@@ -16,3 +16,4 @@
 - [ ] progression per account saven
 - [ ] meerdere talen (NL en ENG voor nu)
 - [ ] leaderboard-badges voor lessen te completen
+- [ ] gradients in css maken
