@@ -171,7 +171,7 @@ function renderModuleButtons() {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.textContent = mod.title;
-    btn.disabled = !isModuleUnlocked(mod.id);
+    btn.disabled = false;
     btn.addEventListener("click", () => {
       showLesson(mod.id, 0);
     });
