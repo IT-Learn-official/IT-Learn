@@ -6,6 +6,10 @@
 - [X] logo maken
 - [ ] nieuwe/betere css
 - [ ] zorgen dat website op laptop, gsm, tablet, ... werkt
+- [X] laptop
+- [ ] gsm
+- [ ] tablet
+
 - [ ] landing page met uitleg over de website
 - [ ] keuze tussen dark en light mode
 - [ ] syntax highlighten als user zelf moet schrijven
