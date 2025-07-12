@@ -4,9 +4,11 @@ body {
 }
 
 header {
+  position: relative;
+  display: block;
   background-color: #c236e8;
   color: white;
-  padding: 1rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
@@ -196,6 +198,27 @@ legend {
 #mascot-image:hover {
   transform: scale(1.1);
 }
+
+#darkmode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: #c236e8;
+  color: #c236e8;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  z-index: 10;
+  transform: scale(1);
+  transition: transform 0.3 ease;
+}
+
+#darkmode-toggle:hover {
+transform: scale(1.2);
+}
+
 .discord-button {
   position: fixed;
   bottom: 20px;
