@@ -40,9 +40,22 @@ let mistakes = JSON.parse(localStorage.getItem("mistakes")) || [];
 
 // darkmode button
 
-toggleButton.addEventListener('click',() => {
-  document.body.classList.toggle('dark-mode');
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('darkmode-toggle');
+
+  const isDarkMode = localStorage.getItem('theme') === 'dark';
+  document.body.classList.toggle('dark-mode', isDarkMode);
+
+  toggleButton.textContent = isDarkMode ? '🌞' : '🌙';
+
+  toggleButton.addEventListener('click', () => {
+    const isNowDark = document.body.classList.toggle('dark-mode');
+    toggleButton.textContent = isNowDark ? '🌞' : '🌙';
+    localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+  });
 });
+
+
 
 // --- Helper functies ---
 
