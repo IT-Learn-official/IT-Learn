@@ -4,7 +4,7 @@
 - [ ] lessen beter maken
 - [ ] meer lessen maken
 - [X] logo maken
-- [ ] nieuwe/betere css
+- [X] nieuwe/betere css
 ---------------      
 - [ ] zorgen dat website op laptop, gsm, tablet, ... werkt
 - [X] laptop
