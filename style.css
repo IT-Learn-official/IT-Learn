@@ -35,7 +35,7 @@ main {
   width: 100%;
   padding: 0.7rem 1rem;
   font-size: 1.1rem;
-  background: linear-gradient(to bottom, #c620df, #910fa5);
+  background: linear-gradient(to bottom, #c620df, #770988);
   background-size: 100% 200%;
   background-position: top;
   transition: background-position 0.4s ease;
@@ -247,9 +247,24 @@ body.dark-mode header {
   background-color: #4a0072;
 }
 
+
 body.dark-mode #modules-list button {
-  background: linear-gradient(to bottom, #5e2d79, #3b0c4a);
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  background: linear-gradient(to bottom, #570264, #770988);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position 0.4s ease;
+  
+  border: none;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.dark-mode #modules-list button:hover{
+    background-position: bottom;
 }
 
 body.dark-mode #lesson-content {
