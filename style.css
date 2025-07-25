@@ -111,11 +111,6 @@ main {
   font-weight: 600;
 }
 
-#missions-info {
-  font-style: italic;
-  color: #ffffff;
-}
-
 #progress-bar-container {
   background: #ddd;
   border-radius: 20px;
