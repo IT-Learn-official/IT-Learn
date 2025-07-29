@@ -19,6 +19,6 @@
 - [ ] js over lussen, variabelen, functions, ...
 - [ ] inlog systeem
 - [ ] progression per account saven
-- [ ] meerdere talen (NL en ENG voor nu)
+- [ ] Joren mee bezig     meerdere talen (NL en ENG voor nu)
 - [ ] leaderboard-badges voor lessen te completen
 - [X] gradients in css maken
