@@ -1,25 +1,40 @@
-# IT-Learn
+✅ IT-Learn – To Do Lijst
+📚 Inhoud & Lessen
+ - [ ] Bestaande lessen verbeteren (duidelijker, uitgebreider, interactiever)
 
-# To Do lijst:
-- [ ] lessen beter maken
-- [ ] meer lessen maken
-- [X] logo maken
-- [X] nieuwe/betere css
----------------      
---- zorgen dat website op laptop, gsm, tablet, ... werkt
-- [X] laptop
-- [ ] gsm
-- [ ] tablet
----------------
-- [ ] landing page met uitleg over de website
-- [X] keuze tussen dark en light mode
-- [ ] syntax highlighten als user zelf moet schrijven
-- [X] links vanonder url naar discord (zoals smpp)
-- [ ] css lessen over pading, margings, ...
-- [ ] js over lussen, variabelen, functions, ...
-- [ ] inlog systeem
-- [ ] progression per account saven
+- [ ] Nieuwe lessen toevoegen
 
-Joren mee bezig --- meerdere talen (NL en ENG voor nu)
-- [ ] leaderboard-badges voor lessen te completen
-- [X] gradients in css maken
+ - [ ] CSS-lessen over padding, margin, enz.
+
+ - [ ] JavaScript-lessen over loops, variabelen, functies, ...
+
+ - [ ] Syntax-highlighting toevoegen bij code schrijven
+
+ - [ ] Leaderboard + badges voor het voltooien van lessen
+
+ - [ ] Meertalige ondersteuning (NL & ENG – Joren werkt hieraan)
+
+🎨 Design & UI
+ - [X] Logo ontwerpen
+
+ - [X] Nieuwe/betere CSS stijlen
+
+ - [X] Ondersteuning voor dark/light mode
+
+ - [X] Footer met link naar Discord (zoals bij SMPP)
+
+ - [X] CSS: Gradients maken
+
+🌐 Responsiviteit (werkt op alle apparaten)
+ - [X] Laptop
+
+ - [ ] GSM
+
+ - [ ] Tablet
+
+🌍 Website structuur
+ - [ ] Landing page met uitleg over het platform
+
+ - [ ] Inlogsysteem
+
+ - [ ] Voortgang per account opslaan
