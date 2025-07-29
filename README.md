@@ -1,5 +1,6 @@
-✅ IT-Learn – To Do Lijst
-📚 Inhoud & Lessen
+# ✅ IT-Learn – To Do Lijst
+
+# 📚 Inhoud & Lessen
  - [ ] Bestaande lessen verbeteren (duidelijker, uitgebreider, interactiever)
 
 - [ ] Nieuwe lessen toevoegen
@@ -14,7 +15,7 @@
 
  - [ ] Meertalige ondersteuning (NL & ENG – Joren werkt hieraan)
 
-🎨 Design & UI
+# 🎨 Design & UI
  - [X] Logo ontwerpen
 
  - [X] Nieuwe/betere CSS stijlen
@@ -25,14 +26,14 @@
 
  - [X] CSS: Gradients maken
 
-🌐 Responsiviteit (werkt op alle apparaten)
+# 🌐 Responsiviteit (werkt op alle apparaten)
  - [X] Laptop
 
  - [ ] GSM
 
  - [ ] Tablet
 
-🌍 Website structuur
+# 🌍 Website structuur
  - [ ] Landing page met uitleg over het platform
 
  - [ ] Inlogsysteem
