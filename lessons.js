@@ -8,9 +8,9 @@ const modulesData = [
         id: "html-intro",
         title: "Wat is HTML?",
         content: `
-          <h2>Wat is HTML?</h2>
-          <p>HTML is de taal om webpagina's te maken. Het bepaalt de structuur en inhoud van een pagina met tags.</p>
-          <pre><code>&lt;!DOCTYPE html&gt;
+          <h2 id="watIsHTML">Wat is HTML?</h2>
+          <p id="uitlegHTML">HTML is de taal om webpagina's te maken. Het bepaalt de structuur en inhoud van een pagina met tags.</p>
+          <pre><code id="codeHTMLDemo>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;&lt;title&gt;Titel&lt;/title&gt;&lt;/head&gt;
   &lt;body&gt;
