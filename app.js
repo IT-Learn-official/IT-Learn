@@ -56,6 +56,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// language drop-down
+
+document.addEventListener('DOMContentLoaded', () => {
+  const langBtn = document.getElementById('current-language');
+  const langOptions = document.getElementById('language-options');
+  const langSelector = document.getElementById('language-selector');
+
+  // Toggle dropdown zichtbaar
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // voorkomt dat klik direct sluit
+    langOptions.classList.toggle('hidden');
+  });
+
+  // Sluit de dropdown als je buiten het menu klikt
+  window.addEventListener('click', (e) => {
+    if (!langSelector.contains(e.target)) {
+      langOptions.classList.add('hidden');
+    }
+  });
+
+  // Select taal uit lijst
+  document.querySelectorAll('#language-options li').forEach(option => {
+    option.addEventListener('click', () => {
+      const lang = option.dataset.lang;
+      applyLanguage(lang);
+      localStorage.setItem('lang', lang);
+      langOptions.classList.add('hidden');
+    });
+  });
+
+  // Pas de juiste taal toe op basis van opslag
+  const savedLang = localStorage.getItem('lang') || 'nl';
+  applyLanguage(savedLang);
+
+  function applyLanguage(lang) {
+    const translations = {
+  nl: {
+    "uitleg": "Leer stap voor stap programmeren met populaire programmeertalen!",
+    "keuzeProgrammeertaal": "Kies een programmeertaal",
+    "back-to-modules": "Terug naar alle programmeertalen",
+    "submit-quiz": "Beantwoord",
+    "next-lesson": "Volgende les",
+    "voortgang": "Voortgang",
+    "mascot-bubble": "Hoi! Klaar om te programmeren?",
+    "watIsHTML": "Wat is HTML?",
+    "uitlegHTML": "HTML is de taal om webpagina's te maken. Het bepaalt de structuur en inhoud van een pagina met tags.",
+    "codeHTMLDemo": `&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Titel&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hallo wereld!&lt;/h1&gt;
+    &lt;p&gt;Dit is een paragraaf.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;`
+  },
+  
+  en: {
+    "uitleg": "Learn to program step by step with popular programming languages!",
+    "keuzeProgrammeertaal": "Choose a programming language",
+    "back-to-modules": "Back to all programming languages",
+    "submit-quiz": "Answer",
+    "next-lesson": "Next lesson",
+    "voortgang": "Progress",
+    "mascot-bubble": "Hi! Ready to program?",
+    "watIsHTML": "What is HTML?",
+    "uitlegHTML": "HTML is the language used to create web pages. It defines the structure and content of a page with tags.",
+    "codeHTMLDemo": `&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello world!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;`
+  }
+};
+
+document.getElementById('uitleg').textContent = translations[lang].uitleg;
+document.getElementById('keuzeProgrammeertaal').textContent = translations[lang].keuzeProgrammeertaal;
+document.getElementById('back-to-modules').textContent = translations[lang]["back-to-modules"];
+document.getElementById('submit-quiz').textContent = translations[lang]["submit-quiz"];
+document.getElementById('next-lesson').textContent = translations[lang]["next-lesson"];
+document.getElementById('voortgang').textContent = translations[lang]["voortgang"];
+document.getElementById('mascot-bubble').textContent = translations[lang]["mascot-bubble"];
+document.getElementById('watIsHTML').textContent = translations[lang]["watIsHTML"];
+document.getElementById('uitlegHTML').textContent = translations[lang]["uitlegHTML"];
+document.getElementById('codeHTMLDemo').innerHTML = translations[lang]["codeHTMLDemo"];
+
+
+    // Update knoptekst
+    langBtn.textContent = (lang === 'nl') ? 'NL ▾' : 'EN ▾';
+
+    const t = translations[lang];
+
+    // Pas teksten aan in de pagina
+    const modulesTitle = document.getElementById('modules-title');
+    const startButton = document.getElementById('start-button');
+
+    if (modulesTitle) modulesTitle.textContent = t.modules;
+    if (startButton) startButton.textContent = t.start;
+  }
+});
+
+
 
 // --- Helper functies ---
 
