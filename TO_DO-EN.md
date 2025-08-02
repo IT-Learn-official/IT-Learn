@@ -54,4 +54,4 @@
 
 - [ ] Border around quizzes behaves strangely due to the amount of text inside
 
-- [ ]Text under ‘Toegankelijkheid’ in HTML goes off-screen
+- [ ] Text under ‘Toegankelijkheid’ in HTML goes off-screen
