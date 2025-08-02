@@ -29,7 +29,7 @@
 # 🌐 Responsiviteit (werkt op alle apparaten)
  - [X] Laptop
 
- - [ ] GSM
+ - [X] GSM (Op Gsm in de mascotte een beetje groot)
 
  - [ ] Tablet
 
