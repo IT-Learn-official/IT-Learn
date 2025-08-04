@@ -13,7 +13,7 @@
 
 - [ ] Leaderboard + badges for completing lessons
 
-- [ ] Multilingual support (NL & ENG – Joren is working on this)
+- [ ] Multilingual support
 
 # 🎨 Design & UI
 
