@@ -161,7 +161,9 @@ function showLessonsList(moduleId) {
   backToModulesBtn.style.display = "inline-block";
 
   lessonTitle.textContent = `Lessen in ${currentModule.title}`;
-  
+
+
+
   // Lessen lijst maken
   lessonContent.innerHTML = "";
   const ul = document.createElement("ul");
@@ -460,34 +462,10 @@ backToModulesBtn.addEventListener("click", () => {
     e.preventDefault();
   });
 
-// Mascotte berichten
 
-const mascotMessages = [
-  "Hoi! Klaar om iets te leren vandaag?",
-  "Goed bezig, hou vol!",
-  "Vergeet niet pauzes te nemen.",
-  "Elke dag een beetje beter!",
-  "Leer vandaag iets nieuws!",
-  "Super! Ga zo door!",
-  "Heb je vragen? Stel ze gerust.",
-  "Fouten maken mag, daarvan leer je!",
-  "Top dat je terug bent!",
-  "Blijf nieuwsgierig!"
-];
-
-function showMascotMessage(message) {
-  mascotBubble.textContent = message;
-}
-
-function randomMascotMessage() {
-  const msg = mascotMessages[Math.floor(Math.random() * mascotMessages.length)];
-  showMascotMessage(msg);
-}
 
 
 // Init
 updateProgressUI();
 updateStreak();
 showModules();
-randomMascotMessage();
-
