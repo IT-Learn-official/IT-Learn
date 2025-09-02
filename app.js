@@ -38,8 +38,7 @@ let lastActive = localStorage.getItem("lastActive") || null;
 let missions = JSON.parse(localStorage.getItem("missions")) || {};
 let mistakes = JSON.parse(localStorage.getItem("mistakes")) || [];
 
-// darkmode button
-
+// ---------------------------- Dark Mode ----------------------------
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('darkmode-toggle');
 
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
   });
 });
-
+// ___________________________________________________________________
 
 // --- Helper functies ---
 
@@ -162,8 +161,6 @@ function showLessonsList(moduleId) {
 
   lessonTitle.textContent = `Lessen in ${currentModule.title}`;
 
-
-
   // Lessen lijst maken
   lessonContent.innerHTML = "";
   const ul = document.createElement("ul");
@@ -230,7 +227,7 @@ function renderModuleButtons() {
     btn.textContent = mod.title;
     btn.disabled = false;
     btn.addEventListener("click", () => {
-      showLessonsList(mod.id);  // aangepast: eerst lessen lijst tonen
+      showLessonsList(mod.id);
     });
     li.appendChild(btn);
     moduleButtons.appendChild(li);
@@ -469,3 +466,4 @@ backToModulesBtn.addEventListener("click", () => {
 updateProgressUI();
 updateStreak();
 showModules();
+
