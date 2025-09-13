@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <button class="escape" onclick="window.location.href='index.html'">X</button>
+  <div class="container">
+    <div class="form-box">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div class="or-divider"><span>OR</span></div>
+
+      <button type="button" class="btn-google" id="google-login">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" alt="Google Logo" />
+        Continue with Google
+      </button>
+
+      <p class="redirect-text">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://otgkiqornzlqceurjnse.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90Z2tpcW9ybnpscWNldXJqbnNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxMDc1OTAsImV4cCI6MjA2OTY4MzU5MH0.FYiilcpzRscaCEQNqKTBhpIOY1uynGS-exv6eUy90VI";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    
+    // Login form
+    const loginForm = document.getElementById("login-form");
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        alert(error.message);
+      } else {
+        alert("Login successful!");
+        window.location.href = "/learn"; // redirect naar lessons
+      }
+    });
+
+    // Google login
+    const googleBtn = document.getElementById("google-login");
+    googleBtn.addEventListener("click", async () => {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: window.location.origin + "/learn" }
+      });
+      if (error) alert(error.message);
+    });
+  </script>
+</body>
+</html>
