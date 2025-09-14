@@ -10,7 +10,6 @@
 <body>
     <header>
         <h1>Privacy Statement — IT-Learn</h1>
-        <button id="closeBtn" class="close-btn" aria-label="Close" title="Close (Esc)">✕</button>
     </header>
 
     <main>
@@ -152,20 +151,6 @@
         // last-updated fallback (keeps placeholder if filled manually)
         const updatedEl = document.getElementById('last-updated');
         if(!updatedEl.textContent.trim()) updatedEl.textContent = new Date().toISOString().slice(0,10);
-
-        // Close/escape button behaviour
-        (function(){
-          const close = document.getElementById('closeBtn');
-          if (!close) return;
-          close.addEventListener('click', ()=>{
-            if (window.history.length > 1) window.history.back();
-            else window.location.href = '/';
-          });
-          window.addEventListener('keydown', (e)=>{
-            if (e.key === 'Escape') close.click();
-          });
-        })();
     </script>
 </body>
-
 </html>
