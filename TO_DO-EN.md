@@ -50,8 +50,6 @@
 
 - [ ] Mascot is too big (can’t read all the text because of this)
 
-- [ ] Moon and sun icons for dark mode toggle are upside down (after refresh it is normal until you press it
-
 - [ ] Border around quizzes behaves strangely due to the amount of text inside
 
 - [ ] Text under ‘Toegankelijkheid’ in HTML goes off-screen
