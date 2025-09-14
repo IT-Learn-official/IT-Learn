@@ -19,7 +19,6 @@ const missionsInfo = document.getElementById("missions-info");
 const mascotBubble = document.getElementById("mascot-bubble");
 const correctSound = document.getElementById("audio-correct");
 const wrongSound = document.getElementById("audio-wrong");
-const toggleButton = document.getElementById("darkmode-toggle");
 
 // ---------------------------- Supabase setup (vervang hieronder) ----------------------------
 // Zet je eigen Supabase URL en anon key hieronder (vervang de placeholders)
@@ -47,22 +46,6 @@ let streak = parseInt(localStorage.getItem("streak")) || 0;
 let lastActive = localStorage.getItem("lastActive") || null;
 let missions = JSON.parse(localStorage.getItem("missions")) || {};
 let mistakes = JSON.parse(localStorage.getItem("mistakes")) || [];
-
-// ---------------------------- Dark Mode ----------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  const isDarkMode = localStorage.getItem('theme') === 'dark';
-  document.body.classList.toggle('dark-mode', isDarkMode);
-  toggleButton.textContent = isDarkMode ? '🌞' : '🌙';
-
-  toggleButton.addEventListener('click', () => {
-    const isNowDark = document.body.classList.toggle('dark-mode');
-    toggleButton.textContent = isNowDark ? '🌞' : '🌙';
-    localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
-  });
-
-  // initialise Supabase auth status & load remote data if logged in
-  initAuthAndData();
-});
 
 // ---------------------------- Mascot Bubble ----------------------------
 function showMascotMessage(message, duration = 4000) {
