@@ -27,6 +27,8 @@
 
 - [X] CSS: Creating gradients
 
+- [ ] make favicon.ico round
+
 # 🌐 Responsiveness (works on all devices)
 
 - [X] Laptop
