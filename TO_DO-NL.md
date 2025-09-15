@@ -28,6 +28,8 @@
 
  - [ ] maak de favicon.ico afgerond
 
+ - [ ] maak de navbar beter zichtbaar tegenover rest van de pagina
+
 # 🌐 Responsiviteit (werkt op alle apparaten)
  - [X] Laptop
 
