@@ -427,3 +427,46 @@ a:focus, button:focus { outline: 2px solid rgba(147,197,253,0.12); outline-offse
   .roadmap-do, .roadmap-later, .roadmap-wont { padding: 1rem; border-radius: 12px; }
   .roadmap-do ul li, .roadmap-later ul li, .roadmap-wont ul li { padding: 0.8rem; font-size: 0.9rem; }
 }
+
+/* Escape / Close button */
+.escape {
+  position: fixed; /* blijft bovenaan staan bij scrollen */
+  top: 1rem;
+  right: 1rem;
+  background: rgba(79,70,229,0.15); /* subtiele accentkleur */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(2,6,23,0.4);
+  transition: all 0.18s ease;
+  z-index: 999; /* altijd boven andere content */
+}
+
+.escape:hover {
+  background: rgba(79,70,229,0.25);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.5);
+}
+
+.escape:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(2,6,23,0.4);
+}
+
+@media (max-width: 520px) {
+  .escape {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+}
