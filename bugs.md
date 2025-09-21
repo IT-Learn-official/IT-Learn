@@ -1,13 +1,13 @@
 # BUGS
 
 ------- Windows -------
-- [ ]
+- [ ] -
 
 -------- Linux --------
-- [ ]
+- [ ] -
 
 -------- macOS --------
-- [ ]
+- [ ] -
 
 --------- IOS ---------
 - [ ] Signup en login button zijn te groot (header, landing-page)
@@ -19,7 +19,7 @@
 - [ ] Escape Button werkt niet op roadmap. Mogelijk door overlay met tekst (header, roadmap)
 
 ------- iPadOS --------
-- [ ]
+- [ ] -
 
 ------- Android -------
-- [ ]
+- [ ] -
