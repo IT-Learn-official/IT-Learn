@@ -1,15 +1,6 @@
 # BUGS
 
-------- Windows -------
-- [ ] -
-
--------- Linux --------
-- [ ] -
-
--------- macOS --------
-- [ ] -
-
---------- IOS ---------
+# IOS 
 - [ ] Signup en login button zijn te groot (header, landing-page)
 - [ ] IT Learn foto is te klein (header, landing-page)
 - [ ] Foto centreren (naast sponsors, landing-page)
@@ -18,8 +9,17 @@
 - [ ] Escape Button zit over de paragraaf op roadmap (header, roadmap)
 - [ ] Escape Button werkt niet op roadmap. Mogelijk door overlay met tekst (header, roadmap)
 
-------- iPadOS --------
+# Android
 - [ ] -
 
-------- Android -------
+# Windows
+- [ ] -
+
+# Linux
+- [ ] -
+
+# macOS
+- [ ] -
+
+# iPadOS
 - [ ] -
