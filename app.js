@@ -351,9 +351,19 @@ function showLesson(moduleId, lessonIndex) {
   if (lesson.quiz && lesson.quiz.length > 0) {
     quizSection.classList.remove("hidden");
     submitQuizBtn.style.display = "inline-block";
-    if(moduleId === "fouten-oefenen") buildMistakesQuiz();
-    else buildQuiz(lesson.quiz);
+
+    // Als het een mail-quiz is
+    if (lesson.quiz[0].type === "mail") {
+      // MAIL QUIZ root moet in HTML staan in lesson.content
+      // Zorg dat er een <div id="mail-exercise-root"></div> in lesson.content zit
+      buildQuiz(lesson.quiz);
+    } else if (moduleId === "fouten-oefenen") {
+      buildMistakesQuiz();
+    } else {
+      buildQuiz(lesson.quiz);
+    }
   }
+
 
   showMascotMessage(`Je leest nu: "${lesson.title}"`);
 }
@@ -372,7 +382,12 @@ function renderModuleButtons() {
 }
 
 // ---------------------------- Quiz ----------------------------
-function buildQuiz(quiz) {
+function buildQuiz(quizArray) {
+  if (quizArray[0].type === "mail") {
+    buildMailExercise(quizArray);
+    return;
+  }
+
   quizForm.innerHTML = "";
   quiz.forEach((q, i) => {
     const questionEl = document.createElement("fieldset");
@@ -396,8 +411,70 @@ function buildQuiz(quiz) {
   quizFeedback.textContent = "";
 }
 
+
+
+// ---------------------------- Mail-view Quiz ----------------------------
+function buildMailExercise(quizArray) {
+  const quiz = quizArray[0]; // eerste mail-quiz
+  const root = document.getElementById("mail-exercise-root");
+  if (!root) return;
+
+  root.innerHTML = quiz.mailHtml;
+
+  quiz.elements.forEach(el => {
+    const element = root.querySelector(el.selector);
+    if (!element) return;
+
+    element.classList.remove("selected", "correct", "incorrect");
+    element.addEventListener("click", () => {
+      element.classList.toggle("selected");
+    });
+
+  });
+
+  submitQuizBtn.style.display = "inline-block";
+  quizFeedback.textContent = "";
+
+  submitQuizBtn.onclick = () => {
+    let allCorrect = true;
+
+    quiz.elements.forEach(el => {
+      const element = root.querySelector(el.selector);
+      if (!element) return;
+      const selected = element.classList.contains("selected");
+
+      if (selected !== el.correct) allCorrect = false;
+
+      element.classList.remove("correct", "incorrect");
+      if (selected && el.correct) element.classList.add("correct");
+      if (selected && !el.correct) element.classList.add("incorrect");
+      if (!selected && el.correct) element.classList.add("incorrect");
+    });
+
+    if (allCorrect) {
+      quizFeedback.textContent = "Goed gedaan! Alle verdachte elementen correct geselecteerd.";
+      correctSound.play();
+      xp += 10;
+      markLessonCompleted(currentModule.id, currentModule.lessons[currentLessonIndex].id);
+      updateProgressUI();
+      saveProgress();
+      nextLessonBtn.classList.remove("hidden");
+      submitQuizBtn.style.display = "none";
+      showMascotMessage("Je hebt deze les succesvol afgerond!");
+    } else {
+      quizFeedback.textContent = "Er is een of meer foutieve keuzes. Probeer opnieuw!";
+      wrongSound.play();
+    }
+  };
+}
+
+
+
+
+
+
 function buildMistakesQuiz() {
-  if(mistakes.length === 0) {
+  if (mistakes.length === 0) {
     quizForm.innerHTML = "<p>Je hebt geen fouten om te oefenen! Ga terug naar modules.</p>";
     submitQuizBtn.style.display = "none";
     return;
@@ -406,10 +483,10 @@ function buildMistakesQuiz() {
   quizForm.innerHTML = "";
   mistakes.forEach((m, i) => {
     const moduleObj = modulesData.find(mod => mod.id === m.moduleId);
-    if(!moduleObj) return;
+    if (!moduleObj) return;
     const lessonObj = moduleObj.lessons.find(les => les.id === m.lessonId);
-    if(!lessonObj) return;
-    if(!lessonObj.quiz || !lessonObj.quiz[m.questionIndex]) return;
+    if (!lessonObj) return;
+    if (!lessonObj.quiz || !lessonObj.quiz[m.questionIndex]) return;
 
     const questionData = lessonObj.quiz[m.questionIndex];
     const questionEl = document.createElement("fieldset");
@@ -438,45 +515,11 @@ function buildMistakesQuiz() {
 submitQuizBtn.addEventListener("click", () => {
   if (!currentModule) return;
 
-  if(currentModule.id === "fouten-oefenen") {
-    let allCorrect = true;
-    let mistakesToRemove = [];
-
-    for(let i=0; i<mistakes.length; i++) {
-      const radios = document.getElementsByName(`question-${i}`);
-      let answered = false;
-      let correct = false;
-      for(const radio of radios) {
-        if(radio.checked) {
-          answered = true;
-          if(parseInt(radio.value) === getMistakeCorrectAnswer(i)) correct = true;
-          break;
-        }
-      }
-      if(!answered) { alert(`Beantwoord vraag ${i+1} eerst.`); return; }
-      if(!correct) allCorrect = false;
-      else mistakesToRemove.push(i);
-    }
-
-    if(allCorrect) {
-      quizFeedback.textContent = "Top! Je hebt alle fouten goed beantwoord. Goed bezig!";
-      correctSound.play();
-      mistakes = [];
-      saveProgress();
-      updateProgressUI();
-      nextLessonBtn.classList.remove("hidden");
-      submitQuizBtn.style.display = "none";
-      showMascotMessage("Fouten goed geoefend, ga zo door!");
-    } else {
-      quizFeedback.textContent = `Je had een of meer fouten. Probeer het nog eens!`;
-      wrongSound.play();
-    }
-
-    return;
-  }
-
-  // Normale quiz beoordeling
   const lesson = currentModule.lessons[currentLessonIndex];
+
+  // Normale quiz beoordeling (geen mail-quiz meer hier)
+  if (!lesson.quiz || lesson.quiz[0].type === "mail") return;
+
   const quiz = lesson.quiz;
   let correctCount = 0;
 
@@ -497,7 +540,7 @@ submitQuizBtn.addEventListener("click", () => {
 
   if (correctCount === quiz.length) {
     quizFeedback.textContent = "Goed gedaan! Alle antwoorden kloppen.";
-    if(!isLessonCompleted(currentModule.id, lesson.id)) {
+    if (!isLessonCompleted(currentModule.id, lesson.id)) {
       xp += 10;
       markLessonCompleted(currentModule.id, lesson.id);
       updateProgressUI();
@@ -509,17 +552,17 @@ submitQuizBtn.addEventListener("click", () => {
     showMascotMessage("Je hebt deze les succesvol afgerond!");
   } else {
     quizFeedback.textContent = `Je had ${quiz.length - correctCount} fout${quiz.length - correctCount !== 1 ? "en" : ""}. Probeer het nog eens!`;
-    wrongSound.play();
+  wrongSound.play();
   }
 });
 
 function getMistakeCorrectAnswer(mistakeIndex) {
   const m = mistakes[mistakeIndex];
   const moduleObj = modulesData.find(mod => mod.id === m.moduleId);
-  if(!moduleObj) return null;
+  if (!moduleObj) return null;
   const lessonObj = moduleObj.lessons.find(les => les.id === m.lessonId);
-  if(!lessonObj) return null;
-  if(!lessonObj.quiz || !lessonObj.quiz[m.questionIndex]) return null;
+  if (!lessonObj) return null;
+  if (!lessonObj.quiz || !lessonObj.quiz[m.questionIndex]) return null;
   return lessonObj.quiz[m.questionIndex].correct;
 }
 
@@ -570,7 +613,7 @@ document.addEventListener('contextmenu', function (e) {
 function runCode(id) {
   const code = document.getElementById(`code-editor-${id}`).value;
   const iframe = document.getElementById(`output-frame-${id}`);
-  
+
   iframe.srcdoc = `
     <style>
       body {
@@ -587,4 +630,5 @@ function runCode(id) {
 updateProgressUI();
 updateStreak();
 showModules();
+initAuthAndData();
 
