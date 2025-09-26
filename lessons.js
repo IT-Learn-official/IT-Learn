@@ -45,7 +45,7 @@ const modulesData =
           content: `
           <h2>Commonly used HTML tags</h2>
           <ul>
-            <li>&lt;h1&gt; t/m &lt;h6&gt;: Kopteksten</li>
+            <li>&lt;h1&gt; t/m &lt;h6&gt;: Headers</li>
             <li>&lt;p&gt;: Paragraph</li>
             <li>&lt;a href=\"url\"&gt;: Link</li>
             <li>&lt;img src=\"afbeelding.jpg\" alt=\"description\"&gt;: picture</li>
@@ -92,7 +92,7 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Hoe maak je een link naar https://google.com?",
+              question: "How to create a URL to https://google.com?",
               options: [
                 "&lt;a href='https://google.com'&gt;Link&lt;/a&gt;",
                 "&lt;link src='https://google.com'&gt;",
@@ -104,26 +104,26 @@ const modulesData =
         },
         {
           id: "html-images",
-          title: "Afbeeldingen toevoegen",
+          title: "Add images",
           content: `
-          <h2>Afbeeldingen</h2>
-          <p>Met de <code>&lt;img&gt;</code> tag voeg je een afbeelding toe.</p>
-          <pre><code>&lt;img src="foto.jpg" alt="Beschrijving"&gt;</code></pre>
+          <h2>Images</h2>
+          <p>With the <code>&lt;img&gt;</code> tag you add an image.</p>
+          <pre><code>&lt;img src="foto.jpg" alt="Description"&gt;</code></pre>
         `,
           quiz: [
             {
-              question: "Wat is verplicht bij een afbeelding voor toegankelijkheid?",
-              options: ["alt attribuut", "title attribuut", "href attribuut"],
+              question: "What is required for an image for accessibility?",
+              options: ["alt attribute", "title attribute", "href attribute"],
               correct: 0
             }
           ]
         },
         {
           id: "html-lijsten",
-          title: "Lijsten maken",
+          title: "Create lists",
           content: `
-          <h2>Lijsten</h2>
-          <p>Er zijn ongeordende lijsten (<code>&lt;ul&gt;</code>) en geordende lijsten (<code>&lt;ol&gt;</code>).</p>
+          <h2>Lists</h2>
+          <p>There are unordered lists (<code>&lt;ul&gt;</code>) and ordered lists (<code>&lt;ol&gt;</code>).</p>
           <pre><code>&lt;ul&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
@@ -131,7 +131,7 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Welke tag gebruik je voor een lijstitem?",
+              question: "What tag do you use for a list item?",
               options: ["&lt;li&gt;", "&lt;ul&gt;", "&lt;ol&gt;"],
               correct: 0
             }
@@ -139,14 +139,14 @@ const modulesData =
         },
         {
           id: "html-tables",
-          title: "Tabellen maken",
+          title: "Create tables",
           content: `
-          <h2>Tabellen</h2>
-          <p>Gebruik <code>&lt;table&gt;</code> met rijen (<code>&lt;tr&gt;</code>) en cellen (<code>&lt;td&gt;</code> en <code>&lt;th&gt;</code>).</p>
+          <h2>Tables</h2>
+          <p>Use <code>&lt;table&gt;</code> with rows (<code>&lt;tr&gt;</code>) and cells (<code>&lt;td&gt;</code> and <code>&lt;th&gt;</code>).</p>
           <pre><code>&lt;table&gt;
   &lt;tr&gt;
-    &lt;th&gt;Naam&lt;/th&gt;
-    &lt;th&gt;Leeftijd&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td&gt;Jan&lt;/td&gt;
@@ -156,7 +156,7 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Welke tag gebruik je voor een kopcel in een tabel?",
+              question: "Which tag do you use for a header cell in a table?",
               options: ["&lt;th&gt;", "&lt;td&gt;", "&lt;tr&gt;"],
               correct: 0
             }
@@ -164,14 +164,14 @@ const modulesData =
         },
         {
           id: "html-forms",
-          title: "Formulieren",
+          title: "Forms",
           content: `
-          <h2>Formulieren</h2>
-          <p>Met formulieren kan de gebruiker data invoeren.</p>
+          <h2>Forms</h2>
+          <p>Forms allow the user to enter data.</p>
           <pre><code>&lt;form action='/submit' method='post'&gt;
-  &lt;label&gt;Naam:&lt;/label&gt;
-  &lt;input type='text' name='naam'&gt;
-  &lt;input type='submit' value='Verstuur'&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type='text' name='name'&gt;
+  &lt;input type='submit' value='Submit'&gt;
 &lt;/form&gt;</code></pre>
         `,
           quiz: [
@@ -184,14 +184,14 @@ const modulesData =
         },
         {
           id: "html-semantic",
-          title: "Semantische tags",
+          title: "Semantic tags",
           content: `
-          <h2>Semantische HTML</h2>
-          <p>Gebruik tags die de betekenis van content aangeven, zoals <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> en <code>&lt;footer&gt;</code>.</p>
+          <h2>Semantic HTML</h2>
+          <p>Use tags that indicate the meaning of content, such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> and <code>&lt;footer&gt;</code>.</p>
         `,
           quiz: [
             {
-              question: "Welke tag gebruik je voor de navigatie?",
+              question: "Which tag do you use for navigation?",
               options: ["&lt;nav&gt;", "&lt;div&gt;", "&lt;header&gt;"],
               correct: 0
             }
@@ -199,17 +199,17 @@ const modulesData =
         },
         {
           id: "html-media",
-          title: "Media toevoegen",
+          title: "Add media",
           content: `
-          <h2>Audio en Video</h2>
-          <p>HTML ondersteunt audio en video met respectievelijk de <code>&lt;audio&gt;</code> en <code>&lt;video&gt;</code> tags.</p>
+          <h2>Audio and Video</h2>
+          <p>HTML supports audio and video with the respective <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags.</p>
           <pre><code>&lt;video controls&gt;
   &lt;source src="video.mp4" type="video/mp4"&gt;
 &lt;/video&gt;</code></pre>
         `,
           quiz: [
             {
-              question: "Welke tag gebruik je om video toe te voegen?",
+              question: "What tag do you use to add video?",
               options: ["&lt;video&gt;", "&lt;img&gt;", "&lt;media&gt;"],
               correct: 0
             }
@@ -217,19 +217,19 @@ const modulesData =
         },
         {
           id: "html-accessibility",
-          title: "Toegankelijkheid",
+          title: "Accessibility",
           content: `
-          <h2>Toegankelijkheid</h2>
-          <p>Gebruik alt-teksten, labels, en ARIA-attributes om websites toegankelijk te maken voor iedereen.</p>
-          <pre><code>&lt;img src='foto.jpg' alt='Beschrijving van de afbeelding'&gt;</code></pre>
+          <h2>Accessiblity</h2>
+          <p>Use alt text, tags, and ARIA attributes to make websites accessible to everyone.</p>
+          <pre><code>&lt;img src='foto.jpg' alt='Description of the image'&gt;</code></pre>
         `,
           quiz: [
             {
-              question: "Waarom gebruik je alt-teksten?",
+              question: "Why use alt text?",
               options: [
-                "Voor schermlezers en zoekmachines",
-                "Voor styling",
-                "Voor animaties"
+                "For screen readers and search engines",
+                "For styling",
+                "For animations"
               ],
               correct: 0
             }
@@ -245,10 +245,10 @@ const modulesData =
       lessons: [
         {
           id: "css-intro",
-          title: "Introductie tot CSS",
+          title: "Introduction to CSS",
           content: `
-          <h2>Wat is CSS?</h2>
-          <p>CSS bepaalt de visuele stijl van je website: kleuren, lettertypes, afstanden, en layout.</p>
+          <h2>What is CSS?</h2>
+          <p>CSS determines the visual style of your website: colors, fonts, spacing, and layout.</p>
           <pre><code>body {
   background-color: #f0f0f0;
   color: navy;
@@ -257,11 +257,11 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Waarvoor gebruik je CSS?",
+              question: "What do you use CSS for?",
               options: [
-                "Structuur van pagina bepalen",
-                "Opmaak en stijl van pagina bepalen",
-                "Pagina interactief maken"
+                "Determine page structure",
+                "Determine page layout and style",
+                "Make page interactive"
               ],
               correct: 1
             }
@@ -272,7 +272,7 @@ const modulesData =
           title: "CSS Selectors",
           content: `
           <h2>CSS Selectors</h2>
-          <p>Met selectors kies je welke HTML-elementen je wilt stijlen: tags, classes en id's.</p>
+          <p>Selectors let you choose which HTML elements you want to style: tags, classes, and IDs.</p>
           <ul>
             <li>Element selector: <code>p {}</code></li>
             <li>Class selector: <code>.menu {}</code></li>
@@ -281,7 +281,7 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Hoe selecteer je elementen met class 'menu'?",
+              question: "How do you select elements with class 'menu'?",
               options: [".menu", "#menu", "menu"],
               correct: 0
             }
@@ -289,15 +289,15 @@ const modulesData =
         },
         {
           id: "css-boxmodel",
-          title: "Het CSS Box Model",
+          title: "The CSS Box Model",
           content: `
-          <h2>Het CSS Box Model</h2>
-          <p>Elke HTML-box heeft:</p>
+          <h2>The CSS Box Model</h2>
+          <p>Each HTML box has:</p>
           <ul>
-            <li><strong>Content</strong>: de inhoud</li>
-            <li><strong>Padding</strong>: ruimte binnen de rand</li>
-            <li><strong>Border</strong>: de rand zelf</li>
-            <li><strong>Margin</strong>: ruimte buiten de rand</li>
+            <li><strong>Content</strong>: the content</li>
+            <li><strong>Padding</strong>: space within the border</li>
+            <li><strong>Border</strong>: the edge itself</li>
+            <li><strong>Margin</strong>: space outside the edge</li>
           </ul>
           <pre><code>div {
   margin: 10px;
@@ -307,7 +307,7 @@ const modulesData =
         `,
           quiz: [
             {
-              question: "Welke laag zit tussen content en border?",
+              question: "What layer is between content and border?",
               options: ["Padding", "Margin", "Outline"],
               correct: 0
             }
@@ -315,10 +315,10 @@ const modulesData =
         },
         {
           id: "css-colors",
-          title: "Kleuren in CSS",
+          title: "Colors in CSS",
           content: `
-          <h2>Kleuren</h2>
-          <p>Je kunt kleuren instellen met namen, hexcodes, rgb en rgba.</p>
+          <h2>Colors</h2>
+          <p>You can set colors with names, hex codes, rgb and rgba.</p>
           <pre><code>color: red;
 background-color: #00ff00;
 border-color: rgb(0,0,255);
@@ -326,7 +326,7 @@ opacity: 0.5;</code></pre>
         `,
           quiz: [
             {
-              question: "Hoe geef je de kleur blauw in hexcode?",
+              question: "How do you specify the color blue in hex code?",
               options: ["#0000ff", "#ff0000", "#00ff00"],
               correct: 0
             }
@@ -334,10 +334,10 @@ opacity: 0.5;</code></pre>
         },
         {
           id: "css-fonts",
-          title: "Lettertypes en tekst",
+          title: "Fonts and text",
           content: `
-          <h2>Lettertypes en tekst</h2>
-          <p>Pas lettertypes, grootte, kleur en uitlijning aan.</p>
+          <h2>Fonts and text</h2>
+          <p>Customize fonts, size, color, and alignment.</p>
           <pre><code>font-family: Arial, sans-serif;
 font-size: 16px;
 color: navy;
@@ -345,7 +345,7 @@ text-align: center;</code></pre>
         `,
           quiz: [
             {
-              question: "Welke CSS-eigenschap verandert het lettertype?",
+              question: "Which CSS property changes the font?",
               options: ["font-family", "font-style", "font-weight"],
               correct: 0
             }
@@ -353,11 +353,11 @@ text-align: center;</code></pre>
         },
         {
           id: "css-layout",
-          title: "Layouts: display en position",
+          title: "Layouts: display and position",
           content: `
           <h2>Layouts</h2>
-          <p>Met <code>display</code> bepaal je of een element inline of block is.</p>
-          <p><code>position</code> bepaalt hoe een element gepositioneerd wordt.</p>
+          <p>With <code>display</code> determine whether an element is inline or block.</p>
+          <p><code>position</code> determines how an element is positioned.</p>
           <pre><code>div {
   display: block;
   position: relative;
@@ -367,11 +367,11 @@ text-align: center;</code></pre>
         `,
           quiz: [
             {
-              question: "Wat doet 'display: block;'?",
+              question: "What does a 'display: block;'?",
               options: [
-                "Element neemt hele regel in",
-                "Element neemt alleen ruimte van inhoud",
-                "Element wordt verborgen"
+                "Element takes up entire line",
+                "Element only takes space from content",
+                "Element is hidden"
               ],
               correct: 0
             }
@@ -382,7 +382,7 @@ text-align: center;</code></pre>
           title: "Flexbox",
           content: `
           <h2>Flexbox</h2>
-          <p>Flexbox is een krachtige manier om layouts te maken die flexibel en responsief zijn.</p>
+          <p>Flexbox is a powerful way to create layouts that are flexible and responsive.</p>
           <pre><code>container {
   display: flex;
   justify-content: center;
@@ -391,11 +391,11 @@ text-align: center;</code></pre>
         `,
           quiz: [
             {
-              question: "Wat doet 'justify-content: center;'?",
+              question: "What does a 'justify-content: center;'?",
               options: [
-                "Centraal uitlijnen van flex-items horizontaal",
-                "Centraal uitlijnen van tekst",
-                "Element verbergen"
+                "Center align flex items horizontally",
+                "Center align text",
+                "Hide element"
               ],
               correct: 0
             }
@@ -406,7 +406,7 @@ text-align: center;</code></pre>
           title: "CSS Grid",
           content: `
           <h2>CSS Grid</h2>
-          <p>Grid is een layoutsysteem met rijen en kolommen voor complexe designs.</p>
+          <p>Grid is a row-and-column layout system for complex designs.</p>
           <pre><code>container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -415,11 +415,11 @@ text-align: center;</code></pre>
         `,
           quiz: [
             {
-              question: "Wat doet 'grid-template-columns: 1fr 2fr 1fr;'?",
+              question: "What does a 'grid-template-columns: 1fr 2fr 1fr;'?",
               options: [
-                "Maakt 3 kolommen met breedtes in verhouding 1:2:1",
-                "Verandert de rijhoogte",
-                "Verbergt een kolom"
+                "Creates 3 columns with widths in ratio 1:2:1",
+                "Changes the row height",
+                "Hides a column"
               ],
               correct: 0
             }
@@ -430,7 +430,7 @@ text-align: center;</code></pre>
           title: "Media Queries",
           content: `
           <h2>Media Queries</h2>
-          <p>Met media queries pas je je design aan voor verschillende schermgroottes (responsief design).</p>
+          <p>With media queries you can adapt your design for different screen sizes (responsive design).</p>
           <pre><code>@media (max-width: 600px) {
   body {
     background-color: lightgray;
@@ -439,11 +439,11 @@ text-align: center;</code></pre>
         `,
           quiz: [
             {
-              question: "Wat doet een media query?",
+              question: "What does a media query do?",
               options: [
-                "Past stijl aan afhankelijk van schermgrootte",
-                "Voegt animaties toe",
-                "Verandert HTML structuur"
+                "Adjusts style depending on screen size",
+                "Adds animations",
+                "Changes HTML structure"
               ],
               correct: 0
             }
@@ -451,10 +451,10 @@ text-align: center;</code></pre>
         },
         {
           id: "css-animations",
-          title: "Animaties en Transities",
+          title: "Animations and Transitions",
           content: `
           <h2>Animaties</h2>
-          <p>Met <code>transition</code> en <code>@keyframes</code> maak je animaties.</p>
+          <p>With <code>transition</code> and <code>@keyframes</code> you make animations.</p>
           <pre><code>div {
   transition: background-color 0.5s ease;
 }
@@ -464,11 +464,11 @@ div:hover {
         `,
           quiz: [
             {
-              question: "Wat doet 'transition: background-color 0.5s;'?",
+              question: "What does 'transition: background-color 0.5s;' do?",
               options: [
-                "Laat kleur langzaam veranderen",
-                "Verandert kleur direct",
-                "Verbergt het element"
+                "Allow color to change slowly",
+                "Changes color instantly",
+                "Hides the element"
               ],
               correct: 0
             }
