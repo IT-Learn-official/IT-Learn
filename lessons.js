@@ -1094,5 +1094,3 @@ document.querySelectorAll(".mail-element").forEach(el => {
     }
   });
 });
-
-  ];
