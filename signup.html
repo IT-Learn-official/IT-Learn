@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Learn | Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
 </head>
+
 <body>
-  <!-- Escape button and form structure (ensure ids match those used by the CSS animations) -->
   <button class="escape" onclick="window.location.href='index.html'">X</button>
 
   <div class="container">
@@ -26,7 +26,6 @@
           <input type="password" id="password" placeholder="Create a password" required />
         </div>
 
-        <!-- Terms checkbox -->
         <div class="input-group" style="margin-top:.5rem;">
           <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer;">
             <input type="checkbox" id="accept-terms" style="width:16px;height:16px;" />
@@ -39,8 +38,8 @@
 
       <div class="or-divider"><span>OR</span></div>
 
-      <button type="button" class="btn-google" id="google-login">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" alt="Google Logo" />
+      <button type="button" class="btn-google" disabled>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" />
         Continue with Google
       </button>
 
@@ -50,83 +49,53 @@
     </div>
   </div>
 
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const signupForm = document.getElementById("signup-form");
 
-  <script>
-    const SUPABASE_URL = "https://otgkiqornzlqceurjnse.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90Z2tpcW9ybnpscWNldXJqbnNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxMDc1OTAsImV4cCI6MjA2OTY4MzU5MH0.FYiilcpzRscaCEQNqKTBhpIOY1uynGS-exv6eUy90VI";
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    // Attach submit handler after DOM ready so elements exist
-    document.addEventListener('DOMContentLoaded', () => {
-      const signupForm = document.getElementById("signup-form");
-      const googleBtn = document.getElementById("google-login");
+    const accept = document.getElementById("accept-terms");
+    if (!accept.checked) {
+      alert("You must accept the terms of use to create an account.");
+      return;
+    }
 
-      if (signupForm) {
-        signupForm.addEventListener("submit", async (e) => {
-          e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-          // checkbox requirement (always checked before doing any network work)
-          const accept = document.getElementById("accept-terms");
-          if (!accept || !accept.checked) {
-            alert("You must accept the terms of use to create an account.");
-            return;
-          }
+    try {
+      const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
 
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
+      const data = await res.json();
 
-          // Init supabase safely (catch init errors)
-          let supabase;
-          try {
-            supabase = Supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-          } catch (err) {
-            console.error("Supabase init error:", err);
-            alert("An error has occurred. Please try again later.");
-            return;
-          }
-
-          try {
-            const { data, error } = await supabase.auth.signUp({ email, password });
-            if (error) {
-              alert(error.message);
-              return;
-            }
-            alert("Account created! Please check your email to confirm.");
-            window.location.href = "/learn";
-          } catch (err) {
-            console.error("Signup error:", err);
-            alert("An error occurred during registration. Please try again.");
-          }
-        });
+      if (!res.ok || data.error) {
+        alert(data.error || "Signup failed. Make sure your email and password are valid.");
+        return;
       }
 
-      // Google signup (safe guard if supabase lib missing)
-      if (googleBtn) {
-        googleBtn.addEventListener("click", async () => {
-          let supabase;
-          try {
-            supabase = Supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-          } catch (err) {
-            console.error("Supabase init error:", err);
-            alert("An error occurred during registration. Please try again.");
-            return;
-          }
+      alert("Account created! Please check your email to confirm.");
+      window.location.href = "learn.html"; // pas aan voor je lokale leeromgeving
 
-          try {
-            const { data, error } = await supabase.auth.signInWithOAuth({
-              provider: "google",
-              options: { redirectTo: window.location.origin + "/learn" }
-            });
-            if (error) alert(error.message);
-          } catch (err) {
-            console.error("OAuth error:", err);
-            alert("An error occurred during Google login. Please try again.");
-          }
-        });
-      }
+    } catch (err) {
+      console.error("Signup error:", err);
+      alert("An error occurred. Check console for details.");
+    }
+  });
+
+  const googleBtn = document.querySelector('.btn-google');
+  if (googleBtn) {
+    googleBtn.addEventListener("click", () => {
+      window.location.href = "https://itlearn.great-site.net/api/login?provider=google";
     });
-(function () {
+  }
+
+  // --- Splash messages ---
   const variants = [
     { text: "Welcome aboard!" },
     { text: "Create something cool ✨" },
@@ -171,7 +140,8 @@
     a.textContent = choice.text;
     box.appendChild(a);
   }
-})();
-  </script>
+});
+</script>
+
 </body>
 </html>
