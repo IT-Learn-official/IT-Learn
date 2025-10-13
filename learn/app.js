@@ -258,7 +258,6 @@ function markLessonCompleted(moduleId, lessonId) {
     saveProgressToAPI(); 
 }
 
-// Voor testen: alle modules altijd unlocked
 function isModuleUnlocked(moduleId) {
     return true;
 }
@@ -272,8 +271,16 @@ function showModules() {
     backToModulesBtn.style.display = "none";
     showMascotMessage("Choose a module to get started!");
     renderModuleButtons();
+
+    const sidebar = document.querySelector("nav.sidebar");
+    if (sidebar) sidebar.style.display = "flex";
+
+    const discordBtn = document.querySelector(".discord-button");
+    if (discordBtn) discordBtn.style.left = "calc(260px + 1rem + 12px)";
+
     updateProgressUI();
 }
+
 
 function renderModuleButtons() {
     moduleButtons.innerHTML = "";
@@ -330,6 +337,13 @@ function showLesson(moduleId, lessonIndex) {
     document.getElementById("modules-list").classList.add("hidden");
     lessonSection.classList.remove("hidden");
 
+    const sidebar = document.querySelector("nav.sidebar");
+    if (sidebar) sidebar.style.display = "none";
+
+    
+    const discordBtn = document.querySelector(".discord-button");
+    if (discordBtn) discordBtn.style.left = "12px";
+
     if (lesson.quiz && lesson.quiz.length) {
         quizSection.classList.remove("hidden");
         submitQuizBtn.style.display = "inline-block";
@@ -344,18 +358,15 @@ function buildQuiz(quizArray) {
     quizFeedback.textContent = "";
 
     quizArray.forEach((q, i) => {
-        // === 1. Speciale phishing-mail oefening ===
         if (q.type === "mail") {
             const mailContainer = document.createElement("div");
             mailContainer.innerHTML = q.mailHtml;
             quizForm.appendChild(mailContainer);
 
-            // Feedbackvak onder de mail
             const feedbackBox = document.createElement("div");
             feedbackBox.className = "mail-feedback";
             quizForm.appendChild(feedbackBox);
 
-            // Klikbare elementen activeren
             q.elements.forEach(el => {
                 const target = mailContainer.querySelector(el.selector);
                 if (target) {
@@ -363,8 +374,6 @@ function buildQuiz(quizArray) {
                         if (target.classList.contains("correct") || target.classList.contains("incorrect")) return;
 
                         target.classList.add(el.correct ? "correct" : "incorrect");
-
-                        // Toon uitleg subtiel onder de mail
                         const p = document.createElement("p");
                         p.className = el.correct ? "correct-text" : "incorrect-text";
                         p.textContent = el.explain;
@@ -375,7 +384,6 @@ function buildQuiz(quizArray) {
             return;
         }
 
-        // === 2. Standaard quizvraag ===
         const fieldset = document.createElement("fieldset");
         const legend = document.createElement("legend");
         legend.textContent = q.question;
@@ -410,7 +418,6 @@ submitQuizBtn.addEventListener("click", () => {
         const q = quiz[i];
 
         if (q.type === "mail") {
-            // Mail-oefening: check of alle correcte elementen aangeklikt zijn
             const mailContainer = quizForm.querySelector(".mail-view");
             let allCorrectClicked = true;
 
@@ -423,7 +430,6 @@ submitQuizBtn.addEventListener("click", () => {
 
             if (allCorrectClicked) correctCount++;
         } else {
-            // Standaard multiple-choice vragen
             const radios = document.getElementsByName(`question-${i}`);
             let answered = false;
 
@@ -446,7 +452,6 @@ submitQuizBtn.addEventListener("click", () => {
         }
     }
 
-    // Resultaat tonen
     if (correctCount === quiz.length) {
         quizFeedback.textContent = "Well done! All answers are correct.";
         if (!isLessonCompleted(currentModule.id, lesson.id)) {
@@ -491,11 +496,38 @@ document.addEventListener('keydown', e => { if (e.key === 'F12' || (e.ctrlKey &&
 document.addEventListener('contextmenu', e => e.preventDefault());
 
 // ---------------------------- Code Editor ----------------------------
-function runCode(id) {
-    const code = document.getElementById(`code-editor-${id}`).value;
+function runCode(id, expectedOutput = "") {
+    const textarea = document.getElementById(`code-editor-${id}`);
     const iframe = document.getElementById(`output-frame-${id}`);
+    if (!textarea || !iframe) return;
+
+    const code = textarea.value;
     iframe.srcdoc = `<style>body{background:#0f172a;color:#fff;font-family:sans-serif;}</style>${code}`;
+
+    if (!expectedOutput) return; 
+
+    setTimeout(() => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const outputText = (doc.body.innerText || "").trim();
+        const lesson = currentModule.lessons[currentLessonIndex];
+
+        if (outputText === expectedOutput) {
+            if (!isLessonCompleted(currentModule.id, lesson.id)) {
+                xp += 10;
+                markLessonCompleted(currentModule.id, lesson.id);
+                updateProgressUI();
+                saveProgressToAPI();
+            }
+            correctSound.play();
+            nextLessonBtn.classList.remove("hidden");
+            showMascotMessage("✅ Correct output! Lesson completed!");
+        } else {
+            wrongSound.play();
+            showMascotMessage("⚠️ Output incorrect, probeer opnieuw!");
+        }
+    }, 50);
 }
+
 
 // ---------------------------- Init ----------------------------
 async function initApp() {
