@@ -345,7 +345,6 @@ body{
   max-width: 200px;
 }
 
-/* audio elements invisible but accessible */
 audio{ display:none }
 
 /* ========== DISCORD BUTTON ========== */
@@ -395,7 +394,6 @@ button:focus, a:focus { outline: 2px solid rgba(147,197,253,0.12); outline-offse
   }
 }
 
-/* --- Gmail-achtige Mail view styling met reply-knop --- */
 .mail-view {
   background: #ffffff;
   border: 1px solid #e0e0e0;
@@ -481,3 +479,94 @@ button:focus, a:focus { outline: 2px solid rgba(147,197,253,0.12); outline-offse
   outline: 2px solid rgba(234,67,53,0.2);
 }
 
+
+
+/* ================= LESSON LAYOUT ================= */
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.lesson-explanation {
+  background: linear-gradient(180deg, rgba(15,23,42,0.8), rgba(11,17,28,0.8));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--muted-2);
+  line-height: 1.6;
+  box-shadow: var(--shadow-1);
+}
+
+.lesson-explanation pre {
+  background: rgba(255,255,255,0.05);
+  padding: 0.75rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+.lesson-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-1);
+}
+
+.lesson-editor textarea {
+  width: 100%;
+  height: 280px;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  resize: vertical;
+}
+
+.lesson-editor button {
+  align-self: flex-start;
+  background: linear-gradient(90deg,var(--accent-600), #8b5cf6);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.18s ease;
+}
+
+.lesson-editor button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg,var(--accent-700), var(--accent-600));
+}
+
+.lesson-output {
+  background: linear-gradient(180deg, rgba(15,23,42,0.8), rgba(11,17,28,0.8));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-1);
+}
+
+.lesson-output iframe {
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
+@media (max-width: 1000px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+}
