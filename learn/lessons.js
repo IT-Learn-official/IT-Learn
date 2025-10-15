@@ -232,7 +232,81 @@ const modulesData =
               correct: 0
             }
           ]
-        }
+        },
+        {
+          id: "html-buttons",
+          title: "Buttons",
+          content: `
+            <h2>Buttons</h2>
+            <p>With the <code>&lt;button&gt;</code> tag you can create clickable buttons.</p>
+            <pre><code>&lt;button&gt;Click me!&lt;/button&gt;</code></pre>
+          `,
+          quiz: [
+            {
+              question: "Which HTML tag do you use for a button?",
+              options: [
+                "&lt;button&gt;",
+                "&lt;input&gt;",
+                "&lt;a&gt;"
+              ],
+              correct: 0
+            }
+          ]
+        },
+        {
+          id: "html-debugging",
+          title: "Debugging HTML",
+          content: `
+            <h2>Debugging HTML</h2>
+            <p>Try fixing each of the buggy HTML snippets below. Type your correction and click "Check Fix".</p>
+        
+            <div class="debug-exercise">
+              <h3>Exercise 1</h3>
+              <textarea id="code-editor-html-debug-1">&lt;img src="photo.jpg" alt="Photo"&gt;&lt;/img&gt;</textarea>
+              <button onclick="checkFix('html-debugging', 1)">Check Fix</button>
+              <div id="feedback-html-debug-1"></div>
+            </div>
+        
+            <div class="debug-exercise">
+              <h3>Exercise 2</h3>
+              <textarea id="code-editor-html-debug-2">&lt;p&gt;This is a paragraph&lt;p&gt;</textarea>
+              <button onclick="checkFix('html-debugging', 2)">Check Fix</button>
+              <div id="feedback-html-debug-2"></div>
+            </div>
+        
+            <div class="debug-exercise">
+              <h3>Exercise 3</h3>
+              <textarea id="code-editor-html-debug-3">&lt;img scr="photo.jpg" alt="My photo"&gt;</textarea>
+              <button onclick="checkFix('html-debugging', 3)">Check Fix</button>
+              <div id="feedback-html-debug-3"></div>
+            </div>
+        
+            <div class="debug-exercise">
+              <h3>Exercise 4</h3>
+              <textarea id="code-editor-html-debug-4">&lt;a href="https://example.com&gt;Click here&lt;/a&gt;</textarea>
+              <button onclick="checkFix('html-debugging', 4)">Check Fix</button>
+              <div id="feedback-html-debug-4"></div>
+            </div>
+          `,
+          exercises: [
+            {
+              expectedFix: `<img src="photo.jpg" alt="Photo">`,
+              hint: "Remember: the &ltimg&gt tag doesn’t need a closing tag."
+            },
+            {
+              expectedFix: `<p>This is a paragraph</p>`,
+              hint: "Every opening &ltp&gt tag needs a closing &lt/p&gt."
+            },
+            {
+              expectedFix: `<img src="photo.jpg" alt="My photo">`,
+              hint: "The attribute name for an image source is <code>src</code>, not <code>scr</code>."
+            },
+            {
+              expectedFix: `<a href="https://example.com">Click here</a>`,
+              hint: "Every attribute value in HTML must start and end with quotes."
+            }
+          ]
+        },
       ]
     },
 
@@ -970,3 +1044,4 @@ p.greet()</code></pre>
       ]
     }
   ];
+
