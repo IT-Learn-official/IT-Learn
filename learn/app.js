@@ -554,3 +554,22 @@ async function initApp() {
 }
 
 initApp();
+
+//-------------------------html debugger---------------------------
+function checkFix(lessonId, exerciseIndex) {
+  const lesson = modulesData
+    .find(m => m.id === "html")
+    .lessons.find(l => l.id === lessonId);
+  
+  const exercise = lesson.exercises[exerciseIndex - 1];
+  const textarea = document.getElementById(`code-editor-html-debug-${exerciseIndex}`);
+  const feedback = document.getElementById(`feedback-html-debug-${exerciseIndex}`);
+  const userCode = textarea.value.trim();
+
+  if (userCode.replace(/\s+/g, '') === exercise.expectedFix.replace(/\s+/g, '')) {
+    feedback.innerHTML = `<p class="correct">✅ Correct! Nicely done.</p>`;
+  } else {
+    feedback.innerHTML = `<p class="incorrect">❌ Not quite right.<br>${exercise.hint}</p>`;
+  }
+}
+
