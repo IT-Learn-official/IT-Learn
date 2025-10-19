@@ -404,7 +404,7 @@ body {
   font-size: 0.75rem;
   padding: 6px 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-500), #8b5cf6);
+  background: linear-gradient(90deg, var(--accent-500), var(--accent-600), var(--accent-700));
   color: white;
   font-weight: 700;
 }
