@@ -6,9 +6,9 @@
   --panel: #0b1220;
   --muted: #94a3b8;
   --muted-2: #c7d2fe;
-  --accent-500: #6366f1;
-  --accent-600: #4f46e5;
-  --accent-700: #4338ca;
+  --accent-500: #f97316;
+  --accent-600: #f97316;
+  --accent-700: #f97316;
   --glass: rgba(49,46,129,0.08);
   --card: #0f172a;
   --card-2: #0b1220;
@@ -109,7 +109,7 @@ body{
 /* Auth button (logout/login) */
 #auth-btn{
   margin-top: auto;
-  background: linear-gradient(90deg,var(--accent-600), #8b5cf6);
+  background: linear-gradient(90deg,var(--accent-600), #f97316);
   color: white;
   border: 0;
   padding: 10px 12px;
@@ -170,7 +170,7 @@ body{
   margin: 1rem 0;
   padding: 0.6rem 1rem;
   font-size: 1rem;
-  background: #42a5f5;
+  background: #f97316;
   border: none;
   color: white;
   border-radius: 6px;
@@ -179,7 +179,7 @@ body{
 }
 
 #lesson-section button:hover {
-  background: #1e88e5;
+  background: #f97316;
 }
 
 #lesson-content {
@@ -220,7 +220,7 @@ body{
   font-weight: 700;
   font-size: 1rem;
   color: white;
-  background: linear-gradient(90deg,var(--accent-600), #8b5cf6);
+  background: linear-gradient(90deg,var(--accent-600), #f97316);
   box-shadow: 0 8px 24px rgba(79,70,229,0.08);
   text-decoration:none;
   transition: transform .12s ease, background .18s ease;
