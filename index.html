@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>IT Learn</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,35 +23,44 @@
   <!-- Meta -->
   <meta name="theme-color" content="#0f172a">
 </head>
-<body>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="container nav-inner">
-    <div class="nav-left">
-      <a class="brand" href="/learn/learn.html">
-        <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png" alt="IT Learn" class="brand-logo">
-        <span class="brand-text">IT Learn</span>
-      </a>
+<body data-page="index">
 
-      <div class="nav-links" id="nav-links">
-        <a href="login.html" class="nav-link">Learn</a>
-        <a href="login.html" class="nav-link">Practice</a>
-        <a href="login.html" class="nav-link">Build</a>
-        <a href="https://discord.gg/rKgF9s32EV" class="nav-link" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="roadmap/roadmap.html" class="nav-link">Roadmap</a>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <a class="brand" href="/learn/learn.html">
+          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png"
+            alt="IT Learn" class="brand-logo">
+          <span class="brand-text">IT Learn</span>
+        </a>
+
+        <div class="nav-links" id="nav-links">
+          <a href="login.html" class="nav-link">Learn</a>
+          <a href="login.html" class="nav-link">Practice</a>
+          <a href="login.html" class="nav-link">Build</a>
+          <a href="https://discord.gg/rKgF9s32EV" class="nav-link" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="roadmap/roadmap.html" class="nav-link">Roadmap</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="language-selector" id="language-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false">NL ▾</button>
+          <div class="lang-dropdown" id="lang-dropdown" role="menu" aria-hidden="true">
+            <a href="#" data-lang="NL">Nederlands</a>
+            <a href="#" data-lang="EN">English</a>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign up</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <i data-feather="menu"></i>
+        </button>
       </div>
     </div>
-
-    <div class="nav-right">
-      <a href="login.html" class="btn btn-secondary">Login</a>
-      <a href="signup.html" class="btn btn-primary">Sign up</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <i data-feather="menu"></i>
-      </button>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 
   <!-- HERO -->
@@ -65,14 +76,15 @@
 
         <div class="hero-supported" data-aos="fade-up" data-aos-delay="200">
           <p class="supported-label">SPONSORED BY: No Sponsors yet, if you want to sponsor feel free to contact us at
-              <a href="mailto:contact.itlearn@gmail.com">contact.itlearn@gmail.com</a>
+            <a href="mailto:contact.itlearn@gmail.com">contact.itlearn@gmail.com</a>
           </p>
           <img src="" alt="" class="sponserd-img">
         </div>
       </div>
 
       <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-        <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/character.png" alt="Character" class="hero-character">
+        <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/character.png"
+          alt="Character" class="hero-character">
       </div>
     </div>
   </header>
@@ -90,7 +102,8 @@
           <!-- Course card: Python -->
           <article class="course-card" data-aos="fade-up">
             <div class="course-media">
-              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/python.png?raw=true" alt="Python" class="course-img">
+              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/python.png?raw=true" alt="Python"
+                class="course-img">
             </div>
             <div class="course-body">
               <div class="course-meta">
@@ -98,7 +111,8 @@
                 <span class="course-type">Course</span>
               </div>
               <h3 class="course-title">Python</h3>
-              <p class="course-desc">Master programming basics like variables, loops, and control flow using the most popular coding language.</p>
+              <p class="course-desc">Master programming basics like variables, loops, and control flow using the most
+                popular coding language.</p>
               <a href="#" class="course-link">Start learning <i data-feather="arrow-right"></i></a>
             </div>
           </article>
@@ -106,7 +120,8 @@
           <!-- Course card: HTML -->
           <article class="course-card" data-aos="fade-up" data-aos-delay="100">
             <div class="course-media">
-              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/html.png?raw=true" alt="HTML" class="course-img">
+              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/html.png?raw=true" alt="HTML"
+                class="course-img">
             </div>
             <div class="course-body">
               <div class="course-meta">
@@ -122,7 +137,8 @@
           <!-- Course card: CSS -->
           <article class="course-card" data-aos="fade-up" data-aos-delay="200">
             <div class="course-media">
-              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/css.png?raw=true" alt="CSS" class="course-img">
+              <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/css.png?raw=true" alt="CSS"
+                class="course-img">
             </div>
             <div class="course-body">
               <div class="course-meta">
@@ -145,11 +161,13 @@
       <div class="container features-grid">
         <div class="features-left" data-aos="fade-right">
           <h2>Level up your learning</h2>
-          <p class="muted">Earn XP and unlock badges as you finish small lessons in Python, HTML, JavaScript, and more. Learning to code has never been this fun!</p>
+          <p class="muted">Earn XP and unlock badges as you finish small lessons in Python, HTML, JavaScript, and more.
+            Learning to code has never been this fun!</p>
           <img src="" alt="Badges" class="feature-img">
         </div>
         <div class="features-right" data-aos="fade-left">
-          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png" alt="Character" class="feature-img-large">
+          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png"
+            alt="Character" class="feature-img-large">
         </div>
       </div>
     </section>
@@ -158,58 +176,68 @@
     <section class="section community">
       <div class="container community-grid">
         <div class="community-left" data-aos="fade-left">
-          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/student_with_itlearn.png" alt="Community illustration" class="student_with_itlearn">
+          <img
+            src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/student_with_itlearn.png"
+            alt="Community illustration" class="student_with_itlearn">
         </div>
         <div class="community-right" data-aos="fade-right">
           <h2>Meet fellow coders on your journey.</h2>
-          <p class="muted">“It’s better to build together than alone. Hop into our Discord to connect, collaborate, and support each other.</p>
+          <p class="muted">“It’s better to build together than alone. Hop into our Discord to connect, collaborate, and
+            support each other.</p>
         </div>
       </div>
     </section>
 
-<!-- OUR TEAM -->
-<section id="team" class="section team">
-  <div class="container">
-    <h2 class="section-title center">Our Team</h2>
+    <!-- OUR TEAM -->
+    <section id="team" class="section team">
+      <div class="container">
+        <h2 class="section-title center">Our Team</h2>
 
-    <div class="team-grid">
-      <div class="team-member" data-aos="fade-up">
-        <div class="team-head">
-          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/Broodje56.png" alt="Team member" class="avatar">
-          <div>
-            <h3>Broodje56</h3>
-            <p class="muted small">Founder</p>
+        <div class="team-grid">
+          <div class="team-member" data-aos="fade-up">
+            <div class="team-head">
+              <img
+                src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/Broodje56.png"
+                alt="Team member" class="avatar">
+              <div>
+                <h3>Broodje56</h3>
+                <p class="muted small">Founder</p>
+              </div>
+            </div>
+            <p class="muted">
+              I’m Broodje56, and together with Joren I co-founded IT Learn.
+              Ever since I was young, I’ve been fascinated by technology, coding, and building creative projects.
+              I love experimenting with new ideas from making games and extensions to designing full platforms.
+              With IT Learn, my goal is to share this passion and help other young people discover the fun side of
+              programming in an interactive way.
+            </p>
+
+            <a href="https://broodje56.is-a.dev" class="more-link small" target="_blank">View profile <i
+                data-feather="arrow-right"></i></a>
+          </div>
+
+          <div class="team-member" data-aos="fade-up">
+            <div class="team-head">
+              <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/AIM_pfp.png"
+                alt="Team member" class="avatar">
+              <div>
+                <h3>Joren</h3>
+                <p class="muted small">Founder</p>
+              </div>
+            </div>
+            <p class="muted">
+              I'm Joren, and together with Broodje56 I co-founded IT Learn.
+              I’ve been programming since i was 11 and have worked on different projects.
+              I’ve also helped multiple people with creating websites and apps.
+              With IT Learn, I want to help others learn programming in a fun and educational way. I hope you’ll enjoy
+              our project!
+            </p>
+            <a href="https://github.com/JorenS15" class="more-link small" target="_blank">View profile <i
+                data-feather="arrow-right"></i></a>
           </div>
         </div>
-        <p class="muted">
-          I’m Broodje56, and together with Joren I co-founded IT Learn.  
-          Ever since I was young, I’ve been fascinated by technology, coding, and building creative projects.  
-          I love experimenting with new ideas from making games and extensions to designing full platforms.  
-          With IT Learn, my goal is to share this passion and help other young people discover the fun side of programming in an interactive way.
-        </p>
-
-        <a href="https://broodje56.is-a.dev" class="more-link small" target="_blank">View profile <i data-feather="arrow-right"></i></a>
       </div>
-
-      <div class="team-member" data-aos="fade-up">
-        <div class="team-head">
-          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/AIM_pfp.png" alt="Team member" class="avatar">
-          <div>
-            <h3>Joren</h3>
-            <p class="muted small">Founder</p>
-          </div>
-        </div>
-        <p class="muted">
-          I'm Joren, and together with Broodje56 I co-founded IT Learn.
-          I’ve been programming since i was 11 and have worked on different projects.
-          I’ve also helped multiple people with creating websites and apps.
-          With IT Learn, I want to help others learn programming in a fun and educational way. I hope you’ll enjoy our project!
-        </p>
-        <a href="https://github.com/JorenS15" class="more-link small" target="_blank">View profile <i data-feather="arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -240,7 +268,8 @@
           <a href="login.html" class="btn btn-lg btn-primary">Get started <i data-feather="arrow-right"></i></a>
         </div>
         <div class="cta-visual" data-aos="fade-left" data-aos-delay="100">
-          <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/programmer.png?raw=true" alt="Character" class="cta-img">
+          <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/programmer.png?raw=true"
+            alt="Character" class="cta-img">
         </div>
       </div>
     </section>
@@ -252,10 +281,11 @@
     <div class="container footer-grid">
       <div class="footer-col">
         <div class="brand-footer">
-          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png" alt="IT Learn" class="footer-logo">
+          <img src="https://raw.githubusercontent.com/Broodje565/IT-Learn-Visuals/refs/heads/main/icons/IT_Learn.png"
+            alt="IT Learn" class="footer-logo">
           <span class="footer-name">IT Learn</span>
         </div>
-        <p class="muted">Made with ❤️ in Belgium</p> 
+        <p class="muted">Made with ❤️ in Belgium</p>
       </div>
 
       <div class="footer-col">
@@ -333,9 +363,60 @@
         window.location.href = 'login.html?next=' + encodeURIComponent(target);
       }
     });
+
+    // Language selector (uses CSS .language-selector, .lang-btn, .lang-dropdown)
+    (function () {
+      const selector = document.getElementById('language-selector');
+      const btn = document.getElementById('lang-btn');
+      const dropdown = document.getElementById('lang-dropdown');
+
+      function setLang(lang) {
+        try { localStorage.setItem('lang', lang); } catch (err) {}
+        btn.textContent = lang === 'EN' ? 'EN ▾' : 'NL ▾';
+        document.documentElement.lang = lang === 'EN' ? 'en' : 'nl';
+      }
+
+      const saved = (function(){ try { return localStorage.getItem('lang') } catch(e){ return null } })() || 'NL';
+      setLang(saved);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+        const expanded = dropdown.classList.contains('show');
+        btn.setAttribute('aria-expanded', expanded);
+        dropdown.setAttribute('aria-hidden', !expanded);
+      });
+
+      dropdown.addEventListener('click', (e) => {
+        const a = e.target.closest('a[data-lang]');
+        if (!a) return;
+        e.preventDefault();
+        const lang = a.getAttribute('data-lang');
+        setLang(lang);
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+      });
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!selector.contains(e.target)) {
+          dropdown.classList.remove('show');
+          btn.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('show');
+          btn.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-hidden', 'true');
+        }
+      });
+    })();
   </script>
 </body>
+
 </html>
-
-
-
