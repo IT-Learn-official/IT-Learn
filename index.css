@@ -579,3 +579,65 @@ i[data-feather] svg{ vertical-align:middle }
   border-radius: 30px;
   object-fit: cover;
 }
+
+
+/* Standaard verbergen */
+.language-selector {
+    display: none;
+}
+
+body[data-page="index"] .language-selector,
+body[data-page="learn"] .language-selector {
+    display: block;
+    position: fixed;
+    top: 0.7rem;
+    right: 22rem;
+    z-index: 1000;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.lang-dropdown.show {
+    display: flex;
+}
+
+.lang-dropdown a {
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 0.3rem;
+}
+
+.lang-dropdown a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
