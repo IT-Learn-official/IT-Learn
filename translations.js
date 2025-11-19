@@ -144,7 +144,15 @@ const translations = {
         'helloFutureProgrammer': 'Hello, future programmer!',
         'error404': 'Error 404: File not found',
         'learningNeverStops': 'Learning never stops',
-        'codingPlusMusic': 'Coding + Music = ❤️',
+                'codingPlusMusic': 'Coding + Music = ❤️',
+        'emailVerified': '✅ Email Verified!',
+        'verifySuccessMessage': 'Your account has been successfully confirmed. You can now login to continue your learning journey.',
+        'goToLogin': 'Go to Login',
+        'autoRedirecting': 'Automatically redirecting in',
+        'seconds': 'seconds...',
+
+
+        // Login/Signup
 
     },
     nl: {
@@ -289,7 +297,15 @@ const translations = {
         'helloFutureProgrammer': 'Hallo, toekomstige programmeur!',
         'error404': 'Fout 404: Bestand niet gevonden',
         'learningNeverStops': 'Leren stopt nooit',
-        'codingPlusMusic': 'Coderen + Muziek = ❤️',
+                'codingPlusMusic': 'Coderen + Muziek = ❤️',
+        'emailVerified': '✅ E-mail geverifieerd!',
+        'verifySuccessMessage': 'Je account is succesvol bevestigd. Je kunt nu inloggen om verder te gaan met je leerreis.',
+        'goToLogin': 'Ga naar Inloggen',
+        'autoRedirecting': 'Automatisch doorsturen over',
+        'seconds': 'seconden...',
+
+
+        // Login/Signup
 
         // slasptext login/signup
         welcomeAboard: "Welkom aan boord!",
@@ -322,6 +338,11 @@ const translations = {
         error404: "Fout 404: Bestand niet gevonden",
         learningNeverStops: "Leren stopt nooit",
         codingPlusMusic: "Coderen + Muziek = ❤️",
+        'emailVerified': '✅ E-mail geverifieerd!',
+        'verifySuccessMessage': 'Je account is succesvol bevestigd. Je kunt nu inloggen om verder te gaan met je leerreis.',
+        'goToLogin': 'Ga naar Inloggen',
+        'autoRedirecting': 'Automatisch doorsturen over',
+        'seconds': 'seconden...',
 
     }
 };

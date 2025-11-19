@@ -6,16 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Learn | Account Verified</title>
   <link rel="stylesheet" href="verify-success.css" />
+  <script src="/translations.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>✅ Email Verified!</h1>
-    <p class="fade-in">Your account has been successfully confirmed. You can now login to continue your learning journey.</p>
-    <a class="btn-login pulse" href="login.html">Go to Login</a>
-    <p class="redirect-text fade-in">Automatically redirecting in <span id="countdown">5</span> seconds...</p>
+    <h1 data-translate="emailVerified">✅ Email Verified!</h1>
+    <p class="fade-in" data-translate="verifySuccessMessage">Your account has been successfully confirmed. You can now login to continue your learning journey.</p>
+    <a class="btn-login pulse" href="login.html" data-translate="goToLogin">Go to Login</a>
+    <p class="redirect-text fade-in"><span data-translate="autoRedirecting">Automatically redirecting in</span> <span id="countdown">5</span> <span data-translate="seconds">seconds...</span></p>
   </div>
 
   <script>
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.setAttribute('data-page', 'verify-success');
+        const storedLang = localStorage.getItem('language') || 'en';
+        updatePageLanguage(storedLang);
+        if (window.feather) {
+            feather.replace();
+        }
+    });
+
     // Redirect countdown
     let countdown = 5;
     const countdownEl = document.getElementById("countdown");
