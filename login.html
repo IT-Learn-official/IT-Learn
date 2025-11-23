@@ -3,10 +3,13 @@
 
 <head>
    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT Learn | Login</title>
-  <link rel="stylesheet" href="login.css" />
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>IT Learn | Login</title>
+   <link rel="stylesheet" href="login.css" />
+
+   <!-- hCaptcha script -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
@@ -25,38 +28,43 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
-  <button class="escape" onclick="window.location.href='index.html'">X</button>
-  <div class="container">
-    <div class="form-box">
-      <h1>Login</h1>
-      <form id="login-form">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required />
-        </div>
-        <button type="submit" class="btn">Login</button>
-      </form>
+<button class="escape" onclick="window.location.href='index.html'">X</button>
+<div class="container">
+  <div class="form-box">
+    <h1>Login</h1>
+    <form id="login-form">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
 
-      <div class="or-divider"><span>OR</span></div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
 
-      <button type="button" class="btn-google" id="google-login">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
-          alt="Google Logo" />
-        Continue with Google
-      </button>
+      <!-- hCaptcha widget -->
+      <div class="h-captcha" data-sitekey="b03c75ae-fc52-45a4-a392-a9ee220e97ea"></div>
 
-      <p class="redirect-text">
-        Don't have an account? <a href="signup.html">Sign Up</a>
-      </p>
-    </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <div class="or-divider"><span>OR</span></div>
+
+    <button type="button" class="btn-google" id="google-login">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
+        alt="Google Logo" />
+      Continue with Google
+    </button>
+
+    <p class="redirect-text">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </p>
   </div>
+</div>
 
-  <!-- Login via live Flask API -->
+<!-- Login via live Flask API -->
 <script>
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -64,18 +72,26 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    // Get hCaptcha token
+    const captchaToken = hcaptcha.getResponse();
+    if (!captchaToken) {
+        alert("Please complete the CAPTCHA.");
+        return;
+    }
+
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ email, password, captchaToken })
         });
 
         const data = await res.json();
 
         if (data.error) {
             alert("Error: " + data.error);
+            hcaptcha.reset(); // reset CAPTCHA
         } else {
             alert("Login successful!");
             window.location.href = "/learn/learn.html";
@@ -83,61 +99,60 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     } catch (err) {
         console.error(err);
         alert("An error occurred while logging in.");
+        hcaptcha.reset();
     }
 });
-
 </script>
 
+<!-- Random motivational splash -->
+<script>
+(function () {
+  const variants = [
+    { text: "Welcome aboard!" },
+    { text: "Create something cool ✨" },
+    { text: "Your dev journey starts here" },
+    { text: "Small steps, big builds" },
+    { text: "Design. Code. Repeat." },
+    { text: "Developed by Broodje56", link: "https://broodje56.is-a.dev" },
+    { text: "Developed by Joren", link: "https://github.com/JorenS15" },
+    { text: "Join Discord", link: "https://discord.gg/rKgF9s32EV" },
+    { text: "Programming = life" },
+    { text: "Keep pushing forward" },
+    { text: "Code your dreams" },
+    { text: "Debugging is fun" },
+    { text: "Eat, Sleep, Code, Repeat" },
+    { text: "Think twice, code once" },
+    { text: "Hello World!" },
+    { text: "Brain.exe has stopped working" },
+    { text: "Code like a boss" },
+    { text: "Syntax never sleeps" },
+    { text: "From ideas to apps" },
+    { text: "Your first bug is a friend" },
+    { text: "CTRL + S your progress" },
+    { text: "Keep calm and code on" },
+    { text: "One line at a time" },
+    { text: "Compile your dreams" },
+    { text: "Future dev in progress" },
+    { text: "Ready, set, deploy!" },
+    { text: "Hello, future programmer!" },
+    { text: "Error 404: File not found" },
+    { text: "Learning never stops" },
+    { text: "Coding + Music = ❤️", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
+  ];
 
-  <!-- Random motivational splash -->
-  <script>
-    (function () {
-      const variants = [
-        { text: "Welcome aboard!" },
-        { text: "Create something cool ✨" },
-        { text: "Your dev journey starts here" },
-        { text: "Small steps, big builds" },
-        { text: "Design. Code. Repeat." },
-        { text: "Developed by Broodje56", link: "https://broodje56.is-a.dev" },
-        { text: "Developed by Joren", link: "https://github.com/JorenS15" },
-        { text: "Join Discord", link: "https://discord.gg/rKgF9s32EV" },
-        { text: "Programming = life" },
-        { text: "Keep pushing forward" },
-        { text: "Code your dreams" },
-        { text: "Debugging is fun" },
-        { text: "Eat, Sleep, Code, Repeat" },
-        { text: "Think twice, code once" },
-        { text: "Hello World!" },
-        { text: "Brain.exe has stopped working" },
-        { text: "Code like a boss" },
-        { text: "Syntax never sleeps" },
-        { text: "From ideas to apps" },
-        { text: "Your first bug is a friend" },
-        { text: "CTRL + S your progress" },
-        { text: "Keep calm and code on" },
-        { text: "One line at a time" },
-        { text: "Compile your dreams" },
-        { text: "Future dev in progress" },
-        { text: "Ready, set, deploy!" },
-        { text: "Hello, future programmer!" },
-        { text: "Error 404: File not found" },
-        { text: "Learning never stops" },
-        { text: "Coding + Music = ❤️", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
-      ];
+  const choice = variants[Math.floor(Math.random() * variants.length)];
+  const box = document.querySelector('.form-box');
+  if (box) {
+    const a = document.createElement('a');
+    a.className = 'splash';
+    if (choice.link) a.href = choice.link;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = choice.text;
+    box.appendChild(a);
+  }
+})();
+</script>
 
-      const choice = variants[Math.floor(Math.random() * variants.length)];
-      const box = document.querySelector('.form-box');
-      if (box) {
-        const a = document.createElement('a');
-        a.className = 'splash';
-        if (choice.link) a.href = choice.link;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = choice.text;
-        box.appendChild(a);
-      }
-    })();
-  </script>
 </body>
 </html>
-

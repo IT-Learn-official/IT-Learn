@@ -232,8 +232,8 @@ s0.parentNode.insertBefore(s1,s0);
     <!-- STATS -->
     <section class="section stats" data-aos="fade-up">
       <div class="container stats-grid">
-        <div class="stat">
-          <div class="stat-num">2</div>
+      <div class="stat">
+          <div class="stat-num" id="learners-count">0</div>
           <div class="stat-label">Learners</div>
         </div>
         <div class="stat">
@@ -317,11 +317,9 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Init AOS & Feather
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
 
-    // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => {
@@ -329,7 +327,6 @@ s0.parentNode.insertBefore(s1,s0);
       hamburger.classList.toggle('open');
     });
 
-    // Close mobile nav on resize bigger than mobile
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) {
         navLinks.classList.remove('open');
@@ -337,7 +334,6 @@ s0.parentNode.insertBefore(s1,s0);
       }
     });
 
-    // ---- Added: check login before redirecting to learn ----
     document.getElementById('get-started').addEventListener('click', function (e) {
       e.preventDefault();
       const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true' || !!localStorage.getItem('authToken');
@@ -349,5 +345,44 @@ s0.parentNode.insertBefore(s1,s0);
       }
     });
   </script>
+
+    <script>
+async function updateLearnersCount() {
+  try {
+    const res = await fetch('https://itlearn.pythonanywhere.com/api/user-count', {
+      credentials: 'include' 
+    });
+    const data = await res.json();
+    const total = data.totalUsers;
+
+    const counter = document.getElementById('learners-count');
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      const currentValue = Math.floor(easedProgress * total);
+      counter.innerText = currentValue;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        counter.innerText = total;
+      }
+    }
+
+    requestAnimationFrame(animate);
+
+  } catch (error) {
+    console.error("Kon aantal learners niet ophalen:", error);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', updateLearnersCount);
+
+    </script>
 </body>
 </html>

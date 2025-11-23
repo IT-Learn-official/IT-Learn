@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Learn | Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
@@ -46,6 +47,8 @@ s0.parentNode.insertBefore(s1,s0);
           <label for="confirm-password">Confirm Password</label>
           <input type="password" id="confirm-password" placeholder="Re-enter your password" required />
         </div>
+        <!-- hCaptcha widget -->
+        <div class="h-captcha" data-sitekey="b03c75ae-fc52-45a4-a392-a9ee220e97ea"></div>
 
         <div class="input-group" style="margin-top:.5rem;">
           <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer;">
@@ -77,12 +80,18 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    // --- hCaptcha token ophalen ---
+    const hcaptchaResponse = hcaptcha.getResponse();
+    if (!hcaptchaResponse) {
+        alert("Please complete the captcha.");
+        return;
+    }
+
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ email, password, captcha: hcaptchaResponse })
         });
 
         const data = await res.json();
@@ -99,8 +108,8 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
     }
 });
 </script>
-<script>
 
+<script>
   // --- Random motivational splash ---
   const variants = [
     { text: "Welcome aboard!" },
@@ -150,4 +159,3 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
 
 </body>
 </html>
-
