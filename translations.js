@@ -2,6 +2,11 @@
 const translations = {
     en: {
         // Landing page
+        headerLearn: 'Learn',
+        headerPractice: 'Practice',
+        headerBuild: 'Build',
+        headerAboutUs: 'About us',
+        headerNewsletter: 'Newsletter',
         login: 'Login',
         signup: 'Sign Up',
         learn: 'Learn',
@@ -49,6 +54,26 @@ const translations = {
         allcourses: 'All Courses',
         termsandconditions: 'Terms and conditions',
         privacypolicy: 'Privacy Policy',
+
+        // About us
+        timeline_idea_title: '🎉 June 2025 (Idea)',
+        timeline_idea_text: '<span class="highlight">Broodje56</span> and <span class="highlight">Joren</span> started this project with a simple idea: to create a platform where people can <span class="highlight">learn and grow together</span> in IT.',
+        timeline_planning_title: '📝 June 2025 (Planning)',
+        timeline_planning_text: 'We brainstormed the main features, sketched a roadmap, and <span class="highlight">planned the first version</span> of IT Learn.',
+        timeline_prototype_title: '💻 July 2025 (Prototype)',
+        timeline_prototype_text: 'Built the <span class="highlight">first prototype</span> of the platform, tested the lesson system, and received initial feedback from friends.',
+        timeline_redesign_title: '🎨 August 2025 (Redesign)',
+        timeline_redesign_text: 'We redesigned the lessons, landing page, and login system, creating a <span class="highlight">smoother user experience</span>.',
+        timeline_funding_title: '💵 September 2025 (Funding)',
+        timeline_funding_text: 'We <span class="highlight">looked for funding</span> to launch the platform while continuing to improve it behind the scenes.',
+        timeline_betatest_title: '🧪 September 2025 (Beta Test)',
+        timeline_betatest_text: 'Selected users helped us test the platform to gather <span class="highlight">feedback on usability</span> and content quality.',
+        timeline_meet_title: '🤝 October 2025',
+        timeline_meet_text: '<span class="highlight">Broodje56</span> and <span class="highlight">Joren</span> finally met in real life; until then the website was built entirely via Discord.',
+        timeline_launch_title: '🚀 November 2025 (Soft Launch)',
+        timeline_launch_text: 'We released a <span class="highlight">soft launch</span> to the first users to test the platform publicly and ensure stability.',
+        timeline_present_title: '📈 Present',
+        timeline_present_text: 'We continue to <span class="highlight">enhance the platform</span>, adding new features, lessons, and opportunities to help learners succeed in IT.',
 
 
         // Roadmap
@@ -157,6 +182,11 @@ const translations = {
     },
     nl: {
         // Landing page
+        headerLearn: 'Leren',
+        headerPractice: 'Oefenen',
+        headerBuild: 'Bouwen',
+        headerAboutUs: 'Over ons',
+        headerNewsletter: 'Nieuwsbrief',
         login: 'Inloggen',
         signup: 'Registreren',
         learn: 'Leren',
@@ -204,6 +234,26 @@ const translations = {
         allcourses: 'Alle cursussen',
         termsandconditions: 'Algemene voorwaarden',
         privacypolicy: 'Privacybeleid',
+
+        // About page
+        timeline_idea_title: '🎉 Juni 2025 (Idee)',
+        timeline_idea_text: '<span class="highlight">Broodje56</span> en <span class="highlight">Joren</span> begonnen dit project met een simpel idee: een platform maken waar mensen kunnen <span class="highlight">samen leren en groeien</span> in IT.',
+        timeline_planning_title: '📝 Juni 2025 (Planning)',
+        timeline_planning_text: 'We bedachten de belangrijkste functies, schetsten een roadmap en <span class="highlight">planden de eerste versie</span> van IT Learn.',
+        timeline_prototype_title: '💻 Juli 2025 (Prototype)',
+        timeline_prototype_text: 'Bouwde het <span class="highlight">eerste prototype</span> van het platform, testte het lessysteem en kregen eerste feedback van vrienden.',
+        timeline_redesign_title: '🎨 Augustus 2025 (Herontwerp)',
+        timeline_redesign_text: 'We herontworpen de lessen, landingspagina en inlogsysteem, wat zorgde voor een <span class="highlight">vlottere gebruikerservaring</span>.',
+        timeline_funding_title: '💵 September 2025 (Financiering)',
+        timeline_funding_text: 'We zochten <span class="highlight">financiering</span> om het platform te lanceren en bleven het ondertussen verbeteren.',
+        timeline_betatest_title: '🧪 September 2025 (Beta Test)',
+        timeline_betatest_text: 'Geselecteerde gebruikers hielpen ons het platform te testen om <span class="highlight">feedback over bruikbaarheid</span> en inhoudskwaliteit te verzamelen.',
+        timeline_meet_title: '🤝 Oktober 2025',
+        timeline_meet_text: '<span class="highlight">Broodje56</span> en <span class="highlight">Joren</span> ontmoetten elkaar uiteindelijk in het echt; tot die tijd werd de website volledig via Discord gebouwd.',
+        timeline_launch_title: '🚀 November 2025 (Soft Launch)',
+        timeline_launch_text: 'We brachten een <span class="highlight">soft launch</span> uit voor de eerste gebruikers om het platform publiekelijk te testen en stabiliteit te waarborgen.',
+        timeline_present_title: '📈 Heden',
+        timeline_present_text: 'We blijven het platform <span class="highlight">verbeteren</span>, met nieuwe functies, lessen en kansen om leerlingen te helpen slagen in IT.',
 
 
         // Roadmap
