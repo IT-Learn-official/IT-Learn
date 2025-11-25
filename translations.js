@@ -414,7 +414,7 @@ const translations = {
         heroSub: 'Programmieren einfach gemacht, von Studenten für Studenten.',
         coursesSectionTitle: 'Starte dein Programmier-Abenteuer.',
         coursesSectionSub: 'Lerne Programmieren mit Kursen, die Lernen leicht und spaßig machen.',
-        sponsorlabel: 'SPONSORED BY: Noch keine Sponsoren. Interessiert? Kontaktiere uns unter contact.itlearn@gmail.com.',
+        sponsorlabel: 'GESPONSERT VON: Noch keine Sponsoren. Interessiert? Kontaktiere uns unter contact.itlearn@gmail.com.',
         landingpython: 'Lerne Grundlagen wie Variablen, Schleifen und Bedingungen mit der beliebtesten Programmiersprache.',
         landinghtml: 'Lerne HTML, indem du deine erste Webseite machst und die Webentwicklung kennenlernst.',
         startlearning: 'Jetzt lernen',
