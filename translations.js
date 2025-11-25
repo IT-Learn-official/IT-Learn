@@ -394,7 +394,173 @@ const translations = {
         'autoRedirecting': 'Automatisch doorsturen over',
         'seconds': 'seconden...',
 
-    }
+    },
+   de: { 
+        // Landing page
+        headerLearn: 'Lernen',
+        headerPractice: 'Üben',
+        headerBuild: 'Bauen',
+        headerAboutUs: 'Über uns',
+        headerNewsletter: 'Newsletter',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        learn: 'Lernen',
+        practice: 'Üben',
+        build: 'Bauen',
+        discord: 'Discord',
+        roadmap: 'Roadmap',
+        heroTitle: 'Entdecke die Welt des Programmierens',
+        getStarted: 'Jetzt starten',
+        heroSub: 'Programmieren einfach gemacht, von Studenten für Studenten.',
+        coursesSectionTitle: 'Starte dein Programmier-Abenteuer.',
+        coursesSectionSub: 'Lerne Programmieren mit Kursen, die Lernen leicht und spaßig machen.',
+        sponsorlabel: 'SPONSORED BY: Noch keine Sponsoren. Interessiert? Kontaktiere uns unter contact.itlearn@gmail.com.',
+        landingpython: 'Lerne Grundlagen wie Variablen, Schleifen und Bedingungen mit der beliebtesten Programmiersprache.',
+        landinghtml: 'Lerne HTML, indem du deine erste Webseite machst und die Webentwicklung kennenlernst.',
+        startlearning: 'Jetzt lernen',
+        landingcss: 'Lerne CSS und gestalte deine Webseiten mit Farben, Schriftarten, Layouts und mehr.',
+        morelink: 'Alle Kurse anzeigen',
+        landinglevelup: 'Verbessere dein Lernen',
+        landingxp: 'Sammle XP und erhalte Abzeichen, indem du kleine Lektionen in Python, HTML, JavaScript und mehr machst. Programmierenlernen war noch nie so einfach!',
+        landingmeetcoders: 'Triff andere Programmierer auf deiner Reise.',
+        landingbuildtogether: 'Gemeinsam macht es mehr Spaß. Tritt unserem Discord bei, um dich auszutauschen, zusammenzuarbeiten und euch gegenseitig zu helfen.',
+        teambroodje56: 'Ich bin Broodje56 und habe IT Learn zusammen mit Joren gegründet. Seit meiner Kindheit interessierten mich Technik, Programmieren und kreative Projekte. Ich probiere gerne neue Ideen aus, von Spielen und Erweiterungen bis hin zu kompletten Plattformen. Mit IT Learn möchte ich diese Leidenschaft teilen und anderen Jugendlichen Programmieren auf eine einfache und spannende Weise zeigen.',
+        teamJoren: 'Ich bin Joren und habe IT Learn zusammen mit Broodje56 gegründet. Ich programmiere seit meinem 11. Lebensjahr und habe viele Projekte gebaut. Außerdem habe ich mehreren Leuten bei Webseiten und Apps geholfen. Mit IT Learn möchte ich anderen helfen, Programmieren auf eine spaßige und einfache Weise zu lernen. Ich hoffe, euch gefällt unser Projekt!',
+        statslearners: 'Lernende',
+        statscountries: 'Länder',
+        statsexercises: 'Übungen',
+        landinglearnforfree: 'Kostenlos anfangen',
+        landingjoinjourney: 'Begleite uns auf der Lernreise und entdecke die Welt des Programmierens.',
+        landingmadewithlove: 'Mit ❤️ gemacht in Belgien',
+        landingfooterourteam: 'Unser Team',
+        landinghelpcenter: 'Hilfezentrum',
+        landingfooterpractice: 'ÜBEN',
+        landingfooterchallenges: 'Herausforderungen',
+        landingfooterprojects: 'Projekte',
+        'hero-title': 'Entdecke die <span class="highlight">Welt des Programmierens</span>',
+        'hero-sub': 'Programmieren einfach gemacht, von Studenten für Studenten.',
+        'section-title': 'Starte dein Programmier-Abenteuer.',
+        'section-sub': 'Lerne Programmieren mit Kursen, die Lernen einfach und lustig machen.',
+        badge: 'ANFÄNGER',
+        'course-type': 'Kurs',
+        exploreallcourses: 'Alle Kurse anzeigen',
+        founder: 'Gründer',
+        viewprofile: 'Profil ansehen',
+        allcourses: 'Alle Kurse',
+        termsandconditions: 'Geschäftsbedingungen',
+        privacypolicy: 'Datenschutzerklärung',
+
+        // About us
+        timeline_idea_title: '🎉 Juni 2025 (Idee)',
+        timeline_idea_text: '<span class="highlight">Broodje56</span> und <span class="highlight">Joren</span> starteten mit einer einfachen Idee: eine Plattform zu machen, auf der Menschen in der IT <span class="highlight">zusammen lernen und wachsen</span> können.',
+        timeline_planning_title: '📝 Juni 2025 (Planung)',
+        timeline_planning_text: 'Wir planten die wichtigsten Funktionen, machten einen Plan und bauten die <span class="highlight">erste Version</span> von IT Learn.',
+        timeline_prototype_title: '💻 Juli 2025 (Prototyp)',
+        timeline_prototype_text: 'Wir bauten den <span class="highlight">ersten Prototypen</span>, testeten das Lektionensystem und bekamen erstes Feedback von Freunden.',
+        timeline_redesign_title: '🎨 August 2025 (Redesign)',
+        timeline_redesign_text: 'Wir überarbeiteten Lektionen, Startseite und Login-System und machten ein <span class="highlight">besseres Nutzererlebnis</span>.',
+        timeline_funding_title: '💵 September 2025 (Finanzierung)',
+        timeline_funding_text: 'Wir suchten nach <span class="highlight">Finanzierung</span>, um die Plattform zu starten, und verbesserten sie weiter im Hintergrund.',
+        timeline_betatest_title: '🧪 September 2025 (Betatest)',
+        timeline_betatest_text: 'Ausgewählte Nutzer testeten die Plattform und gaben <span class="highlight">Feedback zu Benutzerfreundlichkeit</span> und Inhalt.',
+        timeline_meet_title: '🤝 Oktober 2025',
+        timeline_meet_text: '<span class="highlight">Broodje56</span> und <span class="highlight">Joren</span> trafen sich endlich persönlich! Bis dahin wurde die ganze Webseite über Discord entwickelt.',
+        timeline_launch_title: '🚀 November 2025 (Soft-Launch)',
+        timeline_launch_text: 'Wir veröffentlichten einen <span class="highlight">Soft-Launch</span> für erste Nutzer, um die Plattform öffentlich zu testen und Stabilität zu sichern.',
+        timeline_present_title: '📈 Gegenwart',
+        timeline_present_text: 'Wir <span class="highlight">verbessern die Plattform ständig weiter</span>, fügen neue Funktionen, Lektionen und Möglichkeiten hinzu, damit Lernende erfolgreich werden.',
+
+        // Roadmap
+        roadmapOverview: 'Ein Überblick darüber, was wir bei IT Learn machen werden, und was nicht',
+        doh2: '✅ Dinge, die wir machen werden',
+        roadmapdo1: 'Integration mit Smartschool OAuth (Belgien)',
+        roadmapdo2: 'Klassengruppen für Smartschool-Schüler (Belgien)',
+        roadmapdo3: 'Lehrer können Aufgaben an ihre Klasse geben',
+        roadmapdo4: 'Cybersecurity-Lektionen (Phishing, Malware, …)',
+        roadmapdo5: 'Code-Editor + Konsole/Webseite',
+        roadmapdo6: 'Anpassbare Avatare und Profile',
+        roadmapdo7: 'Mobilefreundliche Bedienung',
+        roadmapdo8: 'Abzeichen & Erfolge für Module',
+        laterh2: '🕒 Dinge für später',
+        roadmaplater1: 'Bestenlisten in der Klasse und global',
+        roadmaplater2: 'Quests und gemeinsame Ziele',
+        roadmaplater3: 'Funktionen für Gruppenprojekte',
+        roadmaplater4: 'Video-Tutorials und Live-Coding',
+        wonth2: '❌ Dinge, die wir nicht machen werden',
+        roadmapwont1: 'Themen außerhalb der IT',
+        roadmapwont2: 'Werbung oder starkes Tracking',
+        'roadmap-title': '🚀 IT Learn Roadmap',
+        roadmapdo9: 'Regelmäßig neue Inhalte',
+        roadmapdo10: 'Mehrsprachige Unterstützung',
+        copyright: '© 2025 IT Learn | Roadmap wird regelmäßig aktualisiert',
+
+        // Login/Signup
+        email: 'E-Mail',
+        password: 'Passwort',
+        confirmPassword: 'Passwort bestätigen',
+        enterEmail: 'E-Mail eingeben',
+        enterPassword: 'Passwort eingeben',
+        createPassword: 'Passwort erstellen',
+        reenterPassword: 'Passwort erneut eingeben',
+        createAccount: 'Account erstellen',
+        continueWithGoogle: 'Mit Google fortfahren',
+        alreadyHaveAccount: 'Schon ein Account?',
+        dontHaveAccount: 'Noch kein Account?',
+        termsAgree: 'Ich stimme den',
+        termsAndConditions: 'Geschäftsbedingungen zu',
+        signup: 'Registrieren',
+        iAgree: 'Ich stimme den',
+        signupTerms: 'Geschäftsbedingungen zu',
+        or: 'ODER',
+        continueGoogle: 'Mit Google fortfahren',
+
+        // Learn page
+        profile: 'Profil',
+        badges: 'Abzeichen',
+        settings: 'Einstellungen',
+        logOut: 'Abmelden',
+        chooseProgramming: 'Wähle eine Programmiersprache',
+        backToLanguages: 'Zurück zu allen Sprachen',
+        nextLesson: 'Nächste Lektion',
+        'login-form': 'Anmelden',
+        'welcomeAboard': 'Willkommen an Bord!',
+        'createSomethingCool': 'Erstelle etwas Cooles ✨',
+        'devJourneyStarts': 'Deine Entwicklerreise beginnt hier',
+        'smallStepsBigBuilds': 'Kleine Schritte, große Projekte',
+        'designCodeRepeat': 'Design. Code. Repeat.',
+        'developedByBroodje56': 'Entwickelt von Broodje56',
+        'developedByJoren': 'Entwickelt von Joren',
+        'joinDiscord': 'Betreite den Discord',
+        'programmingEqualsLife': 'Programmieren = Leben',
+        'keepPushingForward': 'Mach weiter Fortschritte',
+        'codeYourDreams': 'Code deine Träume',
+        'debuggingIsFun': 'Debuggen macht Spaß',
+        'eatSleepCodeRepeat': 'Essen, Schlafen, Coden, Repeat',
+        'thinkTwiceCodeOnce': 'Zweimal überlegen, einmal coden',
+        'helloWorld': 'Hallo Welt!',
+        'brainExeStopped': 'Brain.exe funktioniert nicht mehr!',
+        'codeLikeABoss': 'Codiere wie ein Boss',
+        'syntaxNeverSleeps': 'Syntax schläft nie',
+        'fromIdeasToApps': 'Von Ideen zu Apps',
+        'firstBugIsFriend': 'Dein erster Bug ist dein Freund',
+        'ctrlSProgress': 'Speichere deinen Fortschritt (CTRL + S)',
+        'keepCalmCodeOn': 'Bleib ruhig und codiere weiter',
+        'oneLineAtATime': 'Eine Zeile nach der anderen',
+        'compileYourDreams': 'Kompiliere deine Träume',
+        'futureDevInProgress': 'Zukünftiger Developer in Arbeit',
+        'readySetDeploy': 'Bereit, fertig, deploy!',
+        'helloFutureProgrammer': 'Hallo zukünftiger Programmierer!',
+        'error404': 'Fehler 404: Datei nicht gefunden',
+        'learningNeverStops': 'Lernen hört nie auf',
+        'codingPlusMusic': 'Programmieren + Musik = ❤️',
+        'emailVerified': '✅ E-Mail bestätigt!',
+        'verifySuccessMessage': 'Dein Account wurde bestätigt. Du kannst dich jetzt anmelden und weiterlernen.',
+        'goToLogin': 'Zur Anmeldung',
+        'autoRedirecting': 'Automatische Weiterleitung in',
+        'seconds': 'Sekunden…',
+}
+
+
 };
 
 // Language handling functions
@@ -422,7 +588,14 @@ function initializeLanguageSelector() {
 
     // Set initial language
     let currentLanguage = localStorage.getItem('language') || 'en';
-    currentLang.textContent = currentLanguage === 'en' ? 'English' : 'Nederlands';
+
+    const langMap = {
+        en: 'English',
+        nl: 'Nederlands',
+        de: 'Deutsch'
+    };
+
+    currentLang.textContent = langMap[currentLanguage] || 'English';
 
     // Toggle dropdown
     langBtn.addEventListener('click', (e) => {
@@ -438,17 +611,27 @@ function initializeLanguageSelector() {
     });
 
     // Language selection
-    langDropdown.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const lang = e.target.dataset.lang;
-            localStorage.setItem('language', lang);
-            currentLang.textContent = lang === 'en' ? 'English' : 'Nederlands';
-            langDropdown.classList.remove('show');
-            updatePageLanguage(lang);
-        });
+langDropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const lang = e.target.dataset.lang;
+        localStorage.setItem('language', lang);
+
+        if (lang === 'en') {
+            currentLang.textContent = 'English';
+        } else if (lang === 'nl') {
+            currentLang.textContent = 'Nederlands';
+        } else if (lang === 'de') {
+            currentLang.textContent = 'Deutsch';
+        }
+
+        langDropdown.classList.remove('show');
+        updatePageLanguage(lang);
     });
+});
+
 }
 
 // Initialize when DOM is loaded

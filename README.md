@@ -1,6 +1,7 @@
 # ⌨️ IT Learn
 # Welcome to IT Learn!
 Our website is made for anyone, of any age who wants to learn how to code, whether you're just getting started or looking to improve your skills.
+If you want to help us build the website, only create PR's to the beta branch. Any PR for the main branch will get rejected.
 
 With IT Learn, you can explore and practice programming languages like: HTML, CSS, JavaScript & Python
 
