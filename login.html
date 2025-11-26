@@ -8,8 +8,9 @@
    <title>IT Learn | Login</title>
    <link rel="stylesheet" href="login.css" />
 
-   <!-- hCaptcha script -->
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+   <!-- Cloudflare script -->
+   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="/translations.js"></script>
 </head>
 
 <body>
@@ -31,27 +32,27 @@ s0.parentNode.insertBefore(s1,s0);
 <button class="escape" onclick="window.location.href='index.html'">X</button>
 <div class="container">
   <div class="form-box">
-    <h1>Login</h1>
+    <h1 data-translate="login">Login</h1>
     <form id="login-form">
       <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required />
+        <label for="email" data-translate="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
       </div>
 
       <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required />
+        <label for="password" data-translate="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
       </div>
 
-      <!-- hCaptcha widget -->
-      <div class="h-captcha" data-sitekey="b03c75ae-fc52-45a4-a392-a9ee220e97ea"></div>
+      <!-- Cloudflare widget -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn" data-translate="login">Login</button>
     </form>
 
-    <div class="or-divider"><span>OR</span></div>
+    <div class="or-divider"><span data-translate="or">OR</span></div>
 
-    <button type="button" class="btn-google" id="google-login">
+    <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
         alt="Google Logo" />
@@ -98,12 +99,13 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Get hCaptcha token
-    const captchaToken = hcaptcha.getResponse();
-    if (!captchaToken) {
-        alert("Please complete the CAPTCHA.");
-        return;
-    }
+    // Get Turnstile token
+      const captchaToken = turnstile.getResponse();
+      if (!captchaToken) {
+      alert("Please complete the CAPTCHA.");
+      return;
+}
+
 
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
@@ -122,7 +124,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
         if (data.error) {
             alert("Error: " + data.error);
-            hcaptcha.reset(); // reset CAPTCHA
+            turnstile.reset(); // reset CAPTCHA
         } else {
             alert("Login successful!");
             window.location.href = "/learn/learn.html";
@@ -130,7 +132,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     } catch (err) {
         console.error(err);
         alert("An error occurred while logging in.");
-        hcaptcha.reset();
+        turnstile.reset();
     }
 });
 </script>
@@ -139,36 +141,36 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 <script>
 (function () {
   const variants = [
-    { text: "Welcome aboard!" },
-    { text: "Create something cool ✨" },
-    { text: "Your dev journey starts here" },
-    { text: "Small steps, big builds" },
-    { text: "Design. Code. Repeat." },
-    { text: "Developed by Broodje56", link: "https://broodje56.is-a.dev" },
-    { text: "Developed by Joren", link: "https://github.com/JorenS15" },
-    { text: "Join Discord", link: "https://discord.gg/rKgF9s32EV" },
-    { text: "Programming = life" },
-    { text: "Keep pushing forward" },
-    { text: "Code your dreams" },
-    { text: "Debugging is fun" },
-    { text: "Eat, Sleep, Code, Repeat" },
-    { text: "Think twice, code once" },
-    { text: "Hello World!" },
-    { text: "Brain.exe has stopped working" },
-    { text: "Code like a boss" },
-    { text: "Syntax never sleeps" },
-    { text: "From ideas to apps" },
-    { text: "Your first bug is a friend" },
-    { text: "CTRL + S your progress" },
-    { text: "Keep calm and code on" },
-    { text: "One line at a time" },
-    { text: "Compile your dreams" },
-    { text: "Future dev in progress" },
-    { text: "Ready, set, deploy!" },
-    { text: "Hello, future programmer!" },
-    { text: "Error 404: File not found" },
-    { text: "Learning never stops" },
-    { text: "Coding + Music = ❤️", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
+    { text: "welcomeAboard" },
+    { text: "createSomethingCool" },
+    { text: "devJourneyStarts" },
+    { text: "smallStepsBigBuilds" },
+    { text: "designCodeRepeat" },
+    { text: "developedByBroodje56", link: "https://broodje56.is-a.dev" },
+    { text: "developedByJoren", link: "https://github.com/JorenS15" },
+    { text: "joinDiscord", link: "https://discord.gg/rKgF9s32EV" },
+    { text: "programmingEqualsLife" },
+    { text: "keepPushingForward" },
+    { text: "codeYourDreams" },
+    { text: "debuggingIsFun" },
+    { text: "eatSleepCodeRepeat" },
+    { text: "thinkTwiceCodeOnce" },
+    { text: "helloWorld" },
+    { text: "brainExeStopped" },
+    { text: "codeLikeABoss" },
+    { text: "syntaxNeverSleeps" },
+    { text: "fromIdeasToApps" },
+    { text: "firstBugIsFriend" },
+    { text: "ctrlSProgress" },
+    { text: "keepCalmCodeOn" },
+    { text: "oneLineAtATime" },
+    { text: "compileYourDreams" },
+    { text: "futureDevInProgress" },
+    { text: "readySetDeploy" },
+    { text: "helloFutureProgrammer" },
+    { text: "error404" },
+    { text: "learningNeverStops" },
+    { text: "codingPlusMusic", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
   ];
 
   const choice = variants[Math.floor(Math.random() * variants.length)];
@@ -179,7 +181,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     if (choice.link) a.href = choice.link;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.textContent = choice.text;
+    // Translate the splash text using translations object
+    const lang = localStorage.getItem('language') || 'en';
+    a.textContent = translations[lang][choice.text] || choice.text;
     box.appendChild(a);
   }
 })();
