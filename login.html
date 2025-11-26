@@ -8,8 +8,8 @@
    <title>IT Learn | Login</title>
    <link rel="stylesheet" href="login.css" />
 
-   <!-- hCaptcha script -->
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+   <!-- Cloudflare script -->
+   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="/translations.js"></script>
 </head>
 
@@ -44,8 +44,8 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
       </div>
 
-      <!-- hCaptcha widget -->
-      <div class="h-captcha" data-sitekey="b03c75ae-fc52-45a4-a392-a9ee220e97ea"></div>
+      <!-- Cloudflare widget -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
       <button type="submit" class="btn" data-translate="login">Login</button>
     </form>
@@ -99,12 +99,13 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Get hCaptcha token
-    const captchaToken = hcaptcha.getResponse();
-    if (!captchaToken) {
-        alert("Please complete the CAPTCHA.");
-        return;
-    }
+    // Get Turnstile token
+      const captchaToken = turnstile.getResponse();
+      if (!captchaToken) {
+      alert("Please complete the CAPTCHA.");
+      return;
+}
+
 
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
@@ -123,7 +124,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
         if (data.error) {
             alert("Error: " + data.error);
-            hcaptcha.reset(); // reset CAPTCHA
+            turnstile.reset(); // reset CAPTCHA
         } else {
             alert("Login successful!");
             window.location.href = "/learn/learn.html";
@@ -131,7 +132,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     } catch (err) {
         console.error(err);
         alert("An error occurred while logging in.");
-        hcaptcha.reset();
+        turnstile.reset();
     }
 });
 </script>

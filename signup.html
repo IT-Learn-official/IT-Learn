@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Learn | Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
-  <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/translations.js"></script>
 </head>
 
@@ -27,115 +27,121 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
-  <button class="escape" onclick="window.location.href='index.html'">X</button>
+<button class="escape" onclick="window.location.href='index.html'">X</button>
 
-  <div class="container">
-    <div class="form-box">
-      <h1 data-translate="signup">Sign Up</h1>
+<div class="container">
+  <div class="form-box">
+    <h1 data-translate="signup">Sign Up</h1>
 
-      <form id="signup-form">
-        <div class="input-group">
-          <label for="email" data-translate="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
-        </div>
+    <form id="signup-form">
+      <div class="input-group">
+        <label for="email" data-translate="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
+      </div>
 
-        <div class="input-group">
-          <label for="password" data-translate="password">Password</label>
-          <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required />
-        </div>
+      <div class="input-group">
+        <label for="password" data-translate="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required />
+      </div>
 
-        <div class="input-group">
-          <label for="confirm-password" data-translate="confirmPassword">Confirm Password</label>
-          <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required />
-        </div>
-        <!-- hCaptcha widget -->
-        <div class="h-captcha" data-sitekey="b03c75ae-fc52-45a4-a392-a9ee220e97ea"></div>
+      <div class="input-group">
+        <label for="confirm-password" data-translate="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required />
+      </div>
 
-        <div class="input-group" style="margin-top:.5rem;">
-          <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer;">
-            <input type="checkbox" id="accept-terms" style="width:16px;height:16px;" />
-            <span data-translate="iAgree">I agree to the</span> <a href="/terms/terms.html" target="_blank" rel="noopener noreferrer" data-translate="signupTerms">Terms and Conditions</a>
-          </label>
-        </div>
+      <!-- Cloudflare Turnstile -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
-        <button type="submit" class="btn" data-translate="createAccount">Create account</button>
-      </form>
+      <div class="input-group" style="margin-top:.5rem;">
+        <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer;">
+          <input type="checkbox" id="accept-terms" style="width:16px;height:16px;" />
+          <span data-translate="iAgree">I agree to the</span> 
+          <a href="/terms/terms.html" target="_blank" rel="noopener noreferrer" data-translate="signupTerms">Terms and Conditions</a>
+        </label>
+      </div>
 
-      <div class="or-divider"><span data-translate="or">OR</span></div>
+      <button type="submit" class="btn" data-translate="createAccount">Create account</button>
+    </form>
 
-      <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">Continue with Google</button>
+    <div class="or-divider"><span data-translate="or">OR</span></div>
 
-      <p class="redirect-text">
-        Already have an account? <a href="login.html">Log in</a>
-      </p>
-    </div>
+    <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">Continue with Google</button>
+
+    <p class="redirect-text">
+      Already have an account? <a href="login.html">Log in</a>
+    </p>
   </div>
+</div>
 
 <script>
-// Initialize language on page load
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-page', 'signup');
     const storedLang = localStorage.getItem('language') || 'en';
     updatePageLanguage(storedLang);
-    if (window.feather) {
-        feather.replace();
-    }
-    // Update input placeholders after language change
     updateInputPlaceholders(storedLang);
-});
-
-function updateInputPlaceholders(lang) {
+  });
+  
+  function updateInputPlaceholders(lang) {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm-password');
     if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
     if (passwordInput) passwordInput.placeholder = translations[lang]['createPassword'] || 'Create a password';
     if (confirmPasswordInput) confirmPasswordInput.placeholder = translations[lang]['reenterPassword'] || 'Re-enter your password';
-}
-
-// Also update placeholders when language changes
-const originalUpdatePageLanguage = window.updatePageLanguage;
-window.updatePageLanguage = function(lang) {
+  }
+  
+  const originalUpdatePageLanguage = window.updatePageLanguage;
+  window.updatePageLanguage = function(lang) {
     originalUpdatePageLanguage(lang);
     updateInputPlaceholders(lang);
-};
-
-document.getElementById("signup-form").addEventListener("submit", async (e) => {
+  };
+  
+  document.getElementById("signup-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    const email = document.getElementById("email").value;
+  
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
     const acceptTerms = document.getElementById("accept-terms").checked;
-
+  
+    if (!email || !password) {
+        alert("Email and password are required");
+        return;
+    }
+  
     if (password !== confirmPassword) {
         alert("Passwords do not match");
         return;
     }
-
+  
     if (!acceptTerms) {
         alert("You must accept the terms and conditions");
         return;
     }
-
-    // --- hCaptcha token ophalen ---
-    const hcaptchaResponse = hcaptcha.getResponse();
-    if (!hcaptchaResponse) {
-        alert("Please complete the captcha.");
+  
+    const captchaToken = turnstile.getResponse();
+    if (!captchaToken) {
+        alert("Please complete the verification.");
         return;
     }
-
+  
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password, captcha: hcaptchaResponse })
+            credentials: "include",
+            body: JSON.stringify({
+                email,
+                password,
+                captcha_token: captchaToken
+            })
         });
-
+  
         const data = await res.json();
-
+  
         if (data.error) {
             alert("Error: " + data.error);
+            turnstile.reset();
         } else {
             alert("Signup successful!");
             window.location.href = "login.html";
@@ -143,58 +149,59 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
     } catch (err) {
         console.error(err);
         alert("An error occurred while signing up.");
+        turnstile.reset();
     }
-});
-</script>
+  });
+  </script>
+  
 
 <script>
-  // --- Random motivational splash ---
-  const variants = [
-    { text: "welcomeAboard" },
-    { text: "createSomethingCool" },
-    { text: "devJourneyStarts" },
-    { text: "smallStepsBigBuilds" },
-    { text: "designCodeRepeat" },
-    { text: "developedByBroodje56", link: "https://broodje56.is-a.dev" },
-    { text: "developedByJoren", link: "https://github.com/JorenS15" },
-    { text: "joinDiscord", link: "https://discord.gg/rKgF9s32EV" },
-    { text: "programmingEqualsLife" },
-    { text: "keepPushingForward" },
-    { text: "codeYourDreams" },
-    { text: "debuggingIsFun" },
-    { text: "eatSleepCodeRepeat" },
-    { text: "thinkTwiceCodeOnce" },
-    { text: "helloWorld" },
-    { text: "brainExeStopped" },
-    { text: "codeLikeABoss" },
-    { text: "syntaxNeverSleeps" },
-    { text: "fromIdeasToApps" },
-    { text: "firstBugIsFriend" },
-    { text: "ctrlSProgress" },
-    { text: "keepCalmCodeOn" },
-    { text: "oneLineAtATime" },
-    { text: "compileYourDreams" },
-    { text: "futureDevInProgress" },
-    { text: "readySetDeploy" },
-    { text: "helloFutureProgrammer" },
-    { text: "error404" },
-    { text: "learningNeverStops" },
-    { text: "codingPlusMusic", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
-  ];
+// --- Splash text ---
+const variants = [
+  { text: "welcomeAboard" },
+  { text: "createSomethingCool" },
+  { text: "devJourneyStarts" },
+  { text: "smallStepsBigBuilds" },
+  { text: "designCodeRepeat" },
+  { text: "developedByBroodje56", link: "https://broodje56.is-a.dev" },
+  { text: "developedByJoren", link: "https://github.com/JorenS15" },
+  { text: "joinDiscord", link: "https://discord.gg/rKgF9s32EV" },
+  { text: "programmingEqualsLife" },
+  { text: "keepPushingForward" },
+  { text: "codeYourDreams" },
+  { text: "debuggingIsFun" },
+  { text: "eatSleepCodeRepeat" },
+  { text: "thinkTwiceCodeOnce" },
+  { text: "helloWorld" },
+  { text: "brainExeStopped" },
+  { text: "codeLikeABoss" },
+  { text: "syntaxNeverSleeps" },
+  { text: "fromIdeasToApps" },
+  { text: "firstBugIsFriend" },
+  { text: "ctrlSProgress" },
+  { text: "keepCalmCodeOn" },
+  { text: "oneLineAtATime" },
+  { text: "compileYourDreams" },
+  { text: "futureDevInProgress" },
+  { text: "readySetDeploy" },
+  { text: "helloFutureProgrammer" },
+  { text: "error404" },
+  { text: "learningNeverStops" },
+  { text: "codingPlusMusic", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
+];
 
-  const choice = variants[Math.floor(Math.random() * variants.length)];
-  const box = document.querySelector('.form-box');
-  if (box) {
-    const a = document.createElement('a');
-    a.className = 'splash';
-    if (choice.link) a.href = choice.link;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    // Translate the splash text using translations object
-    const lang = localStorage.getItem('language') || 'en';
-    a.textContent = translations[lang][choice.text] || choice.text;
-    box.appendChild(a);
-  }
+const choice = variants[Math.floor(Math.random() * variants.length)];
+const box = document.querySelector('.form-box');
+if (box) {
+  const a = document.createElement('a');
+  a.className = 'splash';
+  if (choice.link) a.href = choice.link;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  const lang = localStorage.getItem('language') || 'en';
+  a.textContent = translations[lang][choice.text] || choice.text;
+  box.appendChild(a);
+}
 </script>
 
 </body>
