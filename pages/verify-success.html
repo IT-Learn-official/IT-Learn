@@ -1,0 +1,22 @@
+<title>IT Learn | Account Verified</title>
+<div class="container">
+  <h1 data-translate="emailVerified">✅ Email Verified!</h1>
+  <p class="fade-in" data-translate="verifySuccessMessage">Your account has been successfully confirmed. You can now
+    login to continue your learning journey.</p>
+  <a class="btn-login pulse" href="login.html" data-translate="goToLogin">Go to Login</a>
+  <p class="redirect-text fade-in"><span data-translate="autoRedirecting">Automatically redirecting in</span> <span
+      id="countdown">5</span> <span data-translate="seconds">seconds...</span></p>
+</div>
+
+<script>
+  let countdown = 5;
+  const countdownEl = document.getElementById("countdown");
+  const interval = setInterval(() => {
+    countdown--;
+    countdownEl.textContent = countdown;
+    if (countdown <= 0) {
+      clearInterval(interval);
+      window.location.href = "login.html";
+    }
+  }, 1000);
+</script>
