@@ -265,7 +265,7 @@ function showModules() {
     if (discordBtn) discordBtn.style.left = "calc(260px + 1rem + 12px)";
 
     updateProgressUI();
-}
+
 
 function showLessonsList(moduleId) {
     currentModule = modulesData.find(m => m.id === moduleId);
