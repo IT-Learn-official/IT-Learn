@@ -305,7 +305,6 @@ const translations = {
         termsAndConditions: 'Algemene voorwaarden',
         or: 'OF',
         continueGoogle: 'Doorgaan met Google',
-        alreadyHaveAccount: 'Heb je al een account?',
         createPassword: 'Maak een wachtwoord aan',
         reenterPassword: 'Voer je wachtwoord opnieuw in',
         confirmPassword: 'Bevestig wachtwoord',
