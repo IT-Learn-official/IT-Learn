@@ -74,75 +74,86 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 
 <script>
-// Initialize language on page load
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.setAttribute('data-page', 'signup');
-  const storedLang = localStorage.getItem('language') || 'en';
-  updatePageLanguage(storedLang);
-  updateInputPlaceholders(storedLang);
-});
-
-function updateInputPlaceholders(lang) {
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('confirm-password');
-  if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
-  if (passwordInput) passwordInput.placeholder = translations[lang]['createPassword'] || 'Create a password';
-  if (confirmPasswordInput) confirmPasswordInput.placeholder = translations[lang]['reenterPassword'] || 'Re-enter your password';
-}
-
-const originalUpdatePageLanguage = window.updatePageLanguage;
-window.updatePageLanguage = function(lang) {
-  originalUpdatePageLanguage(lang);
-  updateInputPlaceholders(lang);
-};
-
-document.getElementById("signup-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm-password").value;
-  const acceptTerms = document.getElementById("accept-terms").checked;
-
-  if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.setAttribute('data-page', 'signup');
+    const storedLang = localStorage.getItem('language') || 'en';
+    updatePageLanguage(storedLang);
+    updateInputPlaceholders(storedLang);
+  });
+  
+  function updateInputPlaceholders(lang) {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+    if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
+    if (passwordInput) passwordInput.placeholder = translations[lang]['createPassword'] || 'Create a password';
+    if (confirmPasswordInput) confirmPasswordInput.placeholder = translations[lang]['reenterPassword'] || 'Re-enter your password';
   }
-
-  if (!acceptTerms) {
-      alert("You must accept the terms and conditions");
-      return;
-  }
-
-  // Get Turnstile token
-  const turnstileToken = turnstile.getResponse();
-  if (!turnstileToken) {
-      alert("Please complete the verification.");
-      return;
-  }
-
-  try {
-      const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password, captcha: turnstileToken })
-      });
-
-      const data = await res.json();
-
-      if (data.error) {
-          alert("Error: " + data.error);
-      } else {
-          alert("Signup successful!");
-          window.location.href = "login.html";
-      }
-  } catch (err) {
-      console.error(err);
-      alert("An error occurred while signing up.");
-  }
-});
-</script>
+  
+  const originalUpdatePageLanguage = window.updatePageLanguage;
+  window.updatePageLanguage = function(lang) {
+    originalUpdatePageLanguage(lang);
+    updateInputPlaceholders(lang);
+  };
+  
+  document.getElementById("signup-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const acceptTerms = document.getElementById("accept-terms").checked;
+  
+    if (!email || !password) {
+        alert("Email and password are required");
+        return;
+    }
+  
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
+  
+    if (!acceptTerms) {
+        alert("You must accept the terms and conditions");
+        return;
+    }
+  
+    const captchaToken = turnstile.getResponse();
+    if (!captchaToken) {
+        alert("Please complete the verification.");
+        return;
+    }
+  
+    try {
+        const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({
+                email,
+                password,
+                captcha_token: captchaToken
+            })
+        });
+  
+        const data = await res.json();
+  
+        if (data.error) {
+            alert("Error: " + data.error);
+            turnstile.reset();
+        } else {
+            alert("Signup successful!");
+            window.location.href = "login.html";
+        }
+    } catch (err) {
+        console.error(err);
+        alert("An error occurred while signing up.");
+        turnstile.reset();
+    }
+  });
+  </script>
+  
 
 <script>
 // --- Splash text ---
