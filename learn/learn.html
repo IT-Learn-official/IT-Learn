@@ -8,6 +8,29 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  
+  <script>
+  async function checkSession() {
+      try {
+          const res = await fetch("https://itlearn.pythonanywhere.com/api/session", {
+              method: "GET",
+              credentials: "include"
+          });
+
+          const data = await res.json();
+
+          if (!data.logged_in) {
+              window.location.href = "/login.html";
+          }
+      } catch (err) {
+          console.error("Session check failed", err);
+          window.location.href = "/login.html";
+      }
+  }
+
+  document.addEventListener("DOMContentLoaded", checkSession);
+  </script>
+
   <div class="container">
 
     <!-- Sidebar -->
