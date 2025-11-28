@@ -255,8 +255,6 @@ function showModules() {
     backToModulesBtn.style.display = "none";
     showMascotMessage("Kies een module om te starten!");
     renderModuleButtons();
-    updateProgressUI();
-}
 
     const sidebar = document.querySelector("nav.sidebar");
     if (sidebar) sidebar.style.display = "flex";
