@@ -45,7 +45,7 @@ s0.parentNode.insertBefore(s1,s0);
       </div>
 
       <!-- Cloudflare widget -->
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf" data-widget="loginCaptcha"></div>
+      <div class="cf-turnstile" id="loginCaptcha" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
       <button type="submit" class="btn" data-translate="login">Login</button>
     </form>
@@ -67,6 +67,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- Login via live Flask API -->
 <script>
+// Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-page', 'login');
     const storedLang = localStorage.getItem('language') || 'en';
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.feather) {
         feather.replace();
     }
+    // Update input placeholders after language change
     updateInputPlaceholders(storedLang);
 });
 
@@ -97,6 +99,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    // Get Turnstile token
     const captchaToken = turnstile.getResponse("loginCaptcha");
       if (!captchaToken) {
       alert("Please complete the CAPTCHA.");
@@ -121,7 +124,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
         if (data.error) {
             alert("Error: " + data.error);
-            turnstile.reset(); 
+            turnstile.reset("loginCaptcha"); // reset CAPTCHA
         } else {
             alert("Login successful!");
             window.location.href = "/learn/learn.html";
@@ -129,7 +132,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     } catch (err) {
         console.error(err);
         alert("An error occurred while logging in.");
-        turnstile.reset();
+        turnstile.reset("loginCaptcha");
     }
 });
 </script>
@@ -178,6 +181,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     if (choice.link) a.href = choice.link;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
+    // Translate the splash text using translations object
     const lang = localStorage.getItem('language') || 'en';
     a.textContent = translations[lang][choice.text] || choice.text;
     box.appendChild(a);
