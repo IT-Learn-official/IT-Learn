@@ -128,6 +128,7 @@ const translations = {
         createAccount: 'Create account',
         or: 'OR',
         continueGoogle: 'Continue with Google',
+        continueGitHub: 'Continue with GitHub',
         alreadyHaveAccount: 'Already have an account?',
 
 
@@ -308,6 +309,7 @@ const translations = {
         termsAndConditions: 'Algemene voorwaarden',
         or: 'OF',
         continueGoogle: 'Doorgaan met Google',
+        continueGitHub: 'Doorgaan met GitHub',
         createPassword: 'Maak een wachtwoord aan',
         reenterPassword: 'Voer je wachtwoord opnieuw in',
         confirmPassword: 'Bevestig wachtwoord',
@@ -525,6 +527,7 @@ const translations = {
         signupTerms: 'Geschäftsbedingungen zu',
         or: 'ODER',
         continueGoogle: 'Mit Google fortfahren',
+        continueGitHub: 'Mit GitHub fortfahren',
 
         // Learn page
         profile: 'Profil',
@@ -689,6 +692,7 @@ fr: {
     termsAndConditions: 'Conditions générales',
     or: 'OU',
     continueGoogle: 'Continuer avec Google',
+        continueGitHub: 'Continuer avec GitHub',
     iAgree: 'J’accepte les',
     signupTerms: 'Conditions générales',
     createAPassword: 'Créer un mot de passe',
