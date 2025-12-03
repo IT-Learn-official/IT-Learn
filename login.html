@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>IT Learn | Login</title>
-   <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Login</title>
+  <link rel="stylesheet" href="login.css" />
 
-   <!-- Cloudflare script -->
-   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script src="/translations.js"></script>
+  <!-- Cloudflare script -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/translations.js"></script>
 </head>
 
 <body>
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
 
 <button class="escape" onclick="window.location.href='index.html'">X</button>
+
 <div class="container">
   <div class="form-box">
     <h1 data-translate="login">Login</h1>
+
     <form id="login-form">
       <div class="input-group">
         <label for="email" data-translate="email">Email</label>
@@ -52,6 +52,7 @@ s0.parentNode.insertBefore(s1,s0);
 
     <div class="or-divider"><span data-translate="or">OR</span></div>
 
+    <!-- Google OAuth button -->
     <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
@@ -69,71 +70,69 @@ s0.parentNode.insertBefore(s1,s0);
 <script>
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.setAttribute('data-page', 'login');
-    const storedLang = localStorage.getItem('language') || 'en';
-    updatePageLanguage(storedLang);
-    if (window.feather) {
-        feather.replace();
-    }
-    // Update input placeholders after language change
-    updateInputPlaceholders(storedLang);
+  document.body.setAttribute('data-page', 'login');
+  const storedLang = localStorage.getItem('language') || 'en';
+  updatePageLanguage(storedLang);
+  if (window.feather) {
+    feather.replace();
+  }
+  // Update input placeholders after language change
+  updateInputPlaceholders(storedLang);
 });
 
 function updateInputPlaceholders(lang) {
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
-    if (passwordInput) passwordInput.placeholder = translations[lang]['enterPassword'] || 'Enter your password';
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
+  if (passwordInput) passwordInput.placeholder = translations[lang]['enterPassword'] || 'Enter your password';
 }
 
 // Also update placeholders when language changes
 const originalUpdatePageLanguage = window.updatePageLanguage;
 window.updatePageLanguage = function(lang) {
-    originalUpdatePageLanguage(lang);
-    updateInputPlaceholders(lang);
+  originalUpdatePageLanguage(lang);
+  updateInputPlaceholders(lang);
 };
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    // Get Turnstile token
-      const captchaToken = turnstile.getResponse();
-      if (!captchaToken) {
-      alert("Please complete the CAPTCHA.");
-      return;
-}
+  // Get Turnstile token
+  const captchaToken = turnstile.getResponse();
+  if (!captchaToken) {
+    alert("Please complete the CAPTCHA.");
+    return;
+  }
 
+  try {
+    const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        email,
+        password,
+        captcha_token: captchaToken
+      })
+    });
 
-    try {
-        const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({
-                email,
-                password,
-                captcha_token: captchaToken
-              })
+    const data = await res.json();
 
-        });
-
-        const data = await res.json();
-
-        if (data.error) {
-            alert("Error: " + data.error);
-            turnstile.reset(); // reset CAPTCHA
-        } else {
-            alert("Login successful!");
-            window.location.href = "/learn/learn.html";
-        }
-    } catch (err) {
-        console.error(err);
-        alert("An error occurred while logging in.");
-        turnstile.reset();
+    if (data.error) {
+      alert("Error: " + data.error);
+      turnstile.reset(); // reset CAPTCHA
+    } else {
+      alert("Login successful!");
+      window.location.href = "/learn/learn.html";
     }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred while logging in.");
+    turnstile.reset();
+  }
 });
 </script>
 
@@ -189,5 +188,38 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 })();
 </script>
 
+<!-- Supabase + Google OAuth -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // TODO: replace with your real Supabase values
+  const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
+  const SUPABASE_ANON_KEY = 'YOUR_PUBLIC_ANON_KEY';
+
+  if (window.supabase) {
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const googleBtn = document.getElementById('google-login-btn');
+    if (googleBtn) {
+      googleBtn.addEventListener('click', async () => {
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            // This must also exist in Supabase Auth redirect URLs
+            redirectTo: window.location.origin + '/verify-success.html'
+          }
+        });
+
+        if (error) {
+          console.error('Google login error:', error);
+          alert('Login with Google failed. Please try again.');
+        }
+      });
+    }
+  } else {
+    console.error('Supabase script failed to load.');
+  }
+</script>
+
 </body>
 </html>
+>

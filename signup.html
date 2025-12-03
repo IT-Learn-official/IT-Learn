@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
@@ -12,17 +11,16 @@
 </head>
 
 <body>
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
@@ -65,7 +63,13 @@ s0.parentNode.insertBefore(s1,s0);
 
     <div class="or-divider"><span data-translate="or">OR</span></div>
 
-    <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">Continue with Google</button>
+    <!-- Google OAuth button (signup) -->
+      <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
+        alt="Google Logo" />
+      Continue with Google
+    </button>
 
     <p class="redirect-text">
       Already have an account? <a href="login.html">Log in</a>
@@ -73,6 +77,7 @@ s0.parentNode.insertBefore(s1,s0);
   </div>
 </div>
 
+<!-- Email/password signup via Flask API -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-page', 'signup');
@@ -105,58 +110,57 @@ s0.parentNode.insertBefore(s1,s0);
     const acceptTerms = document.getElementById("accept-terms").checked;
   
     if (!email || !password) {
-        alert("Email and password are required");
-        return;
+      alert("Email and password are required");
+      return;
     }
   
     if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
+      alert("Passwords do not match");
+      return;
     }
   
     if (!acceptTerms) {
-        alert("You must accept the terms and conditions");
-        return;
+      alert("You must accept the terms and conditions");
+      return;
     }
   
     const captchaToken = turnstile.getResponse();
     if (!captchaToken) {
-        alert("Please complete the verification.");
-        return;
+      alert("Please complete the verification.");
+      return;
     }
   
     try {
-        const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({
-                email,
-                password,
-                captcha_token: captchaToken
-            })
-        });
+      const res = await fetch("https://itlearn.pythonanywhere.com/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          email,
+          password,
+          captcha_token: captchaToken
+        })
+      });
   
-        const data = await res.json();
+      const data = await res.json();
   
-        if (data.error) {
-            alert("Error: " + data.error);
-            turnstile.reset();
-        } else {
-            alert("Signup successful!");
-            window.location.href = "login.html";
-        }
-    } catch (err) {
-        console.error(err);
-        alert("An error occurred while signing up.");
+      if (data.error) {
+        alert("Error: " + data.error);
         turnstile.reset();
+      } else {
+        alert("Signup successful!");
+        window.location.href = "login.html";
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred while signing up.");
+      turnstile.reset();
     }
   });
-  </script>
-  
+</script>
 
+<!-- Splash text -->
 <script>
-// --- Splash text ---
 const variants = [
   { text: "welcomeAboard" },
   { text: "createSomethingCool" },
@@ -202,6 +206,38 @@ if (box) {
   a.textContent = translations[lang][choice.text] || choice.text;
   box.appendChild(a);
 }
+</script>
+
+<!-- Supabase + Google OAuth (same logic as login.html) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // TODO: same values as in login.html
+  const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
+  const SUPABASE_ANON_KEY = 'YOUR_PUBLIC_ANON_KEY';
+
+  if (window.supabase) {
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const googleSignupBtn = document.getElementById('google-signup');
+    if (googleSignupBtn) {
+      googleSignupBtn.addEventListener('click', async () => {
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            // Same success page as login
+            redirectTo: window.location.origin + '/verify-success.html'
+          }
+        });
+
+        if (error) {
+          console.error('Google signup/login error:', error);
+          alert('Google sign-in failed. Please try again.');
+        }
+      });
+    }
+  } else {
+    console.error('Supabase script failed to load on signup page.');
+  }
 </script>
 
 </body>
