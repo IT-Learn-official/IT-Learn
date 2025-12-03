@@ -613,6 +613,7 @@ fr: {
     landinghelpcenter: 'Centre d’aide',
     landingfooterpractice: 'PRATIQUER',
     landingfooterchallenges: 'Défis',
+    landingfooterourteam: 'Notre équipe',
     landingfooterprojects: 'Projets',
     'hero-title': 'Découvrez le <span class="highlight">Monde du Codage</span>',
     'hero-sub': 'Le codage rendu simple par des étudiants pour des étudiants.',
