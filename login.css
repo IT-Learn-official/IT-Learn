@@ -79,6 +79,11 @@ body {
   animation-delay: 550ms;
 }
 
+#discord-login-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 650ms;
+}
+
 .form-box .btn {
   animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
   animation-delay: 600ms;
@@ -127,7 +132,7 @@ body {
 }
 
 /* Buttons */
-.btn, .google-login-btn, .github-login-btn {
+.btn, .google-login-btn, .github-login-btn, .discord-login-btn {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.8rem;
@@ -184,6 +189,23 @@ body {
 
 .github-login-btn:hover {
   background: #2c3136;
+  transform: translateY(-2px);
+}
+
+/* Discord button */
+.discord-login-btn {
+  background: #5865F2; /* Discord blurple */
+  color: white;
+  border: 1px solid #5865F2;
+}
+
+.discord-login-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.discord-login-btn:hover {
+  background: #4752c4;
   transform: translateY(-2px);
 }
 

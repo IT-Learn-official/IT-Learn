@@ -69,6 +69,13 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
       <span data-translate="continueGitHub">Continue with GitHub</span>
     </button>
 
+        <button type="button" class="discord-login-btn" id="discord-login-btn">
+      <img
+        src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d7f4ef6498ac018f2c55_Symbol.svg"
+        alt="Discord Logo"
+      />
+      <span data-translate="continueDiscord">Continue with Discord</span>
+    </button>
 
     <p class="redirect-text">
       Don't have an account? <a href="signup.html">Sign Up</a>
@@ -226,6 +233,23 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   const githubSignupBtn = document.getElementById('github-signup-btn');
   if (githubSignupBtn) {
     githubSignupBtn.addEventListener('click', () => startGithubAuth('signup'));
+  }
+</script>
+<script>
+  function startDiscordAuth(mode) {
+    // mode is either 'login' or 'signup'
+    const target = mode === 'signup' ? 'signup' : 'login';
+    window.location.href = `https://itlearn.pythonanywhere.com/api/auth/discord?mode=${target}`;
+  }
+
+  const discordLoginBtn = document.getElementById('discord-login-btn');
+  if (discordLoginBtn) {
+    discordLoginBtn.addEventListener('click', () => startDiscordAuth('login'));
+  }
+
+  const discordSignupBtn = document.getElementById('discord-signup-btn');
+  if (discordSignupBtn) {
+    discordSignupBtn.addEventListener('click', () => startDiscordAuth('signup'));
   }
 </script>
 </body>

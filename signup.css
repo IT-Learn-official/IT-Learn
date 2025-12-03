@@ -172,6 +172,22 @@ body {
   transform: translateY(-2px);
 }
 
+.discord-signup-btn {
+  background: #5865F2; /* Discord blurple */
+  color: white;
+  border: 1px solid #5865F2;
+}
+
+.discord-signup-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.discord-signup-btn:hover {
+  background: #4752c4;
+  transform: translateY(-2px);
+}
+
 .or-divider {
   margin: 1.2rem 0;
   text-align: center;
