@@ -92,7 +92,7 @@ body {
 #email { animation-delay: 150ms; }
 #password { animation-delay: 300ms; }
 
-#google-signup {
+#google-signup-btn {
   animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
   animation-delay: 450ms;
 }
@@ -111,7 +111,7 @@ body {
 }
 
 /* Buttons */
-.btn, .btn-google {
+.btn, .google-signup-btn {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.8rem;
@@ -136,18 +136,18 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-google {
+.google-signup-btn {
   background: #fff;
   color: #000;
   border: 1px solid #d1d5db;
 }
 
-.btn-google img {
+.google-signup-btn img {
   width: 20px;
   height: 20px;
 }
 
-.btn-google:hover {
+.google-signup-btn:hover {
   background: #f0f0f0;
   transform: translateY(-2px);
 }

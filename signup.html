@@ -64,7 +64,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     <div class="or-divider"><span data-translate="or">OR</span></div>
 
     <!-- Google OAuth button (signup) -->
-    <button type="button" class="btn-google" id="google-signup" data-translate="continueGoogle">
+    <button type="button" class="google-signup-btn" id="google-signup-btn" data-translate="continueGoogle">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
         alt="Google Logo"
@@ -219,7 +219,7 @@ if (box) {
   if (window.supabase) {
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    const googleSignupBtn = document.getElementById('google-signup');
+    const googleSignupBtn = document.getElementById('google-signup-btn');
     if (googleSignupBtn) {
       googleSignupBtn.addEventListener('click', async () => {
         const { error } = await supabase.auth.signInWithOAuth({
@@ -243,3 +243,4 @@ if (box) {
 
 </body>
 </html>
+>
