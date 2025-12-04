@@ -28,5 +28,42 @@
       }
     }, 1000);
   </script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
+  const SUPABASE_ANON_KEY = 'YOUR_PUBLIC_ANON_KEY';
+
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: {
+      flowType: 'pkce',
+      detectSessionInUrl: true
+    }
+  });
+
+  (async () => {
+    const { data, error } = await supabase.auth.getSession();
+    if (error || !data.session) {
+      console.error('No session after OAuth', error);
+      window.location.href = '/login';
+      return;
+    }
+
+    const accessToken = data.session.access_token;
+
+    const res = await fetch('https://itlearn.pythonanywhere.com/api/session-from-supabase', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ access_token: accessToken })
+    });
+
+    if (!res.ok) {
+      window.location.href = '/login';
+      return;
+    }
+
+    window.location.href = '/';
+  })();
+</script>
 </body>
 </html>
