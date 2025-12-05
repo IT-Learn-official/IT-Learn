@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Login...</title>
+  <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <div>
+    <h2>Initiating Google Login...</h2>
+    <p>Please wait while we redirect you to Google.</p>
+  </div>
+  <script>
+    const SUPABASE_URL = 'https://YOUR-REAL-PROJECT.supabase.co';
+    const SUPABASE_ANON_KEY = 'YOUR-REAL-ANON-KEY';
+    
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { flowType: 'pkce', detectSessionInUrl: true }
+    });
+
+    // Start PKCE immediately
+    supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin + '/auth/redirect/google-verify.html'
+      }
+    });
+  </script>
+</body>
+</html>

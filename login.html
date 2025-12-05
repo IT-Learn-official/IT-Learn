@@ -75,7 +75,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         alt="Discord Logo"
       />
       <span data-translate="continueDiscord">Continue with Discord</span>
-    </button>
+        </button>
     
         <button type="button" class="smartschool-login-btn" id="smartschool-login-btn">
       <img
@@ -209,34 +209,18 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 })();
 </script>
 
-<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-  const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
-  const SUPABASE_ANON_KEY = 'YOUR_PUBLIC_ANON_KEY';
+function startGoogleAuth(mode) {
+  const target = mode === 'signup' ? 'signup' : 'login';
+  window.location.href = `https://itlearn.be/auth/pkce/google.html?mode=${target}`;
+}
 
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: {
-      flowType: 'pkce',
-      detectSessionInUrl: true
-    }
-  });
-
-  const googleLoginBtn = document.getElementById('google-login-btn');
-  if (googleLoginBtn) {
-    googleLoginBtn.addEventListener('click', async () => {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: 'https://itlearn.be/verify-success.html'
-        }
-      });
-      if (error) {
-        console.error('Google login error:', error);
-        alert('Login with Google failed. Please try again.');
-      }
-    });
-  }
+const googleLoginBtn = document.getElementById('google-login-btn');
+if (googleLoginBtn) {
+  googleLoginBtn.addEventListener('click', () => startGoogleAuth('login'));
+}
 </script>
+
 <script>
   function startGithubAuth(mode) {
     // mode is either 'login' or 'signup'
