@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>IT Learn | Login</title>
-   <link rel="stylesheet" href="login.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Learn | Login</title>
+    <link rel="stylesheet" href="login.css" />
 
-   <!-- Cloudflare script -->
-   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Cloudflare Turnstile script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="/translations.js"></script>
 </head>
 
@@ -19,12 +19,12 @@
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
@@ -44,7 +44,7 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
       </div>
 
-      <!-- Cloudflare widget -->
+      <!-- Cloudflare Turnstile widget -->
       <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
       <button type="submit" class="btn" data-translate="login">Login</button>
@@ -53,9 +53,7 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="or-divider"><span data-translate="or">OR</span></div>
 
     <button type="button" class="btn-google" id="google-login" data-translate="continueGoogle">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
-        alt="Google Logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" alt="Google Logo" />
       Continue with Google
     </button>
 
@@ -65,17 +63,13 @@ s0.parentNode.insertBefore(s1,s0);
   </div>
 </div>
 
-<!-- Login via live Flask API -->
 <script>
-// Initialize language on page load
+// Language Initialization
 document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-page', 'login');
     const storedLang = localStorage.getItem('language') || 'en';
     updatePageLanguage(storedLang);
-    if (window.feather) {
-        feather.replace();
-    }
-    // Update input placeholders after language change
+    if (window.feather) feather.replace();
     updateInputPlaceholders(storedLang);
 });
 
@@ -86,26 +80,25 @@ function updateInputPlaceholders(lang) {
     if (passwordInput) passwordInput.placeholder = translations[lang]['enterPassword'] || 'Enter your password';
 }
 
-// Also update placeholders when language changes
 const originalUpdatePageLanguage = window.updatePageLanguage;
 window.updatePageLanguage = function(lang) {
     originalUpdatePageLanguage(lang);
     updateInputPlaceholders(lang);
 };
 
+//Login Form Handler 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Get Turnstile token
-      const captchaToken = turnstile.getResponse();
-      if (!captchaToken) {
-      alert("Please complete the CAPTCHA.");
-      return;
-}
+    const captchaToken = turnstile.getResponse();
 
+    if (!captchaToken) {
+        alert("Please complete the CAPTCHA.");
+        return;
+    }
 
     try {
         const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
@@ -116,18 +109,19 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
                 email,
                 password,
                 captcha_token: captchaToken
-              })
-
+            })
         });
 
         const data = await res.json();
 
         if (data.error) {
             alert("Error: " + data.error);
-            turnstile.reset(); // reset CAPTCHA
+            turnstile.reset();
+        } else if (data.success) {
+            window.location.href = "/learn/learn.html"; 
         } else {
-            alert("Login successful!");
-            window.location.href = "/learn/learn.html";
+            alert("Unknown response from server.");
+            turnstile.reset();
         }
     } catch (err) {
         console.error(err);
@@ -135,10 +129,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         turnstile.reset();
     }
 });
-</script>
 
-<!-- Random motivational splash -->
-<script>
+
+// Motivational Splash 
 (function () {
   const variants = [
     { text: "welcomeAboard" },
@@ -181,7 +174,6 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     if (choice.link) a.href = choice.link;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    // Translate the splash text using translations object
     const lang = localStorage.getItem('language') || 'en';
     a.textContent = translations[lang][choice.text] || choice.text;
     box.appendChild(a);
@@ -191,4 +183,3 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
 </body>
 </html>
-
