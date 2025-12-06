@@ -69,10 +69,26 @@ body {
 #email { animation-delay: 150ms; }
 #password { animation-delay: 300ms; }
 
-#google-login {
+#google-login-btn {
   animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
   animation-delay: 450ms;
 }
+
+#github-login-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 550ms;
+}
+
+#discord-login-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 650ms;
+}
+
+#smartschool-login-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 750ms;
+}
+
 
 .form-box .btn {
   animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
@@ -122,7 +138,7 @@ body {
 }
 
 /* Buttons */
-.btn, .btn-google {
+.btn, .google-login-btn, .github-login-btn, .discord-login-btn, .smartschool-login-btn {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.8rem;
@@ -149,19 +165,70 @@ body {
 }
 
 /* Google button */
-.btn-google {
+.google-login-btn {
   background: #fff;
   color: #000;
   border: 1px solid #d1d5db;
 }
 
-.btn-google img {
+.google-login-btn img {
   width: 20px;
   height: 20px;
 }
 
-.btn-google:hover {
+.google-login-btn:hover {
   background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* GitHub button */
+.github-login-btn {
+  background: #24292e;
+  color: white;
+  border: 1px solid #24292e;
+}
+
+.github-login-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.github-login-btn:hover {
+  background: #2c3136;
+  transform: translateY(-2px);
+}
+
+/* Discord button */
+.discord-login-btn {
+  background: #5865F2; /* Discord blurple */
+  color: white;
+  border: 1px solid #5865F2;
+}
+
+.discord-login-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.discord-login-btn:hover {
+  background: #4752c4;
+  transform: translateY(-2px);
+}
+
+/* Smartschool button */
+.smartschool-login-btn {
+  background: #FF520E; /* Smartschool orange */
+  color: white;
+  border: 1px solid #FF520E;
+}
+
+.smartschool-login-btn img {
+  width: 12px;
+  height: 18px;
+}
+
+.smartschool-login-btn:hover {
+  background: #e04a0d;
   transform: translateY(-2px);
 }
 

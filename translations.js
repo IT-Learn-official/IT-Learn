@@ -129,6 +129,9 @@ const translations = {
         createAccount: 'Create account',
         or: 'OR',
         continueGoogle: 'Continue with Google',
+        continueGitHub: 'Continue with GitHub',
+        continueDiscord: 'Continue with Discord',
+        continueSmartschool: 'Continue with Smartschool',
         alreadyHaveAccount: 'Already have an account?',
 
 
@@ -310,6 +313,9 @@ const translations = {
         termsAndConditions: 'Algemene voorwaarden',
         or: 'OF',
         continueGoogle: 'Doorgaan met Google',
+        continueGitHub: 'Doorgaan met GitHub',
+        continueDiscord: 'Doorgaan met Discord',
+        continueSmartschool: 'Doorgaan met Smartschool',
         createPassword: 'Maak een wachtwoord aan',
         reenterPassword: 'Voer je wachtwoord opnieuw in',
         confirmPassword: 'Bevestig wachtwoord',
@@ -528,6 +534,9 @@ const translations = {
         signupTerms: 'Geschäftsbedingungen zu',
         or: 'ODER',
         continueGoogle: 'Mit Google fortfahren',
+        continueGitHub: 'Mit GitHub fortfahren',
+        continueDiscord: 'Mit Discord fortfahren',
+        continueSmartschool: 'Mit Smartschool fortfahren',
 
         // Learn page
         profile: 'Profil',
@@ -693,6 +702,9 @@ fr: {
     termsAndConditions: 'Conditions générales',
     or: 'OU',
     continueGoogle: 'Continuer avec Google',
+    continueGitHub: 'Continuer avec GitHub',
+    continueDiscord: 'Continuer avec Discord',
+        continueSmartschool: 'Continuer avec Smartschool',
     iAgree: 'J’accepte les',
     signupTerms: 'Conditions générales',
     createAPassword: 'Créer un mot de passe',

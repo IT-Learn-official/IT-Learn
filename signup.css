@@ -92,11 +92,25 @@ body {
 #email { animation-delay: 150ms; }
 #password { animation-delay: 300ms; }
 
-#google-login {
+#google-signup-btn {
   animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
   animation-delay: 450ms;
 }
 
+#github-signup-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 550ms;
+}
+
+#discord-signup-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 650ms;
+}
+
+#smartschool-signup-btn {
+  animation: inputPop 700ms cubic-bezier(.2,.9,.3,1) both;
+  animation-delay: 750ms;
+}
 
 @keyframes inputPop {
   0%   { opacity: 0; transform: translateY(10px) scale(.995); }
@@ -111,7 +125,7 @@ body {
 }
 
 /* Buttons */
-.btn, .btn-google {
+.btn, .google-signup-btn, .github-signup-btn, .discord-signup-btn, .smartschool-signup-btn {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.8rem;
@@ -136,19 +150,67 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-google {
+.google-signup-btn {
   background: #fff;
   color: #000;
   border: 1px solid #d1d5db;
 }
 
-.btn-google img {
+.google-signup-btn img {
   width: 20px;
   height: 20px;
 }
 
-.btn-google:hover {
+.google-signup-btn:hover {
   background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.github-signup-btn {
+  background: #24292e;
+  color: white;
+  border: 1px solid #24292e;
+}
+
+.github-signup-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.github-signup-btn:hover {
+  background: #2c3136;
+  transform: translateY(-2px);
+}
+
+.discord-signup-btn {
+  background: #5865F2; /* Discord blurple */
+  color: white;
+  border: 1px solid #5865F2;
+}
+
+.discord-signup-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.discord-signup-btn:hover {
+  background: #4752c4;
+  transform: translateY(-2px);
+}
+
+.smartschool-signup-btn {
+  background: #FF520E; /* Smartschool orange */
+  color: white;
+  border: 1px solid #FF520E;
+}
+
+.smartschool-signup-btn img {
+  width: 12px;
+  height: 18px;
+}
+
+.smartschool-signup-btn:hover {
+  background: #e04a0d;
   transform: translateY(-2px);
 }
 
