@@ -212,7 +212,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 <script>
 function startGoogleAuth(mode) {
   const target = mode === 'signup' ? 'signup' : 'login';
-  window.location.href = `https://itlearn.be/auth/pkce/google.html?mode=${target}`;
+  window.location.href = `https://itlearn.be/auth/login/google.html?mode=${target}`;
 }
 
 const googleLoginBtn = document.getElementById('google-login-btn');
