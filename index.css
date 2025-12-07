@@ -427,6 +427,11 @@ body {
   color: var(--muted)
 }
 
+.discord-button {
+  margin: 5px 0;
+  max-width: 200px;
+}
+
 /* images rounded and shadow */
 .rounded {
   border-radius: 12px;
