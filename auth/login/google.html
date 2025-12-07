@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Google Login...</title>
-  <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- UMD build for browsers: script loads Supabase onto window.supabase (served locally to avoid tracking-prevention issues) -->
+  <script src="/libs/supabase.min.js" defer></script>
 </head>
 <body>
   <div>
@@ -10,20 +11,41 @@
     <p>Please wait while we redirect you to Google.</p>
   </div>
   <script>
-    const SUPABASE_URL = 'https://YOUR-REAL-PROJECT.supabase.co';
-    const SUPABASE_ANON_KEY = 'YOUR-REAL-ANON-KEY';
-    
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-      auth: { flowType: 'pkce', detectSessionInUrl: true }
-    });
+    (function initSupabaseAuth(){
+      const SUPABASE_URL = 'https://gokykzltmnsjbchynfqu.supabase.co';
+      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdva3lremx0bW5zamJjaHluZnF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MTcyNjUsImV4cCI6MjA4MDI5MzI2NX0.StKxTsjfkYcy2hWNr4bcXAFjFRCjHAvkz2idQjRF6OU';
 
-    // Start PKCE immediately
-    supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: window.location.origin + '/auth/callback/google.html'
+      function ready(){
+        return window.supabase && typeof window.supabase.createClient === 'function';
       }
-    });
+
+      function bootstrap(){
+        if (!ready()) {
+          // SDK not loaded yet, try again shortly
+          setTimeout(bootstrap, 50);
+          return;
+        }
+
+        try {
+          const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+            auth: { flowType: 'pkce', detectSessionInUrl: true }
+          });
+
+          supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: { redirectTo: 'https://effective-engine-5g54pxrq4v9vhj7r-3000.app.github.dev//auth/callback/google.html' }
+          }).catch(err => {
+            console.error('Supabase signInWithOAuth error:', err);
+            document.querySelector('p').textContent = 'Redirect failed. Check console for details.';
+          });
+        } catch (err) {
+          console.error('Error initializing Supabase SDK:', err);
+          document.querySelector('p').textContent = 'Initialization failed. Check console for details.';
+        }
+      }
+
+      bootstrap();
+    })();
   </script>
 </body>
 </html>
