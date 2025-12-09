@@ -30,6 +30,10 @@
 </head>
 
 <body>
+  <!-- Background Audio -->
+  <audio id="background-music" loop>
+    <source src="sounds/christmas-song.mp3" type="audio/mpeg">
+  </audio>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -80,6 +84,9 @@
       </div>
       <a href="login.html" class="btn btn-secondary" data-translate="login">Login</a>
       <a href="signup.html" class="btn btn-primary" data-translate="signup">Sign up</a>
+      <button class="music-toggle" id="music-toggle" aria-label="Toggle music" title="Toggle music">
+        <i data-feather="music"></i>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <i data-feather="menu"></i>
       </button>
@@ -450,6 +457,37 @@ window.addEventListener('DOMContentLoaded', updateLearnersCount);
   
       document.body.style.height = 'auto';
       document.body.style.overflowY = 'auto';
+    });
+  </script>
+
+  <!-- Background Music Control -->
+  <script>
+    const audio = document.getElementById('background-music');
+    const musicToggle = document.getElementById('music-toggle');
+    const isMuted = localStorage.getItem('musicMuted') === 'true';
+
+    audio.volume = 0.07;
+
+    // Set initial state based on localStorage
+    if (isMuted) {
+      audio.muted = true;
+      musicToggle.classList.add('muted');
+    } else {
+      audio.play().catch(err => console.log('Autoplay blocked:', err));
+    }
+
+    // Toggle music on button click
+    musicToggle.addEventListener('click', () => {
+      if (audio.muted) {
+        audio.muted = false;
+        audio.play();
+        localStorage.setItem('musicMuted', 'false');
+        musicToggle.classList.remove('muted');
+      } else {
+        audio.muted = true;
+        localStorage.setItem('musicMuted', 'true');
+        musicToggle.classList.add('muted');
+      }
     });
   </script>
 </body>

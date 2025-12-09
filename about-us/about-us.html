@@ -13,6 +13,11 @@
 
 </head>
 <body>
+    <!-- Background Audio -->
+    <audio id="background-music" loop>
+        <source src="../sounds/christmas-song.mp3" type="audio/mpeg">
+    </audio>
+
     <a class="escape" href="/index.html">&#10006</a>
 
     <header class="header fade-in">
@@ -87,5 +92,36 @@
     <script src="../translations.js"></script>
     <!-- Snow Effect -->
   <script src='https://cdn.jsdelivr.net/gh/helpercode0/jsdeploy@main/snoweffect-react/1/1.2/js/script.js'></script>
+
+    <!-- Background Music Control -->
+    <script>
+        const audio = document.getElementById('background-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const isMuted = localStorage.getItem('musicMuted') === 'true';
+
+        audio.volume = 0.07;
+
+        // Set initial state based on localStorage
+        if (isMuted) {
+            audio.muted = true;
+            musicToggle.classList.add('muted');
+        } else {
+            audio.play().catch(err => console.log('Autoplay blocked:', err));
+        }
+
+        // Toggle music on button click
+        musicToggle.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                audio.play();
+                localStorage.setItem('musicMuted', 'false');
+                musicToggle.classList.remove('muted');
+            } else {
+                audio.muted = true;
+                localStorage.setItem('musicMuted', 'true');
+                musicToggle.classList.add('muted');
+            }
+        });
+    </script>
 </body>
 </html>

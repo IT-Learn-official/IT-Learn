@@ -179,6 +179,28 @@ body {
   border-radius:8px;
 }
 
+/* Music Toggle */
+.music-toggle {
+  background: transparent;
+  border: 0;
+  color: var(--muted-2);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.music-toggle:hover {
+  color: var(--accent-500);
+}
+
+.music-toggle.muted {
+  opacity: 0.5;
+}
+
 /* HERO */
 .hero{
   padding-top: 96px;
