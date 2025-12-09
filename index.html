@@ -431,7 +431,27 @@ async function updateLearnersCount() {
 
 window.addEventListener('DOMContentLoaded', updateLearnersCount);
 
-    </script>
+</script>
+
+  <!-- Snow Effect -->
+  <script src='https://cdn.jsdelivr.net/gh/helpercode0/jsdeploy@main/snoweffect-react/1/1.2/js/script.js'></script>
+  <script>
+    window.addEventListener('load', () => {
+      const canvas = document.querySelector('canvas');
+      if (canvas) {
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.zIndex = '0';
+        canvas.style.pointerEvents = 'none';
+      }
+  
+      document.body.style.height = 'auto';
+      document.body.style.overflowY = 'auto';
+    });
+  </script>
 </body>
 
 </html>
