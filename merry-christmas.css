@@ -1,0 +1,334 @@
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #00111f, #003b5c);
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      font-family: 'Space Grotesk', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 5px;
+      background: #ff0000;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+    }
+
+    .btn:hover {
+      background: #ff4444;
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .stage {
+      width: 200px;
+      height: 260px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .santa-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* zichtbaar + animatie heen-en-weer */
+    .santa-wrapper.active {
+      opacity: 1;
+      pointer-events: auto;
+      animation: moveSideToSide 4s ease-in-out infinite;
+    }
+
+
+    @keyframes moveSideToSide {
+      0%   { transform: translateX(-50%) translateX(0); }
+      25%  { transform: translateX(-50%) translateX(-80px); }
+      50%  { transform: translateX(-50%) translateX(80px); }
+      75%  { transform: translateX(-50%) translateX(-60px); }
+      100% { transform: translateX(-50%) translateX(0); }
+    }
+
+    /* fade-out na het dansen */
+    .santa-wrapper.fade-out {
+      animation: fadeOut 0.8s forwards;
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to   { opacity: 0; }
+    }
+
+    .santa {
+      width: 120px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: bottom center;
+    }
+
+    /* dans-animatie van het lichaam zelf */
+    .santa.dancing {
+      animation: dance 0.7s infinite;
+    }
+
+    @keyframes dance {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(-8deg) translateY(-5px); }
+      50%  { transform: rotate(8deg) translateY(0); }
+      75%  { transform: rotate(-5deg) translateY(-3px); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .santa-head {
+      width: 70px;
+      height: 70px;
+      background: #ffddc1;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+    }
+
+    .hat {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 45px;
+      background: #ff0000;
+      border-radius: 40px 40px 10px 10px;
+    }
+
+    .hat::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 16px;
+      background: #fff;
+      border-radius: 20px;
+    }
+
+    .hat::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: -8px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .beard {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 50px;
+      background: #fff;
+      border-radius: 0 0 40px 40px;
+    }
+
+    .eye {
+      position: absolute;
+      top: 25px;
+      width: 8px;
+      height: 8px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    .eye.left {
+      left: 22px;
+    }
+
+    .eye.right {
+      right: 22px;
+    }
+
+    .nose {
+      position: absolute;
+      top: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: #f28b82;
+      border-radius: 50%;
+    }
+
+    .santa-body {
+      width: 90px;
+      height: 90px;
+      background: #ff0000;
+      border-radius: 45px;
+      margin-top: 5px;
+      position: relative;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+    }
+
+    .belt {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      width: 100%;
+      height: 14px;
+      background: #000;
+    }
+
+    .buckle {
+      position: absolute;
+      left: 50%;
+      top: -1px;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 12px;
+      border: 2px solid #ffd54f;
+      background: #000;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .buttons span {
+      width: 7px;
+      height: 7px;
+      background: #000;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .arm {
+      position: absolute;
+      top: 25px;
+      width: 26px;
+      height: 12px;
+      background: #ff0000;
+      border-radius: 10px;
+    }
+
+    .arm.left {
+      left: -26px;
+      transform-origin: right center;
+    }
+
+    .arm.right {
+      right: -26px;
+      transform-origin: left center;
+    }
+
+    .arm::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 16px;
+      background: #ffddc1;
+      border-radius: 50%;
+      top: -2px;
+    }
+
+    .arm.left::after {
+      left: -8px;
+    }
+
+    .arm.right::after {
+      right: -8px;
+    }
+
+    .santa.dancing .arm.left {
+      animation: armLeft 0.7s infinite;
+    }
+
+    .santa.dancing .arm.right {
+      animation: armRight 0.7s infinite;
+    }
+
+    @keyframes armLeft {
+      0%   { transform: rotate(10deg); }
+      50%  { transform: rotate(-40deg); }
+      100% { transform: rotate(10deg); }
+    }
+
+    @keyframes armRight {
+      0%   { transform: rotate(-10deg); }
+      50%  { transform: rotate(40deg); }
+      100% { transform: rotate(-10deg); }
+    }
+
+    .legs {
+      display: flex;
+      gap: 10px;
+      margin-top: -5px;
+    }
+
+    .leg {
+      width: 20px;
+      height: 40px;
+      background: #ff0000;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .boot {
+      position: absolute;
+      bottom: -10px;
+      left: -2px;
+      width: 26px;
+      height: 16px;
+      background: #000;
+      border-radius: 6px 6px 2px 2px;
+    }
+
+    .santa.dancing .leg.left {
+      animation: legLeft 0.7s infinite;
+    }
+
+    .santa.dancing .leg.right {
+      animation: legRight 0.7s infinite;
+    }
+
+    @keyframes legLeft {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes legRight {
+      0%   { transform: translateY(-6px); }
+      50%  { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
