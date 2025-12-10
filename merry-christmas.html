@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dancing Santa</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="merry-christmas.css">
+</head>
+<body>
+
+  <h1>Merry Christmas!</h1>
+  <p>Thanks for using IT Learn this year! We wish you a fun and inspiring 2026!</p>
+
+  <div class="stage">
+    <div class="santa-wrapper" id="santaWrapper">
+      <div class="santa" id="santa">
+        <div class="santa-head">
+          <div class="hat"></div>
+          <div class="beard"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="nose"></div>
+        </div>
+
+        <div class="santa-body">
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+          <div class="belt">
+            <div class="buckle"></div>
+          </div>
+          <div class="buttons">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="legs">
+          <div class="leg left">
+            <div class="boot"></div>
+          </div>
+          <div class="leg right">
+            <div class="boot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const santa = document.getElementById('santa');
+    const santaWrapper = document.getElementById('santaWrapper');
+
+    // Start automatic dancing immediately when page loads
+    function startEndlessDance() {
+      santaWrapper.classList.add('active');
+      santaWrapper.style.opacity = '1';
+      santa.classList.add('dancing');
+    }
+
+    // Start dancing automatically on page load
+    window.addEventListener('load', startEndlessDance);
+  </script>
+
+  <!-- Snow Effect -->
+  <script src="https://cdn.jsdelivr.net/gh/helpercode0/jsdeploy@main/snoweffect-react/1/1.2/js/script.js"></script>
+
+</body>
+</html>
