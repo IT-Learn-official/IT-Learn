@@ -429,7 +429,9 @@ async function updateLearnersCount() {
 }
 
 window.addEventListener('DOMContentLoaded', updateLearnersCount);
-
-    </script>
+  // Send a test metric before calling undefined function
+  Sentry.metrics.count('test_counter', 1);
+  myUndefinedFunction();
+</script>
 </body>
 </html>
