@@ -31,4 +31,4 @@ Quests, challenges and bonus XP
 Improved design and animations
 
 💬 Join Us!
-Have feedback or ideas? Come chat with us on our Discord! https://discord.gg/V7eRBMaTtK
+Have feedback or ideas? Come chat with us on our Discord! https://discord.itlearn.be
