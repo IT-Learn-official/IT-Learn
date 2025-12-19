@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_7",
   "kind": "assessment",
-  "title": "Chapter 7 – Numbers, Math Library, and Randomness Checkpoint",
+  "title": "Chapter 7 - Numbers, Math Library, and Randomness Checkpoint",
   "description": "Quick concept-check for chapter 7. Test your understanding of exponents, the math module, rounding, and randomness.",
   "questions": [
     {
@@ -18,7 +18,7 @@
         "overview": "The ** operator is used for exponents (powers) in Python.",
         "byOptionId": {
           "a": "In Python, ^ is bitwise XOR, not exponent.",
-          "b": "Correct – 2 ** 5 means 2 to the power of 5.",
+          "b": "Correct, 2 ** 5 means 2 to the power of 5.",
           "c": "There is no ^^ operator in Python.",
           "d": "pow(2, 5) would work, but pow(2, 5, 0) has a different meaning and would raise an error."
         }
@@ -38,7 +38,7 @@
         "overview": "Functions in the math module are accessed with math.function_name(...).",
         "byOptionId": {
           "a": "Without 'math.', Python does not know what sqrt is.",
-          "b": "Correct – math.sqrt(16) returns 4.0.",
+          "b": "Correct, math.sqrt(16) returns 4.0.",
           "c": "There is no function named square_root in the math module.",
           "d": "This would try to overwrite math.sqrt instead of calling it."
         }
@@ -49,15 +49,31 @@
       "type": "single-choice",
       "prompt": "What are the results of `math.floor(3.7)` and `math.ceil(3.7)`?",
       "options": [
-        { "id": "a", "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4", "isCorrect": true },
-        { "id": "b", "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3", "isCorrect": false },
-        { "id": "c", "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7", "isCorrect": false },
-        { "id": "d", "label": "math.floor(3.7) = 4, math.ceil(3.7) = 4", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 4",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "floor always goes down, ceil always goes up to the nearest whole number.",
         "byOptionId": {
-          "a": "Correct – floor(3.7) is 3 and ceil(3.7) is 4.",
+          "a": "Correct, floor(3.7) is 3 and ceil(3.7) is 4.",
           "b": "This swaps the meanings of floor and ceil.",
           "c": "Floor and ceil always return whole numbers, not the original decimal.",
           "d": "Both going to 4 would not be correct for floor."
@@ -78,8 +94,8 @@
         "overview": "round(x) returns the nearest whole number.",
         "byOptionId": {
           "a": "2.6 is closer to 3 than to 2, so rounding to 2 would be wrong.",
-          "b": "Same reason as '2' – 2.6 is closer to 3.",
-          "c": "Correct – round(2.6) is 3.",
+          "b": "Same reason as '2' - 2.6 is closer to 3.",
+          "c": "Correct, round(2.6) is 3.",
           "d": "Conceptually close, but in this quiz we use plain integers for whole numbers."
         }
       }
@@ -97,7 +113,7 @@
       "explanations": {
         "overview": "randint(a, b) returns an integer between a and b, including both.",
         "byOptionId": {
-          "a": "Correct – random.randint(1, 10) includes both 1 and 10.",
+          "a": "Correct, random.randint(1, 10) includes both 1 and 10.",
           "b": "This would give numbers from 0 to 9, not 1 to 10.",
           "c": "random.random() does not take arguments and returns a float between 0 and 1.",
           "d": "random.choice() expects a sequence (like a list), not two numbers."
@@ -106,4 +122,3 @@
     }
   ]
 }
-

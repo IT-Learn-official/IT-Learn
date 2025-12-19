@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_12",
   "kind": "practice",
-  "title": "Chapter 12 – Practice: Loops and Iteration Patterns",
+  "title": "Chapter 12 - Practice: Loops and Iteration Patterns",
   "description": "Hands-on missions for chapter 12 using for and while loops, range(), and simple iteration patterns.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

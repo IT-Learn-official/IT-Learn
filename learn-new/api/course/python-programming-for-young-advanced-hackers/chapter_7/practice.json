@@ -1,12 +1,12 @@
 {
   "chapterId": "chapter_7",
   "kind": "practice",
-  "title": "Chapter 7 – Practice: Numbers, Math Library, and Randomness",
+  "title": "Chapter 7 - Practice: Numbers, Math Library, and Randomness",
   "description": "Hands-on missions for chapter 7 using exponents, the math module, rounding helpers, and random numbers for tiny console simulations.",
   "practices": [
     {
       "id": "p-super-calculator-powers-roots",
-      "title": "Mission: Super Calculator – Powers and Roots",
+      "title": "Mission: Super Calculator - Powers and Roots",
       "assignmentResourceUid": "assignments/super_calculator_powers_roots.md",
       "templates": [
         {
@@ -21,7 +21,7 @@
     },
     {
       "id": "p-rounding-gym",
-      "title": "Mission: Rounding Gym – Round, Floor, and Ceil",
+      "title": "Mission: Rounding Gym - Round, Floor, and Ceil",
       "assignmentResourceUid": "assignments/rounding_gym.md",
       "templates": [
         {
@@ -36,7 +36,7 @@
     },
     {
       "id": "p-dice-sum-simulator",
-      "title": "Mission: Dice Roller – Sum of Many Rolls",
+      "title": "Mission: Dice Roller - Sum of Many Rolls",
       "assignmentResourceUid": "assignments/dice_sum_simulator.md",
       "templates": [
         {
@@ -51,7 +51,7 @@
     },
     {
       "id": "p-guess-the-number-distance",
-      "title": "Mission: Guess the Number – Distance Hint",
+      "title": "Mission: Guess the Number - Distance Hint",
       "assignmentResourceUid": "assignments/guess_the_number_distance.md",
       "templates": [
         {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

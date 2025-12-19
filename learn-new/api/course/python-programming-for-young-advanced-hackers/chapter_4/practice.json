@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_4",
   "kind": "practice",
-  "title": "Chapter 4 – Practice: Data Types and Conversion Missions",
+  "title": "Chapter 4 - Practice: Data Types and Conversion Missions",
   "description": "Hands-on missions for chapter 4 using ints, floats, strings, booleans, type(), and safe conversions between them.",
   "practices": [
     {
@@ -101,4 +101,3 @@
     }
   ]
 }
-

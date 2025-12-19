@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_13",
   "kind": "practice",
-  "title": "Chapter 13 – Practice: Functions, Parameters, and Return Values",
+  "title": "Chapter 13 - Practice: Functions, Parameters, and Return Values",
   "description": "Hands-on missions for chapter 13 defining and calling functions, using parameters (including defaults), and returning values.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

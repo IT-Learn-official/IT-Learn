@@ -3,6 +3,7 @@
 Welcome back, hacker. So far you’ve used numbers for basic stuff: scores, counters, maybe a few ports. Now we’re going to crank that up.
 
 In this chapter, you’ll turn Python into a **smart calculator** that can:
+
 - work with precise measurements,
 - model explosions in damage or data,
 - and add just enough **randomness** to feel like a real game or real‑world system.
@@ -38,6 +39,7 @@ These tools power everything from your TikTok “For You” randomness to matchm
 A true hacker knows exactly **what kind of number** they’re working with.
 
 - **Integers (`int`)**: Whole numbers.
+
   - examples: `-3`, `0`, `42`
   - good for: lives, login attempts, level, number of missed calls.
 
@@ -229,6 +231,7 @@ print("You were", distance, "away from the secret number!")
 ```
 
 Could easily be used in a guessing game to give hints:
+
 - “You’re very close!”
 - “You’re far away…”
 
@@ -274,6 +277,7 @@ print(response)
 ```
 
 You could use this to:
+
 - pick a random punishment from your teacher (joking… mostly),
 - choose a random friend from a list to invite to a game,
 - simulate random enemy behaviour.
@@ -325,7 +329,7 @@ These may feel small, but they’re made from the **exact same ingredients** rea
 ## Summary
 
 - **`int` vs `float`**: integers for counts, floats for precise values.
-- **`**`**: exponent operator for modelling fast growth.
+- **`**`\*\*: exponent operator for modelling fast growth.
 - **`math` module**: extra tools like `sqrt()` and `pi`.
 - **Rounding**:
   - `round()` – normal rounding,

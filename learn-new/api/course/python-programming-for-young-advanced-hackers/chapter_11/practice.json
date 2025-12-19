@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_11",
   "kind": "practice",
-  "title": "Chapter 11 – Practice: Conditional Logic",
+  "title": "Chapter 11 - Practice: Conditional Logic",
   "description": "Hands-on missions for chapter 11 using if, elif, else, comparisons, and logical operators to make decisions.",
   "practices": [
     {
@@ -46,7 +46,7 @@
         }
       ],
       "solution": {
-        "notes": "Learner should use if/elif/else to map a numeric score to letter grades A–F based on score ranges."
+        "notes": "Learner should use if/elif/else to map a numeric score to letter grades A-F based on score ranges."
       }
     },
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

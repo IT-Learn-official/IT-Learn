@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_10",
   "kind": "assessment",
-  "title": "Chapter 10 – Sets and Basic Data Operations Checkpoint",
+  "title": "Chapter 10 - Sets and Basic Data Operations Checkpoint",
   "description": "Quick concept-check for chapter 10. Test your understanding of sets, uniqueness, union, intersection, and how sets compare to lists.",
   "questions": [
     {
@@ -9,18 +9,34 @@
       "type": "single-choice",
       "prompt": "What is a set in Python?",
       "options": [
-        { "id": "a", "label": "A list that is always sorted.", "isCorrect": false },
-        { "id": "b", "label": "A collection of unique elements with no guaranteed order.", "isCorrect": true },
-        { "id": "c", "label": "A string with only numbers.", "isCorrect": false },
-        { "id": "d", "label": "A dictionary with only one key.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "A list that is always sorted.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A collection of unique elements with no guaranteed order.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A string with only numbers.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A dictionary with only one key.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Sets store unique elements and do not keep a fixed order.",
         "byOptionId": {
           "a": "Lists can be sorted, but that is not what sets are.",
-          "b": "Correct – this is the main idea of a set.",
+          "b": "Correct, this is the main idea of a set.",
           "c": "Strings are text, not sets.",
-          "d": "Dictionaries store key–value pairs, which is different from sets."
+          "d": "Dictionaries store key-value pairs, which is different from sets."
         }
       }
     },
@@ -29,17 +45,33 @@
       "type": "single-choice",
       "prompt": "Which line correctly creates a set of file names?",
       "options": [
-        { "id": "a", "label": "files = [\"log.txt\", \"data.txt\"]", "isCorrect": false },
-        { "id": "b", "label": "files = (\"log.txt\", \"data.txt\")", "isCorrect": false },
-        { "id": "c", "label": "files = {\"log.txt\", \"data.txt\"}", "isCorrect": true },
-        { "id": "d", "label": "files = \"log.txt, data.txt\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Sets use curly braces {} with comma-separated elements.",
         "byOptionId": {
           "a": "This is a list, not a set.",
           "b": "This is a tuple, not a set.",
-          "c": "Correct – this creates a set of two file names.",
+          "c": "Correct, this creates a set of two file names.",
           "d": "This is one long string, not a set."
         }
       }
@@ -89,10 +121,26 @@
       "type": "single-choice",
       "prompt": "Which statement about sets and lists is true?",
       "options": [
-        { "id": "a", "label": "Lists remove duplicates automatically, sets do not.", "isCorrect": false },
-        { "id": "b", "label": "Sets keep the order of elements, lists do not.", "isCorrect": false },
-        { "id": "c", "label": "Both sets and lists allow duplicate elements.", "isCorrect": false },
-        { "id": "d", "label": "Sets keep only unique elements, lists can have duplicates.", "isCorrect": true }
+        {
+          "id": "a",
+          "label": "Lists remove duplicates automatically, sets do not.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sets keep the order of elements, lists do not.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Both sets and lists allow duplicate elements.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sets keep only unique elements, lists can have duplicates.",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Lists and sets both store collections, but handle duplicates differently.",
@@ -106,4 +154,3 @@
     }
   ]
 }
-

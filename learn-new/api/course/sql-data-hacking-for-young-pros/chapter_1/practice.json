@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter-1",
   "kind": "practice",
-  "title": "Chapter 1 – Practice: Your First SQL Queries",
+  "title": "Chapter 1 - Practice: Your First SQL Queries",
   "description": "Hands-on missions for chapter 1 to master basic SELECT queries and SQL fundamentals.",
   "practices": [
     {
@@ -174,4 +174,3 @@
     }
   ]
 }
-

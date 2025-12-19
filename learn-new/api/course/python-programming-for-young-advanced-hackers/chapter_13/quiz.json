@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_13",
   "kind": "assessment",
-  "title": "Chapter 13 – Functions, Parameters, and Return Values Checkpoint",
+  "title": "Chapter 13 - Functions, Parameters, and Return Values Checkpoint",
   "description": "Quick concept-check for chapter 13. Test your understanding of function definitions, parameters, default values, and return.",
   "questions": [
     {
@@ -9,15 +9,23 @@
       "type": "single-choice",
       "prompt": "What is a function in Python?",
       "options": [
-        { "id": "a", "label": "A way to repeat code by giving it a name and calling it.", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "A way to repeat code by giving it a name and calling it.",
+          "isCorrect": true
+        },
         { "id": "b", "label": "A special kind of list.", "isCorrect": false },
         { "id": "c", "label": "A built-in error message.", "isCorrect": false },
-        { "id": "d", "label": "A comment that Python ignores.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A comment that Python ignores.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Functions are named blocks of code you can reuse by calling them.",
         "byOptionId": {
-          "a": "Correct – functions let you group code and call it by name.",
+          "a": "Correct, functions let you group code and call it by name.",
           "b": "Lists store data; functions are actions.",
           "c": "Errors are separate from functions.",
           "d": "Comments start with # and are not functions."
@@ -38,7 +46,7 @@
         "overview": "Function definitions always start with def.",
         "byOptionId": {
           "a": "func is not a Python keyword.",
-          "b": "Correct – def starts a function definition.",
+          "b": "Correct, def starts a function definition.",
           "c": "function is not a keyword in Python.",
           "d": "call is not a keyword either."
         }
@@ -50,7 +58,11 @@
       "prompt": "In `def greet(name):`, what is `name`?",
       "options": [
         { "id": "a", "label": "A return value.", "isCorrect": false },
-        { "id": "b", "label": "A parameter (an input to the function).", "isCorrect": true },
+        {
+          "id": "b",
+          "label": "A parameter (an input to the function).",
+          "isCorrect": true
+        },
         { "id": "c", "label": "An error.", "isCorrect": false },
         { "id": "d", "label": "A list item.", "isCorrect": false }
       ],
@@ -58,7 +70,7 @@
         "overview": "Parameters are variables listed in the function definition header.",
         "byOptionId": {
           "a": "Return values come from the return statement, not from the header.",
-          "b": "Correct – name is the parameter the function expects.",
+          "b": "Correct, name is the parameter the function expects.",
           "c": "There is nothing wrong with this code.",
           "d": "List items live inside lists, not in function headers."
         }
@@ -69,8 +81,16 @@
       "type": "single-choice",
       "prompt": "What does the return statement do in a function?",
       "options": [
-        { "id": "a", "label": "It prints text to the screen.", "isCorrect": false },
-        { "id": "b", "label": "It stops the function and sends a value back.", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "It prints text to the screen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "It stops the function and sends a value back.",
+          "isCorrect": true
+        },
         { "id": "c", "label": "It starts a new loop.", "isCorrect": false },
         { "id": "d", "label": "It deletes a variable.", "isCorrect": false }
       ],
@@ -78,7 +98,7 @@
         "overview": "return exits the function and hands a value back to the caller.",
         "byOptionId": {
           "a": "print shows a value, but does not return it.",
-          "b": "Correct – this is exactly what return does.",
+          "b": "Correct, this is exactly what return does.",
           "c": "Loops use for or while, not return.",
           "d": "return does not delete variables."
         }
@@ -89,10 +109,22 @@
       "type": "single-choice",
       "prompt": "In `def greet(name, greeting='Hi')`, what happens if you call `greet('Alex')`?",
       "options": [
-        { "id": "a", "label": "Error, because greeting is missing.", "isCorrect": false },
-        { "id": "b", "label": "greeting will automatically be 'Hi'.", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Error, because greeting is missing.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "greeting will automatically be 'Hi'.",
+          "isCorrect": true
+        },
         { "id": "c", "label": "greeting will be None.", "isCorrect": false },
-        { "id": "d", "label": "Python ignores the second parameter.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Python ignores the second parameter.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Default parameter values are used when you don't pass that argument.",
@@ -106,4 +138,3 @@
     }
   ]
 }
-

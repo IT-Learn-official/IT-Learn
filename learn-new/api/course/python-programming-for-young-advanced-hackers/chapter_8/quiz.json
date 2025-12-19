@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_8",
   "kind": "assessment",
-  "title": "Chapter 8 – Working with Text: Strings Checkpoint",
+  "title": "Chapter 8 - Working with Text: Strings Checkpoint",
   "description": "Quick concept-check for chapter 8. Test your understanding of strings, indexing, slicing, methods, and f-strings.",
   "questions": [
     {
@@ -9,16 +9,28 @@
       "type": "single-choice",
       "prompt": "In Python, what is a string?",
       "options": [
-        { "id": "a", "label": "A number you can add and subtract.", "isCorrect": false },
-        { "id": "b", "label": "Text inside quotes, like \"hello\".", "isCorrect": true },
-        { "id": "c", "label": "A secret code Python cannot read.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "A number you can add and subtract.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Text inside quotes, like \"hello\".",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A secret code Python cannot read.",
+          "isCorrect": false
+        },
         { "id": "d", "label": "A list of only numbers.", "isCorrect": false }
       ],
       "explanations": {
         "overview": "A string (str) represents text characters written inside quotes.",
         "byOptionId": {
           "a": "Numbers are values without quotes; strings are text inside quotes.",
-          "b": "Correct – strings are pieces of text inside quotation marks.",
+          "b": "Correct, strings are pieces of text inside quotation marks.",
           "c": "Python understands strings very well.",
           "d": "Lists can store many types, but that's different from strings."
         }
@@ -39,7 +51,7 @@
         "byOptionId": {
           "a": "Index 0 is 'H'. Index 1 is the next character.",
           "b": "This would be a slice, not a single index.",
-          "c": "Correct – 'A' is the character at index 1.",
+          "c": "Correct, 'A' is the character at index 1.",
           "d": "'K' is the last character, index 3."
         }
       }
@@ -59,7 +71,7 @@
         "byOptionId": {
           "a": "That would be word[0:4].",
           "b": "That's just the first character, not 0:3.",
-          "c": "Correct – positions 0, 1, and 2 spell 'PYT'.",
+          "c": "Correct, positions 0, 1, and 2 spell 'PYT'.",
           "d": "Those are the last three letters, from a different slice."
         }
       }
@@ -79,7 +91,7 @@
         "byOptionId": {
           "a": "That is the original string, not uppercased.",
           "b": "Only the first letter capitalized would not be full upper case.",
-          "c": "Correct – all letters become uppercase.",
+          "c": "Correct, all letters become uppercase.",
           "d": "This is just the word 'upper', not the result of the method."
         }
       }
@@ -91,14 +103,18 @@
       "options": [
         { "id": "a", "label": "print(\"Hello, {name}!\")", "isCorrect": false },
         { "id": "b", "label": "print(f\"Hello, {name}!\")", "isCorrect": true },
-        { "id": "c", "label": "print(\"Hello, \" + name + \"!\")", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "print(\"Hello, \" + name + \"!\")",
+          "isCorrect": false
+        },
         { "id": "d", "label": "print(f'Hello, \"name\"!')", "isCorrect": false }
       ],
       "explanations": {
         "overview": "F-strings start with f and insert variable values into the text.",
         "byOptionId": {
           "a": "Without the f, {name} will not be replaced.",
-          "b": "Correct – this is the proper f-string syntax.",
+          "b": "Correct, this is the proper f-string syntax.",
           "c": "This works, but it is not an f-string.",
           "d": "Here \"name\" is inside quotes, so it is just text, not the variable."
         }

@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_8",
   "kind": "practice",
-  "title": "Chapter 8 – Practice: Working with Text – Strings",
+  "title": "Chapter 8 - Practice: Working with Text - Strings",
   "description": "Hands-on missions for chapter 8 using string indexing, slicing, common methods, and f-strings.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

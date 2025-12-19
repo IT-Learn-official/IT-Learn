@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter-1",
   "kind": "assessment",
-  "title": "Chapter 1 – Python Hacker Checkpoint",
+  "title": "Chapter 1 - Python Hacker Checkpoint",
   "description": "Quick concept-check for chapter 1. Use this to see what your brain picked up about Python, code vs programming, and REPL vs script mode.",
   "questions": [
     {
@@ -34,7 +34,7 @@
         "overview": "A programming language is how you give precise instructions to a computer.",
         "byOptionId": {
           "human-language": "Human languages are for talking to people, not directly to computers.",
-          "computer-instructions": "Correct – it's the language you use to write code the computer understands.",
+          "computer-instructions": "Correct, it's the language you use to write code the computer understands.",
           "hardware": "Hardware is the physical stuff (keyboard, mouse, CPU), not the language.",
           "os": "An operating system is software that manages hardware and apps, not the language you write programs in."
         }
@@ -47,7 +47,7 @@
       "options": [
         {
           "id": "no-difference",
-          "label": "There is no real difference – people just use different words.",
+          "label": "There is no real difference, people just use different words.",
           "isCorrect": false
         },
         {
@@ -71,7 +71,7 @@
         "byOptionId": {
           "no-difference": "There is a difference! Programming is the whole process, not just typing.",
           "reversed-definition": "This flips it: planning is programming, not code.",
-          "correct-definition": "Correct – think of programming as the plan plus the code together.",
+          "correct-definition": "Correct, think of programming as the plan plus the code together.",
           "experts-only": "Anyone can learn programming; it's not just for experts."
         }
       }
@@ -106,7 +106,7 @@
         "overview": "C++ is a compiled language: code is translated into machine code before it runs.",
         "byOptionId": {
           "python": "Python is usually interpreted, not compiled like this.",
-          "cpp": "Correct – C++ programs are normally compiled into executables.",
+          "cpp": "Correct, C++ programs are normally compiled into executables.",
           "javascript": "JavaScript is typically interpreted by the browser.",
           "html": "HTML is a markup language for structuring web pages, not a compiled programming language."
         }
@@ -141,7 +141,7 @@
       "explanations": {
         "overview": "REPL describes the cycle of interactive mode: read your input, evaluate it, print the result, and loop.",
         "byOptionId": {
-          "read-eval-print-loop": "Correct – this is the full name of REPL.",
+          "read-eval-print-loop": "Correct, this is the full name of REPL.",
           "run-edit-print-load": "Close-sounding, but not the official meaning.",
           "read-execute-print-learn": "Nice idea, but not what REPL stands for.",
           "repeat-eval-print-loop": "Has some of the right words, but the first step is READ, not REPEAT."
@@ -215,7 +215,7 @@
         "byOptionId": {
           "snake": "There is a snake named python, but the language name comes from the TV show.",
           "pet": "Python is not named after a pet.",
-          "monty-python": "Correct – the creator wanted a fun name.",
+          "monty-python": "Correct, the creator wanted a fun name.",
           "acronym": "Python is not an acronym; it doesn't secretly stand for something."
         }
       }
@@ -251,7 +251,7 @@
         "byOptionId": {
           "txt": ".txt is for plain text files; Python code won't be recognized as a script there.",
           "exe": ".exe is for compiled executables, not source code.",
-          "py": "Correct – .py is the standard extension for Python source files.",
+          "py": "Correct, .py is the standard extension for Python source files.",
           "java": ".java is for Java source files, not Python."
         }
       }
@@ -287,7 +287,7 @@
         "byOptionId": {
           "hello-world-no-punct": "The output includes a comma and an exclamation mark: `Hello, World!`.",
           "prints-code": "That's the code itself, not what appears when it runs.",
-          "hello-world-with-punct": "Correct – `print` sends this text to the screen.",
+          "hello-world-with-punct": "Correct, `print` sends this text to the screen.",
           "error": "There is no error here; this is valid Python."
         }
       }
@@ -321,7 +321,7 @@
       "explanations": {
         "overview": "The REPL is perfect for quick experiments like this.",
         "byOptionId": {
-          "repl": "Correct – interactive mode lets you try `10 / 3` in one line and instantly see the result.",
+          "repl": "Correct, interactive mode lets you try `10 / 3` in one line and instantly see the result.",
           "script": "You *could* do this in a script, but it's slower for tiny tests you don't need to save.",
           "text-editor": "Just typing it in a text file doesn't make Python actually run it.",
           "spreadsheet": "Python code belongs in Python, not in a spreadsheet cell."
@@ -357,7 +357,7 @@
       "explanations": {
         "overview": "Strings in Python need matching opening and closing quotes.",
         "byOptionId": {
-          "missing-quote": "Correct – the closing quote after the `!` is missing.",
+          "missing-quote": "Correct, the closing quote after the `!` is missing.",
           "missing-comma": "You don't put a comma after `print` in this version of Python.",
           "missing-space": "Spaces inside the string are fine; that wouldn't crash the program.",
           "wrong-word": "`World` is just text inside the string; Python doesn't care what human words you use there."
@@ -394,7 +394,7 @@
         "overview": "Programming includes planning what the program should do before or while you write code.",
         "byOptionId": {
           "write-print-line": "That's writing actual code, not planning steps.",
-          "plan-steps": "Correct – creating the step-by-step plan is programming.",
+          "plan-steps": "Correct, creating the step-by-step plan is programming.",
           "save-file": "Saving the file is important, but it's not really programming or code by itself.",
           "run-program": "Running the program tests your code, but it's not the planning part."
         }

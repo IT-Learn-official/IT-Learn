@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_3",
   "kind": "practice",
-  "title": "Chapter 3 – Practice: Function Superpowers",
+  "title": "Chapter 3 - Practice: Function Superpowers",
   "description": "Practice calling built-in functions like len, abs, round, and type, and learn to use their results in small scripts.",
   "practices": [
     {

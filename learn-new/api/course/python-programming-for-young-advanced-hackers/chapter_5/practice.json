@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_5",
   "kind": "practice",
-  "title": "Chapter 5 – Practice: Execution Flow and Debugging",
+  "title": "Chapter 5 - Practice: Execution Flow and Debugging",
   "description": "Hands-on missions for chapter 5: trace variables, fix broken code, and use print-debugging to understand program flow.",
   "practices": [
     {
@@ -9,7 +9,11 @@
       "title": "Mission: Trace the Score",
       "assignmentResourceUid": "assignments/trace_the_score.md",
       "templates": [
-        { "path": "attachments/trace_the_score.py", "language": "python", "role": "starter" }
+        {
+          "path": "attachments/trace_the_score.py",
+          "language": "python",
+          "role": "starter"
+        }
       ],
       "solution": {
         "expectedStdout": "Score: 0\nScore: 10\nScore: 15\n",
@@ -21,7 +25,11 @@
       "title": "Mission: Fix the Lives Bug",
       "assignmentResourceUid": "assignments/fix_the_lives_bug.md",
       "templates": [
-        { "path": "attachments/fix_the_lives_bug.py", "language": "python", "role": "starter" }
+        {
+          "path": "attachments/fix_the_lives_bug.py",
+          "language": "python",
+          "role": "starter"
+        }
       ],
       "solution": {
         "expectedStdout": "Lives: 3\nLives: 2\nLives: 1\n",
@@ -33,7 +41,11 @@
       "title": "Mission: Debug the Coins",
       "assignmentResourceUid": "assignments/debug_the_coins.md",
       "templates": [
-        { "path": "attachments/debug_the_coins.py", "language": "python", "role": "starter" }
+        {
+          "path": "attachments/debug_the_coins.py",
+          "language": "python",
+          "role": "starter"
+        }
       ],
       "solution": {
         "expectedStdout": "Start coins: 5\nAfter buying a shield: 3\nAfter finding treasure: 8\n",
@@ -45,7 +57,11 @@
       "title": "Mission: Read the Error",
       "assignmentResourceUid": "assignments/read_the_error.md",
       "templates": [
-        { "path": "attachments/read_the_error.py", "language": "python", "role": "starter" }
+        {
+          "path": "attachments/read_the_error.py",
+          "language": "python",
+          "role": "starter"
+        }
       ],
       "solution": {
         "notes": "Learner should read the error message, fix the typo in the variable name, and get the script to run without errors."
@@ -53,4 +69,3 @@
     }
   ]
 }
-

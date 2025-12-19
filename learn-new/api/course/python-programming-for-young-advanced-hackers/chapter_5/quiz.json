@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_5",
   "kind": "assessment",
-  "title": "Chapter 5 – Execution Flow and Debugging Checkpoint",
+  "title": "Chapter 5 - Execution Flow and Debugging Checkpoint",
   "description": "Quick concept-check for chapter 5. Test your understanding of execution flow, tracing, and debugging.",
   "questions": [
     {
@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "What does 'execution flow' mean in Python?",
       "options": [
-        { "id": "a", "label": "The order in which Python runs your code, line by line.", "isCorrect": true },
-        { "id": "b", "label": "The speed at which your computer runs.", "isCorrect": false },
-        { "id": "c", "label": "The way Python prints text.", "isCorrect": false },
-        { "id": "d", "label": "A type of variable in Python.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "The order in which Python runs your code, line by line.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "The speed at which your computer runs.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The way Python prints text.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A type of variable in Python.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Execution flow is the order Python runs your code, usually from top to bottom.",
@@ -29,10 +45,22 @@
       "type": "single-choice",
       "prompt": "What does it mean to 'trace' a variable in your code?",
       "options": [
-        { "id": "a", "label": "Follow how its value changes as the program runs.", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Follow how its value changes as the program runs.",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Give it a new name.", "isCorrect": false },
-        { "id": "c", "label": "Delete it from your program.", "isCorrect": false },
-        { "id": "d", "label": "Make it print in all capital letters.", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Delete it from your program.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Make it print in all capital letters.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Tracing means following how a variable's value changes as your code runs.",
@@ -49,10 +77,22 @@
       "type": "single-choice",
       "prompt": "Why do programmers use print statements when debugging?",
       "options": [
-        { "id": "a", "label": "To see what is happening inside the program as it runs.", "isCorrect": true },
-        { "id": "b", "label": "To make the program run faster.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "To see what is happening inside the program as it runs.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To make the program run faster.",
+          "isCorrect": false
+        },
         { "id": "c", "label": "To delete variables.", "isCorrect": false },
-        { "id": "d", "label": "To change the color of the text.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "To change the color of the text.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Print-debugging helps you see the values of variables and the flow of your program.",
@@ -69,10 +109,26 @@
       "type": "single-choice",
       "prompt": "You see this error: `NameError: name 'scroe' is not defined`. What should you do?",
       "options": [
-        { "id": "a", "label": "Check for typos in your variable names.", "isCorrect": true },
-        { "id": "b", "label": "Delete all your code and start over.", "isCorrect": false },
-        { "id": "c", "label": "Ignore the error and keep running the code.", "isCorrect": false },
-        { "id": "d", "label": "Change your computer's language settings.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Check for typos in your variable names.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Delete all your code and start over.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ignore the error and keep running the code.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Change your computer's language settings.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "A NameError usually means you misspelled a variable name.",
@@ -86,4 +142,3 @@
     }
   ]
 }
-

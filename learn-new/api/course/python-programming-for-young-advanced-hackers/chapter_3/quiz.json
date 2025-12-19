@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter-3",
   "kind": "assessment",
-  "title": "Chapter 3 – Function Basics & Built-in Helpers Quiz",
+  "title": "Chapter 3 - Function Basics & Built-in Helpers Quiz",
   "description": "Check your understanding of functions, arguments, return values, and common built-in helpers like len, abs, round, and type.",
   "questions": [
     {
@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "In Python, what is a function like len or round?",
       "options": [
-        { "id": "a", "label": "A reusable helper that does a specific job when you call it.", "isCorrect": true },
-        { "id": "b", "label": "A special kind of comment that Python ignores.", "isCorrect": false },
-        { "id": "c", "label": "A variable that stores numbers only.", "isCorrect": false },
-        { "id": "d", "label": "A window that pops up on the screen.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "A reusable helper that does a specific job when you call it.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "A special kind of comment that Python ignores.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A variable that stores numbers only.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A window that pops up on the screen.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Functions are mini-programs you can reuse: you call them with parentheses, give them arguments, and often they return a value.",
@@ -29,10 +45,22 @@
       "type": "single-choice",
       "prompt": "What do the parentheses do in this line of code?\\n\\n```python\\nprint(\"Hello\")\\n```",
       "options": [
-        { "id": "a", "label": "They call the function print and hold its arguments.", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "They call the function print and hold its arguments.",
+          "isCorrect": true
+        },
         { "id": "b", "label": "They create a list.", "isCorrect": false },
-        { "id": "c", "label": "They are just decoration; they do nothing.", "isCorrect": false },
-        { "id": "d", "label": "They tell Python to loop forever.", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "They are just decoration; they do nothing.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "They tell Python to loop forever.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "When you see name(...), Python calls the function with the values inside the parentheses as arguments.",
@@ -49,10 +77,26 @@
       "type": "single-choice",
       "prompt": "In the code `round(3.14159, 2)`, what does the `2` mean?",
       "options": [
-        { "id": "a", "label": "It tells round to keep 2 decimal places.", "isCorrect": true },
-        { "id": "b", "label": "It doubles the number before rounding.", "isCorrect": false },
-        { "id": "c", "label": "It makes the function run 2 times.", "isCorrect": false },
-        { "id": "d", "label": "It has no meaning; it is just random.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "It tells round to keep 2 decimal places.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "It doubles the number before rounding.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It makes the function run 2 times.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It has no meaning; it is just random.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The second argument to round controls how many decimal places are kept.",
@@ -72,7 +116,11 @@
         { "id": "a", "label": "6", "isCorrect": true },
         { "id": "b", "label": "7", "isCorrect": false },
         { "id": "c", "label": "\"wizard\"", "isCorrect": false },
-        { "id": "d", "label": "Nothing, length will be empty.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Nothing, length will be empty.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "len(\"wizard\") counts how many characters are in the string and returns that number.",
@@ -112,7 +160,11 @@
         { "id": "a", "label": "10", "isCorrect": true },
         { "id": "b", "label": "-10", "isCorrect": false },
         { "id": "c", "label": "0", "isCorrect": false },
-        { "id": "d", "label": "It prints -10 but returns nothing.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "It prints -10 but returns nothing.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "abs gives the distance from zero, which is always non-negative.",
@@ -149,10 +201,26 @@
       "type": "single-choice",
       "prompt": "Why might a programmer write `print(type(coins))` in their code?",
       "options": [
-        { "id": "a", "label": "To check what kind of value coins is (like int or str).", "isCorrect": true },
-        { "id": "b", "label": "To change coins into a different value.", "isCorrect": false },
-        { "id": "c", "label": "To delete the variable coins.", "isCorrect": false },
-        { "id": "d", "label": "To loop over coins many times.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "To check what kind of value coins is (like int or str).",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To change coins into a different value.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To delete the variable coins.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To loop over coins many times.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "type helps you debug by telling you what kind of value a variable currently stores.",
@@ -169,10 +237,26 @@
       "type": "single-choice",
       "prompt": "In the Python REPL you see this: \\n\\n```python\\n>>> len(\"cat\")\\n3\\n>>> print(len(\"cat\"))\\n3\\n```\\nWhat is true about these two lines?",
       "options": [
-        { "id": "a", "label": "Both use len, but the second one also uses print to show the result.", "isCorrect": true },
-        { "id": "b", "label": "Only the first line uses len.", "isCorrect": false },
-        { "id": "c", "label": "The second line changes the value returned by len.", "isCorrect": false },
-        { "id": "d", "label": "The first line will cause an error.", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Both use len, but the second one also uses print to show the result.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Only the first line uses len.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The second line changes the value returned by len.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "The first line will cause an error.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "In the REPL, an expression by itself shows its value. print(len(...)) also prints the same value.",

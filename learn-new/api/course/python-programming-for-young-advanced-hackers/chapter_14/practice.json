@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_14",
   "kind": "practice",
-  "title": "Chapter 14 – Practice: Comprehensions, map, filter, and zip",
+  "title": "Chapter 14 - Practice: Comprehensions, map, filter, and zip",
   "description": "Hands-on missions for chapter 14 using comprehensions, map/filter, and zip to transform and combine collections.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

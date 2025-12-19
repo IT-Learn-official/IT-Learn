@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_10",
   "kind": "practice",
-  "title": "Chapter 10 – Practice: Sets and Basic Data Operations",
+  "title": "Chapter 10 - Practice: Sets and Basic Data Operations",
   "description": "Hands-on missions for chapter 10 using sets to handle unique items, remove duplicates, and compare groups.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-

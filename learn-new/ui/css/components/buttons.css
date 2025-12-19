@@ -2,7 +2,6 @@
    licence: MIT
    Shared button & navigation styles */
 
-/* Premium focus states */
 button:focus-visible,
 .list-button:focus-visible,
 .back-button:focus-visible,
@@ -65,7 +64,6 @@ button:focus-visible,
   animation: none;
 }
 
-/* Stagger animation for multiple buttons */
 .list-button:nth-child(1) { animation-delay: 0.05s; }
 .list-button:nth-child(2) { animation-delay: 0.1s; }
 .list-button:nth-child(3) { animation-delay: 0.15s; }
@@ -135,7 +133,6 @@ button:focus-visible,
   box-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
-/* Chapter list layout */
 .chapter-list-button {
   display: flex;
   align-items: center;
@@ -182,7 +179,6 @@ button:focus-visible,
   position: relative;
 }
 
-/* Subtle marquee-style scroll on hover so long descriptions can be read */
 .chapter-list-button:hover .chapter-list-description {
   animation: chapter-desc-scroll 12s linear infinite;
 }

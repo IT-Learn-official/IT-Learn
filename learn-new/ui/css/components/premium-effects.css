@@ -1,8 +1,6 @@
 /* author: https://github.com/nhermab
-   licence: MIT
-   Premium Effects - Advanced animations and visual enhancements */
+   rewrite by: https://github.com/broodje565 */
 
-/* Animated grid background overlay */
 body::before {
   content: '';
   position: fixed;
@@ -25,7 +23,6 @@ body::before {
   }
 }
 
-/* Floating particles effect */
 body::after {
   content: '';
   position: fixed;
@@ -53,13 +50,11 @@ body::after {
   }
 }
 
-/* Ensure main content is above background effects */
 #app-root {
   position: relative;
   z-index: 1;
 }
 
-/* Premium card entrance animation */
 @keyframes card-entrance {
   0% {
     opacity: 0;
@@ -71,13 +66,11 @@ body::after {
   }
 }
 
-/* Apply to quiz questions, course items, etc. */
 .quiz-question,
 .list-item {
   animation: card-entrance 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
-/* Stagger the animations */
 .list-item:nth-child(1) { animation-delay: 0.05s; }
 .list-item:nth-child(2) { animation-delay: 0.1s; }
 .list-item:nth-child(3) { animation-delay: 0.15s; }
@@ -99,7 +92,6 @@ body::after {
 .list-item:nth-child(19) { animation-delay: 0.95s; }
 .list-item:nth-child(20) { animation-delay: 1s; }
 
-/* Premium glow pulse animation for interactive elements */
 @keyframes premium-glow-pulse {
   0%, 100% {
     box-shadow:
@@ -113,14 +105,12 @@ body::after {
   }
 }
 
-/* Apply subtle pulse to active elements */
 .list-button.is-active,
 .tab-button.is-active,
 .practice-attachment-button.is-active {
   animation: premium-glow-pulse 3s ease-in-out infinite;
 }
 
-/* Neon text glow for headings */
 @keyframes neon-glow {
   0%, 100% {
     filter: drop-shadow(0 0 8px rgba(88,101,242,0.4));
@@ -134,7 +124,6 @@ header h1 {
   animation: neon-glow 4s ease-in-out infinite;
 }
 
-/* Cyberpunk-style scan line effect */
 @keyframes cyber-scan {
   0% {
     transform: translateY(-100%);
@@ -149,13 +138,11 @@ header h1 {
   }
 }
 
-/* Optional scan line overlay (subtle) */
 .screen::after {
   animation: cyber-scan 8s linear infinite;
   opacity: 0.4;
 }
 
-/* Enhanced button ripple effect on click */
 @keyframes button-ripple {
   0% {
     transform: scale(0);
@@ -166,20 +153,7 @@ header h1 {
     opacity: 0;
   }
 }
-/*
-.btn-primary:active::after,
-.quiz-button:active::after,
-.practice-run-button:active::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
-  animation: button-ripple 0.6s ease-out;
-  pointer-events: none;
-}*/
 
-/* Holographic shimmer effect */
 @keyframes holographic-shimmer {
   0% {
     background-position: -200% center;
@@ -189,7 +163,6 @@ header h1 {
   }
 }
 
-/* Status indicator pulse */
 @keyframes status-pulse {
   0%, 100% {
     opacity: 1;
@@ -201,12 +174,10 @@ header h1 {
   }
 }
 
-/* Loading state shimmer for status */
 #global-status.is-visible::before {
   animation: shimmer 2s infinite;
 }
 
-/* Smooth reveal for markdown content */
 .markdown-body > * {
   animation: fade-in 0.5s ease-out backwards;
 }
@@ -242,7 +213,6 @@ header h1 {
 .markdown-body > *:nth-child(29) { animation-delay: 1.45s; }
 .markdown-body > *:nth-child(30) { animation-delay: 1.5s; }
 
-/* Premium focus glow */
 *:focus-visible {
   outline: 2px solid var(--color-primary-light);
   outline-offset: 3px;
@@ -251,7 +221,6 @@ header h1 {
     0 0 25px rgba(88,101,242,0.3);
 }
 
-/* Enhanced link hover with glow trail */
 .markdown-body a {
   position: relative;
 }
@@ -272,7 +241,6 @@ header h1 {
   width: 100%;
 }
 
-/* Premium scrollbar glow on interaction */
 *::-webkit-scrollbar-thumb:active {
   background: rgba(99,102,241,0.9);
   box-shadow:
@@ -280,7 +248,6 @@ header h1 {
     inset 0 0 8px rgba(255,255,255,0.2);
 }
 
-/* Gradient border animation for cards */
 @keyframes border-glow-rotate {
   0% {
     filter: hue-rotate(0deg);
@@ -290,8 +257,6 @@ header h1 {
   }
 }
 
-
-/* Premium select dropdown enhancement */
 .practice-assignment-select {
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -311,7 +276,6 @@ header h1 {
     0 0 20px rgba(88,101,242,0.3);
 }
 
-/* Enhanced table hover effect */
 .markdown-body tr {
   transition: all 0.2s ease;
 }
@@ -320,7 +284,6 @@ header h1 {
   transform: translateX(4px);
 }
 
-/* Blockquote premium styling enhancement */
 .markdown-body blockquote {
   position: relative;
   overflow: hidden;
@@ -337,13 +300,11 @@ header h1 {
   line-height: 1;
 }
 
-/* Premium image zoom on hover */
 .markdown-body img {
   cursor: zoom-in;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Smooth transitions for all interactive elements */
 button,
 a,
 input,
@@ -352,14 +313,12 @@ textarea {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Add subtle text shadow to improve readability on glowing backgrounds */
 .screen-header-title,
 .chapter-header-title,
 .practice-assignment-title {
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* Premium tooltip style (if tooltips are added) */
 [data-tooltip] {
   position: relative;
 }
@@ -389,7 +348,6 @@ textarea {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Disable all premium/animated/glow effects for professional IDE look */
 body::before, body::after, .screen::after, .list-button.is-active, .tab-button.is-active, .practice-attachment-button.is-active, header h1, .markdown-body a::after, *:focus-visible, .markdown-body tr:hover, .markdown-body blockquote::before, .markdown-body img, .practice-assignment-select:hover, .practice-assignment-select:focus {
   animation: none !important;
   box-shadow: none !important;

@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter-1",
   "kind": "practice",
-  "title": "Chapter 1 – Practice: Hello, Python!",
+  "title": "Chapter 1 - Practice: Hello, Python!",
   "description": "Hands-on missions for chapter 1 using script mode and basic Python concepts.",
   "practices": [
     {
@@ -55,7 +55,7 @@
     },
     {
       "id": "p-repl-playground",
-      "title": "Mission: Simple Script — Print three lines",
+      "title": "Mission: Simple Script: Print three lines",
       "assignmentResourceUid": "assignments/repl_playground.md",
       "templates": [
         {

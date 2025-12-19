@@ -1,6 +1,5 @@
 /* author: https://github.com/nhermab
-   licence: MIT
-    Markdown content styling */
+   rewrite by: https://github.com/broodje565 */
 
 .markdown-body {
   max-width: 100%;
@@ -36,13 +35,13 @@
   color: #818cf8;
   text-decoration: none;
   border-bottom: 1px solid rgba(129,140,248,0.3);
-  transition: color 150ms ease, border-color 150ms ease, text-shadow 150ms ease;
+  transition: none !important;
 }
 
 .markdown-body a:hover {
   color: #a5b4fc;
   border-bottom-color: #a5b4fc;
-  text-shadow: 0 0 10px rgba(129,140,248,0.5);
+  text-shadow: none;
 }
 
 .markdown-body ul,
@@ -70,7 +69,7 @@
   margin: 0.75rem 0;
   padding: 0.5rem 0.75rem;
   border-left: 3px solid #444;
-  background: #232526;
+  background: #181a1b;
   box-shadow: none;
   border-radius: 0 0.5rem 0.5rem 0;
 }
@@ -87,9 +86,7 @@
   margin: 1rem 0;
   border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow:
-    0 0 20px rgba(88,101,242,0.1),
-    0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: none;
 }
 
 .markdown-body th {
@@ -102,7 +99,7 @@
 }
 
 .markdown-body td {
-  background: rgba(15,23,42,0.8);
+  background: #181a1b;
   padding: 0.65rem 1rem;
   border-bottom: 1px solid rgba(148,163,184,0.2);
 }
@@ -113,7 +110,7 @@
 
 .markdown-body tr:hover td {
   background: rgba(79,70,229,0.12);
-  transition: background 150ms ease;
+  transition: none !important;
 }
 
 .markdown-body img {
@@ -121,17 +118,8 @@
   height: auto;
   border-radius: 0.75rem;
   border: 1px solid rgba(88,101,242,0.4);
-  box-shadow:
-    0 0 30px rgba(88,101,242,0.15),
-    0 8px 24px rgba(0,0,0,0.4);
-  transition: transform 200ms ease, box-shadow 200ms ease;
-}
-
-.markdown-body img:hover {
-  transform: scale(1.02);
-  box-shadow:
-    0 0 40px rgba(88,101,242,0.25),
-    0 12px 32px rgba(0,0,0,0.5);
+  box-shadow: none;
+  transition: none !important;
 }
 
 .markdown-body hr {
@@ -158,19 +146,17 @@
 
 .markdown-body pre.markdown-code-block {
   margin: 0.85rem 0;
-  /* Keep symmetric padding around the embedded Ace editor */
   padding: 0.6rem 0.75rem;
   border: none;
   background: transparent;
   overflow: visible;
 }
 
-/* Ace editor: Discord dark theme container styling */
 .markdown-ace-editor {
   border-radius: 0.85rem;
   border: 1px solid #232526;
   overflow: hidden;
-  padding: 1.2rem 0.4rem 1.2rem 0.4rem; /* top, right, bottom, left */
+  padding: 1.2rem 0.4rem 1.2rem 0.4rem;
   background: #181a1b;
   box-shadow: none;
   position: relative;

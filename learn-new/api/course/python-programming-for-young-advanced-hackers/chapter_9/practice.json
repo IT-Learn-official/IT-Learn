@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_9",
   "kind": "practice",
-  "title": "Chapter 9 – Practice: Lists, Tuples, and Dictionaries",
+  "title": "Chapter 9 - Practice: Lists, Tuples, and Dictionaries",
   "description": "Hands-on missions for chapter 9 using lists, tuples, and dictionaries to store, update, and print collections of data.",
   "practices": [
     {
@@ -66,4 +66,3 @@
     }
   ]
 }
-
