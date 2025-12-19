@@ -1,0 +1,164 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+App-level layout & shell */
+
+#app-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#screen-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  background: var(--color-bg-dark);
+  position: relative;
+  animation: fade-in 0.3s ease-out;
+}
+
+.screen::before {
+  display: none;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 1.0rem;
+  border-bottom: 1px solid #232526;
+  background: var(--color-bg-darker);
+  backdrop-filter: none;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.screen-header::after {
+  display: none;
+}
+
+/* Flex wrapper for back button, optional tabs, and title on chapter screens */
+.screen-header-content-with-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.screen-header-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Align title block to the far right when used with back button on the left */
+.screen-header-main--align-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.screen-header-title {
+  margin: 0;
+  font-size: 1.0rem;
+  color: var(--color-primary);
+  text-shadow: none;
+}
+
+.screen-header-subtitle {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Tabs when placed in header: horizontal row, tight sizing */
+.tabs.tabs-in-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0; /* no extra vertical margin */
+  background: var(--color-bg-card);
+  box-shadow: none;
+}
+
+.tabs.tabs-in-header .tab-button {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+/* On very small screens, allow header content to wrap so it stays usable */
+@media (max-width: 640px) {
+  .screen-header-content-with-tabs {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+
+  .screen-header-main--align-right {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+}
+
+.screen-body {
+  padding: 0.75rem 1.25rem;
+  /* Let the body fill the remaining space below the header without forcing its own scrollbar */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tab content wrapper - the div that holds theory/quiz/practice content */
+.screen-body > div:last-child {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#global-status {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #232526;
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  display: none;
+  flex-shrink: 0;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+#global-status::before {
+  display: none;
+}
+
+#global-status.is-visible {
+  display: block;
+}
+
+.chapter-header-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.chapter-header-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}

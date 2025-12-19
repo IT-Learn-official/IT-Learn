@@ -1,0 +1,143 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "practice",
+  "title": "Chapter 15 – Practice: Classes and Objects",
+  "description": "Hands-on missions for chapter 15 defining simple classes, creating objects, and using attributes and methods.",
+  "practices": [
+    {
+      "id": "p-book-class",
+      "title": "Mission: Create a Book Class",
+      "assignmentResourceUid": "assignments/book_class.md",
+      "templates": [
+        {
+          "path": "attachments/book_class.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define a Book class with title and pages attributes, an __init__ method, and a description() method that returns a string like 'Title (X pages)'."
+      }
+    },
+    {
+      "id": "p-player-score",
+      "title": "Mission: Player with Score",
+      "assignmentResourceUid": "assignments/player_score.md",
+      "templates": [
+        {
+          "path": "attachments/player_score.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should implement a Player class with name and score, methods add_score(points) and reset_score(), and demonstrate updating and printing the score."
+      }
+    },
+    {
+      "id": "p-virtual-pet",
+      "title": "Mission: Your First Virtual Pet",
+      "assignmentResourceUid": "assignments/virtual_pet.md",
+      "templates": [
+        {
+          "path": "attachments/virtual_pet.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should create a Pet class with name and hunger attributes, methods feed(amount) and status(), and show how hunger changes and affects status messages."
+      }
+    },
+    {
+      "id": "p-pretty-str",
+      "title": "Mission: Make Objects Print Nicely",
+      "assignmentResourceUid": "assignments/pretty_str.md",
+      "templates": [
+        {
+          "path": "attachments/pretty_str.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should add a __str__ method to a simple class so that printing the object shows a friendly summary string."
+      }
+    },
+    {
+      "id": "p-firewall-rules",
+      "title": "Mission: Firewall Rule Simulator",
+      "assignmentResourceUid": "assignments/firewall_rules.md",
+      "templates": [
+        {
+          "path": "attachments/firewall_rules.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should build FirewallRule and Firewall classes, store a list of rules, loop over them in Firewall.check, and return 'ALLOW' or 'BLOCK' depending on whether any rule matches the given IP and port."
+      }
+    },
+    {
+      "id": "p-password-cracker",
+      "title": "Mission: Password Cracker Sim",
+      "assignmentResourceUid": "assignments/password_cracker.md",
+      "templates": [
+        {
+          "path": "attachments/password_cracker.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should implement Attempt and Vault classes, track failed attempts in a list, lock the vault after too many failures, and show how the state changes over time."
+      }
+    },
+    {
+      "id": "p-network-node-ping",
+      "title": "Mission: Network Node Ping Game",
+      "assignmentResourceUid": "assignments/network_node_ping.md",
+      "templates": [
+        {
+          "path": "attachments/network_node_ping.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should implement Node and Network classes, store nodes in a list, find nodes by name, and simulate pinging between them with different online/offline states."
+      }
+    },
+    {
+      "id": "p-keylogger-detector",
+      "title": "Mission: Keylogger Detector",
+      "assignmentResourceUid": "assignments/keylogger_detector.md",
+      "templates": [
+        {
+          "path": "attachments/keylogger_detector.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should implement Process and SecurityMonitor classes, add processes to a list, filter high-risk ones with high_risk_processes(min_risk), and print warnings for them."
+      }
+    },
+    {
+      "id": "p-codebreaker-game",
+      "title": "Mission: Codebreaker Mini-Game",
+      "assignmentResourceUid": "assignments/codebreaker_game.md",
+      "templates": [
+        {
+          "path": "attachments/codebreaker_game.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should create Code and CodeBreaker classes, call methods between objects, track attempts, and stop when the code is guessed correctly."
+      }
+    }
+  ]
+}

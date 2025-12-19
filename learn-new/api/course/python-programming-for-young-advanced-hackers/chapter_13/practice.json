@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "practice",
+  "title": "Chapter 13 – Practice: Functions, Parameters, and Return Values",
+  "description": "Hands-on missions for chapter 13 defining and calling functions, using parameters (including defaults), and returning values.",
+  "practices": [
+    {
+      "id": "p-greet-function",
+      "title": "Mission: Write a Greeting Function",
+      "assignmentResourceUid": "assignments/greet_function.md",
+      "templates": [
+        {
+          "path": "attachments/greet_function.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define a function greet(name) that prints a greeting including the name, and call it at least twice with different names."
+      }
+    },
+    {
+      "id": "p-add-return",
+      "title": "Mission: Add Two Numbers (Return)",
+      "assignmentResourceUid": "assignments/add_return.md",
+      "templates": [
+        {
+          "path": "attachments/add_return.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define add(a, b) that returns a + b using return, store the result in a variable, and print it."
+      }
+    },
+    {
+      "id": "p-default-greeting",
+      "title": "Mission: Custom Greeting with Default",
+      "assignmentResourceUid": "assignments/default_greeting.md",
+      "templates": [
+        {
+          "path": "attachments/default_greeting.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define greet(name, greeting='Hello') and call it both with one argument and with two arguments to show the default in action."
+      }
+    },
+    {
+      "id": "p-rectangle-area",
+      "title": "Mission: Calculate Rectangle Area",
+      "assignmentResourceUid": "assignments/rectangle_area.md",
+      "templates": [
+        {
+          "path": "attachments/rectangle_area.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define rectangle_area(width, height) that returns width * height, call it for at least two rectangles, and print or compare the results."
+      }
+    }
+  ]
+}
+

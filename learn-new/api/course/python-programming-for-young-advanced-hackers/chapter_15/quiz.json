@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Chapter 15 – Classes and Objects Checkpoint",
+  "description": "Quick concept-check for chapter 15. Test your understanding of classes, __init__, attributes, methods, and objects.",
+  "questions": [
+    {
+      "id": "q-init-purpose",
+      "type": "single-choice",
+      "prompt": "What is the main purpose of the __init__ method in a Python class?",
+      "options": [
+        { "id": "a", "label": "To delete an object from memory.", "isCorrect": false },
+        { "id": "b", "label": "To initialize a new object's attributes when it is created.", "isCorrect": true },
+        { "id": "c", "label": "To print the object when you call print(obj).", "isCorrect": false },
+        { "id": "d", "label": "To define a global function.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "__init__ runs when a new instance is created and usually sets up its attributes.",
+        "byOptionId": {
+          "a": "Deleting is handled differently; __init__ is for setup.",
+          "b": "Correct – __init__ initializes the object's data.",
+          "c": "print(obj) uses __str__ or __repr__, not __init__.",
+          "d": "__init__ belongs to a class, not to the global scope."
+        }
+      }
+    },
+    {
+      "id": "q-correct-class-def",
+      "type": "single-choice",
+      "prompt": "Which of the following correctly defines a class and its initializer?",
+      "options": [
+        { "id": "a", "label": "class Car:\n    def __init__(color):\n        self.color = color", "isCorrect": false },
+        { "id": "b", "label": "class Car:\n    def __init__(self, color):\n        self.color = color", "isCorrect": true },
+        { "id": "c", "label": "def Car(color):\n    self.color = color", "isCorrect": false },
+        { "id": "d", "label": "class Car(color):\n    self.color = color", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Methods must include self as the first parameter, and __init__ must be inside a class.",
+        "byOptionId": {
+          "a": "__init__ is missing self as the first parameter.",
+          "b": "Correct – this is valid class and __init__ syntax.",
+          "c": "This defines a function, not a class.",
+          "d": "This is not valid class syntax in basic Python."
+        }
+      }
+    },
+    {
+      "id": "q-create-object",
+      "type": "single-choice",
+      "prompt": "Given class Player:\n    def __init__(self, name):\n        self.name = name\nHow do you correctly create a new Player named 'Alex'?",
+      "options": [
+        { "id": "a", "label": "p = Player.__init__(\"Alex\")", "isCorrect": false },
+        { "id": "b", "label": "p = new Player(\"Alex\")", "isCorrect": false },
+        { "id": "c", "label": "p = Player(\"Alex\")", "isCorrect": true },
+        { "id": "d", "label": "p = Player.init(\"Alex\")", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "You create an instance by calling the class like a function.",
+        "byOptionId": {
+          "a": "You should not call __init__ directly.",
+          "b": "Python does not use new like this for classes.",
+          "c": "Correct – this calls Player and runs __init__ behind the scenes.",
+          "d": "There is no built-in init method named this on the class."
+        }
+      }
+    },
+    {
+      "id": "q-access-attribute",
+      "type": "single-choice",
+      "prompt": "You have p = Player(\"Alex\") and inside __init__ you did self.name = name. How do you read the player's name outside the class?",
+      "options": [
+        { "id": "a", "label": "name = Player.name", "isCorrect": false },
+        { "id": "b", "label": "name = self.name", "isCorrect": false },
+        { "id": "c", "label": "name = p.name", "isCorrect": true },
+        { "id": "d", "label": "name = name.self", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Attributes are accessed through the instance variable.",
+        "byOptionId": {
+          "a": "Player.name would refer to a class attribute, not the instance's name.",
+          "b": "self is only used inside class methods.",
+          "c": "Correct – p.name reads the name attribute from this Player object.",
+          "d": "This is not valid Python syntax."
+        }
+      }
+    },
+    {
+      "id": "q-self-meaning",
+      "type": "single-choice",
+      "prompt": "In a method defined as def greet(self):, what does self usually refer to?",
+      "options": [
+        { "id": "a", "label": "The class itself.", "isCorrect": false },
+        { "id": "b", "label": "The module where the class is defined.", "isCorrect": false },
+        { "id": "c", "label": "The specific object (instance) that the method is called on.", "isCorrect": true },
+        { "id": "d", "label": "A random global variable.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "self is the instance that the method is acting on.",
+        "byOptionId": {
+          "a": "self is not the class itself, but an instance of it.",
+          "b": "Modules are separate from class instances.",
+          "c": "Correct - self lets methods access the instance's data.",
+          "d": "self is a normal parameter name, not a global variable."
+        }
+      }
+    },
+    {
+      "id": "q-class-vs-instance-attribute",
+      "type": "single-choice",
+      "prompt": "You have:\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWhat are the values of a.team_name and b.name at the end?",
+      "options": [
+        { "id": "a", "label": "a.team_name == \"Red\" and b.name == \"Blake\"", "isCorrect": false },
+        { "id": "b", "label": "a.team_name == \"Blue\" and b.name == \"Blake\"", "isCorrect": true },
+        { "id": "c", "label": "a.team_name == \"Blue\" and b.name == \"Blue\"", "isCorrect": false },
+        { "id": "d", "label": "a.team_name == \"Red\" and b.name == \"Avery\"", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Class attributes (like team_name) are shared by all instances. Instance attributes (like name) belong to a single object.",
+        "byOptionId": {
+          "a": "Wrong – Hacker.team_name was changed to 'Blue', so a.team_name sees 'Blue'.",
+          "b": "Correct – class attribute update affects all instances; only a.name was changed.",
+          "c": "Wrong – b.name is still 'Blake', not 'Blue'.",
+          "d": "Wrong – team_name is now 'Blue', not 'Red'."
+        }
+      }
+    },
+    {
+      "id": "q-method-side-effects",
+      "type": "single-choice",
+      "prompt": "Given:\n\n```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n\n    def click(self):\n        self.value = self.value + 1\n        return self.value\n\nc = Counter()\nx = c.click()\ny = c.click()\n```\n\nWhat are the values of x and y?",
+      "options": [
+        { "id": "a", "label": "x == 0 and y == 0", "isCorrect": false },
+        { "id": "b", "label": "x == 1 and y == 1", "isCorrect": false },
+        { "id": "c", "label": "x == 1 and y == 2", "isCorrect": true },
+        { "id": "d", "label": "x == 2 and y == 3", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Each call to click changes the same object's value and returns the new value after incrementing.",
+        "byOptionId": {
+          "a": "Wrong – click starts from 0 and increments, so it never returns 0.",
+          "b": "Wrong – the second call keeps incrementing, so value becomes 2.",
+          "c": "Correct – first call returns 1, second call returns 2.",
+          "d": "Wrong – this would be true only if the counter started at 1."
+        }
+      }
+    },
+    {
+      "id": "q-self-parameter-behavior",
+      "type": "single-choice",
+      "prompt": "What is the best description of self in this method?\n\n```python\nclass Device:\n    def reboot(self):\n        print(\"Rebooting\", self.name)\n```",
+      "options": [
+        { "id": "a", "label": "self is a keyword that always refers to the class Device.", "isCorrect": false },
+        { "id": "b", "label": "self is the first argument and refers to the specific Device object that called reboot.", "isCorrect": true },
+        { "id": "c", "label": "self is a global variable automatically created by Python.", "isCorrect": false },
+        { "id": "d", "label": "self must always be named self or Python will crash.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "self is just a normal parameter name; by convention it refers to the instance that called the method.",
+        "byOptionId": {
+          "a": "Wrong – self is not a keyword and does not always refer to the class.",
+          "b": "Correct – when you do phone.reboot(), self is that phone object.",
+          "c": "Wrong – self is not global; it is passed like any other parameter.",
+          "d": "Wrong – you can use another name, but self is the common convention."
+        }
+      }
+    },
+    {
+      "id": "q-multiple-objects-state",
+      "type": "single-choice",
+      "prompt": "Given:\n\n```python\nclass Bot:\n    def __init__(self, name):\n        self.name = name\n        self.energy = 100\n\n    def drain(self, amount):\n        self.energy = self.energy - amount\n\na = Bot(\"Alpha\")\nb = Bot(\"Beta\")\na.drain(30)\nb.drain(10)\n```\n\nWhat are the final energy values?",
+      "options": [
+        { "id": "a", "label": "a.energy == 100 and b.energy == 100", "isCorrect": false },
+        { "id": "b", "label": "a.energy == 70 and b.energy == 90", "isCorrect": true },
+        { "id": "c", "label": "a.energy == 60 and b.energy == 90", "isCorrect": false },
+        { "id": "d", "label": "a.energy == 70 and b.energy == 70", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Each object has its own energy attribute. The methods modify only the object they’re called on.",
+        "byOptionId": {
+          "a": "Wrong – drain was called on both bots, so their energy changed.",
+          "b": "Correct – Alpha lost 30 (100 → 70); Beta lost 10 (100 → 90).",
+          "c": "Wrong – Alpha only drained 30, not 40.",
+          "d": "Wrong – Beta only drained 10, so it should be 90, not 70."
+        }
+      }
+    }
+  ]
+}

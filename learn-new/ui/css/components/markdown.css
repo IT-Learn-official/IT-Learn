@@ -1,0 +1,199 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+    Markdown content styling */
+
+.markdown-body {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #e6e6e6;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  position: relative;
+  padding-bottom: 0.35rem;
+  text-shadow: none;
+}
+
+.markdown-body h1::after,
+.markdown-body h2::after {
+  display: none;
+}
+
+.markdown-body p {
+  margin: 0.5rem 0;
+}
+
+.markdown-body a {
+  color: #818cf8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(129,140,248,0.3);
+  transition: color 150ms ease, border-color 150ms ease, text-shadow 150ms ease;
+}
+
+.markdown-body a:hover {
+  color: #a5b4fc;
+  border-bottom-color: #a5b4fc;
+  text-shadow: 0 0 10px rgba(129,140,248,0.5);
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-body li {
+  margin: 0.3rem 0;
+}
+
+.markdown-body strong {
+  font-weight: 700;
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+.markdown-body em {
+  font-style: italic;
+  color: #e5e7eb;
+}
+
+.markdown-body blockquote {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid #444;
+  background: #232526;
+  box-shadow: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.markdown-body blockquote p {
+  margin: 0.25rem 0;
+  color: #cbd5e1;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(88,101,242,0.1),
+    0 4px 16px rgba(0,0,0,0.3);
+}
+
+.markdown-body th {
+  background: rgba(79,70,229,0.3);
+  color: #f8fafc;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(88,101,242,0.5);
+}
+
+.markdown-body td {
+  background: rgba(15,23,42,0.8);
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-body tr:hover td {
+  background: rgba(79,70,229,0.12);
+  transition: background 150ms ease;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(88,101,242,0.4);
+  box-shadow:
+    0 0 30px rgba(88,101,242,0.15),
+    0 8px 24px rgba(0,0,0,0.4);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.markdown-body img:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 40px rgba(88,101,242,0.25),
+    0 12px 32px rgba(0,0,0,0.5);
+}
+
+.markdown-body hr {
+  border: none;
+  height: 2px;
+  background: #444;
+  margin: 1.5rem 0;
+  box-shadow: none;
+}
+
+.markdown-body code {
+  background: #232526;
+  color: #ffcb6b;
+  border: 1px solid #232526;
+  box-shadow: none;
+}
+
+.markdown-body pre {
+  background: #181a1b;
+  color: #e6e6e6;
+  border: 1px solid #232526;
+  box-shadow: none;
+}
+
+.markdown-body pre.markdown-code-block {
+  margin: 0.85rem 0;
+  /* Keep symmetric padding around the embedded Ace editor */
+  padding: 0.6rem 0.75rem;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+/* Ace editor: Discord dark theme container styling */
+.markdown-ace-editor {
+  border-radius: 0.85rem;
+  border: 1px solid #232526;
+  overflow: hidden;
+  padding: 1.2rem 0.4rem 1.2rem 0.4rem; /* top, right, bottom, left */
+  background: #181a1b;
+  box-shadow: none;
+  position: relative;
+}
+
+.markdown-ace-editor::before {
+  display: none;
+}
+
+.markdown-body ul.task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.markdown-body ul.task-list li.task-list-item {
+  margin: 0.25rem 0;
+}
+
+.markdown-body ul.task-list li.task-list-item.task-done {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+.markdown-body ul.task-list li.task-list-item input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

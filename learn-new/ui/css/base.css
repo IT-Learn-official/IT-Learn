@@ -1,0 +1,216 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+   Base tokens, keyframes, global document styles */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Premium CSS Variables */
+:root {
+  --color-primary: #b0b0b0;
+  --color-primary-light: #e6e6e6;
+  --color-primary-lighter: #f5f5f5;
+  --color-secondary: #b0b0b0; /* subtle accent */
+  --color-bg-dark: #181a1b; /* main background */
+  --color-bg-darker: #131415;
+  --color-bg-card: #232526;
+  --color-text: #e6e6e6;
+  --color-text-muted: #8a8a8a;
+  --shadow-elevated: 0 2px 8px rgba(0,0,0,0.7);
+  --border-radius: 8px;
+  --border-radius-sm: 5px;
+  --border-radius-lg: 12px;
+  --transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Premium keyframe animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(88,101,242,0.3),
+      0 0 40px rgba(88,101,242,0.2),
+      0 0 60px rgba(88,101,242,0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(88,101,242,0.4),
+      0 0 60px rgba(88,101,242,0.3),
+      0 0 90px rgba(88,101,242,0.2);
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Premium scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #232526;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(15,23,42,0.5);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+  border: 2px solid #232526;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #666;
+  box-shadow: 0 0 10px #222;
+}
+
+*::-webkit-scrollbar-corner {
+  background: rgba(15,23,42,0.5);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'JetBrains Mono', 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.4;
+  color: #e6e6e6; /* light slate */
+  background:
+    radial-gradient(circle at 20% 50%, rgba(61,174,233,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(179,136,255,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59,130,246,0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #131415 0%, #181a1b 50%, #131415 100%);
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: none;
+}
+
+header {
+  padding: 0.75rem 1.25rem;
+  background: #181a1b;
+  color: #e6e6e6;
+  border-bottom: 1px solid #232526;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  backdrop-filter: none;
+  flex-shrink: 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  text-shadow: none;
+  color: var(--color-primary);
+  position: relative;
+  z-index: 1;
+  animation: fade-in 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-bracket {
+  color: var(--color-primary);
+  text-shadow: none;
+  animation: none;
+}
+
+.logo-text {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  color: var(--color-text);
+}
+
+.logo-subtitle {
+  color: var(--color-text-muted);
+  text-shadow: none;
+  background: none;
+  -webkit-text-fill-color: var(--color-text-muted);
+}
+
+/* Remove all glow and neon keyframes and variables */
+@keyframes glow-pulse {}
+@keyframes neon-glow {}

@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "practice",
+  "title": "Chapter 10 – Practice: Sets and Basic Data Operations",
+  "description": "Hands-on missions for chapter 10 using sets to handle unique items, remove duplicates, and compare groups.",
+  "practices": [
+    {
+      "id": "p-unique-password-checker",
+      "title": "Mission: Unique Password Checker",
+      "assignmentResourceUid": "assignments/unique_password_checker.md",
+      "templates": [
+        {
+          "path": "attachments/unique_password_checker.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should turn a list of passwords into a set to remove duplicates, then print total vs unique counts and optionally the unique set."
+      }
+    },
+    {
+      "id": "p-virus-scanner-overlap",
+      "title": "Mission: Virus Scanner Overlap",
+      "assignmentResourceUid": "assignments/virus_scanner_overlap.md",
+      "templates": [
+        {
+          "path": "attachments/virus_scanner_overlap.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use set union and intersection on two virus name sets and print viruses found by both and all viruses found."
+      }
+    },
+    {
+      "id": "p-online-vs-chat-users",
+      "title": "Mission: Online vs Chat Users",
+      "assignmentResourceUid": "assignments/online_vs_chat_users.md",
+      "templates": [
+        {
+          "path": "attachments/online_vs_chat_users.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should find intersection of online and chat user sets, print who is in both, and use 'in' to check if a particular user is in chat."
+      }
+    },
+    {
+      "id": "p-set-vs-list-detective",
+      "title": "Mission: Set vs List Detective",
+      "assignmentResourceUid": "assignments/set_vs_list_detective.md",
+      "templates": [
+        {
+          "path": "attachments/set_vs_list_detective.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should convert a list with duplicates into a set, print both, and demonstrate a membership check like 'usb' in items_set."
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,108 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Chapter 12 – Loops and Iteration Patterns Checkpoint",
+  "description": "Quick concept-check for chapter 12. Test your understanding of for loops, while loops, range(), and iterating over strings and lists.",
+  "questions": [
+    {
+      "id": "q-for-purpose",
+      "type": "single-choice",
+      "prompt": "What is a for loop mainly used for in Python?",
+      "options": [
+        { "id": "a", "label": "To define a function.", "isCorrect": false },
+        { "id": "b", "label": "To repeat code for each item in a sequence.", "isCorrect": true },
+        { "id": "c", "label": "To stop a program immediately.", "isCorrect": false },
+        { "id": "d", "label": "To create a new variable.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "for loops are used to repeat code for each item in a range or collection.",
+        "byOptionId": {
+          "a": "Functions are defined with def, not with for.",
+          "b": "Correct – for loops go through each item in a sequence.",
+          "c": "You would use exit() or similar to stop a program, not for.",
+          "d": "Variables can be created anywhere, not just in for loops."
+        }
+      }
+    },
+    {
+      "id": "q-range-3",
+      "type": "single-choice",
+      "prompt": "What numbers does range(3) generate?",
+      "options": [
+        { "id": "a", "label": "1, 2, 3", "isCorrect": false },
+        { "id": "b", "label": "0, 1, 2", "isCorrect": true },
+        { "id": "c", "label": "0, 1, 2, 3", "isCorrect": false },
+        { "id": "d", "label": "Only 3", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "range(stop) starts at 0 and goes up to stop-1.",
+        "byOptionId": {
+          "a": "This would be range(1, 4).",
+          "b": "Correct – range(3) gives 0, 1, 2.",
+          "c": "This includes the stop value, which range() does not do.",
+          "d": "range(3) makes a sequence, not a single number."
+        }
+      }
+    },
+    {
+      "id": "q-while-stop",
+      "type": "single-choice",
+      "prompt": "When does a while loop stop running?",
+      "options": [
+        { "id": "a", "label": "After exactly 10 loops.", "isCorrect": false },
+        { "id": "b", "label": "When its condition becomes False.", "isCorrect": true },
+        { "id": "c", "label": "When Python decides it is enough.", "isCorrect": false },
+        { "id": "d", "label": "Only when the user presses a key.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "while keeps looping as long as its condition is True.",
+        "byOptionId": {
+          "a": "A while loop does not magically stop after 10 loops unless you code it that way.",
+          "b": "Correct – you must make sure the condition can eventually become False.",
+          "c": "Python does not auto-stop your loops for you.",
+          "d": "User input can affect the condition, but it is not required."
+        }
+      }
+    },
+    {
+      "id": "q-infinite-while",
+      "type": "single-choice",
+      "prompt": "Which mistake can easily create an infinite while loop?",
+      "options": [
+        { "id": "a", "label": "Using a for loop instead.", "isCorrect": false },
+        { "id": "b", "label": "Forgetting to change the variable used in the condition.", "isCorrect": true },
+        { "id": "c", "label": "Printing too many times.", "isCorrect": false },
+        { "id": "d", "label": "Using range() with 0.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "If the condition never becomes False, a while loop never stops.",
+        "byOptionId": {
+          "a": "Using a for loop will not automatically make an infinite loop.",
+          "b": "Correct – if you never update the variable, the condition may stay True forever.",
+          "c": "Printing a lot is noisy but not infinite by itself.",
+          "d": "range() is not used directly in while loops."
+        }
+      }
+    },
+    {
+      "id": "q-iterate-string",
+      "type": "single-choice",
+      "prompt": "What does `for ch in 'cat':` do?",
+      "options": [
+        { "id": "a", "label": "Loops over the numbers 1 to 3.", "isCorrect": false },
+        { "id": "b", "label": "Loops over the letters 'c', 'a', 't'.", "isCorrect": true },
+        { "id": "c", "label": "Causes an error; you can't loop over strings.", "isCorrect": false },
+        { "id": "d", "label": "Deletes the string.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Strings are sequences of characters, so for can loop over each character.",
+        "byOptionId": {
+          "a": "The loop variable ch is a character, not a number here.",
+          "b": "Correct – ch will be 'c', then 'a', then 't'.",
+          "c": "Python allows you to loop over strings.",
+          "d": "for does not delete values."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "practice",
+  "title": "Chapter 6 – Practice: Operators and Comparisons",
+  "description": "Hands-on missions for chapter 6 using arithmetic, comparison, assignment, and logical operators to build and test expressions.",
+  "practices": [
+    {
+      "id": "p-arithmetic-operators",
+      "title": "Mission: Arithmetic Operator Playground",
+      "assignmentResourceUid": "assignments/arithmetic_operators.md",
+      "templates": [
+        { "path": "attachments/arithmetic_operators.py", "language": "python", "role": "starter" }
+      ],
+      "solution": {
+        "notes": "Learner should use +, -, *, /, //, %, and ** on at least two numbers and print the results. Validator can check for correct use of each operator and at least six print statements."
+      }
+    },
+    {
+      "id": "p-comparison-operators",
+      "title": "Mission: Comparison Operator Detective",
+      "assignmentResourceUid": "assignments/comparison_operators.md",
+      "templates": [
+        { "path": "attachments/comparison_operators.py", "language": "python", "role": "starter" }
+      ],
+      "solution": {
+        "notes": "Learner should use ==, !=, <, >, <=, >= to compare numbers and print the results. Validator can check for correct use of each operator and at least six print statements."
+      }
+    },
+    {
+      "id": "p-assignment-operators",
+      "title": "Mission: Assignment Operator Lab",
+      "assignmentResourceUid": "assignments/assignment_operators.md",
+      "templates": [
+        { "path": "attachments/assignment_operators.py", "language": "python", "role": "starter" }
+      ],
+      "solution": {
+        "notes": "Learner should use =, +=, -=, *=, /= to update a variable and print the value after each change. Validator can check for correct use of each operator and at least five print statements."
+      }
+    },
+    {
+      "id": "p-logical-operators",
+      "title": "Mission: Logical Operator Challenge",
+      "assignmentResourceUid": "assignments/logical_operators.md",
+      "templates": [
+        { "path": "attachments/logical_operators.py", "language": "python", "role": "starter" }
+      ],
+      "solution": {
+        "notes": "Learner should use and, or, not with boolean expressions and print the results. Validator can check for correct use of each logical operator and at least three print statements."
+      }
+    }
+  ]
+}
+

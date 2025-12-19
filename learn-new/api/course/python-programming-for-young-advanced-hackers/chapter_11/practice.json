@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "practice",
+  "title": "Chapter 11 – Practice: Conditional Logic",
+  "description": "Hands-on missions for chapter 11 using if, elif, else, comparisons, and logical operators to make decisions.",
+  "practices": [
+    {
+      "id": "p-basic-if-number",
+      "title": "Mission: Check If a Number Is Big Enough",
+      "assignmentResourceUid": "assignments/basic_if_number.md",
+      "templates": [
+        {
+          "path": "attachments/basic_if_number.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use an if statement with a comparison (>=) to decide whether to print a message about the number being big enough."
+      }
+    },
+    {
+      "id": "p-guess-check",
+      "title": "Mission: Simple Guess Check",
+      "assignmentResourceUid": "assignments/guess_check.md",
+      "templates": [
+        {
+          "path": "attachments/guess_check.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should compare guess and secret_number with ==, printing a success message if they match and a failure message otherwise using if/else."
+      }
+    },
+    {
+      "id": "p-grade-calculator",
+      "title": "Mission: Grade Calculator",
+      "assignmentResourceUid": "assignments/grade_calculator.md",
+      "templates": [
+        {
+          "path": "attachments/grade_calculator.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use if/elif/else to map a numeric score to letter grades A–F based on score ranges."
+      }
+    },
+    {
+      "id": "p-cinema-access-checker",
+      "title": "Mission: Cinema Access Checker",
+      "assignmentResourceUid": "assignments/cinema_access_checker.md",
+      "templates": [
+        {
+          "path": "attachments/cinema_access_checker.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use logical operators (and/or/not) to decide if a user is allowed to watch a movie based on age, permission note, and whether they are with an adult."
+      }
+    }
+  ]
+}
+

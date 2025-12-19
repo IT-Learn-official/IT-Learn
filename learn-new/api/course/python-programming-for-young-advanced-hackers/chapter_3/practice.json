@@ -1,0 +1,68 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "practice",
+  "title": "Chapter 3 – Practice: Function Superpowers",
+  "description": "Practice calling built-in functions like len, abs, round, and type, and learn to use their results in small scripts.",
+  "practices": [
+    {
+      "id": "p-functions-len-intro",
+      "title": "Counting Characters with len",
+      "assignmentResourceUid": "functions_len_intro.md",
+      "templates": [
+        {
+          "path": "attachments/functions_len_intro.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-abs-distance",
+      "title": "Distance from Zero with abs",
+      "assignmentResourceUid": "abs_distance.md",
+      "templates": [
+        {
+          "path": "attachments/abs_distance.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-round-scoreboard",
+      "title": "Rounding the Scoreboard with round",
+      "assignmentResourceUid": "round_scoreboard.md",
+      "templates": [
+        {
+          "path": "attachments/round_scoreboard.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-type-detective",
+      "title": "Type Detective with type",
+      "assignmentResourceUid": "type_detective.md",
+      "templates": [
+        {
+          "path": "attachments/type_detective.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-function-combo-mini-report",
+      "title": "Function Combo Mini Report",
+      "assignmentResourceUid": "function_combo_report.md",
+      "templates": [
+        {
+          "path": "attachments/function_combo_report.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    }
+  ]
+}

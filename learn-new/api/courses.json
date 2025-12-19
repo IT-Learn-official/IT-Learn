@@ -1,0 +1,265 @@
+{
+  "courses": [
+    {
+        "id": "python-programming-for-young-advanced-hackers",
+      "title": "Python Programming for young advanced hackers",
+      "description": "A hands-on, project-based introduction to coding for beginners, kids, and teens, covering basics to object-oriented programming.",
+      "authors": [
+        "Nick Hermans"
+      ],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "Getting Ready for Python Programming & Hello World",
+          "description": "Introduction to programming, running Python in the browser, and writing your very first console programs with print() and comments.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Variables, Numbers, and Simple Math",
+          "description": "Store numbers in variables, use arithmetic operators, and build basic math expressions that print results to the console.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "Function Basics and Built-ins",
+          "description": "See functions as helpers, call built-in functions like print(), len(), and round(), and read their results from the console.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Data Types and Type Conversion",
+          "description": "Work with integers, floats, strings, and booleans, convert between them, and understand how types affect operators and printed output.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "Execution Flow and Debugging",
+          "description": "Follow how Python runs code line by line, trace variables, and use print-debugging to understand and fix program behavior.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "Operators and Comparisons",
+          "description": "Use arithmetic, comparison, assignment, and logical operators to build expressions and decision conditions that drive printed results.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Numbers, Math Library, and Randomness",
+          "description": "Do more advanced math with the math module, exponents, rounding, and controlled randomness for simple console-based simulations.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "Working with Text: Strings",
+          "description": "Create and manipulate strings, use indexing and slicing, apply string methods, and format output using f-strings.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "Lists, Tuples, and Dictionaries",
+          "description": "Store collections of data using lists, tuples, and dictionaries, and access, update, and iterate over their items with printed feedback.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "Sets and Basic Data Operations",
+          "description": "Use sets to handle unique items, perform union and intersection, and combine sets with other collections in console-based programs.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Conditional Logic: If, Elif, Else",
+          "description": "Make decisions in your programs using if/elif/else, nested conditions, and logical operators to control what gets printed.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "Loops and Iteration Patterns",
+          "description": "Repeat work using for and while loops, range(), and common patterns for iterating over strings and collections, with visible console output.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Functions, Parameters, and Return Values",
+          "description": "Define your own functions with parameters and return values, use default arguments, and verify behavior by printing function calls.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Comprehensions, map, filter, and zip",
+          "description": "Use list/dict/set comprehensions and functional tools like map(), filter(), and zip() to transform and combine collections and print the results.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_15",
+          "title": "Object-Oriented Python: Classes and Objects",
+          "description": "Learn the basics of object-oriented Python: defining classes, creating objects, and using attributes and methods with console-based examples.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
+    },
+    {
+      "id": "sql-data-hacking-for-young-pros",
+      "title": "SQL Data Hacking for Young Pros",
+      "description": "Master the language of data. A hands-on, project-based course using SQLite to query, analyze, and build databases from scratch.",
+      "language": "sql",
+      "authors": [
+        "Nick Hermans"
+      ],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "The Data Matrix: Intro to SQLite & Tables",
+          "description": "Understand what a database is, how SQLite works, and run your first query to peek inside a table.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Selecting Your Target: The SELECT Statement",
+          "description": "The 'Hello World' of SQL. Learn to retrieve specific columns, use aliases, and fetch all data with the wild card (*).",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "Filtering the Noise: The WHERE Clause",
+          "description": "Filter results to find exactly what you need using equality, inequality, and comparison operators.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Advanced Search Patterns: LIKE and Logical Operators",
+          "description": "Combine conditions with AND/OR/NOT and use wildcard pattern matching (LIKE) to find text that 'looks like' your query.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "Ranking and Slicing: ORDER BY and LIMIT",
+          "description": "Sort your data alphabetically or numerically and limit the output to see only the top-tier results.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "Computed Columns and Nulls",
+          "description": "Perform basic math directly in your queries, handle missing data (NULL), and format your output results.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Data Intelligence: Aggregation Functions",
+          "description": "Don't just read data, understand it. Use COUNT, MAX, MIN, SUM, and AVG to get statistics from your tables.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "Categorizing Data: GROUP BY and HAVING",
+          "description": "Group rows into buckets to summarize data by category and filter those groups using the HAVING clause.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "Inserting New Data: The INSERT Statement",
+          "description": "Stop just looking and start creating. Learn how to add single or multiple rows of new data into your tables.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "Modifying History: UPDATE and DELETE",
+          "description": "Learn the dangerous art of modifying existing records and permanently deleting data from your database.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Architecting the Base: CREATE TABLE and Data Types",
+          "description": "Design your own schema. Create tables, define column data types (INTEGER, TEXT, REAL), and understand constraints.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "The Relational Model: Keys and Constraints",
+          "description": "Understand how tables talk to each other using Primary Keys and Foreign Keys to keep data integrity.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Connecting Tables: INNER and LEFT JOINS",
+          "description": "The power of SQL lies in connections. Merge data from multiple tables into a single result set using JOINs.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Inception Queries: Subqueries",
+          "description": "Write queries inside queries. Use the result of one select statement to drive the filter or logic of another.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_15",
+          "title": "Optimization and Views",
+          "description": "Save complex queries as virtual tables (Views) and learn the basics of Indexes to make your searches lightning fast.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
+    }
+  ]
+}

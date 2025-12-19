@@ -1,0 +1,357 @@
+/*author: https://github.com/nhermab */
+/*licence: MIT */
+/* Modern, chat-style styling for the Teacher panel inside the practice view. */
+
+.practice-chat-panel {
+  grid-area: chat;
+  /* Match other practice panels: flex column, no extra background here */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* The outer frame / background comes from .practice-chat-body in practice.css,
+   so we don't add another card shell here to avoid a double frame look. */
+
+
+.teacher-status {
+  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
+  flex: 0 0 auto;
+}
+
+.teacher-status.is-connecting {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.teacher-connecting-label {
+  opacity: 0.85;
+}
+
+.teacher-connecting-dots {
+  display: inline-flex;
+  gap: 0.16rem;
+}
+
+.teacher-connecting-dots span {
+  width: 0.26rem;
+  height: 0.26rem;
+  border-radius: 999px;
+  background: #b0b0b0;
+  opacity: 0.25;
+  animation: teacher-connecting-bounce 1s infinite ease-in-out;
+}
+
+.teacher-connecting-dots span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.teacher-connecting-dots span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes teacher-connecting-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.25;
+  }
+  30% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+}
+
+.teacher-messages {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 0.75rem;
+  /* Match assignment/editor panels: dark glass card inside the practice body */
+  background: #232526;
+  padding: 0.5rem 0.6rem;
+  /* Space above input comes from form margin-top so we keep the card tight at the bottom */
+  margin-bottom: 0;
+  box-shadow: none;
+  border: 1px solid #313335;
+  transition: background 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.teacher-message {
+  margin-bottom: 0.55rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.teacher-message:last-child {
+  margin-bottom: 0;
+}
+
+/* Make messages visible when JS toggles the is-visible class */
+.teacher-message.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teacher-message-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+  margin-bottom: 0.1rem;
+}
+
+.teacher-message-body {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  white-space: normal;
+}
+
+/* User bubble */
+.teacher-message-user .teacher-message-body {
+  background: #232526;
+  color: #e6e6e6;
+  border-radius: 0.65rem;
+  padding: 0.35rem 0.55rem;
+  box-shadow: none;
+}
+
+.teacher-message-user .markdown-body {
+  color: #f9fafb;
+}
+
+/* Assistant bubble */
+.teacher-message-assistant .teacher-message-body {
+  background: #181a1b;
+  border: 1px solid #313335;
+  color: #e6e6e6;
+  border-radius: 0.65rem;
+  padding: 0.35rem 0.55rem;
+  box-shadow: none;
+}
+
+.teacher-message-body .markdown-body {
+  max-width: 100%;
+}
+
+.teacher-message-body .markdown-body p {
+  margin: 0.25rem 0;
+}
+
+.teacher-message-body .markdown-body p:first-child {
+  margin-top: 0;
+}
+
+.teacher-message-body .markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Input area */
+.teacher-form {
+  display: flex;
+  flex-direction: column;
+  /* Keep the form visually attached to the bottom of the panel */
+  margin-top: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.teacher-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid #313335;
+  background: #232526;
+  padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+/* Focus state follows the rounded wrapper to avoid a square glow */
+.teacher-input-wrapper:focus-within {
+  border-color: #b0b0b0;
+  background: #232526;
+  box-shadow: 0 0 0 2px #b0b0b0;
+}
+
+.teacher-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  resize: none;
+  min-height: 2.1rem;
+  max-height: 5rem;
+  overflow-y: auto;
+}
+
+.teacher-input::placeholder {
+  color: rgba(148,163,184,0.7);
+}
+
+/* Remove square native outline and rely on wrapper focus styling */
+.teacher-input:focus,
+.teacher-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.teacher-send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  border: 1px solid #b0b0b0;
+  cursor: pointer;
+  background: #232526;
+  color: #e6e6e6;
+  box-shadow: none;
+}
+
+.teacher-send-button:hover {
+  background: #181a1b;
+  color: #e6e6e6;
+  border-color: #b0b0b0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.teacher-send-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 14px rgba(15,23,42,0.9);
+}
+
+.teacher-send-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* Button focus glow that respects its circular shape */
+.teacher-send-button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #b0b0b0;
+}
+
+.teacher-send-icon {
+  display: inline-block;
+  transform: translateX(1px);
+}
+
+/* Connecting / status helpers */
+.teacher-connecting-progress {
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(37,99,235,0.18);
+  border: 1px solid rgba(129,140,248,0.6);
+  font-size: 0.7rem;
+}
+
+/* Typing indicator: Teacher is writing... */
+.teacher-typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: rgba(209,213,219,0.9);
+  margin-top: 0.25rem;
+  margin-bottom: 0.35rem;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.teacher-typing-indicator[style*="display: block"] {
+  opacity: 1;
+}
+
+.teacher-typing-label {
+  opacity: 0.8;
+}
+
+.teacher-typing-dots {
+  display: inline-flex;
+  gap: 0.18rem;
+}
+
+.teacher-typing-dots span {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: #b0b0b0;
+  opacity: 0.3;
+  animation: teacher-typing-bounce 1s infinite ease-in-out;
+}
+
+.teacher-typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.teacher-typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes teacher-typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+}
+
+/* Toolbar above teacher code snippets inside messages */
+.teacher-code-toolbar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.7rem;
+}
+
+.teacher-code-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  cursor: pointer;
+  background: rgba(31,41,55,0.95);
+  color: #e5e7eb;
+  box-shadow:
+    0 0 0 1px rgba(148,163,184,0.55),
+    0 4px 10px rgba(15,23,42,0.7);
+  transition: background 120ms ease, box-shadow 120ms ease, transform 80ms ease, color 120ms ease;
+}
+
+.teacher-code-btn:hover {
+  background: rgba(55,65,81,0.98);
+  color: #f9fafb;
+  box-shadow:
+    0 0 0 1px rgba(191,219,254,0.9),
+    0 6px 18px rgba(15,23,42,0.9);
+}
+
+.teacher-code-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(15,23,42,0.9);
+}
+
+.teacher-code-btn-copy {
+  /* blue-ish accent matching primary */
+}
+
+.teacher-code-btn-load {
+  /* subtle distinct accent could be added later if desired */
+}
+
+.teacher-code-btn-insert {
+  /* subtle distinct accent could be added later if desired */
+}

@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "practice",
+  "title": "Chapter 14 – Practice: Comprehensions, map, filter, and zip",
+  "description": "Hands-on missions for chapter 14 using comprehensions, map/filter, and zip to transform and combine collections.",
+  "practices": [
+    {
+      "id": "p-even-squares",
+      "title": "Mission: Even Squares with List Comprehension",
+      "assignmentResourceUid": "assignments/even_squares.md",
+      "templates": [
+        {
+          "path": "attachments/even_squares.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use a list comprehension with an if filter to build a list of squares of even numbers from an input list."
+      }
+    },
+    {
+      "id": "p-unique-name-lengths",
+      "title": "Mission: Unique Name Lengths (Set Comprehension)",
+      "assignmentResourceUid": "assignments/unique_name_lengths.md",
+      "templates": [
+        {
+          "path": "attachments/unique_name_lengths.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use a set comprehension to build a set of distinct name lengths from a list of names."
+      }
+    },
+    {
+      "id": "p-score-dict-zip",
+      "title": "Mission: Combine Names and Scores with zip",
+      "assignmentResourceUid": "assignments/score_dict_zip.md",
+      "templates": [
+        {
+          "path": "attachments/score_dict_zip.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use zip (and optionally a dict comprehension) to build a dictionary mapping names to scores from two parallel lists."
+      }
+    },
+    {
+      "id": "p-long-upper-words",
+      "title": "Mission: Filter Long Words and Uppercase Them",
+      "assignmentResourceUid": "assignments/long_upper_words.md",
+      "templates": [
+        {
+          "path": "attachments/long_upper_words.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should either use filter+map or a single list comprehension to keep words of length >= 5 and convert them to uppercase."
+      }
+    }
+  ]
+}
+

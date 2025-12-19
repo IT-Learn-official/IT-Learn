@@ -1,0 +1,39 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+   ACE editor theme overrides */
+
+/* ACE editor overrides */
+.markdown-ace-editor .ace_editor,
+.practice-editor .ace_editor {
+  background-color: #181a1b !important;
+  color: #e6e6e6 !important;
+  margin: 0 !important;
+}
+
+.ace_gutter {
+  background: #181a1b !important;
+  color: #888 !important;
+  box-shadow: none !important;
+  border-right: 1px solid #232526 !important;
+}
+
+/* Override Ace editor selection color globally for embedded editors */
+.ace_editor .ace_marker-layer .ace_selection {
+  background: #b3d4fc !important; /* Example: light blue, change as desired */
+}
+
+/* Force background for Ace editor in practice and markdown containers */
+.practice-editor .ace_editor,
+.markdown-ace-editor .ace_editor,
+.practice-editor .ace_editor.ace_dark,
+.markdown-ace-editor .ace_editor.ace_dark {
+  background: #181a1b !important;
+  background-color: #181a1b !important;
+}
+
+/* Also force Ace scroller background */
+.practice-editor .ace_scroller,
+.markdown-ace-editor .ace_scroller {
+  background: #181a1b !important;
+  background-color: #181a1b !important;
+}

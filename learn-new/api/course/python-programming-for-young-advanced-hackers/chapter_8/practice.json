@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "practice",
+  "title": "Chapter 8 – Practice: Working with Text – Strings",
+  "description": "Hands-on missions for chapter 8 using string indexing, slicing, common methods, and f-strings.",
+  "practices": [
+    {
+      "id": "p-secret-name-tag",
+      "title": "Mission: Secret Name Tag",
+      "assignmentResourceUid": "assignments/secret_name_tag.md",
+      "templates": [
+        {
+          "path": "attachments/secret_name_tag.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should slice parts of first and last name and combine them into a code name using an f-string, then print it in a clear sentence."
+      }
+    },
+    {
+      "id": "p-message-analyzer",
+      "title": "Mission: Message Analyzer",
+      "assignmentResourceUid": "assignments/message_analyzer.md",
+      "templates": [
+        {
+          "path": "attachments/message_analyzer.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use indexing, slicing, and .lower()/.upper() on a provided message string and print the results."
+      }
+    },
+    {
+      "id": "p-cleaner-bot",
+      "title": "Mission: Cleaner Bot",
+      "assignmentResourceUid": "assignments/cleaner_bot.md",
+      "templates": [
+        {
+          "path": "attachments/cleaner_bot.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use .strip(), .replace(), and .split() on prepared messy strings, then print cleaned results and list items."
+      }
+    },
+    {
+      "id": "p-status-line-generator",
+      "title": "Mission: Status Line Generator",
+      "assignmentResourceUid": "assignments/status_line_generator.md",
+      "templates": [
+        {
+          "path": "attachments/status_line_generator.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should combine several variables into a single readable status line using an f-string and print it."
+      }
+    }
+  ]
+}
+

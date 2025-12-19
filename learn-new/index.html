@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IT Courses Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./ui/css/base.css" />
+  <link rel="stylesheet" href="./ui/css/layout.css" />
+  <link rel="stylesheet" href="./ui/css/components/buttons.css" />
+  <link rel="stylesheet" href="./ui/css/components/markdown.css" />
+  <link rel="stylesheet" href="./ui/css/components/editor-theme.css" />
+  <link rel="stylesheet" href="./ui/css/components/quiz.css" />
+  <link rel="stylesheet" href="./ui/css/components/practice.css" />
+  <link rel="stylesheet" href="./ui/css/components/premium-effects.css" />
+  <link rel="stylesheet" href="./ui/css/components/teacherbot.css" />
+  <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/theme-discord-dark.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <div id="global-status" aria-live="polite"></div>
+  <main id="app-root">
+    <section id="screen-root" aria-live="polite">
+    </section>
+  </main>
+  <script type="module" src="./ui/js/main.js"></script>
+  <script>
+    (function () {
+      function isAllowedOrigin(origin) {
+        try {
+          const u = new URL(origin);
+          const hostname = u.hostname.toLowerCase();
+          // Allow all localhost variants, loopback IP and subdomains of *.localhost
+          if (
+                  hostname === 'localhost' ||
+                  hostname === '127.0.0.1' ||
+                  hostname === '::1' ||
+                  hostname.endsWith('.localhost')
+          ) {
+            return true;
+          }
+          // Allow itlearn.be and subdomains (http or https)
+          if (hostname === 'itlearn.be' || hostname.endsWith('.itlearn.be')) {
+            return true;
+          }
+          return false;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function applyInjectedCSS(css) {
+        const id = 'external-injected-style';
+        let style = document.getElementById(id);
+        if (!style) {
+          style = document.createElement('style');
+          style.id = id;
+          document.head.appendChild(style);
+        }
+        // Replace style content
+        style.textContent = css;
+      }
+
+      window.addEventListener('message', function (event) {
+        // Accept same-origin (for local testing) or allowed origins
+        if (event.origin !== window.location.origin && !isAllowedOrigin(event.origin)) {
+          // ignore unauthorized origins
+          if (event.source && event.source.postMessage) {
+            event.source.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'origin-not-allowed' },
+                    event.origin
+            );
+          }
+          return;
+        }
+
+        const msg = event.data;
+        if (!msg || typeof msg !== 'object') {
+          // ignore invalid messages
+          return;
+        }
+
+        if (msg.type === 'inject-css') {
+          const css = String(msg.css || '');
+          // simple safety checks
+          if (css.length > 20000) {
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'css-too-large' },
+                    event.origin
+            );
+            return;
+          }
+          try {
+            applyInjectedCSS(css);
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'ok' },
+                    event.origin
+            );
+          } catch (err) {
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'apply-failed' },
+                    event.origin
+            );
+          }
+        }
+      }, false);
+    })();
+  </script>
+</body>
+</html>

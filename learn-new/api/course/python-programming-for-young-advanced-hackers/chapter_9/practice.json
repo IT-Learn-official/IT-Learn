@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "practice",
+  "title": "Chapter 9 – Practice: Lists, Tuples, and Dictionaries",
+  "description": "Hands-on missions for chapter 9 using lists, tuples, and dictionaries to store, update, and print collections of data.",
+  "practices": [
+    {
+      "id": "p-hacker-inventory",
+      "title": "Mission: Hacker Inventory List",
+      "assignmentResourceUid": "assignments/hacker_inventory.md",
+      "templates": [
+        {
+          "path": "attachments/hacker_inventory.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should create a list, use indexing to access first/last items, append a new item, and loop over the list to print each item with a label."
+      }
+    },
+    {
+      "id": "p-teleport-coordinates",
+      "title": "Mission: Teleport Coordinates (Tuples)",
+      "assignmentResourceUid": "assignments/teleport_coordinates.md",
+      "templates": [
+        {
+          "path": "attachments/teleport_coordinates.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should store start and target positions in tuples, access coordinates by index, and print them in readable sentences."
+      }
+    },
+    {
+      "id": "p-player-profiles",
+      "title": "Mission: Player Profiles (Dictionaries)",
+      "assignmentResourceUid": "assignments/player_profiles.md",
+      "templates": [
+        {
+          "path": "attachments/player_profiles.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should create a player dict with name, level, and score, update the score, and print a summary sentence using an f-string."
+      }
+    },
+    {
+      "id": "p-high-score-table",
+      "title": "Mission: High Score Table (List of Dicts)",
+      "assignmentResourceUid": "assignments/high_score_table.md",
+      "templates": [
+        {
+          "path": "attachments/high_score_table.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should extend a list of player dictionaries, then loop through and print each player's name and score in a formatted way."
+      }
+    }
+  ]
+}
+

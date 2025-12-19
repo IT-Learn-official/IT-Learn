@@ -1,0 +1,104 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "practice",
+  "title": "Chapter 4 – Practice: Data Types and Conversion Missions",
+  "description": "Hands-on missions for chapter 4 using ints, floats, strings, booleans, type(), and safe conversions between them.",
+  "practices": [
+    {
+      "id": "p-type-scanner",
+      "title": "Mission: Type Scanner",
+      "assignmentResourceUid": "assignments/type_scanner.md",
+      "templates": [
+        {
+          "path": "attachments/type_scanner.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use print(type(...)) on at least four different values, including an int, a float, a string that looks like a number (like '123'), and a boolean. Validator can check for usage of type() and at least four print calls."
+      }
+    },
+    {
+      "id": "p-string-vs-number-detective",
+      "title": "Mission: String vs Number Detective",
+      "assignmentResourceUid": "assignments/string_vs_number_detective.md",
+      "templates": [
+        {
+          "path": "attachments/string_vs_number_detective.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "raw_age = '13'\nraw_score = '250'\nbonus = 5\n\nage = int(raw_age)\nscore = int(raw_score)\n\ntotal_score = score + bonus\n\nprint('Age:', age)\nprint('Score:', score)\nprint('Total score:', total_score)\nprint('Message: You are ' + str(age) + ' years old and your score is ' + str(score))\n",
+        "notes": "Validator can check that the script converts at least two numeric-looking strings using int() or float(), does at least one numeric calculation, and prints a combined message that uses str() or commas to mix text and numbers."
+      }
+    },
+    {
+      "id": "p-boolean-mood-light",
+      "title": "Mission: Boolean Mood Light",
+      "assignmentResourceUid": "assignments/boolean_mood_light.md",
+      "templates": [
+        {
+          "path": "attachments/boolean_mood_light.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "is_happy = True\nname = ''\ncoins = 0\nmessage = 'hi'\n\nprint('is_happy =', is_happy, '-> bool(is_happy) =', bool(is_happy))\nprint('name =', repr(name), '-> bool(name) =', bool(name))\nprint('coins =', coins, '-> bool(coins) =', bool(coins))\nprint('message =', repr(message), '-> bool(message) =', bool(message))\n",
+        "notes": "Validator can check for at least four calls to bool(...) on different values and that the script runs without errors. Using repr() for strings is optional but helpful to see empty vs non-empty."
+      }
+    },
+    {
+      "id": "p-fix-typeerror",
+      "title": "Mission: Fix the TypeError",
+      "assignmentResourceUid": "assignments/fix_typeerror.md",
+      "templates": [
+        {
+          "path": "attachments/fix_typeerror.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedStdout": "Next year you will be 16\nTotal score: 150\nCoins after bonus: 15\n",
+        "notes": "Starter file contains small buggy snippets mixing strings and numbers. Learner's job is to use int(), float(), and/or str() so the script runs without errors and produces the correct numeric results and messages shown here."
+      }
+    },
+    {
+      "id": "p-mini-shop-calculator",
+      "title": "Mission: Mini Shop Calculator",
+      "assignmentResourceUid": "assignments/mini_shop_calculator.md",
+      "templates": [
+        {
+          "path": "attachments/mini_shop_calculator.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "price_str = '9.99'\nquantity_str = '3'\n\nprice = float(price_str)\nquantity = int(quantity_str)\n\nsubtotal = price * quantity\nprint('Subtotal:', subtotal)\n",
+        "expectedStdout": "Subtotal: 29.97\n",
+        "notes": "Validator can allow small floating point differences (like 29.9699999). The important thing is that strings are converted to numbers and multiplied correctly."
+      }
+    },
+    {
+      "id": "p-data-type-report",
+      "title": "Mission: Data Type Report",
+      "assignmentResourceUid": "assignments/data_type_report.md",
+      "templates": [
+        {
+          "path": "attachments/data_type_report.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should define at least four variables of different types (int, float, str, bool) and print each value plus its type using type(). Validator can check for calls to type(...) and at least four output lines mentioning <class 'int'>, <class 'float'>, <class 'str'>, and <class 'bool'>."
+      }
+    }
+  ]
+}
+

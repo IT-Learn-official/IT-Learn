@@ -1,0 +1,109 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Chapter 10 – Sets and Basic Data Operations Checkpoint",
+  "description": "Quick concept-check for chapter 10. Test your understanding of sets, uniqueness, union, intersection, and how sets compare to lists.",
+  "questions": [
+    {
+      "id": "q-set-definition",
+      "type": "single-choice",
+      "prompt": "What is a set in Python?",
+      "options": [
+        { "id": "a", "label": "A list that is always sorted.", "isCorrect": false },
+        { "id": "b", "label": "A collection of unique elements with no guaranteed order.", "isCorrect": true },
+        { "id": "c", "label": "A string with only numbers.", "isCorrect": false },
+        { "id": "d", "label": "A dictionary with only one key.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Sets store unique elements and do not keep a fixed order.",
+        "byOptionId": {
+          "a": "Lists can be sorted, but that is not what sets are.",
+          "b": "Correct – this is the main idea of a set.",
+          "c": "Strings are text, not sets.",
+          "d": "Dictionaries store key–value pairs, which is different from sets."
+        }
+      }
+    },
+    {
+      "id": "q-create-set",
+      "type": "single-choice",
+      "prompt": "Which line correctly creates a set of file names?",
+      "options": [
+        { "id": "a", "label": "files = [\"log.txt\", \"data.txt\"]", "isCorrect": false },
+        { "id": "b", "label": "files = (\"log.txt\", \"data.txt\")", "isCorrect": false },
+        { "id": "c", "label": "files = {\"log.txt\", \"data.txt\"}", "isCorrect": true },
+        { "id": "d", "label": "files = \"log.txt, data.txt\"", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Sets use curly braces {} with comma-separated elements.",
+        "byOptionId": {
+          "a": "This is a list, not a set.",
+          "b": "This is a tuple, not a set.",
+          "c": "Correct – this creates a set of two file names.",
+          "d": "This is one long string, not a set."
+        }
+      }
+    },
+    {
+      "id": "q-remove-duplicates",
+      "type": "single-choice",
+      "prompt": "You have `nums = [1, 2, 2, 3]`. What does `set(nums)` produce?",
+      "options": [
+        { "id": "a", "label": "[1, 2, 2, 3]", "isCorrect": false },
+        { "id": "b", "label": "{1, 2, 2, 3}", "isCorrect": false },
+        { "id": "c", "label": "{1, 2, 3}", "isCorrect": true },
+        { "id": "d", "label": "(1, 2, 3)", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Converting a list to a set removes duplicate values.",
+        "byOptionId": {
+          "a": "This is the original list, not a set.",
+          "b": "Sets do not keep duplicates.",
+          "c": "Correct - only unique values remain in the set.",
+          "d": "Tuples are a different type that does not remove duplicates automatically."
+        }
+      }
+    },
+    {
+      "id": "q-union-intersection",
+      "type": "single-choice",
+      "prompt": "You have `a = {1, 2}` and `b = {2, 3}`. What is `a & b` (the intersection)?",
+      "options": [
+        { "id": "a", "label": "{1, 2, 3}", "isCorrect": false },
+        { "id": "b", "label": "{1}", "isCorrect": false },
+        { "id": "c", "label": "{2}", "isCorrect": true },
+        { "id": "d", "label": "{}", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Intersection keeps only elements that appear in both sets.",
+        "byOptionId": {
+          "a": "That would be the union (all elements from both).",
+          "b": "1 is only in set a, not in both.",
+          "c": "Correct - 2 is the only element in both sets.",
+          "d": "There is at least one common element, so it's not an empty set."
+        }
+      }
+    },
+    {
+      "id": "q-set-vs-list",
+      "type": "single-choice",
+      "prompt": "Which statement about sets and lists is true?",
+      "options": [
+        { "id": "a", "label": "Lists remove duplicates automatically, sets do not.", "isCorrect": false },
+        { "id": "b", "label": "Sets keep the order of elements, lists do not.", "isCorrect": false },
+        { "id": "c", "label": "Both sets and lists allow duplicate elements.", "isCorrect": false },
+        { "id": "d", "label": "Sets keep only unique elements, lists can have duplicates.", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Lists and sets both store collections, but handle duplicates differently.",
+        "byOptionId": {
+          "a": "Lists allow duplicates; sets remove them.",
+          "b": "Lists keep order; sets do not guarantee order.",
+          "c": "Only lists allow duplicates; sets do not.",
+          "d": "Correct - this is the key difference for duplicates."
+        }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,221 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+   Shared button & navigation styles */
+
+/* Premium focus states */
+button:focus-visible,
+.list-button:focus-visible,
+.back-button:focus-visible,
+.tab-button:focus-visible {
+  outline: 2px solid #b0b0b0;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #b0b0b0;
+}
+
+.back-button {
+  border-radius: 999px;
+  border: 1px solid #232526;
+  padding: 0.35rem 0.75rem;
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  cursor: pointer;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 80ms ease, box-shadow 120ms ease;
+  box-shadow: none;
+}
+
+.back-button:hover {
+  background: #232526;
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0;
+}
+
+.list-item {
+  margin-bottom: 0.35rem;
+}
+
+.list-button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid #232526;
+  background: var(--color-bg-card);
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text);
+  transition: background 140ms ease, border-color 140ms ease, transform 80ms ease, box-shadow 140ms ease, color 140ms ease;
+  box-shadow: none;
+  animation: none;
+}
+
+/* Stagger animation for multiple buttons */
+.list-button:nth-child(1) { animation-delay: 0.05s; }
+.list-button:nth-child(2) { animation-delay: 0.1s; }
+.list-button:nth-child(3) { animation-delay: 0.15s; }
+.list-button:nth-child(4) { animation-delay: 0.2s; }
+.list-button:nth-child(5) { animation-delay: 0.25s; }
+.list-button:nth-child(6) { animation-delay: 0.3s; }
+.list-button:nth-child(7) { animation-delay: 0.35s; }
+.list-button:nth-child(8) { animation-delay: 0.4s; }
+.list-button:nth-child(9) { animation-delay: 0.45s; }
+.list-button:nth-child(10) { animation-delay: 0.5s; }
+.list-button:nth-child(n+11) { animation-delay: 0.55s; }
+
+.list-button:hover {
+  background: #232526;
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  transform: translateY(-2px);
+}
+
+.list-button.is-active, .tab-button.is-active, .practice-attachment-button.is-active {
+  box-shadow: 0 0 0 2px #b0b0b0;
+  border-color: #b0b0b0;
+  color: #e6e6e6;
+  background: #232526;
+}
+
+.tabs {
+  border-bottom: 1px solid #232526;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.25rem;
+  background: var(--color-bg-card);
+  backdrop-filter: none;
+  flex-shrink: 0;
+  box-shadow: none;
+}
+
+.tab-button {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--color-bg-dark);
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease, transform 80ms ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #e6e6e6;
+  border-color: #b0b0b0;
+  background: #232526;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  transform: translateY(-1px);
+}
+
+.tab-button.is-active {
+  border-color: #b0b0b0;
+  font-weight: 600;
+  color: #e6e6e6;
+  background: #232526;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Chapter list layout */
+.chapter-list-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-inline: 0.9rem 0.9rem;
+}
+
+.chapter-list-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chapter-list-number {
+  flex: 0 0 auto;
+  min-width: 1.5rem;
+  text-align: right;
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.chapter-list-text {
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-list-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chapter-list-description {
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+/* Subtle marquee-style scroll on hover so long descriptions can be read */
+.chapter-list-button:hover .chapter-list-description {
+  animation: chapter-desc-scroll 12s linear infinite;
+}
+
+@keyframes chapter-desc-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+.chapter-list-read-badge {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(144, 238, 144, 0.18);
+  color: #8fdd8f;
+}
+
+.chapter-list-button.is-read {
+  border-left: 3px solid rgba(144, 238, 144, 0.8);
+  padding-left: 0.7rem;
+  opacity: 0.95;
+}

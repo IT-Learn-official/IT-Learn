@@ -1,0 +1,400 @@
+/* author: https://github.com/nhermab
+   licence: MIT
+   Practice/editor layout & styling */
+
+.practice-container {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "assignment editor"
+    "chat       console";
+  gap: 1rem;
+  margin-top: 0.75rem;
+  height: calc(100% - 0.75rem);
+  overflow: hidden;
+}
+
+/* Generic panel styling for all four panels */
+.practice-panel {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #232526;
+}
+
+/* Left-top: assignment header + body */
+.practice-assignment-panel {
+  grid-area: assignment;
+}
+
+.practice-assignment-header {
+  margin-bottom: 0.4rem;
+}
+
+.practice-assignment-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.practice-assignment-breadcrumb-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.practice-assignment-select {
+  max-width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #313335;
+  background: #232526;
+  color: #e6e6e6;
+  font: inherit;
+  font-size: 0.85rem;
+  box-shadow: none;
+  appearance: none;
+  outline: none;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.practice-assignment-select:focus,
+.practice-assignment-select:active {
+  border-color: #b0b0b0;
+  background: #181a1b;
+  color: #e6e6e6;
+  box-shadow: 0 0 0 2px #232526;
+  outline: none;
+}
+
+.practice-assignment-select option {
+  background: #232526;
+  color: #e6e6e6;
+}
+
+.practice-assignment-title {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+}
+
+.practice-assignment-header .muted {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.practice-assignment-body {
+  min-height: 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.75rem;
+  border: 1px solid #232526;
+  background: #232526;
+  box-shadow: none;
+  overflow-y: auto;
+  overflow-x: auto;
+  height:100%;
+}
+
+/* Right-top: editor */
+.practice-editor-panel {
+  grid-area: editor;
+}
+
+.practice-editor-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.practice-attachments {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.5rem;
+  flex: 0 0 auto;
+}
+
+.practice-attachments h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.practice-attachments-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.practice-attachments-list li {
+  margin: 0;
+}
+
+.practice-attachment-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #313335;
+  background: #232526;
+  color: #e6e6e6;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+}
+
+.practice-attachment-button:hover {
+  background: #181a1b;
+  border-color: #b0b0b0;
+  color: #e6e6e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.practice-attachment-button.is-active {
+  background: #181a1b;
+  border-color: #b0b0b0;
+  color: #e6e6e6;
+  box-shadow: 0 0 0 2px #b0b0b0;
+}
+
+.practice-editor-col {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.practice-editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align all children to the left */
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+  flex: 0 0 auto;
+}
+
+.practice-run-button,
+.practice-validate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #b0b0b0;
+  background: #232526;
+  color: #e6e6e6;
+  font: 0.9rem 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 130ms ease, border-color 130ms ease, box-shadow 100ms ease, transform 80ms ease, color 100ms ease;
+}
+
+
+
+.practice-run-button:hover,
+.practice-validate-button:hover {
+  background: #181a1b;
+  color: #e6e6e6;
+  border-color: #b0b0b0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.practice-run-button:active,
+.practice-validate-button:active {
+  box-shadow: none;
+}
+
+.practice-run-status {
+  font-size: 0.8rem;
+}
+
+.practice-editor {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 0.85rem;
+  border: 1px solid #232526;
+  background: #181a1b;
+  box-shadow: none;
+  overflow: auto;
+  position: relative;
+}
+
+.practice-editor::before {
+  display: none;
+}
+
+/* Bottom-left: teacher chat placeholder */
+.practice-chat-panel {
+  grid-area: chat;
+}
+
+.practice-chat-title {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.practice-chat-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* Make this a flex container so input stays at bottom */
+  display: flex;
+  flex-direction: column;
+  /* Reduce bottom padding so the chat input can sit closer to the frame bottom */
+  padding: 0.6rem 0.8rem 0.3rem 0.8rem;
+  border-radius: 0.75rem;
+  border: 1px dashed #444;
+  background: #232526;
+  box-shadow: none;
+  /* Remove overflow-y: auto from here, as messages will scroll independently */
+  overflow: hidden;
+
+}
+
+/* Bottom-right: console */
+.practice-console-panel {
+  grid-area: console;
+}
+
+.practice-console {
+  flex: 1 1 auto;
+  min-height: 130px;
+  max-height: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #313335;
+  background: #181a1b;
+  color: #e6e6e6;
+  box-shadow: none;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  position: relative;
+  margin: 0;
+}
+
+.practice-console::before {
+  display: none;
+}
+
+/* Prevent white flash on run: ensure all panels and output areas are always dark */
+.practice-panel,
+.practice-editor,
+.practice-console,
+.practice-editor-col,
+.practice-editor .ace_editor,
+.practice-editor .ace_scroller {
+  background: #181a1b !important;
+  transition: none !important;
+}
+
+/* Remove background transitions that could cause a flash */
+.practice-panel,
+.practice-editor,
+.practice-console,
+.practice-editor-col {
+  transition: none !important;
+}
+
+/* If output area is cleared and re-rendered, keep background dark */
+.practice-console:empty {
+  background: #181a1b !important;
+}
+
+/* Responsive tweaks for narrow screens */
+@media (max-width: 1024px) {
+  .practice-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .practice-panel {
+    margin-bottom: 0.75rem;
+    min-height: 250px;
+    flex: 0 0 auto;
+  }
+
+  /* Ensure proper order: assignment -> editor -> console -> chat */
+  .practice-assignment-panel {
+    order: 1;
+  }
+
+  .practice-editor-panel {
+    order: 2;
+    min-height: 300px;
+  }
+
+  .practice-console-panel {
+    order: 3;
+  }
+
+  .practice-chat-panel {
+    order: 4;
+  }
+
+  .practice-console {
+    max-height: none;
+    min-height: 150px;
+  }
+
+  .practice-editor,
+  .practice-editor-col,
+  .practice-editor-row {
+    min-height: 250px;
+  }
+
+  /* Ensure assignment body has reasonable height */
+  .practice-assignment-body {
+    min-height: 150px;
+  }
+
+  /* Ensure chat has reasonable height */
+  .practice-chat-body {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .practice-container {
+    height: auto;
+  }
+
+  .practice-panel {
+    min-height: 200px;
+  }
+
+  .practice-editor-panel {
+    min-height: 300px;
+  }
+
+  .practice-editor,
+  .practice-editor-col,
+  .practice-editor-row {
+    min-height: 250px;
+  }
+
+  .practice-assignment-body {
+    min-height: 120px;
+  }
+
+  .practice-console {
+    min-height: 120px;
+  }
+
+  .practice-chat-body {
+    min-height: 120px;
+  }
+}

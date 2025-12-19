@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "practice",
+  "title": "Chapter 7 – Practice: Numbers, Math Library, and Randomness",
+  "description": "Hands-on missions for chapter 7 using exponents, the math module, rounding helpers, and random numbers for tiny console simulations.",
+  "practices": [
+    {
+      "id": "p-super-calculator-powers-roots",
+      "title": "Mission: Super Calculator – Powers and Roots",
+      "assignmentResourceUid": "assignments/super_calculator_powers_roots.md",
+      "templates": [
+        {
+          "path": "attachments/super_calculator_powers_roots.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should import math, read a positive number from input, and print its square, cube, and square root in clear sentences using ** and math.sqrt."
+      }
+    },
+    {
+      "id": "p-rounding-gym",
+      "title": "Mission: Rounding Gym – Round, Floor, and Ceil",
+      "assignmentResourceUid": "assignments/rounding_gym.md",
+      "templates": [
+        {
+          "path": "attachments/rounding_gym.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should import math, read a decimal number, and print the rounded, floored, and ceiled versions using round, math.floor, and math.ceil."
+      }
+    },
+    {
+      "id": "p-dice-sum-simulator",
+      "title": "Mission: Dice Roller – Sum of Many Rolls",
+      "assignmentResourceUid": "assignments/dice_sum_simulator.md",
+      "templates": [
+        {
+          "path": "attachments/dice_sum_simulator.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should import random, ask how many times to roll, use random.randint(1, 6) in a loop, and print each roll plus a final total sum."
+      }
+    },
+    {
+      "id": "p-guess-the-number-distance",
+      "title": "Mission: Guess the Number – Distance Hint",
+      "assignmentResourceUid": "assignments/guess_the_number_distance.md",
+      "templates": [
+        {
+          "path": "attachments/guess_the_number_distance.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should import random, pick a secret number with random.randint(1, 50), loop asking for guesses until correct, and after wrong guesses print whether it is too high/low and how far away using abs(secret - guess)."
+      }
+    }
+  ]
+}
+

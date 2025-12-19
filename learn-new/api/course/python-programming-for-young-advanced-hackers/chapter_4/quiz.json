@@ -1,0 +1,224 @@
+{
+  "chapterId": "chapter-4",
+  "kind": "assessment",
+  "title": "Chapter 4 – Data Types and Type Conversion Checkpoint",
+  "description": "Quick concept-check for chapter 4. Use this to see what your brain picked up about ints, floats, strings, booleans, and converting between them.",
+  "questions": [
+    {
+      "id": "q-type-of-3-point-0",
+      "type": "single-choice",
+      "prompt": "In Python, what is the type of the value `3.0`?",
+      "options": [
+        { "id": "int", "label": "int", "isCorrect": false },
+        { "id": "float", "label": "float", "isCorrect": true },
+        { "id": "str", "label": "str", "isCorrect": false },
+        { "id": "bool", "label": "bool", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Numbers with a decimal point are floats.",
+        "byOptionId": {
+          "int": "`3` without a decimal would be an int, but `3.0` is a float.",
+          "float": "Correct – the decimal point means this value is a float.",
+          "str": "A string would need quotes, like `\"3.0\"`.",
+          "bool": "Booleans are only `True` or `False`."
+        }
+      }
+    },
+    {
+      "id": "q-type-of-quoted-123",
+      "type": "single-choice",
+      "prompt": "Look at this value: `'123'` (with quotes). What is its type in Python?",
+      "options": [
+        { "id": "int", "label": "int", "isCorrect": false },
+        { "id": "float", "label": "float", "isCorrect": false },
+        { "id": "str", "label": "str", "isCorrect": true },
+        { "id": "bool", "label": "bool", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Quotes mean string, even if the characters are digits.",
+        "byOptionId": {
+          "int": "It looks like a number, but the quotes make it a string.",
+          "float": "Floats are numeric values with a decimal point, not text.",
+          "str": "Correct – anything in quotes is a string.",
+          "bool": "Booleans are `True` or `False`, not `'123'`."
+        }
+      }
+    },
+    {
+      "id": "q-boolean-literal",
+      "type": "single-choice",
+      "prompt": "Which of these is a **boolean literal** in Python?",
+      "options": [
+        { "id": "true-lower", "label": "true", "isCorrect": false },
+        { "id": "true-string", "label": "\"True\"", "isCorrect": false },
+        { "id": "True", "label": "True", "isCorrect": true },
+        { "id": "one", "label": "1", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Python booleans are written as `True` and `False` with capital letters and no quotes.",
+        "byOptionId": {
+          "true-lower": "`true` (all lowercase) is not a special value in Python.",
+          "true-string": "`\"True\"` is a string of characters, not a boolean.",
+          "True": "Correct – this is the boolean value `True`.",
+          "one": "`1` is an integer, not a boolean, even though `bool(1)` is `True`."
+        }
+      }
+    },
+    {
+      "id": "q-type-function",
+      "type": "single-choice",
+      "prompt": "What does this code show?\\n\\n```python\\nprint(type(\"Hello\"))\\n```",
+      "options": [
+        { "id": "class-str", "label": "Something like <class 'str'>", "isCorrect": true },
+        { "id": "class-int", "label": "Something like <class 'int'>", "isCorrect": false },
+        { "id": "prints-hello", "label": "It prints `Hello`", "isCorrect": false },
+        { "id": "error", "label": "It gives an error.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "The `type` function tells you what type a value is.",
+        "byOptionId": {
+          "class-str": "Correct – the type of a string like `\"Hello\"` is `str`.",
+          "class-int": "`\"Hello\"` is not an int; it's a string.",
+          "prints-hello": "`type` doesn't print the value itself, it prints information about the type.",
+          "error": "This is valid Python – no error here."
+        }
+      }
+    },
+    {
+      "id": "q-implicit-int-float",
+      "type": "single-choice",
+      "prompt": "What is the **type** of the result of `3 + 2.5` in Python?",
+      "options": [
+        { "id": "int", "label": "int", "isCorrect": false },
+        { "id": "float", "label": "float", "isCorrect": true },
+        { "id": "str", "label": "str", "isCorrect": false },
+        { "id": "bool", "label": "bool", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "When you add an int and a float, Python converts the result to a float.",
+        "byOptionId": {
+          "int": "The result is not a whole number type; Python promotes it to a float.",
+          "float": "Correct – int + float becomes a float.",
+          "str": "The expression has no strings in it.",
+          "bool": "There are no True/False values involved here."
+        }
+      }
+    },
+    {
+      "id": "q-string-plus-int-bug",
+      "type": "single-choice",
+      "prompt": "What happens when you run this code?\\n\\n```python\\nage = 12\\nprint(\"You are \" + age)\\n```",
+      "options": [
+        { "id": "prints-text-age", "label": "It prints `You are age`.", "isCorrect": false },
+        { "id": "prints-you-are-12", "label": "It prints `You are 12`.", "isCorrect": false },
+        { "id": "type-error", "label": "It gives a TypeError because you are adding a string and a number.", "isCorrect": true },
+        { "id": "crash", "label": "It crashes the whole computer.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "You can't directly concatenate a string and an int.",
+        "byOptionId": {
+          "prints-text-age": "Python does not automatically replace `age` with its value inside the string.",
+          "prints-you-are-12": "That would work if you used `str(age)` or a comma in `print`.",
+          "type-error": "Correct – Python complains because `age` is an `int`, not a `str`.",
+          "crash": "Errors stop your program, but they don't destroy your computer."
+        }
+      }
+    },
+    {
+      "id": "q-fix-string-plus-int",
+      "type": "single-choice",
+      "prompt": "Which line is the **best** fix for this code so it prints `You are 12`?\\n\\n```python\\nage = 12\\n# your code here\\n```",
+      "options": [
+        { "id": "use-str", "label": "print(\"You are \" + str(age))", "isCorrect": true },
+        { "id": "use-int", "label": "print(\"You are \" + int(age))", "isCorrect": false },
+        { "id": "use-bool", "label": "print(\"You are \" + bool(age))", "isCorrect": false },
+        { "id": "just-age", "label": "print(age)", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "To glue text and numbers with `+`, turn the number into a string.",
+        "byOptionId": {
+          "use-str": "Correct – `str(age)` turns the int into text you can add to another string.",
+          "use-int": "`int(age)` is still a number, so you'd still get a TypeError.",
+          "use-bool": "`bool(age)` would be `True`, and mixing that in a string is not what we want.",
+          "just-age": "This prints `12`, but loses the text `You are` from the original goal."
+        }
+      }
+    },
+    {
+      "id": "q-safe-int-conversion",
+      "type": "single-choice",
+      "prompt": "Which string can be safely converted with `int(...)` **without** causing an error?",
+      "options": [
+        { "id": "ten", "label": "\"10\"", "isCorrect": true },
+        { "id": "three-point-five", "label": "\"3.5\"", "isCorrect": false },
+        { "id": "word-ten", "label": "\"ten\"", "isCorrect": false },
+        { "id": "empty", "label": "\"\" (empty string)", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`int` expects a string that looks like a whole number.",
+        "byOptionId": {
+          "ten": "Correct – `\"10\"` is a clean integer string.",
+          "three-point-five": "`int(\"3.5\")` will crash; use `float` for decimals.",
+          "word-ten": "Python doesn't know how to turn the English word 'ten' into a number.",
+          "empty": "An empty string doesn't represent any number."
+        }
+      }
+    },
+    {
+      "id": "q-bool-empty-string",
+      "type": "single-choice",
+      "prompt": "What is the result of `bool(\"\")` (an empty string)?",
+      "options": [
+        { "id": "true", "label": "True", "isCorrect": false },
+        { "id": "false", "label": "False", "isCorrect": true },
+        { "id": "error", "label": "It gives an error.", "isCorrect": false },
+        { "id": "string-false", "label": "\"False\"", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Empty strings are considered False when converted to bool.",
+        "byOptionId": {
+          "true": "Non-empty strings are True, but this string is empty.",
+          "false": "Correct – `bool(\"\")` is False.",
+          "error": "`bool` can handle strings; no error here.",
+          "string-false": "This would be a string again, not a boolean."
+        }
+      }
+    },
+    {
+      "id": "q-type-for-debugging",
+      "type": "single-choice",
+      "prompt": "You see this code:\\n\\n```python\\ncoins = \"10\"\\nprint(type(coins))\\n```\\n\\nWhat is this line mainly helping you check?",
+      "options": [
+        { "id": "coins-is-string", "label": "That `coins` is a string, not a number.", "isCorrect": true },
+        { "id": "coins-is-int", "label": "That `coins` is an int.", "isCorrect": false },
+        { "id": "coins-will-auto-convert", "label": "That Python will automatically turn it into a number later.", "isCorrect": false },
+        { "id": "coins-is-broken", "label": "That `coins` is broken and unusable.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`type` is a debugging tool: it tells you what kind of value you have.",
+        "byOptionId": {
+          "coins-is-string": "Correct – it reveals that `coins` is currently a `str`, which explains future TypeErrors in math.",
+          "coins-is-int": "If you see `<class 'str'>`, then it's not an int.",
+          "coins-will-auto-convert": "Python does not auto-convert number-like strings in math operations.",
+          "coins-is-broken": "The value isn't broken; it's just a different type than you might expect."
+        }
+      }
+    },
+    {
+      "id": "q-auto-convert-string-number",
+      "type": "single-choice",
+      "prompt": "True or False: Python will automatically turn the string `'5'` into the number 5 when you do `'5' + 3`.",
+      "options": [
+        { "id": "true", "label": "True", "isCorrect": false },
+        { "id": "false", "label": "False", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Python does not automatically mix strings and numbers in `+` expressions.",
+        "byOptionId": {
+          "true": "`'5' + 3` will actually cause a TypeError.",
+          "false": "Correct – you must convert one side yourself, e.g. `int('5') + 3` or `'5' + str(3)`."
+        }
+      }
+    }
+  ]
+}

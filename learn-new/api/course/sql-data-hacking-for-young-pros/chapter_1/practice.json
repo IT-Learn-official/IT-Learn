@@ -1,0 +1,177 @@
+{
+  "chapterId": "chapter-1",
+  "kind": "practice",
+  "title": "Chapter 1 – Practice: Your First SQL Queries",
+  "description": "Hands-on missions for chapter 1 to master basic SELECT queries and SQL fundamentals.",
+  "practices": [
+    {
+      "id": "first_select_query",
+      "title": "Mission: Your First SELECT Query",
+      "assignmentResourceUid": "assignments/understanding_database_structure.md",
+      "templates": [
+        {
+          "path": "attachments/sample_database_schema.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT * FROM hackers;",
+        "hints": [
+          "Use the SELECT keyword followed by the wildcard *",
+          "Don't forget the FROM clause to specify the table name",
+          "Remember to end your statement with a semicolon (;)"
+        ],
+        "notes": "Write your very first SQL query to see data from a table! Query must select all columns from the 'hackers' table using the wildcard (*)."
+      }
+    },
+    {
+      "id": "select_specific_columns",
+      "title": "Mission: Selecting Specific Columns",
+      "assignmentResourceUid": "assignments/first_select_queries.md",
+      "templates": [
+        {
+          "path": "attachments/basic_select_queries.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT username, level FROM hackers;",
+        "hints": [
+          "After SELECT, list the column names separated by a comma",
+          "The syntax is: SELECT column1, column2 FROM table_name;",
+          "Make sure to spell the column names correctly"
+        ],
+        "notes": "Learn to retrieve only the columns you need instead of all data. Write a query to select only the 'username' and 'level' columns from the 'hackers' table."
+      }
+    },
+    {
+      "id": "select_one_column",
+      "title": "Mission: Single Column Selection",
+      "assignmentResourceUid": "assignments/first_select_queries.md",
+      "templates": [
+        {
+          "path": "attachments/basic_select_queries.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT username FROM hackers;",
+        "hints": [
+          "SELECT just one column name",
+          "Don't use commas if you're only selecting one column",
+          "Syntax: SELECT column_name FROM table_name;"
+        ],
+        "notes": "Sometimes you only need one piece of information from a table. Write a query to select only the 'username' column from the 'hackers' table."
+      }
+    },
+    {
+      "id": "explore_skills_table",
+      "title": "Mission: Exploring the Skills Table",
+      "assignmentResourceUid": "assignments/database_explorer_challenge.md",
+      "templates": [
+        {
+          "path": "attachments/skills_table_data.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT * FROM skills;",
+        "hints": [
+          "Use SELECT * to get all columns",
+          "The table name is 'skills'",
+          "Remember the semicolon at the end"
+        ],
+        "notes": "Practice selecting data from a different table to get comfortable with the basics. Write a query to select all columns from the 'skills' table."
+      }
+    },
+    {
+      "id": "select_three_columns",
+      "title": "Mission: Three Column Challenge",
+      "assignmentResourceUid": "assignments/database_explorer_challenge.md",
+      "templates": [
+        {
+          "path": "attachments/skills_table_data.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT skill_name, category, difficulty FROM skills;",
+        "hints": [
+          "List all three column names separated by commas",
+          "Make sure there's no comma after the last column name",
+          "Order doesn't matter for now, but try to match: skill_name, category, difficulty"
+        ],
+        "notes": "Master selecting multiple columns by retrieving three different pieces of information. Write a query to select 'skill_name', 'category', and 'difficulty' columns from the 'skills' table."
+      }
+    },
+    {
+      "id": "projects_exploration",
+      "title": "Mission: Exploring Projects",
+      "assignmentResourceUid": "assignments/database_explorer_challenge.md",
+      "templates": [
+        {
+          "path": "attachments/projects_table_data.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT project_name, status FROM projects;",
+        "hints": [
+          "Use SELECT followed by the two column names",
+          "Separate columns with a comma",
+          "The table name is 'projects'"
+        ],
+        "notes": "Practice with a third table to reinforce your SELECT skills. Write a query to select 'project_name' and 'status' columns from the 'projects' table."
+      }
+    },
+    {
+      "id": "fix_syntax_errors",
+      "title": "Mission: SQL Syntax Detective",
+      "assignmentResourceUid": "assignments/sql_syntax_detective.md",
+      "templates": [
+        {
+          "path": "attachments/common_syntax_errors.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT username, level FROM hackers;",
+        "hints": [
+          "Look for missing punctuation between column names",
+          "Don't forget the semicolon at the end",
+          "Column names need to be separated by commas"
+        ],
+        "notes": "Find and fix common SQL syntax errors to become a better debugger. Fix this query: SELECT username level FROM hackers"
+      }
+    },
+    {
+      "id": "build_custom_query",
+      "title": "Mission: Build Your Own Query",
+      "assignmentResourceUid": "assignments/build_your_own_queries.md",
+      "templates": [
+        {
+          "path": "attachments/query_practice_playground.txt",
+          "language": "sql",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedQuery": "SELECT username, level, xp_points FROM hackers;",
+        "hints": [
+          "Think about what information a leaderboard would show",
+          "Select the three columns that show player progress",
+          "Remember to separate column names with commas"
+        ],
+        "notes": "Create queries based on real-world scenarios to apply what you've learned. You need to create a leaderboard. Write a query to get 'username', 'level', and 'xp_points' from the 'hackers' table."
+      }
+    }
+  ]
+}
+

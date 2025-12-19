@@ -1,0 +1,69 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "practice",
+  "title": "Chapter 12 – Practice: Loops and Iteration Patterns",
+  "description": "Hands-on missions for chapter 12 using for and while loops, range(), and simple iteration patterns.",
+  "practices": [
+    {
+      "id": "p-count-1-to-10",
+      "title": "Mission: Count from 1 to 10",
+      "assignmentResourceUid": "assignments/count_1_to_10.md",
+      "templates": [
+        {
+          "path": "attachments/count_1_to_10.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use a for loop with range to print numbers 1 through 10 (inclusive), not by writing ten separate print statements."
+      }
+    },
+    {
+      "id": "p-sum-of-scores",
+      "title": "Mission: Add Up Scores",
+      "assignmentResourceUid": "assignments/sum_of_scores.md",
+      "templates": [
+        {
+          "path": "attachments/sum_of_scores.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use a for loop over a list of numbers to compute a total sum into a variable and then print it, without using the built-in sum()."
+      }
+    },
+    {
+      "id": "p-while-countdown",
+      "title": "Mission: Rocket Countdown",
+      "assignmentResourceUid": "assignments/while_countdown.md",
+      "templates": [
+        {
+          "path": "attachments/while_countdown.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use a while loop with a countdown variable, printing numbers down to 1 and then printing 'Liftoff!'."
+      }
+    },
+    {
+      "id": "p-letter-count",
+      "title": "Mission: Count a Letter in a Word",
+      "assignmentResourceUid": "assignments/letter_count.md",
+      "templates": [
+        {
+          "path": "attachments/letter_count.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should loop over the characters in a string, count how many match a target letter, and print how many times it was found."
+      }
+    }
+  ]
+}
+

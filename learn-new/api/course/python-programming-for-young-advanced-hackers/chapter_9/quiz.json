@@ -1,0 +1,109 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Chapter 9 – Lists, Tuples, and Dictionaries Checkpoint",
+  "description": "Quick concept-check for chapter 9. Test your understanding of lists, tuples, and dictionaries.",
+  "questions": [
+    {
+      "id": "q-list-create",
+      "type": "single-choice",
+      "prompt": "Which line correctly creates a list of hacker names?",
+      "options": [
+        { "id": "a", "label": "names = \"Alice\", \"Bob\", \"Eve\"", "isCorrect": false },
+        { "id": "b", "label": "names = [\"Alice\", \"Bob\", \"Eve\"]", "isCorrect": true },
+        { "id": "c", "label": "names = {\"Alice\", \"Bob\", \"Eve\"}", "isCorrect": false },
+        { "id": "d", "label": "names = (\"Alice\", \"Bob\", \"Eve\")", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Lists use square brackets [].",
+        "byOptionId": {
+          "a": "This creates a tuple without brackets in some contexts, but it's not a list.",
+          "b": "Correct – this is a list of three strings.",
+          "c": "Curly braces without key:value pairs create a set, not a list.",
+          "d": "Parentheses create a tuple, not a list."
+        }
+      }
+    },
+    {
+      "id": "q-list-append",
+      "type": "single-choice",
+      "prompt": "You have `tools = [\"laptop\", \"phone\"]`. What does `tools.append(\"usb\")` do?",
+      "options": [
+        { "id": "a", "label": "Replaces 'phone' with 'usb'.", "isCorrect": false },
+        { "id": "b", "label": "Deletes 'laptop'.", "isCorrect": false },
+        { "id": "c", "label": "Adds 'usb' to the end of the list.", "isCorrect": true },
+        { "id": "d", "label": "Does nothing.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "append adds a new item to the end of the list.",
+        "byOptionId": {
+          "a": "append does not replace items; it adds a new one.",
+          "b": "append never deletes items.",
+          "c": "Correct – tools becomes ['laptop', 'phone', 'usb'].",
+          "d": "append always changes the list by adding something."
+        }
+      }
+    },
+    {
+      "id": "q-dict-access",
+      "type": "single-choice",
+      "prompt": "You have `player = {\"name\": \"Leo\", \"score\": 50}`. How do you get the score?",
+      "options": [
+        { "id": "a", "label": "player[0]", "isCorrect": false },
+        { "id": "b", "label": "player(\"score\")", "isCorrect": false },
+        { "id": "c", "label": "player[\"score\"]", "isCorrect": true },
+        { "id": "d", "label": "player.score", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Dictionary values are accessed by key using square brackets and the key string.",
+        "byOptionId": {
+          "a": "Dictionaries are not indexed by number by default.",
+          "b": "This tries to call player like a function.",
+          "c": "Correct – this looks up the value stored under the key 'score'.",
+          "d": "Dot-notation like this is not how dicts work in plain Python."
+        }
+      }
+    },
+    {
+      "id": "q-tuple-immutable",
+      "type": "single-choice",
+      "prompt": "What is special about tuples compared to lists?",
+      "options": [
+        { "id": "a", "label": "Tuples can only store numbers.", "isCorrect": false },
+        { "id": "b", "label": "Tuples are always longer than lists.", "isCorrect": false },
+        { "id": "c", "label": "Tuples cannot be changed after creation.", "isCorrect": true },
+        { "id": "d", "label": "Tuples are always empty.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Tuples are immutable; lists are mutable.",
+        "byOptionId": {
+          "a": "Tuples can store any types, not just numbers.",
+          "b": "Length has nothing to do with the type.",
+          "c": "Correct – once you create a tuple, its elements cannot be changed.",
+          "d": "Tuples can have many elements."
+        }
+      }
+    },
+    {
+      "id": "q-choose-type",
+      "type": "single-choice",
+      "prompt": "You want to store a player's name and score together and look them up by name. Which structure is best?",
+      "options": [
+        { "id": "a", "label": "A list of names only.", "isCorrect": false },
+        { "id": "b", "label": "A tuple like (\"Mia\", 10).", "isCorrect": false },
+        { "id": "c", "label": "A dictionary like {\"name\": \"Mia\", \"score\": 10}.", "isCorrect": true },
+        { "id": "d", "label": "A single string like \"Mia 10\".", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Dictionaries connect named keys to values, which is perfect for labeled data.",
+        "byOptionId": {
+          "a": "You would lose the scores if you only store names.",
+          "b": "A tuple stores the pair but does not label the parts.",
+          "c": "Correct – key 'name' and 'score' clearly label the values.",
+          "d": "A single string is hard to work with in code."
+        }
+      }
+    }
+  ]
+}
+

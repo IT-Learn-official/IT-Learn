@@ -1,0 +1,28 @@
+-- Sample database structure for SQL Data Hacking course
+-- This file contains the schema for the tables used in Chapter 1
+
+-- Create the hackers table
+CREATE TABLE hackers (
+    id INTEGER PRIMARY KEY,
+    username TEXT NOT NULL,
+    email TEXT NOT NULL,
+    level INTEGER DEFAULT 1,
+    xp_points INTEGER DEFAULT 0,
+    join_date TEXT,
+    hacker_type TEXT
+);
+
+-- Insert sample data
+INSERT INTO hackers (id, username, email, level, xp_points, join_date, hacker_type) VALUES
+(1, 'neo_matrix', 'neo@matrix.com', 10, 5000, '2024-01-15', 'White Hat'),
+(2, 'cypher_punk', 'cypher@punk.io', 8, 3500, '2024-02-20', 'Gray Hat'),
+(3, 'trinity_code', 'trinity@code.net', 12, 7500, '2024-01-10', 'White Hat'),
+(4, 'morpheus_db', 'morpheus@oracle.com', 15, 10000, '2023-12-01', 'White Hat'),
+(5, 'agent_smith', 'smith@system.gov', 5, 1200, '2024-03-10', 'Black Hat'),
+(6, 'tank_operator', 'tank@nebuchadnezzar.net', 6, 2000, '2024-02-15', 'White Hat'),
+(7, 'oracle_seer', 'oracle@future.io', 20, 15000, '2023-11-15', 'White Hat'),
+(8, 'dozer_builder', 'dozer@construct.com', 7, 2800, '2024-02-28', 'White Hat');
+
+-- View all hackers
+SELECT * FROM hackers;
+
