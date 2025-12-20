@@ -504,7 +504,7 @@ body.checking-session::before {
   align-items: center;
   justify-content: center;
 }
-Global status messages */
+/* Global status messages */
 #global-status {
   position: fixed;
   top: 20px;
