@@ -13,6 +13,8 @@
   <meta property="og:type" content="website">
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Feather icons (needed for eye/eye-off icons) -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" onload="if(window.feather){feather.replace();}" ></script>
   <script src="/translations.js"></script>
 </head>
 
@@ -44,14 +46,24 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
       </div>
 
-      <div class="input-group">
+      <div class="input-group password">
         <label for="password" data-translate="password">Password</label>
-        <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required />
+        <div class="input-row">
+          <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required />
+          <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
+            <i data-feather="eye">👁️</i>
+          </button>
+        </div>
       </div>
 
-      <div class="input-group">
+      <div class="input-group password">
         <label for="confirm-password" data-translate="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required />
+        <div class="input-row">
+          <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required />
+          <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
+            <i data-feather="eye">👁️</i>
+          </button>
+        </div>
       </div>
 
       <!-- Cloudflare Turnstile -->
@@ -121,11 +133,58 @@ s0.parentNode.insertBefore(s1,s0);
     if (passwordInput) passwordInput.placeholder = translations[lang]['createPassword'] || 'Create a password';
     if (confirmPasswordInput) confirmPasswordInput.placeholder = translations[lang]['reenterPassword'] || 'Re-enter your password';
   }
+
+  function updatePasswordToggleLabels(lang) {
+    const btns = document.querySelectorAll('.password-toggle');
+    if (!btns) return;
+    btns.forEach(btn => {
+      const show = translations[lang] && translations[lang]['showPassword'] ? translations[lang]['showPassword'] : 'Show password';
+      const hide = translations[lang] && translations[lang]['hidePassword'] ? translations[lang]['hidePassword'] : 'Hide password';
+      btn.dataset.showLabel = show;
+      btn.dataset.hideLabel = hide;
+      const isPressed = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-label', isPressed ? hide : show);
+      btn.setAttribute('title', isPressed ? hide : show);
+    });
+  }
+
+  function initPasswordToggle() {
+    document.querySelectorAll('.password-toggle').forEach(btn => {
+      const row = btn.closest('.input-row');
+      const input = row ? row.querySelector('input') : null;
+      if (!input) return;
+
+      // Ensure icons are rendered
+      if (window.feather) feather.replace();
+
+      btn.addEventListener('click', () => {
+        const showing = input.type === 'text';
+        if (showing) {
+          input.type = 'password';
+          btn.setAttribute('aria-pressed', 'false');
+          const show = btn.dataset.showLabel || 'Show password';
+          btn.setAttribute('aria-label', show);
+          btn.setAttribute('title', show);
+          btn.innerHTML = '<i data-feather="eye"></i>';
+        } else {
+          input.type = 'text';
+          btn.setAttribute('aria-pressed', 'true');
+          const hide = btn.dataset.hideLabel || 'Hide password';
+          btn.setAttribute('aria-label', hide);
+          btn.setAttribute('title', hide);
+          btn.innerHTML = '<i data-feather="eye-off"></i>';
+        }
+        if (window.feather) feather.replace();
+        input.focus();
+      });
+    });
+  }
   
   const originalUpdatePageLanguage = window.updatePageLanguage;
   window.updatePageLanguage = function(lang) {
     originalUpdatePageLanguage(lang);
     updateInputPlaceholders(lang);
+    updatePasswordToggleLabels(lang);
   };
   
   document.getElementById("signup-form").addEventListener("submit", async (e) => {

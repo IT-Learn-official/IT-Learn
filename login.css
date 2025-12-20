@@ -121,6 +121,84 @@ body {
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* Password toggle specific: input + button side-by-side */
+.input-group.password .input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  max-width: 420px; /* default compact width for password row */
+}
+
+.input-group.password .input-row input {
+  flex: 1 1 auto;
+  width: auto;
+  padding-right: 0.8rem;
+}
+
+/* Optional manual compact variant: add .compact to .input-group.password to further shrink the input */
+.input-group.password.compact .input-row {
+  max-width: 300px;
+}
+
+.password-toggle {
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: #e6eef8;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+}
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.password-toggle:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.password-toggle:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Responsive: on small screens stack input and button */
+@media (max-width: 450px) {
+  .input-group.password .input-row {
+    display: block;
+    max-width: 100%;
+  }
+
+  .input-group.password .input-row input {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .password-toggle {
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+  }
+}
+
+.password-toggle:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.password-toggle:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+
 /* Buttons */
 .btn, .btn-google {
   width: 100%;
