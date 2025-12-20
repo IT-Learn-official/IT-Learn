@@ -14,6 +14,8 @@
 
    <!-- Cloudflare script -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Feather icons (needed for eye/eye-off icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" onload="if(window.feather){feather.replace();}" ></script>
     <script src="/translations.js"></script>
 </head>
 
@@ -43,9 +45,14 @@ s0.parentNode.insertBefore(s1,s0);
         <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
       </div>
 
-      <div class="input-group">
+      <div class="input-group password">
         <label for="password" data-translate="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
+        <div class="input-row">
+          <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
+          <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
+            <i data-feather="eye">👁️</i>
+          </button>
+        </div>
       </div>
 
       <!-- Cloudflare widget -->
@@ -79,6 +86,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         feather.replace();
     }
     updateInputPlaceholders(storedLang);
+    initPasswordToggle();
+    updatePasswordToggleLabels(storedLang);
 
   try {
     const resp = await fetch('https://itlearn.pythonanywhere.com/api/session', {
@@ -115,10 +124,55 @@ function updateInputPlaceholders(lang) {
     if (passwordInput) passwordInput.placeholder = translations[lang]['enterPassword'] || 'Enter your password';
 }
 
+function updatePasswordToggleLabels(lang) {
+    const btn = document.querySelector('.password-toggle');
+    if (!btn) return;
+    const show = translations[lang] && translations[lang]['showPassword'] ? translations[lang]['showPassword'] : 'Show password';
+    const hide = translations[lang] && translations[lang]['hidePassword'] ? translations[lang]['hidePassword'] : 'Hide password';
+    btn.dataset.showLabel = show;
+    btn.dataset.hideLabel = hide;
+    const isPressed = btn.getAttribute('aria-pressed') === 'true';
+    btn.setAttribute('aria-label', isPressed ? hide : show);
+    btn.setAttribute('title', isPressed ? hide : show);
+}
+
+function initPasswordToggle() {
+    const pw = document.getElementById('password');
+    const btn = document.querySelector('.password-toggle');
+    if (!pw || !btn) return;
+
+    // Ensure icons are rendered
+    if (window.feather) feather.replace();
+
+    btn.addEventListener('click', () => {
+        const showing = pw.type === 'text';
+        if (showing) {
+            pw.type = 'password';
+            btn.setAttribute('aria-pressed', 'false');
+            const show = btn.dataset.showLabel || 'Show password';
+            btn.setAttribute('aria-label', show);
+            btn.setAttribute('title', show);
+            btn.innerHTML = '<i data-feather="eye"></i>';
+        } else {
+            pw.type = 'text';
+            btn.setAttribute('aria-pressed', 'true');
+            const hide = btn.dataset.hideLabel || 'Hide password';
+            btn.setAttribute('aria-label', hide);
+            btn.setAttribute('title', hide);
+            btn.innerHTML = '<i data-feather="eye-off"></i>';
+        }
+        if (window.feather) {
+            feather.replace();
+        }
+        pw.focus();
+    });
+}
+
 const originalUpdatePageLanguage = window.updatePageLanguage;
 window.updatePageLanguage = function(lang) {
     originalUpdatePageLanguage(lang);
     updateInputPlaceholders(lang);
+    updatePasswordToggleLabels(lang);
 };
 
 document.getElementById("login-form").addEventListener("submit", async (e) => {
