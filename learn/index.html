@@ -58,7 +58,9 @@
 
   <script type="module" src="./ui/js/main.js"></script>
   
-  <script>
+  <script type="module">
+    import { logout } from './ui/js/services/authService.js';
+    
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initLogoutButton);
@@ -66,25 +68,22 @@
       initLogoutButton();
     }
     
-    function initLogoutButton() {
+    async function initLogoutButton() {
       const authBtn = document.getElementById('auth-btn');
-      console.log('Auth button found:', authBtn);
       
       if (authBtn) {
         authBtn.addEventListener('click', async function(e) {
           e.preventDefault();
           console.log('Logout button clicked');
           
-          try {
-            const response = await fetch("https://itlearn.pythonanywhere.com/api/logout", {
-              method: "POST",
-              credentials: "include"
-            });
-            console.log('Logout response:', response);
-            window.location.href = "/login.html";
-          } catch (err) {
-            console.error("Logout failed", err);
-            alert("Logout failed. Please try again.");
+          const result = await logout();
+          
+          if (result.success) {
+            console.log('Logout successful, redirecting...');
+            window.location.href = '/login.html';
+          } else {
+            console.error('Logout failed');
+            alert('Logout failed. Please try again.');
           }
         });
         console.log('Event listener attached to logout button');
