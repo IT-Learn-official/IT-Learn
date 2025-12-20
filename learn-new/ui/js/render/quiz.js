@@ -2,6 +2,7 @@
 //licence: MIT
 
 import { renderMarkdownToHtml } from '../utils/markdown.js';
+import { playCorrectSound, playWrongSound, showMascotMessage } from '../mascot.js';
 
 /**
  * Ensure quiz data is loaded, using provided cache helpers.
@@ -104,11 +105,17 @@ export function renderQuiz({ container, quiz }) {
         feedbackEl.className = 'quiz-feedback is-correct';
         if (label) label.classList.add('is-correct');
         if (orb) orb.classList.add('is-correct');
+
+        playCorrectSound();
+        showMascotMessage("✅ Correct! Well done! 🎉", 3000);
       } else {
         feedbackEl.textContent = byOptionId[selectedId] || overview || 'Not quite. Try again!';
         feedbackEl.className = 'quiz-feedback is-incorrect';
         if (label) label.classList.add('is-incorrect');
         if (orb) orb.classList.add('is-incorrect');
+
+        playWrongSound();
+        showMascotMessage("❌ Not quite right. Try again! 💪", 3000);
       }
     }
 

@@ -59,8 +59,12 @@ export function appendVerdictMessages(teacherPanelApi, validation) {
     const passed = /pass(ed)?|success|congrat/i.test(validation.feedbackText);
     if (passed) {
       verdictMessage = '\n✅ Congratulations! Your assignment passed all checks.';
+      playCorrectSound();
+      showMascotMessage("🎉 Great job! Assignment completed successfully!", 4000);
     } else {
       verdictMessage = '\n❌ Your assignment did not pass all checks. Please review the feedback above.';
+      playWrongSound();
+      showMascotMessage("Keep trying! Review the feedback and try again. 💪", 4000);
     }
   }
 

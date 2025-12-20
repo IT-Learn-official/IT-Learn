@@ -5,6 +5,7 @@ import { setCoursesDoc } from './state/appState.js';
 import { initRouter } from './state/router.js';
 import { initLayout, handleRouteChange, setGlobalStatus } from './render/layout.js';
 import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotService.js';
+import { showWelcomeMessage } from './mascot.js';
 
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
@@ -18,6 +19,8 @@ async function bootstrap() {
     const coursesDoc = await fetchCourses();
     setCoursesDoc(coursesDoc);
     setGlobalStatus('');
+    
+    showWelcomeMessage();
   } catch (error) {
     console.error('Failed to load courses', error);
     setGlobalStatus('Failed to load courses. Please refresh the page.');

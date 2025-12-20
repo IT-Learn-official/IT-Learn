@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
-  <title>IT Courses Platform</title>
+  <title>IT Learn</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./ui/css/base.css" />
+  <meta property="og:title" content="IT Learn">
+  <meta property="og:description" content="Learn programming for free! - IT Learn">
+  <meta property="og:image" content="https://files.itlearn.be/images/branding/logo/IT_Learn.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./ui/css/main.css" />
+  <link rel="stylesheet" href="./ui/css/base.css" />
   <link rel="stylesheet" href="./ui/css/layout.css" />
   <link rel="stylesheet" href="./ui/css/components/buttons.css" />
   <link rel="stylesheet" href="./ui/css/components/markdown.css" />
@@ -19,12 +25,75 @@
   <script src="./ui/js/ace/theme-discord-dark.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+  
+
+
   <div id="global-status" aria-live="polite"></div>
+  <nav class="sidebar">
+    <h2>IT Learn</h2>
+    <ul>
+      <li><a href="#" id="profile-link">Profile</a></li>
+      <li><a href="#" id="badges-link">Badges</a></li>
+      <li><a href="#" id="settings-link">Settings</a></li>
+    </ul>
+    <button id="auth-btn">Log Out</button>
+  </nav>
+
   <main id="app-root">
     <section id="screen-root" aria-live="polite">
     </section>
+    
+    <a href="https://discord.gg/rKgF9s32EV" target="_blank" class="discord-button">
+      <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/discord.png?raw=true" alt="Discord" />
+    </a>
   </main>
+
+  <div id="mascot-container" aria-live="polite" aria-atomic="true" role="region">
+    <img src="https://files.itlearn.be/images/branding/logo/IT_Learn.png" alt="Mascot" id="mascot-image" />
+    <div id="mascot-bubble">Hi! Ready to code?</div>
+  </div>
+
+  <audio id="audio-correct" src="/sounds/correct.mp3" preload="auto"></audio>
+  <audio id="audio-wrong" src="/sounds/wrong.mp3" preload="auto"></audio>
+
   <script type="module" src="./ui/js/main.js"></script>
+  
+  <script>
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLogoutButton);
+    } else {
+      initLogoutButton();
+    }
+    
+    function initLogoutButton() {
+      const authBtn = document.getElementById('auth-btn');
+      console.log('Auth button found:', authBtn);
+      
+      if (authBtn) {
+        authBtn.addEventListener('click', async function(e) {
+          e.preventDefault();
+          console.log('Logout button clicked');
+          
+          try {
+            const response = await fetch("https://itlearn.pythonanywhere.com/api/logout", {
+              method: "POST",
+              credentials: "include"
+            });
+            console.log('Logout response:', response);
+            window.location.href = "/login.html";
+          } catch (err) {
+            console.error("Logout failed", err);
+            alert("Logout failed. Please try again.");
+          }
+        });
+        console.log('Event listener attached to logout button');
+      } else {
+        console.error('Auth button not found!');
+      }
+    }
+  </script>
+  
   <script>
     (function () {
       function isAllowedOrigin(origin) {
