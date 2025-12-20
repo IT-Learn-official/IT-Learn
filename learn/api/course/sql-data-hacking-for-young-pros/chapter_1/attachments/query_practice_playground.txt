@@ -1,0 +1,106 @@
+-- Query Practice Playground
+-- Use this file to practice writing your own queries
+-- The sample data is already loaded in the database
+
+-- ====================================
+-- PRACTICE EXERCISES
+-- ====================================
+
+-- Exercise 1: Get all hackers
+-- Write your query below:
+
+
+
+-- Exercise 2: Get only usernames from hackers
+-- Write your query below:
+
+
+
+-- Exercise 3: Get username and level from hackers
+-- Write your query below:
+
+
+
+-- Exercise 4: Get all skills
+-- Write your query below:
+
+
+
+-- Exercise 5: Get skill_name and difficulty from skills
+-- Write your query below:
+
+
+
+-- Exercise 6: Get all projects
+-- Write your query below:
+
+
+
+-- Exercise 7: Get project_name and status from projects
+-- Write your query below:
+
+
+
+-- Exercise 8: Get username, email, and level from hackers
+-- Write your query below:
+
+
+
+-- Exercise 9: Get skill_name, category, and points from skills
+-- Write your query below:
+
+
+
+-- Exercise 10: Get project_name, difficulty, and points_reward from projects
+-- Write your query below:
+
+
+
+-- ====================================
+-- CHALLENGE SECTION
+-- ====================================
+
+-- Challenge 1: Write a query to select 4 columns from any table
+
+
+
+-- Challenge 2: Write 3 different queries for 3 different tables
+
+
+
+-- Challenge 3: Create your own query that selects columns in a unique order
+
+
+
+-- ====================================
+-- NOTES AND EXPERIMENTS
+-- ====================================
+-- Use this space to experiment with your own queries
+-- Try different combinations of columns
+-- Test what happens when you change the order of columns
+
+
+
+
+
+
+
+
+
+
+
+-- ====================================
+-- ANSWER KEY (Try before looking!)
+-- ====================================
+
+-- Exercise 1: SELECT * FROM hackers;
+-- Exercise 2: SELECT username FROM hackers;
+-- Exercise 3: SELECT username, level FROM hackers;
+-- Exercise 4: SELECT * FROM skills;
+-- Exercise 5: SELECT skill_name, difficulty FROM skills;
+-- Exercise 6: SELECT * FROM projects;
+-- Exercise 7: SELECT project_name, status FROM projects;
+-- Exercise 8: SELECT username, email, level FROM hackers;
+-- Exercise 9: SELECT skill_name, category, points FROM skills;
+-- Exercise 10: SELECT project_name, difficulty, points_reward FROM projects;
+

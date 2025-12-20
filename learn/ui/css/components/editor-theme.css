@@ -1,0 +1,56 @@
+/* author: https://github.com/nhermab
+   rewrite by: https://github.com/broodje565 */
+
+.markdown-ace-editor .ace_editor,
+.practice-editor .ace_editor {
+  background-color: var(--panel) !important;
+  color: #f8fafc !important;
+  margin: 0 !important;
+  border-radius: var(--radius-md);
+  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+.ace_gutter {
+  background: var(--panel) !important;
+  color: var(--muted) !important;
+  box-shadow: none !important;
+  border-right: 1px solid var(--glass-border) !important;
+}
+
+.ace_editor .ace_marker-layer .ace_selection {
+  background: rgba(99,102,241,0.25) !important;
+}
+
+.practice-editor .ace_editor,
+.markdown-ace-editor .ace_editor,
+.practice-editor .ace_editor.ace_dark,
+.markdown-ace-editor .ace_editor.ace_dark {
+  background: var(--panel) !important;
+}
+
+.practice-editor .ace_scroller,
+.markdown-ace-editor .ace_scroller {
+  background: var(--panel) !important;
+}
+
+.ace_cursor {
+  color: #6366f1 !important;
+}
+
+.ace_gutter-cell {
+  font-weight: var(--fw-medium);
+}
+
+.ace_marker-layer .ace_active-line {
+  background: rgba(79,70,229,0.08) !important;
+}
+
+.ace_print-margin {
+  width: 1px;
+  background: var(--glass-border) !important;
+}
+
+.ace_fold {
+  background-color: var(--accent-600) !important;
+  border-radius: 4px;
+}

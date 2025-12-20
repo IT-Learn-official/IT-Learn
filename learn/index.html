@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <title>IT Learn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="IT Learn">
+  <meta property="og:description" content="Learn programming for free! - IT Learn">
+  <meta property="og:image" content="https://files.itlearn.be/images/branding/logo/IT_Learn.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./ui/css/main.css" />
+  <link rel="stylesheet" href="./ui/css/base.css" />
+  <link rel="stylesheet" href="./ui/css/layout.css" />
+  <link rel="stylesheet" href="./ui/css/components/buttons.css" />
+  <link rel="stylesheet" href="./ui/css/components/markdown.css" />
+  <link rel="stylesheet" href="./ui/css/components/editor-theme.css" />
+  <link rel="stylesheet" href="./ui/css/components/quiz.css" />
+  <link rel="stylesheet" href="./ui/css/components/practice.css" />
+  <link rel="stylesheet" href="./ui/css/components/premium-effects.css" />
+  <link rel="stylesheet" href="./ui/css/components/teacherbot.css" />
+  <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./ui/js/ace/theme-discord-dark.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  
+
+
+  <div id="global-status" aria-live="polite"></div>
+  <nav class="sidebar">
+    <h2>IT Learn</h2>
+    <ul>
+      <li><a href="#" id="profile-link">Profile</a></li>
+      <li><a href="#" id="badges-link">Badges</a></li>
+      <li><a href="#" id="settings-link">Settings</a></li>
+    </ul>
+    <button id="auth-btn">Log Out</button>
+  </nav>
+
+  <main id="app-root">
+    <section id="screen-root" aria-live="polite">
+    </section>
+    
+    <a href="https://discord.gg/rKgF9s32EV" target="_blank" class="discord-button">
+      <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/discord.png?raw=true" alt="Discord" />
+    </a>
+  </main>
+
+  <div id="mascot-container" aria-live="polite" aria-atomic="true" role="region">
+    <img src="https://files.itlearn.be/images/branding/logo/IT_Learn.png" alt="Mascot" id="mascot-image" />
+    <div id="mascot-bubble">Hi! Ready to code?</div>
+  </div>
+
+  <audio id="audio-correct" src="/sounds/correct.mp3" preload="auto"></audio>
+  <audio id="audio-wrong" src="/sounds/wrong.mp3" preload="auto"></audio>
+
+  <script type="module" src="./ui/js/main.js"></script>
+  
+  <script type="module">
+    import { logout } from './ui/js/services/authService.js';
+    
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLogoutButton);
+    } else {
+      initLogoutButton();
+    }
+    
+    async function initLogoutButton() {
+      const authBtn = document.getElementById('auth-btn');
+      
+      if (authBtn) {
+        authBtn.addEventListener('click', async function(e) {
+          e.preventDefault();
+          console.log('Logout button clicked');
+          
+          const result = await logout();
+          
+          if (result.success) {
+            console.log('Logout successful, redirecting...');
+            window.location.href = '/login.html';
+          } else {
+            console.error('Logout failed');
+            alert('Logout failed. Please try again.');
+          }
+        });
+        console.log('Event listener attached to logout button');
+      } else {
+        console.error('Auth button not found!');
+      }
+    }
+  </script>
+  
+  <script>
+    (function () {
+      function isAllowedOrigin(origin) {
+        try {
+          const u = new URL(origin);
+          const hostname = u.hostname.toLowerCase();
+          // Allow all localhost variants, loopback IP and subdomains of *.localhost
+          if (
+                  hostname === 'localhost' ||
+                  hostname === '127.0.0.1' ||
+                  hostname === '::1' ||
+                  hostname.endsWith('.localhost')
+          ) {
+            return true;
+          }
+          // Allow itlearn.be and subdomains (http or https)
+          if (hostname === 'itlearn.be' || hostname.endsWith('.itlearn.be')) {
+            return true;
+          }
+          return false;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function applyInjectedCSS(css) {
+        const id = 'external-injected-style';
+        let style = document.getElementById(id);
+        if (!style) {
+          style = document.createElement('style');
+          style.id = id;
+          document.head.appendChild(style);
+        }
+        // Replace style content
+        style.textContent = css;
+      }
+
+      window.addEventListener('message', function (event) {
+        // Accept same-origin (for local testing) or allowed origins
+        if (event.origin !== window.location.origin && !isAllowedOrigin(event.origin)) {
+          // ignore unauthorized origins
+          if (event.source && event.source.postMessage) {
+            event.source.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'origin-not-allowed' },
+                    event.origin
+            );
+          }
+          return;
+        }
+
+        const msg = event.data;
+        if (!msg || typeof msg !== 'object') {
+          // ignore invalid messages
+          return;
+        }
+
+        if (msg.type === 'inject-css') {
+          const css = String(msg.css || '');
+          // simple safety checks
+          if (css.length > 20000) {
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'css-too-large' },
+                    event.origin
+            );
+            return;
+          }
+          try {
+            applyInjectedCSS(css);
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'ok' },
+                    event.origin
+            );
+          } catch (err) {
+            event.source?.postMessage(
+                    { type: 'inject-response', status: 'error', reason: 'apply-failed' },
+                    event.origin
+            );
+          }
+        }
+      }, false);
+    })();
+  </script>
+</body>
+</html>
