@@ -348,9 +348,11 @@ textarea {
   transform: translateX(-50%) translateY(0);
 }
 
-body::before, body::after, .screen::after, .list-button.is-active, .tab-button.is-active, .practice-attachment-button.is-active, header h1, .markdown-body a::after, *:focus-visible, .markdown-body tr:hover, .markdown-body blockquote::before, .markdown-body img, .practice-assignment-select:hover, .practice-assignment-select:focus {
-  animation: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  background: none !important;
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after, .screen::after, .list-button.is-active, .tab-button.is-active, .practice-attachment-button.is-active, header h1, .markdown-body a::after, *:focus-visible, .markdown-body tr:hover, .markdown-body blockquote::before, .markdown-body img, .practice-assignment-select:hover, .practice-assignment-select:focus {
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    background: none !important;
+  }
 }
