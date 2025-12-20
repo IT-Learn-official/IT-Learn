@@ -13,7 +13,6 @@
   <meta property="og:type" content="website">
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <!-- Feather icons (needed for eye/eye-off icons) -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" onload="if(window.feather){feather.replace();}" ></script>
   <script src="/translations.js"></script>
 </head>
@@ -96,6 +95,8 @@ s0.parentNode.insertBefore(s1,s0);
     const storedLang = localStorage.getItem('language') || 'en';
     updatePageLanguage(storedLang);
     updateInputPlaceholders(storedLang);
+    initPasswordToggle();
+    updatePasswordToggleLabels(storedLang);
 
     try {
       const resp = await fetch('https://itlearn.pythonanywhere.com/api/session', {
@@ -154,7 +155,6 @@ s0.parentNode.insertBefore(s1,s0);
       const input = row ? row.querySelector('input') : null;
       if (!input) return;
 
-      // Ensure icons are rendered
       if (window.feather) feather.replace();
 
       btn.addEventListener('click', () => {
