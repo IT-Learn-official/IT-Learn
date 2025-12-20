@@ -1,12 +1,10 @@
 {
   "courses": [
     {
-        "id": "python-programming-for-young-advanced-hackers",
+      "id": "python-programming-for-young-advanced-hackers",
       "title": "Python Programming for young advanced hackers",
       "description": "A hands-on, project-based introduction to coding for beginners, kids, and teens, covering basics to object-oriented programming.",
-      "authors": [
-        "Nick Hermans"
-      ],
+      "authors": ["Nick Hermans, Broodje56"],
       "chapters": [
         {
           "id": "chapter_1",
@@ -135,9 +133,7 @@
       "title": "SQL Data Hacking for Young Pros",
       "description": "Master the language of data. A hands-on, project-based course using SQLite to query, analyze, and build databases from scratch.",
       "language": "sql",
-      "authors": [
-        "Nick Hermans"
-      ],
+      "authors": ["Nick Hermans"],
       "chapters": [
         {
           "id": "chapter_1",
