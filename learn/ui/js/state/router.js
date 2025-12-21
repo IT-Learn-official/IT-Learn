@@ -17,6 +17,13 @@ export function parseLocation(hash) {
   const segments = pathPart.split('/').filter(Boolean);
   const query = queryPart ? parseQuery(queryPart) : {};
 
+  if (segments[0] === 'settings') {
+    return {
+      route: 'settings',
+      tab: query.tab || 'settings',
+    };
+  }
+
   if (segments[0] === 'courses' && segments.length === 1) {
     return {
       route: 'courses',
@@ -39,6 +46,10 @@ export function parseLocation(hash) {
 }
 
 export function toHash(descriptor) {
+  if (descriptor.route === 'settings') {
+    return '#/settings';
+  }
+
   if (descriptor.route === 'courses') {
     const base = '#/courses';
     const params = new URLSearchParams();

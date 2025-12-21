@@ -183,3 +183,58 @@ export async function getUserCount() {
         return { totalUsers: '0+' };
     }
 }
+
+/**
+ * Change user password
+ * @param {string} newPassword - New password
+ * @returns {Promise<{success: boolean, error?: string}>}
+ */
+export async function changePassword(newPassword) {
+    try {
+        const response = await fetch(`${API_BASE}/change-password`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                new_password: newPassword
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Password change failed' };
+        }
+        
+        return { success: true };
+    } catch (error) {
+        console.error('Change password error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}
+
+/**
+ * Delete user account
+ * @returns {Promise<{success: boolean, error?: string}>}
+ */
+export async function deleteAccount() {
+    try {
+        const response = await fetch(`${API_BASE}/delete-account`, {
+            method: 'POST',
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Account deletion failed' };
+        }
+        
+        return { success: true };
+    } catch (error) {
+        console.error('Delete account error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}

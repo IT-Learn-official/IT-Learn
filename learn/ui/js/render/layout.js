@@ -3,6 +3,7 @@
 import { getState, setSelection } from '../state/appState.js';
 import { renderCoursesScreen, renderChaptersScreen } from '../render/courseListView.js';
 import { renderChapterScreenContent } from '../render/chapterView.js';
+import { renderSettingsView } from '../render/settingsView.js';
 import { navigateTo } from '../state/router.js';
 
 let globalStatusEl;
@@ -55,6 +56,11 @@ export async function renderApp(route) {
   const { coursesDoc, selectedCourseId, selectedChapterId } = state;
 
   screenRootEl.innerHTML = '';
+
+  if (route.route === 'settings') {
+    renderSettingsView(screenRootEl);
+    return;
+  }
 
   if (!coursesDoc || !coursesDoc.courses) {
     const loadingScreen = document.createElement('section');

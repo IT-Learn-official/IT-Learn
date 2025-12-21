@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./ui/css/components/practice.css" />
   <link rel="stylesheet" href="./ui/css/components/premium-effects.css" />
   <link rel="stylesheet" href="./ui/css/components/teacherbot.css" />
+  <link rel="stylesheet" href="./ui/css/components/settings.css" />
   <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -60,16 +61,18 @@
   
   <script type="module">
     import { logout } from './ui/js/services/authService.js';
+    import { navigateTo } from './ui/js/state/router.js';
     
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initLogoutButton);
+      document.addEventListener('DOMContentLoaded', initEventListeners);
     } else {
-      initLogoutButton();
+      initEventListeners();
     }
     
-    async function initLogoutButton() {
+    async function initEventListeners() {
       const authBtn = document.getElementById('auth-btn');
+      const settingsLink = document.getElementById('settings-link');
       
       if (authBtn) {
         authBtn.addEventListener('click', async function(e) {
@@ -89,6 +92,17 @@
         console.log('Event listener attached to logout button');
       } else {
         console.error('Auth button not found!');
+      }
+
+      if (settingsLink) {
+        settingsLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Settings link clicked');
+          navigateTo({ route: 'settings' });
+        });
+        console.log('Event listener attached to settings link');
+      } else {
+        console.error('Settings link not found!');
       }
     }
   </script>
