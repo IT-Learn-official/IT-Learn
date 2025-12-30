@@ -9,6 +9,11 @@ const state = {
   chapterContentCache: new Map(), // key: `${courseId}:${chapterId}`, value: { theory, quiz, practice }
   selectedPracticeAssignmentId: null,
   selectedPracticeTemplatePath: null,
+  trialMode: {
+    isActive: false,
+    courseId: null,
+    requiresRegistration: false,
+  },
 };
 
 export function getState() {
@@ -42,7 +47,24 @@ export function getChapterContent(courseId, chapterId) {
   return state.chapterContentCache.get(key) || {};
 }
 
-export function setSelectedPracticeAssignment(assignmentId) {
+export function setTrialMode(isActive, courseId = null, requiresRegistration = false) {
+  state.trialMode = {
+    isActive,
+    courseId,
+    requiresRegistration,
+  };
+}
+
+export function getTrialMode() {
+  return state.trialMode;
+}
+
+export function setTrialRequiresRegistration(value) {
+  state.trialMode.requiresRegistration = value;
+}
+
+
+export function setSelectedPracticeAssignmentId(assignmentId) {
   state.selectedPracticeAssignmentId = assignmentId;
 }
 

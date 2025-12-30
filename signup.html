@@ -291,7 +291,65 @@ s0.parentNode.insertBefore(s1,s0);
             return;
         }
 
-        console.log('[SIGNUP] Success! Redirecting...');
+        console.log('[SIGNUP] Success! Checking for trial data...');
+        
+        // Check if this signup came from a trial session
+        const urlParams = new URLSearchParams(window.location.search);
+        const isFromTrial = urlParams.get('trial') === 'completed';
+        
+        if (isFromTrial) {
+          console.log('[SIGNUP] Trial completion detected, linking trial progress...');
+          try {
+            // Get trial data from localStorage
+            const trialSessionData = localStorage.getItem('itlearn_trial_session');
+            const trialProgressData = localStorage.getItem('itlearn_trial_progress');
+            
+            if (trialSessionData && trialProgressData) {
+              const trialSession = JSON.parse(trialSessionData);
+              const trialProgress = JSON.parse(trialProgressData);
+              
+              // Prepare data for backend linking
+              const trialDataForLinking = {
+                sessionId: trialSession.sessionId,
+                courseId: trialSession.courseId,
+                startedAt: trialSession.startedAt,
+                expiresAt: trialSession.expiresAt,
+                chapters: trialProgress.chapters || []
+              };
+              
+              console.log('[SIGNUP] Linking trial data with backend...');
+              const linkRes = await fetch('https://itlearn.pythonanywhere.com/api/trial/link', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify(trialDataForLinking)
+              });
+              
+              if (linkRes.ok) {
+                const linkData = await linkRes.json();
+                console.log('[SIGNUP] Trial progress linked successfully:', linkData);
+                
+                // Clear trial data from localStorage
+                localStorage.removeItem('itlearn_trial_session');
+                localStorage.removeItem('itlearn_trial_progress');
+                console.log('[SIGNUP] Trial data cleared from localStorage');
+              } else {
+                console.warn('[SIGNUP] Failed to link trial progress, but account created:', linkRes.status);
+                // Account was created successfully, just trial linking failed
+                // Clear trial data anyway
+                localStorage.removeItem('itlearn_trial_session');
+                localStorage.removeItem('itlearn_trial_progress');
+              }
+            }
+          } catch (trialErr) {
+            console.warn('[SIGNUP] Error linking trial data:', trialErr);
+            // Account was created successfully, continue anyway
+            localStorage.removeItem('itlearn_trial_session');
+            localStorage.removeItem('itlearn_trial_progress');
+          }
+        }
+        
+        console.log('[SIGNUP] Signup complete, redirecting to /learn/index.html');
         alert('Signup successful!');
         window.location.href = '/learn/index.html';
     } catch (err) {

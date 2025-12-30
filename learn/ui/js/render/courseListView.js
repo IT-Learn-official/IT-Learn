@@ -3,10 +3,14 @@
 import { navigateTo } from '../state/router.js';
 import { getState } from '../state/appState.js';
 import { isChapterRead } from '../state/courseProgress.js';
+import { getTrialMode } from '../state/appState.js';
+import { startTrialCourse } from '../services/trialMode.js';
+import { createTrialBadge } from './trialRegistrationModal.js';
 
 export function renderCoursesScreen(container) {
   const state = getState();
   const { coursesDoc, selectedCourseId } = state;
+  const trialMode = getTrialMode();
 
   container.innerHTML = '';
 
@@ -25,8 +29,22 @@ export function renderCoursesScreen(container) {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'list-button' + (course.id === selectedCourseId ? ' is-active' : '');
-      button.textContent = course.title;
+      
+      if (trialMode.isActive) {
+        const badgeEl = createTrialBadge(true);
+        if (badgeEl) {
+          button.appendChild(badgeEl);
+        }
+      }
+      
+      const titleSpan = document.createElement('span');
+      titleSpan.textContent = course.title;
+      button.appendChild(titleSpan);
+      
       button.addEventListener('click', () => {
+        if (trialMode.isActive) {
+          startTrialCourse(course.id);
+        }
         navigateTo({ route: 'courses', courseId: course.id, tab: 'theory' });
       });
       li.appendChild(button);

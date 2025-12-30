@@ -1,12 +1,5 @@
-// Authentication Service for IT Learn
-// Handles login, signup, logout, and session management
-
 const API_BASE = 'https://itlearn.pythonanywhere.com/api';
 
-/**
- * Check if user is logged in
- * @returns {Promise<{logged_in: boolean, user_id: string|null}>}
- */
 export async function checkSession() {
     try {
         const response = await fetch(`${API_BASE}/session`, {
@@ -21,13 +14,6 @@ export async function checkSession() {
     }
 }
 
-/**
- * Login user
- * @param {string} email 
- * @param {string} password 
- * @param {string} captchaToken - Turnstile CAPTCHA token
- * @returns {Promise<{success: boolean, user_id?: string, error?: string}>}
- */
 export async function login(email, password, captchaToken) {
     try {
         const response = await fetch(`${API_BASE}/login`, {
@@ -56,13 +42,6 @@ export async function login(email, password, captchaToken) {
     }
 }
 
-/**
- * Sign up new user
- * @param {string} email 
- * @param {string} password 
- * @param {string} captchaToken - Turnstile CAPTCHA token
- * @returns {Promise<{success: boolean, user_id?: string, error?: string}>}
- */
 export async function signup(email, password, captchaToken) {
     try {
         const response = await fetch(`${API_BASE}/signup`, {
@@ -91,10 +70,6 @@ export async function signup(email, password, captchaToken) {
     }
 }
 
-/**
- * Logout user
- * @returns {Promise<{success: boolean}>}
- */
 export async function logout() {
     try {
         const response = await fetch(`${API_BASE}/logout`, {
@@ -110,10 +85,6 @@ export async function logout() {
     }
 }
 
-/**
- * Load user progress
- * @returns {Promise<Object>} Progress data
- */
 export async function loadProgress() {
     try {
         const response = await fetch(`${API_BASE}/progress/load`, {
@@ -140,11 +111,6 @@ export async function loadProgress() {
     }
 }
 
-/**
- * Save user progress
- * @param {Object} progressData - Progress data to save
- * @returns {Promise<{success: boolean}>}
- */
 export async function saveProgress(progressData) {
     try {
         const response = await fetch(`${API_BASE}/progress/save`, {
@@ -166,10 +132,6 @@ export async function saveProgress(progressData) {
     }
 }
 
-/**
- * Get total user count
- * @returns {Promise<{totalUsers: string}>}
- */
 export async function getUserCount() {
     try {
         const response = await fetch(`${API_BASE}/user-count`, {
@@ -181,6 +143,30 @@ export async function getUserCount() {
     } catch (error) {
         console.error('User count error:', error);
         return { totalUsers: '0+' };
+    }
+}
+
+export async function linkTrialProgress(trialData) {
+    try {
+        const response = await fetch(`${API_BASE}/trial/link`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify(trialData)
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Failed to link trial progress' };
+        }
+        
+        return { success: true };
+    } catch (error) {
+        console.error('Link trial progress error:', error);
+        return { success: false, error: 'Network error. Trial progress may not be linked.' };
     }
 }
 

@@ -85,7 +85,10 @@ export function isChapterRead(courseId, chapterIndex) {
 }
 
 export function markChapterRead(courseId, chapterIndex, totalChaptersHint) {
-  if (!courseId || chapterIndex == null || chapterIndex < 0) return;
+  if (!courseId || chapterIndex == null || chapterIndex < 0) return false;
+  
+  const wasAlreadyRead = isChapterRead(courseId, chapterIndex);
+  
   const totalBits = typeof totalChaptersHint === 'number' && totalChaptersHint > 0
     ? Math.max(totalChaptersHint, chapterIndex + 1)
     : (chapterIndex + 1);
@@ -95,6 +98,7 @@ export function markChapterRead(courseId, chapterIndex, totalChaptersHint) {
   const bytes = ensureCourseBytes(courseId, bitsNeeded);
   bytes[byteIndex] = bytes[byteIndex] | (1 << bitIndex);
   saveReadChaptersCookie();
+  return wasAlreadyRead;
 }
 
 export function getChapterIndexForCourse(course, chapterId) {

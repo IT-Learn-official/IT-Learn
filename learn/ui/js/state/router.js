@@ -42,6 +42,10 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'settings') {
+    return { route: 'settings' };
+  }
+
   return { route: 'courses', tab: 'theory' };
 }
 
@@ -67,6 +71,10 @@ export function toHash(descriptor) {
     const base = `#/courses/${encodeURIComponent(courseId)}/chapters/${encodeURIComponent(chapterId)}`;
     const query = tab && tab !== 'theory' ? `?tab=${encodeURIComponent(tab)}` : '';
     return `${base}${query}`;
+  }
+
+  if (descriptor.route === 'settings') {
+    return '#/settings';
   }
 
   return DEFAULT_ROUTE;

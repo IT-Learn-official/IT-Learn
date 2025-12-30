@@ -1,11 +1,12 @@
 //author: https://github.com/nhermab
 //licence: MIT
-import { getState, getChapterContent, setChapterContent } from '../state/appState.js';
+import { getState, getChapterContent, setChapterContent, getTrialMode } from '../state/appState.js';
 import { fetchChapterQuiz } from '../services/apiClient.js';
 import { ensureQuizLoaded, renderQuiz } from './quiz.js';
 import { getChapterIndexForCourse, markChapterRead } from '../state/courseProgress.js';
 import { renderTheoryTab } from './theoryTab.js';
 import { renderPracticeTab } from './practice/practiceTabRenderer.js';
+import { triggerChapterComplete } from './chapterView.js';
 
 export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabButtons, tabContentEl }) {
   const state = getState();
@@ -41,10 +42,34 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
     return;
   }
 
-  // Mark this chapter as read as soon as it is successfully resolved.
+  const trialMode = getTrialMode();
   const chapterIndex = getChapterIndexForCourse(course, selectedChapterId);
+  if (trialMode.isActive && chapterIndex > 0) {
+    if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Chapter';
+    if (headerSubtitleEl) headerSubtitleEl.textContent = course.title || '';
+    setActiveTabButton(tabButtons, selectedTab);
+    
+    tabContentEl.innerHTML = `
+      <div class="trial-restricted-content">
+        <div class="trial-lock-icon">🔒</div>
+        <h2>Keep Learning For Free</h2>
+        <p>Great start! Create a free account to unlock every chapter in this course and keep your progress synced.</p>
+        <ul class="trial-benefits">
+          <li>All chapters unlocked instantly</li>
+          <li>Progress and streaks saved</li>
+          <li>Practice and quizzes included</li>
+        </ul>
+        <a href="/signup.html?trial=completed" class="btn btn-primary" style="margin-top: 1rem;">Create Free Account</a>
+      </div>
+    `;
+    return;
+  }
+
   if (chapterIndex >= 0) {
-    markChapterRead(selectedCourseId, chapterIndex, course.chapters.length);
+    const wasRead = markChapterRead(selectedCourseId, chapterIndex, course.chapters.length);
+    if (!wasRead) {
+      triggerChapterComplete();
+    }
   }
 
   if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Chapter';

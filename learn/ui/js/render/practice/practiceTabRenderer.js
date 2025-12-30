@@ -1,4 +1,4 @@
-import { getState, setChapterContent, getChapterContent, setSelectedPracticeAssignment, setSelectedPracticeTemplatePath } from '../../state/appState.js';
+import { getState, setChapterContent, getChapterContent, setSelectedPracticeAssignmentId, setSelectedPracticeTemplatePath } from '../../state/appState.js';
 import { fetchChapterPractice } from '../../services/apiClient.js';
 import { createAssignmentPanel } from './assignmentPanel.js';
 import { createEditorPanel, initializeAceEditor, createConsolePanel, createChatPanel } from './editorPanel.js';
@@ -46,7 +46,7 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
   let activeAssignmentId = selectedPracticeAssignmentId || practice.practices[0].id;
   const activeAssignment = practice.practices.find((p) => p.id === activeAssignmentId) || practice.practices[0];
   if (!selectedPracticeAssignmentId) {
-    setSelectedPracticeAssignment(activeAssignment.id);
+    setSelectedPracticeAssignmentId(activeAssignment.id);
   }
 
   const activeTemplates = activeAssignment.templates || [];
@@ -68,7 +68,7 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
     courseId: selectedCourseId,
     chapterId: selectedChapterId,
     onAssignmentChange: (newId) => {
-      setSelectedPracticeAssignment(newId);
+      setSelectedPracticeAssignmentId(newId);
       setSelectedPracticeTemplatePath(null);
       renderPracticeTab(course, chapter, tabContentEl);
     },
