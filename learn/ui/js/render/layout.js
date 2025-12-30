@@ -1,5 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
+//edited by: https://github.com/broodje565
 import { getState, setSelection, getTrialMode } from '../state/appState.js';
 import { renderCoursesScreen, renderChaptersScreen } from '../render/courseListView.js';
 import { renderChapterScreenContent } from '../render/chapterView.js';

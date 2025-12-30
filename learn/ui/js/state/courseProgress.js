@@ -1,5 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
+//edited by: https://github.com/broodje565
 const READ_CHAPTERS_COOKIE = 'itskill_read_chapters';
 const READ_CHAPTERS_MAX_AGE_SECONDS = 60 * 60 * 24 * 90; // 90 days
 

@@ -1,5 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
+//edited by: https://github.com/broodje565
 import { navigateTo } from '../state/router.js';
 import { getState } from '../state/appState.js';
 import { isChapterRead } from '../state/courseProgress.js';

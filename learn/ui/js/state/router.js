@@ -1,5 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
+//edited by: https://github.com/broodje565
 const DEFAULT_ROUTE = '#/courses';
 
 function parseQuery(queryString) {

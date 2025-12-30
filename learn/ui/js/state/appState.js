@@ -1,6 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
-
+//edited by: https://github.com/broodje565
 const state = {
   coursesDoc: null, // full courses.json document
   selectedCourseId: null,

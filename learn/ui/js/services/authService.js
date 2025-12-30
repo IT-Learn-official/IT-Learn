@@ -170,11 +170,6 @@ export async function linkTrialProgress(trialData) {
     }
 }
 
-/**
- * Change user password
- * @param {string} newPassword - New password
- * @returns {Promise<{success: boolean, error?: string}>}
- */
 export async function changePassword(newPassword) {
     try {
         const response = await fetch(`${API_BASE}/change-password`, {
@@ -201,10 +196,6 @@ export async function changePassword(newPassword) {
     }
 }
 
-/**
- * Delete user account
- * @returns {Promise<{success: boolean, error?: string}>}
- */
 export async function deleteAccount() {
     try {
         const response = await fetch(`${API_BASE}/delete-account`, {
