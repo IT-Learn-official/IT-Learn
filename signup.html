@@ -97,6 +97,7 @@ s0.parentNode.insertBefore(s1,s0);
     updateInputPlaceholders(storedLang);
     initPasswordToggle();
     updatePasswordToggleLabels(storedLang);
+    initGoogleOAuth();
 
     try {
       const resp = await fetch('https://itlearn.pythonanywhere.com/api/session', {
@@ -146,6 +147,40 @@ s0.parentNode.insertBefore(s1,s0);
       const isPressed = btn.getAttribute('aria-pressed') === 'true';
       btn.setAttribute('aria-label', isPressed ? hide : show);
       btn.setAttribute('title', isPressed ? hide : show);
+    });
+  }
+
+  function initGoogleOAuth() {
+    const btn = document.getElementById('google-login');
+    if (!btn) return;
+    const baseLabel = btn.textContent;
+
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      btn.textContent = 'Connecting to Google...';
+
+      try {
+        const redirectTo = `${window.location.origin}/oauth-callback.html`;
+        const res = await fetch('https://itlearn.pythonanywhere.com/api/oauth/google/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ redirect_to: redirectTo })
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.url) {
+          const errMsg = data && data.error ? data.error : 'Could not start Google login.';
+          throw new Error(errMsg);
+        }
+
+        window.location.href = data.url;
+      } catch (err) {
+        console.error('[GOOGLE] Start failed:', err);
+        alert('Could not start Google sign-in. Please try again.');
+        btn.disabled = false;
+        btn.textContent = baseLabel;
+      }
     });
   }
 
