@@ -67,7 +67,7 @@
   <div class="card">
     <div class="pulse" aria-hidden="true"></div>
     <h1>Finishing sign-in...</h1>
-    <p id="status">Hang tight while we verify your Google login.</p>
+    <p id="status">Hang tight while we verify your login.</p>
     <button id="retry" hidden>Back to login</button>
   </div>
 
@@ -76,12 +76,27 @@
       const statusEl = document.getElementById('status');
       const retryBtn = document.getElementById('retry');
 
+      const providerFromQuery = (new URLSearchParams(window.location.search).get('provider') || 'google').toLowerCase();
+      const providerLabel = {
+        google: 'Google',
+        github: 'GitHub',
+        discord: 'Discord'
+      }[providerFromQuery] || 'account';
+      const apiBase = 'https://itlearn.pythonanywhere.com';
+
       const hash = window.location.hash || '';
-      const params = new URLSearchParams(hash.startsWith('#') ? hash.substring(1) : hash);
+      const hashParams = new URLSearchParams(hash.startsWith('#') ? hash.substring(1) : hash);
+      const queryParams = new URLSearchParams(window.location.search || '');
+
+      const params = new URLSearchParams();
+      for (const [k, v] of queryParams.entries()) params.set(k, v);
+      for (const [k, v] of hashParams.entries()) params.set(k, v);
+
       const error = params.get('error_description') || params.get('error');
       const accessToken = params.get('access_token');
       const refreshToken = params.get('refresh_token');
       const expiresIn = Number(params.get('expires_in')) || null;
+      const authCode = params.get('code');
 
       const fail = (message) => {
         statusEl.textContent = message;
@@ -93,25 +108,26 @@
       });
 
       if (error) {
-        fail('Google sign-in was cancelled or failed. Please try again.');
+        fail(`${providerLabel} sign-in was cancelled or failed. Please try again.`);
         return;
       }
 
-      if (!accessToken) {
-        fail('No access token returned by Google. Please try again.');
+      if (!accessToken && !authCode) {
+        fail(`No access token returned by ${providerLabel}. Please try again.`);
         return;
       }
 
-      statusEl.textContent = 'Verifying your account...';
+      statusEl.textContent = `Verifying your ${providerLabel} account...`;
 
-      fetch('https://itlearn.pythonanywhere.com/api/oauth/google/complete', {
+      fetch(`${apiBase}/api/oauth/${providerFromQuery}/complete`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({
           access_token: accessToken,
           refresh_token: refreshToken,
-          expires_in: expiresIn
+          expires_in: expiresIn,
+          auth_code: authCode
         })
       })
         .then(async (res) => {
@@ -125,12 +141,33 @@
             throw new Error(msg);
           }
 
+          const redirectTo = `${window.location.origin}/learn/index.html`;
+
+          if (providerFromQuery === 'discord') {
+            const shouldJoin = localStorage.getItem('discord_join_server') === 'true';
+            localStorage.removeItem('discord_join_server');
+
+            if (shouldJoin) {
+              try {
+                const joinRes = await fetch(`${apiBase}/api/discord/join/start?next=${encodeURIComponent(redirectTo)}`);
+                const joinData = await joinRes.json();
+                if (joinData && joinData.url) {
+                  statusEl.textContent = 'Success! Adding you to Discord...';
+                  window.location.replace(joinData.url);
+                  return;
+                }
+              } catch (err) {
+                console.warn('Discord join start failed (ignored):', err);
+              }
+            }
+          }
+
           statusEl.textContent = 'Success! Redirecting to your course...';
-          window.location.replace('/learn/index.html');
+          window.location.replace(redirectTo);
         })
         .catch((err) => {
           console.error('[OAUTH CALLBACK] Verification failed:', err);
-          fail('Could not finish Google sign-in. Please try again.');
+          fail(`Could not finish ${providerLabel} sign-in. Please try again.`);
         });
     })();
   </script>
