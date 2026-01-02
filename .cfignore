@@ -1,2 +1,3 @@
 # Exclude large AI model binary files - these will be downloaded at runtime by web-llm
-learn/ui/js/web-llm/models/**/*.bin
+
+learn/ui/js/web-llm/models/\*_/_.bin
