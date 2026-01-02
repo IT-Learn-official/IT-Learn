@@ -1,0 +1,186 @@
+/* Variables */
+:root {
+    --bg: #0f172a;
+    --panel: #0b1220;
+    --muted: #94a3b8;
+    --muted-2: #c7d2fe;
+    --accent-500: #a855f7;
+    --accent-600: #6366f1;
+    --accent-700: #4338ca;
+    --card-glow: rgba(99, 102, 241, 0.25);
+    --glass: rgba(99, 102, 241, 0.1);
+    --radius-lg: 16px;
+    --fw-bold: 700;
+    --container: 1100px;
+}
+
+/* Base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #0b1120, #0f172a 60%);
+    color: var(--muted-2);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Smooth Fade */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(5) { animation-delay: 0.5s; }
+.fade-in:nth-child(6) { animation-delay: 0.6s; }
+.fade-in:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: var(--fw-bold);
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.content {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+/* Gratitude Sections */
+.gratitude-section {
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.gratitude-section h2 {
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+    color: var(--muted-2);
+    font-weight: var(--fw-bold);
+}
+
+.gratitude-section p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* Highlight */
+.highlight {
+    color: #a855f7;
+    font-weight: 600;
+}
+
+/* Escape button */
+.escape {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50%;
+    color: var(--muted-2);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.escape:hover {
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: scale(1.1);
+}
+
+/* Thank you message */
+.thank-you-message {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 50px 40px;
+    margin-top: 60px;
+}
+
+.thank-you-message p {
+    font-size: 1.3rem;
+    color: var(--muted-2);
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .gratitude-section {
+        padding: 25px;
+    }
+
+    .gratitude-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .gratitude-section p {
+        font-size: 1rem;
+    }
+
+    .thank-you-message {
+        padding: 30px 20px;
+    }
+
+    .thank-you-message p {
+        font-size: 1.1rem;
+    }
+}

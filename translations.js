@@ -6,6 +6,7 @@ const translations = {
         headerPractice: 'Practice',
         headerBuild: 'Build',
         headerAboutUs: 'About us',
+        headerThanks: 'Thanks',
         headerNewsletter: 'Newsletter',
         login: 'Login',
         signup: 'Sign Up',
@@ -77,6 +78,20 @@ const translations = {
         timeline_present_title: '📈 Present',
         timeline_present_text: 'We continue to <span class="highlight">enhance the platform</span>, adding new features, lessons, and opportunities to help learners succeed in IT.',
 
+        // Thanks page
+        thanks: 'Thanks',
+        thanksTitle: 'A heartfelt thanks to everyone who helped make IT Learn possible.',
+        thanksFounders: '💪 Our Founders',
+        thanksFoundersText: 'This incredible journey would not have been possible without the vision and dedication of <span class="highlight">Broodje56</span> and <span class="highlight">Joren</span>. Their passion for teaching and commitment to making IT education accessible to everyone has been the driving force behind IT Learn.',
+        thanksCommunity: '🤝 Our Community',
+        thanksCommunityText: 'We want to thank our <span class="highlight">amazing community</span> of students, teachers, and supporters who have joined us on this journey. Your feedback, encouragement, and participation have been invaluable in shaping IT Learn into what it is today. Together, we\'re building something special!',
+        thanksBetaTester: '🧪 Beta Testers',
+        thanksBetaTesterText: 'A special thank you to all the <span class="highlight">beta testers</span> who tested our platform, reported bugs, and provided constructive feedback. Your testing helped us create a stable and user-friendly platform.',
+        thanksContributors: '✨ Contributors',
+        thanksContributorsText: 'We thank everyone who has contributed to IT Learn, whether by creating content, fixing bugs, or supporting the project. Your contributions, big or small, have made IT Learn better for everyone.',
+        thanksYou: '🙏 And Most Importantly, You!',
+        thanksYouText: 'Last but not least, we want to thank <span class="highlight">you</span> whether you\'re a learner, contributor, or supporter. You are the reason we do what we do. Your trust in IT Learn motivates us to keep improving and innovating.',
+        thanksClosing: 'Thank you for being part of the IT Learn family. Together, we\'re learning, growing, and shaping the future of IT education!',
 
         // Roadmap
         roadmapOverview: 'An overview of what we will and will not do for IT Learn',
@@ -197,6 +212,7 @@ const translations = {
         headerPractice: 'Oefenen',
         headerBuild: 'Bouwen',
         headerAboutUs: 'Over ons',
+        headerThanks: 'Bedankt',
         headerNewsletter: 'Nieuwsbrief',
         login: 'Inloggen',
         signup: 'Registreren',
@@ -274,6 +290,20 @@ const translations = {
         timeline_present_title: '📈 Heden',
         timeline_present_text: 'We blijven het platform <span class="highlight">verbeteren</span>, met nieuwe functies, lessen en kansen om leerlingen te helpen slagen in IT.',
 
+        // Thanks page
+        thanks: 'Bedankt',
+        thanksTitle: 'Een hartelijk dank aan iedereen die heeft geholpen om IT Learn mogelijk te maken.',
+        thanksFounders: '💪 Onze Oprichters',
+        thanksFoundersText: 'Deze ongelooflijke reis zou niet mogelijk zijn geweest zonder de visie en toewijding van <span class="highlight">Broodje56</span> en <span class="highlight">Joren</span>. Hun passie voor onderwijs en inzet om IT-onderwijs voor iedereen toegankelijk te maken, is de drijvende kracht achter IT Learn.',
+        thanksCommunity: '🤝 Onze Gemeenschap',
+        thanksCommunityText: 'We willen onze <span class="highlight">geweldige gemeenschap</span> van studenten, docenten en supporters bedanken die ons vergezeld hebben op deze reis. Uw feedback, aanmoediging en deelname zijn onwaarschijnlijk waardevol geweest bij het vormen van IT Learn tot wat het vandaag is. Samen bouwen we iets geweldigs!',
+        thanksBetaTester: '🧪 Beta Testers',
+        thanksBetaTesterText: 'Een speciaal dankwoord aan alle <span class="highlight">beta testers</span> die ons platform hebben getest, bugs hebben gerapporteerd en constructieve feedback hebben gegeven. Uw testen hebben ons geholpen een stabiel en gebruiksvriendelijk platform te creëren.',
+        thanksContributors: '✨ Bijdragers',
+        thanksContributorsText: 'We danken iedereen die aan IT Learn heeft bijgedragen, of het nu gaat om het maken van inhoud, het repareren van bugs of het steunen van het project. Uw bijdragen, groot of klein, hebben IT Learn beter gemaakt voor iedereen.',
+        thanksYou: '🙏 En het Allerbelangrijkst, Jij!',
+        thanksYouText: 'Tenslotte willen we jou bedanken, of je nu een leerling, bijdrager of supporter bent. Jij bent de reden dat we doen wat we doen. Uw vertrouwen in IT Learn motiveert ons om te blijven verbeteren en vernieuwen.',
+        thanksClosing: 'Dank je wel dat je deel uitmaakt van de IT Learn-familie. Samen leren we, groeien we en vormen we de toekomst van IT-onderwijs!',
 
         // Roadmap
         roadmapOverview: 'Een overzicht van wat we wel en niet gaan doen voor IT Learn',
@@ -428,6 +458,7 @@ const translations = {
         headerPractice: 'Üben',
         headerBuild: 'Bauen',
         headerAboutUs: 'Über uns',
+        headerThanks: 'Danke',
         headerNewsletter: 'Newsletter',
         login: 'Anmelden',
         signup: 'Registrieren',
@@ -502,6 +533,21 @@ const translations = {
         timeline_launch_text: 'Wir veröffentlichten einen <span class="highlight">Soft-Launch</span> für erste Nutzer, um die Plattform öffentlich zu testen und Stabilität zu sichern.',
         timeline_present_title: '📈 Gegenwart',
         timeline_present_text: 'Wir <span class="highlight">verbessern die Plattform ständig weiter</span>, fügen neue Funktionen, Lektionen und Möglichkeiten hinzu, damit Lernende erfolgreich werden.',
+
+        // Thanks page
+        thanks: 'Danke',
+        thanksTitle: 'Ein herzliches Dankeschön an alle, die IT Learn möglich gemacht haben.',
+        thanksFounders: '💪 Unsere Gründer',
+        thanksFoundersText: 'Diese unglaubliche Reise wäre ohne die Vision und Hingabe von <span class="highlight">Broodje56</span> und <span class="highlight">Joren</span> nicht möglich gewesen. Ihre Leidenschaft für Bildung und ihr Engagement, IT-Bildung für alle zugänglich zu machen, ist die treibende Kraft hinter IT Learn.',
+        thanksCommunity: '🤝 Unsere Gemeinschaft',
+        thanksCommunityText: 'Wir möchten unsere <span class="highlight">großartige Gemeinschaft</span> von Schülern, Lehrern und Unterstützern danken, die uns auf dieser Reise begleitet hat. Euer Feedback, eure Unterstützung und eure Teilnahme waren unglaublich wertvoll, um IT Learn zu dem zu machen, was es heute ist. Zusammen bauen wir etwas Besonderes!',
+        thanksBetaTester: '🧪 Betatester',
+        thanksBetaTesterText: 'Ein besonderer Dank an alle <span class="highlight">Betatester</span>, die unsere Plattform getestet, Fehler gemeldet und konstruktives Feedback gegeben haben. Euer Test hat uns geholfen, eine stabile und benutzerfreundliche Plattform zu schaffen.',
+        thanksContributors: '✨ Mitwirkende',
+        thanksContributorsText: 'Wir danken jedem, der zu IT Learn beigetragen hat, ob durch das Erstellen von Inhalten, das Beheben von Fehlern oder die Unterstützung des Projekts. Eure Beiträge, groß oder klein, haben IT Learn für alle besser gemacht.',
+        thanksYou: '🙏 Und vor allem Danke an Dich!',
+        thanksYouText: 'Zuletzt möchten wir dir danken, ob du ein Lernender, Beitragender oder Unterstützer bist. Du bist der Grund, warum wir das tun, was wir tun. Dein Vertrauen in IT Learn motiviert uns, ständig besser zu werden und zu innovieren.',
+        thanksClosing: 'Danke, dass du Teil der IT Learn Familie bist. Zusammen lernen, wachsen und gestalten wir die Zukunft der IT-Bildung!',
 
         // Roadmap
         roadmapOverview: 'Ein Überblick darüber, was wir bei IT Learn machen werden, und was nicht',
@@ -610,6 +656,7 @@ fr: {
     headerPractice: 'Pratiquer',
     headerBuild: 'Construire',
     headerAboutUs: 'À propos de nous',
+    headerThanks: 'Merci',
     headerNewsletter: 'Newsletter',
     login: 'Connexion',
     signup: 'Inscription',
@@ -681,6 +728,21 @@ fr: {
     timeline_launch_text: 'Nous avons effectué un <span class="highlight">soft launch</span> pour les premiers utilisateurs afin de tester publiquement la plateforme et garantir sa stabilité.',
     timeline_present_title: '📈 Présent',
     timeline_present_text: 'Nous continuons à <span class="highlight">améliorer la plateforme</span> avec de nouvelles fonctionnalités, leçons et opportunités pour aider chaque apprenant à réussir en IT.',
+
+    // Thanks page
+    thanks: 'Merci',
+    thanksTitle: 'Un sincère merci à tous ceux qui ont rendu IT Learn possible.',
+    thanksFounders: '💪 Nos Fondateurs',
+    thanksFoundersText: 'Ce voyage incroyable n\'aurait pas été possible sans la vision et l\'engagement de <span class="highlight">Broodje56</span> et <span class="highlight">Joren</span>. Leur passion pour l\'éducation et leur engagement à rendre l\'éducation informatique accessible à tous est la force motrice d\'IT Learn.',
+    thanksCommunity: '🤝 Notre Communauté',
+    thanksCommunityText: 'Nous voulons remercier notre <span class="highlight">communauté formidable</span> d\'étudiants, d\'enseignants et de supporters qui nous ont accompagnés dans ce parcours. Vos retours, votre soutien et votre participation ont été incroyablement précieux pour façonner IT Learn en ce qu\'il est aujourd\'hui. Ensemble, nous construisons quelque chose de merveilleux!',
+    thanksBetaTester: '🧪 Testeurs Bêta',
+    thanksBetaTesterText: 'Un merci particulier à tous les <span class="highlight">testeurs bêta</span> qui ont testé notre plateforme, signalé des bogues et donné des commentaires constructifs. Vos tests nous ont aidés à créer une plateforme stable et conviviale.',
+    thanksContributors: '✨ Contributeurs',
+    thanksContributorsText: 'Nous remercions tous ceux qui ont contribué à IT Learn, que ce soit en créant du contenu, en corrigeant des bugs ou en soutenant le projet. Vos contributions, grandes ou petites, ont rendu IT Learn meilleur pour tous.',
+    thanksYou: '🙏 Et surtout, merci à toi!',
+    thanksYouText: 'Enfin, nous voulons te remercier, que tu sois un apprenant, un contributeur ou un supporter. Tu es la raison pour laquelle nous faisons ce que nous faisons. Votre confiance en IT Learn nous pousse à continuer à nous améliorer et à innover.',
+    thanksClosing: 'Merci de faire partie de la famille IT Learn. Ensemble, nous apprenons, nous grandissons et nous façonnons l\'avenir de l\'éducation informatique!',
 
     // Roadmap
     roadmapOverview: 'Un aperçu de ce que nous ferons et ne ferons pas pour IT Learn',
