@@ -1,0 +1,13 @@
+# AI Model binary files (too large for deployment - downloaded at runtime)
+learn/ui/js/web-llm/models/**/*.bin
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
