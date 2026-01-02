@@ -227,6 +227,8 @@ function initOAuthButton(provider, buttonId) {
       localStorage.setItem('discord_join_server', shouldJoin ? 'true' : 'false');
     }
 
+    localStorage.setItem('oauth_origin', window.location.origin);
+
     try {
       const redirectTo = `${window.location.origin}/oauth-callback.html?provider=${provider}`;
       const res = await fetch(`${OAUTH_API_BASE}/api/oauth/${provider}/start`, {

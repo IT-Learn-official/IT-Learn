@@ -17,9 +17,21 @@
   </div>
 
   <script>
+    const storedOrigin = localStorage.getItem('oauth_origin');
+    const currentOrigin = window.location.origin;
+    
+    if (storedOrigin && storedOrigin !== currentOrigin && storedOrigin !== 'https://itlearn.be') {
+      const currentUrl = new URL(window.location.href);
+      const targetUrl = `${storedOrigin}${currentUrl.pathname}${currentUrl.search}`;
+      console.log(`Redirecting from ${currentOrigin} to ${storedOrigin}`);
+      window.location.replace(targetUrl);
+      throw new Error('Redirecting to correct domain');
+    }
+    
     document.getElementById('loginBtn').addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = `${window.location.origin}/login.html`;
+      const targetOrigin = storedOrigin || window.location.origin;
+      window.location.href = `${targetOrigin}/login.html`;
     });
     
     let countdown = 5;
@@ -29,7 +41,8 @@
       countdownEl.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(interval);
-        window.location.href = `${window.location.origin}/login.html`;
+        const targetOrigin = storedOrigin || window.location.origin;
+        window.location.href = `${targetOrigin}/login.html`;
       }
     }, 1000);
   </script>
