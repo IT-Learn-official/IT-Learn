@@ -1,5 +1,6 @@
 import { changePassword, deleteAccount } from '../services/authService.js';
 import { setGlobalStatus } from './layout.js';
+import { navigateTo } from '../state/router.js';
 
 export function renderSettingsView(screenRootEl) {
   const screen = document.createElement('section');
@@ -7,6 +8,14 @@ export function renderSettingsView(screenRootEl) {
 
   const header = document.createElement('header');
   header.className = 'screen-header';
+
+  const backButton = document.createElement('button');
+  backButton.type = 'button';
+  backButton.className = 'back-button';
+  backButton.textContent = 'Back to courses';
+  backButton.addEventListener('click', () => {
+    navigateTo({ route: 'courses' });
+  });
 
   const mainHeader = document.createElement('div');
   mainHeader.className = 'screen-header-main screen-header-main--align-right';
@@ -21,6 +30,7 @@ export function renderSettingsView(screenRootEl) {
 
   mainHeader.appendChild(title);
   mainHeader.appendChild(subtitle);
+  header.appendChild(backButton);
   header.appendChild(mainHeader);
 
   const body = document.createElement('div');
