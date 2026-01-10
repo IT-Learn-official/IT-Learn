@@ -58,11 +58,39 @@
         <a href="login.html" class="nav-link" data-translate="headerLearn">Learn</a>
         <a href="login.html" class="nav-link" data-translate="headerPractice">Practice</a>
         <a href="login.html" class="nav-link" data-translate="headerBuild">Build</a>
-        <a href="https://discord.itlearn.be/" class="nav-link" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="roadmap/index.html" class="nav-link">Roadmap</a>
-        <a href="/about-us/about-us.html" class="nav-link" data-translate="headerAboutUs">About us</a>
-        <a href="/thanks/thanks.html" class="nav-link" data-translate="headerThanks">Thanks</a>
-        <a href="https://itlearn.beehiiv.com/" class="nav-link" data-translate="headerNewsletter">Newsletter</a></a>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle nav-link" aria-expanded="false">
+            Community
+            <i data-feather="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-section">
+              <p class="dropdown-title">Stay connected</p>
+              <a href="https://discord.itlearn.be/" class="dropdown-link" target="_blank" rel="noopener noreferrer">Discord</a>
+              <a href="/thanks/thanks.html" class="dropdown-link" data-translate="headerThanks">Thanks</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle nav-link" aria-expanded="false">
+            Company
+            <i data-feather="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-section">
+              <p class="dropdown-title">About</p>
+              <a href="/about-us/about-us.html" class="dropdown-link" data-translate="headerAboutUs">About us</a>
+              <a href="roadmap/index.html" class="dropdown-link">Roadmap</a>
+            </div>
+            <div class="dropdown-section">
+              <p class="dropdown-title">Stay in the loop</p>
+              <a href="https://itlearn.beehiiv.com/" class="dropdown-link" data-translate="headerNewsletter">Newsletter</a>
+              <a href="https://discord.itlearn.be/" class="dropdown-link" data-translate="helpCenter" target="_blank" rel="noopener noreferrer">Help Center</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -369,15 +397,48 @@
 
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
+    const navDropdowns = Array.from(document.querySelectorAll('.nav-dropdown'));
+
+    const closeAllDropdowns = () => {
+      navDropdowns.forEach(dropdown => {
+        dropdown.classList.remove('open');
+        dropdown.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    };
+
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       hamburger.classList.toggle('open');
+      closeAllDropdowns();
+    });
+
+    navDropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      toggle?.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          navDropdowns
+            .filter(other => other !== dropdown)
+            .forEach(other => {
+              other.classList.remove('open');
+              other.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+            });
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      const clickedInsideDropdown = navDropdowns.some(dropdown => dropdown.contains(event.target));
+      if (!clickedInsideDropdown) closeAllDropdowns();
     });
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) {
         navLinks.classList.remove('open');
         hamburger.classList.remove('open');
+        closeAllDropdowns();
       }
     });
 

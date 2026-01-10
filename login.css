@@ -104,13 +104,14 @@ body {
 
 .input-group input {
   width: 100%;
-  padding: 0.65rem 0.8rem;
+  padding: 0.75rem 0.8rem;
   border-radius: 10px;
   border: none;
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   font-size: 1rem;
   transition: background 0.2s ease, outline 0.2s ease;
+  min-height: 44px;
 }
 
 .input-group input::placeholder {
@@ -383,11 +384,11 @@ body {
 }
 /* Escape Button */
 .escape {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 40px;
-  height: 40px;
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -401,6 +402,17 @@ body {
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
   text-decoration: none;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 600px) {
+  .escape {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .escape:hover {
