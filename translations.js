@@ -167,6 +167,8 @@ const translations = {
         'login-form': 'Login',
         'dontHaveAccount': "Don't have an account?",
         'welcomeAboard': 'Welcome aboard!',
+        'captchaisevil': 'CAPTCHA is evil',
+        'helloworldagain': 'Hello world! Again...',
         'createSomethingCool': 'Create something cool ✨',
         'devJourneyStarts': 'Your dev journey starts here',
         'smallStepsBigBuilds': 'Small steps, big builds',
@@ -376,6 +378,8 @@ const translations = {
         'login-form': 'Inloggen',
         'dontHaveAccount': 'Nog geen account?',
         'welcomeAboard': 'Welkom aan boord!',
+        'captchaisevil': 'CAPTCHA is duivels',
+        'helloworldagain': 'Hello world! Opnieuw...',
         'createSomethingCool': 'Maak iets tofs ✨',
         'devJourneyStarts': 'Jouw ontwikkelreis begint hier',
         'smallStepsBigBuilds': 'Kleine stappen, grote projecten',
@@ -414,8 +418,10 @@ const translations = {
 
         // Login/Signup
 
-        // slasptext login/signup
+        // splashtext login/signup
         welcomeAboard: "Welkom aan boord!",
+        captchaisevil: 'CAPTCHA is duivels',
+        helloworldagain: 'Hello world! Again...',
         createSomethingCool: "Maak iets tofs ✨",
         devJourneyStarts: "Jouw ontwikkelreis begint hier",
         smallStepsBigBuilds: "Kleine stappen, grote projecten",
@@ -612,6 +618,8 @@ const translations = {
         nextLesson: 'Nächste Lektion',
         'login-form': 'Anmelden',
         'welcomeAboard': 'Willkommen an Bord!',
+        'captchaisevil': 'Captcha ist böse',
+        'helloworldagain': 'Hallo Welt! Wieder…',
         'createSomethingCool': 'Erstelle etwas Cooles ✨',
         'devJourneyStarts': 'Deine Entwicklerreise beginnt hier',
         'smallStepsBigBuilds': 'Kleine Schritte, große Projekte',
@@ -807,6 +815,8 @@ fr: {
     nextLesson: 'Leçon suivante',
     'login-form': 'Connexion',
     'welcomeAboard': 'Bienvenue à bord !',
+    'captchaisevil': 'Captcha est mauvais.',
+    'helloworldagain': 'Bonjour le monde ! Encore…',
     'createSomethingCool': 'Crée quelque chose de cool ✨',
     'devJourneyStarts': 'Ton aventure de dev commence ici',
     'smallStepsBigBuilds': 'Petits pas, grands projets',
