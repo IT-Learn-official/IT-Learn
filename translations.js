@@ -142,6 +142,8 @@ const translations = {
         'dontHaveAccount': "Don't have an account?",
         'welcomeAboard': 'Welcome aboard!',
         'createSomethingCool': 'Create something cool ✨',
+        'CAPTCHAsareevil': "CAPTCHAs are evil",
+        'HelloworldAgain': "Hello world! Again...",
         'devJourneyStarts': 'Your dev journey starts here',
         'smallStepsBigBuilds': 'Small steps, big builds',
         'designCodeRepeat': 'Design. Code. Repeat.',
@@ -344,6 +346,8 @@ const translations = {
         'compileYourDreams': 'Compileer je dromen',
         'futureDevInProgress': 'Toekomstige dev in ontwikkeling',
         'readySetDeploy': 'Klaar, set, deploy!',
+        'CAPTCHAsareevil': 'CAPTCHAs zijn duivels',
+        'HelloworldAgain': 'Hello world! Weeral...',
         'helloFutureProgrammer': 'Hallo, toekomstige programmeur!',
         'error404': 'Fout 404: Bestand niet gevonden',
         'learningNeverStops': 'Leren stopt nooit',
@@ -357,8 +361,10 @@ const translations = {
 
         // Login/Signup
 
-        // slasptext login/signup
+        // splashtext login/signup
         welcomeAboard: "Welkom aan boord!",
+        CAPTCHAsareevil: "CAPTCHAs zijn duivels",
+        HelloworldAgain: "Hello world! Weeral...",
         createSomethingCool: "Maak iets tofs ✨",
         devJourneyStarts: "Jouw ontwikkelreis begint hier",
         smallStepsBigBuilds: "Kleine stappen, grote projecten",
