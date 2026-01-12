@@ -1,5 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
+//edited by: https://github.com/broodje565
 const DEFAULT_ROUTE = '#/courses';
 
 function parseQuery(queryString) {
@@ -16,6 +17,13 @@ export function parseLocation(hash) {
   const [pathPart, queryPart] = cleaned.split('?');
   const segments = pathPart.split('/').filter(Boolean);
   const query = queryPart ? parseQuery(queryPart) : {};
+
+  if (segments[0] === 'settings') {
+    return {
+      route: 'settings',
+      tab: query.tab || 'settings',
+    };
+  }
 
   if (segments[0] === 'courses' && segments.length === 1) {
     return {
@@ -35,10 +43,18 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'settings') {
+    return { route: 'settings' };
+  }
+
   return { route: 'courses', tab: 'theory' };
 }
 
 export function toHash(descriptor) {
+  if (descriptor.route === 'settings') {
+    return '#/settings';
+  }
+
   if (descriptor.route === 'courses') {
     const base = '#/courses';
     const params = new URLSearchParams();
@@ -56,6 +72,10 @@ export function toHash(descriptor) {
     const base = `#/courses/${encodeURIComponent(courseId)}/chapters/${encodeURIComponent(chapterId)}`;
     const query = tab && tab !== 'theory' ? `?tab=${encodeURIComponent(tab)}` : '';
     return `${base}${query}`;
+  }
+
+  if (descriptor.route === 'settings') {
+    return '#/settings';
   }
 
   return DEFAULT_ROUTE;

@@ -19,15 +19,14 @@
   <link rel="stylesheet" href="./ui/css/components/practice.css" />
   <link rel="stylesheet" href="./ui/css/components/premium-effects.css" />
   <link rel="stylesheet" href="./ui/css/components/teacherbot.css" />
+  <link rel="stylesheet" href="./ui/css/components/trial-mode.css" />
+  <link rel="stylesheet" href="./ui/css/components/settings.css" />
   <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/theme-discord-dark.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  
-
-
   <div id="global-status" aria-live="polite"></div>
   <nav class="sidebar">
     <h2>IT Learn</h2>
@@ -42,10 +41,6 @@
   <main id="app-root">
     <section id="screen-root" aria-live="polite">
     </section>
-    
-    <a href="https://discord.gg/rKgF9s32EV" target="_blank" class="discord-button">
-      <img src="https://github.com/Broodje565/IT-Learn-Visuals/blob/main/icons/discord.png?raw=true" alt="Discord" />
-    </a>
   </main>
 
   <div id="mascot-container" aria-live="polite" aria-atomic="true" role="region">
@@ -60,16 +55,18 @@
   
   <script type="module">
     import { logout } from './ui/js/services/authService.js';
+    import { navigateTo } from './ui/js/state/router.js';
     
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initLogoutButton);
+      document.addEventListener('DOMContentLoaded', initEventListeners);
     } else {
-      initLogoutButton();
+      initEventListeners();
     }
     
-    async function initLogoutButton() {
+    async function initEventListeners() {
       const authBtn = document.getElementById('auth-btn');
+      const settingsLink = document.getElementById('settings-link');
       
       if (authBtn) {
         authBtn.addEventListener('click', async function(e) {
@@ -89,6 +86,17 @@
         console.log('Event listener attached to logout button');
       } else {
         console.error('Auth button not found!');
+      }
+
+      if (settingsLink) {
+        settingsLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Settings link clicked');
+          navigateTo({ route: 'settings' });
+        });
+        console.log('Event listener attached to settings link');
+      } else {
+        console.error('Settings link not found!');
       }
     }
   </script>
