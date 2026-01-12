@@ -104,7 +104,7 @@
       };
 
       retryBtn.addEventListener('click', () => {
-        window.location.href = '/login.html';
+        window.location.href = `${window.location.origin}/login.html`;
       });
 
       if (error) {
@@ -141,7 +141,8 @@
             throw new Error(msg);
           }
 
-          const redirectTo = `${window.location.origin}/learn/index.html`;
+          const currentOrigin = window.location.origin;
+          const redirectTo = `${currentOrigin}/learn/index.html`;
 
           if (providerFromQuery === 'discord') {
             const shouldJoin = localStorage.getItem('discord_join_server') === 'true';
@@ -149,7 +150,8 @@
 
             if (shouldJoin) {
               try {
-                const joinRes = await fetch(`${apiBase}/api/discord/join/start?next=${encodeURIComponent(redirectTo)}`);
+                const joinRedirect = `${currentOrigin}/learn/index.html`;
+                const joinRes = await fetch(`${apiBase}/api/discord/join/start?next=${encodeURIComponent(joinRedirect)}`);
                 const joinData = await joinRes.json();
                 if (joinData && joinData.url) {
                   statusEl.textContent = 'Success! Adding you to Discord...';

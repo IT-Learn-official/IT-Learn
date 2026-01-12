@@ -35,7 +35,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
-<button class="escape" onclick="window.location.href='index.html'">X</button>
+<button class="escape" onclick="window.location.href='index.html'">&#10006</button>
 <div class="container">
   <div class="form-box">
     <h1 data-translate="login">Login</h1>
@@ -226,6 +226,8 @@ function initOAuthButton(provider, buttonId) {
       const shouldJoin = joinCheckbox ? joinCheckbox.checked : false;
       localStorage.setItem('discord_join_server', shouldJoin ? 'true' : 'false');
     }
+
+    localStorage.setItem('oauth_origin', window.location.origin);
 
     try {
       const redirectTo = `${window.location.origin}/oauth-callback.html?provider=${provider}`;

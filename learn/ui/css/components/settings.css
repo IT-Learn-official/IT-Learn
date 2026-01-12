@@ -21,6 +21,7 @@
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.2), inset 0 0 0 1px rgba(220, 38, 38, 0.1);
   position: relative;
   text-align: center;
+  padding-bottom: 200px;
 }
 
 .settings-section.danger-zone::before {
@@ -53,7 +54,8 @@
 }
 
 .danger-zone .settings-button {
-  align-self: center;
+  display: inline-block;
+  margin: 0;
 }
 
 .settings-title.danger-title::before {
@@ -201,6 +203,11 @@
 
 
 .settings-button.danger-button {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
   background: linear-gradient(135deg, #dc2626, #991b1b);
   border: 2px solid #dc2626;
   box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3), 0 0 0 0 rgba(220, 38, 38, 0.1);
@@ -211,13 +218,13 @@
   background: linear-gradient(135deg, #ff3333, #bb1515);
   box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5), 0 0 15px rgba(220, 38, 38, 0.3);
   border-color: #ff3333;
-  transform: translateY(-3px) scale(1.02);
+  transform: translateX(-50%) translateY(-3px) scale(1.02);
 }
 
 .settings-button.danger-button:active {
   box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
-  transform: translateY(-1px) scale(0.98);
-}
+  transform: translateX(-50%) translateY(-1px) scale(0.98);
+} 
 
 @keyframes danger-glow {
   0%, 100% {
@@ -247,5 +254,16 @@
   .settings-button {
     width: 100%;
     align-self: stretch;
+  }
+
+  /* reset danger button positioning on small screens */
+  .settings-button.danger-button {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    z-index: auto;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 }
