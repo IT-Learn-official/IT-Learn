@@ -1,0 +1,729 @@
+{
+  "chapterId": "chapter-1",
+  "kind": "assessment",
+  "title": "Chapter 1 - Introduction to Databases and SQL Checkpoint",
+  "description": "Quick concept-check for chapter 1. Test your understanding of databases, SQLite, tables, and basic SELECT statements.",
+  "questions": [
+    {
+      "id": "q1_what_is_database",
+      "type": "single-choice",
+      "prompt": "What is a database?",
+      "options": [
+        {
+          "id": "image-file",
+          "label": "A file that stores images",
+          "isCorrect": false
+        },
+        {
+          "id": "organized-collection",
+          "label": "An organized collection of data",
+          "isCorrect": true
+        },
+        {
+          "id": "programming-language",
+          "label": "A programming language",
+          "isCorrect": false
+        },
+        {
+          "id": "computer-virus",
+          "label": "A type of computer virus",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A database is an organized collection of data that allows for efficient storage, retrieval, and management of information.",
+        "byOptionId": {
+          "image-file": "While databases can store images, they are not limited to or defined by that purpose.",
+          "organized-collection": "Correct - databases organize data in a structured way for efficient access.",
+          "programming-language": "SQL is a language for working with databases, but a database itself is not a language.",
+          "computer-virus": "Databases are legitimate tools for managing data, not malicious software."
+        }
+      }
+    },
+    {
+      "id": "q2_sqlite_advantage",
+      "type": "single-choice",
+      "prompt": "Which of the following is a key advantage of SQLite?",
+      "options": [
+        {
+          "id": "complex-server",
+          "label": "It requires a complex server setup",
+          "isCorrect": false
+        },
+        {
+          "id": "windows-only",
+          "label": "It only works on Windows",
+          "isCorrect": false
+        },
+        {
+          "id": "lightweight-serverless",
+          "label": "It's lightweight and doesn't need a server",
+          "isCorrect": true
+        },
+        {
+          "id": "text-only",
+          "label": "It can only store text data",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SQLite is lightweight and file-based, meaning it doesn't require a separate server process. This makes it perfect for learning and for embedded applications.",
+        "byOptionId": {
+          "complex-server": "SQLite's key advantage is that it does NOT require a server - it's file-based.",
+          "windows-only": "SQLite works on all major platforms including Windows, Mac, Linux, iOS, and Android.",
+          "lightweight-serverless": "Correct - SQLite runs directly in your application without needing a separate database server.",
+          "text-only": "SQLite supports multiple data types including integers, floats, text, and binary data (BLOBs)."
+        }
+      }
+    },
+    {
+      "id": "q3_table_structure",
+      "type": "single-choice",
+      "prompt": "In a database table, what do we call the horizontal entries that contain related data?",
+      "options": [
+        {
+          "id": "columns",
+          "label": "Columns",
+          "isCorrect": false
+        },
+        {
+          "id": "fields",
+          "label": "Fields",
+          "isCorrect": false
+        },
+        {
+          "id": "rows",
+          "label": "Rows",
+          "isCorrect": true
+        },
+        {
+          "id": "schemas",
+          "label": "Schemas",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Rows (also called records) are the horizontal entries in a table. Each row represents one complete entry or record with related data across all columns.",
+        "byOptionId": {
+          "columns": "Columns are vertical structures that define what type of data each field contains.",
+          "fields": "Fields typically refer to individual data cells or column definitions, not horizontal entries.",
+          "rows": "Correct - rows are the horizontal entries containing a complete record of related data.",
+          "schemas": "A schema is the overall structure/blueprint of a database, not individual entries."
+        }
+      }
+    },
+    {
+      "id": "q4_select_purpose",
+      "type": "single-choice",
+      "prompt": "What is the purpose of the SELECT statement in SQL?",
+      "options": [
+        {
+          "id": "delete-data",
+          "label": "To delete data from a table",
+          "isCorrect": false
+        },
+        {
+          "id": "retrieve-data",
+          "label": "To retrieve data from a table",
+          "isCorrect": true
+        },
+        {
+          "id": "create-table",
+          "label": "To create a new table",
+          "isCorrect": false
+        },
+        {
+          "id": "update-data",
+          "label": "To update existing data",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The SELECT statement is used to retrieve (query) data from one or more tables in a database. It's the most fundamental and commonly used SQL command.",
+        "byOptionId": {
+          "delete-data": "DELETE is the SQL statement used to remove data from tables, not SELECT.",
+          "retrieve-data": "Correct - SELECT retrieves data from database tables for viewing or further processing.",
+          "create-table": "CREATE TABLE is the statement used to make new tables, not SELECT.",
+          "update-data": "UPDATE is the statement used to modify existing data, not SELECT."
+        }
+      }
+    },
+    {
+      "id": "q5_wildcard_asterisk",
+      "type": "single-choice",
+      "prompt": "What does the asterisk (*) mean in a SELECT statement?",
+      "options": [
+        {
+          "id": "no-columns",
+          "label": "Select no columns",
+          "isCorrect": false
+        },
+        {
+          "id": "first-column",
+          "label": "Select only the first column",
+          "isCorrect": false
+        },
+        {
+          "id": "all-columns",
+          "label": "Select all columns",
+          "isCorrect": true
+        },
+        {
+          "id": "multiply",
+          "label": "Multiply the values",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The asterisk (*) is a wildcard that means 'all columns'. Using SELECT * retrieves all columns from the specified table.",
+        "byOptionId": {
+          "no-columns": "That wouldn't be very useful! The asterisk actually selects everything, not nothing.",
+          "first-column": "The asterisk selects ALL columns, not just the first one.",
+          "all-columns": "Correct - * is a shorthand for selecting every column in the table.",
+          "multiply": "While * is the multiplication operator in math, in SQL SELECT it means 'all columns'."
+        }
+      }
+    },
+    {
+      "id": "q6_from_clause",
+      "type": "single-choice",
+      "prompt": "In the query 'SELECT name FROM students;', what does FROM specify?",
+      "options": [
+        {
+          "id": "column-to-select",
+          "label": "The column to select",
+          "isCorrect": false
+        },
+        {
+          "id": "table-to-query",
+          "label": "The table to query",
+          "isCorrect": true
+        },
+        {
+          "id": "database-name",
+          "label": "The database name",
+          "isCorrect": false
+        },
+        {
+          "id": "row-count",
+          "label": "The number of rows to return",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The FROM clause specifies which table you want to retrieve data from. In this case, it's telling SQL to get the data from the 'students' table.",
+        "byOptionId": {
+          "column-to-select": "The column is specified before FROM (in this case, 'name'). FROM specifies where to get it from.",
+          "table-to-query": "Correct - FROM tells SQL which table contains the data you want to retrieve.",
+          "database-name": "Database names are typically specified differently (if at all), not with the FROM clause.",
+          "row-count": "LIMIT is the clause used to specify how many rows to return, not FROM."
+        }
+      }
+    },
+    {
+      "id": "q7_semicolon",
+      "type": "single-choice",
+      "prompt": "Why do we end SQL statements with a semicolon (;)?",
+      "options": [
+        {
+          "id": "run-faster",
+          "label": "To make the query run faster",
+          "isCorrect": false
+        },
+        {
+          "id": "mark-end",
+          "label": "To mark the end of a statement",
+          "isCorrect": true
+        },
+        {
+          "id": "add-comment",
+          "label": "To add a comment",
+          "isCorrect": false
+        },
+        {
+          "id": "optional",
+          "label": "It's optional and not needed",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The semicolon marks the end of a SQL statement. This is especially important when you have multiple statements, as it tells the database where one statement ends and another begins.",
+        "byOptionId": {
+          "run-faster": "The semicolon doesn't affect performance - it's just a delimiter that marks the statement boundary.",
+          "mark-end": "Correct - the semicolon is a statement terminator that shows where one SQL statement ends.",
+          "add-comment": "Comments in SQL use -- or /* */ syntax, not semicolons.",
+          "optional": "While some database tools allow omitting it for single statements, it's best practice to always use it."
+        }
+      }
+    },
+    {
+      "id": "q8_primary_key",
+      "type": "single-choice",
+      "prompt": "What is a primary key in a database table?",
+      "options": [
+        {
+          "id": "unique-identifier",
+          "label": "A column that uniquely identifies each row",
+          "isCorrect": true
+        },
+        {
+          "id": "first-column",
+          "label": "The first column in the table",
+          "isCorrect": false
+        },
+        {
+          "id": "password",
+          "label": "A password to access the database",
+          "isCorrect": false
+        },
+        {
+          "id": "important-data",
+          "label": "The most important data in the table",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A primary key is a column (or set of columns) that uniquely identifies each row in a table. No two rows can have the same primary key value, and it's often named 'id'.",
+        "byOptionId": {
+          "unique-identifier": "Correct - a primary key uniquely identifies each row, ensuring no duplicates exist.",
+          "first-column": "While it's often the first column, that's not what defines a primary key.",
+          "password": "Primary keys identify rows, they're not related to database access control or passwords.",
+          "important-data": "Importance is subjective - a primary key's purpose is unique identification, not importance."
+        }
+      }
+    },
+    {
+      "id": "q9_columns_definition",
+      "type": "single-choice",
+      "prompt": "What are columns in a database table?",
+      "options": [
+        {
+          "id": "horizontal-entries",
+          "label": "Horizontal entries containing related data",
+          "isCorrect": false
+        },
+        {
+          "id": "vertical-divisions",
+          "label": "Vertical divisions that define what kind of information is stored",
+          "isCorrect": true
+        },
+        {
+          "id": "row-count",
+          "label": "The number of rows in the table",
+          "isCorrect": false
+        },
+        {
+          "id": "commands",
+          "label": "Commands to retrieve data",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Columns (also called fields) are the vertical divisions in a table. Each column represents a specific type of information, like 'name', 'age', or 'email'.",
+        "byOptionId": {
+          "horizontal-entries": "That describes rows, not columns. Columns are vertical.",
+          "vertical-divisions": "Correct - columns are vertical and each defines a type of data that can be stored.",
+          "row-count": "The row count is a number, not what columns are.",
+          "commands": "SQL commands retrieve data, but columns are the structure that holds the data."
+        }
+      }
+    },
+    {
+      "id": "q10_schema_definition",
+      "type": "single-choice",
+      "prompt": "What is a database schema?",
+      "options": [
+        {
+          "id": "sql-query",
+          "label": "A type of SQL query",
+          "isCorrect": false
+        },
+        {
+          "id": "structure-blueprint",
+          "label": "The blueprint that defines the structure of tables and columns",
+          "isCorrect": true
+        },
+        {
+          "id": "database-backup",
+          "label": "A backup of the database",
+          "isCorrect": false
+        },
+        {
+          "id": "security-feature",
+          "label": "A security feature",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A schema is the blueprint or structure of a database. It defines what tables exist, what columns each table has, what data types are used, and how tables relate to each other.",
+        "byOptionId": {
+          "sql-query": "Queries retrieve data, but a schema defines the structure where data is stored.",
+          "structure-blueprint": "Correct - the schema is the architectural plan showing how the database is organized.",
+          "database-backup": "A backup is a copy of the data, not the structural definition.",
+          "security-feature": "While schemas can have permissions, they're primarily about structure, not security."
+        }
+      }
+    },
+    {
+      "id": "q11_valid_select",
+      "type": "single-choice",
+      "prompt": "Which of the following is a valid SQL SELECT statement?",
+      "options": [
+        {
+          "id": "get-keyword",
+          "label": "GET name FROM users;",
+          "isCorrect": false
+        },
+        {
+          "id": "select-keyword",
+          "label": "SELECT name FROM users;",
+          "isCorrect": true
+        },
+        {
+          "id": "retrieve-keyword",
+          "label": "RETRIEVE name FROM users;",
+          "isCorrect": false
+        },
+        {
+          "id": "fetch-keyword",
+          "label": "FETCH name FROM users;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The correct SQL keyword for retrieving data is SELECT. The syntax is SELECT column_name FROM table_name;",
+        "byOptionId": {
+          "get-keyword": "GET is not a valid SQL keyword for retrieving data.",
+          "select-keyword": "Correct - SELECT is the proper SQL keyword for querying data.",
+          "retrieve-keyword": "RETRIEVE sounds logical but is not a valid SQL keyword.",
+          "fetch-keyword": "FETCH exists in SQL but is used differently, not as the main query keyword."
+        }
+      }
+    },
+    {
+      "id": "q12_case_sensitivity",
+      "type": "single-choice",
+      "prompt": "Which statement about SQL case sensitivity is TRUE?",
+      "options": [
+        {
+          "id": "must-lowercase",
+          "label": "SQL keywords must always be lowercase",
+          "isCorrect": false
+        },
+        {
+          "id": "must-uppercase",
+          "label": "SQL keywords must always be uppercase",
+          "isCorrect": false
+        },
+        {
+          "id": "not-sensitive-convention",
+          "label": "SQL keywords are not case-sensitive, but UPPERCASE is a common convention",
+          "isCorrect": true
+        },
+        {
+          "id": "completely-sensitive",
+          "label": "SQL is completely case-sensitive for everything",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SQL keywords (like SELECT, FROM, WHERE) are not case-sensitive, but it's a widely adopted convention to write them in UPPERCASE to make queries more readable.",
+        "byOptionId": {
+          "must-lowercase": "SQL keywords work in any case - lowercase, uppercase, or mixed.",
+          "must-uppercase": "While uppercase is conventional, it's not required - SQL keywords are case-insensitive.",
+          "not-sensitive-convention": "Correct - keywords work in any case, but UPPERCASE is conventional for readability.",
+          "completely-sensitive": "Table and column names may be case-sensitive depending on the system, but keywords are not."
+        }
+      }
+    },
+    {
+      "id": "q13_multiple_columns",
+      "type": "single-choice",
+      "prompt": "How do you select multiple specific columns in SQL?",
+      "options": [
+        {
+          "id": "plus-sign",
+          "label": "SELECT name + age FROM students;",
+          "isCorrect": false
+        },
+        {
+          "id": "ampersand",
+          "label": "SELECT name & age FROM students;",
+          "isCorrect": false
+        },
+        {
+          "id": "comma",
+          "label": "SELECT name, age FROM students;",
+          "isCorrect": true
+        },
+        {
+          "id": "and-keyword",
+          "label": "SELECT name AND age FROM students;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "To select multiple columns, separate them with commas. For example: SELECT name, age, grade FROM students;",
+        "byOptionId": {
+          "plus-sign": "The + sign is for addition in SQL, not for listing columns.",
+          "ampersand": "The & symbol is not used in standard SQL for column selection.",
+          "comma": "Correct - commas separate multiple column names in the SELECT clause.",
+          "and-keyword": "AND is used in WHERE clauses for conditions, not for listing columns."
+        }
+      }
+    },
+    {
+      "id": "q14_sqlite_usage",
+      "type": "single-choice",
+      "prompt": "Which of these applications uses SQLite?",
+      "options": [
+        {
+          "id": "word",
+          "label": "Microsoft Word",
+          "isCorrect": false
+        },
+        {
+          "id": "chrome",
+          "label": "Google Chrome",
+          "isCorrect": true
+        },
+        {
+          "id": "photoshop",
+          "label": "Photoshop",
+          "isCorrect": false
+        },
+        {
+          "id": "calculator",
+          "label": "Calculator",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Google Chrome (and many other browsers) use SQLite for storing browser history, cookies, and other data. SQLite is one of the most widely deployed database engines in the world.",
+        "byOptionId": {
+          "word": "Microsoft Word uses its own proprietary document format, not SQLite.",
+          "chrome": "Correct - Chrome uses SQLite for browsing history, cookies, and various browser data.",
+          "photoshop": "Photoshop works with image files and uses different storage mechanisms.",
+          "calculator": "Calculator performs math operations and doesn't need a database."
+        }
+      }
+    },
+    {
+      "id": "q15_table_analogy",
+      "type": "single-choice",
+      "prompt": "A database table is most similar to which of the following?",
+      "options": [
+        {
+          "id": "document",
+          "label": "A document file",
+          "isCorrect": false
+        },
+        {
+          "id": "spreadsheet",
+          "label": "A spreadsheet with rows and columns",
+          "isCorrect": true
+        },
+        {
+          "id": "folder",
+          "label": "A folder containing files",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "An image file",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A database table is very similar to a spreadsheet, with rows representing individual records and columns representing different types of information about those records.",
+        "byOptionId": {
+          "document": "Documents contain flowing text, not structured rows and columns like tables.",
+          "spreadsheet": "Correct - tables have rows and columns just like spreadsheets (e.g., Excel or Google Sheets).",
+          "folder": "Folders organize files, but don't have the structured row/column format of tables.",
+          "image": "Images contain pixels and visual data, not structured tabular data."
+        }
+      }
+    },
+    {
+      "id": "q16_identify_syntax_error",
+      "type": "single-choice",
+      "prompt": "Which query has a syntax error?",
+      "options": [
+        {
+          "id": "select-all",
+          "label": "SELECT * FROM students;",
+          "isCorrect": false
+        },
+        {
+          "id": "select-name",
+          "label": "SELECT name FROM students;",
+          "isCorrect": false
+        },
+        {
+          "id": "select-multiple",
+          "label": "SELECT name, age FROM students;",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong-order",
+          "label": "SELECT FROM students name;",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "The correct syntax is SELECT columns FROM table. Option 4 incorrectly places the table name after the column, which is a syntax error.",
+        "byOptionId": {
+          "select-all": "This is valid - selects all columns from the students table.",
+          "select-name": "This is valid - selects the name column from students.",
+          "select-multiple": "This is valid - selects both name and age columns.",
+          "wrong-order": "Correct answer - this has wrong syntax. The column should come after SELECT, not after FROM."
+        }
+      }
+    },
+    {
+      "id": "q17_data_organization",
+      "type": "single-choice",
+      "prompt": "What advantage does a database provide over storing data in separate text files?",
+      "options": [
+        {
+          "id": "more-space",
+          "label": "Databases take up more space",
+          "isCorrect": false
+        },
+        {
+          "id": "slower",
+          "label": "Databases are slower",
+          "isCorrect": false
+        },
+        {
+          "id": "organized-efficient",
+          "label": "Databases organize, retrieve, and protect data efficiently",
+          "isCorrect": true
+        },
+        {
+          "id": "online-only",
+          "label": "Databases only work online",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Databases provide structured organization, fast retrieval through indexing, data integrity checks, and protection against corruption - all much better than scattered text files.",
+        "byOptionId": {
+          "more-space": "This is a disadvantage, not an advantage.",
+          "slower": "Databases are actually faster for searching and retrieving structured data.",
+          "organized-efficient": "Correct - databases excel at organizing, quickly finding, and protecting data.",
+          "online-only": "Many databases, including SQLite, work perfectly offline."
+        }
+      }
+    },
+    {
+      "id": "q18_record_synonym",
+      "type": "single-choice",
+      "prompt": "Another name for a 'row' in a database table is:",
+      "options": [
+        {
+          "id": "column",
+          "label": "Column",
+          "isCorrect": false
+        },
+        {
+          "id": "record",
+          "label": "Record",
+          "isCorrect": true
+        },
+        {
+          "id": "field",
+          "label": "Field",
+          "isCorrect": false
+        },
+        {
+          "id": "query",
+          "label": "Query",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A row is also called a record. Both terms refer to a single entry in a table containing related data across all columns.",
+        "byOptionId": {
+          "column": "A column is a vertical division, different from a row.",
+          "record": "Correct - row and record are synonymous terms for a single table entry.",
+          "field": "A field is another term for a column, not a row.",
+          "query": "A query is a command to retrieve data, not a table structure."
+        }
+      }
+    },
+    {
+      "id": "q19_field_synonym",
+      "type": "single-choice",
+      "prompt": "Another name for a 'column' in a database table is:",
+      "options": [
+        {
+          "id": "row",
+          "label": "Row",
+          "isCorrect": false
+        },
+        {
+          "id": "record",
+          "label": "Record",
+          "isCorrect": false
+        },
+        {
+          "id": "field",
+          "label": "Field",
+          "isCorrect": true
+        },
+        {
+          "id": "table",
+          "label": "Table",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A column is also called a field. Both terms refer to a vertical division in a table that holds a specific type of information.",
+        "byOptionId": {
+          "row": "A row is a horizontal entry, different from a column.",
+          "record": "A record is another term for a row, not a column.",
+          "field": "Correct - column and field are synonymous terms for a vertical data division.",
+          "table": "A table is the entire structure containing rows and columns."
+        }
+      }
+    },
+    {
+      "id": "q20_select_all_meaning",
+      "type": "single-choice",
+      "prompt": "What will 'SELECT * FROM products;' do?",
+      "options": [
+        {
+          "id": "delete-all",
+          "label": "Delete all products",
+          "isCorrect": false
+        },
+        {
+          "id": "multiply",
+          "label": "Multiply all product values",
+          "isCorrect": false
+        },
+        {
+          "id": "retrieve-all",
+          "label": "Retrieve all columns from the products table",
+          "isCorrect": true
+        },
+        {
+          "id": "update-all",
+          "label": "Update all products",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SELECT * FROM products will retrieve all columns from every row in the products table. The * wildcard means 'all columns'.",
+        "byOptionId": {
+          "delete-all": "DELETE removes data, but SELECT only retrieves/reads data without changing it.",
+          "multiply": "While * means multiplication in math, in SELECT it means 'all columns'.",
+          "retrieve-all": "Correct - this query fetches all columns from all rows in the products table.",
+          "update-all": "UPDATE modifies data, but SELECT only reads data without changing it."
+        }
+      }
+    }
+  ]
+}
+

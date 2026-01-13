@@ -1,0 +1,29 @@
+-- Projects table structure and sample data
+-- This represents various hacking projects and challenges
+
+CREATE TABLE projects (
+    id INTEGER PRIMARY KEY,
+    project_name TEXT NOT NULL,
+    description TEXT,
+    difficulty TEXT,
+    status TEXT,
+    points_reward INTEGER,
+    deadline TEXT
+);
+
+-- Insert sample projects
+INSERT INTO projects (id, project_name, description, difficulty, status, points_reward, deadline) VALUES
+(1, 'Matrix Database Hack', 'Infiltrate the Matrix mainframe database', 'Advanced', 'Active', 1000, '2024-12-31'),
+(2, 'Secure the Nebuchadnezzar', 'Implement security protocols for ship systems', 'Intermediate', 'Active', 500, '2024-11-30'),
+(3, 'Agent Detection Algorithm', 'Create an algorithm to detect Agent programs', 'Advanced', 'Completed', 800, '2024-10-15'),
+(4, 'Zion Network Analysis', 'Analyze Zion city network traffic', 'Beginner', 'Active', 200, '2024-12-15'),
+(5, 'Construct Builder', 'Build a training construct environment', 'Intermediate', 'Active', 600, '2024-12-20'),
+(6, 'Oracle Query System', 'Design a predictive query system', 'Advanced', 'Planning', 1200, '2025-01-30'),
+(7, 'Sentinel Defense', 'Program defensive measures against Sentinels', 'Advanced', 'Active', 900, '2024-12-25'),
+(8, 'Red Pill Tracker', 'Track awakened individuals in the Matrix', 'Beginner', 'Completed', 150, '2024-09-30');
+
+-- Try these queries to explore projects:
+SELECT * FROM projects;
+SELECT project_name, status FROM projects;
+SELECT project_name, difficulty, points_reward FROM projects;
+

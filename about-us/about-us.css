@@ -49,20 +49,32 @@ body {
 /* Header */
 .header {
     text-align: center;
-    padding: 80px 20px 60px;
+    padding: 60px 20px 40px;
     background: linear-gradient(to bottom right, #1e1b4b, #312e81);
     border-bottom: 1px solid var(--glass);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
     position: relative;
 }
 
+@media (min-width: 600px) {
+    .header {
+        padding: 80px 20px 60px;
+    }
+}
+
 
 .header h1 {
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-weight: var(--fw-bold);
     color: #fff;
     letter-spacing: 1px;
     text-shadow: 0 0 15px var(--accent-600);
+}
+
+@media (min-width: 600px) {
+    .header h1 {
+        font-size: 3.2rem;
+    }
 }
 
 .header p {

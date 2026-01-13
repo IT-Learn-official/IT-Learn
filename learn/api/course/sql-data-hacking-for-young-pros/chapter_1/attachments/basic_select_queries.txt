@@ -1,0 +1,31 @@
+-- Basic SELECT queries - Examples from Chapter 1
+-- These queries demonstrate the fundamental SELECT statement
+
+-- Example 1: Select all columns from hackers table
+-- The * wildcard means "all columns"
+SELECT * FROM hackers;
+
+-- Example 2: Select specific columns
+-- Only show username and level
+SELECT username, level FROM hackers;
+
+-- Example 3: Select a single column
+-- Get just the usernames
+SELECT username FROM hackers;
+
+-- Example 4: Select multiple specific columns
+-- Show username, level, and xp_points
+SELECT username, level, xp_points FROM hackers;
+
+-- Example 5: Select columns in different order
+-- You can arrange columns however you want in the result
+SELECT level, username, email FROM hackers;
+
+-- Try these queries yourself!
+-- Uncomment (remove --) from the line you want to run
+
+-- SELECT * FROM skills;
+-- SELECT skill_name FROM skills;
+-- SELECT skill_name, difficulty FROM skills;
+-- SELECT * FROM projects;
+

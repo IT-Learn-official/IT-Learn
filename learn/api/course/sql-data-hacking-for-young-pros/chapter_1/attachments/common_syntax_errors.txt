@@ -1,0 +1,89 @@
+-- Common SQL syntax errors and how to fix them
+-- This file helps you learn from common mistakes
+
+-- ERROR 1: Missing semicolon
+-- Wrong:
+-- SELECT * FROM hackers
+
+-- Correct:
+SELECT * FROM hackers;
+
+
+-- ERROR 2: Missing comma between columns
+-- Wrong:
+-- SELECT username level FROM hackers;
+
+-- Correct:
+SELECT username, level FROM hackers;
+
+
+-- ERROR 3: Extra comma after last column
+-- Wrong:
+-- SELECT username, level, FROM hackers;
+
+-- Correct:
+SELECT username, level FROM hackers;
+
+
+-- ERROR 4: Wrong keyword order
+-- Wrong:
+-- SELECT FROM hackers username;
+
+-- Correct:
+SELECT username FROM hackers;
+
+
+-- ERROR 5: Missing FROM clause
+-- Wrong:
+-- SELECT username, level;
+
+-- Correct:
+SELECT username, level FROM hackers;
+
+
+-- ERROR 6: Misspelled keyword
+-- Wrong:
+-- SELCT * FROM hackers;
+
+-- Correct:
+SELECT * FROM hackers;
+
+
+-- ERROR 7: Misspelled table name
+-- Wrong:
+-- SELECT * FROM hacker;
+
+-- Correct:
+SELECT * FROM hackers;
+
+
+-- ERROR 8: Misspelled column name
+-- Wrong:
+-- SELECT user_name FROM hackers;
+
+-- Correct (assuming column is called 'username'):
+SELECT username FROM hackers;
+
+
+-- PRACTICE: Find the errors in these queries
+-- Try to fix them before looking at the answers below
+
+-- Query A (has 2 errors):
+-- SELCT username level FROM hackers
+
+-- Query B (has 1 error):
+-- SELECT username, email, FROM skills;
+
+-- Query C (has 1 error):
+-- SELECT * FROM project
+
+-- Query D (has 1 error):
+-- SELECT FROM hackers username;
+
+
+-- ANSWERS:
+-- Query A fixed: SELECT username, level FROM hackers;
+-- Query B fixed: SELECT username, email FROM skills;
+-- Query C fixed: SELECT * FROM projects;
+-- Query D fixed: SELECT username FROM hackers;
+

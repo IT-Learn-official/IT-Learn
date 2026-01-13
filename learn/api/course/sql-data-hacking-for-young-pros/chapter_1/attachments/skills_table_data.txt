@@ -1,0 +1,30 @@
+-- Skills table structure and sample data
+-- This represents different hacking and programming skills
+
+CREATE TABLE skills (
+    id INTEGER PRIMARY KEY,
+    skill_name TEXT NOT NULL,
+    category TEXT,
+    difficulty TEXT,
+    points INTEGER,
+    description TEXT
+);
+
+-- Insert sample skills data
+INSERT INTO skills (id, skill_name, category, difficulty, points, description) VALUES
+(1, 'SQL Basics', 'Database', 'Beginner', 100, 'Learn to query databases with SELECT statements'),
+(2, 'Python Programming', 'Programming', 'Beginner', 150, 'Master the basics of Python coding'),
+(3, 'Network Analysis', 'Networking', 'Intermediate', 250, 'Analyze network traffic and protocols'),
+(4, 'Web Scraping', 'Data Collection', 'Intermediate', 200, 'Extract data from websites automatically'),
+(5, 'Cryptography', 'Security', 'Advanced', 400, 'Understand encryption and decryption'),
+(6, 'SQL Injection', 'Security', 'Advanced', 450, 'Learn about SQL injection vulnerabilities'),
+(7, 'JavaScript', 'Programming', 'Beginner', 120, 'Client-side web programming'),
+(8, 'Linux Command Line', 'Systems', 'Beginner', 100, 'Navigate and control Linux systems'),
+(9, 'Penetration Testing', 'Security', 'Advanced', 500, 'Ethical hacking and system testing'),
+(10, 'Data Analysis', 'Database', 'Intermediate', 300, 'Analyze and visualize data patterns');
+
+-- Try these queries to explore the skills:
+SELECT * FROM skills;
+SELECT skill_name, points FROM skills;
+SELECT skill_name, category, difficulty FROM skills;
+

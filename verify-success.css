@@ -14,12 +14,18 @@ body {
 
 .container {
   background: rgba(0, 0, 0, 0.7);
-  padding: 50px;
+  padding: 2rem 1.5rem;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   max-width: 450px;
   width: 90%;
   animation: fadeInContainer 1s ease forwards;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 3rem 2.5rem;
+  }
 }
 
 /* Fade-in animation */
@@ -39,8 +45,14 @@ body {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 1.75rem;
   margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
 }
 
 p {

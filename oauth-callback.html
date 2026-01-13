@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Signing In</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #111827 40%, #0b1530);
+      color: #e5e7eb;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    .card {
+      width: min(480px, 100%);
+      padding: 1.75rem;
+      border-radius: 16px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.01em;
+    }
+    p {
+      margin: 0 0 1.25rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .pulse {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      border: 6px solid rgba(59, 130, 246, 0.3);
+      border-top-color: #60a5fa;
+      animation: spin 0.9s linear infinite;
+    }
+    button {
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #1f2937;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+    button:hover { background: #111827; transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+  
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="pulse" aria-hidden="true"></div>
+    <h1>Finishing sign-in...</h1>
+    <p id="status">Hang tight while we verify your login.</p>
+    <button id="retry" hidden>Back to login</button>
+  </div>
+
+  <script>
+    (function () {
+      const statusEl = document.getElementById('status');
+      const retryBtn = document.getElementById('retry');
+
+      const providerFromQuery = (new URLSearchParams(window.location.search).get('provider') || 'google').toLowerCase();
+      const providerLabel = {
+        google: 'Google',
+        github: 'GitHub',
+        discord: 'Discord'
+      }[providerFromQuery] || 'account';
+      const apiBase = 'https://itlearn.pythonanywhere.com';
+
+      const hash = window.location.hash || '';
+      const hashParams = new URLSearchParams(hash.startsWith('#') ? hash.substring(1) : hash);
+      const queryParams = new URLSearchParams(window.location.search || '');
+
+      const params = new URLSearchParams();
+      for (const [k, v] of queryParams.entries()) params.set(k, v);
+      for (const [k, v] of hashParams.entries()) params.set(k, v);
+
+      const error = params.get('error_description') || params.get('error');
+      const accessToken = params.get('access_token');
+      const refreshToken = params.get('refresh_token');
+      const expiresIn = Number(params.get('expires_in')) || null;
+      const authCode = params.get('code');
+
+      const fail = (message) => {
+        statusEl.textContent = message;
+        retryBtn.hidden = false;
+      };
+
+      retryBtn.addEventListener('click', () => {
+        window.location.href = `${window.location.origin}/login.html`;
+      });
+
+      if (error) {
+        fail(`${providerLabel} sign-in was cancelled or failed. Please try again.`);
+        return;
+      }
+
+      if (!accessToken && !authCode) {
+        fail(`No access token returned by ${providerLabel}. Please try again.`);
+        return;
+      }
+
+      statusEl.textContent = `Verifying your ${providerLabel} account...`;
+
+      fetch(`${apiBase}/api/oauth/${providerFromQuery}/complete`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+          expires_in: expiresIn,
+          auth_code: authCode
+        })
+      })
+        .then(async (res) => {
+          let data = null;
+          try { data = await res.json(); } catch (err) {
+            console.warn('[OAUTH CALLBACK] No JSON body:', err);
+          }
+
+          if (!res.ok || (data && data.error)) {
+            const msg = data && data.error ? data.error : 'Verification failed.';
+            throw new Error(msg);
+          }
+
+          const currentOrigin = window.location.origin;
+          const redirectTo = `${currentOrigin}/learn/index.html`;
+
+          if (providerFromQuery === 'discord') {
+            const shouldJoin = localStorage.getItem('discord_join_server') === 'true';
+            localStorage.removeItem('discord_join_server');
+
+            if (shouldJoin) {
+              try {
+                const joinRedirect = `${currentOrigin}/learn/index.html`;
+                const joinRes = await fetch(`${apiBase}/api/discord/join/start?next=${encodeURIComponent(joinRedirect)}`);
+                const joinData = await joinRes.json();
+                if (joinData && joinData.url) {
+                  statusEl.textContent = 'Success! Adding you to Discord...';
+                  window.location.replace(joinData.url);
+                  return;
+                }
+              } catch (err) {
+                console.warn('Discord join start failed (ignored):', err);
+              }
+            }
+          }
+
+          statusEl.textContent = 'Success! Redirecting to your course...';
+          window.location.replace(redirectTo);
+        })
+        .catch((err) => {
+          console.error('[OAUTH CALLBACK] Verification failed:', err);
+          fail(`Could not finish ${providerLabel} sign-in. Please try again.`);
+        });
+    })();
+  </script>
+</body>
+</html>

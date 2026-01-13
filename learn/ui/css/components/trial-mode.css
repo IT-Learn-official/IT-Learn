@@ -1,0 +1,266 @@
+/* author: https://github.com/broodje565 */
+.trial-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.trial-info-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.trial-info-message {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Trial Badge */
+.trial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.trial-badge-icon {
+  font-size: 12px;
+}
+
+.trial-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 16px;
+}
+
+.trial-modal-overlay.is-visible {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Trial Modal */
+.trial-modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.trial-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.trial-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.trial-modal-close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.trial-modal-content {
+  padding: 24px;
+}
+
+.trial-modal-title {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.trial-modal-message {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.trial-modal-benefits {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.trial-modal-benefits-title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.trial-modal-benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trial-modal-benefit-item {
+  margin: 8px 0;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.trial-modal-benefit-item:before {
+  content: '';
+  margin-right: 8px;
+}
+
+.trial-modal-stats {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border: 1px solid #667eea30;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.trial-modal-stats p {
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.trial-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.trial-modal-button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: center;
+}
+
+.trial-modal-button--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.trial-modal-button--primary:hover {
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.trial-modal-button--primary:active {
+  transform: translateY(0);
+}
+
+.trial-modal-button--secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.trial-modal-button--secondary:hover {
+  background: #f3f4f6;
+}
+
+.trial-modal-button--secondary:active {
+  background: white;
+}
+
+@media (max-width: 480px) {
+  .trial-modal-overlay {
+    padding: 12px;
+  }
+
+  .trial-modal {
+    max-width: 100%;
+  }
+
+  .trial-modal-title {
+    font-size: 20px;
+  }
+
+  .trial-modal-message {
+    font-size: 13px;
+  }
+
+  .trial-info-banner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .trial-info-message {
+    width: 100%;
+    font-size: 12px;
+  }
+}
