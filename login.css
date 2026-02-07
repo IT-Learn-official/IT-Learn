@@ -7,20 +7,25 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   background: linear-gradient(135deg, #0f172a 0%, #071026 80%);
   color: #f8fafc;
-  overflow: hidden;
 }
+
 
 /* Container */
 .container {
+  min-height: 100vh;
   width: 100%;
   max-width: 400px;
   padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
 }
 
 /* Form Box */
