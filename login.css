@@ -4,6 +4,18 @@
   font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
+.cf-turnstile {
+    display: flex;   
+    justify-content: center;  
+    margin: 20px 0;           
+}
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 body {
   min-height: 100vh;
   background:
@@ -197,3 +209,4 @@ body {
   color: #a5b4fc;
   text-decoration: none;
 }
+
