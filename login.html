@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>IT Learn | Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="stylesheet" href="login.css" />
+  <!-- Turnstile CAPTCHA -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-
 <body>
-
-<!-- Start of Tawk.to Script -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!-- End of Tawk.to Script -->
 
 <header class="top-bar">
   <div class="logo">
@@ -38,21 +22,23 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 <main class="hero">
   <div class="login-card">
     <span class="badge">Welcome back</span>
-
     <h1>Login to <span>IT Learn</span></h1>
-    <p class="subtitle">
-      Continue learning without frustration.
-    </p>
+    <p class="subtitle">Continue learning without frustration.</p>
 
     <form id="login-form">
       <div class="field">
         <label>Email</label>
-        <input type="email" placeholder="example@example.com" required />
+        <input type="email" placeholder="example@example.com" required>
       </div>
 
       <div class="field">
         <label>Password</label>
-        <input type="password" placeholder="********" required />
+        <input type="password" placeholder="********" required>
+      </div>
+
+      <!-- Centered Turnstile CAPTCHA -->
+      <div style="text-align:center; margin: 15px 0;">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
       </div>
 
       <button type="submit" class="primary-btn">Login</button>
@@ -60,22 +46,23 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 
     <div class="divider"><span>OR</span></div>
 
-    <!-- OAuth buttons -->
-   <button class="oauth google" id="google-login">
-  <img src="https://files.itlearn.be/images/branding/icons/Google.png" alt="Google">
-  Continue with Google
-</button>
+    <!-- OAuth buttons container -->
+    <div class="oauth-container" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <button class="oauth google" id="google-login">
+        <img src="https://files.itlearn.be/images/branding/icons/Google.png" alt="Google"> 
+        Continue with Google
+      </button>
 
-<button class="oauth github" id="github-login">
-  <img src="oauth-logos/github.png" alt="GitHub">
-  Continue with GitHub
-</button>
+      <button class="oauth github" id="github-login">
+        <img src="oauth-logos/github.png" alt="GitHub">
+        Continue with GitHub
+      </button>
 
-<button class="oauth discord" id="discord-login">
-  <img src="oauth-logos/discord.png" alt="Discord">
-  Continue with Discord
-</button>
-
+      <button class="oauth discord" id="discord-login">
+        <img src="oauth-logos/discord.png" alt="Discord">
+        Continue with Discord
+      </button>
+    </div>
 
     <p class="footer-text">
       No account yet? <a href="signup.html">Create one</a>
@@ -83,6 +70,46 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   </div>
 </main>
 
-<script src="oauth.js"></script>
+<script>
+// === OAuth buttons ===
+const OAUTH_API_BASE = 'https://itlearn.pythonanywhere.com';
+
+function initOAuthButton(provider, buttonId) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    btn.innerText = `Connecting to ${provider}...`;
+
+    try {
+      const redirectTo = `${window.location.origin}/oauth-callback.html?provider=${provider}`;
+      const res = await fetch(`${OAUTH_API_BASE}/api/oauth/${provider}/start`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ redirect_to: redirectTo })
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.url) throw new Error(data?.error || 'Failed to start OAuth');
+
+      window.location.href = data.url;
+
+    } catch (err) {
+      console.error(`[OAUTH][${provider}]`, err);
+      alert(`Could not start ${provider} sign-in. Try again.`);
+      btn.disabled = false;
+      btn.innerText = `Continue with ${provider.charAt(0).toUpperCase() + provider.slice(1)}`;
+    }
+  });
+}
+
+initOAuthButton('google', 'google-login');
+initOAuthButton('github', 'github-login');
+initOAuthButton('discord', 'discord-login');
+
+</script>
+
 </body>
 </html>
