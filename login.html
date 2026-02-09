@@ -27,13 +27,13 @@
 
     <form id="login-form">
       <div class="field">
-        <label>Email</label>
-        <input type="email" placeholder="example@example.com" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required>
       </div>
 
       <div class="field">
-        <label>Password</label>
-        <input type="password" placeholder="********" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="********" required>
       </div>
 
       <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
@@ -69,6 +69,58 @@
 
 <script>
 const OAUTH_API_BASE = 'https://itlearn.pythonanywhere.com';
+
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('email')?.value || '';
+    const password = document.getElementById('password')?.value || '';
+    const submitBtn = loginForm.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    let captchaToken = '';
+    try {
+      if (typeof turnstile !== 'undefined') {
+        captchaToken = turnstile.getResponse();
+      }
+    } catch {}
+
+    if (!captchaToken) {
+      alert('Please complete the CAPTCHA before logging in.');
+      if (submitBtn) submitBtn.disabled = false;
+      return;
+    }
+
+    try {
+      const res = await fetch(`${OAUTH_API_BASE}/api/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password, captcha_token: captchaToken })
+      });
+
+      if (!res.ok) {
+        let msg = 'Login failed.';
+        try {
+          const data = await res.json();
+          if (data && data.error) msg = data.error;
+        } catch {}
+        alert(msg);
+        try { turnstile.reset(); } catch {}
+        return;
+      }
+
+      window.location.href = '/learn/index.html';
+    } catch {
+      alert('An error occurred while logging in.');
+      try { turnstile.reset(); } catch {}
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
 
 function initOAuthButton(provider, buttonId) {
   const btn = document.getElementById(buttonId);
