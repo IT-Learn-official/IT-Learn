@@ -1,223 +1,250 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 body {
   min-height: 100vh;
   background:
-    radial-gradient(80% 60% at 50% 0%, rgba(99,102,241,0.18), transparent),
+    radial-gradient(80% 60% at 50% 0%, rgba(99, 102, 241, 0.2), transparent 60%),
     linear-gradient(135deg, #0f172a 0%, #020617 85%);
+  color: #f8fafc;
+  display: grid;
+  place-items: center;
+}
+
+.escape {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
+  font-size: 18px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.container {
+  width: 100%;
+  padding: 64px 20px 36px;
+  display: grid;
+  place-items: center;
+}
+
+.form-box {
+  width: min(420px, 92vw);
+  padding: 28px 26px 24px;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(14px);
+}
+
+.form-box h1 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.input-group {
+  margin-top: 16px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.06);
   color: #f8fafc;
 }
 
-/* Top bar */
-.top-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(10px);
+.input-group input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.7);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
-.logo {
+.input-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-weight: 700;
+  gap: 8px;
 }
 
-.logo img {
-  width: 28px;
-}
-
-.back-link {
-  color: #c7d2fe;
-  text-decoration: none;
-}
-
-/* Hero */
-.hero {
-  min-height: 100vh;
+.password-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.4);
+  color: #e2e8f0;
+  cursor: pointer;
   display: grid;
   place-items: center;
-  padding: 6rem 1.5rem 2rem;
 }
 
-/* Card */
-.login-card {
-  width: 100%;
-  max-width: 420px;
-  padding: 2.5rem;
-  border-radius: 20px;
-  background: rgba(15,23,42,0.75);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 30px 80px rgba(2,6,23,0.7);
-}
-
-.badge {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(99,102,241,0.15);
-  color: #c7d2fe;
-  font-size: 0.8rem;
-}
-
-.login-card h1 {
-  font-size: 2rem;
-}
-
-.login-card h1 span {
-  color: #93c5fd;
-}
-
-.subtitle {
-  margin: 0.6rem 0 1.6rem;
-  font-size: 0.95rem;
-  color: #94a3b8;
-}
-
-/* Inputs */
-.field {
-  margin-bottom: 1rem;
-}
-
-.field label {
-  font-size: 0.85rem;
-  color: #94a3b8;
-}
-
-.field input {
-  width: 100%;
-  margin-top: 0.3rem;
-  padding: 0.75rem 0.9rem;
-  border-radius: 12px;
-  border: none;
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-}
-
-.field input:focus {
-  outline: 2px solid #6366f1;
+.password-toggle i {
+  width: 18px;
+  height: 18px;
 }
 
 .cf-turnstile {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 18px 0 8px;
 }
 
-/* Primary button */
-.primary-btn {
+.btn {
   width: 100%;
+  margin-top: 14px;
   padding: 0.85rem;
   border-radius: 999px;
   border: none;
   font-weight: 700;
   cursor: pointer;
   background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  color: white;
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-/* Divider */
-.divider {
-  margin: 1.5rem 0;
-  position: relative;
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.or-divider {
+  margin: 22px 0 14px;
   text-align: center;
-}
-
-.divider span {
-  background: rgba(15,23,42,0.75);
-  padding: 0 0.6rem;
+  position: relative;
   color: #94a3b8;
   font-size: 0.8rem;
 }
 
-.divider::before {
+.or-divider::before {
   content: "";
   position: absolute;
-  inset: 50% 0 auto 0;
+  left: 0;
+  right: 0;
+  top: 50%;
   height: 1px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* OAuth */
-.oauth-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.or-divider span {
+  position: relative;
+  padding: 0 10px;
+  background: rgba(15, 23, 42, 0.75);
 }
 
-.oauth {
+.oauth-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.btn-oauth {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   font-weight: 600;
   font-size: 0.95rem;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 
-.oauth:hover {
-  transform: translateY(-2px);
-}
-
-/* OAuth icons */
-.oauth img {
+.btn-oauth img {
   width: 22px;
   height: 22px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
-/* Providers */
-.oauth.google {
+.btn-oauth:hover {
+  transform: translateY(-2px);
+}
+
+.btn-oauth.google {
   background: #ffffff;
-  color: #000;
+  color: #0f172a;
 }
 
-.oauth.github {
+.btn-oauth.github {
   background: #405575;
-  color: #dde5ec;
+  color: #e2e8f0;
 }
 
-.oauth.github img {
+.btn-oauth.github img {
   filter: invert(1);
 }
 
-.oauth.discord {
+.btn-oauth.discord {
   background: #4752c4;
-  color: white;
+  color: #fff;
 }
 
-.oauth.discord:hover {
-  background: #4752c4;
+.discord-join-option {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #cbd5f5;
 }
 
-.oauth.discord img {
-  transform: translateY(1px);
+.discord-join-option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Footer */
-.footer-text {
+.redirect-text {
+  margin-top: 18px;
   text-align: center;
-  margin-top: 1.2rem;
   font-size: 0.85rem;
   color: #94a3b8;
 }
 
-.footer-text a {
+.redirect-text a {
   color: #a5b4fc;
   text-decoration: none;
+}
+
+.splash {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .form-box {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .input-row {
+    gap: 6px;
+  }
 }
