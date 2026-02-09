@@ -4,18 +4,6 @@
   font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
-.cf-turnstile {
-    display: flex;   
-    justify-content: center;  
-    margin: 20px 0;           
-}
-.login-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 body {
   min-height: 100vh;
   background:
@@ -70,12 +58,6 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(14px);
   box-shadow: 0 30px 80px rgba(2,6,23,0.7);
-  animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 .badge {
@@ -126,19 +108,25 @@ body {
   outline: 2px solid #6366f1;
 }
 
-/* Buttons */
+.cf-turnstile {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+/* Primary button */
 .primary-btn {
   width: 100%;
   padding: 0.85rem;
   border-radius: 999px;
   border: none;
-  margin-top: 0.5rem;
   font-weight: 700;
   cursor: pointer;
   background: linear-gradient(90deg, #6366f1, #8b5cf6);
   color: white;
 }
 
+/* Divider */
 .divider {
   margin: 1.5rem 0;
   position: relative;
@@ -161,24 +149,41 @@ body {
 }
 
 /* OAuth */
+.oauth-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
 .oauth {
   width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 0.6rem;
+  padding: 0.75rem 1rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.75rem;
   cursor: pointer;
   border: 1px solid rgba(255,255,255,0.15);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
+.oauth:hover {
+  transform: translateY(-2px);
+}
+
+/* OAuth icons */
 .oauth img {
   width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
+/* Providers */
 .oauth.google {
-  background: #fff;
+  background: #ffffff;
   color: #000;
 }
 
@@ -192,9 +197,16 @@ body {
 }
 
 .oauth.discord {
-  background: #5865f2;
+  background: #4752c4;
   color: white;
-  margin-top: 15px;
+}
+
+.oauth.discord:hover {
+  background: #4752c4;
+}
+
+.oauth.discord img {
+  transform: translateY(1px);
 }
 
 /* Footer */
@@ -209,4 +221,3 @@ body {
   color: #a5b4fc;
   text-decoration: none;
 }
-
