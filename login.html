@@ -1,233 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>IT Learn | Login</title>
-   <link rel="stylesheet" href="login.css" />
-    <meta property="og:title" content="IT Learn">
-    <meta property="og:description" content="Learn programming for free! - IT Learn">
-    <meta property="og:image" content="https://files.itlearn.be/images/branding/logo/IT_Learn.png">
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <title>IT Learn | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
 
-   <!-- Cloudflare script -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <!-- Feather icons (needed for eye/eye-off icons) -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" onload="if(window.feather){feather.replace();}" ></script>
-    <script src="/translations.js"></script>
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-
 <body>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<header class="top-bar">
+  <div class="logo">
+    <img src="favicon.ico" alt="IT Learn logo">
+    <span>IT Learn</span>
+  </div>
+  <a href="index.html" class="back-link">← Back to home</a>
+</header>
 
-<button class="escape" onclick="window.location.href='index.html'">&#10006</button>
-<div class="container">
-  <div class="form-box">
-    <h1 data-translate="login">Login</h1>
+<main class="hero">
+  <div class="login-card">
+    <span class="badge">Welcome back</span>
+    <h1>Login to <span>IT Learn</span></h1>
+    <p class="subtitle">Continue learning without frustration.</p>
+
     <form id="login-form">
-      <div class="input-group">
-        <label for="email" data-translate="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="example@example.com" required>
       </div>
 
-      <div class="input-group password">
-        <label for="password" data-translate="password">Password</label>
-        <div class="input-row">
-          <input type="password" id="password" placeholder="Enter your password" data-translate="enterPassword" required />
-          <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
-            <i data-feather="eye">👁️</i>
-          </button>
-        </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" placeholder="********" required>
       </div>
 
-      <!-- Cloudflare widget -->
       <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
-      <button type="submit" class="btn" data-translate="login">Login</button>
+      <button type="submit" class="primary-btn">Login</button>
     </form>
 
-    <div class="or-divider"><span data-translate="or">OR</span></div>
+    <div class="divider"><span>OR</span></div>
 
-    <div class="oauth-grid">
-      <!-- OAuth buttons -->
-      <button type="button" class="btn-oauth btn-google google" id="google-login" data-connecting="Connecting to Google...">
-        <img
-          src="https://files.itlearn.be/images/branding/icons/Google.png"
-          alt="Google Logo"
-        />
-        <span class="oauth-label" data-translate="continueGoogle">Continue with Google</span>
+    <!-- OAuth -->
+    <div class="oauth-container">
+      <button class="oauth google" id="google-login">
+        <img src="https://files.itlearn.be/images/branding/icons/Google.png" alt="Google">
+        <span>Continue with Google</span>
       </button>
 
-      <button type="button" class="btn-oauth btn-github github" id="github-login" data-connecting="Connecting to GitHub...">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/24/Github_logo_svg.svg"
-            alt="GitHub Logo"
-          />
-        <span class="oauth-label" data-translate="continueGitHub">Continue with GitHub</span>
+      <button class="oauth github" id="github-login">
+        <img src="https://files.itlearn.be/images/branding/icons/GitHub.png" alt="GitHub">
+        <span>Continue with GitHub</span>
       </button>
 
-      <button type="button" class="btn-oauth btn-discord discord" id="discord-login" data-connecting="Connecting to Discord...">
-          <img
-            src="https://files.itlearn.be/images/branding/icons/discord.png"
-            alt="Discord Logo"
-          />
-        <span class="oauth-label" data-translate="continueDiscord">Continue with Discord</span>
+      <button class="oauth discord" id="discord-login">
+        <img src="https://files.itlearn.be/images/branding/icons/discord.png" alt="Discord">
+        <span>Continue with Discord</span>
       </button>
     </div>
 
-    <div class="discord-join-option">
-      <label>
-        <input type="checkbox" id="join-discord-server" checked />
-        <span data-translate="joinDiscordServer">Join our official Discord server</span>
-      </label>
-    </div>
-
-    <p class="redirect-text">
-      Don't have an account? <a href="signup.html">Sign Up</a>
+    <p class="footer-text">
+      No account yet? <a href="signup.html">Create one</a>
     </p>
   </div>
-</div>
+</main>
 
-<!-- Login via live Flask API -->
 <script>
-document.addEventListener('DOMContentLoaded', async () => {
-    document.body.setAttribute('data-page', 'login');
-    const storedLang = localStorage.getItem('language') || 'en';
-    updatePageLanguage(storedLang);
-    if (window.feather) {
-        feather.replace();
-    }
-    updateInputPlaceholders(storedLang);
-    initPasswordToggle();
-    updatePasswordToggleLabels(storedLang);
-  initOAuthButtons();
-
-  try {
-    const resp = await fetch('https://itlearn.pythonanywhere.com/api/session', {
-      method: 'GET',
-      credentials: 'include'
-    });
-    const session = await resp.json();
-    if (session.logged_in) {
-      window.location.href = '/learn/index.html';
-      return;
-    }
-  } catch (e) {
-    console.warn('Session pre-check failed:', e);
-  }
-  
-  setTimeout(() => {
-    try {
-      if (typeof turnstile !== 'undefined') {
-        const oldToken = turnstile.getResponse();
-        console.log('[LOGIN] Page load - old token (first 20):', oldToken ? oldToken.substring(0, 20) + '...' : 'NONE');
-        turnstile.reset();
-        console.log('[LOGIN] Turnstile reset on page load');
-      }
-    } catch (e) {
-      console.warn('[LOGIN] Could not reset Turnstile on load:', e);
-    }
-  }, 1000);
-});
-
-function updateInputPlaceholders(lang) {
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    if (emailInput) emailInput.placeholder = translations[lang]['enterEmail'] || 'Enter your email';
-    if (passwordInput) passwordInput.placeholder = translations[lang]['enterPassword'] || 'Enter your password';
-}
-
-function updatePasswordToggleLabels(lang) {
-    const btn = document.querySelector('.password-toggle');
-    if (!btn) return;
-    const show = translations[lang] && translations[lang]['showPassword'] ? translations[lang]['showPassword'] : 'Show password';
-    const hide = translations[lang] && translations[lang]['hidePassword'] ? translations[lang]['hidePassword'] : 'Hide password';
-    btn.dataset.showLabel = show;
-    btn.dataset.hideLabel = hide;
-    const isPressed = btn.getAttribute('aria-pressed') === 'true';
-    btn.setAttribute('aria-label', isPressed ? hide : show);
-    btn.setAttribute('title', isPressed ? hide : show);
-}
-
-function initPasswordToggle() {
-    const pw = document.getElementById('password');
-    const btn = document.querySelector('.password-toggle');
-    if (!pw || !btn) return;
-
-    // Ensure icons are rendered
-    if (window.feather) feather.replace();
-
-    btn.addEventListener('click', () => {
-        const showing = pw.type === 'text';
-        if (showing) {
-            pw.type = 'password';
-            btn.setAttribute('aria-pressed', 'false');
-            const show = btn.dataset.showLabel || 'Show password';
-            btn.setAttribute('aria-label', show);
-            btn.setAttribute('title', show);
-            btn.innerHTML = '<i data-feather="eye"></i>';
-        } else {
-            pw.type = 'text';
-            btn.setAttribute('aria-pressed', 'true');
-            const hide = btn.dataset.hideLabel || 'Hide password';
-            btn.setAttribute('aria-label', hide);
-            btn.setAttribute('title', hide);
-            btn.innerHTML = '<i data-feather="eye-off"></i>';
-        }
-        if (window.feather) {
-            feather.replace();
-        }
-        pw.focus();
-    });
-}
-
 const OAUTH_API_BASE = 'https://itlearn.pythonanywhere.com';
-
-function providerLabel(provider) {
-  switch (provider) {
-    case 'github': return 'GitHub';
-    case 'discord': return 'Discord';
-    default: return 'Google';
-  }
-}
 
 function initOAuthButton(provider, buttonId) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  const labelEl = btn.querySelector('.oauth-label');
-  const baseLabel = labelEl ? labelEl.textContent : btn.textContent;
-  const connecting = btn.dataset.connecting || `Connecting to ${providerLabel(provider)}...`;
 
   btn.addEventListener('click', async () => {
     btn.disabled = true;
-    if (labelEl) {
-      labelEl.textContent = connecting;
-    } else {
-      btn.textContent = connecting;
-    }
-
-    if (provider === 'discord') {
-      const joinCheckbox = document.getElementById('join-discord-server');
-      const shouldJoin = joinCheckbox ? joinCheckbox.checked : false;
-      localStorage.setItem('discord_join_server', shouldJoin ? 'true' : 'false');
-    }
-
-    localStorage.setItem('oauth_origin', window.location.origin);
+    btn.innerText = `Connecting to ${provider}...`;
 
     try {
       const redirectTo = `${window.location.origin}/oauth-callback.html?provider=${provider}`;
@@ -239,194 +88,20 @@ function initOAuthButton(provider, buttonId) {
       });
 
       const data = await res.json();
-      if (!res.ok || !data.url) {
-        const errMsg = data && data.error ? data.error : `Could not start ${providerLabel(provider)} login.`;
-        throw new Error(errMsg);
-      }
+      if (!res.ok || !data.url) throw new Error();
 
       window.location.href = data.url;
-    } catch (err) {
-      console.error(`[OAUTH][${provider}] Start failed:`, err);
-      alert(`Could not start ${providerLabel(provider)} sign-in. Please try again.`);
+    } catch {
+      alert(`Could not start ${provider} login`);
       btn.disabled = false;
-      if (labelEl) {
-        labelEl.textContent = baseLabel;
-      } else {
-        btn.textContent = baseLabel;
-      }
+      btn.innerText = `Continue with ${provider}`;
     }
   });
 }
 
-function initOAuthButtons() {
-  initOAuthButton('google', 'google-login');
-  initOAuthButton('github', 'github-login');
-  initOAuthButton('discord', 'discord-login');
-}
-
-const originalUpdatePageLanguage = window.updatePageLanguage;
-window.updatePageLanguage = function(lang) {
-    originalUpdatePageLanguage(lang);
-    updateInputPlaceholders(lang);
-    updatePasswordToggleLabels(lang);
-};
-
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-  const submitBtn = document.querySelector('#login-form .btn');
-  if (submitBtn) submitBtn.disabled = true;
-
-      let captchaToken = turnstile.getResponse();
-      const tokenPrefix = captchaToken ? captchaToken.substring(0, 20) : 'NONE';
-      console.log('[LOGIN] Initial token check:', captchaToken ? 'Token exists' : 'No token');
-      console.log('[LOGIN] Token prefix:', tokenPrefix);
-
-      const lastToken = sessionStorage.getItem('last_captcha_token');
-      if (lastToken && lastToken === tokenPrefix) {
-        console.error('[LOGIN] ⚠️ WARNING: REUSING SAME TOKEN! Tokens are single-use only!');
-        alert('Please wait for CAPTCHA to reset...');
-        if (submitBtn) submitBtn.disabled = false;
-        return;
-      }
-      sessionStorage.setItem('last_captcha_token', tokenPrefix);
-      
-      if (!captchaToken) {
-        console.log('[LOGIN] Waiting for token to generate...');
-        for (let i = 0; i < 6; i++) {
-          await new Promise(resolve => setTimeout(resolve, 500));
-          captchaToken = turnstile.getResponse();
-          if (captchaToken) {
-            console.log('[LOGIN] Token ready after', (i + 1) * 500, 'ms');
-            break;
-          }
-        }
-      }
-      
-      if (!captchaToken) {
-        console.error('[LOGIN] No CAPTCHA token available after waiting');
-        alert("CAPTCHA verification not ready. Please wait a moment and try again.");
-        if (submitBtn) submitBtn.disabled = false;
-        return;
-      }
-
-      console.log('[LOGIN] Submitting with token (first 20 chars):', captchaToken.substring(0, 20) + '...');
-
-    try {
-      const requestBody = {
-        email,
-        password,
-        captcha_token: captchaToken
-      };
-      console.log('[LOGIN] Request body:', { email, captcha_token_length: captchaToken.length });
-      
-      const res = await fetch("https://itlearn.pythonanywhere.com/api/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify(requestBody)
-        });
-
-      if (!res.ok) {
-        let msg = 'Login failed.';
-        let errorData = null;
-        try {
-          errorData = await res.json();
-          if (errorData && errorData.error) msg = errorData.error;
-        } catch {}
-
-        console.error('[LOGIN] Error details:', { 
-          status: res.status, 
-          errorMessage: msg, 
-          fullErrorData: errorData,
-          errorString: JSON.stringify(errorData)
-        });
-
-        if (res.status === 401) {
-          alert('Login failed: ' + (msg || 'Incorrect email or password. Please check your credentials.'));
-        } else if (res.status === 400) {
-          alert('Login failed: ' + (msg || 'Invalid request or CAPTCHA failed. Please try again.'));
-        } else {
-          alert('Login failed: ' + msg);
-        }
-        
-        console.log('[LOGIN] Resetting CAPTCHA after error');
-        try { 
-          turnstile.reset();
-          await new Promise(resolve => setTimeout(resolve, 500));
-        } catch (e) {
-          console.error('[LOGIN] Turnstile reset failed:', e);
-        }
-        return;
-      }
-
-      console.log('[LOGIN] Success! Redirecting...');
-      alert("Login successful!");
-      window.location.href = "/learn/index.html";
-    } catch (err) {
-        console.error('[LOGIN] Exception:', err);
-        alert("An error occurred while logging in.");
-        
-        try { 
-          turnstile.reset();
-          await new Promise(resolve => setTimeout(resolve, 500));
-        } catch {}
-    } finally {
-      if (submitBtn) submitBtn.disabled = false;
-    }
-});
-</script>
-
-<script>
-(function () {
-  const variants = [
-    { text: "welcomeAboard" },
-    { text: "createSomethingCool" },
-    { text: "devJourneyStarts" },
-    { text: "smallStepsBigBuilds" },
-    { text: "designCodeRepeat" },
-    { text: "developedByBroodje56", link: "https://broodje56.is-a.dev" },
-    { text: "developedByJoren", link: "https://github.com/JorenS15" },
-    { text: "joinDiscord", link: "https://discord.gg/rKgF9s32EV" },
-    { text: "programmingEqualsLife" },
-    { text: "keepPushingForward" },
-    { text: "codeYourDreams" },
-    { text: "debuggingIsFun" },
-    { text: "eatSleepCodeRepeat" },
-    { text: "thinkTwiceCodeOnce" },
-    { text: "helloWorld" },
-    { text: "brainExeStopped" },
-    { text: "codeLikeABoss" },
-    { text: "syntaxNeverSleeps" },
-    { text: "fromIdeasToApps" },
-    { text: "firstBugIsFriend" },
-    { text: "ctrlSProgress" },
-    { text: "keepCalmCodeOn" },
-    { text: "oneLineAtATime" },
-    { text: "compileYourDreams" },
-    { text: "futureDevInProgress" },
-    { text: "readySetDeploy" },
-    { text: "helloFutureProgrammer" },
-    { text: "error404" },
-    { text: "learningNeverStops" },
-    { text: "codingPlusMusic", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
-  ];
-
-  const choice = variants[Math.floor(Math.random() * variants.length)];
-  const box = document.querySelector('.form-box');
-  if (box) {
-    const a = document.createElement('a');
-    a.className = 'splash';
-    if (choice.link) a.href = choice.link;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    const lang = localStorage.getItem('language') || 'en';
-    a.textContent = translations[lang][choice.text] || choice.text;
-    box.appendChild(a);
-  }
-})();
+initOAuthButton('google', 'google-login');
+initOAuthButton('github', 'github-login');
+initOAuthButton('discord', 'discord-login');
 </script>
 
 </body>
