@@ -1,34 +1,57 @@
 # ⌨️ IT Learn
-# Welcome to IT Learn!
-Our website is made for anyone, of any age who wants to learn how to code, whether you're just getting started or looking to improve your skills.
-If you want to help us build the website, only create PR's to the beta branch. Any PR for the main branch will get rejected.
 
-With IT Learn, you can explore and practice programming languages like: HTML, CSS, JavaScript & Python
+## Welcome to IT Learn!
 
-# 🚀 Features
-📚 Interactive lessons with explanations, examples, and quizzes
+IT Learn is a project we started to make learning code a bit easier and more fun.  
+Anyone can use it. It does not matter if you are just starting or already know some basics.
 
-🏅 XP system, leaderboard, and achievement badges
+Right now you can learn:
 
-🌙 Support for Dark Mode and Light Mode
+- HTML  
+- CSS  
+- JavaScript  
+- Python  
+- And more!
 
-🖼️ Friendly mascot to guide you through the lessons
+We are still building and improving things, so the site will keep changing over time.
 
-🌐 Fully responsive: works on laptop, tablet, and mobile
+If you want to contribute, please only create pull requests to the **new-beta** branch.  
+Pull requests to the **main** branch will be rejected (Broodje doesn't like it...).
 
-🔐 Account system to track your progress
+---
 
-# 🛠️ Work in Progress
-Our developers are actively working on improving the platform!
-Here’s what’s coming soon:
+## What you will find on IT Learn
 
-More lessons and topics (including advanced JavaScriptand for the future Cybersecurity)
+- Lessons with explanations and examples  
+- Quizzes to test what you learned  
+- An XP system with a leaderboard and badges  
+- Dark mode and light mode  
+- A mascot that guides you  
+- A responsive design that works on phone, tablet and desktop  
+- Accounts to save your progress  
 
-Better syntax highlighting for code snippets
+---
 
-Quests, challenges and bonus XP
+## Work in progress
 
-Improved design and animations
+We are currently working on:
 
-💬 Join Us!
-Have feedback or ideas? Come chat with us on our Discord! https://discord.itlearn.be
+- More lessons, including advanced JavaScript  
+- Cybersecurity in the future  
+- Better syntax highlighting  
+- Challenges and bonus XP  
+- Improvements to the design and animations (We’re working hard on it!)
+
+---
+
+## Join us
+
+Have feedback, ideas, or found a bug?  
+Join our Discord and talk to us:
+
+https://discord.itlearn.be
+
+Thanks for checking out IT Learn.
+
+Greets,
+Broodje56 & Joren
