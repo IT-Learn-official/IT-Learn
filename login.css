@@ -221,3 +221,22 @@ body {
   color: #a5b4fc;
   text-decoration: none;
 }
+
+.splash {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  background: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  transform: rotate(13deg);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.45);
+  cursor: pointer;
+  pointer-events: auto;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+}

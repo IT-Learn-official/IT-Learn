@@ -33,34 +33,42 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
-<button class="escape" onclick="window.location.href='index.html'">&#10006</button>
+<header class="top-bar">
+  <div class="logo">
+    <img src="favicon.ico" alt="IT Learn logo">
+    <span>IT Learn</span>
+  </div>
+  <a href="index.html" class="back-link">&#8592; Back to home</a>
+</header>
 
-<div class="container">
-  <div class="form-box">
-    <h1 data-translate="signup">Sign Up</h1>
+<main class="hero">
+  <div class="login-card">
+    <span class="badge" data-translate="signup">Sign Up</span>
+    <h1><span>IT Learn</span> <span data-translate="signup">Sign Up</span></h1>
+    <p class="subtitle">Start learning without frustration.</p>
 
     <form id="signup-form">
-      <div class="input-group">
+      <div class="field">
         <label for="email" data-translate="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required />
+        <input type="email" id="email" placeholder="Enter your email" data-translate="enterEmail" required>
       </div>
 
-      <div class="input-group password">
+      <div class="field password">
         <label for="password" data-translate="password">Password</label>
         <div class="input-row">
-          <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required />
+          <input type="password" id="password" placeholder="Create a password" data-translate="createPassword" required>
           <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
-            <i data-feather="eye">👁️</i>
+            <i data-feather="eye">&#128065;</i>
           </button>
         </div>
       </div>
 
-      <div class="input-group password">
+      <div class="field password">
         <label for="confirm-password" data-translate="confirmPassword">Confirm Password</label>
         <div class="input-row">
-          <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required />
+          <input type="password" id="confirm-password" placeholder="Re-enter your password" data-translate="reenterPassword" required>
           <button type="button" class="password-toggle" aria-pressed="false" aria-label="Show password" title="Show password">
-            <i data-feather="eye">👁️</i>
+            <i data-feather="eye">&#128065;</i>
           </button>
         </div>
       </div>
@@ -68,58 +76,48 @@ s0.parentNode.insertBefore(s1,s0);
       <!-- Cloudflare Turnstile -->
       <div class="cf-turnstile" data-sitekey="0x4AAAAAACDEaJSXddDZ6jRf"></div>
 
-      <div class="input-group" style="margin-top:.5rem;">
-        <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer;">
-          <input type="checkbox" id="accept-terms" style="width:16px;height:16px;" />
-          <span data-translate="iAgree">I agree to the</span> 
+      <div class="terms-row">
+        <label>
+          <input type="checkbox" id="accept-terms">
+          <span data-translate="iAgree">I agree to the</span>
           <a href="/terms/terms.html" target="_blank" rel="noopener noreferrer" data-translate="signupTerms">Terms and Conditions</a>
         </label>
       </div>
 
-      <button type="submit" class="btn" data-translate="createAccount">Create account</button>
+      <button type="submit" class="primary-btn" data-translate="createAccount">Create account</button>
     </form>
 
-    <div class="or-divider"><span data-translate="or">OR</span></div>
+    <div class="divider"><span data-translate="or">OR</span></div>
 
-    <div class="oauth-grid">
-      <!-- OAuth buttons -->
-      <button type="button" class="btn-oauth btn-google google" id="google-login" data-connecting="Connecting to Google...">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
-          alt="Google Logo"
-        />
+    <div class="oauth-container">
+      <button class="oauth google" id="google-login" data-connecting="Connecting to Google...">
+        <img src="https://files.itlearn.be/images/branding/icons/Google.png" alt="Google">
         <span class="oauth-label" data-translate="continueGoogle">Continue with Google</span>
       </button>
 
-      <button type="button" class="btn-oauth btn-github github" id="github-login" data-connecting="Connecting to GitHub...">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/24/Github_logo_svg.svg"
-            alt="GitHub Logo"
-          />
+      <button class="oauth github" id="github-login" data-connecting="Connecting to GitHub...">
+        <img src="https://files.itlearn.be/images/branding/icons/GitHub.png" alt="GitHub">
         <span class="oauth-label" data-translate="continueGitHub">Continue with GitHub</span>
       </button>
 
-      <button type="button" class="btn-oauth btn-discord discord" id="discord-login" data-connecting="Connecting to Discord...">
-          <img
-            src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d7f4ef6498ac018f2c55_Symbol.svg"
-            alt="Discord Logo"
-          />
+      <button class="oauth discord" id="discord-login" data-connecting="Connecting to Discord...">
+        <img src="https://files.itlearn.be/images/branding/icons/discord.png" alt="Discord">
         <span class="oauth-label" data-translate="continueDiscord">Continue with Discord</span>
       </button>
     </div>
 
     <div class="discord-join-option">
       <label>
-        <input type="checkbox" id="join-discord-server" checked />
+        <input type="checkbox" id="join-discord-server" checked>
         <span data-translate="joinDiscordServer">Join our official Discord server</span>
       </label>
     </div>
 
-    <p class="redirect-text">
+    <p class="footer-text">
       Already have an account? <a href="login.html">Log in</a>
     </p>
   </div>
-</div>
+</main>
 
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
@@ -293,7 +291,7 @@ s0.parentNode.insertBefore(s1,s0);
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
     const acceptTerms = document.getElementById("accept-terms").checked;
-    const submitBtn = document.querySelector('#signup-form .btn');
+    const submitBtn = document.querySelector('#signup-form .primary-btn');
     if (submitBtn) submitBtn.disabled = true;
 
     if (!email || !password) {
@@ -494,7 +492,7 @@ const variants = [
 ];
 
 const choice = variants[Math.floor(Math.random() * variants.length)];
-const box = document.querySelector('.form-box');
+const box = document.querySelector('.login-card');
 if (box) {
   const a = document.createElement('a');
   a.className = 'splash';

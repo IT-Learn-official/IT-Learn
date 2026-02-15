@@ -8,6 +8,7 @@
 
   <!-- Cloudflare Turnstile -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/translations.js"></script>
 </head>
 <body>
 
@@ -154,6 +155,57 @@ function initOAuthButton(provider, buttonId) {
 initOAuthButton('google', 'google-login');
 initOAuthButton('github', 'github-login');
 initOAuthButton('discord', 'discord-login');
+</script>
+
+<script>
+// --- Splash text ---
+const variants = [
+  { text: "welcomeAboard" },
+  { text: "createSomethingCool" },
+  { text: "devJourneyStarts" },
+  { text: "smallStepsBigBuilds" },
+  { text: "designCodeRepeat" },
+  { text: "developedByBroodje56", link: "https://broodje56.is-a.dev" },
+  { text: "developedByJoren", link: "https://github.com/JorenS15" },
+  { text: "joinDiscord", link: "https://discord.gg/rKgF9s32EV" },
+  { text: "programmingEqualsLife" },
+  { text: "keepPushingForward" },
+  { text: "codeYourDreams" },
+  { text: "debuggingIsFun" },
+  { text: "eatSleepCodeRepeat" },
+  { text: "thinkTwiceCodeOnce" },
+  { text: "helloWorld" },
+  { text: "brainExeStopped" },
+  { text: "codeLikeABoss" },
+  { text: "syntaxNeverSleeps" },
+  { text: "fromIdeasToApps" },
+  { text: "firstBugIsFriend" },
+  { text: "ctrlSProgress" },
+  { text: "keepCalmCodeOn" },
+  { text: "oneLineAtATime" },
+  { text: "compileYourDreams" },
+  { text: "futureDevInProgress" },
+  { text: "readySetDeploy" },
+  { text: "helloFutureProgrammer" },
+  { text: "error404" },
+  { text: "learningNeverStops" },
+  { text: "codingPlusMusic", link: "https://open.spotify.com/track/4tZgM0PdoK8MG5jvMKdJkC" }
+];
+
+const choice = variants[Math.floor(Math.random() * variants.length)];
+const box = document.querySelector('.login-card');
+if (box) {
+  const a = document.createElement('a');
+  a.className = 'splash';
+  if (choice.link) a.href = choice.link;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  const lang = localStorage.getItem('language') || 'en';
+  const translationsMap = typeof translations !== 'undefined' ? translations : {};
+  const translated = translationsMap[lang] && translationsMap[lang][choice.text];
+  a.textContent = translated || choice.text;
+  box.appendChild(a);
+}
 </script>
 
 </body>
