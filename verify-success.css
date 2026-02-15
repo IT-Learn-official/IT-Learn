@@ -21,7 +21,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(15,23,42,0.72);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .logo {
@@ -38,6 +41,19 @@ body {
 .back-link {
   color: #c7d2fe;
   text-decoration: none;
+}
+
+.back-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.back-link:focus,
+.back-link:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: 2px solid #a5b4fc;
+  outline-offset: 3px;
 }
 
 /* Hero */
@@ -100,6 +116,14 @@ body {
 
 .primary-btn:hover {
   transform: translateY(-2px);
+}
+
+.primary-btn:focus,
+.primary-btn:focus-visible {
+  transform: translateY(-2px);
+  outline: 2px solid #e0e7ff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.35);
 }
 
 .redirect-text {
