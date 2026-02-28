@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter-5",
+  "kind": "assessment",
+  "title": "Chapter 5 - Headings",
+  "description": "Quick check on headings and hierarchy.",
+  "questions": [
+    {
+      "id": "q-h1",
+      "type": "single-choice",
+      "prompt": "Which heading should usually be used only once per page?",
+      "options": [
+        {
+          "id": "h1",
+          "label": "<h1>",
+          "isCorrect": true
+        },
+        {
+          "id": "h2",
+          "label": "<h2>",
+          "isCorrect": false
+        },
+        {
+          "id": "h3",
+          "label": "<h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "h6",
+          "label": "<h6>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<h1> is typically the main title of the page.",
+        "byOptionId": {
+          "h1": "Correct — <h1> is usually the single main title of a page.",
+          "h2": "Incorrect — <h2> is for subsection titles, not usually the main page title.",
+          "h3": "Incorrect — <h3> is for lower-level headings.",
+          "h6": "Incorrect — <h6> is a very low-level heading."
+        }
+      }
+    },
+    {
+      "id": "q-heading-order",
+      "type": "single-choice",
+      "prompt": "If you have a main title and two subsections, a good order of tags is:",
+      "options": [
+        {
+          "id": "a",
+          "label": "<h1>, <h2>, <h2>",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "<h2>, <h1>, <h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "<h1>, <h2>, <h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<h3>, <h2>, <h1>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Keep headings in logical descending order for clarity and accessibility.",
+        "byOptionId": {
+          "a": "Correct — a main <h1> followed by <h2> subsections is logical.",
+          "b": "Incorrect — keep the main title at <h1>.",
+          "c": "Incorrect — you need 2 equal-level headings (<h2> and <h2>).",
+          "d": "Incorrect — this reverses the proper hierarchy. <h1> is big, and <h3> is small."
+        }
+      }
+    }
+  ]
+}

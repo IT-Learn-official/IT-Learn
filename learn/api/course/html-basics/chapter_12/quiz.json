@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter-12",
+  "kind": "assessment",
+  "title": "Chapter 12 - Semantic HTML",
+  "description": "Check understanding of semantic elements like header, nav, main, section, article, footer.",
+  "questions": [
+    {
+      "id": "q-header",
+      "type": "single-choice",
+      "prompt": "Which element is intended for the top of a page or section?",
+      "options": [
+        {
+          "id": "footer",
+          "label": "<footer>",
+          "isCorrect": false
+        },
+        {
+          "id": "header",
+          "label": "<header>",
+          "isCorrect": true
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<header> is used for introductory content or navigational aids at the top.",
+        "byOptionId": {
+          "header": "Correct — <header> is intended for the top area of a page or section.",
+          "footer": "Incorrect — <footer> belongs at the end of a page or section.",
+          "nav": "Incorrect — <nav> is for navigation links, often inside a header, but not the header itself.",
+          "div": "Incorrect — <div> is generic; semantic elements like <header> are preferred when appropriate."
+        }
+      }
+    },
+    {
+      "id": "q-main",
+      "type": "single-choice",
+      "prompt": "Which element should appear only once and contain the central content?",
+      "options": [
+        {
+          "id": "article",
+          "label": "<article>",
+          "isCorrect": false
+        },
+        {
+          "id": "main",
+          "label": "<main>",
+          "isCorrect": true
+        },
+        {
+          "id": "section",
+          "label": "<section>",
+          "isCorrect": false
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<main> contains the main content of the document and should be unique per page.",
+        "byOptionId": {
+          "main": "Correct — <main> designates the central content unique to the page.",
+          "article": "Incorrect — <article> represents a self-contained composition, not necessarily the whole main content.",
+          "section": "Incorrect — <section> is a thematic grouping and can appear multiple times.",
+          "nav": "Incorrect — <nav> is for navigation links, not the main content."
+        }
+      }
+    }
+  ]
+}

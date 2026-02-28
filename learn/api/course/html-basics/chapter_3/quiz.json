@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter-3",
+  "kind": "assessment",
+  "title": "Chapter 3 - Document Structure",
+  "description": "Check your understanding of the HTML document skeleton.",
+  "questions": [
+    {
+      "id": "q-doctype",
+      "type": "single-choice",
+      "prompt": "What is the purpose of <!DOCTYPE html>?",
+      "options": [
+        {
+          "id": "tellwhatversion",
+          "label": "It tells the browser to use modern HTML standards",
+          "isCorrect": true
+        },
+        {
+          "id": "displaytitle",
+          "label": "It displays a title on the page",
+          "isCorrect": false
+        },
+        {
+          "id": "csslink",
+          "label": "It links a CSS file",
+          "isCorrect": false
+        },
+        {
+          "id": "definebody",
+          "label": "It defines the page body",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The DOCTYPE ensures the browser parses the page with the correct rules.",
+        "byOptionId": {
+          "a": "Correct — DOCTYPE tells the browser to use the standard HTML parsing mode.",
+          "b": "Incorrect — DOCTYPE does not display titles.",
+          "c": "Incorrect — CSS is linked with <link>, not DOCTYPE.",
+          "d": "Incorrect — DOCTYPE does not define the body element."
+        }
+      }
+    },
+    {
+      "id": "q-head-function",
+      "type": "single-choice",
+      "prompt": "Which tag contains the visible content of the page?",
+      "options": [
+        {
+          "id": "head",
+          "label": "<head>",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "<html>",
+          "isCorrect": false
+        },
+        {
+          "id": "body",
+          "label": "<body>",
+          "isCorrect": true
+        },
+        {
+          "id": "meta",
+          "label": "<meta>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The <body> contains content the user sees in the browser window.",
+        "byOptionId": {
+          "body": "Correct — visible content goes inside <body>.",
+          "head": "Incorrect — <head> holds metadata and resources, not the main visible content.",
+          "html": "Incorrect — <html> is the root wrapper, not the visible content container.",
+          "meta": "Incorrect — <meta> provides metadata such as charset or viewport info."
+        }
+      }
+    },
+    {
+      "id": "q-title-location",
+      "type": "single-choice",
+      "prompt": "Where does the <title> tag go?",
+      "options": [
+        {
+          "id": "body",
+          "label": "Inside <body>",
+          "isCorrect": false
+        },
+        {
+          "id": "footer",
+          "label": "Inside <footer>",
+          "isCorrect": false
+        },
+        {
+          "id": "head",
+          "label": "Inside <head>",
+          "isCorrect": true
+        },
+        {
+          "id": "outside",
+          "label": "Outside of <html>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<title> belongs in the head and appears in the browser tab.",
+        "byOptionId": {
+          "head": "Correct — <title> is placed in <head> and is shown in the browser tab.",
+          "body": "Incorrect — <title> should not be inside <body>.",
+          "footer": "Incorrect — <footer> is part of the page body, not where <title> belongs.",
+          "outside": "Incorrect — <title> must be inside <head> within <html>."
+        }
+      }
+    },
+    {
+      "id": "q-html-root",
+      "type": "single-choice",
+      "prompt": "What is the root element of an HTML document?",
+      "options": [
+        {
+          "id": "head",
+          "label": "<head>",
+          "isCorrect": false
+        },
+        {
+          "id": "body",
+          "label": "<body>",
+          "isCorrect": false
+        },
+        {
+          "id": "doctype",
+          "label": "<!DOCTYPE>",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "<html>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "<html> is the outer element that wraps the whole document.",
+        "byOptionId": {
+          "html": "Correct — <html> is the document root.",
+          "head": "Incorrect — <head> is a child of <html>.",
+          "body": "Incorrect — <body> is also a child of <html>, not the root.",
+          "doctype": "Incorrect — DOCTYPE is a declaration, not the root element."
+        }
+      }
+    }
+  ]
+}

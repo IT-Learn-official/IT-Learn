@@ -1,0 +1,44 @@
+{
+  "chapterId": "chapter-20",
+  "kind": "assessment",
+  "title": "Chapter 20 - Backend VS Frontend",
+  "description": "Basic questions about backend and frontend concepts.",
+  "questions": [
+        {
+      "id": "q-frontend-backend",
+      "type": "single-choice",
+      "prompt": "Which of the following is a frontend technology?",
+      "options": [
+        {
+          "id": "api",
+          "label": "An API (System for communication between website and server)",
+          "isCorrect": false
+        },
+        {
+          "id": "server",
+          "label": "A server (computer that hosts a website)",
+          "isCorrect": false
+        },
+        {
+          "id": "css",
+          "label": "CSS (Language for styling web pages)",
+          "isCorrect": false
+        },
+        {
+          "id": "edge-functions",
+          "label": "Edge functions (Server code that runs close to users for fast responses)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Frontend technologies run in the user's browser and control what they see and interact with. Backend technologies run on servers and handle data, logic, and communication.",
+        "byOptionId": {
+          "css": "Correct — CSS is a frontend technology used for styling web pages.",
+          "edge-functions": "incorrect — Edge functions are a backend technology that runs close to users for fast responses.",
+          "api": "Incorrect — An API is a backend technology that allows communication between the frontend and backend.",
+          "server": "Incorrect — A server is a backend technology that hosts websites and handles requests."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter-9",
+  "kind": "assessment",
+  "title": "Chapter 9 - Lists",
+  "description": "Check understanding of unordered and ordered lists.",
+  "questions": [
+    {
+      "id": "q-ul-ol",
+      "type": "single-choice",
+      "prompt": "Which tag creates a bulleted list?",
+      "options": [
+        {
+          "id": "ol",
+          "label": "<ol>",
+          "isCorrect": false
+        },
+        {
+          "id": "ul",
+          "label": "<ul>",
+          "isCorrect": true
+        },
+        {
+          "id": "li",
+          "label": "<li>",
+          "isCorrect": false
+        },
+        {
+          "id": "list",
+          "label": "<list>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<ul> is for unordered, bulleted lists.",
+        "byOptionId": {
+          "ul": "Correct — <ul> creates an unordered (bulleted) list.",
+          "ol": "Incorrect — <ol> creates a numbered list.",
+          "li": "Incorrect — <li> is a list item tag used inside <ul> or <ol>.",
+          "list": "Incorrect — <list> is not a valid HTML element."
+        }
+      }
+    },
+    {
+      "id": "q-li",
+      "type": "single-choice",
+      "prompt": "Which tag wraps each list item?",
+      "options": [
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        },
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        },
+        {
+          "id": "li",
+          "label": "<li>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Use <li> inside <ul> or <ol> for each item.",
+        "byOptionId": {
+          "li": "Correct — <li> wraps each list item inside <ul> or <ol>.",
+          "p": "Incorrect — <p> is for paragraphs, not list items.",
+          "div": "Incorrect — <div> may contain list elements but <li> is the semantic list item.",
+          "span": "Incorrect — <span> is inline and not a list item wrapper."
+        }
+      }
+    }
+  ]
+}
