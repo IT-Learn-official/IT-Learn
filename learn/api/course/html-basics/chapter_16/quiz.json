@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-16",
+  "chapterId": "chapter_16",
   "kind": "assessment",
   "title": "Chapter 16 - HTML Best Practices",
   "description": "Questions about code style, comments, and readability.",
@@ -21,7 +21,7 @@
         },
         {
           "id": "star",
-          "label": "/* This is acomment */",
+          "label": "/* This is a comment */",
           "isCorrect": false
         },
         {

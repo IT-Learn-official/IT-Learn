@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-4",
+  "chapterId": "chapter_4",
   "kind": "assessment",
   "title": "Chapter 4 - Head & Meta",
   "description": "Check knowledge of the common head elements and meta tags.",
@@ -46,9 +46,9 @@
       "prompt": "What does <meta charset=\"utf-8\"> do?",
       "options": [
         {
-          "id": "encoding",
-          "label": "Sets character encoding so text displays correctly",
-          "isCorrect": true
+          "id": "language",
+          "label": "Sets the page language",
+          "isCorrect": false
         },
         {
           "id": "style",
@@ -77,7 +77,8 @@
           "encoding": "Correct — charset sets the document character encoding so text renders correctly.",
           "style": "Incorrect — styling is handled by CSS, not the charset meta tag.",
           "linkcss": "Incorrect — CSS is linked with <link>, not with a charset meta tag.",
-          "runjs": "Incorrect — meta tags do not execute JavaScript."
+          "runjs": "Incorrect — meta tags do not execute JavaScript.",
+          "language": "Incorrect — the charset meta tag does not set the page language."
         }
       }
     },

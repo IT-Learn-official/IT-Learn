@@ -1,4 +1,4 @@
-# Backend VS Frontend
+# Backend vs Frontend
 
 You may have heard the terms backend and frontend before. But what do they mean?
 

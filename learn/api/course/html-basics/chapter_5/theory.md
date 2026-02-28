@@ -12,7 +12,7 @@ Here are some examples of how headings look like:
 
 ---
 
-Fun fact: Search engines and screen readers use headings to understand the structure of your page..
+Fun fact: Search engines and screen readers use headings to understand the structure of your page.
 
 
 Important rules:

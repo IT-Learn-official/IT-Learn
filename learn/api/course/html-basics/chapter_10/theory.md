@@ -26,10 +26,12 @@ Example of a simple table:
   <tr>
     <td>Diana</td>
     <td>28</td>
+  </tr>
 </table>
 ```
 
 The code will have an output like this:
+
 | Name      | Age |
 |-----------|-----|
 | Alice     | 30  |

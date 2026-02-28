@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-6",
+  "chapterId": "chapter_6",
   "kind": "assessment",
   "title": "Chapter 6 - Paragraphs & Text",
   "description": "Check understanding of basic text elements and emphasis.",
@@ -43,7 +43,7 @@
     {
       "id": "q-strong-em",
       "type": "single-choice",
-      "prompt": "Which tag makes text bold?",
+      "prompt": "Which tag semantically indicates strong importance?",
       "options": [
         {
           "id": "em",

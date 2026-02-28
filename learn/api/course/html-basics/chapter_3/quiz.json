@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-3",
+  "chapterId": "chapter_3",
   "kind": "assessment",
   "title": "Chapter 3 - Document Structure",
   "description": "Check your understanding of the HTML document skeleton.",
@@ -33,10 +33,10 @@
       "explanations": {
         "overview": "The DOCTYPE ensures the browser parses the page with the correct rules.",
         "byOptionId": {
-          "a": "Correct — DOCTYPE tells the browser to use the standard HTML parsing mode.",
-          "b": "Incorrect — DOCTYPE does not display titles.",
-          "c": "Incorrect — CSS is linked with <link>, not DOCTYPE.",
-          "d": "Incorrect — DOCTYPE does not define the body element."
+          "tellwhatversion": "Correct — DOCTYPE tells the browser to use the standard HTML parsing mode.",
+          "displaytitle": "Incorrect — DOCTYPE does not display titles.",
+          "csslink": "Incorrect — CSS is linked with <link>, not DOCTYPE.",
+          "definebody": "Incorrect — DOCTYPE does not define the body element."
         }
       }
     },

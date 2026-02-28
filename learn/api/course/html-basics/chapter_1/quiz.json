@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-1",
+  "chapterId": "chapter_1",
   "kind": "assessment",
   "title": "Chapter 1 - What is HTML? Check",
   "description": "Short concept check for basics of HTML and how it compares to CSS and JavaScript.",

@@ -1,5 +1,5 @@
 {
-  "chapterId": "chapter-20",
+  "chapterId": "chapter_20",
   "kind": "assessment",
   "title": "Chapter 20 - Backend VS Frontend",
   "description": "Basic questions about backend and frontend concepts.",
@@ -22,12 +22,12 @@
         {
           "id": "css",
           "label": "CSS (Language for styling web pages)",
-          "isCorrect": false
+          "isCorrect": true
         },
         {
           "id": "edge-functions",
           "label": "Edge functions (Server code that runs close to users for fast responses)",
-          "isCorrect": true
+          "isCorrect": false
         }
       ],
       "explanations": {
