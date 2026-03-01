@@ -1,0 +1,78 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Chapter 8 - Images",
+  "description": "Check image tag usage and accessibility.",
+  "questions": [
+    {
+      "id": "q-img-src",
+      "type": "single-choice",
+      "prompt": "Which attribute provides the image file location?",
+      "options": [
+        {
+          "id": "alt",
+          "label": "alt",
+          "isCorrect": false
+        },
+        {
+          "id": "href",
+          "label": "href",
+          "isCorrect": false
+        },
+        {
+          "id": "title",
+          "label": "title",
+          "isCorrect": false
+        },        {
+          "id": "src",
+          "label": "src",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "The src attribute points to the image resource.",
+        "byOptionId": {
+          "src": "Correct — src specifies the image URL to load.",
+          "alt": "Incorrect — alt provides alternative text, not the file path.",
+          "href": "Incorrect — href is used for anchors, not image sources.",
+          "title": "Incorrect — title offers tooltip text, not the image location."
+        }
+      }
+    },
+    {
+      "id": "q-alt",
+      "type": "single-choice",
+      "prompt": "Why is alt text important?",
+      "options": [
+        {
+          "id": "style",
+          "label": "It styles the image",
+          "isCorrect": false
+        },        {
+          "id": "accessibility",
+          "label": "It helps users with screen readers (blind users) and describes the image if it fails to load",
+          "isCorrect": true
+        },
+        {
+          "id": "link",
+          "label": "It creates a link",
+          "isCorrect": false
+        },
+        {
+          "id": "download",
+          "label": "It downloads the image",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Alt text supports accessibility and provides fallback information.",
+        "byOptionId": {
+          "accessibility": "Correct — alt text helps assistive tech and shows when images fail to load.",
+          "style": "Incorrect — alt is not for styling; CSS handles styles.",
+          "link": "Incorrect — alt does not create links; <a> does that.",
+          "download": "Incorrect — alt does not cause downloading of the image."
+        }
+      }
+    }
+  ]
+}

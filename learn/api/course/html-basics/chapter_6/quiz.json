@@ -1,0 +1,116 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Chapter 6 - Paragraphs & Text",
+  "description": "Check understanding of basic text elements and emphasis.",
+  "questions": [
+    {
+      "id": "q-p-tag",
+      "type": "single-choice",
+      "prompt": "Which tag should you use for a paragraph?",
+      "options": [
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        },
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": true
+        },
+        {
+          "id": "br",
+          "label": "<br>",
+          "isCorrect": false
+        },
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Use <p> to mark blocks of text as paragraphs.",
+        "byOptionId": {
+          "p": "Correct — use <p> for paragraphs of text.",
+          "div": "Incorrect — <div> is a generic block container but not the semantic paragraph tag.",
+          "br": "Incorrect — <br> inserts a line break, not a paragraph block.",
+          "span": "Incorrect — <span> is inline and not for paragraph blocks."
+        }
+      }
+    },
+    {
+      "id": "q-strong-em",
+      "type": "single-choice",
+      "prompt": "Which tag semantically indicates strong importance?",
+      "options": [
+        {
+          "id": "em",
+          "label": "<em>",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "<b>",
+          "isCorrect": false
+        },
+        {
+          "id": "strong",
+          "label": "<strong>",
+          "isCorrect": true
+        },
+        {
+          "id": "i",
+          "label": "<i>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<strong> signals strong importance and is semantically meaningful.",
+        "byOptionId": {
+          "strong": "Correct — <strong> conveys strong importance semantically.",
+          "em": "Incorrect — <em> indicates emphasis but not the same semantic weight as <strong>.",
+          "b": "Incorrect — <b> is purely presentational; <strong> adds semantic meaning.",
+          "i": "Incorrect — <i> is presentational and does not imply importance."
+        }
+      }
+    },
+    {
+      "id": "q-br-hr",
+      "type": "single-choice",
+      "prompt": "Which tag creates a horizontal rule (a thematic break)?",
+      "options": [
+        {
+          "id": "br",
+          "label": "<br>",
+          "isCorrect": false
+        },
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": false
+        },
+        {
+          "id": "hr2",
+          "label": "<hr2>",
+          "isCorrect": false
+        },
+        {
+          "id": "hr",
+          "label": "<hr>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "<hr> creates a thematic break line across the content.",
+        "byOptionId": {
+          "hr": "Correct — <hr> represents a thematic break in content.",
+          "br": "Incorrect — <br> is a line break, not a thematic rule.",
+          "p": "Incorrect — <p> is for paragraphs, not horizontal rules.",
+          "hr2": "Incorrect — <hr2> is not a valid HTML element."
+        }
+      }
+    }
+  ]
+}
