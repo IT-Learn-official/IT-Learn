@@ -1,6 +1,6 @@
 # Paragraphs & Text
 
-Text is the most common content on websites. We use `<p>`to make paragraphs on a html page. For single-line breaks use `<br>` and for a thematic break use `<hr>`.
+Text is the most common content on websites. We use `<p>`to make paragraphs on an html page. For single-line breaks use `<br>`, and for a thematic break, use `<hr>`.
 
 Emphasis tags:
 - `<strong>` makes your text **bold**.
@@ -14,7 +14,7 @@ Example:
 and an <em>italic</em> word.</p>
 ```
 
-Has as output:
+Output:
 >This is a paragraph of text.
 >
 >---

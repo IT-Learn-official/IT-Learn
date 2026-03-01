@@ -16,7 +16,7 @@
         },
         {
           "id": "access",
-          "label": "To help people using screen readers (because they are not able to see) and when images fail to load",
+          "label": "To help people using screen readers and when images fail to load",
           "isCorrect": true
         },
         {

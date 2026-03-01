@@ -1,6 +1,6 @@
 # Form Basics
 
-To make an input form in HTML, we use the `<form>` element. This element is a container for various types of input elements. Such as:
+To make an input form in HTML, we use the `<form>` element. This element is a container for various types of input elements, such as:
 - `<input>`: This is the most common form element. It can be used for text fields, checkboxes, radio buttons, and more, depending on the `type` attribute.
 - `<textarea>`: This is used for multi-line text input.
 - `<select>`: This creates a dropdown list of options.

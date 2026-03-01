@@ -5,7 +5,7 @@ The `<head>` holds metadata, information about the page that browsers and search
 ---
 
 Main items in the head:
-- `<title>`: this is the text shown on a tab in your browser This is most of the time the title of the page.
+- `<title>`: this is the text shown on a tab in your browser. This is most of the time the title of the page.
 - `<meta charset="utf-8">`: tells the browser which characters you use so text displays correctly.
 - `<meta name="viewport" content="width=device-width, initial-scale=1">`: makes pages responsive on phones.
 

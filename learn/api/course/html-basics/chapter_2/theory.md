@@ -1,4 +1,4 @@
-# Requirements
+# Setup requirements
 
 To write HTML you only need two tools: a text editor (like VS Code) and a modern web browser (Chrome, Firefox, Edge). The editor is where you type your page; the browser reads your file and shows it like a finished web page.
 

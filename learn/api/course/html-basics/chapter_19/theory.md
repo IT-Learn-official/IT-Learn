@@ -4,4 +4,4 @@ CSS stands for Cascading Style Sheets. It is a language used to give your websit
 
 ---
 
-Think of CSS as building a house: HTML is the frame and rooms, while CSS is the paint, furniture, and decorations that make it look nice and feel like home. (In this case JavaScript would be the electricity and plumbing that adds interactivity and functionality.)
+Think of CSS as building a house: HTML is the frame and rooms, while CSS is the paint, furniture, and decorations that make it look nice and feel like home. (In this case, JavaScript would be the electricity and plumbing that adds interactivity and functionality.)

@@ -34,7 +34,7 @@
         "overview": "Frontend technologies run in the user's browser and control what they see and interact with. Backend technologies run on servers and handle data, logic, and communication.",
         "byOptionId": {
           "css": "Correct — CSS is a frontend technology used for styling web pages.",
-          "edge-functions": "incorrect — Edge functions are a backend technology that runs close to users for fast responses.",
+          "edge-functions": "Incorrect — Edge functions are a backend technology that runs close to users for fast responses.",
           "api": "Incorrect — An API is a backend technology that allows communication between the frontend and backend.",
           "server": "Incorrect — A server is a backend technology that hosts websites and handles requests."
         }

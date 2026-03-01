@@ -15,8 +15,4 @@ HTML stands for **HyperText Markup Language.** Think of a web page as a house: H
 
 ---
 
-HTML stands for HyperText Markup Language. It defines the structure and content of web pages using elements and tags. HTML describes what content is, not how it looks.
-
----
-
 HTML vs CSS vs JavaScript: HTML provides structure, CSS provides presentation (styles), and JavaScript provides behavior and interactivity.

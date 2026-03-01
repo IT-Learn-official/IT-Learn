@@ -1,7 +1,8 @@
 # Links
 
 Links are created with an `<a>` tag, which stands for "anchor". The `href` attribute specifies the destination of your link. 
-It kind of works like this:
+
+It works like this:
 ```html
 <a href="https://www.example.com">Visit Example</a>
 ```
