@@ -369,14 +369,18 @@ export function renderSettingsView(screenRootEl) {
 
     const newPassword = newPasswordInput.value.trim();
     const confirmPassword = confirmPasswordInput.value.trim();
+    const checks = getPasswordChecks(newPassword);
+    const allRequirementsMet = Object.values(checks).every(Boolean);
+
+    updatePasswordStrength(newPassword);
 
     if (!newPassword) {
       showPasswordStatus('Please enter a new password', 'error');
       return;
     }
 
-    if (newPassword.length < 8) {
-      showPasswordStatus('Password must be at least 8 characters', 'error');
+    if (!allRequirementsMet) {
+      showPasswordStatus('Password must meet all listed requirements', 'error');
       return;
     }
 
@@ -453,13 +457,17 @@ export function renderSettingsView(screenRootEl) {
     button.textContent = isLoading ? loadingLabel : defaultLabel;
   }
 
-  function updatePasswordStrength(password) {
-    const checks = {
+  function getPasswordChecks(password) {
+    return {
       length: password.length >= 8,
       upper: /[A-Z]/.test(password),
       number: /\d/.test(password),
       special: /[^A-Za-z0-9]/.test(password),
     };
+  }
+
+  function updatePasswordStrength(password) {
+    const checks = getPasswordChecks(password);
 
     requirements.querySelectorAll('li').forEach((item) => {
       const rule = item.getAttribute('data-rule');
