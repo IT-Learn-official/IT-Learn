@@ -13,7 +13,7 @@
   --radius-lg: 24px;
 }
 
-@keyframes fadeUp {
+@keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(14px);
@@ -56,7 +56,7 @@ body {
   backdrop-filter: blur(14px);
   box-shadow: 0 30px 80px rgba(2, 6, 23, 0.7);
   position: relative;
-  animation: fadeUp 0.55s ease;
+  animation: fade-up 0.55s ease;
 }
 
 .form-box h1 {
