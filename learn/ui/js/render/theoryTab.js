@@ -3,8 +3,9 @@
 import { renderMarkdownToHtml } from '../utils/markdown.js';
 import { upgradeMarkdownCodeBlocks } from '../utils/markdownAceEnhancer.js';
 import { fetchChapterTheory } from '../services/apiClient.js';
+import { getRemoteTaskStateForChapter, queueTaskStateSync } from '../services/progressService.js';
 import { getChapterContent, setChapterContent } from '../state/appState.js';
-import { loadTaskState, updateTaskState } from '../state/taskState.js';
+import { loadTaskState, saveTaskState, updateTaskState } from '../state/taskState.js';
 
 /**
  * Render theory tab content.
@@ -19,8 +20,16 @@ import { loadTaskState, updateTaskState } from '../state/taskState.js';
 export async function renderTheoryTab({ course, chapter, container, courseId, chapterId }) {
   container.innerHTML = '<p class="muted">Loading theory...</p>';
 
-  function applyTaskStateAndHandlers() {
-    const taskState = loadTaskState(courseId, chapterId);
+  async function applyTaskStateAndHandlers() {
+    const localTaskState = loadTaskState(courseId, chapterId);
+    const remoteTaskState = await getRemoteTaskStateForChapter(courseId, chapterId);
+    const taskState = { ...localTaskState, ...(remoteTaskState ?? {}) };
+
+    if (Object.keys(taskState).length > Object.keys(localTaskState).length) {
+      // Persist merged state locally so chapter UI remains consistent after reload.
+      saveTaskState(courseId, chapterId, taskState);
+    }
+
     const markdownContainer = container.querySelector('.markdown-body');
     if (!markdownContainer) return;
 
@@ -28,9 +37,11 @@ export async function renderTheoryTab({ course, chapter, container, courseId, ch
     const checkboxes = markdownContainer.querySelectorAll('input[type="checkbox"][data-task-id]');
     checkboxes.forEach((cb) => {
       const id = cb.dataset.taskId;
-      if (Object.prototype.hasOwnProperty.call(taskState, id)) {
-        cb.checked = !!taskState[id];
-      }
+      const legacyId = id && id.includes('-') ? id.split('-').pop() : id;
+      const resolvedValue = Object.prototype.hasOwnProperty.call(taskState, id)
+        ? taskState[id]
+        : taskState[legacyId];
+      cb.checked = !!resolvedValue;
       const li = cb.closest('li');
       if (li) {
         li.classList.toggle('task-done', cb.checked);
@@ -47,7 +58,8 @@ export async function renderTheoryTab({ course, chapter, container, courseId, ch
       if (target.type !== 'checkbox' || !target.dataset.taskId) return;
       const id = target.dataset.taskId;
       const checked = !!target.checked;
-      updateTaskState(courseId, chapterId, id, checked);
+      const nextState = updateTaskState(courseId, chapterId, id, checked);
+      queueTaskStateSync(courseId, chapterId, nextState);
       const li = target.closest('li');
       if (li) {
         li.classList.toggle('task-done', checked);
@@ -55,7 +67,7 @@ export async function renderTheoryTab({ course, chapter, container, courseId, ch
           li.classList.add('task-list-item');
         }
       }
-    }, { once: true });
+    });
   }
 
   const cached = getChapterContent(courseId, chapterId);

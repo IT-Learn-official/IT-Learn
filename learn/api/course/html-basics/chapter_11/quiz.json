@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Chapter 11 - Divs & Spans",
+  "description": "Check understanding of divs and spans.",
+  "questions": [
+    {
+      "id": "q-div-block",
+      "type": "single-choice",
+      "prompt": "Which element is block-level by default?",
+      "options": [
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        },
+        {
+          "id": "img",
+          "label": "<img>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "<a>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<div> is a block-level container; <span> is inline.",
+        "byOptionId": {
+          "div": "Correct — <div> is block-level and takes full width by default.",
+          "span": "Incorrect — <span> is inline and flows within lines of text.",
+          "img": "Incorrect — <img> is inline (or replaced) by default, not a block container.",
+          "a": "Incorrect — <a> is inline; it creates links not block-level layout."
+        }
+      }
+    },
+    {
+      "id": "q-span-use",
+      "type": "single-choice",
+      "prompt": "When should you use <span>?",
+      "options": [
+        {
+          "id": "large",
+          "label": "To create large page sections",
+          "isCorrect": false
+        },
+        {
+          "id": "table",
+          "label": "To make table rows",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "To include images",
+          "isCorrect": false
+        },
+        {
+          "id": "inline",
+          "label": "To wrap small inline parts of text for styling or scripts",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Use <span> for inline grouping only.",
+        "byOptionId": {
+          "inline": "Correct — <span> is for inline grouping and small styling hooks.",
+          "large": "Incorrect — use block containers like <div> or semantic sections for large sections.",
+          "table": "Incorrect — table rows use <tr>, not <span>.",
+          "image": "Incorrect — <img> embeds images; <span> does not replace it."
+        }
+      }
+    }
+  ]
+}

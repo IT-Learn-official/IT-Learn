@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Chapter 15 - Attributes",
+  "description": "Questions about common HTML attributes and their purposes.",
+  "questions": [
+    {
+      "id": "q-id-class",
+      "type": "single-choice",
+      "prompt": "What are id and class attributes used for?",
+      "options": [
+        {
+          "id": "content",
+          "label": "Holding text content",
+          "isCorrect": false
+        },
+        {
+          "id": "identify",
+          "label": "Identifying elements for styling and scripting",
+          "isCorrect": true
+        },
+        {
+          "id": "styleonly",
+          "label": "Adding inline styles only",
+          "isCorrect": false
+        },
+        {
+          "id": "deprecated",
+          "label": "Deprecated attributes",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id and class are used to target elements from CSS and JavaScript.",
+        "byOptionId": {
+          "identify": "Correct — id and class let you select elements from CSS and JS.",
+          "content": "Incorrect — attributes don't hold primary text content, elements do.",
+          "styleonly": "Incorrect — attributes can be used by scripts and selectors, not just inline styles.",
+          "deprecated": "Incorrect — id/class are standard attributes, not deprecated."
+        }
+      }
+    },
+    {
+      "id": "q-location",
+      "type": "single-choice",
+      "prompt": "Where do id and class attributes go?",
+      "options": [
+        {
+          "id": "end",
+          "label": "Inside the closing tag of an HTML element",
+          "isCorrect": false
+        },
+        {
+          "id": "between",
+          "label": "Between the opening and closing tags of an HTML element",
+          "isCorrect": false
+        },
+        {
+          "id": "start",
+          "label": "Inside the opening tag of an HTML element",
+          "isCorrect": true
+        },
+        {
+          "id": "before",
+          "label": "Before the opening tag of an HTML element",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id and class attributes go inside the opening tag of an HTML element.",
+        "byOptionId": {
+          "start": "Correct — id and class attributes go inside the opening tag.",
+          "end": "Incorrect — id and class attributes do not go in the closing tag.",
+          "between": "Incorrect — id and class attributes do not go between opening and closing tags.",
+          "before": "Incorrect — id and class attributes do not go before the opening tag."
+        }
+      }
+    }
+  ]
+}

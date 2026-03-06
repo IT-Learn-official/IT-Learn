@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="./ui/css/components/teacherbot.css" />
   <link rel="stylesheet" href="./ui/css/components/trial-mode.css" />
   <link rel="stylesheet" href="./ui/css/components/settings.css" />
+  <link rel="stylesheet" href="./ui/css/components/badges.css" />
+  <link rel="stylesheet" href="./ui/css/components/profile.css" />
   <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -31,6 +33,7 @@
   <nav class="sidebar">
     <h2>IT Learn</h2>
     <ul>
+      <li><a href="#" id="dashboard-link">Courses</a></li>
       <li><a href="#" id="profile-link">Profile</a></li>
       <li><a href="#" id="badges-link">Badges</a></li>
       <li><a href="#" id="settings-link">Settings</a></li>
@@ -66,7 +69,17 @@
     
     async function initEventListeners() {
       const authBtn = document.getElementById('auth-btn');
+      const dashboardLink = document.getElementById('dashboard-link');
+      const profileLink = document.getElementById('profile-link');
       const settingsLink = document.getElementById('settings-link');
+      const badgesLink = document.getElementById('badges-link');
+      const sidebarLinks = [dashboardLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+
+      function setActiveSidebarLink(activeLink) {
+        sidebarLinks.forEach((link) => {
+          link.classList.toggle('is-active', link === activeLink);
+        });
+      }
       
       if (authBtn) {
         authBtn.addEventListener('click', async function(e) {
@@ -88,15 +101,52 @@
         console.error('Auth button not found!');
       }
 
+      if (profileLink) {
+        profileLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Profile link clicked');
+          setActiveSidebarLink(profileLink);
+          navigateTo({ route: 'profile' });
+        });
+        console.log('Event listener attached to profile link');
+      } else {
+        console.error('Profile link not found!');
+      }
+
+      if (dashboardLink) {
+        dashboardLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Courses link clicked');
+          setActiveSidebarLink(dashboardLink);
+          navigateTo({ route: 'courses' });
+        });
+        console.log('Event listener attached to dashboard link');
+      } else {
+        console.error('Dashboard link not found!');
+      }
+
       if (settingsLink) {
         settingsLink.addEventListener('click', function(e) {
           e.preventDefault();
           console.log('Settings link clicked');
+          setActiveSidebarLink(settingsLink);
           navigateTo({ route: 'settings' });
         });
         console.log('Event listener attached to settings link');
       } else {
         console.error('Settings link not found!');
+      }
+
+      if (badgesLink) {
+        badgesLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Badges link clicked');
+          setActiveSidebarLink(badgesLink);
+          navigateTo({ route: 'badges' });
+        });
+        console.log('Event listener attached to badges link');
+      } else {
+        console.error('Badges link not found!');
       }
     }
   </script>

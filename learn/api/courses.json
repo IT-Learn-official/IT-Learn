@@ -257,5 +257,175 @@
         }
       ]
     }
+  ,
+    {
+      "id": "html-basics",
+      "title": "HTML Basics for Young Pros",
+      "description": "A beginner-friendly course introducing HTML fundamentals, structure, and best practices.",
+      "language": "html",
+      "authors": ["super_man2775"],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "What is HTML?",
+          "description": "What HTML means and what it does or doesn't do; contrast with CSS and JavaScript.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Requirements",
+          "description": "Tools you need: code editor, browser, and creating your first HTML file.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "HTML Document Structure",
+          "description": "DOCTYPE, html, head, and body elements and their roles.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Head & Meta",
+          "description": "Using title, meta charset, and viewport meta tags correctly.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "Headings",
+          "description": "Heading elements h1 to h6 and their use for structure and SEO.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "Paragraphs & Text",
+          "description": "Paragraphs, line breaks, horizontal rules, and text emphasis tags.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Links",
+          "description": "Anchor tags, internal vs external links, and using target attributes.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "Images",
+          "description": "The img element, src and alt attributes, and image path basics.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "Lists",
+          "description": "Unordered and ordered lists with list items.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "Tables",
+          "description": "Basic table structure with table, tr, td, and th elements.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Divs & Spans",
+          "description": "Difference between block and inline elements using div and span.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "Semantic HTML",
+          "description": "Using semantic elements like header, nav, main, section, article, and footer.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Form Basics",
+          "description": "The form element and simple inputs with labels.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Form Inputs Overview",
+          "description": "All form input types: text, email, password, checkbox, radio, textarea, select.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_15",
+          "title": "Attributes",
+          "description": "id, class, title, placeholder, required, disabled and how to use them.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_16",
+          "title": "HTML Best Practices",
+          "description": "Indentation, readable code, and HTML comments.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_17",
+          "title": "Accessibility Basics",
+          "description": "Alt text, form labels, and semantic markup for accessibility.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_18",
+          "title": "SEO Basics",
+          "description": "Using headings, meta description, and proper structure for search engines.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_19",
+          "title": "HTML + CSS",
+          "description": "Linking stylesheets and what CSS is used for.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_20",
+          "title": "Why JavaScript and CSS Matter",
+          "description": "How to connect JS and CSS, and a recap of frontend vs backend.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
+    }
   ]
 }

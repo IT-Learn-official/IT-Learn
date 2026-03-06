@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Chapter 13 - Form Basics",
+  "description": "Exercises on basic form elements and labels.",
+  "questions": [
+    {
+      "id": "q-form",
+      "type": "single-choice",
+      "prompt": "Which tag groups form controls for submission?",
+      "options": [
+        {
+          "id": "form",
+          "label": "<form>",
+          "isCorrect": true
+        },
+        {
+          "id": "fieldset",
+          "label": "<fieldset>",
+          "isCorrect": false
+        },
+        {
+          "id": "input",
+          "label": "<input>",
+          "isCorrect": false
+        },
+        {
+          "id": "label",
+          "label": "<label>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<form> wraps controls and can be submitted to a server.",
+        "byOptionId": {
+          "form": "Correct — <form> groups inputs and submission behavior.",
+          "fieldset": "Incorrect — <fieldset> groups related controls but doesn't enable submission on its own.",
+          "input": "Incorrect — <input> is a control inside a form, not the form container.",
+          "label": "Incorrect — <label> labels a control but isn't the form container."
+        }
+      }
+    },
+    {
+      "id": "q-label",
+      "type": "single-choice",
+      "prompt": "Why use <label> with form controls?",
+      "options": [
+        {
+          "id": "style",
+          "label": "To style the control",
+          "isCorrect": false
+        },
+        {
+          "id": "access",
+          "label": "To improve accessibility and connect text to controls",
+          "isCorrect": true
+        },
+        {
+          "id": "submit",
+          "label": "To submit the form automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "label": "It's optional and has no benefit",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Labels help screen readers and allow clicking the text to focus the control.",
+        "byOptionId": {
+          "access": "Correct — <label> improves accessibility and focus behavior.",
+          "style": "Incorrect — styling is done via CSS, not the label element itself.",
+          "submit": "Incorrect — <label> does not submit forms automatically.",
+          "none": "Incorrect — labels provide accessibility benefits and should be used."
+        }
+      }
+    }
+  ]
+}
