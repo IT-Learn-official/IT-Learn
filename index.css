@@ -354,14 +354,11 @@ body[data-page="learn"] .language-selector {
   animation: fadeUp 0.9s ease forwards;
 }
 
-.highlight {
-  margin-left: 0.35rem;
-  display: inline-block;
-  padding: 0 0.3rem;
-  border-radius: 0.4rem;
-  color: var(--text);
-  background: linear-gradient(120deg, rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.3));
-  box-shadow: 0 0 0 1px var(--accent-soft) inset;
+.highlight{
+  color: #93c5fd;
+  background: linear-gradient(90deg, rgba(99,102,241,0.14), rgba(139,92,246,0.08));
+  padding:0.05rem 0.18rem;
+  border-radius:6px;
 }
 
 .hero-sub {
