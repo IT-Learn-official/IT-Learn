@@ -37,4 +37,4 @@ This form will ask the user to:
 4. Choose an option from a dropdown list.
 5. Click the submit button to send the form data.
 
-Forms are used with JavaScript to handle user input. When the user submits the form, the data can be sent to a server for processing or used within the webpage to provide feedback or update content dynamically.
+Forms can work on their own or together with JavaScript. When the user submits the form, the browser can send the data to a server for processing, and JavaScript can also validate input or update the page dynamically.
