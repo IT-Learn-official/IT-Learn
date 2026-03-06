@@ -98,8 +98,8 @@
           "isCorrect": false
         },
         {
-          "id": "MarkZuckerberg",
-          "label": "To track your data and sell it to Mark Zuckerberg",
+          "id": "title",
+          "label": "To set the page title",
           "isCorrect": false
         },
         {
@@ -114,7 +114,7 @@
           "responsive": "Correct — the viewport tag helps pages scale properly on phones and tablets.",
           "speed": "Incorrect — viewport affects layout, not network speed.",
           "security": "Incorrect — viewport does not add security features.",
-          "MarkZuckerberg": "Incorrect — viewport doesn't control tracking or selling data."
+          "title": "Incorrect — the page title is set with the <title> tag, not the viewport meta tag."
         }
       }
     }
