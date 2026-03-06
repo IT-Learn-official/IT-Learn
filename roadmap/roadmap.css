@@ -426,6 +426,10 @@ button:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   header,
   .roadmap-do,
   .roadmap-later,
