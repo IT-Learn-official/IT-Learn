@@ -38,7 +38,7 @@ function renderCodeBlock(text, langHint) {
  * @returns {string} Rendered HTML
  */
 export function renderBlocks(blocks, refDefs) {
-  const htmlParts = blocks.map((block) => {
+  const htmlParts = blocks.map((block, blockIndex) => {
     switch (block.type) {
       case 'paragraph':
         return `<p>${renderInline(block.text, refDefs)}</p>`;
@@ -64,7 +64,7 @@ export function renderBlocks(blocks, refDefs) {
             return `<li>${inner}</li>`;
           }
           const checkedAttr = item.checked ? ' checked' : '';
-          const taskId = `${index}`;
+          const taskId = `${blockIndex}-${index}`;
           const liClass = item.checked ? ' class="task-list-item task-done"' : ' class="task-list-item"';
           const checkbox = `<input type="checkbox" data-task-id="${escapeHtmlAttr(taskId)}"${checkedAttr}>`;
           return `<li${liClass}>${checkbox} ${inner}</li>`;

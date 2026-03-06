@@ -28,6 +28,106 @@
   }
 }
 
+@keyframes easterHue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes easterLogoSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  35% {
+    transform: rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes easterGlitch {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    transform: translate(2px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes easterBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-12px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+@keyframes easterRainbowText {
+  0% {
+    color: #f59e0b;
+  }
+  33% {
+    color: #22d3ee;
+  }
+  66% {
+    color: #f472b6;
+  }
+  100% {
+    color: #a78bfa;
+  }
+}
+
+@keyframes easterWobble {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  20% {
+    transform: rotate(-2deg) translateY(-4px);
+  }
+  40% {
+    transform: rotate(2deg) translateY(2px);
+  }
+  60% {
+    transform: rotate(-1.5deg) translateY(-3px);
+  }
+  80% {
+    transform: rotate(1.5deg) translateY(1px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes easterStarsDrift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +145,50 @@ body {
   color: var(--text);
   line-height: 1.55;
   overflow-x: hidden;
+  position: relative;
+}
+
+body.easter-party {
+  animation: easterHue 10s linear infinite;
+}
+
+body.easter-party .hero-character {
+  filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.55));
+}
+
+body.easter-retro {
+  image-rendering: pixelated;
+}
+
+body.easter-retro .course-card,
+body.easter-retro .team-member,
+body.easter-retro .stat {
+  border-style: dashed;
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+body.easter-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.easter-invert img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.easter-stars::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1500;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(250, 204, 21, 0.85) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.8) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 35% 55%, rgba(196, 181, 253, 0.9) 0 1.6px, transparent 2px),
+    radial-gradient(circle at 60% 30%, rgba(244, 114, 182, 0.8) 0 1.4px, transparent 2px);
+  background-size: 280px 280px;
+  opacity: 0.55;
+  animation: easterStarsDrift 2.8s ease-in-out infinite alternate;
 }
 
 .container {
@@ -94,6 +238,10 @@ body {
   width: 34px;
   height: 34px;
   border-radius: var(--radius-sm);
+}
+
+.brand-logo.easter-spin {
+  animation: easterLogoSpin 0.55s linear 4;
 }
 
 .brand-text {
@@ -354,6 +502,11 @@ body[data-page="learn"] .language-selector {
   animation: fadeUp 0.9s ease forwards;
 }
 
+.hero-title.easter-glitch {
+  text-shadow: -2px 0 #22d3ee, 2px 0 #f472b6;
+  animation: easterGlitch 0.18s steps(2, end) 12;
+}
+
 .highlight{
   color: #93c5fd;
   background: linear-gradient(90deg, rgba(99,102,241,0.14), rgba(139,92,246,0.08));
@@ -402,6 +555,10 @@ body[data-page="learn"] .language-selector {
 .hero-character {
   width: min(420px, 82vw);
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+}
+
+.hero-character.easter-bounce {
+  animation: easterBounce 0.6s ease 3;
 }
 
 /* SECTIONS */
@@ -467,6 +624,10 @@ body[data-page="learn"] .language-selector {
 
 .course-card:hover::after {
   opacity: 1;
+}
+
+.course-card.easter-wobble {
+  animation: easterWobble 0.65s ease;
 }
 
 .course-media {
@@ -640,6 +801,10 @@ body[data-page="learn"] .language-selector {
   line-height: 1.1;
 }
 
+.stat-num.easter-rainbow {
+  animation: easterRainbowText 0.45s linear infinite;
+}
+
 .stat-label {
   color: var(--muted);
   font-size: 0.95rem;
@@ -745,6 +910,31 @@ body[data-page="learn"] .language-selector {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+.easter-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  max-width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  background: rgba(2, 6, 23, 0.9);
+  color: #e2e8f0;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.easter-toast.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* GLOBALS */
@@ -884,5 +1074,11 @@ button:focus {
 
   .hero-character {
     width: min(300px, 76vw);
+  }
+
+  .easter-toast {
+    right: 0.7rem;
+    left: 0.7rem;
+    max-width: none;
   }
 }

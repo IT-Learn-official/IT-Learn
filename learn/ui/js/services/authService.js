@@ -132,6 +132,46 @@ export async function saveProgress(progressData) {
     }
 }
 
+export async function loadBadges() {
+    try {
+        const response = await fetch(`${API_BASE}/badges/load`, {
+            method: 'POST',
+            credentials: 'include'
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to load badges');
+        }
+
+        const data = await response.json();
+        return data.badges || {};
+    } catch (error) {
+        console.error('Load badges error:', error);
+        return {};
+    }
+}
+
+export async function saveBadges(badgesData) {
+    try {
+        const response = await fetch(`${API_BASE}/badges/save`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                badges: badgesData || {}
+            })
+        });
+
+        const data = await response.json();
+        return { success: data.success || false };
+    } catch (error) {
+        console.error('Save badges error:', error);
+        return { success: false };
+    }
+}
+
 export async function getUserCount() {
     try {
         const response = await fetch(`${API_BASE}/user-count`, {
@@ -212,6 +252,67 @@ export async function deleteAccount() {
         return { success: true };
     } catch (error) {
         console.error('Delete account error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}
+
+export async function getMyProfile() {
+    try {
+        const response = await fetch(`${API_BASE}/profile/me`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Failed to load profile' };
+        }
+
+        return { success: true, profile: data };
+    } catch (error) {
+        console.error('Get profile error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}
+
+export async function updateProfile({ username, bio }) {
+    try {
+        const response = await fetch(`${API_BASE}/profile/update`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ username, bio })
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Failed to update profile' };
+        }
+
+        return { success: true, profile: data.profile };
+    } catch (error) {
+        console.error('Update profile error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}
+
+export async function getPublicProfile(username) {
+    try {
+        const response = await fetch(`${API_BASE}/profile/${encodeURIComponent(username)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Profile not found' };
+        }
+
+        return { success: true, profile: data };
+    } catch (error) {
+        console.error('Get public profile error:', error);
         return { success: false, error: 'Network error. Please try again.' };
     }
 }

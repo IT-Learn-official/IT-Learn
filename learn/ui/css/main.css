@@ -107,6 +107,11 @@ body {
   transform: translateY(-1px);
 }
 
+.sidebar li a.is-active {
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.2), rgba(139, 92, 246, 0.12));
+  color: #fff;
+}
+
 #auth-btn {
   margin-top: auto;
   background: linear-gradient(90deg, var(--accent-600), #8b5cf6);
@@ -190,14 +195,6 @@ body {
   background: #1e88e5;
 }
 
-#lesson-content {
-  margin-top: 1rem;
-  background: #cba76e6c;
-  padding: 1rem;
-  border-radius: 8px;
-  line-height: 1.5;
-}
-
 #modules-list h2 {
   margin: 0 0 0.75rem;
   color: var(--muted-2);
@@ -237,6 +234,7 @@ body {
 }
 
 #lesson-content {
+  margin-top: 1rem;
   background: linear-gradient(180deg, rgba(15,23,42,0.8), rgba(11,17,28,0.8));
   padding: 1.25rem;
   border-radius: 12px;

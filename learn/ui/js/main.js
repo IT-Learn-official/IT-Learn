@@ -72,7 +72,24 @@ async function bootstrap() {
 bootstrap();
 
 function attachSidebarLinks() {
+  const profileLink = document.getElementById('profile-link');
   const settingsLink = document.getElementById('settings-link');
+  const badgesLink = document.getElementById('badges-link');
+
+  if (profileLink) {
+    profileLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'profile' });
+    });
+  }
+
+  if (badgesLink) {
+    badgesLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'badges' });
+    });
+  }
+
   if (settingsLink) {
     settingsLink.addEventListener('click', (e) => {
       e.preventDefault();

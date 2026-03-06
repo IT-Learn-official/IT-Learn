@@ -1,0 +1,137 @@
+.badges-body {
+  display: grid;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 1.15rem 0;
+  gap: 0.9rem;
+}
+
+.badges-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.65rem;
+}
+
+.badges-summary-stat {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  background: linear-gradient(160deg, rgba(79, 70, 229, 0.2), rgba(15, 23, 42, 0.75));
+}
+
+.badges-summary-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e0e7ff;
+}
+
+.badges-summary-label {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.badge-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(165deg, rgba(49, 46, 129, 0.12), rgba(11, 18, 32, 0.86));
+  padding: 0.9rem;
+}
+
+.badge-card.is-unlocked {
+  border-color: rgba(34, 197, 94, 0.45);
+  box-shadow: 0 10px 20px rgba(22, 163, 74, 0.18);
+}
+
+.badge-card.is-locked {
+  opacity: 0.88;
+}
+
+.badge-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.badge-head h3 {
+  margin: 0;
+  font-size: 0.94rem;
+  color: #f8fafc;
+}
+
+.badge-head p {
+  margin: 0.08rem 0 0;
+  color: #a5b4fc;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #e2e8f0;
+  background: linear-gradient(145deg, rgba(129, 140, 248, 0.4), rgba(79, 70, 229, 0.35));
+  border: 1px solid rgba(165, 180, 252, 0.35);
+}
+
+.badge-card.is-unlocked .badge-icon {
+  color: #052e16;
+  background: linear-gradient(145deg, rgba(187, 247, 208, 0.95), rgba(74, 222, 128, 0.85));
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.badge-description {
+  margin: 0.75rem 0 0.7rem;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.badge-progress-row {
+  display: flex;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 0.74rem;
+}
+
+.badge-progress-track {
+  margin-top: 0.4rem;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.22);
+  overflow: hidden;
+}
+
+.badge-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+}
+
+.badge-card.is-unlocked .badge-progress-fill {
+  background: linear-gradient(90deg, #22c55e, #86efac);
+}
+
+@media (max-width: 768px) {
+  .badges-body {
+    width: 100%;
+    padding: 0.9rem 0;
+  }
+
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+}

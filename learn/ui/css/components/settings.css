@@ -1,269 +1,372 @@
 /* author: https://github.com/broodje565 */
 .settings-body {
-  max-width: 700px;
+  display: grid;
+  width: min(920px, 100%);
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.4rem 0;
+  gap: 1rem;
+}
+
+.settings-overview {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.settings-overview-card {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(165deg, rgba(79, 70, 229, 0.16), rgba(15, 23, 42, 0.68));
+}
+
+.settings-overview-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.92rem;
+}
+
+.settings-overview-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.settings-overview-card--danger {
+  border-color: rgba(239, 68, 68, 0.45);
+  background: linear-gradient(165deg, rgba(127, 29, 29, 0.36), rgba(15, 23, 42, 0.7));
 }
 
 .settings-section {
-  background: linear-gradient(135deg, rgba(49, 46, 129, 0.15), rgba(15, 23, 42, 0.5));
+  background: linear-gradient(165deg, rgba(49, 46, 129, 0.18), rgba(11, 18, 32, 0.8));
   border-radius: var(--radius-md);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 1.25rem;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px rgba(2, 6, 23, 0.3);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.38);
 }
 
 .settings-section.danger-zone {
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(139, 20, 20, 0.1));
-  border: 2px solid rgba(220, 38, 38, 0.6);
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.2), inset 0 0 0 1px rgba(220, 38, 38, 0.1);
-  position: relative;
-  text-align: center;
-  padding-bottom: 200px;
-}
-
-.settings-section.danger-zone::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #dc2626, transparent);
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-color: rgba(239, 68, 68, 0.4);
+  background: linear-gradient(165deg, rgba(127, 29, 29, 0.34), rgba(11, 18, 32, 0.78));
 }
 
 .settings-title {
-  font-size: 1.5rem;
+  margin: 0;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #f8fafc;
-  margin: 0 0 1.5rem 0;
-  font-family: "Space Grotesk", system-ui;
-  text-transform: capitalize;
 }
 
 .settings-title.danger-title {
-  color: #ff6b6b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  text-align: center;
-}
-
-.danger-zone .settings-button {
-  display: inline-block;
-  margin: 0;
-}
-
-.settings-title.danger-title::before {
-  content: '⚠';
-  font-size: 1.3rem;
-  display: inline-block;
+  color: #fca5a5;
 }
 
 .settings-info {
-  font-size: 0.9rem;
+  margin: 0.45rem 0 1rem;
   color: var(--muted);
-  margin: 0 0 1.5rem 0;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .settings-info.danger-info {
-  color: #fca5a5;
-  font-weight: 500;
+  color: #fecaca;
+}
+
+.settings-link-preview {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: #a5b4fc;
 }
 
 .settings-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  gap: 0.65rem;
 }
 
-.settings-form label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  display: block;
-  margin-bottom: 0.5rem;
+.settings-form label,
+.danger-confirm-panel label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #dbeafe;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.04em;
+}
+
+.settings-input-row {
+  position: relative;
 }
 
 .settings-form input[type="password"],
-.settings-form input[type="email"],
-.settings-form input[type="text"] {
+.settings-form input[type="text"],
+.danger-confirm-panel input[type="text"] {
   width: 100%;
-  padding: 0.85rem;
+  padding: 0.68rem 0.78rem;
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-family: inherit;
-  background-color: rgba(15, 23, 42, 0.6);
+  border-radius: 9px;
+  font-size: 0.92rem;
+  background: rgba(15, 23, 42, 0.7);
   color: #f8fafc;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-}
-
-.settings-form input[type="password"]::placeholder,
-.settings-form input[type="email"]::placeholder,
-.settings-form input[type="text"]::placeholder {
-  color: rgba(148, 163, 184, 0.6);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .settings-form input[type="password"]:focus,
-.settings-form input[type="email"]:focus,
-.settings-form input[type="text"]:focus {
+.settings-form input[type="text"]:focus,
+.danger-confirm-panel input[type="text"]:focus {
   outline: none;
   border-color: var(--accent-500);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1), inset 0 0 0 1px rgba(99, 102, 241, 0.2);
-  background-color: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.settings-input-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.92);
+  color: #cbd5e1;
+  border-radius: 7px;
+  font-size: 0.75rem;
+  padding: 0.28rem 0.5rem;
+  cursor: pointer;
+}
+
+.settings-input-toggle:hover {
+  border-color: rgba(165, 180, 252, 0.75);
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.settings-input-toggle:focus {
+  outline: none;
+  border-color: #c7d2fe;
+  box-shadow: 0 0 0 2px rgba(224, 231, 255, 0.85), 0 0 0 5px rgba(99, 102, 241, 0.3);
+}
+
+.settings-input-toggle:focus-visible {
+  outline: 2px solid #e2e8f0;
+  outline-offset: 2px;
+}
+
+.password-strength {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.password-strength-meter {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+  position: relative;
+}
+
+.password-strength-meter::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.password-strength-meter[data-level="1"]::before {
+  width: 25%;
+  background: #ef4444;
+}
+
+.password-strength-meter[data-level="2"]::before {
+  width: 50%;
+  background: #f59e0b;
+}
+
+.password-strength-meter[data-level="3"]::before {
+  width: 75%;
+  background: #22c55e;
+}
+
+.password-strength-meter[data-level="4"]::before {
+  width: 100%;
+  background: #10b981;
+}
+
+.password-strength-label {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.password-requirements {
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.password-requirements li {
+  color: #93a1b8;
+  font-size: 0.78rem;
+}
+
+.password-requirements li::before {
+  content: 'x';
+  display: inline-block;
+  margin-right: 0.45rem;
+  color: #ef4444;
+}
+
+.password-requirements li.is-met {
+  color: #bbf7d0;
+}
+
+.password-requirements li.is-met::before {
+  content: 'v';
+  color: #22c55e;
 }
 
 .settings-status {
-  padding: 1rem;
-  border-radius: var(--radius-md);
+  margin-top: 0.35rem;
+  padding: 0.58rem 0.75rem;
+  border-radius: 9px;
   text-align: center;
-  min-height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  min-height: 1.2rem;
+  font-size: 0.8rem;
   border: 1px solid transparent;
 }
 
 .settings-status.status-success {
-  background-color: rgba(34, 197, 94, 0.1);
+  background: rgba(34, 197, 94, 0.12);
   color: #86efac;
-  border-color: rgba(34, 197, 94, 0.3);
+  border-color: rgba(34, 197, 94, 0.35);
 }
 
 .settings-status.status-error {
-  background-color: rgba(220, 38, 38, 0.1);
-  color: #fca5a5;
-  border-color: rgba(220, 38, 38, 0.3);
+  background: rgba(239, 68, 68, 0.13);
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.38);
 }
 
 .settings-status.status-loading {
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--muted-2);
-  border-color: rgba(99, 102, 241, 0.3);
-  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
+  background: rgba(99, 102, 241, 0.12);
+  color: #c7d2fe;
+  border-color: rgba(99, 102, 241, 0.35);
 }
 
 .settings-button {
-  padding: 0.85rem 1.75rem;
-  border: 1px solid rgba(99, 102, 241, 0.4);
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0.68rem 1rem;
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  border-radius: 9px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   cursor: pointer;
   background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
   color: white;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  align-self: flex-start;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: "Space Grotesk", system-ui;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
 }
 
 .settings-button:hover {
-  background: linear-gradient(135deg, var(--accent-600), var(--accent-700));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-  border-color: rgba(99, 102, 241, 0.6);
-}
-
-.settings-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  transform: translateY(-1px);
 }
 
 .settings-button:disabled {
-  opacity: 0.5;
+  opacity: 0.65;
   cursor: not-allowed;
   transform: none;
 }
 
+.settings-button:focus-visible:not(:disabled),
+.settings-button-ghost:focus-visible:not(:disabled) {
+  outline: 2px solid #e2e8f0;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.28), 0 8px 18px rgba(79, 70, 229, 0.3);
+}
 
+.settings-button:focus:not(:focus-visible):not(:disabled),
+.settings-button-ghost:focus:not(:focus-visible):not(:disabled) {
+  outline: none;
+}
+
+.settings-button-ghost {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.35);
+  box-shadow: none;
+}
 
 .settings-button.danger-button {
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  background: linear-gradient(135deg, #dc2626, #991b1b);
-  border: 2px solid #dc2626;
-  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3), 0 0 0 0 rgba(220, 38, 38, 0.1);
-  animation: danger-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  border-color: rgba(248, 113, 113, 0.55);
+  box-shadow: 0 8px 18px rgba(185, 28, 28, 0.3);
 }
 
-.settings-button.danger-button:hover {
-  background: linear-gradient(135deg, #ff3333, #bb1515);
-  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5), 0 0 15px rgba(220, 38, 38, 0.3);
-  border-color: #ff3333;
-  transform: translateX(-50%) translateY(-3px) scale(1.02);
+.settings-button.danger-button-outline {
+  width: 100%;
+  margin-top: 0.65rem;
 }
 
-.settings-button.danger-button:active {
-  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
-  transform: translateX(-50%) translateY(-1px) scale(0.98);
-} 
+.settings-button.is-hidden {
+  display: none;
+}
 
-@keyframes danger-glow {
-  0%, 100% {
-    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3), 0 0 0 0 rgba(220, 38, 38, 0.1);
-  }
-  50% {
-    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4), 0 0 10px rgba(220, 38, 38, 0.25);
-  }
+.danger-checklist {
+  margin: 0 0 0.9rem;
+  padding-left: 1.15rem;
+  color: #fecaca;
+  font-size: 0.8rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.danger-confirm-panel {
+  display: none;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 10px;
+  background: rgba(30, 9, 11, 0.55);
+  padding: 0.95rem;
+  margin-bottom: 0.7rem;
+}
+
+.danger-confirm-panel.is-visible {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.danger-confirm-title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ffe4e6;
+}
+
+.danger-confirm-info {
+  margin: 0;
+  color: #fecaca;
+  font-size: 0.78rem;
+}
+
+.danger-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
   .settings-body {
+    width: 100%;
     padding: 1rem 0;
   }
 
-  .settings-section {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .settings-form input[type="password"],
-  .settings-form input[type="email"],
-  .settings-form input[type="text"] {
-    font-size: 16px;
+  .settings-section,
+  .settings-overview-card {
+    padding: 1rem;
   }
 
   .settings-button {
     width: 100%;
-    align-self: stretch;
   }
 
-  /* reset danger button positioning on small screens */
-  .settings-button.danger-button {
-    position: static;
-    transform: none;
-    left: auto;
-    top: auto;
-    z-index: auto;
-    width: 100%;
-    margin-top: 0.5rem;
+  .danger-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

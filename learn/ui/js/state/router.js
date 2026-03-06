@@ -25,6 +25,21 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'badges') {
+    return {
+      route: 'badges',
+      tab: query.tab || 'badges',
+    };
+  }
+
+  if (segments[0] === 'profile') {
+    return {
+      route: 'profile',
+      username: segments[1] ? decodeURIComponent(segments[1]) : null,
+      tab: query.tab || 'profile',
+    };
+  }
+
   if (segments[0] === 'courses' && segments.length === 1) {
     return {
       route: 'courses',
@@ -43,16 +58,23 @@ export function parseLocation(hash) {
     };
   }
 
-  if (segments[0] === 'settings') {
-    return { route: 'settings' };
-  }
-
   return { route: 'courses', tab: 'theory' };
 }
 
 export function toHash(descriptor) {
   if (descriptor.route === 'settings') {
     return '#/settings';
+  }
+
+  if (descriptor.route === 'badges') {
+    return '#/badges';
+  }
+
+  if (descriptor.route === 'profile') {
+    if (descriptor.username) {
+      return `#/profile/${encodeURIComponent(descriptor.username)}`;
+    }
+    return '#/profile';
   }
 
   if (descriptor.route === 'courses') {
@@ -72,10 +94,6 @@ export function toHash(descriptor) {
     const base = `#/courses/${encodeURIComponent(courseId)}/chapters/${encodeURIComponent(chapterId)}`;
     const query = tab && tab !== 'theory' ? `?tab=${encodeURIComponent(tab)}` : '';
     return `${base}${query}`;
-  }
-
-  if (descriptor.route === 'settings') {
-    return '#/settings';
   }
 
   return DEFAULT_ROUTE;

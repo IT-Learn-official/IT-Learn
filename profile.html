@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body class="public-profile-page">
+  <div class="profile-shell">
+    <div class="profile-top">
+      <a href="/index.html">Back to IT Learn</a>
+      <span id="status">Loading profile...</span>
+    </div>
+
+    <div id="profile-root"></div>
+  </div>
+
+  <script>
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+    const root = document.getElementById('profile-root');
+    const status = document.getElementById('status');
+
+    const query = new URLSearchParams(window.location.search);
+    const fromQuery = query.get('u');
+    const pathMatch = window.location.pathname.match(/^\/@([^/]+)/);
+    const fromPath = pathMatch ? pathMatch[1] : null;
+    const username = (fromQuery || fromPath || '').trim().toLowerCase();
+
+    function renderErrorCard(message) {
+      const card = document.createElement('div');
+      card.className = 'error-card';
+
+      const title = document.createElement('h3');
+      title.textContent = 'Profile unavailable';
+
+      const details = document.createElement('p');
+      details.textContent = message;
+
+      card.appendChild(title);
+      card.appendChild(details);
+      root.replaceChildren(card);
+    }
+
+    function createStat(label, value) {
+      const stat = document.createElement('div');
+      stat.className = 'stat';
+
+      const strong = document.createElement('strong');
+      strong.textContent = String(value);
+
+      const span = document.createElement('span');
+      span.textContent = label;
+
+      stat.appendChild(strong);
+      stat.appendChild(span);
+      return stat;
+    }
+
+    function renderProfile(data, fallbackHandle) {
+      const usernameValue = (data.username || fallbackHandle || 'user').toString();
+      const firstLetter = usernameValue.charAt(0).toUpperCase() || 'U';
+
+      const section = document.createElement('section');
+      section.className = 'profile-card';
+
+      const banner = document.createElement('div');
+      banner.className = 'profile-banner';
+
+      const main = document.createElement('div');
+      main.className = 'profile-main';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'profile-avatar';
+      avatar.textContent = firstLetter;
+
+      const profileId = document.createElement('div');
+      profileId.className = 'profile-id';
+
+      const heading = document.createElement('h1');
+      heading.textContent = `@${usernameValue}`;
+
+      const bio = document.createElement('p');
+      bio.textContent = data.bio || 'This learner has not written a bio yet.';
+
+      profileId.appendChild(heading);
+      profileId.appendChild(bio);
+
+      main.appendChild(avatar);
+      main.appendChild(profileId);
+
+      const stats = document.createElement('div');
+      stats.className = 'stats';
+      stats.appendChild(createStat('XP', Number(data.xp) || 0));
+      stats.appendChild(createStat('Streak', Number(data.streak) || 0));
+      stats.appendChild(createStat('Badges', Number(data.badges_unlocked) || 0));
+      stats.appendChild(createStat('Last Active', data.last_active || 'n/a'));
+
+      section.appendChild(banner);
+      section.appendChild(main);
+      section.appendChild(stats);
+
+      root.replaceChildren(section);
+    }
+
+    if (!username) {
+      status.textContent = 'No username provided';
+      renderErrorCard('Missing username in URL.');
+    } else {
+      status.textContent = `@${username}`;
+      loadProfile(username);
+    }
+
+    async function loadProfile(handle) {
+      try {
+        const response = await fetch(`${API_BASE}/profile/${encodeURIComponent(handle)}`, {
+          credentials: 'include'
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          renderErrorCard(data.error || 'Unknown error');
+          return;
+        }
+
+        renderProfile(data, handle);
+      } catch (error) {
+        renderErrorCard('Network error while loading profile.');
+      }
+    }
+  </script>
+</body>
+</html>

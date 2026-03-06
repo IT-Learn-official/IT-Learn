@@ -1,0 +1,115 @@
+.profile-body {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.profile-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(8, 12, 20, 0.92));
+  box-shadow: 0 22px 40px rgba(2, 6, 23, 0.55);
+  overflow: hidden;
+}
+
+.profile-banner {
+  height: 110px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(14, 165, 233, 0.7));
+}
+
+.profile-main {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  color: #0b1020;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  margin-top: -40px;
+}
+
+.profile-identity h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.2rem;
+}
+
+.profile-identity p {
+  margin: 0.35rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.profile-link-share {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.profile-link-share:hover {
+  text-decoration: underline;
+}
+
+.profile-stats-grid {
+  padding: 0 1.1rem 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7rem;
+}
+
+.profile-stat-card {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.profile-stat-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.profile-stat-label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.profile-note {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.profile-empty {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.58);
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-empty h3 {
+  margin: 0;
+}
+
+.profile-empty p {
+  margin: 0;
+  color: var(--muted);
+}

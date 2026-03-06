@@ -453,6 +453,197 @@
       }
     });
 
+    const isTextInput = (target) => {
+      if (!target) return false;
+      const tag = target.tagName;
+      return target.isContentEditable || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+    };
+
+    const showEasterToast = (() => {
+      let toastEl;
+      let hideTimeout;
+
+      return (message) => {
+        if (!toastEl) {
+          toastEl = document.createElement('div');
+          toastEl.className = 'easter-toast';
+          document.body.appendChild(toastEl);
+        }
+
+        toastEl.textContent = message;
+        toastEl.classList.add('is-visible');
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => {
+          toastEl.classList.remove('is-visible');
+        }, 2600);
+      };
+    })();
+
+    let finalLearnersValue;
+
+    const initEasterEggs = () => {
+      const konami = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
+      const brandLink = document.querySelector('.brand');
+      const logo = document.querySelector('.brand-logo');
+      const heroTitle = document.querySelector('.hero-title');
+      const heroCharacter = document.querySelector('.hero-character');
+      const learnersCount = document.getElementById('learners-count');
+      const footerBrand = document.querySelector('.brand-footer');
+      const courseCards = Array.from(document.querySelectorAll('.course-card'));
+      let konamiIndex = 0;
+      let typedBuffer = '';
+      let logoClickCount = 0;
+      let logoClickResetTimer;
+      let learnersClickCount = 0;
+      let learnersClickResetTimer;
+      let learnersRevertTimer;
+      let spacePressCount = 0;
+      let spaceResetTimer;
+      let footerClickCount = 0;
+      let footerClickResetTimer;
+
+      const playEggSound = (filePath) => {
+        const sound = new Audio(filePath);
+        sound.volume = 0.45;
+        sound.play().catch(() => {
+          // Ignore autoplay restrictions if the browser blocks this call.
+        });
+      };
+
+      document.addEventListener('keydown', (event) => {
+        if (isTextInput(event.target)) return;
+
+        if (event.shiftKey && event.altKey && event.key.toLowerCase() === 'i') {
+          event.preventDefault();
+          const invertEnabled = document.body.classList.toggle('easter-invert');
+          showEasterToast(invertEnabled ? 'Inversion mode enabled. Welcome to mirror world.' : 'Inversion mode disabled.');
+          return;
+        }
+
+        if (event.code === 'Space') {
+          spacePressCount += 1;
+          clearTimeout(spaceResetTimer);
+          spaceResetTimer = setTimeout(() => {
+            spacePressCount = 0;
+          }, 1600);
+
+          if (spacePressCount >= 3) {
+            spacePressCount = 0;
+            playEggSound('/sounds/correct.mp3');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showEasterToast('Launch combo detected. Returning to spawn point.');
+          }
+        }
+
+        const key = event.key.toLowerCase();
+        if (key === konami[konamiIndex]) {
+          konamiIndex += 1;
+        } else {
+          konamiIndex = key === konami[0] ? 1 : 0;
+        }
+
+        if (konamiIndex === konami.length) {
+          const enabled = document.body.classList.toggle('easter-party');
+          showEasterToast(enabled ? 'Party mode unlocked: Rainbow compiler engaged.' : 'Party mode disabled. Back to serious coding.');
+          konamiIndex = 0;
+        }
+
+        if (key.length === 1 && /[a-z]/.test(key)) {
+          typedBuffer = (typedBuffer + key).slice(-12);
+          if (typedBuffer.endsWith('debug')) {
+            heroTitle?.classList.add('easter-glitch');
+            setTimeout(() => heroTitle?.classList.remove('easter-glitch'), 2200);
+            showEasterToast('Debug mode: title waveform destabilized.');
+            typedBuffer = '';
+          } else if (typedBuffer.endsWith('python')) {
+            const retroEnabled = document.body.classList.toggle('easter-retro');
+            showEasterToast(retroEnabled ? 'Retro mode on: 8-bit frontend aesthetics enabled.' : 'Retro mode off: modern rendering restored.');
+            typedBuffer = '';
+          } else if (typedBuffer.endsWith('sql')) {
+            courseCards.forEach(card => {
+              card.classList.remove('easter-wobble');
+              void card.offsetWidth;
+              card.classList.add('easter-wobble');
+            });
+            playEggSound('/sounds/wrong.mp3');
+            showEasterToast('SQL injection blocked. Tables are wobbling but safe.');
+            setTimeout(() => courseCards.forEach(card => card.classList.remove('easter-wobble')), 900);
+            typedBuffer = '';
+          }
+        }
+      });
+
+      heroCharacter?.addEventListener('dblclick', () => {
+        heroCharacter.classList.remove('easter-bounce');
+        // Force restart so repeated double-clicks still replay the animation.
+        void heroCharacter.offsetWidth;
+        heroCharacter.classList.add('easter-bounce');
+        setTimeout(() => heroCharacter.classList.remove('easter-bounce'), 1900);
+        showEasterToast('Mascot energy burst activated.');
+      });
+
+      brandLink?.addEventListener('click', (event) => {
+        const nextCount = logoClickCount + 1;
+        if (nextCount >= 5) {
+          event.preventDefault();
+        }
+
+        logoClickCount = nextCount;
+        clearTimeout(logoClickResetTimer);
+        logoClickResetTimer = setTimeout(() => {
+          logoClickCount = 0;
+        }, 1200);
+
+        if (logoClickCount >= 5) {
+          logoClickCount = 0;
+          logo.classList.add('easter-spin');
+          setTimeout(() => logo.classList.remove('easter-spin'), 2400);
+          showEasterToast('Turbo logo activated. You clicked fast enough.');
+        }
+      });
+
+      learnersCount?.addEventListener('click', () => {
+        learnersClickCount += 1;
+        clearTimeout(learnersClickResetTimer);
+        learnersClickResetTimer = setTimeout(() => {
+          learnersClickCount = 0;
+        }, 1500);
+
+        if (learnersClickCount >= 7) {
+          learnersClickCount = 0;
+          const previousValue = typeof finalLearnersValue === 'undefined'
+            ? learnersCount.textContent
+            : String(finalLearnersValue);
+          learnersCount.textContent = '1337';
+          learnersCount.classList.add('easter-rainbow');
+          showEasterToast('Leet counter unlocked. Respect +100.');
+
+          clearTimeout(learnersRevertTimer);
+          learnersRevertTimer = setTimeout(() => {
+            learnersCount.textContent = previousValue;
+            learnersCount.classList.remove('easter-rainbow');
+          }, 2600);
+        }
+      });
+
+      footerBrand?.addEventListener('click', () => {
+        footerClickCount += 1;
+        clearTimeout(footerClickResetTimer);
+        footerClickResetTimer = setTimeout(() => {
+          footerClickCount = 0;
+        }, 1700);
+
+        if (footerClickCount >= 3) {
+          footerClickCount = 0;
+          const starsEnabled = document.body.classList.toggle('easter-stars');
+          playEggSound('/sounds/correct.mp3');
+          showEasterToast(starsEnabled ? 'Night sky overlay enabled. Secret constellation unlocked.' : 'Night sky overlay disabled.');
+        }
+      });
+    };
+
+    initEasterEggs();
+
     // Set page data attribute for language selector visibility
     document.body.setAttribute('data-page', 'index');
   </script>
@@ -464,9 +655,11 @@ async function updateLearnersCount() {
       credentials: 'include' 
     });
     const data = await res.json();
-    const total = data.totalUsers;
+    const total = Number(data.totalUsers) || 0;
+    finalLearnersValue = total;
 
     const counter = document.getElementById('learners-count');
+    if (!counter) return;
     const duration = 2000;
     const startTime = performance.now();
 
@@ -482,6 +675,7 @@ async function updateLearnersCount() {
         requestAnimationFrame(animate);
       } else {
         counter.innerText = total;
+        finalLearnersValue = total;
       }
     }
 
