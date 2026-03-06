@@ -224,7 +224,7 @@ export async function getBadgeStatsFromBackend() {
 
 export async function syncBadgeUnlocks(computedBadges) {
   const stored = await ensureRemoteBadgesLoaded();
-  const unlockMap = ensureObject(stored.unlockedBadges);
+  const unlockMap = { ...ensureObject(stored.unlockedBadges) };
 
   let hasChanges = false;
   computedBadges.forEach((badge) => {
