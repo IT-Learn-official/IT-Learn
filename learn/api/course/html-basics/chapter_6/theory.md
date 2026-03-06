@@ -3,8 +3,8 @@
 Text is the most common content on websites. We use `<p>`to make paragraphs on an html page. For single-line breaks use `<br>`, and for a thematic break, use `<hr>`.
 
 Emphasis tags:
-- `<strong>` makes your text **bold**.
-- `<em>` makes your text *italic*.
+- `<strong>` marks text as strongly important. Browsers usually show it in **bold**.
+- `<em>` marks text with emphasis. Browsers usually show it in *italic*.
 
 Example:
 ```html

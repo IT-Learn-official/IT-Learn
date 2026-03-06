@@ -140,14 +140,14 @@ export async function loadBadges() {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to load badges');
+            throw new Error(`Failed to load badges (${response.status})`);
         }
 
         const data = await response.json();
-        return data.badges || {};
+        return data?.badges && typeof data.badges === 'object' ? data.badges : {};
     } catch (error) {
         console.error('Load badges error:', error);
-        return {};
+        throw error;
     }
 }
 

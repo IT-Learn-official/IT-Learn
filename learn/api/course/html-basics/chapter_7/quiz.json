@@ -103,7 +103,7 @@
         }
       ],
       "explanations": {
-        "overview": "_target=_blank_ opens the target in a new tab.",
+        "overview": "target=\"_blank\" opens the target in a new tab.",
         "byOptionId": {
           "newtab": "Correct — target=\"_blank\" opens the destination in a new tab or window.",
           "internal": "Incorrect — target does not change whether a link is internal or external.",

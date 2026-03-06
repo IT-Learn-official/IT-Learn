@@ -599,10 +599,8 @@
       });
 
       brandLink?.addEventListener('click', (event) => {
+        event.preventDefault();
         const nextCount = logoClickCount + 1;
-        if (nextCount >= 5) {
-          event.preventDefault();
-        }
 
         logoClickCount = nextCount;
         clearTimeout(logoClickResetTimer);

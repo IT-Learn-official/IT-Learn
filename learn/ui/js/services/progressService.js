@@ -186,9 +186,14 @@ export function queueTaskStateSync(courseId, chapterId, chapterState) {
 
 export async function getRemoteTaskStateForChapter(courseId, chapterId) {
   const chapterKey = `${courseId || ''}:${chapterId || ''}`;
+  const pendingState = pendingChapterStates.get(chapterKey);
   const remote = await ensureRemoteProgressLoaded();
   const taskStateByChapter = ensureObject(remote.progress?.taskStateByChapter);
-  return ensureObject(taskStateByChapter[chapterKey]);
+  return {
+    ...ensureObject(taskStateByChapter[chapterKey]),
+    ...ensureObject(pendingState),
+  };
+}
 }
 
 export async function getBadgeStatsFromBackend() {
@@ -219,7 +224,7 @@ export async function getBadgeStatsFromBackend() {
 
 export async function syncBadgeUnlocks(computedBadges) {
   const stored = await ensureRemoteBadgesLoaded();
-  const unlockMap = ensureObject(stored.unlockedBadges);
+  const unlockMap = { ...ensureObject(stored.unlockedBadges) };
 
   let hasChanges = false;
   computedBadges.forEach((badge) => {
