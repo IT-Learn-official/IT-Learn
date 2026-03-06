@@ -148,7 +148,7 @@
         "overview": "Live preview saves time by automatically refreshing the browser when you save the file.",
         "byOptionId": {
           "livepreview": "Correct — live preview or auto-reload shows changes instantly.",
-          "whoppergods": "Incorrect — praying to Whopper Gods doesn't help see code changes. (I think)",
+          "manual-refresh": "Incorrect — manual refresh works, but live preview is faster.",
           "githubpages": "Incorrect — GitHub Pages is not a fast preview method.",
           "restartpc": "Incorrect — restarting is unnecessary for previewing changes."
         }
