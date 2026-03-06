@@ -23,7 +23,7 @@ export async function renderTheoryTab({ course, chapter, container, courseId, ch
   async function applyTaskStateAndHandlers() {
     const localTaskState = loadTaskState(courseId, chapterId);
     const remoteTaskState = await getRemoteTaskStateForChapter(courseId, chapterId);
-    const taskState = { ...(remoteTaskState ?? {}), ...localTaskState };
+    const taskState = { ...localTaskState, ...(remoteTaskState ?? {}) };
 
     if (Object.keys(taskState).length > Object.keys(localTaskState).length) {
       // Persist merged state locally so chapter UI remains consistent after reload.
