@@ -27,6 +27,22 @@
   <meta property="og:image" content="https://files.itlearn.be/images/branding/logo/IT_Learn.png">
   <meta property="og:type" content="website">
 
+  <script>
+    (function redirectPublicProfilePath() {
+      const path = window.location.pathname || '';
+      const match = path.match(/^\/@([^/?#]+)/);
+      if (!match) return;
+
+      const username = decodeURIComponent(match[1]).trim();
+      if (!username) return;
+
+      const target = `/profile.html?u=${encodeURIComponent(username)}`;
+      if (window.location.pathname + window.location.search !== target) {
+        window.location.replace(target);
+      }
+    })();
+  </script>
+
 </head>
 
 <body>
@@ -232,7 +248,7 @@
       <div class="container community-grid">
         <div class="community-left" data-aos="fade-left">
           <img
-            src="http://files.itlearn.be/images/branding/icons/student_with_itlearn.png"
+            src="https://files.itlearn.be/images/branding/icons/student_with_itlearn.png"
             alt="Community illustration" class="student_with_itlearn">
         </div>
         <div class="community-right" data-aos="fade-right">
