@@ -527,6 +527,7 @@
       card.innerHTML = `
         <div class="meta">
           ${cardLabel('User', escapeHtml(username))}
+          ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
           ${cardLabel('Banned', escapeHtml(banned))}
           ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
           ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
