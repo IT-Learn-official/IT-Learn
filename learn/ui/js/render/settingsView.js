@@ -35,13 +35,18 @@ export function renderSettingsView(screenRootEl) {
   const body = document.createElement('div');
   body.className = 'screen-body settings-body';
 
-  const overview = document.createElement('div');
-  overview.className = 'settings-overview';
-  overview.innerHTML = `
+  const profileOverview = document.createElement('div');
+  profileOverview.className = 'settings-overview';
+  profileOverview.innerHTML = `
     <article class="settings-overview-card">
       <h3>Public Profile</h3>
       <p>Pick your unique username so others can visit your profile at itlearn.be/@username.</p>
     </article>
+  `;
+
+  const accountOverview = document.createElement('div');
+  accountOverview.className = 'settings-overview';
+  accountOverview.innerHTML = `
     <article class="settings-overview-card">
       <h3>Account Security</h3>
       <p>Use a strong password and rotate it regularly to keep your account safe.</p>
@@ -51,6 +56,52 @@ export function renderSettingsView(screenRootEl) {
       <p>Deleting your account permanently removes progress, submissions, and profile data.</p>
     </article>
   `;
+
+  const tabs = document.createElement('div');
+  tabs.className = 'settings-tabs';
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Settings sections');
+
+  const profileTab = document.createElement('button');
+  profileTab.type = 'button';
+  profileTab.className = 'settings-tab';
+  profileTab.id = 'settings-tab-profile';
+  profileTab.setAttribute('role', 'tab');
+  profileTab.setAttribute('aria-controls', 'settings-panel-profile');
+  profileTab.setAttribute('aria-selected', 'false');
+  profileTab.setAttribute('tabindex', '-1');
+  profileTab.textContent = 'Profile';
+
+  const accountTab = document.createElement('button');
+  accountTab.type = 'button';
+  accountTab.className = 'settings-tab is-active';
+  accountTab.id = 'settings-tab-account';
+  accountTab.setAttribute('role', 'tab');
+  accountTab.setAttribute('aria-controls', 'settings-panel-account');
+  accountTab.setAttribute('aria-selected', 'true');
+  accountTab.textContent = 'Account';
+
+  tabs.appendChild(profileTab);
+  tabs.appendChild(accountTab);
+
+  const profileGroup = document.createElement('section');
+  profileGroup.className = 'settings-group';
+  profileGroup.id = 'settings-panel-profile';
+  profileGroup.setAttribute('role', 'tabpanel');
+  profileGroup.setAttribute('aria-labelledby', 'settings-tab-profile');
+  profileGroup.hidden = true;
+
+  const profileGroupContent = document.createElement('div');
+  profileGroupContent.className = 'settings-group-content';
+
+  const accountGroup = document.createElement('section');
+  accountGroup.className = 'settings-group';
+  accountGroup.id = 'settings-panel-account';
+  accountGroup.setAttribute('role', 'tabpanel');
+  accountGroup.setAttribute('aria-labelledby', 'settings-tab-account');
+
+  const accountGroupContent = document.createElement('div');
+  accountGroupContent.className = 'settings-group-content';
 
   const profileSection = document.createElement('div');
   profileSection.className = 'settings-section';
@@ -285,10 +336,18 @@ export function renderSettingsView(screenRootEl) {
   deleteSection.appendChild(deleteStatus);
   deleteSection.appendChild(deleteButton);
 
-  body.appendChild(overview);
-  body.appendChild(profileSection);
-  body.appendChild(passwordSection);
-  body.appendChild(deleteSection);
+  profileGroupContent.appendChild(profileOverview);
+  profileGroupContent.appendChild(profileSection);
+  profileGroup.appendChild(profileGroupContent);
+
+  accountGroupContent.appendChild(accountOverview);
+  accountGroupContent.appendChild(passwordSection);
+  accountGroupContent.appendChild(deleteSection);
+  accountGroup.appendChild(accountGroupContent);
+
+  body.appendChild(tabs);
+  body.appendChild(profileGroup);
+  body.appendChild(accountGroup);
 
   screen.appendChild(header);
   screen.appendChild(body);
@@ -296,6 +355,39 @@ export function renderSettingsView(screenRootEl) {
 
   setupToggleButton(toggleNewPasswordButton, newPasswordInput);
   setupToggleButton(toggleConfirmPasswordButton, confirmPasswordInput);
+
+  profileTab.addEventListener('click', () => {
+    activateTab('profile');
+  });
+
+  accountTab.addEventListener('click', () => {
+    activateTab('account');
+  });
+
+  tabs.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+      return;
+    }
+    event.preventDefault();
+    const isProfileSelected = profileTab.getAttribute('aria-selected') === 'true';
+
+    if (event.key === 'Home') {
+      activateTab('profile', { focusTab: true });
+      return;
+    }
+
+    if (event.key === 'End') {
+      activateTab('account', { focusTab: true });
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+      return;
+    }
+
+    activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+  });
 
   usernameInput.addEventListener('input', () => {
     const candidate = usernameInput.value.trim().toLowerCase();
@@ -455,6 +547,25 @@ export function renderSettingsView(screenRootEl) {
   function setButtonLoading(button, isLoading, defaultLabel, loadingLabel) {
     button.disabled = isLoading;
     button.textContent = isLoading ? loadingLabel : defaultLabel;
+  }
+
+  function activateTab(tabName, options = {}) {
+    const isProfileTab = tabName === 'profile';
+
+    profileTab.classList.toggle('is-active', isProfileTab);
+    profileTab.setAttribute('aria-selected', String(isProfileTab));
+    profileTab.setAttribute('tabindex', isProfileTab ? '0' : '-1');
+
+    accountTab.classList.toggle('is-active', !isProfileTab);
+    accountTab.setAttribute('aria-selected', String(!isProfileTab));
+    accountTab.setAttribute('tabindex', isProfileTab ? '-1' : '0');
+
+    profileGroup.hidden = !isProfileTab;
+    accountGroup.hidden = isProfileTab;
+
+    if (options.focusTab) {
+      (isProfileTab ? profileTab : accountTab).focus();
+    }
   }
 
   function getPasswordChecks(password) {

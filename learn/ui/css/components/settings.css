@@ -5,6 +5,8 @@
   margin: 0 auto;
   padding: 1.4rem 0;
   gap: 1rem;
+  align-content: start;
+  grid-auto-rows: max-content;
 }
 
 .settings-overview {
@@ -43,6 +45,87 @@
   padding: 1.50rem;
   border: 1px solid var(--glass-border);
   box-shadow: 0 12px 26px rgba(2, 6, 23, 0.38);
+}
+
+.settings-group {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.settings-group[hidden] {
+  display: none;
+}
+
+.settings-group-header {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.settings-group-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #e2e8f0;
+}
+
+.settings-group-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.settings-group-content {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.settings-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  padding: 0.22rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: rgba(10, 16, 30, 0.72);
+}
+
+.settings-tab {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.35);
+  color: #cbd5e1;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.settings-tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(165, 180, 252, 0.55);
+}
+
+.settings-tab.is-active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(79, 70, 229, 0.9));
+  border-color: rgba(199, 210, 254, 0.65);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.28);
+}
+
+.settings-tab:focus-visible {
+  outline: 2px solid #e2e8f0;
+  outline-offset: 2px;
 }
 
 .settings-section.danger-zone {
@@ -359,6 +442,10 @@
   .settings-section,
   .settings-overview-card {
     padding: 1rem;
+  }
+
+  .settings-tabs {
+    grid-template-columns: 1fr;
   }
 
   .settings-button {
