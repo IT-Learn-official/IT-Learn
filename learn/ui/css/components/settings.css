@@ -40,7 +40,7 @@
 .settings-section {
   background: linear-gradient(165deg, rgba(49, 46, 129, 0.18), rgba(11, 18, 32, 0.8));
   border-radius: var(--radius-md);
-  padding: 1.25rem;
+  padding: 1.50rem;
   border: 1px solid var(--glass-border);
   box-shadow: 0 12px 26px rgba(2, 6, 23, 0.38);
 }
