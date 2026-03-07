@@ -244,6 +244,17 @@
       align-items: center;
     }
 
+    .profiles-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .profiles-pagination .muted {
+      margin-left: auto;
+    }
+
     @media (max-width: 700px) {
       .report-actions-inline {
         grid-template-columns: 1fr;
@@ -282,6 +293,12 @@
 
         <button id="refresh" class="button-primary" type="button">Refresh reports</button>
         <button id="refresh-profiles" class="button-primary" type="button">Refresh all profiles</button>
+        <label for="profile-page-size">Profiles/page:</label>
+        <select id="profile-page-size">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+        </select>
         <input id="profile-search" type="text" placeholder="Search @username or bio" />
       </div>
 
@@ -295,6 +312,11 @@
         <section class="panel-card">
           <h2 class="section-title">All Profiles and Bios</h2>
           <div id="profiles-status" class="status">Loading profiles...</div>
+          <div class="profiles-pagination">
+            <button id="profiles-prev" type="button">Prev</button>
+            <button id="profiles-next" type="button">Next</button>
+            <p id="profiles-page-info" class="muted">Page 1</p>
+          </div>
           <div id="profiles-list" class="grid"></div>
         </section>
       </div>
@@ -315,7 +337,14 @@
     const statusFilter = document.getElementById('status-filter');
     const limitFilter = document.getElementById('limit-filter');
     const profileSearchInput = document.getElementById('profile-search');
+    const profilePageSizeSelect = document.getElementById('profile-page-size');
+    const profilesPrevBtn = document.getElementById('profiles-prev');
+    const profilesNextBtn = document.getElementById('profiles-next');
+    const profilesPageInfo = document.getElementById('profiles-page-info');
     let allProfiles = [];
+    let profilesPage = 1;
+    let profilesPageSize = Number(profilePageSizeSelect?.value || 100);
+    let profilesHasNextPage = true;
 
     function setStatus(message, type) {
       statusEl.textContent = message;
@@ -331,6 +360,12 @@
       profilesStatusEl.textContent = message;
       profilesStatusEl.className = 'status';
       if (type) profilesStatusEl.classList.add(type);
+    }
+
+    function updateProfilesPaginationUI() {
+      profilesPageInfo.textContent = `Page ${profilesPage}`;
+      profilesPrevBtn.disabled = profilesPage <= 1;
+      profilesNextBtn.disabled = !profilesHasNextPage;
     }
 
     function escapeHtml(input) {
@@ -613,12 +648,23 @@
       setProfilesStatus(`Showing ${filtered.length} profile(s).`, 'ok');
     }
 
-    async function loadProfiles() {
-      setProfilesStatus('Loading all profiles...');
+    async function loadProfiles(page = 1, pageSize = profilesPageSize) {
+      const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+      const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
+
+      setProfilesStatus(`Loading profiles page ${safePage}...`);
       profilesListEl.innerHTML = '';
+      profilesNextBtn.disabled = true;
+      profilesPrevBtn.disabled = true;
 
       try {
-        const response = await fetch(`${API_BASE}/admin/profiles?limit=1000`, {
+        const params = new URLSearchParams({
+          page: String(safePage),
+          pageSize: String(safePageSize),
+          page_size: String(safePageSize),
+        });
+
+        const response = await fetch(`${API_BASE}/admin/profiles?${params.toString()}`, {
           method: 'GET',
           credentials: 'include',
         });
@@ -629,15 +675,31 @@
           return;
         }
 
-        allProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+        const fetchedProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+
+        if (!fetchedProfiles.length && safePage > 1) {
+          profilesHasNextPage = false;
+          setProfilesStatus('No more profiles to load.', 'ok');
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        allProfiles = fetchedProfiles;
+        profilesPage = safePage;
+        profilesPageSize = safePageSize;
+        profilesHasNextPage = fetchedProfiles.length >= safePageSize;
+
         if (!allProfiles.length) {
-          setProfilesStatus('No profiles found.', 'ok');
+          setProfilesStatus('No profiles found on this page.', 'ok');
+          updateProfilesPaginationUI();
           return;
         }
 
         renderProfiles();
+        updateProfilesPaginationUI();
       } catch (error) {
         setProfilesStatus('Network error while loading profiles.', 'error');
+        updateProfilesPaginationUI();
       }
     }
 
@@ -658,7 +720,7 @@
         authBlock.classList.add('hidden');
         panel.classList.remove('hidden');
         await loadReports();
-        await loadProfiles();
+        await loadProfiles(1, profilesPageSize);
       } catch (error) {
         authBlock.textContent = 'Could not verify your session.';
         authBlock.classList.add('error');
@@ -670,7 +732,27 @@
     });
 
     refreshProfilesBtn.addEventListener('click', () => {
-      void loadProfiles();
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profilePageSizeSelect.addEventListener('change', () => {
+      const selected = Number(profilePageSizeSelect.value);
+      profilesPageSize = Number.isFinite(selected) && selected > 0 ? selected : 100;
+      profilesPage = 1;
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profilesPrevBtn.addEventListener('click', () => {
+      if (profilesPage <= 1) return;
+      void loadProfiles(profilesPage - 1, profilesPageSize);
+    });
+
+    profilesNextBtn.addEventListener('click', () => {
+      if (!profilesHasNextPage) {
+        setProfilesStatus('No more profiles to load.', 'ok');
+        return;
+      }
+      void loadProfiles(profilesPage + 1, profilesPageSize);
     });
 
     statusFilter.addEventListener('change', () => {

@@ -1,6 +1,30 @@
 import { getMyProfile, getPublicProfile, reportProfileBio } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
 
+function normalizeLang(lang) {
+  const short = String(lang || '').toLowerCase().split('-')[0];
+  return ['en', 'nl', 'de', 'fr'].includes(short) ? short : 'en';
+}
+
+function t(key, fallback) {
+  let storedLang = '';
+  try {
+    storedLang = typeof localStorage !== 'undefined' ? localStorage.getItem('language') : '';
+  } catch (error) {
+    storedLang = '';
+  }
+
+  const lang = normalizeLang(
+    storedLang || document.documentElement.lang || 'en'
+  );
+
+  const globalTranslations = typeof window !== 'undefined' ? window.translations : null;
+  return globalTranslations?.[lang]?.[key]
+    || globalTranslations?.en?.[key]
+    || fallback
+    || key;
+}
+
 function createStatCard(label, value) {
   const card = document.createElement('div');
   card.className = 'profile-stat-card';
@@ -105,36 +129,53 @@ function createReportBioPanel(username) {
   panel.className = 'profile-card';
 
   const title = document.createElement('h3');
-  title.textContent = 'Report this bio';
+  title.textContent = t('reportBioTitle', 'Report this bio');
 
   const text = document.createElement('p');
   text.className = 'profile-note';
-  text.textContent = 'Help keep IT Learn safe. Report bios with abusive or inappropriate content.';
+  text.textContent = t('reportBioDescription', 'Help keep IT Learn safe. Report bios with abusive or inappropriate content.');
 
   const reasonLabel = document.createElement('label');
-  reasonLabel.textContent = 'Reason';
+  reasonLabel.textContent = t('reportBioReasonLabel', 'Reason');
   reasonLabel.htmlFor = 'bio-report-reason';
 
   const reasonSelect = document.createElement('select');
   reasonSelect.id = 'bio-report-reason';
   reasonSelect.className = 'settings-button settings-button-ghost';
   reasonSelect.style.maxWidth = '360px';
-  ['Harassment or hate speech', 'Sexual content', 'Threats or violence', 'Other'].forEach((option) => {
+  [
+    {
+      value: t('reportBioReasonHarassmentValue', 'Harassment or hate speech'),
+      text: t('reportBioReasonHarassment', 'Harassment or hate speech'),
+    },
+    {
+      value: t('reportBioReasonSexualValue', 'Sexual content'),
+      text: t('reportBioReasonSexual', 'Sexual content'),
+    },
+    {
+      value: t('reportBioReasonThreatsValue', 'Threats or violence'),
+      text: t('reportBioReasonThreats', 'Threats or violence'),
+    },
+    {
+      value: t('reportBioReasonOtherValue', 'Other'),
+      text: t('reportBioReasonOther', 'Other'),
+    },
+  ].forEach((option) => {
     const el = document.createElement('option');
-    el.value = option;
-    el.textContent = option;
+    el.value = option.value;
+    el.textContent = option.text;
     reasonSelect.appendChild(el);
   });
 
   const detailsLabel = document.createElement('label');
-  detailsLabel.textContent = 'Details (optional)';
+  detailsLabel.textContent = t('reportBioDetailsLabel', 'Details (optional)');
   detailsLabel.htmlFor = 'bio-report-details';
 
   const detailsInput = document.createElement('textarea');
   detailsInput.id = 'bio-report-details';
   detailsInput.rows = 3;
   detailsInput.maxLength = 300;
-  detailsInput.placeholder = 'Short context for moderators';
+  detailsInput.placeholder = t('reportBioDetailsPlaceholder', 'Short context for moderators');
 
   const actions = document.createElement('div');
   actions.style.display = 'flex';
@@ -144,13 +185,13 @@ function createReportBioPanel(username) {
   const submitButton = document.createElement('button');
   submitButton.type = 'button';
   submitButton.className = 'settings-button danger-button-outline';
-  submitButton.textContent = 'Report bio';
+  submitButton.textContent = t('reportBioSubmit', 'Report bio');
 
   const status = document.createElement('p');
   status.className = 'profile-note';
 
   submitButton.addEventListener('click', async () => {
-    status.textContent = 'Submitting report...';
+    status.textContent = t('reportBioSubmitting', 'Submitting report...');
     submitButton.disabled = true;
 
     const result = await reportProfileBio({
@@ -161,12 +202,12 @@ function createReportBioPanel(username) {
 
     submitButton.disabled = false;
     if (!result.success) {
-      status.textContent = result.error || 'Failed to submit report.';
+      status.textContent = result.error || t('reportBioFailed', 'Failed to submit report.');
       return;
     }
 
     detailsInput.value = '';
-    status.textContent = 'Report submitted. Thank you.';
+    status.textContent = t('reportBioSuccess', 'Report submitted. Thank you.');
   });
 
   actions.appendChild(submitButton);
@@ -234,7 +275,8 @@ export async function renderProfileView(screenRootEl, { username } = {}) {
   const profile = response.profile || {};
   body.appendChild(renderProfileCard(profile, !isPublicProfile));
 
-  if (isPublicProfile && profile.username) {
+  const hasPersistedBio = typeof profile.bio === 'string' && profile.bio.trim().length > 0;
+  if (isPublicProfile && profile.username && hasPersistedBio) {
     body.appendChild(createReportBioPanel(profile.username));
   }
 

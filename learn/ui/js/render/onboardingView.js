@@ -94,6 +94,11 @@ export async function renderOnboardingView(screenRootEl, { onComplete } = {}) {
   if (profile.success && profile.profile) {
     usernameInput.value = (profile.profile.username || '').toLowerCase();
     bioInput.value = String(profile.profile.bio || '');
+  } else if (!profile.success) {
+    console.warn('[onboarding] Failed to prefill profile data from getMyProfile()', {
+      error: profile.error || null,
+      payload: profile,
+    });
   }
 
   form.addEventListener('submit', async (event) => {

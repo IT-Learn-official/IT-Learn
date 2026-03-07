@@ -328,9 +328,39 @@ export async function reportProfileBio({ username, reason, details }) {
             body: JSON.stringify({ username, reason, details })
         });
 
-        const data = await response.json();
         if (!response.ok) {
-            return { success: false, error: data.error || 'Failed to submit report' };
+            const statusText = `HTTP ${response.status}${response.statusText ? ` ${response.statusText}` : ''}`;
+            let bodyText = '';
+            try {
+                bodyText = await response.text();
+            } catch (readError) {
+                bodyText = '';
+            }
+
+            let bodyMessage = '';
+            const trimmedBody = bodyText.trim();
+            if (trimmedBody) {
+                try {
+                    const parsed = JSON.parse(trimmedBody);
+                    bodyMessage = parsed?.error || parsed?.message || trimmedBody;
+                } catch (parseError) {
+                    bodyMessage = trimmedBody;
+                }
+            }
+
+            return {
+                success: false,
+                error: bodyMessage ? `${statusText}: ${bodyMessage}` : statusText,
+            };
+        }
+
+        const contentType = response.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+            try {
+                await response.json();
+            } catch (parseError) {
+                // Success responses do not require a parseable JSON payload here.
+            }
         }
 
         return { success: true };

@@ -147,6 +147,14 @@
       const row = document.createElement('div');
       row.className = 'moderation-actions';
 
+      const replacement = document.createElement('input');
+      replacement.type = 'text';
+      replacement.maxLength = 180;
+      replacement.placeholder = 'Replacement text after ban (optional)';
+      replacement.className = 'moderation-input';
+      replacement.hidden = !currentSession.is_bio_admin;
+      replacement.disabled = !currentSession.is_bio_admin;
+
       const reportBtn = document.createElement('button');
       reportBtn.type = 'button';
       reportBtn.textContent = 'Report bio';
@@ -191,12 +199,6 @@
       row.appendChild(reportBtn);
 
       if (currentSession.is_bio_admin) {
-        const replacement = document.createElement('input');
-        replacement.type = 'text';
-        replacement.maxLength = 180;
-        replacement.placeholder = 'Replacement text after ban (optional)';
-        replacement.className = 'moderation-input';
-
         const banBtn = document.createElement('button');
         banBtn.type = 'button';
         banBtn.className = 'moderation-btn danger';
@@ -230,7 +232,6 @@
         });
 
         row.appendChild(banBtn);
-        panel.appendChild(replacement);
       }
 
       panel.appendChild(title);
@@ -239,6 +240,7 @@
       panel.appendChild(reason);
       panel.appendChild(detailsLabel);
       panel.appendChild(details);
+      panel.appendChild(replacement);
       panel.appendChild(row);
       panel.appendChild(result);
       return panel;
