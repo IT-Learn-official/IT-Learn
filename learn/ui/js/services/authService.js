@@ -316,3 +316,26 @@ export async function getPublicProfile(username) {
         return { success: false, error: 'Network error. Please try again.' };
     }
 }
+
+export async function reportProfileBio({ username, reason, details }) {
+    try {
+        const response = await fetch(`${API_BASE}/profile/report-bio`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ username, reason, details })
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+            return { success: false, error: data.error || 'Failed to submit report' };
+        }
+
+        return { success: true };
+    } catch (error) {
+        console.error('Report bio error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}

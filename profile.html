@@ -11,7 +11,10 @@
   <div class="profile-shell">
     <div class="profile-top">
       <a href="/index.html">Back to IT Learn</a>
-      <span id="status">Loading profile...</span>
+      <div class="profile-top-actions">
+        <span id="status">Loading profile...</span>
+        <a id="admin-panel-link" class="admin-panel-link" href="/admin-bio.html" hidden>Open Admin Panel</a>
+      </div>
     </div>
 
     <div id="profile-root"></div>
@@ -21,6 +24,8 @@
     const API_BASE = 'https://itlearn.pythonanywhere.com/api';
     const root = document.getElementById('profile-root');
     const status = document.getElementById('status');
+    const adminPanelLink = document.getElementById('admin-panel-link');
+    let currentSession = { logged_in: false, user_id: null, is_bio_admin: false };
 
     const query = new URLSearchParams(window.location.search);
     const fromQuery = query.get('u');
@@ -101,15 +106,161 @@
       section.appendChild(main);
       section.appendChild(stats);
 
-      root.replaceChildren(section);
+      const moderationPanel = createModerationPanel(usernameValue);
+      root.replaceChildren(section, moderationPanel);
     }
 
-    if (!username) {
-      status.textContent = 'No username provided';
-      renderErrorCard('Missing username in URL.');
-    } else {
-      status.textContent = `@${username}`;
-      loadProfile(username);
+    function createModerationPanel(usernameValue) {
+      const panel = document.createElement('section');
+      panel.className = 'moderation-card';
+
+      const title = document.createElement('h3');
+      title.textContent = 'Report bio';
+
+      const caption = document.createElement('p');
+      caption.className = 'moderation-caption';
+      caption.textContent = 'Flag bios that contain harassment, hate, threats, or sexual content.';
+
+      const reasonLabel = document.createElement('label');
+      reasonLabel.textContent = 'Reason';
+      reasonLabel.htmlFor = 'bio-report-reason';
+
+      const reason = document.createElement('select');
+      reason.id = 'bio-report-reason';
+      ['Harassment or hate speech', 'Sexual content', 'Threats or violence', 'Other'].forEach((option) => {
+        const el = document.createElement('option');
+        el.value = option;
+        el.textContent = option;
+        reason.appendChild(el);
+      });
+
+      const detailsLabel = document.createElement('label');
+      detailsLabel.textContent = 'Details (optional)';
+      detailsLabel.htmlFor = 'bio-report-details';
+
+      const details = document.createElement('textarea');
+      details.id = 'bio-report-details';
+      details.rows = 3;
+      details.maxLength = 300;
+      details.placeholder = 'Short context for moderators';
+
+      const row = document.createElement('div');
+      row.className = 'moderation-actions';
+
+      const reportBtn = document.createElement('button');
+      reportBtn.type = 'button';
+      reportBtn.textContent = 'Report bio';
+      reportBtn.className = 'moderation-btn';
+
+      const result = document.createElement('p');
+      result.className = 'moderation-status';
+
+      reportBtn.addEventListener('click', async () => {
+        if (!currentSession.logged_in) {
+          result.textContent = 'Please log in to report this bio.';
+          return;
+        }
+
+        reportBtn.disabled = true;
+        result.textContent = 'Submitting report...';
+        try {
+          const response = await fetch(`${API_BASE}/profile/report-bio`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+              username: usernameValue,
+              reason: reason.value,
+              details: details.value.trim(),
+            }),
+          });
+          const data = await response.json();
+          if (!response.ok) {
+            result.textContent = data.error || 'Failed to submit report.';
+            return;
+          }
+          details.value = '';
+          result.textContent = 'Report submitted. Thank you.';
+        } catch (error) {
+          result.textContent = 'Network error. Please try again.';
+        } finally {
+          reportBtn.disabled = false;
+        }
+      });
+
+      row.appendChild(reportBtn);
+
+      if (currentSession.is_bio_admin) {
+        const replacement = document.createElement('input');
+        replacement.type = 'text';
+        replacement.maxLength = 180;
+        replacement.placeholder = 'Replacement text after ban (optional)';
+        replacement.className = 'moderation-input';
+
+        const banBtn = document.createElement('button');
+        banBtn.type = 'button';
+        banBtn.className = 'moderation-btn danger';
+        banBtn.textContent = 'Ban this bio';
+
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          result.textContent = 'Applying bio ban...';
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({
+                username: usernameValue,
+                replacement_bio: replacement.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              result.textContent = data.error || 'Failed to ban bio.';
+              return;
+            }
+            result.textContent = 'Bio banned successfully.';
+            await loadProfile(usernameValue);
+          } catch (error) {
+            result.textContent = 'Network error. Please try again.';
+          } finally {
+            banBtn.disabled = false;
+          }
+        });
+
+        row.appendChild(banBtn);
+        panel.appendChild(replacement);
+      }
+
+      panel.appendChild(title);
+      panel.appendChild(caption);
+      panel.appendChild(reasonLabel);
+      panel.appendChild(reason);
+      panel.appendChild(detailsLabel);
+      panel.appendChild(details);
+      panel.appendChild(row);
+      panel.appendChild(result);
+      return panel;
+    }
+
+    async function loadSession() {
+      try {
+        const response = await fetch(`${API_BASE}/session`, {
+          method: 'GET',
+          credentials: 'include'
+        });
+        const data = await response.json();
+        currentSession = {
+          logged_in: Boolean(data.logged_in),
+          user_id: data.user_id || null,
+          is_bio_admin: Boolean(data.is_bio_admin),
+        };
+        adminPanelLink.hidden = !currentSession.is_bio_admin;
+      } catch (error) {
+        currentSession = { logged_in: false, user_id: null, is_bio_admin: false };
+        adminPanelLink.hidden = true;
+      }
     }
 
     async function loadProfile(handle) {
@@ -129,6 +280,20 @@
         renderErrorCard('Network error while loading profile.');
       }
     }
+
+    async function init() {
+      await loadSession();
+      if (!username) {
+        status.textContent = 'No username provided';
+        renderErrorCard('Missing username in URL.');
+        return;
+      }
+
+      status.textContent = `@${username}`;
+      await loadProfile(username);
+    }
+
+    void init();
   </script>
 </body>
 </html>

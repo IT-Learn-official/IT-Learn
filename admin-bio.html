@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Bio Moderation Admin</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #101a33;
+      --panel-2: #1a2747;
+      --text: #ecf2ff;
+      --muted: #93a3c7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #22d3ee;
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.18);
+      --ok: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -5%, #1d2f5e, var(--bg) 70%);
+      padding: 24px 16px 48px;
+    }
+
+    .wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.78);
+      backdrop-filter: blur(8px);
+      padding: 14px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.82);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    select,
+    input,
+    button,
+    textarea {
+      font: inherit;
+      color: var(--text);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      padding: 8px 10px;
+    }
+
+    button {
+      cursor: pointer;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .button-primary {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .button-danger {
+      background: var(--danger-soft);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .status {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16, 26, 51, 0.8);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .status.ok {
+      color: var(--ok);
+    }
+
+    .status.error {
+      color: #fda4af;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(26, 39, 71, 0.8);
+    }
+
+    .bio-box,
+    .details-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 9px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #dbe7ff;
+      font-size: 0.93rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .actions input {
+      flex: 1 1 320px;
+      min-width: 220px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>Bio Moderation Admin</h1>
+        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel.</p>
+      </div>
+      <a href="/index.html" class="muted">Back to home</a>
+    </div>
+
+    <div id="auth-block" class="status">Checking your admin session...</div>
+
+    <section id="panel" class="hidden">
+      <div class="controls">
+        <label for="status-filter">Report status:</label>
+        <select id="status-filter">
+          <option value="open" selected>Open</option>
+          <option value="resolved">Resolved</option>
+          <option value="all">All</option>
+        </select>
+
+        <label for="limit-filter">Limit:</label>
+        <select id="limit-filter">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+          <option value="500">500</option>
+        </select>
+
+        <button id="refresh" class="button-primary" type="button">Refresh reports</button>
+      </div>
+
+      <div id="status" class="status">Loading reports...</div>
+      <div id="list" class="grid"></div>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+
+    const authBlock = document.getElementById('auth-block');
+    const panel = document.getElementById('panel');
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('list');
+    const refreshBtn = document.getElementById('refresh');
+    const statusFilter = document.getElementById('status-filter');
+    const limitFilter = document.getElementById('limit-filter');
+
+    function setStatus(message, type) {
+      statusEl.textContent = message;
+      statusEl.className = 'status';
+      if (type) statusEl.classList.add(type);
+    }
+
+    function cardLabel(title, value) {
+      return `<span class="chip"><strong>${title}:</strong> ${value}</span>`;
+    }
+
+    function escapeHtml(input) {
+      return String(input || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function reportCard(report) {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      const username = escapeHtml(report.reported_username || 'unknown');
+      const reason = escapeHtml(report.reason || 'No reason');
+      const status = escapeHtml(report.status || 'open');
+      const reporter = escapeHtml(report.reporter_user_id || 'unknown');
+      const createdAt = escapeHtml(report.created_at || 'n/a');
+      const currentBio = escapeHtml(report.current_bio || '');
+      const details = escapeHtml(report.details || 'No details');
+
+      card.innerHTML = `
+        <div class="meta">
+          ${cardLabel('User', '@' + username)}
+          ${cardLabel('Status', status)}
+          ${cardLabel('Reason', reason)}
+          ${cardLabel('Reported by', reporter)}
+          ${cardLabel('Created', createdAt)}
+        </div>
+        <div>
+          <p class="muted">Current bio</p>
+          <div class="bio-box">${currentBio || 'No bio text'}</div>
+        </div>
+        <div>
+          <p class="muted">Report details</p>
+          <div class="details-box">${details}</div>
+        </div>
+      `;
+
+      if ((report.status || '').toLowerCase() === 'open') {
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.maxLength = 180;
+        input.placeholder = 'Replacement text after ban (optional)';
+
+        const banBtn = document.createElement('button');
+        banBtn.type = 'button';
+        banBtn.className = 'button-danger';
+        banBtn.textContent = 'Ban Bio';
+
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          setStatus(`Applying bio ban for @${report.reported_username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: report.reported_username,
+                replacement_bio: input.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
+            await loadReports();
+          } catch (error) {
+            setStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+          }
+        });
+
+        actions.appendChild(input);
+        actions.appendChild(banBtn);
+        card.appendChild(actions);
+      }
+
+      return card;
+    }
+
+    async function loadSession() {
+      const response = await fetch(`${API_BASE}/session`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const data = await response.json();
+      return data;
+    }
+
+    async function loadReports() {
+      setStatus('Loading reports...');
+      listEl.innerHTML = '';
+
+      const status = encodeURIComponent(statusFilter.value);
+      const limit = encodeURIComponent(limitFilter.value);
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/bio-reports?status=${status}&limit=${limit}`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setStatus(data.error || 'Could not fetch reports.', 'error');
+          return;
+        }
+
+        const reports = Array.isArray(data.reports) ? data.reports : [];
+        if (!reports.length) {
+          setStatus('No reports found for selected filter.', 'ok');
+          return;
+        }
+
+        reports.forEach((report) => {
+          listEl.appendChild(reportCard(report));
+        });
+        setStatus(`Loaded ${reports.length} report(s).`, 'ok');
+      } catch (error) {
+        setStatus('Network error while loading reports.', 'error');
+      }
+    }
+
+    async function init() {
+      try {
+        const session = await loadSession();
+        if (!session.logged_in) {
+          authBlock.textContent = 'You must be logged in to access this page.';
+          authBlock.classList.add('error');
+          return;
+        }
+        if (!session.is_bio_admin) {
+          authBlock.textContent = 'Access denied. Your account is not in BIO_MOD_ADMIN_USER_IDS.';
+          authBlock.classList.add('error');
+          return;
+        }
+
+        authBlock.classList.add('hidden');
+        panel.classList.remove('hidden');
+        await loadReports();
+      } catch (error) {
+        authBlock.textContent = 'Could not verify your session.';
+        authBlock.classList.add('error');
+      }
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      void loadReports();
+    });
+
+    statusFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    limitFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    void init();
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { getMyProfile, getPublicProfile } from '../services/authService.js';
+import { getMyProfile, getPublicProfile, reportProfileBio } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
 
 function createStatCard(label, value) {
@@ -100,6 +100,88 @@ function renderProfileCard(profile, isOwnProfile) {
   return section;
 }
 
+function createReportBioPanel(username) {
+  const panel = document.createElement('section');
+  panel.className = 'profile-card';
+
+  const title = document.createElement('h3');
+  title.textContent = 'Report this bio';
+
+  const text = document.createElement('p');
+  text.className = 'profile-note';
+  text.textContent = 'Help keep IT Learn safe. Report bios with abusive or inappropriate content.';
+
+  const reasonLabel = document.createElement('label');
+  reasonLabel.textContent = 'Reason';
+  reasonLabel.htmlFor = 'bio-report-reason';
+
+  const reasonSelect = document.createElement('select');
+  reasonSelect.id = 'bio-report-reason';
+  reasonSelect.className = 'settings-button settings-button-ghost';
+  reasonSelect.style.maxWidth = '360px';
+  ['Harassment or hate speech', 'Sexual content', 'Threats or violence', 'Other'].forEach((option) => {
+    const el = document.createElement('option');
+    el.value = option;
+    el.textContent = option;
+    reasonSelect.appendChild(el);
+  });
+
+  const detailsLabel = document.createElement('label');
+  detailsLabel.textContent = 'Details (optional)';
+  detailsLabel.htmlFor = 'bio-report-details';
+
+  const detailsInput = document.createElement('textarea');
+  detailsInput.id = 'bio-report-details';
+  detailsInput.rows = 3;
+  detailsInput.maxLength = 300;
+  detailsInput.placeholder = 'Short context for moderators';
+
+  const actions = document.createElement('div');
+  actions.style.display = 'flex';
+  actions.style.gap = '10px';
+  actions.style.marginTop = '10px';
+
+  const submitButton = document.createElement('button');
+  submitButton.type = 'button';
+  submitButton.className = 'settings-button danger-button-outline';
+  submitButton.textContent = 'Report bio';
+
+  const status = document.createElement('p');
+  status.className = 'profile-note';
+
+  submitButton.addEventListener('click', async () => {
+    status.textContent = 'Submitting report...';
+    submitButton.disabled = true;
+
+    const result = await reportProfileBio({
+      username,
+      reason: reasonSelect.value,
+      details: detailsInput.value.trim(),
+    });
+
+    submitButton.disabled = false;
+    if (!result.success) {
+      status.textContent = result.error || 'Failed to submit report.';
+      return;
+    }
+
+    detailsInput.value = '';
+    status.textContent = 'Report submitted. Thank you.';
+  });
+
+  actions.appendChild(submitButton);
+  panel.appendChild(title);
+  panel.appendChild(text);
+  panel.appendChild(reasonLabel);
+  panel.appendChild(reasonSelect);
+  panel.appendChild(detailsLabel);
+  panel.appendChild(detailsInput);
+  panel.appendChild(actions);
+  panel.appendChild(status);
+
+  return panel;
+}
+
 export async function renderProfileView(screenRootEl, { username } = {}) {
   const screen = document.createElement('section');
   screen.className = 'screen';
@@ -151,6 +233,10 @@ export async function renderProfileView(screenRootEl, { username } = {}) {
 
   const profile = response.profile || {};
   body.appendChild(renderProfileCard(profile, !isPublicProfile));
+
+  if (isPublicProfile && profile.username) {
+    body.appendChild(createReportBioPanel(profile.username));
+  }
 
   if (!isPublicProfile) {
     const note = document.createElement('p');
