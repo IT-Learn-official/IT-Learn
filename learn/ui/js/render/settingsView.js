@@ -35,13 +35,18 @@ export function renderSettingsView(screenRootEl) {
   const body = document.createElement('div');
   body.className = 'screen-body settings-body';
 
-  const overview = document.createElement('div');
-  overview.className = 'settings-overview';
-  overview.innerHTML = `
+  const profileOverview = document.createElement('div');
+  profileOverview.className = 'settings-overview';
+  profileOverview.innerHTML = `
     <article class="settings-overview-card">
       <h3>Public Profile</h3>
       <p>Pick your unique username so others can visit your profile at itlearn.be/@username.</p>
     </article>
+  `;
+
+  const accountOverview = document.createElement('div');
+  accountOverview.className = 'settings-overview';
+  accountOverview.innerHTML = `
     <article class="settings-overview-card">
       <h3>Account Security</h3>
       <p>Use a strong password and rotate it regularly to keep your account safe.</p>
@@ -51,6 +56,52 @@ export function renderSettingsView(screenRootEl) {
       <p>Deleting your account permanently removes progress, submissions, and profile data.</p>
     </article>
   `;
+
+  const tabs = document.createElement('div');
+  tabs.className = 'settings-tabs';
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Settings sections');
+
+  const profileTab = document.createElement('button');
+  profileTab.type = 'button';
+  profileTab.className = 'settings-tab is-active';
+  profileTab.id = 'settings-tab-profile';
+  profileTab.setAttribute('role', 'tab');
+  profileTab.setAttribute('aria-controls', 'settings-panel-profile');
+  profileTab.setAttribute('aria-selected', 'true');
+  profileTab.textContent = 'Profile';
+
+  const accountTab = document.createElement('button');
+  accountTab.type = 'button';
+  accountTab.className = 'settings-tab';
+  accountTab.id = 'settings-tab-account';
+  accountTab.setAttribute('role', 'tab');
+  accountTab.setAttribute('aria-controls', 'settings-panel-account');
+  accountTab.setAttribute('aria-selected', 'false');
+  accountTab.setAttribute('tabindex', '-1');
+  accountTab.textContent = 'Account';
+
+  tabs.appendChild(profileTab);
+  tabs.appendChild(accountTab);
+
+  const profileGroup = document.createElement('section');
+  profileGroup.className = 'settings-group';
+  profileGroup.id = 'settings-panel-profile';
+  profileGroup.setAttribute('role', 'tabpanel');
+  profileGroup.setAttribute('aria-labelledby', 'settings-tab-profile');
+
+  const profileGroupContent = document.createElement('div');
+  profileGroupContent.className = 'settings-group-content';
+
+  const accountGroup = document.createElement('section');
+  accountGroup.className = 'settings-group';
+  accountGroup.id = 'settings-panel-account';
+  accountGroup.setAttribute('role', 'tabpanel');
+  accountGroup.setAttribute('aria-labelledby', 'settings-tab-account');
+  accountGroup.hidden = true;
+
+  const accountGroupContent = document.createElement('div');
+  accountGroupContent.className = 'settings-group-content';
 
   const profileSection = document.createElement('div');
   profileSection.className = 'settings-section';
@@ -82,17 +133,34 @@ export function renderSettingsView(screenRootEl) {
   usernamePreview.className = 'settings-info settings-link-preview';
   usernamePreview.textContent = 'Public link: itlearn.be/@username';
 
+  const bioLabel = document.createElement('label');
+  bioLabel.htmlFor = 'profile-bio';
+  bioLabel.textContent = 'Bio';
+
+  const bioInput = document.createElement('textarea');
+  bioInput.id = 'profile-bio';
+  bioInput.placeholder = 'Tell other learners a bit about you...';
+  bioInput.maxLength = 280;
+  bioInput.rows = 4;
+
+  const bioInfo = document.createElement('p');
+  bioInfo.className = 'settings-info';
+  bioInfo.textContent = 'Up to 280 characters. This appears on your public profile.';
+
   const profileStatus = document.createElement('div');
   profileStatus.className = 'settings-status';
 
   const profileButton = document.createElement('button');
   profileButton.type = 'submit';
   profileButton.className = 'settings-button';
-  profileButton.textContent = 'Save username';
+  profileButton.textContent = 'Save profile';
 
   profileForm.appendChild(usernameLabel);
   profileForm.appendChild(usernameInput);
   profileForm.appendChild(usernamePreview);
+  profileForm.appendChild(bioLabel);
+  profileForm.appendChild(bioInput);
+  profileForm.appendChild(bioInfo);
   profileForm.appendChild(profileStatus);
   profileForm.appendChild(profileButton);
 
@@ -285,10 +353,18 @@ export function renderSettingsView(screenRootEl) {
   deleteSection.appendChild(deleteStatus);
   deleteSection.appendChild(deleteButton);
 
-  body.appendChild(overview);
-  body.appendChild(profileSection);
-  body.appendChild(passwordSection);
-  body.appendChild(deleteSection);
+  profileGroupContent.appendChild(profileOverview);
+  profileGroupContent.appendChild(profileSection);
+  profileGroup.appendChild(profileGroupContent);
+
+  accountGroupContent.appendChild(accountOverview);
+  accountGroupContent.appendChild(passwordSection);
+  accountGroupContent.appendChild(deleteSection);
+  accountGroup.appendChild(accountGroupContent);
+
+  body.appendChild(tabs);
+  body.appendChild(profileGroup);
+  body.appendChild(accountGroup);
 
   screen.appendChild(header);
   screen.appendChild(body);
@@ -296,6 +372,39 @@ export function renderSettingsView(screenRootEl) {
 
   setupToggleButton(toggleNewPasswordButton, newPasswordInput);
   setupToggleButton(toggleConfirmPasswordButton, confirmPasswordInput);
+
+  profileTab.addEventListener('click', () => {
+    activateTab('profile');
+  });
+
+  accountTab.addEventListener('click', () => {
+    activateTab('account');
+  });
+
+  tabs.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+      return;
+    }
+    event.preventDefault();
+    const isProfileSelected = profileTab.getAttribute('aria-selected') === 'true';
+
+    if (event.key === 'Home') {
+      activateTab('profile', { focusTab: true });
+      return;
+    }
+
+    if (event.key === 'End') {
+      activateTab('account', { focusTab: true });
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+      return;
+    }
+
+    activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+  });
 
   usernameInput.addEventListener('input', () => {
     const candidate = usernameInput.value.trim().toLowerCase();
@@ -315,7 +424,9 @@ export function renderSettingsView(screenRootEl) {
       return;
     }
     const username = profileResult.profile?.username || '';
+    const bio = typeof profileResult.profile?.bio === 'string' ? profileResult.profile.bio : '';
     usernameInput.value = username;
+    bioInput.value = bio;
     usernamePreview.textContent = username
       ? `Public link: itlearn.be/@${username}`
       : 'Public link: itlearn.be/@username';
@@ -324,24 +435,32 @@ export function renderSettingsView(screenRootEl) {
   profileForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const username = usernameInput.value.trim().toLowerCase();
+    const bio = bioInput.value.trim();
     if (!/^[a-z0-9_]{3,24}$/.test(username)) {
       showProfileStatus('Username must be 3-24 chars with letters, numbers, underscore.', 'error');
       return;
     }
 
-    setButtonLoading(profileButton, true, 'Save username', 'Saving...');
-    showProfileStatus('Saving username...', 'loading');
-    const result = await updateProfile({ username });
-    setButtonLoading(profileButton, false, 'Save username', 'Saving...');
+    if (bio.length > 280) {
+      showProfileStatus('Bio can be up to 280 characters.', 'error');
+      return;
+    }
+
+    setButtonLoading(profileButton, true, 'Save profile', 'Saving...');
+    showProfileStatus('Saving profile...', 'loading');
+    const result = await updateProfile({ username, bio });
+    setButtonLoading(profileButton, false, 'Save profile', 'Saving...');
 
     if (!result.success) {
-      showProfileStatus(result.error || 'Failed to save username.', 'error');
+      showProfileStatus(result.error || 'Failed to save profile.', 'error');
       return;
     }
     const savedUsername = result.profile?.username || username;
+    const savedBio = typeof result.profile?.bio === 'string' ? result.profile.bio : bio;
     usernameInput.value = savedUsername;
+    bioInput.value = savedBio;
     usernamePreview.textContent = `Public link: itlearn.be/@${savedUsername}`;
-    showProfileStatus('Username updated successfully.', 'success');
+    showProfileStatus('Profile updated successfully.', 'success');
   });
 
   newPasswordInput.addEventListener('input', () => {
@@ -455,6 +574,25 @@ export function renderSettingsView(screenRootEl) {
   function setButtonLoading(button, isLoading, defaultLabel, loadingLabel) {
     button.disabled = isLoading;
     button.textContent = isLoading ? loadingLabel : defaultLabel;
+  }
+
+  function activateTab(tabName, options = {}) {
+    const isProfileTab = tabName === 'profile';
+
+    profileTab.classList.toggle('is-active', isProfileTab);
+    profileTab.setAttribute('aria-selected', String(isProfileTab));
+    profileTab.setAttribute('tabindex', isProfileTab ? '0' : '-1');
+
+    accountTab.classList.toggle('is-active', !isProfileTab);
+    accountTab.setAttribute('aria-selected', String(!isProfileTab));
+    accountTab.setAttribute('tabindex', isProfileTab ? '-1' : '0');
+
+    profileGroup.hidden = !isProfileTab;
+    accountGroup.hidden = isProfileTab;
+
+    if (options.focusTab) {
+      (isProfileTab ? profileTab : accountTab).focus();
+    }
   }
 
   function getPasswordChecks(password) {
