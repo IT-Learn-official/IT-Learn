@@ -49,15 +49,42 @@
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    let tawkLoaded = false;
+
+    function loadTawk() {
+      if (tawkLoaded) return;
+
+      tawkLoaded = true;
+      window.Tawk_API = window.Tawk_API || {};
+      window.Tawk_LoadStart = new Date();
+
+      const s1 = document.createElement('script');
+      const s0 = document.getElementsByTagName('script')[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
-    })();
+
+      localStorage.setItem('tawkConsent', 'granted');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('tawkConsent') === 'granted') {
+        loadTawk();
+      }
+
+      document.querySelectorAll('[data-open-help-chat]').forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+          event.preventDefault();
+          loadTawk();
+
+          if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+            window.Tawk_API.maximize();
+          }
+        });
+      });
+    });
   </script>
   <!--End of Tawk.to Script-->
 
@@ -105,8 +132,8 @@
                 <p class="dropdown-title" data-translate="dropdownStayInLoop">Stay in the loop</p>
                 <a href="https://itlearn.beehiiv.com/" class="dropdown-link"
                   data-translate="headerNewsletter">Newsletter</a>
-                <a href="https://discord.itlearn.be/" class="dropdown-link" data-translate="helpCenter" target="_blank"
-                  rel="noopener noreferrer">Help Center</a>
+                <a href="#" class="dropdown-link" data-open-help-chat="true"
+                  data-translate="helpCenter">Help Center</a>
               </div>
             </div>
           </div>
@@ -285,7 +312,7 @@
 
         <div class="role-filter">
           <button class="role-filter-btn active" data-filter="owner" data-translate="ownersFilter">Owners</button>
-          <button class="role-filter-btn" data-filter="manager" data-translate="managersFilter">Managers</button>
+          <button class="role-filter-btn" data-filter="manager" data-translate="managerFilter">Managers</button>
           <button class="role-filter-btn" data-filter="developer" data-translate="developersFilter">Developers</button>
           <button class="role-filter-btn" data-filter="moderator" data-translate="moderatorsFilter">Moderators</button>
         </div>
@@ -335,7 +362,7 @@
           </div>
 
           <!--Matteo -->
-          <div class="team-member" data-aos="fade-up" data-member="matteo" data-role="owner">
+          <div class="team-member placeholder" data-aos="fade-up" data-member="matteo" data-role="owner">
             <div class="team-head">
               <img src="" alt="Team member" class="avatar">
               <div>
@@ -344,14 +371,14 @@
               </div>
             </div>
             <p class="muted" data-translate="teamMatteo">Tekst Matteo</p>
-            <a href="" class="more-link small" target="_blank"
-              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
+            <span class="more-link small" aria-disabled="true"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></span>
           </div>
 
           <!--Manager -->
 
           <!--Miltie-->
-          <div class="team-member" data-aos="fade-up" data-member="miltie" data-role="manager">
+          <div class="team-member placeholder" data-aos="fade-up" data-member="miltie" data-role="manager">
             <div class="team-head">
               <img src="" alt="Team member" class="avatar">
               <div>
@@ -360,12 +387,12 @@
               </div>
             </div>
             <p class="muted">Tekst Miltie</p>
-            <a href="#" class="more-link small" target="_blank" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <span class="more-link small" aria-disabled="true" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></span>
           </div>
 
           <!--Nick -->
-          <div class="team-member" data-aos="fade-up" data-member="nick" data-role="manager">
+          <div class="team-member placeholder" data-aos="fade-up" data-member="nick" data-role="manager">
             <div class="team-head">
               <img src="" alt="Team member" class="avatar">
               <div>
@@ -374,14 +401,14 @@
               </div>
             </div>
             <p class="muted">Tekst Nick</p>
-            <a href="#" class="more-link small" target="_blank" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <span class="more-link small" aria-disabled="true" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></span>
           </div>
 
           <!-- Developer -->
 
           <!--Superman -->
-          <div class="team-member" data-aos="fade-up" data-member="dev1" data-role="developer">
+          <div class="team-member placeholder" data-aos="fade-up" data-member="dev1" data-role="developer">
             <div class="team-head">
               <img src="" alt="Team member" class="avatar">
               <div>
@@ -389,15 +416,15 @@
                 <p class="muted small">Developer</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamDevSuperman">Tekst Superman<p>
-            <a href="#" class="more-link small" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamDevSuperman">Tekst Superman</p>
+            <span class="more-link small" aria-disabled="true" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></span>
           </div>
 
           <!-- Moderator -->
 
           <!--Superman -->
-          <div class="team-member" data-aos="fade-up" data-member="mod1" data-role="moderator">
+          <div class="team-member placeholder" data-aos="fade-up" data-member="mod1" data-role="moderator">
             <div class="team-head">
               <img src="" alt="Team member" class="avatar">
               <div>
@@ -405,9 +432,9 @@
                 <p class="muted small">Moderator</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamModSuperman">Tekst Superman<p>
-            <a href="#" class="more-link small" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamModSuperman">Tekst Superman</p>
+            <span class="more-link small" aria-disabled="true" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></span>
           </div>
         </div>
       </div>
@@ -469,8 +496,7 @@
           <li><a href="/about-us/about-us.html" data-translate="footerAboutUs">About us</a></li>
           <li><a href="#team" data-translate="footerOurTeam">Our Team</a></li>
           <li><a href="https://discord.itlearn.be/" target="_blank" rel="noopener noreferrer">Discord</a></li>
-          <li><a href="https://discord.itlearn.be/" data-translate="helpCenter" target="_blank"
-              rel="noopener noreferrer">Help Center</a></li>
+            <li><a href="#" data-open-help-chat="true" data-translate="helpCenter">Help Center</a></li>
           <li><a href="/roadmap/index.html">Roadmap</a></li>
         </ul>
       </div>
@@ -765,10 +791,35 @@
     const roleFilterBtns = document.querySelectorAll('.role-filter-btn');
     const teamMembers = document.querySelectorAll('.team-member');
 
+    const isReadyTeamMember = (member) => {
+      if (member.classList.contains('placeholder')) return false;
+
+      const avatarSrc = member.querySelector('.avatar')?.getAttribute('src')?.trim() || '';
+      const profileHref = member.querySelector('.more-link')?.getAttribute('href')?.trim() || '';
+      const bioText = member.querySelector('p.muted:not(.small)')?.textContent?.trim().toLowerCase() || '';
+
+      const hasAvatar = avatarSrc !== '';
+      const hasProfile = profileHref !== '' && profileHref !== '#';
+      const hasRealBio = bioText !== '' && !bioText.startsWith('tekst ');
+
+      return hasAvatar && hasProfile && hasRealBio;
+    };
+
+    teamMembers.forEach(member => {
+      if (!isReadyTeamMember(member)) {
+        member.style.display = 'none';
+        member.dataset.ready = 'false';
+      } else {
+        member.dataset.ready = 'true';
+      }
+    });
+
     const filterTeamMembers = (selectedRole) => {
       teamMembers.forEach(member => {
         const memberRole = member.getAttribute('data-role');
-        if (memberRole === selectedRole) {
+        const isReady = member.dataset.ready === 'true';
+
+        if (isReady && memberRole === selectedRole) {
           member.style.display = '';
           member.classList.add('fade-in');
         } else {
