@@ -64,21 +64,21 @@ export function renderSettingsView(screenRootEl) {
 
   const profileTab = document.createElement('button');
   profileTab.type = 'button';
-  profileTab.className = 'settings-tab';
+  profileTab.className = 'settings-tab is-active';
   profileTab.id = 'settings-tab-profile';
   profileTab.setAttribute('role', 'tab');
   profileTab.setAttribute('aria-controls', 'settings-panel-profile');
-  profileTab.setAttribute('aria-selected', 'false');
-  profileTab.setAttribute('tabindex', '-1');
+  profileTab.setAttribute('aria-selected', 'true');
   profileTab.textContent = 'Profile';
 
   const accountTab = document.createElement('button');
   accountTab.type = 'button';
-  accountTab.className = 'settings-tab is-active';
+  accountTab.className = 'settings-tab';
   accountTab.id = 'settings-tab-account';
   accountTab.setAttribute('role', 'tab');
   accountTab.setAttribute('aria-controls', 'settings-panel-account');
-  accountTab.setAttribute('aria-selected', 'true');
+  accountTab.setAttribute('aria-selected', 'false');
+  accountTab.setAttribute('tabindex', '-1');
   accountTab.textContent = 'Account';
 
   tabs.appendChild(profileTab);
@@ -89,7 +89,6 @@ export function renderSettingsView(screenRootEl) {
   profileGroup.id = 'settings-panel-profile';
   profileGroup.setAttribute('role', 'tabpanel');
   profileGroup.setAttribute('aria-labelledby', 'settings-tab-profile');
-  profileGroup.hidden = true;
 
   const profileGroupContent = document.createElement('div');
   profileGroupContent.className = 'settings-group-content';
@@ -99,6 +98,7 @@ export function renderSettingsView(screenRootEl) {
   accountGroup.id = 'settings-panel-account';
   accountGroup.setAttribute('role', 'tabpanel');
   accountGroup.setAttribute('aria-labelledby', 'settings-tab-account');
+  accountGroup.hidden = true;
 
   const accountGroupContent = document.createElement('div');
   accountGroupContent.className = 'settings-group-content';
