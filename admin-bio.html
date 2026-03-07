@@ -136,6 +136,17 @@
       gap: 10px;
     }
 
+    .grid.two-cols {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 1000px) {
+      .grid.two-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     .card {
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -187,6 +198,38 @@
     .hidden {
       display: none;
     }
+
+    .section-title {
+      margin: 0;
+      font-size: 1rem;
+      color: #dbeafe;
+    }
+
+    .profile-mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .profile-mini .bio-box {
+      margin: 0;
+    }
+
+    .report-actions-inline {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .report-actions-inline {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -219,10 +262,23 @@
         </select>
 
         <button id="refresh" class="button-primary" type="button">Refresh reports</button>
+        <button id="refresh-profiles" class="button-primary" type="button">Refresh all profiles</button>
+        <input id="profile-search" type="text" placeholder="Search @username or bio" />
       </div>
 
-      <div id="status" class="status">Loading reports...</div>
-      <div id="list" class="grid"></div>
+      <div class="grid two-cols">
+        <section class="card">
+          <h2 class="section-title">Reports</h2>
+          <div id="status" class="status">Loading reports...</div>
+          <div id="list" class="grid"></div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">All Profiles and Bios</h2>
+          <div id="profiles-status" class="status">Loading profiles...</div>
+          <div id="profiles-list" class="grid"></div>
+        </section>
+      </div>
     </section>
   </div>
 
@@ -233,9 +289,14 @@
     const panel = document.getElementById('panel');
     const statusEl = document.getElementById('status');
     const listEl = document.getElementById('list');
+    const profilesStatusEl = document.getElementById('profiles-status');
+    const profilesListEl = document.getElementById('profiles-list');
     const refreshBtn = document.getElementById('refresh');
+    const refreshProfilesBtn = document.getElementById('refresh-profiles');
     const statusFilter = document.getElementById('status-filter');
     const limitFilter = document.getElementById('limit-filter');
+    const profileSearchInput = document.getElementById('profile-search');
+    let allProfiles = [];
 
     function setStatus(message, type) {
       statusEl.textContent = message;
@@ -245,6 +306,12 @@
 
     function cardLabel(title, value) {
       return `<span class="chip"><strong>${title}:</strong> ${value}</span>`;
+    }
+
+    function setProfilesStatus(message, type) {
+      profilesStatusEl.textContent = message;
+      profilesStatusEl.className = 'status';
+      if (type) profilesStatusEl.classList.add(type);
     }
 
     function escapeHtml(input) {
@@ -290,18 +357,29 @@
         const actions = document.createElement('div');
         actions.className = 'actions';
 
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.maxLength = 180;
-        input.placeholder = 'Replacement text after ban (optional)';
+        const replacementInput = document.createElement('input');
+        replacementInput.type = 'text';
+        replacementInput.maxLength = 180;
+        replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+        const closeNoteInput = document.createElement('input');
+        closeNoteInput.type = 'text';
+        closeNoteInput.maxLength = 240;
+        closeNoteInput.placeholder = 'Close note for false report (optional)';
 
         const banBtn = document.createElement('button');
         banBtn.type = 'button';
         banBtn.className = 'button-danger';
         banBtn.textContent = 'Ban Bio';
 
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'button-primary';
+        closeBtn.textContent = 'Close Report';
+
         banBtn.addEventListener('click', async () => {
           banBtn.disabled = true;
+          closeBtn.disabled = true;
           setStatus(`Applying bio ban for @${report.reported_username}...`);
 
           try {
@@ -311,7 +389,7 @@
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 username: report.reported_username,
-                replacement_bio: input.value.trim(),
+                replacement_bio: replacementInput.value.trim(),
               }),
             });
             const data = await response.json();
@@ -322,15 +400,54 @@
 
             setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
             await loadReports();
+            await loadProfiles();
           } catch (error) {
             setStatus('Network error while banning bio.', 'error');
           } finally {
             banBtn.disabled = false;
+            closeBtn.disabled = false;
           }
         });
 
-        actions.appendChild(input);
-        actions.appendChild(banBtn);
+        closeBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
+          setStatus(`Closing report ${report.report_id}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/bio-reports/close`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                report_id: report.report_id,
+                close_note: closeNoteInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to close report.', 'error');
+              return;
+            }
+
+            setStatus(`Report ${report.report_id} closed.`, 'ok');
+            await loadReports();
+          } catch (error) {
+            setStatus('Network error while closing report.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
+          }
+        });
+
+        const inline = document.createElement('div');
+        inline.className = 'report-actions-inline';
+        inline.appendChild(closeNoteInput);
+        inline.appendChild(closeBtn);
+        inline.appendChild(banBtn);
+
+        actions.appendChild(replacementInput);
+        actions.appendChild(inline);
         card.appendChild(actions);
       }
 
@@ -380,6 +497,77 @@
       }
     }
 
+    function profileCard(profile) {
+      const card = document.createElement('article');
+      card.className = 'profile-mini';
+
+      const username = profile.username ? `@${profile.username}` : '(no username)';
+      const bio = profile.bio || 'No bio';
+      const banned = profile.bio_banned ? 'yes' : 'no';
+
+      card.innerHTML = `
+        <div class="meta">
+          ${cardLabel('User', escapeHtml(username))}
+          ${cardLabel('Banned', escapeHtml(banned))}
+          ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
+          ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
+        </div>
+        <div class="bio-box">${escapeHtml(bio)}</div>
+      `;
+
+      return card;
+    }
+
+    function renderProfiles() {
+      profilesListEl.innerHTML = '';
+      const q = (profileSearchInput.value || '').trim().toLowerCase();
+
+      const filtered = allProfiles.filter((p) => {
+        if (!q) return true;
+        const username = (p.username || '').toLowerCase();
+        const bio = (p.bio || '').toLowerCase();
+        return username.includes(q) || bio.includes(q);
+      });
+
+      if (!filtered.length) {
+        setProfilesStatus('No profiles matched your filter.', 'ok');
+        return;
+      }
+
+      filtered.forEach((profile) => {
+        profilesListEl.appendChild(profileCard(profile));
+      });
+      setProfilesStatus(`Showing ${filtered.length} profile(s).`, 'ok');
+    }
+
+    async function loadProfiles() {
+      setProfilesStatus('Loading all profiles...');
+      profilesListEl.innerHTML = '';
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/profiles?limit=1000`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setProfilesStatus(data.error || 'Could not fetch profiles.', 'error');
+          return;
+        }
+
+        allProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+        if (!allProfiles.length) {
+          setProfilesStatus('No profiles found.', 'ok');
+          return;
+        }
+
+        renderProfiles();
+      } catch (error) {
+        setProfilesStatus('Network error while loading profiles.', 'error');
+      }
+    }
+
     async function init() {
       try {
         const session = await loadSession();
@@ -397,6 +585,7 @@
         authBlock.classList.add('hidden');
         panel.classList.remove('hidden');
         await loadReports();
+        await loadProfiles();
       } catch (error) {
         authBlock.textContent = 'Could not verify your session.';
         authBlock.classList.add('error');
@@ -407,12 +596,20 @@
       void loadReports();
     });
 
+    refreshProfilesBtn.addEventListener('click', () => {
+      void loadProfiles();
+    });
+
     statusFilter.addEventListener('change', () => {
       void loadReports();
     });
 
     limitFilter.addEventListener('change', () => {
       void loadReports();
+    });
+
+    profileSearchInput.addEventListener('input', () => {
+      renderProfiles();
     });
 
     void init();
