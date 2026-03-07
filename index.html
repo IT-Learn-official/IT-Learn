@@ -800,11 +800,22 @@
   <script>
     async function updateLearnersCount() {
       try {
-        const res = await fetch('https://itlearn.pythonanywhere.com/api/user-count', {
-          credentials: 'include'
+        const endpoint = 'https://itlearn.pythonanywhere.com/api/user-count';
+        const res = await fetch(endpoint, {
+          method: 'GET',
+          cache: 'no-store'
         });
+
+        if (!res.ok) {
+          throw new Error(`Learner count request failed (${res.status})`);
+        }
+
         const data = await res.json();
-        const total = Number(data.totalUsers) || 0;
+        const rawTotal = data?.totalUsers ?? data?.total_users ?? data?.count ?? 0;
+        const normalizedTotal = String(rawTotal).replace(/[^\d]/g, '');
+        const parsedTotal = Number.parseInt(normalizedTotal, 10);
+        const total = Number.isFinite(parsedTotal) ? parsedTotal : 0;
+
         finalLearnersValue = total;
 
         const counter = document.getElementById('learners-count');
