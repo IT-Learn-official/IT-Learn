@@ -181,6 +181,7 @@
 
 .settings-form input[type="password"],
 .settings-form input[type="text"],
+.settings-form textarea,
 .danger-confirm-panel input[type="text"] {
   width: 100%;
   padding: 0.68rem 0.78rem;
@@ -194,10 +195,16 @@
 
 .settings-form input[type="password"]:focus,
 .settings-form input[type="text"]:focus,
+.settings-form textarea:focus,
 .danger-confirm-panel input[type="text"]:focus {
   outline: none;
   border-color: var(--accent-500);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.settings-form textarea {
+  resize: vertical;
+  min-height: 96px;
 }
 
 .settings-input-toggle {

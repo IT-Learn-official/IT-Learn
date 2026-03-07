@@ -133,17 +133,34 @@ export function renderSettingsView(screenRootEl) {
   usernamePreview.className = 'settings-info settings-link-preview';
   usernamePreview.textContent = 'Public link: itlearn.be/@username';
 
+  const bioLabel = document.createElement('label');
+  bioLabel.htmlFor = 'profile-bio';
+  bioLabel.textContent = 'Bio';
+
+  const bioInput = document.createElement('textarea');
+  bioInput.id = 'profile-bio';
+  bioInput.placeholder = 'Tell other learners a bit about you...';
+  bioInput.maxLength = 280;
+  bioInput.rows = 4;
+
+  const bioInfo = document.createElement('p');
+  bioInfo.className = 'settings-info';
+  bioInfo.textContent = 'Up to 280 characters. This appears on your public profile.';
+
   const profileStatus = document.createElement('div');
   profileStatus.className = 'settings-status';
 
   const profileButton = document.createElement('button');
   profileButton.type = 'submit';
   profileButton.className = 'settings-button';
-  profileButton.textContent = 'Save username';
+  profileButton.textContent = 'Save profile';
 
   profileForm.appendChild(usernameLabel);
   profileForm.appendChild(usernameInput);
   profileForm.appendChild(usernamePreview);
+  profileForm.appendChild(bioLabel);
+  profileForm.appendChild(bioInput);
+  profileForm.appendChild(bioInfo);
   profileForm.appendChild(profileStatus);
   profileForm.appendChild(profileButton);
 
@@ -407,7 +424,9 @@ export function renderSettingsView(screenRootEl) {
       return;
     }
     const username = profileResult.profile?.username || '';
+    const bio = typeof profileResult.profile?.bio === 'string' ? profileResult.profile.bio : '';
     usernameInput.value = username;
+    bioInput.value = bio;
     usernamePreview.textContent = username
       ? `Public link: itlearn.be/@${username}`
       : 'Public link: itlearn.be/@username';
@@ -416,24 +435,32 @@ export function renderSettingsView(screenRootEl) {
   profileForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const username = usernameInput.value.trim().toLowerCase();
+    const bio = bioInput.value.trim();
     if (!/^[a-z0-9_]{3,24}$/.test(username)) {
       showProfileStatus('Username must be 3-24 chars with letters, numbers, underscore.', 'error');
       return;
     }
 
-    setButtonLoading(profileButton, true, 'Save username', 'Saving...');
-    showProfileStatus('Saving username...', 'loading');
-    const result = await updateProfile({ username });
-    setButtonLoading(profileButton, false, 'Save username', 'Saving...');
+    if (bio.length > 280) {
+      showProfileStatus('Bio can be up to 280 characters.', 'error');
+      return;
+    }
+
+    setButtonLoading(profileButton, true, 'Save profile', 'Saving...');
+    showProfileStatus('Saving profile...', 'loading');
+    const result = await updateProfile({ username, bio });
+    setButtonLoading(profileButton, false, 'Save profile', 'Saving...');
 
     if (!result.success) {
-      showProfileStatus(result.error || 'Failed to save username.', 'error');
+      showProfileStatus(result.error || 'Failed to save profile.', 'error');
       return;
     }
     const savedUsername = result.profile?.username || username;
+    const savedBio = typeof result.profile?.bio === 'string' ? result.profile.bio : bio;
     usernameInput.value = savedUsername;
+    bioInput.value = savedBio;
     usernamePreview.textContent = `Public link: itlearn.be/@${savedUsername}`;
-    showProfileStatus('Username updated successfully.', 'success');
+    showProfileStatus('Profile updated successfully.', 'success');
   });
 
   newPasswordInput.addEventListener('input', () => {
