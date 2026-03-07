@@ -147,6 +147,17 @@
       }
     }
 
+    .panel-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
     .card {
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -154,6 +165,14 @@
       padding: 12px;
       display: grid;
       gap: 10px;
+    }
+
+    #list,
+    #profiles-list {
+      align-content: start;
+      max-height: 65vh;
+      overflow: auto;
+      padding-right: 4px;
     }
 
     .meta {
@@ -267,13 +286,13 @@
       </div>
 
       <div class="grid two-cols">
-        <section class="card">
+        <section class="panel-card">
           <h2 class="section-title">Reports</h2>
           <div id="status" class="status">Loading reports...</div>
           <div id="list" class="grid"></div>
         </section>
 
-        <section class="card">
+        <section class="panel-card">
           <h2 class="section-title">All Profiles and Bios</h2>
           <div id="profiles-status" class="status">Loading profiles...</div>
           <div id="profiles-list" class="grid"></div>
@@ -514,6 +533,59 @@
         </div>
         <div class="bio-box">${escapeHtml(bio)}</div>
       `;
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const replacementInput = document.createElement('input');
+      replacementInput.type = 'text';
+      replacementInput.maxLength = 180;
+      replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+      const banBtn = document.createElement('button');
+      banBtn.type = 'button';
+      banBtn.className = 'button-danger';
+      banBtn.textContent = 'Ban Bio';
+
+      if (!profile.username) {
+        banBtn.disabled = true;
+        replacementInput.disabled = true;
+        replacementInput.placeholder = 'Cannot ban: user has no username yet';
+      } else {
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          setProfilesStatus(`Applying bio ban for @${profile.username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: profile.username,
+                replacement_bio: replacementInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Bio banned for @${profile.username}.`, 'ok');
+            await loadProfiles();
+            await loadReports();
+          } catch (error) {
+            setProfilesStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+          }
+        });
+      }
+
+      actions.appendChild(replacementInput);
+      actions.appendChild(banBtn);
+      card.appendChild(actions);
 
       return card;
     }
