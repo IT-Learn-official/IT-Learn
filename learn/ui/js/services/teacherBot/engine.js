@@ -1,6 +1,7 @@
 //author: https://github.com/nhermab
 //licence: MIT
 // Web-LLM engine lifecycle management for TeacherBot
+//edited by: https://github.com/broodje565
 
 import { CreateMLCEngine } from "../../web-llm-lib/web-llm.esm.js";
 
@@ -15,6 +16,7 @@ let engine = null;
 let status = 'idle';
 let initProgress = 0;
 let useLocalModel = false;
+let initPromise = null;
 
 /**
  * Get the current status of the Teacher engine.
@@ -33,29 +35,38 @@ export function getTeacherBotStatus() {
  */
 export async function initTeacherBot() {
   if (status === 'ready' && engine) return;
-  if (status === 'initializing') return;
-
-  try {
-    status = 'initializing';
-    initProgress = 0;
-
-    console.log(`Starting to load teacher model ${modelId}...`);
-
-    engine = await CreateMLCEngine(modelId, {
-      initProgressCallback: (report) => {
-        initProgress = report.progress;
-        console.log(`Loading teacher model: ${Math.round(report.progress * 100)}%`);
-      }
-    });
-
-    status = 'ready';
-    initProgress = 1;
-    console.log('Teacher is online and ready.');
-  } catch (err) {
-    status = 'error';
-    console.error('Failed to initialize teacher model:', err);
-    throw err;
+  if (status === 'initializing' && initPromise) {
+    await initPromise;
+    return;
   }
+
+  initPromise = (async () => {
+    try {
+      status = 'initializing';
+      initProgress = 0;
+
+      console.log(`Starting to load teacher model ${modelId}...`);
+
+      engine = await CreateMLCEngine(modelId, {
+        initProgressCallback: (report) => {
+          initProgress = report.progress;
+          console.log(`Loading teacher model: ${Math.round(report.progress * 100)}%`);
+        }
+      });
+
+      status = 'ready';
+      initProgress = 1;
+      console.log('Teacher is online and ready.');
+    } catch (err) {
+      status = 'error';
+      console.error('Failed to initialize teacher model:', err);
+      throw err;
+    } finally {
+      initPromise = null;
+    }
+  })();
+
+  await initPromise;
 }
 
 /**
