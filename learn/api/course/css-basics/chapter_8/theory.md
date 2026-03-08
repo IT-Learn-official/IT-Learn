@@ -13,6 +13,10 @@ content, padding, border, and margin.
 }
 ```
 
-This is a small example that shows how the box model works.
+This is a painting. You can divide it in 4 parts:
+- The painting itself (the content)
+- The whitespace between the painting and the cadre (the padding)
+- The cadre (the border)
+- The wall (the margin)
 
-![Cartoon of the CSS box model by www.joonpak.com](https://www.joonpak.com/images/instructions/joons-wall-with-instructions.png)
+![A painting](https://www.clairedeprez.be/wp-content/uploads/2023/07/Atelier-Claire-Deprez-encadrement-tableau-9956.webp)
