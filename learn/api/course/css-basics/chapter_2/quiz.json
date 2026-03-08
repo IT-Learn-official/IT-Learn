@@ -2,7 +2,7 @@
   "chapterId": "chapter_2",
   "kind": "assessment",
   "title": "Chapter 2 - Adding CSS to Your HTML",
-  "description": "Quick concept check for adding css to your html.",
+  "description": "Quick concept check for adding CSS to your HTML.",
   "questions": [
     {
       "id": "q1-inline-style",
