@@ -159,7 +159,7 @@ function checkChecklist(text) {
 export function buildGradeContext(request) {
   const assignmentText = truncateToTokens(
     checkChecklist(request.assignmentText || request.assignment?.descriptionMarkdown || 'No assignment provided'),
-    1000
+    420
   );
 
   let userCodeRaw;
@@ -171,7 +171,7 @@ export function buildGradeContext(request) {
 
   // Strip comments before truncation so the grader isn't confused by comments
   const userCodeStripped = stripComments(userCodeRaw);
-  let userCode = truncateToTokens(userCodeStripped, 2000);
+  let userCode = truncateToTokens(userCodeStripped, 700);
 
   // Add output
   const lastRun = request.environment?.lastRun || {};
@@ -191,7 +191,7 @@ export function buildGradeContext(request) {
 
   // Final sanitization and truncation
   outputText = sanitizeOutput(outputText);
-  outputText = truncateToTokens(outputText, 1000);
+  outputText = truncateToTokens(outputText, 320);
 
   return { assignmentText, userCode, outputText };
 }

@@ -1116,7 +1116,7 @@ button:focus {
 }
 
 /* Fade in animation */
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -1128,7 +1128,7 @@ button:focus {
 }
 
 .fade-in {
-  animation: fadeIn 0.4s ease;
+  animation: fade-in 0.4s ease;
 }
 
 @media (max-width: 900px) {

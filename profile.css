@@ -34,9 +34,30 @@
   margin-bottom: 1rem;
 }
 
+.public-profile-page .profile-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
 .public-profile-page .profile-top a {
   color: #c7d2fe;
   text-decoration: none;
+}
+
+.public-profile-page .admin-panel-link {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  background: rgba(99, 102, 241, 0.18);
+  color: #e0e7ff;
+  text-decoration: none;
+}
+
+.public-profile-page .admin-panel-link:hover {
+  text-decoration: none;
+  background: rgba(99, 102, 241, 0.28);
 }
 
 .public-profile-page .profile-top a:hover {
@@ -118,4 +139,72 @@
   border-radius: var(--radius-md);
   padding: 1rem;
   background: rgba(15, 23, 42, 0.72);
+}
+
+.public-profile-page .moderation-card {
+  margin-top: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.72);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.public-profile-page .moderation-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.public-profile-page .moderation-caption,
+.public-profile-page .moderation-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.public-profile-page .moderation-card label {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+}
+
+.public-profile-page .moderation-card select,
+.public-profile-page .moderation-card textarea,
+.public-profile-page .moderation-input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.public-profile-page .moderation-card textarea {
+  resize: vertical;
+}
+
+.public-profile-page .moderation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.public-profile-page .moderation-btn {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+}
+
+.public-profile-page .moderation-btn.danger {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.public-profile-page .moderation-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }

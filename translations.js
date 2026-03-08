@@ -39,10 +39,13 @@ const translations = {
         joinOurDiscord: 'Join Our Discord!',
         teambroodje56: 'I’m Broodje56, and together with Joren I co-founded IT Learn.  Ever since I was young, I’ve been fascinated by technology, coding, and building creative projects.  I love experimenting with new ideas from making games and extensions to designing full platforms.  With IT Learn, my goal is to share this passion and help other young people discover the fun side of programming in an interactive way.',
         teamJoren: "I'm Joren, and together with Broodje56 I co-founded IT Learn. I’ve been programming since i was 11 and have worked on different projects.I’ve also helped multiple people with creating websites and apps.With IT Learn, I want to help others learn programming in a fun and educational way. I hope you’ll enjoy our project!",
-        teamMatteo: "",
+        teamMatteo: "Hey! I'm Matteo, co-owner of IT Learn. Together with Broodje56 and Joren I help manage and grow the project. I enjoy working with technology and helping build a place where people can learn programming in a fun and simple way. Being part of IT Learn is really exciting for me, and I'm happy to help improve the platform and the community.",
         coOwner: "Co-owner",
-        teamDevSuperman: "",
-        teamModSuperman: "",
+        teamDevSuperman: "Hi there! I am super_man2775, and I helped developing the platform you are looking at right now! It has been an amazing journey, from the first line of code to where we are right now, and I am very proud of what we have accomplished!",
+        teamModSuperman: 'Hello! I am super_man2775. I am moderator for IT Learn, which means I keep IT Learn fun and engaging for everyone! I really love hanging out in our Discord community and talking with people. I am very proud of how amazing our community is, and how it evolved from a server with 5 people in it, to what we have now.',
+        teamMiltie: "My name is Miltie, and I am the manager of the IT Learn Discord. I am currently learning different coding languages with the help of this platform and I hope to contribute to the website in the future.",
+        teamNick: 'Nick\'s profile text will be added soon.',
+        teamNunoke: "I'm Nuno, a developer at IT Learn. I study computer science and love building websites. I want to help make IT Learn even easier and more fun for everyone.",
         statslearners: 'Learners',
         statscountries: 'Countries',
         statsexercises: 'Exercises',
@@ -54,6 +57,15 @@ const translations = {
         managerFilter: 'Managers',
         developersFilter: 'Developers',
         moderatorsFilter: 'Moderators',
+        roleManager: 'Manager',
+        roleDeveloper: 'Developer',
+        roleModerator: 'Moderator',
+        company: 'COMPANY',
+        footerAboutUs: 'About us',
+        footerOurTeam: 'Our Team',
+        footerLearn: 'LEARN',
+        challenges: 'Challenges',
+        projects: 'Projects',
         landinghelpcenter: 'Help Center',
         landingfooterpractice: 'PRACTICE',
         landingfooterchallenges: 'Challenges',
@@ -72,6 +84,7 @@ const translations = {
         privacypolicy: 'Privacy Policy',
 
         // About us
+        aboutUs: 'About Us',
         aboutUsTitle: 'Discover our journey from idea to reality.',
         timeline_idea_title: '🎉 June 2025 (Idea)',
         timeline_idea_text: '<span class="highlight">Broodje56</span> and <span class="highlight">Joren</span> started this project with a simple idea: to create a platform where people can <span class="highlight">learn and grow together</span> in IT.',
@@ -175,6 +188,23 @@ const translations = {
         badges: 'Badges',
         settings: 'Settings',
         logOut: 'Log Out',
+        reportBioTitle: 'Report this bio',
+        reportBioDescription: 'Help keep IT Learn safe. Report bios with abusive or inappropriate content.',
+        reportBioReasonLabel: 'Reason',
+        reportBioReasonHarassment: 'Harassment or hate speech',
+        reportBioReasonHarassmentValue: 'Harassment or hate speech',
+        reportBioReasonSexual: 'Sexual content',
+        reportBioReasonSexualValue: 'Sexual content',
+        reportBioReasonThreats: 'Threats or violence',
+        reportBioReasonThreatsValue: 'Threats or violence',
+        reportBioReasonOther: 'Other',
+        reportBioReasonOtherValue: 'Other',
+        reportBioDetailsLabel: 'Details (optional)',
+        reportBioDetailsPlaceholder: 'Short context for moderators',
+        reportBioSubmit: 'Report bio',
+        reportBioSubmitting: 'Submitting report...',
+        reportBioFailed: 'Failed to submit report.',
+        reportBioSuccess: 'Report submitted. Thank you.',
         chooseProgramming: 'Choose a programming language',
         backToLanguages: 'Back to all programming languages',
         nextLesson: 'Next lesson',
@@ -241,13 +271,6 @@ const translations = {
         discord: 'Discord',
         roadmap: 'Roadmap',
         helpCenter: 'Helpcentrum',
-        login: 'Inloggen',
-        signup: 'Registreren',
-        learn: 'Leren',
-        practice: 'Oefenen',
-        build: 'Bouwen',
-        discord: 'Discord',
-        roadmap: 'Roadmap',
         heroTitle: 'Ontdek de Wereld van Coderen',
         getStarted: 'Aan de slag',
         heroSub: 'Coderen eenvoudig gemaakt door studenten voor studenten.',
@@ -267,9 +290,12 @@ const translations = {
         teambroodje56: 'Ik ben Broodje56, en samen met Joren heb ik IT Learn opgericht. Sinds jonge leeftijd ben ik gefascineerd door technologie, coderen en creatieve projecten. Ik experimenteer graag met nieuwe ideeën, van het maken van games en extensies tot volledige platforms. Met IT Learn wil ik deze passie delen en andere jongeren de leuke kant van programmeren laten ontdekken op een interactieve manier.',
         teamJoren: 'Ik ben Joren, en samen met Broodje56 heb ik IT Learn opgericht. Ik programmeer sinds mijn 11e en heb aan verschillende projecten gewerkt. Ik heb ook anderen geholpen met het maken van websites en apps. Met IT Learn wil ik anderen op een leuke en leerzame manier leren programmeren. Ik hoop dat je van ons project geniet!',
         coOwner: "Mede-eigenaar",
-        teamMatteo: '',
-        teamDevSuperman: '',
-        teamModSuperman: '',
+        teamMatteo: 'Hey! Ik ben Matteo, mede-eigenaar van IT Learn. Samen met Broodje56 en Joren help ik het project beheren en laten groeien. Ik werk graag met technologie en help mee bouwen aan een plek waar mensen op een leuke en eenvoudige manier programmeren kunnen leren. Deel uitmaken van IT Learn is echt spannend voor mij, en ik help graag om het platform en de community verder te verbeteren.',
+        teamDevSuperman: 'Hallo daar! Ik ben super_man2775, en ik help met het bouwen van het platform waar je nu naar kijkt! Het is een fantastisch project geweest, van de eerste lijn code tot nu, en ik ben heel trots op wat we hebben bereikt!',
+        teamModSuperman: 'Hallo! Ik ben super_man2775. Ik ben moderator voor IT Learn, wat betekent dat ik IT Learn leuk en interessant hou voor iedereen! Ik hou ervan om plezier te maken in onze Discord server, of gewoon te praten met mensen. Ik ben heel trots op hoe leuk onze server is, en hoe het is geëvolueerd van een server met 5 mensen erin tot wat we nu hebben.',
+        teamMiltie: 'Ik ben Miltie en ik ben manager van de IT Learn-Discord. Ik leer momenteel verschillende programmeertalen met hulp van dit platform en hoop later ook aan de website mee te bouwen.',
+        teamNick: 'De profieltekst van Nick wordt binnenkort toegevoegd.',
+        teamNunoke: 'Ik ben Nuno, ontwikkelaar bij IT Learn. Ik studeer computerwetenschappen en bouw graag websites. Ik wil IT Learn nog makkelijker en leuker maken voor iedereen.',
         statslearners: 'Leerlingen',
         statscountries: 'Landen',
         statsexercises: 'Oefeningen',
@@ -281,6 +307,9 @@ const translations = {
         managerFilter: 'Managers',
         developersFilter: 'Ontwikkelaars',
         moderatorsFilter: 'Moderators',
+        roleManager: 'Manager',
+        roleDeveloper: 'Ontwikkelaar',
+        roleModerator: 'Moderator',
         company: 'Bedrijf',
         footerAboutUs: 'Over ons',
         footerOurTeam: 'Ons Team',
@@ -305,6 +334,7 @@ const translations = {
         privacypolicy: 'Privacybeleid',
 
         // About page
+        aboutUs: 'Over ons',
         aboutUsTitle: 'Ontdek onze reis van idee naar realiteit.',
         timeline_idea_title: '🎉 Juni 2025 (Idee)',
         timeline_idea_text: '<span class="highlight">Broodje56</span> en <span class="highlight">Joren</span> begonnen dit project met een simpel idee: een platform maken waar mensen kunnen <span class="highlight">samen leren en groeien</span> in IT.',
@@ -405,6 +435,23 @@ const translations = {
         badges: 'Badges',
         settings: 'Instellingen',
         logOut: 'Uitloggen',
+        reportBioTitle: 'Deze bio melden',
+        reportBioDescription: 'Help IT Learn veilig te houden. Meld bio\'s met kwetsende of ongepaste inhoud.',
+        reportBioReasonLabel: 'Reden',
+        reportBioReasonHarassment: 'Intimidatie of haatspraak',
+        reportBioReasonHarassmentValue: 'Harassment or hate speech',
+        reportBioReasonSexual: 'Seksuele inhoud',
+        reportBioReasonSexualValue: 'Sexual content',
+        reportBioReasonThreats: 'Bedreigingen of geweld',
+        reportBioReasonThreatsValue: 'Threats or violence',
+        reportBioReasonOther: 'Anders',
+        reportBioReasonOtherValue: 'Other',
+        reportBioDetailsLabel: 'Details (optioneel)',
+        reportBioDetailsPlaceholder: 'Korte context voor moderators',
+        reportBioSubmit: 'Bio melden',
+        reportBioSubmitting: 'Melding verzenden...',
+        reportBioFailed: 'Melding verzenden mislukt.',
+        reportBioSuccess: 'Melding verzonden. Bedankt.',
         chooseProgramming: 'Kies een programmeertaal',
         backToLanguages: 'Terug naar alle programmeertalen',
         nextLesson: 'Volgende les',
@@ -500,14 +547,6 @@ const translations = {
         dropdownStayConnected: 'Bleib in Verbindung',
         dropdownAbout: 'Über uns',
         dropdownStayInLoop: 'Bleib auf dem Laufenden',
-        login: 'Inloggen',
-        signup: 'Registreren',
-        learn: 'Leren',
-        practice: 'Oefenen',
-        build: 'Bouwen',
-        discord: 'Discord',
-        roadmap: 'Roadmap',
-        helpCenter: 'Helpcentrum',
         login: 'Anmelden',
         signup: 'Registrieren',
         learn: 'Lernen',
@@ -534,9 +573,12 @@ const translations = {
         teambroodje56: 'Ich bin Broodje56 und habe IT Learn zusammen mit Joren gegründet. Seit meiner Kindheit interessierten mich Technik, Programmieren und kreative Projekte. Ich probiere gerne neue Ideen aus, von Spielen und Erweiterungen bis hin zu kompletten Plattformen. Mit IT Learn möchte ich diese Leidenschaft teilen und anderen Jugendlichen Programmieren auf eine einfache und spannende Weise zeigen.',
         teamJoren: 'Ich bin Joren und habe IT Learn zusammen mit Broodje56 gegründet. Ich programmiere seit meinem 11. Lebensjahr und habe viele Projekte gebaut. Außerdem habe ich mehreren Leuten bei Webseiten und Apps geholfen. Mit IT Learn möchte ich anderen helfen, Programmieren auf eine spaßige und einfache Weise zu lernen. Ich hoffe, euch gefällt unser Projekt!',
         coOwner: "Mitbesitzer",
-        teamMatteo: '',
-        teamDevSuperman: '',
-        teamModSuperman: '',
+        teamMatteo: 'Hey! Ich bin Matteo, Mitinhaber von IT Learn. Gemeinsam mit Broodje56 und Joren helfe ich dabei, das Projekt zu verwalten und weiter auszubauen. Ich arbeite gerne mit Technologie und baue mit an einem Ort, an dem Menschen Programmieren auf eine einfache und spaßige Weise lernen koennen. Teil von IT Learn zu sein, begeistert mich sehr, und ich freue mich, die Plattform und die Community weiter zu verbessern.',
+        teamDevSuperman: 'Hallo Leute! Ich bin super_man2775, und ich habe beim Aufbau der Plattform mitgearbeitet, auf der du dich gerade umsiehst. Es war ein großartiges Projekt, von der ersten Codezeile bis heute, und ich bin wirklich stolz auf das, was wir gemeinsam erreicht haben!',
+        teamModSuperman: 'Hallo! Ich bin super_man2775, Moderator bei IT Learn. Das bedeutet, dass ich dafür sorge, dass IT Learn für alle spannend und unterhaltsam bleibt! Ich mag es total, in unserer Discord Community Zeit zu verbringen und mit den Leuten zu quatschen. Ich bin sehr stolz darauf, wie großartig unsere Community geworden ist, von einem kleinen Server mit nur fünf Leuten bis zu dem, was wir heute haben.',
+        teamMiltie: 'Ich bin Miltie und Manager des IT Learn Discord-Servers. Ich lerne aktuell mehrere Programmiersprachen mit Hilfe dieser Plattform und hoffe, später auch an der Website mitzuarbeiten.',
+        teamNick: 'Nicks Profiltext wird bald hinzugefügt.',
+        teamNunoke: 'Ich bin Nuno, Entwickler bei IT Learn. Ich studiere Informatik und baue gern Websites. Ich möchte IT Learn für alle noch einfacher und unterhaltsamer machen.',
         statslearners: 'Lernende',
         statscountries: 'Länder',
         statsexercises: 'Übungen',
@@ -548,6 +590,9 @@ const translations = {
         managerFilter: 'Manager',
         developersFilter: 'Entwickler',
         moderatorsFilter: 'Moderatoren',
+        roleManager: 'Manager',
+        roleDeveloper: 'Entwickler',
+        roleModerator: 'Moderator',
         footerOurTeam: 'Unser Team',
         footerAboutUs: 'Über uns',
         helpCenter: 'Hilfezentrum',
@@ -570,6 +615,7 @@ const translations = {
         privacypolicy: 'Datenschutzerklärung',
 
         // About us
+        aboutUs: 'Über uns',
         aboutUsTitle: 'Entdecke unsere Reise von der Idee zur Realität.',
         timeline_idea_title: '🎉 Juni 2025 (Idee)',
         timeline_idea_text: '<span class="highlight">Broodje56</span> und <span class="highlight">Joren</span> starteten mit einer einfachen Idee: eine Plattform zu machen, auf der Menschen in der IT <span class="highlight">zusammen lernen und wachsen</span> können.',
@@ -663,6 +709,23 @@ const translations = {
         badges: 'Abzeichen',
         settings: 'Einstellungen',
         logOut: 'Abmelden',
+        reportBioTitle: 'Diese Bio melden',
+        reportBioDescription: 'Hilf, IT Learn sicher zu halten. Melde Bios mit beleidigenden oder unangebrachten Inhalten.',
+        reportBioReasonLabel: 'Grund',
+        reportBioReasonHarassment: 'Belastigung oder Hassrede',
+        reportBioReasonHarassmentValue: 'Harassment or hate speech',
+        reportBioReasonSexual: 'Sexuelle Inhalte',
+        reportBioReasonSexualValue: 'Sexual content',
+        reportBioReasonThreats: 'Drohungen oder Gewalt',
+        reportBioReasonThreatsValue: 'Threats or violence',
+        reportBioReasonOther: 'Sonstiges',
+        reportBioReasonOtherValue: 'Other',
+        reportBioDetailsLabel: 'Details (optional)',
+        reportBioDetailsPlaceholder: 'Kurzer Kontext fuer Moderatoren',
+        reportBioSubmit: 'Bio melden',
+        reportBioSubmitting: 'Meldung wird gesendet...',
+        reportBioFailed: 'Meldung konnte nicht gesendet werden.',
+        reportBioSuccess: 'Meldung gesendet. Danke.',
         chooseProgramming: 'Wähle eine Programmiersprache',
         backToLanguages: 'Zurück zu allen Sprachen',
         nextLesson: 'Nächste Lektion',
@@ -722,18 +785,11 @@ const translations = {
         login: 'Connexion',
         signup: 'Inscription',
         learn: 'Apprendre',
-        practice: 'Oefenen',
-        build: 'Bouwen',
-        discord: 'Discord',
-        roadmap: 'Roadmap',
-        helpCenter: 'Helpcentrum',
-        login: 'Connexion',
-        signup: 'Inscription',
-        learn: 'Apprendre',
         practice: 'Pratiquer',
         build: 'Construire',
         discord: 'Discord',
         roadmap: 'Feuille de route',
+        helpCenter: 'Centre d’aide',
         heroTitle: 'Découvrez le Monde du Codage',
         getStarted: 'Commencer',
         heroSub: 'Le codage rendu simple par des étudiants pour des étudiants.',
@@ -753,9 +809,12 @@ const translations = {
         teambroodje56: 'Je suis Broodje56, et avec Joren j’ai cofondé IT Learn. Depuis tout jeune, je suis fasciné par la technologie, le codage et la création de projets. J’adore expérimenter de nouvelles idées, que ce soit des jeux, des extensions ou des plateformes complètes. Avec IT Learn, je souhaite partager cette passion et aider les jeunes à découvrir le côté amusant de la programmation de manière interactive.',
         teamJoren: "Je suis Joren, et avec Broodje56 j’ai cofondé IT Learn. Je programme depuis mes 11 ans et j’ai travaillé sur différents projets. J’ai aussi aidé plusieurs personnes à créer des sites web et des applications. Avec IT Learn, je veux aider les autres à apprendre la programmation de manière amusante et éducative. J’espère que vous apprécierez notre projet !",
         coOwner: "Co-propriétaire",
-        teamMatteo: '',
-        teamDevSuperman: '',
-        teamModSuperman: '',
+        teamMatteo: "Hey ! Je suis Matteo, copropriétaire de IT Learn. Avec Broodje56 et Joren, j'aide à gérer et à faire grandir le projet. J'aime travailler avec la technologie et aider à construire un endroit où les gens peuvent apprendre la programmation de façon simple et amusante. Faire partie de IT Learn est très motivant pour moi, et je suis heureux d'aider à améliorer la plateforme et la communauté.",
+        teamDevSuperman: 'Salut ! Je suis super_man2775 et je participe au développement de la plateforme que tu vois ici. Du premier code jusqu\'à maintenant, ce projet a été incroyable, et je suis fier de ce que nous avons construit.',
+        teamModSuperman: 'Bonjour ! Je suis super_man2775. En tant que modérateur chez IT Learn, j\'aide à garder la communauté accueillante, active et agréable pour tout le monde.',
+        teamMiltie: 'Je suis Miltie et je suis manager du Discord IT Learn. J\'apprends actuellement plusieurs langages de programmation avec l\'aide de cette plateforme et j\'espère contribuer au site plus tard.',
+        teamNick: 'Le texte de profil de Nick sera ajouté prochainement.',
+        teamNunoke: 'Je suis Nuno, développeur chez IT Learn. J\'étudie l\'informatique et j\'aime créer des sites web. Je veux rendre IT Learn encore plus simple et amusant pour tout le monde.',
         statslearners: 'Apprenants',
         statscountries: 'Pays',
         statsexercises: 'Exercices',
@@ -767,10 +826,18 @@ const translations = {
         managerFilter: 'Managers',
         developersFilter: 'Développeurs',
         moderatorsFilter: 'Modérateurs',
+        roleManager: 'Manager',
+        roleDeveloper: 'Développeur',
+        roleModerator: 'Modérateur',
+        company: 'ENTREPRISE',
+        challenges: 'Défis',
+        projects: 'Projets',
+        footerOurTeam: 'Notre équipe',
+        footerAboutUs: 'À propos de nous',
+        footerLearn: 'APPRENDRE',
         landinghelpcenter: 'Centre d’aide',
         landingfooterpractice: 'PRATIQUER',
         landingfooterchallenges: 'Défis',
-        landingfooterourteam: 'Notre équipe',
         landingfooterprojects: 'Projets',
         'hero-title': 'Découvrez le <span class="highlight">Monde du Codage</span>',
         'hero-sub': 'Le codage rendu simple par des étudiants pour des étudiants.',
@@ -786,6 +853,7 @@ const translations = {
         privacypolicy: 'Politique de confidentialité',
 
         // About us
+        aboutUs: 'À propos de nous',
         aboutUsTitle: 'Découvrez notre parcours, de l’idée à la réalité.',
         timeline_idea_title: '🎉 Juin 2025 (Idée)',
         timeline_idea_text: '<span class="highlight">Broodje56</span> et <span class="highlight">Joren</span> ont lancé ce projet avec une idée simple : créer une plateforme où les gens peuvent <span class="highlight">apprendre et grandir ensemble</span> dans l’informatique.',
@@ -879,6 +947,23 @@ const translations = {
         badges: 'Badges',
         settings: 'Paramètres',
         logOut: 'Déconnexion',
+        reportBioTitle: 'Signaler cette bio',
+        reportBioDescription: 'Aidez a garder IT Learn securise. Signalez les bios contenant un contenu abusif ou inapproprie.',
+        reportBioReasonLabel: 'Raison',
+        reportBioReasonHarassment: 'Harcelement ou discours haineux',
+        reportBioReasonHarassmentValue: 'Harassment or hate speech',
+        reportBioReasonSexual: 'Contenu sexuel',
+        reportBioReasonSexualValue: 'Sexual content',
+        reportBioReasonThreats: 'Menaces ou violence',
+        reportBioReasonThreatsValue: 'Threats or violence',
+        reportBioReasonOther: 'Autre',
+        reportBioReasonOtherValue: 'Other',
+        reportBioDetailsLabel: 'Details (facultatif)',
+        reportBioDetailsPlaceholder: 'Contexte court pour les moderateurs',
+        reportBioSubmit: 'Signaler la bio',
+        reportBioSubmitting: 'Envoi du signalement...',
+        reportBioFailed: 'Echec de l\'envoi du signalement.',
+        reportBioSuccess: 'Signalement envoye. Merci.',
         chooseProgramming: 'Choisissez un langage de programmation',
         backToLanguages: 'Retour à tous les langages',
         nextLesson: 'Leçon suivante',
@@ -922,17 +1007,40 @@ const translations = {
 };
 
 // Language handling functions
+const supportedLanguages = ['en', 'nl', 'de', 'fr'];
+
+// Expose translations for module-based pages (e.g. learn/ui/js/*)
+if (typeof window !== 'undefined') {
+    window.translations = translations;
+}
+
+function normalizeLanguage(lang) {
+    return supportedLanguages.includes(lang) ? lang : 'en';
+}
+
 function updatePageLanguage(lang) {
-    document.documentElement.lang = lang;
+    const activeLang = normalizeLanguage(lang);
+    document.documentElement.lang = activeLang;
     const elements = document.querySelectorAll('[data-translate]');
 
     elements.forEach(element => {
         const key = element.dataset.translate;
-        const translation = translations[lang]?.[key];
-        if (translation) {
+        const translation = translations[activeLang]?.[key];
+        if (translation !== undefined && translation !== null) {
+            // Inputs use placeholder/value rather than innerHTML.
+            if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
+                if (element.type === 'submit' || element.type === 'button' || element.type === 'reset') {
+                    element.value = translation;
+                } else {
+                    element.placeholder = translation;
+                }
+                return;
+            }
             element.innerHTML = translation;
         }
     });
+
+    return activeLang;
 }
 
 
@@ -945,12 +1053,14 @@ function initializeLanguageSelector() {
     if (!langBtn || !langDropdown || !currentLang) return;
 
     // Set initial language
-    let currentLanguage = localStorage.getItem('language') || 'en';
+    let currentLanguage = normalizeLanguage(localStorage.getItem('language') || 'en');
+    localStorage.setItem('language', currentLanguage);
 
     const langMap = {
         en: 'English',
         nl: 'Nederlands',
-        de: 'Deutsch'
+        de: 'Deutsch',
+        fr: 'Français'
     };
 
     currentLang.textContent = langMap[currentLanguage] || 'English';
@@ -974,7 +1084,7 @@ function initializeLanguageSelector() {
             e.preventDefault();
             e.stopPropagation();
 
-            const lang = e.target.dataset.lang;
+            const lang = normalizeLanguage(e.currentTarget.dataset.lang);
             localStorage.setItem('language', lang);
 
             if (lang === 'en') {
@@ -998,7 +1108,8 @@ function initializeLanguageSelector() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeLanguageSelector();
     // Initialize with stored language
-    const storedLang = localStorage.getItem('language') || 'en';
+    const storedLang = normalizeLanguage(localStorage.getItem('language') || 'en');
+    localStorage.setItem('language', storedLang);
     updatePageLanguage(storedLang);
 
     // Initialize feather icons after language update

@@ -40,6 +40,13 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'onboarding') {
+    return {
+      route: 'onboarding',
+      tab: query.tab || 'onboarding',
+    };
+  }
+
   if (segments[0] === 'courses' && segments.length === 1) {
     return {
       route: 'courses',
@@ -75,6 +82,10 @@ export function toHash(descriptor) {
       return `#/profile/${encodeURIComponent(descriptor.username)}`;
     }
     return '#/profile';
+  }
+
+  if (descriptor.route === 'onboarding') {
+    return '#/onboarding';
   }
 
   if (descriptor.route === 'courses') {
