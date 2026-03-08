@@ -2,7 +2,7 @@
   "chapterId": "chapter_1",
   "kind": "assessment",
   "title": "Chapter 1 - What Is CSS and Why Use It?",
-  "description": "Quick concept check for what is css and why use it?.",
+  "description": "Quick concept check on what CSS is and why we use it."
   "questions": [
     {
       "id": "q1-css-meaning",
