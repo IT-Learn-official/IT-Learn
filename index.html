@@ -49,15 +49,42 @@
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    let tawkLoaded = false;
+
+    function loadTawk() {
+      if (tawkLoaded) return;
+
+      tawkLoaded = true;
+      window.Tawk_API = window.Tawk_API || {};
+      window.Tawk_LoadStart = new Date();
+
+      const s1 = document.createElement('script');
+      const s0 = document.getElementsByTagName('script')[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
-    })();
+
+      localStorage.setItem('tawkConsent', 'granted');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('tawkConsent') === 'granted') {
+        loadTawk();
+      }
+
+      document.querySelectorAll('[data-open-help-chat]').forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+          event.preventDefault();
+          loadTawk();
+
+          if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+            window.Tawk_API.maximize();
+          }
+        });
+      });
+    });
   </script>
   <!--End of Tawk.to Script-->
 
@@ -105,8 +132,8 @@
                 <p class="dropdown-title" data-translate="dropdownStayInLoop">Stay in the loop</p>
                 <a href="https://itlearn.beehiiv.com/" class="dropdown-link"
                   data-translate="headerNewsletter">Newsletter</a>
-                <a href="https://discord.itlearn.be/" class="dropdown-link" data-translate="helpCenter" target="_blank"
-                  rel="noopener noreferrer">Help Center</a>
+                <a href="#" class="dropdown-link" data-open-help-chat="true"
+                  data-translate="helpCenter">Help Center</a>
               </div>
             </div>
           </div>
@@ -285,7 +312,7 @@
 
         <div class="role-filter">
           <button class="role-filter-btn active" data-filter="owner" data-translate="ownersFilter">Owners</button>
-          <button class="role-filter-btn" data-filter="manager" data-translate="managersFilter">Managers</button>
+          <button class="role-filter-btn" data-filter="manager" data-translate="managerFilter">Managers</button>
           <button class="role-filter-btn" data-filter="developer" data-translate="developersFilter">Developers</button>
           <button class="role-filter-btn" data-filter="moderator" data-translate="moderatorsFilter">Moderators</button>
         </div>
@@ -293,7 +320,7 @@
         <div class="team-grid">
           <!-- Owners -->
 
-          <!--Broodje56 -->
+          <!-- Broodje56 -->
           <div class="team-member" data-aos="fade-up" data-member="broodje56" data-role="owner">
             <div class="team-head">
               <img src="https://files.itlearn.be/images/branding/pfp/Broodje56.png" alt="Team member" class="avatar">
@@ -304,17 +331,15 @@
             </div>
             <p class="muted" data-translate="teambroodje56">
               I'm Broodje56, and together with Joren I co-founded IT Learn.
-              Ever since I was young, I've been fascinated by technology, coding, and building creative projects.
-              I love experimenting with new ideas from making games and extensions to designing full platforms.
-              With IT Learn, my goal is to share this passion and help other young people discover the fun side of
-              programming in an interactive way.
+              From a young age, I've been fascinated by technology and computers.
+              With IT Learn, my goal is to share that passion and help other young people discover the fun and creative side of programming through interactive learning. 
             </p>
 
-            <a href="https://github.com/Broodje565" class="more-link small" target="_blank"
+            <a href="https://github.com/Broodje565" class="more-link small" target="_blank" rel="noopener noreferrer"
               data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
-          <!--Joren -->
+          <!-- Joren -->
           <div class="team-member" data-aos="fade-up" data-member="joren" data-role="owner">
             <div class="team-head">
               <img src="https://files.itlearn.be/images/branding/pfp/AIM_pfp.png" alt="Team member" class="avatar">
@@ -330,84 +355,84 @@
               With IT Learn, I want to help others learn programming in a fun and educational way. I hope you'll enjoy
               our project!
             </p>
-            <a href="https://github.com/JorenS15" class="more-link small" target="_blank"
+            <a href="https://github.com/JorenS15" class="more-link small" target="_blank" rel="noopener noreferrer"
               data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
-          <!--Matteo -->
+          <!-- Matteo -->
           <div class="team-member" data-aos="fade-up" data-member="matteo" data-role="owner">
             <div class="team-head">
-              <img src="" alt="Team member" class="avatar">
+              <img src="https://files.itlearn.be/images/branding/pfp/Matteohls.png" alt="Team member" class="avatar">
               <div>
                 <h3>Matteo</h3>
                 <p class="muted small" data-translate="coOwner">Co-owner</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamMatteo">Tekst Matteo</p>
-            <a href="" class="more-link small" target="_blank"
+            <p class="muted" data-translate="teamMatteo">Hey! I'm Matteo, co-owner of IT Learn. Together with Broodje56 and Joren I help manage and grow the project. I enjoy working with technology and helping build a place where people can learn programming in a fun and simple way. Being part of IT Learn is really exciting for me, and I'm happy to help improve the platform and the community.</p>
+            <a href="https://github.com/matteohls" class="more-link small" target="_blank" rel="noopener noreferrer"
               data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
-          <!--Manager -->
+          <!-- Manager -->
 
-          <!--Miltie-->
+          <!-- Miltie-->
           <div class="team-member" data-aos="fade-up" data-member="miltie" data-role="manager">
             <div class="team-head">
-              <img src="" alt="Team member" class="avatar">
+              <img src="https://files.itlearn.be/images/branding/pfp/Miltie.jpg" alt="Team member" class="avatar">
               <div>
                 <h3>Miltie</h3>
-                <p class="muted small">Manager</p>
+                <p class="muted small" data-translate="roleManager">Manager</p>
               </div>
             </div>
-            <p class="muted">Tekst Miltie</p>
-            <a href="#" class="more-link small" target="_blank" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
-          </div>
-
-          <!--Nick -->
-          <div class="team-member" data-aos="fade-up" data-member="nick" data-role="manager">
-            <div class="team-head">
-              <img src="" alt="Team member" class="avatar">
-              <div>
-                <h3>Nick</h3>
-                <p class="muted small">Manager</p>
-              </div>
-            </div>
-            <p class="muted">Tekst Nick</p>
-            <a href="#" class="more-link small" target="_blank" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamMiltie">My name is Miltie, and I am the Manager of the IT-Learn Discord. I'm trying to learn a couple of different coding languages at the moment, with the help of this platform ofcourse. I would love to be able to help programming this website later. I am looking to help this community where necessary, and hope to meet you here too!</p>
+            <a href="https://discord.itlearn.be/" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></a>
           </div>
 
           <!-- Developer -->
 
-          <!--Superman -->
-          <div class="team-member" data-aos="fade-up" data-member="dev1" data-role="developer">
+          <!-- Nunoke -->
+          <div class="team-member" data-aos="fade-up" data-member="nunoke" data-role="developer">
             <div class="team-head">
-              <img src="" alt="Team member" class="avatar">
+              <img src="https://files.itlearn.be/images/branding/pfp/Nunoke.png" alt="Team member" class="avatar">
               <div>
-                <h3>super_man2775</h3>
-                <p class="muted small">Developer</p>
+                <h3>Nunoke</h3>
+                <p class="muted small" data-translate="roleDeveloper">Developer</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamDevSuperman">Tekst Superman<p>
-            <a href="#" class="more-link small" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamNunoke">I'm Nuno, and I'm a developer at ITLearn. I am a computer science student and I love making websites and I want to teach it myself. That's why I wan't to help create ITLearn to make learning it even more easy and fun.</p>
+            <a href="https://github.com/Nunoke123" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></a>
+          </div>
+
+          <!-- Superman -->
+          <div class="team-member" data-aos="fade-up" data-member="superman-dev" data-role="developer">
+            <div class="team-head">
+              <img src="https://files.itlearn.be/images/branding/pfp/Superman.png" alt="Team member" class="avatar">
+              <div>
+                <h3>super_man2775</h3>
+                <p class="muted small" data-translate="roleDeveloper">Developer</p>
+              </div>
+            </div>
+            <p class="muted" data-translate="teamDevSuperman">Hi there! I am super_man2775, and I helped developing the platform you are looking at right now! It has been an amazing journey, from the first line of code to where we are right now, and I am very proud of what we have accomplished!</p>
+            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></a>
           </div>
 
           <!-- Moderator -->
 
-          <!--Superman -->
-          <div class="team-member" data-aos="fade-up" data-member="mod1" data-role="moderator">
+          <!-- Superman -->
+          <div class="team-member" data-aos="fade-up" data-member="superman-mod" data-role="moderator">
             <div class="team-head">
-              <img src="" alt="Team member" class="avatar">
+              <img src="https://files.itlearn.be/images/branding/pfp/Superman.png" alt="Team member" class="avatar">
               <div>
                 <h3>super_man2775</h3>
-                <p class="muted small">Moderator</p>
+                <p class="muted small" data-translate="roleModerator">Moderator</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamModSuperman">Tekst Superman<p>
-            <a href="#" class="more-link small" data-translate="viewprofile">View profile <i
-                data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamModSuperman">Hello! I am super_man2775. I am moderator for IT Learn, which means I keep IT Learn fun and engaging for everyone! I really love hanging out in our Discord community and talking with people. I am very proud of how amazing our community is, and how it evolved from a server with 5 people in it, to what we have now.</p>
+            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
+              data-feather="arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -469,8 +494,7 @@
           <li><a href="/about-us/about-us.html" data-translate="footerAboutUs">About us</a></li>
           <li><a href="#team" data-translate="footerOurTeam">Our Team</a></li>
           <li><a href="https://discord.itlearn.be/" target="_blank" rel="noopener noreferrer">Discord</a></li>
-          <li><a href="https://discord.itlearn.be/" data-translate="helpCenter" target="_blank"
-              rel="noopener noreferrer">Help Center</a></li>
+            <li><a href="#" data-open-help-chat="true" data-translate="helpCenter">Help Center</a></li>
           <li><a href="/roadmap/index.html">Roadmap</a></li>
         </ul>
       </div>
@@ -765,10 +789,35 @@
     const roleFilterBtns = document.querySelectorAll('.role-filter-btn');
     const teamMembers = document.querySelectorAll('.team-member');
 
+    const isReadyTeamMember = (member) => {
+      if (member.classList.contains('placeholder')) return false;
+
+      const avatarSrc = member.querySelector('.avatar')?.getAttribute('src')?.trim() || '';
+      const profileHref = member.querySelector('.more-link')?.getAttribute('href')?.trim() || '';
+      const bioText = member.querySelector('p.muted:not(.small)')?.textContent?.trim().toLowerCase() || '';
+
+      const hasAvatar = avatarSrc !== '';
+      const hasProfile = profileHref !== '' && profileHref !== '#';
+      const hasRealBio = bioText !== '' && !bioText.startsWith('tekst ');
+
+      return hasAvatar && hasProfile && hasRealBio;
+    };
+
+    teamMembers.forEach(member => {
+      if (!isReadyTeamMember(member)) {
+        member.style.display = 'none';
+        member.dataset.ready = 'false';
+      } else {
+        member.dataset.ready = 'true';
+      }
+    });
+
     const filterTeamMembers = (selectedRole) => {
       teamMembers.forEach(member => {
         const memberRole = member.getAttribute('data-role');
-        if (memberRole === selectedRole) {
+        const isReady = member.dataset.ready === 'true';
+
+        if (isReady && memberRole === selectedRole) {
           member.style.display = '';
           member.classList.add('fade-in');
         } else {

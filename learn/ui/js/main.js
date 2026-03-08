@@ -1,13 +1,19 @@
 // Entry point for the SPA.
 
 import { fetchCourses } from './services/apiClient.js';
-import { setCoursesDoc, setTrialMode } from './state/appState.js';
+import { setCoursesDoc, setTrialMode, setOnboardingRequired } from './state/appState.js';
 import { initRouter, navigateTo } from './state/router.js';
 import { initLayout, handleRouteChange, setGlobalStatus } from './render/layout.js';
 import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotService.js';
 import { showWelcomeMessage } from './mascot.js';
-import { checkSession } from './services/authService.js';
+import { checkSession, getMyProfile } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
+
+function requiresProfileOnboarding(profile) {
+  const username = String(profile?.username || '').trim().toLowerCase();
+  const validUsername = /^[a-z0-9_]{3,24}$/.test(username);
+  return !validUsername;
+}
 
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
@@ -39,6 +45,13 @@ async function bootstrap() {
     } else if (sessionData.logged_in) {
       setTrialMode(false);
       window.currentUserId = sessionData.user_id;
+
+      const profileResult = await getMyProfile();
+      if (!profileResult.success) {
+        setOnboardingRequired(true);
+      } else {
+        setOnboardingRequired(requiresProfileOnboarding(profileResult.profile));
+      }
     }
   }
   

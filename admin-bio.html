@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Bio Moderation Admin</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #101a33;
+      --panel-2: #1a2747;
+      --text: #ecf2ff;
+      --muted: #93a3c7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #22d3ee;
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.18);
+      --ok: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -5%, #1d2f5e, var(--bg) 70%);
+      padding: 24px 16px 48px;
+    }
+
+    .wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.78);
+      backdrop-filter: blur(8px);
+      padding: 14px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.82);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    select,
+    input,
+    button,
+    textarea {
+      font: inherit;
+      color: var(--text);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      padding: 8px 10px;
+    }
+
+    button {
+      cursor: pointer;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .button-primary {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .button-danger {
+      background: var(--danger-soft);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .status {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16, 26, 51, 0.8);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .status.ok {
+      color: var(--ok);
+    }
+
+    .status.error {
+      color: #fda4af;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .grid.two-cols {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 1000px) {
+      .grid.two-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .panel-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    #list,
+    #profiles-list {
+      align-content: start;
+      max-height: 65vh;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(26, 39, 71, 0.8);
+    }
+
+    .bio-box,
+    .details-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 9px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #dbe7ff;
+      font-size: 0.93rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .actions input {
+      flex: 1 1 320px;
+      min-width: 220px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1rem;
+      color: #dbeafe;
+    }
+
+    .profile-mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .profile-mini .bio-box {
+      margin: 0;
+    }
+
+    .report-actions-inline {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .profiles-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .profiles-pagination .muted {
+      margin-left: auto;
+    }
+
+    @media (max-width: 700px) {
+      .report-actions-inline {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>Bio Moderation Admin</h1>
+        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel.</p>
+      </div>
+      <a href="/index.html" class="muted">Back to home</a>
+    </div>
+
+    <div id="auth-block" class="status">Checking your admin session...</div>
+
+    <section id="panel" class="hidden">
+      <div class="controls">
+        <label for="status-filter">Report status:</label>
+        <select id="status-filter">
+          <option value="open" selected>Open</option>
+          <option value="resolved">Resolved</option>
+          <option value="all">All</option>
+        </select>
+
+        <label for="limit-filter">Limit:</label>
+        <select id="limit-filter">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+          <option value="500">500</option>
+        </select>
+
+        <button id="refresh" class="button-primary" type="button">Refresh reports</button>
+        <button id="refresh-profiles" class="button-primary" type="button">Refresh all profiles</button>
+        <label for="profile-page-size">Profiles/page:</label>
+        <select id="profile-page-size">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+        </select>
+        <input id="profile-search" type="text" placeholder="Search @username or bio" />
+      </div>
+
+      <div class="grid two-cols">
+        <section class="panel-card">
+          <h2 class="section-title">Reports</h2>
+          <div id="status" class="status">Loading reports...</div>
+          <div id="list" class="grid"></div>
+        </section>
+
+        <section class="panel-card">
+          <h2 class="section-title">All Profiles and Bios</h2>
+          <div id="profiles-status" class="status">Loading profiles...</div>
+          <div class="profiles-pagination">
+            <button id="profiles-prev" type="button">Prev</button>
+            <button id="profiles-next" type="button">Next</button>
+            <p id="profiles-page-info" class="muted">Page 1</p>
+          </div>
+          <div id="profiles-list" class="grid"></div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+
+    const authBlock = document.getElementById('auth-block');
+    const panel = document.getElementById('panel');
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('list');
+    const profilesStatusEl = document.getElementById('profiles-status');
+    const profilesListEl = document.getElementById('profiles-list');
+    const refreshBtn = document.getElementById('refresh');
+    const refreshProfilesBtn = document.getElementById('refresh-profiles');
+    const statusFilter = document.getElementById('status-filter');
+    const limitFilter = document.getElementById('limit-filter');
+    const profileSearchInput = document.getElementById('profile-search');
+    const profilePageSizeSelect = document.getElementById('profile-page-size');
+    const profilesPrevBtn = document.getElementById('profiles-prev');
+    const profilesNextBtn = document.getElementById('profiles-next');
+    const profilesPageInfo = document.getElementById('profiles-page-info');
+    let allProfiles = [];
+    let profilesPage = 1;
+    let profilesPageSize = Number(profilePageSizeSelect?.value || 100);
+    let profilesHasNextPage = true;
+
+    function setStatus(message, type) {
+      statusEl.textContent = message;
+      statusEl.className = 'status';
+      if (type) statusEl.classList.add(type);
+    }
+
+    function cardLabel(title, value) {
+      return `<span class="chip"><strong>${title}:</strong> ${value}</span>`;
+    }
+
+    function setProfilesStatus(message, type) {
+      profilesStatusEl.textContent = message;
+      profilesStatusEl.className = 'status';
+      if (type) profilesStatusEl.classList.add(type);
+    }
+
+    function updateProfilesPaginationUI() {
+      profilesPageInfo.textContent = `Page ${profilesPage}`;
+      profilesPrevBtn.disabled = profilesPage <= 1;
+      profilesNextBtn.disabled = !profilesHasNextPage;
+    }
+
+    function escapeHtml(input) {
+      return String(input || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function reportCard(report) {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      const username = escapeHtml(report.reported_username || 'unknown');
+      const reason = escapeHtml(report.reason || 'No reason');
+      const status = escapeHtml(report.status || 'open');
+      const reporter = escapeHtml(report.reporter_user_id || 'unknown');
+      const createdAt = escapeHtml(report.created_at || 'n/a');
+      const currentBio = escapeHtml(report.current_bio || '');
+      const details = escapeHtml(report.details || 'No details');
+
+      card.innerHTML = `
+        <div class="meta">
+          ${cardLabel('User', '@' + username)}
+          ${cardLabel('Status', status)}
+          ${cardLabel('Reason', reason)}
+          ${cardLabel('Reported by', reporter)}
+          ${cardLabel('Created', createdAt)}
+        </div>
+        <div>
+          <p class="muted">Current bio</p>
+          <div class="bio-box">${currentBio || 'No bio text'}</div>
+        </div>
+        <div>
+          <p class="muted">Report details</p>
+          <div class="details-box">${details}</div>
+        </div>
+      `;
+
+      if ((report.status || '').toLowerCase() === 'open') {
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const replacementInput = document.createElement('input');
+        replacementInput.type = 'text';
+        replacementInput.maxLength = 180;
+        replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+        const closeNoteInput = document.createElement('input');
+        closeNoteInput.type = 'text';
+        closeNoteInput.maxLength = 240;
+        closeNoteInput.placeholder = 'Close note for false report (optional)';
+
+        const banBtn = document.createElement('button');
+        banBtn.type = 'button';
+        banBtn.className = 'button-danger';
+        banBtn.textContent = 'Ban Bio';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'button-primary';
+        closeBtn.textContent = 'Close Report';
+
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
+          setStatus(`Applying bio ban for @${report.reported_username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: report.reported_username,
+                replacement_bio: replacementInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
+            await loadReports();
+            await loadProfiles();
+          } catch (error) {
+            setStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
+          }
+        });
+
+        closeBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
+          setStatus(`Closing report ${report.report_id}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/bio-reports/close`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                report_id: report.report_id,
+                close_note: closeNoteInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to close report.', 'error');
+              return;
+            }
+
+            setStatus(`Report ${report.report_id} closed.`, 'ok');
+            await loadReports();
+          } catch (error) {
+            setStatus('Network error while closing report.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
+          }
+        });
+
+        const inline = document.createElement('div');
+        inline.className = 'report-actions-inline';
+        inline.appendChild(closeNoteInput);
+        inline.appendChild(closeBtn);
+        inline.appendChild(banBtn);
+
+        actions.appendChild(replacementInput);
+        actions.appendChild(inline);
+        card.appendChild(actions);
+      }
+
+      return card;
+    }
+
+    async function loadSession() {
+      const response = await fetch(`${API_BASE}/session`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const data = await response.json();
+      return data;
+    }
+
+    async function loadReports() {
+      setStatus('Loading reports...');
+      listEl.innerHTML = '';
+
+      const status = encodeURIComponent(statusFilter.value);
+      const limit = encodeURIComponent(limitFilter.value);
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/bio-reports?status=${status}&limit=${limit}`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setStatus(data.error || 'Could not fetch reports.', 'error');
+          return;
+        }
+
+        const reports = Array.isArray(data.reports) ? data.reports : [];
+        if (!reports.length) {
+          setStatus('No reports found for selected filter.', 'ok');
+          return;
+        }
+
+        reports.forEach((report) => {
+          listEl.appendChild(reportCard(report));
+        });
+        setStatus(`Loaded ${reports.length} report(s).`, 'ok');
+      } catch (error) {
+        setStatus('Network error while loading reports.', 'error');
+      }
+    }
+
+    function profileCard(profile) {
+      const card = document.createElement('article');
+      card.className = 'profile-mini';
+
+      const username = profile.username ? `@${profile.username}` : '(no username)';
+      const bio = profile.bio || 'No bio';
+      const banned = profile.bio_banned ? 'yes' : 'no';
+
+      card.innerHTML = `
+        <div class="meta">
+          ${cardLabel('User', escapeHtml(username))}
+          ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
+          ${cardLabel('Banned', escapeHtml(banned))}
+          ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
+          ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
+        </div>
+        <div class="bio-box">${escapeHtml(bio)}</div>
+      `;
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const replacementInput = document.createElement('input');
+      replacementInput.type = 'text';
+      replacementInput.maxLength = 180;
+      replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+      const banBtn = document.createElement('button');
+      banBtn.type = 'button';
+      banBtn.className = 'button-danger';
+      banBtn.textContent = 'Ban Bio';
+
+      if (!profile.username) {
+        banBtn.disabled = true;
+        replacementInput.disabled = true;
+        replacementInput.placeholder = 'Cannot ban: user has no username yet';
+      } else {
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          setProfilesStatus(`Applying bio ban for @${profile.username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: profile.username,
+                replacement_bio: replacementInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Bio banned for @${profile.username}.`, 'ok');
+            await loadProfiles();
+            await loadReports();
+          } catch (error) {
+            setProfilesStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+          }
+        });
+      }
+
+      actions.appendChild(replacementInput);
+      actions.appendChild(banBtn);
+      card.appendChild(actions);
+
+      return card;
+    }
+
+    function renderProfiles() {
+      profilesListEl.innerHTML = '';
+      const q = (profileSearchInput.value || '').trim().toLowerCase();
+
+      const filtered = allProfiles.filter((p) => {
+        if (!q) return true;
+        const username = (p.username || '').toLowerCase();
+        const bio = (p.bio || '').toLowerCase();
+        return username.includes(q) || bio.includes(q);
+      });
+
+      if (!filtered.length) {
+        setProfilesStatus('No profiles matched your filter.', 'ok');
+        return;
+      }
+
+      filtered.forEach((profile) => {
+        profilesListEl.appendChild(profileCard(profile));
+      });
+      setProfilesStatus(`Showing ${filtered.length} profile(s).`, 'ok');
+    }
+
+    async function loadProfiles(page = 1, pageSize = profilesPageSize) {
+      const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+      const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
+
+      setProfilesStatus(`Loading profiles page ${safePage}...`);
+      profilesNextBtn.disabled = true;
+      profilesPrevBtn.disabled = true;
+
+      try {
+        const params = new URLSearchParams({
+          page: String(safePage),
+          pageSize: String(safePageSize),
+          page_size: String(safePageSize),
+        });
+
+        const response = await fetch(`${API_BASE}/admin/profiles?${params.toString()}`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setProfilesStatus(data.error || 'Could not fetch profiles.', 'error');
+          return;
+        }
+
+        const fetchedProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+
+        if (!fetchedProfiles.length && safePage > 1) {
+          profilesHasNextPage = false;
+          setProfilesStatus('No more profiles to load.', 'ok');
+          renderProfiles();
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        allProfiles = fetchedProfiles;
+        profilesPage = safePage;
+        profilesPageSize = safePageSize;
+        profilesHasNextPage = fetchedProfiles.length >= safePageSize;
+
+        if (!allProfiles.length) {
+          setProfilesStatus('No profiles found on this page.', 'ok');
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        renderProfiles();
+        updateProfilesPaginationUI();
+      } catch (error) {
+        setProfilesStatus('Network error while loading profiles.', 'error');
+        updateProfilesPaginationUI();
+      }
+    }
+
+    async function init() {
+      try {
+        const session = await loadSession();
+        if (!session.logged_in) {
+          authBlock.textContent = 'You must be logged in to access this page.';
+          authBlock.classList.add('error');
+          return;
+        }
+        if (!session.is_bio_admin) {
+          authBlock.textContent = 'Access denied. Your account is not in BIO_MOD_ADMIN_USER_IDS.';
+          authBlock.classList.add('error');
+          return;
+        }
+
+        authBlock.classList.add('hidden');
+        panel.classList.remove('hidden');
+        await loadReports();
+        await loadProfiles(1, profilesPageSize);
+      } catch (error) {
+        authBlock.textContent = 'Could not verify your session.';
+        authBlock.classList.add('error');
+      }
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      void loadReports();
+    });
+
+    refreshProfilesBtn.addEventListener('click', () => {
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profilePageSizeSelect.addEventListener('change', () => {
+      const selected = Number(profilePageSizeSelect.value);
+      profilesPageSize = Number.isFinite(selected) && selected > 0 ? selected : 100;
+      profilesPage = 1;
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profilesPrevBtn.addEventListener('click', () => {
+      if (profilesPage <= 1) return;
+      void loadProfiles(profilesPage - 1, profilesPageSize);
+    });
+
+    profilesNextBtn.addEventListener('click', () => {
+      if (!profilesHasNextPage) {
+        setProfilesStatus('No more profiles to load.', 'ok');
+        return;
+      }
+      void loadProfiles(profilesPage + 1, profilesPageSize);
+    });
+
+    statusFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    limitFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    profileSearchInput.addEventListener('input', () => {
+      renderProfiles();
+    });
+
+    void init();
+  </script>
+</body>
+</html>

@@ -14,6 +14,7 @@ const state = {
     courseId: null,
     requiresRegistration: false,
   },
+  onboardingRequired: false,
 };
 
 export function getState() {
@@ -61,6 +62,14 @@ export function getTrialMode() {
 
 export function setTrialRequiresRegistration(value) {
   state.trialMode.requiresRegistration = value;
+}
+
+export function setOnboardingRequired(value) {
+  state.onboardingRequired = Boolean(value);
+}
+
+export function isOnboardingRequired() {
+  return Boolean(state.onboardingRequired);
 }
 
 

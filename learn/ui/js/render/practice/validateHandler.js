@@ -7,7 +7,7 @@ import { formatSqlOutput, formatPythonOutput, getSqlStatusMessage } from './outp
 import { updateConsoleOutput } from './outputUpdater.js';
 import { createTeacherContext } from './teacherContext.js';
 import { runCode, prepareLastRun } from './runExecutor.js';
-import { ensureTeacherPanel, initFreshTeacherPanel, appendVerdictMessages } from './teacherPanelManager.js';
+import { initFreshTeacherPanel } from './teacherPanelManager.js';
 
 /**
  * Create and attach validate button event handler.
@@ -43,6 +43,7 @@ export function createValidateHandler({
 }) {
   let teacherPanelApi = null;
   let lastRunResult = null;
+  let lastExecutedCode = null;
 
   const handler = async () => {
     if (!practiceEditor) return;
@@ -57,8 +58,13 @@ export function createValidateHandler({
 
     validateButton.disabled = true;
     runButton.disabled = true;
-    consoleEl.textContent = 'Running code before teacher validation...';
-    runStatus.textContent = `Running ${editorLanguage}...`;
+    const canReuseRun = !!lastRunResult && lastExecutedCode === code;
+    consoleEl.textContent = canReuseRun
+      ? 'Reusing previous run result for faster validation...'
+      : 'Running code before teacher validation...';
+    runStatus.textContent = canReuseRun
+      ? `Fast validation (${editorLanguage})...`
+      : `Running ${editorLanguage}...`;
 
     // Clear chat immediately and initialize a fresh panel without welcome
     chatBody.innerHTML = '';
@@ -84,16 +90,19 @@ export function createValidateHandler({
     }
 
     try {
-      const result = await runCode(code, editorLanguage);
-      lastRunResult = result;
+      if (!canReuseRun) {
+        const result = await runCode(code, editorLanguage);
+        lastRunResult = result;
+        lastExecutedCode = code;
 
-      // Update console output (same logic as run button)
-      updateConsoleOutput({
-        result,
-        editorLanguage,
-        consoleEl,
-        runStatus,
-      });
+        // Update console output (same logic as run button)
+        updateConsoleOutput({
+          result,
+          editorLanguage,
+          consoleEl,
+          runStatus,
+        });
+      }
 
       // Prepare context for teacher validation
       const languageId = activeTemplate?.language || 'python';
@@ -115,28 +124,12 @@ export function createValidateHandler({
 
       const markdownKey = activeAssignment.id;
 
-      // Ensure teacher panel is ready (reuse ensureTeacherPanel but pass existing api if any)
-      teacherPanelApi = await ensureTeacherPanel({
-        teacherPanelApi: freshTeacherApi || teacherPanelApi,
-        chatBody,
-        course,
-        chapter,
-        activeAssignment,
-        activeTemplate,
-        languageId,
-        codeFiles,
-        practice,
-        markdownKey,
-        lastRun,
-        runStatus,
-        consoleEl,
-      });
-
       // Request teacher validation
       const validation = await validateAssignmentWithTeacher({
         assignment: {
           title: activeAssignment.title || '',
           descriptionMarkdown: practice.assignmentMarkdown[markdownKey] || '',
+          solution: activeAssignment.solution || null,
         },
         codeFiles,
         environment: { lastRun },
@@ -183,7 +176,9 @@ export function createValidateHandler({
       // Add verdict message after the feedback
       let verdictMessage = '';
       if (validation && typeof validation.feedbackText === 'string') {
-        const passed = /pass(ed)?|success|congrat/i.test(validation.feedbackText);
+        const passed = typeof validation.passed === 'boolean'
+          ? validation.passed
+          : /pass(ed)?|success|congrat/i.test(validation.feedbackText);
         if (passed) {
           verdictMessage = '\n✅ Congratulations! Your assignment passed all checks.';
         } else {
