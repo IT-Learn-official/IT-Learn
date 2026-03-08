@@ -316,3 +316,56 @@ export async function getPublicProfile(username) {
         return { success: false, error: 'Network error. Please try again.' };
     }
 }
+
+export async function reportProfileBio({ username, reason, details }) {
+    try {
+        const response = await fetch(`${API_BASE}/profile/report-bio`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ username, reason, details })
+        });
+
+        if (!response.ok) {
+            const statusText = `HTTP ${response.status}${response.statusText ? ` ${response.statusText}` : ''}`;
+            let bodyText = '';
+            try {
+                bodyText = await response.text();
+            } catch (readError) {
+                bodyText = '';
+            }
+
+            let bodyMessage = '';
+            const trimmedBody = bodyText.trim();
+            if (trimmedBody) {
+                try {
+                    const parsed = JSON.parse(trimmedBody);
+                    bodyMessage = parsed?.error || parsed?.message || trimmedBody;
+                } catch (parseError) {
+                    bodyMessage = trimmedBody;
+                }
+            }
+
+            return {
+                success: false,
+                error: bodyMessage ? `${statusText}: ${bodyMessage}` : statusText,
+            };
+        }
+
+        const contentType = response.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+            try {
+                await response.json();
+            } catch (parseError) {
+                // Success responses do not require a parseable JSON payload here.
+            }
+        }
+
+        return { success: true };
+    } catch (error) {
+        console.error('Report bio error:', error);
+        return { success: false, error: 'Network error. Please try again.' };
+    }
+}

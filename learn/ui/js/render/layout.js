@@ -2,11 +2,13 @@
 //licence: MIT
 //edited by: https://github.com/broodje565
 import { getState, setSelection, getTrialMode } from '../state/appState.js';
+import { isOnboardingRequired, setOnboardingRequired } from '../state/appState.js';
 import { renderCoursesScreen, renderChaptersScreen } from '../render/courseListView.js';
 import { renderChapterScreenContent } from '../render/chapterView.js';
 import { renderSettingsView } from '../render/settingsView.js';
 import { renderBadgesView } from '../render/badgesView.js';
 import { renderProfileView } from '../render/profileView.js';
+import { renderOnboardingView } from '../render/onboardingView.js';
 import { navigateTo } from '../state/router.js';
 import { createTrialInfoBanner, showTrialCompletionModal } from './trialRegistrationModal.js';
 import { completeTrialCourse, saveTrialProgress, getTrialSession } from '../services/trialMode.js';
@@ -31,6 +33,11 @@ export function setGlobalStatus(message) {
 }
 
 export async function handleRouteChange(route) {
+  if (isOnboardingRequired() && route.route !== 'onboarding') {
+    navigateTo({ route: 'onboarding' });
+    return;
+  }
+
   if (route.route === 'chapter') {
     setSelection({
       courseId: route.courseId,
@@ -48,6 +55,8 @@ export async function handleRouteChange(route) {
   } else if (route.route === 'badges') {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else if (route.route === 'profile') {
+    setSelection({ courseId: null, chapterId: null, tab: 'theory' });
+  } else if (route.route === 'onboarding') {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else {
     setSelection({
@@ -80,6 +89,16 @@ export async function renderApp(route) {
 
   if (route.route === 'profile') {
     await renderProfileView(screenRootEl, { username: route.username || null });
+    return;
+  }
+
+  if (route.route === 'onboarding') {
+    await renderOnboardingView(screenRootEl, {
+      onComplete: () => {
+        setOnboardingRequired(false);
+        navigateTo({ route: 'courses' });
+      },
+    });
     return;
   }
 
