@@ -2,7 +2,7 @@
   "chapterId": "chapter_8",
   "kind": "assessment",
   "title": "Chapter 8 - The CSS Box Model Explained",
-  "description": "Quick concept check for the css box model explained.",
+  "description": "Quick concept check for the CSS box model.",
   "questions": [
     {
       "id": "q1-box-order",
