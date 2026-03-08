@@ -68,6 +68,9 @@ export async function renderOnboardingView(screenRootEl, { onComplete } = {}) {
 
   const status = document.createElement('div');
   status.className = 'settings-status';
+  status.setAttribute('role', 'status');
+  status.setAttribute('aria-live', 'polite');
+  status.setAttribute('aria-atomic', 'true');
 
   const submit = document.createElement('button');
   submit.type = 'submit';

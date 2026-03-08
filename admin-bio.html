@@ -653,7 +653,6 @@
       const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
 
       setProfilesStatus(`Loading profiles page ${safePage}...`);
-      profilesListEl.innerHTML = '';
       profilesNextBtn.disabled = true;
       profilesPrevBtn.disabled = true;
 
@@ -680,6 +679,7 @@
         if (!fetchedProfiles.length && safePage > 1) {
           profilesHasNextPage = false;
           setProfilesStatus('No more profiles to load.', 'ok');
+          renderProfiles();
           updateProfilesPaginationUI();
           return;
         }
