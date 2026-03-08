@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_2",
+  "kind": "assessment",
+  "title": "Chapter 2 - Adding CSS to Your HTML",
+  "description": "Quick concept check for adding css to your html.",
+  "questions": [
+    {
+      "id": "q1-inline-style",
+      "type": "single-choice",
+      "prompt": "Which HTML attribute is used for inline CSS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "class",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "id",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "style",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "href",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Inline CSS is written with the style attribute.",
+        "byOptionId": {
+          "a": "Not quite. Inline CSS is written with the style attribute.",
+          "b": "Not quite. Inline CSS is written with the style attribute.",
+          "c": "Correct. Inline CSS is written with the style attribute.",
+          "d": "Not quite. Inline CSS is written with the style attribute."
+        }
+      }
+    },
+    {
+      "id": "q2-external-css",
+      "type": "single-choice",
+      "prompt": "Which tag links an external CSS file?",
+      "options": [
+        {
+          "id": "a",
+          "label": "<css>",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "<link rel=\"stylesheet\" href=\"styles.css\">",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "<script src=\"styles.css\"></script>",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<style src=\"styles.css\">",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Use the link tag in the head to load an external stylesheet.",
+        "byOptionId": {
+          "a": "Not quite. Use the link tag in the head to load an external stylesheet.",
+          "b": "Correct. Use the link tag in the head to load an external stylesheet.",
+          "c": "Not quite. Use the link tag in the head to load an external stylesheet.",
+          "d": "Not quite. Use the link tag in the head to load an external stylesheet."
+        }
+      }
+    }
+  ]
+}

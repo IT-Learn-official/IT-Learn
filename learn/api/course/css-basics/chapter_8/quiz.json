@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Chapter 8 - The CSS Box Model Explained",
+  "description": "Quick concept check for the css box model explained.",
+  "questions": [
+    {
+      "id": "q1-box-order",
+      "type": "single-choice",
+      "prompt": "Which order is correct from inside to outside?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Content -> padding -> border -> margin",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Margin -> border -> padding -> content",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Border -> content -> margin -> padding",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Padding -> margin -> content -> border",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The order is content, padding, border, margin.",
+        "byOptionId": {
+          "a": "Correct. The order is content, padding, border, margin.",
+          "b": "Not quite. The order is content, padding, border, margin.",
+          "c": "Not quite. The order is content, padding, border, margin.",
+          "d": "Not quite. The order is content, padding, border, margin."
+        }
+      }
+    },
+    {
+      "id": "q2-margin-vs-padding",
+      "type": "single-choice",
+      "prompt": "What is the main difference between margin and padding?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Both are exactly the same",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Padding is outside and margin is inside",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Padding is inside, margin is outside",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Margin changes text color",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Padding is inside the border. Margin is outside the border.",
+        "byOptionId": {
+          "a": "Not quite. Padding is inside the border. Margin is outside the border.",
+          "b": "Not quite. Padding is inside the border. Margin is outside the border.",
+          "c": "Correct. Padding is inside the border. Margin is outside the border.",
+          "d": "Not quite. Padding is inside the border. Margin is outside the border."
+        }
+      }
+    }
+  ]
+}
