@@ -83,26 +83,6 @@
           "links": "Not correct — HTML creates links with <a> tags."
         }
       }
-    },
-    {
-      "id": "q-html-example",
-      "type": "single-choice",
-      "prompt": "Which tag would you use to mark a paragraph of text?",
-      "options": [
-        { "id": "p", "label": "<p>", "isCorrect": true },
-        { "id": "h1", "label": "<h1>", "isCorrect": false },
-        { "id": "img", "label": "<img>", "isCorrect": false },
-        { "id": "a", "label": "<a>", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "<p> is the semantic tag for paragraphs of text.",
-        "byOptionId": {
-          "p": "Correct — <p> marks a paragraph.",
-          "h1": "Not correct — <h1> is for top-level headings, not regular paragraphs.",
-          "img": "Not correct — <img> embeds images, not text paragraphs.",
-          "a": "Not correct — <a> creates links, not paragraphs."
-        }
-      }
     }
   ]
 }
