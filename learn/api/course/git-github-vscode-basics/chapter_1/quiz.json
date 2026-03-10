@@ -80,7 +80,7 @@
           "a": "Correct. A repo is a folder tracked by Git.",
           "b": "Incorrect. Repos are not temporary random files.",
           "c": "Incorrect. Repos are not images.",
-          "d": "Incorrect. Git is a tool, not a programming language."
+          "d": "Incorrect. Repos are not programming languages."
         }
       }
     }

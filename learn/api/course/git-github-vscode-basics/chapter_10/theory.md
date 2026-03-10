@@ -7,7 +7,7 @@ Use this as a quick reminder.
 
 ```bash
 git status
-git add .
+git add <file-name>
 git commit -m "Message"
 ```
 
@@ -30,8 +30,8 @@ git merge feature/name
 ## GitHub Sync
 
 ```bash
-git pull
-git push
+git pull origin main
+git push -u origin main
 ```
 
 ## Undo
