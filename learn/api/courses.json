@@ -602,6 +602,94 @@
           "practiceResourceUid": "practice.json"
         }
       ]
+    },
+    {
+      "id": "git-github-vscode-basics",
+      "title": "Git, GitHub, and VS Code Basics for Young Students",
+      "description": "A beginner-friendly course that teaches the basics of Git version control, GitHub collaboration, and how to use VS Code with Git.",
+      "authors": ["super_man2775"],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "Version Control, Git, and GitHub",
+          "description": "What version control is, what Git does locally, and what GitHub adds online.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Setting Up Git and VS Code",
+          "description": "Configure your Git identity and learn the key Git features inside VS Code.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "Your First Repo: Status, Add, Commit",
+          "description": "See changes, stage the right files, write clear commits, and learn what `.gitignore` is for.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Branches, Merging, and Conflicts",
+          "description": "Work in feature branches, merge safely, and understand how to resolve merge conflicts in VS Code.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "GitHub Remotes: Clone, Push, Pull",
+          "description": "Sync your work with GitHub using clone, push, pull, and the `origin` remote.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "Collaboration: Pull Requests, Reviews, and Issues",
+          "description": "Use pull requests, reviews, and issues to collaborate without overwriting each other.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Undoing Mistakes (Without Panic)",
+          "description": "Learn safe ways to undo changes with restore, revert, stash, and reflog basics.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "Good Habits: Clean History and Clear Messages",
+          "description": "Write good commit messages, keep commits focused, and learn simple tagging and documentation habits.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "Useful VS Code Extensions",
+          "description": "A small list of beginner-friendly extensions that can improve your workflow without overwhelming you.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "Git Cheat Sheet",
+          "description": "A quick reference of common Git commands for day-to-day work, branches, syncing, and undoing mistakes.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
     }
   ]
 }
