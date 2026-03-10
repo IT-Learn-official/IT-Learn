@@ -672,6 +672,22 @@
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "Useful VS Code Extensions",
+          "description": "A small list of beginner-friendly extensions that can improve your workflow without overwhelming you.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "Git Cheat Sheet",
+          "description": "A quick reference of common Git commands for day-to-day work, branches, syncing, and undoing mistakes.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
         }
       ]
     }

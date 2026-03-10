@@ -4,7 +4,7 @@ Git history is for humans.
 Make it easy to read.
 
 Good commit messages are short and specific:
-- bad: `stuff`
+- bad: `i did something cool`
 - good: `Fix navbar spacing on mobile`
 
 Try to keep commits small: one idea per commit.
