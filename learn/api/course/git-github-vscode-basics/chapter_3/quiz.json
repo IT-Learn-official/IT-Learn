@@ -1,0 +1,89 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Chapter 3 - Your First Repo: Status, Add, Commit",
+  "description": "Check your understanding of staging and committing changes.",
+  "questions": [
+    {
+      "id": "q1-git-status",
+      "type": "single-choice",
+      "prompt": "What does `git status` help you see?",
+      "options": [
+        { "id": "a", "label": "The current weather", "isCorrect": false },
+        { "id": "b", "label": "Which files have changed and are staged or unstaged", "isCorrect": true },
+        { "id": "c", "label": "Your GitHub followers", "isCorrect": false },
+        { "id": "d", "label": "A list of all programming languages", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`git status` tells you what changed and what is ready to commit.",
+        "byOptionId": {
+          "a": "Not quite. Git does not track weather.",
+          "b": "Correct. It shows changed files and their staging state.",
+          "c": "Not quite. GitHub followers are unrelated to Git status.",
+          "d": "Not quite. Git status is about your repository state."
+        }
+      }
+    },
+    {
+      "id": "q2-what-is-staging",
+      "type": "single-choice",
+      "prompt": "What is the staging area used for?",
+      "options": [
+        { "id": "a", "label": "Automatically uploading files to GitHub", "isCorrect": false },
+        { "id": "b", "label": "Deleting old commits", "isCorrect": false },
+        { "id": "c", "label": "Renaming your repository", "isCorrect": false },
+        { "id": "d", "label": "Choosing which changes go into the next commit", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Staging is the selection step before committing.",
+        "byOptionId": {
+          "a": "Not quite. Staging is about selecting changes, not uploading.",
+          "b": "Not quite. Staging does not delete history.",
+          "c": "Not quite. Staging does not rename repositories.",
+          "d": "Correct. Staging lets you pick what to include in the next commit."
+        }
+      }
+    },
+    {
+      "id": "q3-git-add-does",
+      "type": "single-choice",
+      "prompt": "What does `git add` do?",
+      "options": [
+        { "id": "a", "label": "Creates a new GitHub repository", "isCorrect": false },
+        { "id": "b", "label": "Stages changes so they can be committed", "isCorrect": true },
+        { "id": "c", "label": "Writes a commit message for you", "isCorrect": false },
+        { "id": "d", "label": "Deletes a file from your computer", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`git add` stages changes for the next commit.",
+        "byOptionId": {
+          "a": "Incorrect. Creating a GitHub repo is a separate step.",
+          "b": "Correct. `git add` stages changes.",
+          "c": "Incorrect. You write commit messages when you commit.",
+          "d": "Incorrect. `git add` does not delete files."
+        }
+      }
+    },
+    {
+      "id": "q4-gitignore",
+      "type": "single-choice",
+      "prompt": "Why would you use a `.gitignore` file?",
+      "options": [
+        { "id": "a", "label": "To speed up your internet connection", "isCorrect": false },
+        { "id": "b", "label": "To make commits anonymous", "isCorrect": false },
+        { "id": "c", "label": "To force Git to track every file", "isCorrect": false },
+        { "id": "d", "label": "To ignore files you do not want to track in Git", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "`.gitignore` helps prevent committing temporary files, build output, and secrets.",
+        "byOptionId": {
+          "a": "Not quite. `.gitignore` does not change your internet speed.",
+          "b": "Not quite. It does not make commits anonymous.",
+          "c": "Not quite. It does the opposite by telling Git to ignore certain files.",
+          "d": "Correct. `.gitignore` tells Git what not to track."
+        }
+      }
+    }
+  ]
+}
+
