@@ -37,7 +37,7 @@
       "explanations": {
         "overview": "Git runs on your computer; GitHub is a popular place to store and share Git repositories online.",
         "byOptionId": {
-          "a": "Incorrect. This swaps them.",
+          "a": "Incorrect. Git is a tool on your computer, and GitHub is a website.",
           "b": "Correct. Git is local; GitHub is online hosting and collaboration.",
           "c": "Incorrect. They are related, but not the same.",
           "d": "Incorrect. You can use Git locally without GitHub."
