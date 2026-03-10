@@ -17,7 +17,7 @@ A commit is a saved snapshot with a short message.
 Terms to know:
 
 ```text
-Files you edit  -> working folder
+Files you edit  -> working directory
 Saved snapshots -> commits
 Online copy     -> remote (GitHub)
 ```

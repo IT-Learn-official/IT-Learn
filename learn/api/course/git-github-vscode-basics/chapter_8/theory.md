@@ -20,4 +20,11 @@ When you reach a stable point, you can tag it:
 git tag v1.0.0
 ```
 
+and after that, you can push the tag:
+
+```bash
+git push origin v1.0.0
+```
+
+
 In VS Code, always look at the diff before you commit.

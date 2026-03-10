@@ -59,7 +59,7 @@
         "byOptionId": {
           "a": "Not quite. A commit is not a folder.",
           "b": "Not quite. A commit is not a password.",
-          "c": "Not quite. Authentication is separate from commits.",
+          "c": "Not quite. A commit is not a file, and it does not delete old code.",
           "d": "Correct. A commit is a snapshot with a message and an ID."
         }
       }
