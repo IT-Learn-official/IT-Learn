@@ -8,6 +8,7 @@ import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotServ
 import { showWelcomeMessage } from './mascot.js';
 import { checkSession, getMyProfile } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
+import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
 
 function requiresProfileOnboarding(profile) {
   const username = String(profile?.username || '').trim().toLowerCase();
@@ -15,9 +16,14 @@ function requiresProfileOnboarding(profile) {
   return !validUsername;
 }
 
+function hasForcedOnboardingFlag() {
+  return localStorage.getItem('itlearn_force_onboarding') === '1';
+}
+
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
   const globalStatusElement = document.getElementById('global-status');
+  let bootProfile = null;
 
   // Check if user is logged in
   const sessionData = await checkSession();
@@ -50,12 +56,18 @@ async function bootstrap() {
       if (!profileResult.success) {
         setOnboardingRequired(true);
       } else {
-        setOnboardingRequired(requiresProfileOnboarding(profileResult.profile));
+        bootProfile = profileResult.profile;
+        setOnboardingRequired(hasForcedOnboardingFlag() || requiresProfileOnboarding(profileResult.profile));
       }
     }
   }
   
   initLayout({ globalStatusElement, screenRootElement });
+
+  await syncGamificationWithProfileProgress(bootProfile);
+
+  // Populate sidebar gamification stats from localStorage
+  updateSidebarStats();
 
   setGlobalStatus('Loading courses...');
 
@@ -88,6 +100,7 @@ function attachSidebarLinks() {
   const profileLink = document.getElementById('profile-link');
   const settingsLink = document.getElementById('settings-link');
   const badgesLink = document.getElementById('badges-link');
+  const storeLink = document.getElementById('store-link');
 
   if (profileLink) {
     profileLink.addEventListener('click', (e) => {
@@ -107,6 +120,13 @@ function attachSidebarLinks() {
     settingsLink.addEventListener('click', (e) => {
       e.preventDefault();
       navigateTo({ route: 'settings' });
+    });
+  }
+
+  if (storeLink) {
+    storeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'store' });
     });
   }
 }
