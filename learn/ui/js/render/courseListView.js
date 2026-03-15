@@ -76,7 +76,7 @@ function buildActiveUnitCard(course, courses, trialMode) {
   const unitInfo = document.createElement('div');
   unitInfo.className = 'learn-unit-info';
   unitInfo.innerHTML = `
-    <span class="learn-unit-label">← SECTION ${Math.max(1, Math.ceil(currentLesson / 4))}, LESSON ${currentLesson}</span>
+    <span class="learn-unit-label">SECTION ${Math.max(1, Math.ceil(currentLesson / 4))}, LESSON ${currentLesson}</span>
     <h3 class="learn-unit-title">${course.title || 'Your path'}</h3>
   `;
 
@@ -251,7 +251,7 @@ function buildInventoryCard() {
       <span>🚀 2x XP boosts</span>
       <strong>${inventory.doubleXp || 0}</strong>
     </div>
-    <button type="button" class="learn-shop-btn">Open Store</button>
+    <button type="button" class="learn-shop-btn">Open Shop</button>
   `;
 
   const button = card.querySelector('.learn-shop-btn');

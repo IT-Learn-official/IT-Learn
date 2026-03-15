@@ -6,6 +6,11 @@ import { checkSession, loadProgress, saveProgress } from '../services/authServic
 const STORAGE_KEY = 'itlearn_gamification';
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
+const REWARD_MIN_FACTOR = 0.8;
+const REWARD_MAX_FACTOR = 1.2;
+const XP_PER_RANK = 8;
+const RANKS_PER_LEAGUE = 30;
+const XP_PER_LEAGUE = XP_PER_RANK * RANKS_PER_LEAGUE;
 
 export const LEAGUES = ['Wood', 'Plastic', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Platina', 'Master'];
 
@@ -76,11 +81,26 @@ function weekStartStr() {
   const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - d.getDay());
   return d.toISOString().split('T')[0];
 }
+function randomizeReward(base) {
+  if (typeof base !== 'number' || !Number.isFinite(base) || base <= 0) return 0;
+  const min = Math.max(1, Math.floor(base * REWARD_MIN_FACTOR));
+  const max = Math.max(min, Math.ceil(base * REWARD_MAX_FACTOR));
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function formatRewardLabel(item) {
+  if (item.coins) return `+${item.coins} Coins`;
+  if (item.xp) return `+${item.xp} XP Bonus`;
+  return item.label;
+}
 function makeDailyQuests() {
   return [...QUEST_POOL]
     .sort(() => Math.random() - 0.5)
     .slice(0, 5)
     .map(q => ({ ...q, progress: 0, completed: false, claimed: false }));
+}
+function updateLeagueIndex(state) {
+  const nextIndex = Math.min(LEAGUES.length - 1, Math.floor(state.leaderboard.weeklyXp / XP_PER_LEAGUE));
+  state.leaderboard.leagueIndex = nextIndex;
 }
 function defaultState() {
   return {
@@ -132,6 +152,7 @@ function load() {
     if (_state.leaderboard.weekStart !== weekStartStr()) {
       _state.leaderboard.weeklyXp  = 0;
       _state.leaderboard.weekStart = weekStartStr();
+      updateLeagueIndex(_state);
     }
   } catch {
     _state = defaultState();
@@ -310,6 +331,7 @@ export function addXP(amount) {
   s.xp.total  += actual;
   s.xp.daily  += actual;
   s.leaderboard.weeklyXp += actual;
+  updateLeagueIndex(s);
   _progressQuest('earn_xp_50', actual);
   save();
   return actual;
@@ -362,7 +384,7 @@ export function updateStreak() {
 // ─── Leaderboard ─────────────────────────────────────────────────────────────
 export function getLeaderboard() {
   const s    = load();
-  const rank = Math.max(1, 30 - Math.floor(s.leaderboard.weeklyXp / 8));
+  const rank = Math.max(1, RANKS_PER_LEAGUE - Math.floor(s.leaderboard.weeklyXp / XP_PER_RANK));
   return {
     league:      LEAGUES[s.leaderboard.leagueIndex] || 'Wood',
     leagueIndex: s.leaderboard.leagueIndex,
@@ -408,13 +430,22 @@ export function openBox() {
   for (const [k, w] of Object.entries(RARITY_WEIGHTS)) { r -= w; if (r <= 0) { rarity = k; break; } }
 
   const pool = REWARD_ITEMS.filter(i => i.rarity === rarity);
-  const item = pool[Math.floor(Math.random() * pool.length)];
+  const item = { ...pool[Math.floor(Math.random() * pool.length)] };
 
-  if (item.coins)  s.coins += item.coins;
-  if (item.xp)    { s.xp.total += item.xp; s.xp.daily += item.xp; s.leaderboard.weeklyXp += item.xp; }
+  if (item.coins) item.coins = randomizeReward(item.coins);
+  if (item.xp) item.xp = randomizeReward(item.xp);
+  item.label = formatRewardLabel(item);
+
+  if (item.coins) s.coins += item.coins;
+  if (item.xp) {
+    s.xp.total += item.xp;
+    s.xp.daily += item.xp;
+    s.leaderboard.weeklyXp += item.xp;
+    updateLeagueIndex(s);
+  }
   if (item.hearts) s.hearts.current = Math.min(item.hearts, s.hearts.max);
   if (item.item === 'streak_freeze') s.inventory.streakFreezes++;
-  if (item.item === 'double_xp')     s.inventory.doubleXp++;
+  if (item.item === 'double_xp') s.inventory.doubleXp++;
 
   save();
   return item;
@@ -446,19 +477,22 @@ export function buyStoreItem(itemId) {
 }
 
 // ─── Lesson Complete ─────────────────────────────────────────────────────────
-export function onLessonComplete({ correct, total }) {
+export function onLessonComplete({ correct, total, awardXp = true }) {
   const base   = 10;
   const quizXp = correct * 5;
   const perfXp = (correct === total && total > 0) ? 15 : 0;
 
-  const xpEarned = addXP(base + quizXp + perfXp);
-  progressQuest('complete_lesson', 1);
-  progressQuest('complete_2', 1);
-  progressQuest('correct_5', correct);
-  if (correct === total && total > 0) progressQuest('perfect_quiz', 1);
+  const xpEarned = awardXp ? addXP(base + quizXp + perfXp) : 0;
 
-  const streak = updateStreak();
-  setBoxReady();
+  if (awardXp) {
+    progressQuest('complete_lesson', 1);
+    progressQuest('complete_2', 1);
+    progressQuest('correct_5', correct);
+    if (correct === total && total > 0) progressQuest('perfect_quiz', 1);
+  }
+
+  const streak = awardXp ? updateStreak() : getStreak();
+  if (awardXp) setBoxReady();
 
   return { xpEarned, streak };
 }

@@ -86,7 +86,7 @@ export function renderStoreView(screenRootEl) {
 
   const title = document.createElement('h2');
   title.className = 'screen-header-title';
-  title.textContent = 'Store';
+  title.textContent = 'Shop';
 
   const subtitle = document.createElement('p');
   subtitle.className = 'screen-header-subtitle';

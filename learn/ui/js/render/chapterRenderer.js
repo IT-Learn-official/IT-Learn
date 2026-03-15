@@ -128,8 +128,8 @@ async function renderQuizTab(course, chapter, tabContentEl) {
     renderQuiz({
       container: tabContentEl,
       quiz,
-      onComplete: ({ correct, total }) => {
-        triggerLessonComplete({ correct, total, lessonTitle: chapter.title || 'Lesson' });
+      onComplete: ({ correct, total, awardXp }) => {
+        triggerLessonComplete({ correct, total, awardXp, lessonTitle: chapter.title || 'Lesson' });
       },
     });
   } catch (error) {

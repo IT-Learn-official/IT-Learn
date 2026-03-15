@@ -24,13 +24,13 @@ const LEAGUE_COLORS = {
  * @param {string}   opts.lessonTitle
  * @param {Function} opts.onDone  — called when the user closes the flow
  */
-export function showPostLessonFlow({ correctAnswers = 0, totalQuestions = 0, lessonTitle = 'Lesson', onDone }) {
+export function showPostLessonFlow({ correctAnswers = 0, totalQuestions = 0, lessonTitle = 'Lesson', awardXp = true, onDone }) {
   // ── Process lesson completion ────────────────────────────────────────────
-  const { xpEarned, streak } = onLessonComplete({ correct: correctAnswers, total: totalQuestions });
+  const { xpEarned, streak } = onLessonComplete({ correct: correctAnswers, total: totalQuestions, awardXp });
   const leaderboard  = getLeaderboard();
   const quests       = getQuests();
-  const questCoins   = claimAllQuests();
-  const boxItem      = openBox();
+  const questCoins   = awardXp ? claimAllQuests() : 0;
+  const boxItem      = awardXp ? openBox() : null;
 
   updateSidebarStats();
 
@@ -305,6 +305,11 @@ function buildBoxSlide(item) {
       box.disabled = true;
 
       setTimeout(() => {
+        const wrap = box.parentElement;
+        if (wrap) {
+          wrap.insertBefore(reveal, box);
+          box.remove();
+        }
         reveal.hidden = false;
         const rarityClass = item ? `rarity-${item.rarity}` : 'rarity-common';
         reveal.innerHTML = `
