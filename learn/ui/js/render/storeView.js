@@ -123,6 +123,7 @@ function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
 
   const box = body.querySelector('.reward-box');
   const reveal = body.querySelector('.reward-reveal');
+  const AUTO_OPEN_DELAY = 2500;
 
   if (box && reveal) {
     let opened = false;
@@ -138,12 +139,15 @@ function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
           wrap.insertBefore(reveal, box);
           box.remove();
         }
+        const safeRarity = (reward && typeof reward.rarity === 'string' && reward.rarity)
+          ? reward.rarity
+          : 'common';
         reveal.hidden = false;
         reveal.innerHTML = `
-          <div class="reward-item rarity-${reward.rarity}">
+          <div class="reward-item rarity-${safeRarity}">
             <span class="reward-item__icon">${reward.icon || '🎁'}</span>
             <span class="reward-item__label">${reward.label}</span>
-            <span class="reward-item__rarity">${reward.rarity.toUpperCase()}</span>
+            <span class="reward-item__rarity">${safeRarity.toUpperCase()}</span>
           </div>
         `;
         reveal.classList.add('is-visible');
@@ -159,7 +163,7 @@ function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
 
     setTimeout(() => {
       if (!opened) openNow();
-    }, 200);
+    }, AUTO_OPEN_DELAY);
   }
 
   document.body.classList.add('overlay-open');
