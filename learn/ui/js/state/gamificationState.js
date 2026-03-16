@@ -8,9 +8,11 @@ const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
 const REWARD_MIN_FACTOR = 0.8;
 const REWARD_MAX_FACTOR = 1.2;
-const XP_PER_RANK = 8;
+const XP_PER_RANK = 12;
 const RANKS_PER_LEAGUE = 30;
 const XP_PER_LEAGUE = XP_PER_RANK * RANKS_PER_LEAGUE;
+const BIG_BOX_UPGRADE_COST = 75;
+const BIG_BOX_REWARD_MULTIPLIER = 1.35;
 
 export const LEAGUES = ['Wood', 'Plastic', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Platina', 'Master'];
 
@@ -36,6 +38,7 @@ export const REWARD_ITEMS = [
 ];
 
 const RARITY_WEIGHTS = { common: 50, uncommon: 30, rare: 15, epic: 5 };
+const BIG_BOX_RARITY_WEIGHTS = { common: 30, uncommon: 35, rare: 25, epic: 10 };
 
 const STORE_ITEMS = [
   {
@@ -73,6 +76,22 @@ const STORE_ITEMS = [
       if (!s.inventory.profileEffects.includes('glow')) s.inventory.profileEffects.push('glow');
     },
   },
+  {
+    id: 'buy_box_normal',
+    title: 'Reward Box',
+    description: 'Open a reward box instantly.',
+    icon: '🎁',
+    price: 50,
+    apply: () => openBoxInternal({ isBig: false, consumeReady: false }),
+  },
+  {
+    id: 'buy_box_big',
+    title: 'BIG BOX',
+    description: 'Better odds and bigger rewards.',
+    icon: '📦',
+    price: 120,
+    apply: () => openBoxInternal({ isBig: true, consumeReady: false }),
+  },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -81,10 +100,11 @@ function weekStartStr() {
   const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - d.getDay());
   return d.toISOString().split('T')[0];
 }
-function randomizeReward(base) {
+function randomizeReward(base, multiplier = 1) {
   if (typeof base !== 'number' || !Number.isFinite(base) || base <= 0) return 0;
-  const min = Math.max(1, Math.floor(base * REWARD_MIN_FACTOR));
-  const max = Math.max(min, Math.ceil(base * REWARD_MAX_FACTOR));
+  const scaled = base * multiplier;
+  const min = Math.max(1, Math.floor(scaled * REWARD_MIN_FACTOR));
+  const max = Math.max(min, Math.ceil(scaled * REWARD_MAX_FACTOR));
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function formatRewardLabel(item) {
@@ -384,7 +404,9 @@ export function updateStreak() {
 // ─── Leaderboard ─────────────────────────────────────────────────────────────
 export function getLeaderboard() {
   const s    = load();
-  const rank = Math.max(1, RANKS_PER_LEAGUE - Math.floor(s.leaderboard.weeklyXp / XP_PER_RANK));
+  const leagueFloor = s.leaderboard.leagueIndex * RANKS_PER_LEAGUE * XP_PER_RANK;
+  const xpIntoLeague = Math.max(0, s.leaderboard.weeklyXp - leagueFloor);
+  const rank = Math.max(1, RANKS_PER_LEAGUE - Math.floor(xpIntoLeague / XP_PER_RANK));
   return {
     league:      LEAGUES[s.leaderboard.leagueIndex] || 'Wood',
     leagueIndex: s.leaderboard.leagueIndex,
@@ -418,22 +440,25 @@ export function claimAllQuests() {
 // ─── Reward Box ──────────────────────────────────────────────────────────────
 export function isBoxReady() { return load().boxReady; }
 export function setBoxReady() { const s = load(); s.boxReady = true; save(); }
+export function getBoxUpgradeCost() { return BIG_BOX_UPGRADE_COST; }
 
-export function openBox() {
+function openBoxInternal({ isBig = false, consumeReady = false } = {}) {
   const s = load();
-  if (!s.boxReady) return null;
-  s.boxReady = false;
+  if (consumeReady && !s.boxReady) return null;
+  if (consumeReady) s.boxReady = false;
 
-  const total = Object.values(RARITY_WEIGHTS).reduce((a, b) => a + b, 0);
+  const weights = isBig ? BIG_BOX_RARITY_WEIGHTS : RARITY_WEIGHTS;
+  const total = Object.values(weights).reduce((a, b) => a + b, 0);
   let r = Math.random() * total;
   let rarity = 'common';
-  for (const [k, w] of Object.entries(RARITY_WEIGHTS)) { r -= w; if (r <= 0) { rarity = k; break; } }
+  for (const [k, w] of Object.entries(weights)) { r -= w; if (r <= 0) { rarity = k; break; } }
 
   const pool = REWARD_ITEMS.filter(i => i.rarity === rarity);
   const item = { ...pool[Math.floor(Math.random() * pool.length)] };
+  const multiplier = isBig ? BIG_BOX_REWARD_MULTIPLIER : 1;
 
-  if (item.coins) item.coins = randomizeReward(item.coins);
-  if (item.xp) item.xp = randomizeReward(item.xp);
+  if (item.coins) item.coins = randomizeReward(item.coins, multiplier);
+  if (item.xp) item.xp = randomizeReward(item.xp, multiplier);
   item.label = formatRewardLabel(item);
 
   if (item.coins) s.coins += item.coins;
@@ -449,6 +474,10 @@ export function openBox() {
 
   save();
   return item;
+}
+
+export function openBox({ isBig = false } = {}) {
+  return openBoxInternal({ isBig, consumeReady: true });
 }
 
 // ─── Inventory ───────────────────────────────────────────────────────────────
@@ -471,9 +500,9 @@ export function buyStoreItem(itemId) {
   if (s.coins < item.price) return { success: false, error: 'Not enough coins.' };
 
   s.coins -= item.price;
-  item.apply(s);
+  const reward = item.apply(s) || null;
   save();
-  return { success: true, itemId: item.id, remainingCoins: s.coins };
+  return { success: true, itemId: item.id, remainingCoins: s.coins, reward };
 }
 
 // ─── Lesson Complete ─────────────────────────────────────────────────────────

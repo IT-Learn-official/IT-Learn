@@ -165,9 +165,14 @@ export function renderQuiz({ container, quiz, onComplete }) {
           playWrongSound();
           showMascotMessage('❌ Wrong answer — heart lost! 💔', 3000);
 
-          if (remaining === 0) {
+          if (remaining === 0 && awardXp) {
+            awardXp = false;
             // Slight delay so the heart animation is visible first
-            setTimeout(() => showNoHeartsOverlay(root, container, null), 600);
+            setTimeout(() => {
+              showNoHeartsOverlay(root, container, () => {
+                awardXp = false;
+              });
+            }, 600);
           }
         }
 
