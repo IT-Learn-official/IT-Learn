@@ -13,6 +13,8 @@ const RANKS_PER_LEAGUE = 30;
 const XP_PER_LEAGUE = XP_PER_RANK * RANKS_PER_LEAGUE;
 const BIG_BOX_UPGRADE_COST = 75;
 const BIG_BOX_REWARD_MULTIPLIER = 1.35;
+const BOX_DROP_CHANCE = 0.28;
+const BOX_PITY_AFTER_LESSONS = 4;
 
 export const LEAGUES = ['Wood', 'Plastic', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Platina', 'Master'];
 
@@ -130,8 +132,9 @@ function defaultState() {
     streak:      { current: 0, longest: 0, lastDate: null },
     leaderboard: { leagueIndex: 0, weeklyXp: 0, weekStart: weekStartStr() },
     quests:      { date: todayStr(), list: makeDailyQuests() },
-    inventory:   { streakFreezes: 0, doubleXp: 0 },
+    inventory:   { streakFreezes: 0, doubleXp: 0, profileEffects: [] },
     boxReady:    false,
+    lessonsSinceBox: 0,
   };
 }
 
@@ -194,6 +197,7 @@ function buildRemoteGamificationPayload() {
       profileEffects: Array.isArray(s.inventory?.profileEffects) ? [...s.inventory.profileEffects] : [],
     },
     boxReady: Boolean(s.boxReady),
+    lessonsSinceBox: Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0,
     savedAt: new Date().toISOString(),
   };
 }
@@ -292,6 +296,9 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
             : (Array.isArray(s.inventory.profileEffects) ? s.inventory.profileEffects : []),
         };
         s.boxReady = Boolean(remoteGamification.boxReady);
+        s.lessonsSinceBox = Number.isFinite(remoteGamification.lessonsSinceBox)
+          ? Math.max(0, remoteGamification.lessonsSinceBox)
+          : (Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0);
         saveLocalOnly();
       } finally {
         _suppressRemoteSync = false;
@@ -439,8 +446,24 @@ export function claimAllQuests() {
 
 // ─── Reward Box ──────────────────────────────────────────────────────────────
 export function isBoxReady() { return load().boxReady; }
-export function setBoxReady() { const s = load(); s.boxReady = true; save(); }
+export function setBoxReady() { const s = load(); s.boxReady = true; s.lessonsSinceBox = 0; save(); }
 export function getBoxUpgradeCost() { return BIG_BOX_UPGRADE_COST; }
+
+function maybeSetBoxReadyAfterLesson() {
+  const s = load();
+  if (s.boxReady) return true;
+
+  const currentCounter = Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0;
+  const nextCounter = currentCounter + 1;
+  const guaranteedDrop = nextCounter >= BOX_PITY_AFTER_LESSONS;
+  const randomDrop = Math.random() < BOX_DROP_CHANCE;
+  const shouldDrop = guaranteedDrop || randomDrop;
+
+  s.lessonsSinceBox = shouldDrop ? 0 : nextCounter;
+  s.boxReady = shouldDrop;
+  save();
+  return shouldDrop;
+}
 
 function openBoxInternal({ isBig = false, consumeReady = false, skipSave = false } = {}) {
   const s = load();
@@ -471,6 +494,10 @@ function openBoxInternal({ isBig = false, consumeReady = false, skipSave = false
   if (item.hearts) s.hearts.current = Math.min(item.hearts, s.hearts.max);
   if (item.item === 'streak_freeze') s.inventory.streakFreezes++;
   if (item.item === 'double_xp') s.inventory.doubleXp++;
+  if (item.item === 'profile_glow') {
+    s.inventory.profileEffects = Array.isArray(s.inventory.profileEffects) ? s.inventory.profileEffects : [];
+    if (!s.inventory.profileEffects.includes('glow')) s.inventory.profileEffects.push('glow');
+  }
 
   if (!skipSave) save();
   return item;
@@ -521,7 +548,7 @@ export function onLessonComplete({ correct, total, awardXp = true }) {
   }
 
   const streak = awardXp ? updateStreak() : getStreak();
-  if (awardXp) setBoxReady();
+  if (awardXp) maybeSetBoxReadyAfterLesson();
 
   return { xpEarned, streak };
 }
