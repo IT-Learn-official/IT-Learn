@@ -6,6 +6,13 @@ import { checkSession, loadProgress, saveProgress } from '../services/authServic
 const STORAGE_KEY = 'itlearn_gamification';
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
+const REWARD_MIN_FACTOR = 0.8;
+const REWARD_MAX_FACTOR = 1.2;
+const XP_PER_RANK = 12;
+const RANKS_PER_LEAGUE = 30;
+const XP_PER_LEAGUE = XP_PER_RANK * RANKS_PER_LEAGUE;
+const BIG_BOX_UPGRADE_COST = 75;
+const BIG_BOX_REWARD_MULTIPLIER = 1.35;
 
 export const LEAGUES = ['Wood', 'Plastic', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Platina', 'Master'];
 
@@ -31,6 +38,7 @@ export const REWARD_ITEMS = [
 ];
 
 const RARITY_WEIGHTS = { common: 50, uncommon: 30, rare: 15, epic: 5 };
+const BIG_BOX_RARITY_WEIGHTS = { common: 30, uncommon: 35, rare: 25, epic: 10 };
 
 const STORE_ITEMS = [
   {
@@ -68,6 +76,22 @@ const STORE_ITEMS = [
       if (!s.inventory.profileEffects.includes('glow')) s.inventory.profileEffects.push('glow');
     },
   },
+  {
+    id: 'buy_box_normal',
+    title: 'Reward Box',
+    description: 'Open a reward box instantly.',
+    icon: '🎁',
+    price: 50,
+    apply: () => openBoxInternal({ isBig: false, consumeReady: false, skipSave: true }),
+  },
+  {
+    id: 'buy_box_big',
+    title: 'BIG BOX',
+    description: 'Better odds and bigger rewards.',
+    icon: '📦',
+    price: 120,
+    apply: () => openBoxInternal({ isBig: true, consumeReady: false, skipSave: true }),
+  },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -76,11 +100,27 @@ function weekStartStr() {
   const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - d.getDay());
   return d.toISOString().split('T')[0];
 }
+function randomizeReward(base, multiplier = 1) {
+  if (typeof base !== 'number' || !Number.isFinite(base) || base <= 0) return 0;
+  const scaled = base * multiplier;
+  const min = Math.max(1, Math.floor(scaled * REWARD_MIN_FACTOR));
+  const max = Math.max(min, Math.ceil(scaled * REWARD_MAX_FACTOR));
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function formatRewardLabel(item) {
+  if (item.coins) return `+${item.coins} Coins`;
+  if (item.xp) return `+${item.xp} XP Bonus`;
+  return item.label;
+}
 function makeDailyQuests() {
   return [...QUEST_POOL]
     .sort(() => Math.random() - 0.5)
     .slice(0, 5)
     .map(q => ({ ...q, progress: 0, completed: false, claimed: false }));
+}
+function updateLeagueIndex(state) {
+  const nextIndex = Math.min(LEAGUES.length - 1, Math.floor(state.leaderboard.weeklyXp / XP_PER_LEAGUE));
+  state.leaderboard.leagueIndex = nextIndex;
 }
 function defaultState() {
   return {
@@ -132,6 +172,7 @@ function load() {
     if (_state.leaderboard.weekStart !== weekStartStr()) {
       _state.leaderboard.weeklyXp  = 0;
       _state.leaderboard.weekStart = weekStartStr();
+      updateLeagueIndex(_state);
     }
   } catch {
     _state = defaultState();
@@ -310,6 +351,7 @@ export function addXP(amount) {
   s.xp.total  += actual;
   s.xp.daily  += actual;
   s.leaderboard.weeklyXp += actual;
+  updateLeagueIndex(s);
   _progressQuest('earn_xp_50', actual);
   save();
   return actual;
@@ -362,7 +404,9 @@ export function updateStreak() {
 // ─── Leaderboard ─────────────────────────────────────────────────────────────
 export function getLeaderboard() {
   const s    = load();
-  const rank = Math.max(1, 30 - Math.floor(s.leaderboard.weeklyXp / 8));
+  const leagueFloor = s.leaderboard.leagueIndex * RANKS_PER_LEAGUE * XP_PER_RANK;
+  const xpIntoLeague = Math.max(0, s.leaderboard.weeklyXp - leagueFloor);
+  const rank = Math.max(1, RANKS_PER_LEAGUE - Math.floor(xpIntoLeague / XP_PER_RANK));
   return {
     league:      LEAGUES[s.leaderboard.leagueIndex] || 'Wood',
     leagueIndex: s.leaderboard.leagueIndex,
@@ -396,28 +440,44 @@ export function claimAllQuests() {
 // ─── Reward Box ──────────────────────────────────────────────────────────────
 export function isBoxReady() { return load().boxReady; }
 export function setBoxReady() { const s = load(); s.boxReady = true; save(); }
+export function getBoxUpgradeCost() { return BIG_BOX_UPGRADE_COST; }
 
-export function openBox() {
+function openBoxInternal({ isBig = false, consumeReady = false, skipSave = false } = {}) {
   const s = load();
-  if (!s.boxReady) return null;
-  s.boxReady = false;
+  if (consumeReady && !s.boxReady) return null;
+  if (consumeReady) s.boxReady = false;
 
-  const total = Object.values(RARITY_WEIGHTS).reduce((a, b) => a + b, 0);
+  const weights = isBig ? BIG_BOX_RARITY_WEIGHTS : RARITY_WEIGHTS;
+  const total = Object.values(weights).reduce((a, b) => a + b, 0);
   let r = Math.random() * total;
   let rarity = 'common';
-  for (const [k, w] of Object.entries(RARITY_WEIGHTS)) { r -= w; if (r <= 0) { rarity = k; break; } }
+  for (const [k, w] of Object.entries(weights)) { r -= w; if (r <= 0) { rarity = k; break; } }
 
   const pool = REWARD_ITEMS.filter(i => i.rarity === rarity);
-  const item = pool[Math.floor(Math.random() * pool.length)];
+  const item = { ...pool[Math.floor(Math.random() * pool.length)] };
+  const multiplier = isBig ? BIG_BOX_REWARD_MULTIPLIER : 1;
 
-  if (item.coins)  s.coins += item.coins;
-  if (item.xp)    { s.xp.total += item.xp; s.xp.daily += item.xp; s.leaderboard.weeklyXp += item.xp; }
+  if (item.coins) item.coins = randomizeReward(item.coins, multiplier);
+  if (item.xp) item.xp = randomizeReward(item.xp, multiplier);
+  item.label = formatRewardLabel(item);
+
+  if (item.coins) s.coins += item.coins;
+  if (item.xp) {
+    s.xp.total += item.xp;
+    s.xp.daily += item.xp;
+    s.leaderboard.weeklyXp += item.xp;
+    updateLeagueIndex(s);
+  }
   if (item.hearts) s.hearts.current = Math.min(item.hearts, s.hearts.max);
   if (item.item === 'streak_freeze') s.inventory.streakFreezes++;
-  if (item.item === 'double_xp')     s.inventory.doubleXp++;
+  if (item.item === 'double_xp') s.inventory.doubleXp++;
 
-  save();
+  if (!skipSave) save();
   return item;
+}
+
+export function openBox({ isBig = false } = {}) {
+  return openBoxInternal({ isBig, consumeReady: true });
 }
 
 // ─── Inventory ───────────────────────────────────────────────────────────────
@@ -440,25 +500,28 @@ export function buyStoreItem(itemId) {
   if (s.coins < item.price) return { success: false, error: 'Not enough coins.' };
 
   s.coins -= item.price;
-  item.apply(s);
+  const reward = item.apply(s) || null;
   save();
-  return { success: true, itemId: item.id, remainingCoins: s.coins };
+  return { success: true, itemId: item.id, remainingCoins: s.coins, reward };
 }
 
 // ─── Lesson Complete ─────────────────────────────────────────────────────────
-export function onLessonComplete({ correct, total }) {
+export function onLessonComplete({ correct, total, awardXp = true }) {
   const base   = 10;
   const quizXp = correct * 5;
   const perfXp = (correct === total && total > 0) ? 15 : 0;
 
-  const xpEarned = addXP(base + quizXp + perfXp);
-  progressQuest('complete_lesson', 1);
-  progressQuest('complete_2', 1);
-  progressQuest('correct_5', correct);
-  if (correct === total && total > 0) progressQuest('perfect_quiz', 1);
+  const xpEarned = awardXp ? addXP(base + quizXp + perfXp) : 0;
 
-  const streak = updateStreak();
-  setBoxReady();
+  if (awardXp) {
+    progressQuest('complete_lesson', 1);
+    progressQuest('complete_2', 1);
+    progressQuest('correct_5', correct);
+    if (correct === total && total > 0) progressQuest('perfect_quiz', 1);
+  }
+
+  const streak = awardXp ? updateStreak() : getStreak();
+  if (awardXp) setBoxReady();
 
   return { xpEarned, streak };
 }

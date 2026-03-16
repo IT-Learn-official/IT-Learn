@@ -7,6 +7,10 @@ import {
   getQuests,
   claimAllQuests,
   openBox,
+  getCoins,
+  spendCoins,
+  isBoxReady,
+  getBoxUpgradeCost,
   updateSidebarStats,
 } from '../state/gamificationState.js';
 
@@ -24,13 +28,13 @@ const LEAGUE_COLORS = {
  * @param {string}   opts.lessonTitle
  * @param {Function} opts.onDone  — called when the user closes the flow
  */
-export function showPostLessonFlow({ correctAnswers = 0, totalQuestions = 0, lessonTitle = 'Lesson', onDone }) {
+export function showPostLessonFlow({ correctAnswers = 0, totalQuestions = 0, lessonTitle = 'Lesson', awardXp = true, onDone }) {
   // ── Process lesson completion ────────────────────────────────────────────
-  const { xpEarned, streak } = onLessonComplete({ correct: correctAnswers, total: totalQuestions });
+  const { xpEarned, streak } = onLessonComplete({ correct: correctAnswers, total: totalQuestions, awardXp });
   const leaderboard  = getLeaderboard();
   const quests       = getQuests();
-  const questCoins   = claimAllQuests();
-  const boxItem      = openBox();
+  const questCoins   = awardXp ? claimAllQuests() : 0;
+  const boxReady     = awardXp && isBoxReady();
 
   updateSidebarStats();
 
@@ -46,7 +50,11 @@ export function showPostLessonFlow({ correctAnswers = 0, totalQuestions = 0, les
     buildStreakSlide(streak),
     buildLeaderboardSlide(leaderboard),
     buildQuestsSlide(quests, questCoins),
-    buildBoxSlide(boxItem),
+    buildBoxSlide({
+      boxReady,
+      awardXp,
+      upgradeCost: getBoxUpgradeCost(),
+    }),
   ];
 
   let current = 0;
@@ -277,10 +285,27 @@ function buildQuestsSlide(quests, coinsEarned) {
 
 // ─── Slide 5 - Reward Box ─────────────────────────────────────────────────────
 
-function buildBoxSlide(item) {
+function buildBoxSlide({ boxReady, awardXp, upgradeCost }) {
   const { el, body, footer } = makeCard('Reward Box 🎰');
 
+  if (!awardXp || !boxReady) {
+    body.innerHTML = `
+      <p class="lesson-slide__subtitle">No reward box this time. Keep your hearts up to unlock it!</p>
+    `;
+    const obj = { el, _advance: null };
+    continueBtn(footer, obj, 'Continue');
+    return obj;
+  }
+
   body.innerHTML = `
+    <div class="reward-upgrade">
+      <div class="reward-upgrade__info">
+        <span class="reward-upgrade__title">Upgrade to BIG BOX</span>
+        <span class="reward-upgrade__desc">Higher chance of rare rewards.</span>
+      </div>
+      <button type="button" class="reward-upgrade__btn" id="rw-upgrade">Upgrade (${upgradeCost} 🪙)</button>
+    </div>
+    <p class="reward-upgrade__status" id="rw-upgrade-status"></p>
     <div class="reward-box-wrap">
       <button class="reward-box" aria-label="Open reward box" id="rw-box">
         <span class="reward-box__icon">🎁</span>
@@ -297,15 +322,63 @@ function buildBoxSlide(item) {
   obj._onShow = () => {
     const box    = el.querySelector('#rw-box');
     const reveal = el.querySelector('#rw-reveal');
+    const upgradeBtn = el.querySelector('#rw-upgrade');
+    const upgradeStatus = el.querySelector('#rw-upgrade-status');
+    const upgradeWrap = el.querySelector('.reward-upgrade');
     if (!box || !reveal) return;
+    let isBig = false;
+
+    function setStatus(message) {
+      if (!upgradeStatus) return;
+      upgradeStatus.textContent = message || '';
+    }
+
+    function refreshUpgradeState() {
+      if (!upgradeBtn) return;
+      const coins = getCoins();
+      upgradeBtn.disabled = isBig || coins < upgradeCost;
+      upgradeBtn.textContent = isBig ? 'BIG BOX ready' : `Upgrade (${upgradeCost} 🪙)`;
+      if (box) box.classList.toggle('is-big', isBig);
+      if (isBig) {
+        setStatus('Upgrade complete. Enjoy better rewards!');
+      } else if (coins < upgradeCost) {
+        setStatus(`Need ${upgradeCost - coins} more coins.`);
+      } else {
+        setStatus('');
+      }
+    }
+
+    if (upgradeBtn) {
+      upgradeBtn.addEventListener('click', () => {
+        if (isBig) return;
+        const ok = spendCoins(upgradeCost);
+        if (!ok) {
+          setStatus('Not enough coins.');
+          return;
+        }
+        isBig = true;
+        updateSidebarStats();
+        refreshUpgradeState();
+      });
+    }
+
+    refreshUpgradeState();
 
     box.addEventListener('click', function handler() {
       box.removeEventListener('click', handler);
       box.classList.add('is-opening');
       box.disabled = true;
+      if (upgradeBtn) upgradeBtn.disabled = true;
 
       setTimeout(() => {
+        const wrap = box.parentElement;
+        if (wrap) {
+          wrap.insertBefore(reveal, box);
+          box.remove();
+        }
+        if (upgradeWrap) upgradeWrap.hidden = true;
         reveal.hidden = false;
+        const item = openBox({ isBig });
         const rarityClass = item ? `rarity-${item.rarity}` : 'rarity-common';
         reveal.innerHTML = `
           <div class="reward-item ${rarityClass}">
@@ -316,6 +389,7 @@ function buildBoxSlide(item) {
         `;
         reveal.classList.add('is-visible');
         btn.hidden = false;
+        updateSidebarStats();
       }, 750);
     });
   };

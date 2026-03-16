@@ -84,6 +84,7 @@ async function bootstrap() {
 
   initRouter(async (route) => {
     await handleRouteChange(route);
+    updateSidebarActive(route);
   });
 
   attachSidebarLinks();
@@ -95,6 +96,41 @@ async function bootstrap() {
 }
 
 bootstrap();
+
+function updateSidebarActive(route) {
+  const dashboardLink = document.getElementById('dashboard-link');
+  const storeLink = document.getElementById('store-link');
+  const profileLink = document.getElementById('profile-link');
+  const badgesLink = document.getElementById('badges-link');
+  const settingsLink = document.getElementById('settings-link');
+  const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+
+  let activeLink = null;
+  switch (route.route) {
+    case 'courses':
+    case 'chapter':
+      activeLink = dashboardLink;
+      break;
+    case 'store':
+      activeLink = storeLink;
+      break;
+    case 'profile':
+      activeLink = profileLink;
+      break;
+    case 'badges':
+      activeLink = badgesLink;
+      break;
+    case 'settings':
+      activeLink = settingsLink;
+      break;
+    default:
+      activeLink = null;
+  }
+
+  sidebarLinks.forEach((link) => {
+    link.classList.toggle('is-active', link === activeLink);
+  });
+}
 
 function attachSidebarLinks() {
   const profileLink = document.getElementById('profile-link');

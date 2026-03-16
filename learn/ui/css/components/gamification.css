@@ -319,6 +319,67 @@ body.overlay-open { overflow: hidden; }
 }
 
 /* ─── Slide 5 – Reward Box ────────────────────────────────────────────────── */
+.reward-upgrade {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--border-radius, 10px);
+  border: 1px solid rgba(99,102,241,0.25);
+  background: linear-gradient(135deg, rgba(30,41,59,0.75), rgba(15,23,42,0.9));
+}
+
+.reward-upgrade__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.reward-upgrade__title {
+  font-weight: 700;
+  color: var(--color-text, #f8fafc);
+  font-size: 0.9rem;
+}
+
+.reward-upgrade__desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.reward-upgrade__btn {
+  border: 1px solid rgba(99,102,241,0.5);
+  background: linear-gradient(90deg, rgba(79,70,229,0.25), rgba(99,102,241,0.12));
+  color: #e2e8f0;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.35);
+}
+
+.reward-upgrade__btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, rgba(79,70,229,0.35), rgba(99,102,241,0.2));
+  border-color: rgba(99,102,241,0.75);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(2,6,23,0.45);
+}
+
+.reward-upgrade__btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.reward-upgrade__status {
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #94a3b8);
+}
+
 .reward-box-wrap {
   display: flex;
   flex-direction: column;
@@ -340,6 +401,11 @@ body.overlay-open { overflow: hidden; }
   box-shadow: 0 0 24px rgba(139,92,246,0.3);
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.reward-box.is-big {
+  background: linear-gradient(135deg, #78350f, #b45309);
+  border-color: rgba(245,158,11,0.7);
+  box-shadow: 0 0 28px rgba(245,158,11,0.35);
 }
 .reward-box:hover:not(.is-opening) {
   transform: scale(1.05);

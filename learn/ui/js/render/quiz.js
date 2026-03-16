@@ -48,6 +48,7 @@ export async function ensureQuizLoaded({
  */
 export function renderQuiz({ container, quiz, onComplete }) {
   if (!container) return;
+  let awardXp = true;
 
   if (!quiz || !Array.isArray(quiz.questions)) {
     container.innerHTML = '<p class="muted">No quiz available for this lesson.</p>';
@@ -69,7 +70,10 @@ export function renderQuiz({ container, quiz, onComplete }) {
 
   // ── Check if already out of hearts before questions render ────────────────
   if (!hasHearts()) {
-    showNoHeartsOverlay(root, container, () => renderAllQuestions());
+    showNoHeartsOverlay(root, container, () => {
+      awardXp = false;
+      renderAllQuestions();
+    });
     container.innerHTML = '';
     container.appendChild(root);
     return;
@@ -122,6 +126,23 @@ export function renderQuiz({ container, quiz, onComplete }) {
         const chosenOption = (question.options || []).find(opt => opt.id === selectedId);
         const label        = selectedInput.closest('label.quiz-option');
         const orb          = label ? label.querySelector('.quiz-option-letter') : null;
+        const correctOption = (question.options || []).find(opt => opt.isCorrect);
+
+        function markCorrectOption() {
+          if (!correctOption) return;
+          const inputs = optionsList.querySelectorAll('input[type="radio"]');
+          let correctInput = null;
+          inputs.forEach((input) => {
+            if (input.value === correctOption.id) correctInput = input;
+          });
+          if (!correctInput) return;
+          const correctLabel = correctInput.closest('label.quiz-option');
+          const correctOrb = correctLabel ? correctLabel.querySelector('.quiz-option-letter') : null;
+          if (correctLabel) correctLabel.classList.add('is-correct');
+          if (correctOrb) correctOrb.classList.add('is-correct');
+          if (correctLabel) correctLabel.classList.add('is-revealed');
+          if (correctOrb) correctOrb.classList.add('is-revealed');
+        }
 
         if (chosenOption && chosenOption.isCorrect) {
           const detail = overview || byOptionId[selectedId] || '';
@@ -137,21 +158,25 @@ export function renderQuiz({ container, quiz, onComplete }) {
           feedbackEl.className   = 'quiz-feedback is-incorrect';
           if (label) label.classList.add('is-incorrect');
           if (orb)   orb.classList.add('is-incorrect');
+          markCorrectOption();
 
           const remaining = loseHeart();
           heartsBar.update(remaining);
           playWrongSound();
           showMascotMessage('❌ Wrong answer — heart lost! 💔', 3000);
 
-          if (remaining === 0) {
+          if (remaining === 0 && awardXp) {
+            awardXp = false;
             // Slight delay so the heart animation is visible first
-            setTimeout(() => showNoHeartsOverlay(root, container, null), 600);
+            setTimeout(() => {
+              showNoHeartsOverlay(root, container, () => {});
+            }, 600);
           }
         }
 
         answeredCount++;
         if (answeredCount === total) {
-          showCompleteButton(root, correctCount, total, onComplete);
+          showCompleteButton(root, correctCount, total, onComplete, awardXp);
         }
       }
 
@@ -188,7 +213,7 @@ export function renderQuiz({ container, quiz, onComplete }) {
 
     // If the quiz somehow has 0 questions after filtering, offer the button
     if (!supported.length) {
-      showCompleteButton(root, 0, 0, onComplete);
+      showCompleteButton(root, 0, 0, onComplete, awardXp);
     }
   }
 
@@ -273,7 +298,7 @@ function showNoHeartsOverlay(root, container, continueAnyway) {
 }
 
 // ─── Complete-lesson button ───────────────────────────────────────────────────
-function showCompleteButton(root, correct, total, onComplete) {
+function showCompleteButton(root, correct, total, onComplete, awardXp = true) {
   const wrap = document.createElement('div');
   wrap.className = 'complete-lesson-btn-wrap';
 
@@ -282,7 +307,7 @@ function showCompleteButton(root, correct, total, onComplete) {
   btn.textContent = '🎉 Complete Lesson';
   btn.addEventListener('click', () => {
     btn.disabled = true;
-    if (onComplete) onComplete({ correct, total });
+    if (onComplete) onComplete({ correct, total, awardXp });
   });
 
   wrap.appendChild(btn);

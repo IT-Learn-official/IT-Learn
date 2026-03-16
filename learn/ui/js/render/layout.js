@@ -218,14 +218,6 @@ function renderChapterScreen(route, state) {
   const header = document.createElement('header');
   header.className = 'screen-header';
 
-  const backButton = document.createElement('button');
-  backButton.type = 'button';
-  backButton.className = 'back-button';
-  backButton.textContent = 'Back to lessons';
-  backButton.addEventListener('click', () => {
-    navigateTo({ route: 'courses', courseId: state.selectedCourseId });
-  });
-
   const mainHeader = document.createElement('div');
   mainHeader.className = 'screen-header-main screen-header-main--align-right';
 
@@ -263,8 +255,7 @@ function renderChapterScreen(route, state) {
   const headerContent = document.createElement('div');
   headerContent.className = 'screen-header-content-with-tabs';
 
-  // Layout: back button (left) | tabs (middle) | title (right)
-  headerContent.appendChild(backButton);
+  // Layout: tabs (middle) | title (right)
   headerContent.appendChild(tabsNav);
   headerContent.appendChild(mainHeader);
 
@@ -325,12 +316,13 @@ function renderChapterScreen(route, state) {
         }
       }
     },
-    onLessonComplete: ({ correct, total, lessonTitle }) => {
+    onLessonComplete: ({ correct, total, lessonTitle, awardXp }) => {
       if (trialMode.isActive) return; // handled by onChapterComplete
       showPostLessonFlow({
         correctAnswers: correct,
         totalQuestions: total,
         lessonTitle: lessonTitle || 'Lesson',
+        awardXp,
         onDone: () => navigateTo({ route: 'courses', courseId: state.selectedCourseId }),
       });
     },

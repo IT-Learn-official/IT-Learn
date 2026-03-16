@@ -66,6 +66,110 @@ function createStoreItemCard(item, onPurchase) {
   return card;
 }
 
+function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
+  if (!reward) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'post-lesson-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Reward box');
+
+  const frame = document.createElement('div');
+  frame.className = 'lesson-flow-frame';
+
+  const slide = document.createElement('div');
+  slide.className = 'lesson-slide slide-visible';
+
+  const card = document.createElement('div');
+  card.className = 'lesson-slide__card';
+
+  const h2 = document.createElement('h2');
+  h2.className = 'lesson-slide__title';
+  h2.textContent = title;
+
+  const body = document.createElement('div');
+  body.className = 'lesson-slide__body';
+  body.innerHTML = `
+    <div class="reward-box-wrap">
+      <button class="reward-box" aria-label="Open reward box">
+        <span class="reward-box__icon">🎁</span>
+        <span class="reward-box__hint">Tap to reveal!</span>
+      </button>
+      <div class="reward-reveal" hidden></div>
+    </div>
+  `;
+
+  const footer = document.createElement('footer');
+  footer.className = 'lesson-slide__footer';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.className = 'btn btn-primary lesson-slide__continue';
+  closeBtn.textContent = 'Close';
+  closeBtn.hidden = true;
+  closeBtn.addEventListener('click', () => {
+    overlay.remove();
+    document.body.classList.remove('overlay-open');
+  });
+
+  footer.appendChild(closeBtn);
+  card.appendChild(h2);
+  card.appendChild(body);
+  card.appendChild(footer);
+  slide.appendChild(card);
+  frame.appendChild(slide);
+  overlay.appendChild(frame);
+
+  const box = body.querySelector('.reward-box');
+  const reveal = body.querySelector('.reward-reveal');
+  const AUTO_OPEN_DELAY = 2500;
+
+  if (box && reveal) {
+    let opened = false;
+    function openNow() {
+      if (opened) return;
+      opened = true;
+      box.classList.add('is-opening');
+      box.disabled = true;
+
+      setTimeout(() => {
+        const wrap = box.parentElement;
+        if (wrap) {
+          wrap.insertBefore(reveal, box);
+          box.remove();
+        }
+        const safeRarity = (reward && typeof reward.rarity === 'string' && reward.rarity)
+          ? reward.rarity
+          : 'common';
+        reveal.hidden = false;
+        reveal.innerHTML = `
+          <div class="reward-item rarity-${safeRarity}">
+            <span class="reward-item__icon">${reward.icon || '🎁'}</span>
+            <span class="reward-item__label">${reward.label}</span>
+            <span class="reward-item__rarity">${safeRarity.toUpperCase()}</span>
+          </div>
+        `;
+        reveal.classList.add('is-visible');
+        closeBtn.hidden = false;
+      }, 750);
+    }
+
+    box.addEventListener('click', function handler() {
+      if (opened) return;
+      box.removeEventListener('click', handler);
+      openNow();
+    });
+
+    setTimeout(() => {
+      if (!opened) openNow();
+    }, AUTO_OPEN_DELAY);
+  }
+
+  document.body.classList.add('overlay-open');
+  document.body.appendChild(overlay);
+}
+
 export function renderStoreView(screenRootEl) {
   const screen = document.createElement('section');
   screen.className = 'screen';
@@ -86,7 +190,7 @@ export function renderStoreView(screenRootEl) {
 
   const title = document.createElement('h2');
   title.className = 'screen-header-title';
-  title.textContent = 'Store';
+  title.textContent = 'Shop';
 
   const subtitle = document.createElement('p');
   subtitle.className = 'screen-header-subtitle';
@@ -132,7 +236,12 @@ export function renderStoreView(screenRootEl) {
           return;
         }
 
-        status.textContent = `Purchased ${selected.title}!`;
+        if (result.reward) {
+          status.textContent = `Opened ${selected.title}: ${result.reward.label}`;
+          showShopRewardModal(result.reward, { title: selected.title });
+        } else {
+          status.textContent = `Purchased ${selected.title}!`;
+        }
         status.classList.add('is-success');
         status.classList.remove('is-error');
         updateSidebarStats();
