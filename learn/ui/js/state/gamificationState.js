@@ -38,11 +38,7 @@ export const REWARD_ITEMS = [
 ];
 
 const RARITY_WEIGHTS = { common: 50, uncommon: 30, rare: 15, epic: 5 };
-<<<<<<< fix-lots-of-bugs
-const BIG_BOX_RARITY_WEIGHTS = { common: 25, uncommon: 35, rare: 30, epic: 10 };
-=======
 const BIG_BOX_RARITY_WEIGHTS = { common: 30, uncommon: 35, rare: 25, epic: 10 };
->>>>>>> beta
 
 const STORE_ITEMS = [
   {
