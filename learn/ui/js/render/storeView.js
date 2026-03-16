@@ -125,7 +125,10 @@ function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
   const reveal = body.querySelector('.reward-reveal');
 
   if (box && reveal) {
+    let opened = false;
     function openNow() {
+      if (opened) return;
+      opened = true;
       box.classList.add('is-opening');
       box.disabled = true;
 
@@ -149,11 +152,14 @@ function showShopRewardModal(reward, { title = 'Reward Box 🎰' } = {}) {
     }
 
     box.addEventListener('click', function handler() {
+      if (opened) return;
       box.removeEventListener('click', handler);
       openNow();
     });
 
-    setTimeout(openNow, 200);
+    setTimeout(() => {
+      if (!opened) openNow();
+    }, 200);
   }
 
   document.body.classList.add('overlay-open');

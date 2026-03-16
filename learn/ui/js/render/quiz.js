@@ -169,9 +169,7 @@ export function renderQuiz({ container, quiz, onComplete }) {
             awardXp = false;
             // Slight delay so the heart animation is visible first
             setTimeout(() => {
-              showNoHeartsOverlay(root, container, () => {
-                awardXp = false;
-              });
+              showNoHeartsOverlay(root, container, () => {});
             }, 600);
           }
         }

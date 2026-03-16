@@ -82,7 +82,7 @@ const STORE_ITEMS = [
     description: 'Open a reward box instantly.',
     icon: '🎁',
     price: 50,
-    apply: () => openBoxInternal({ isBig: false, consumeReady: false }),
+    apply: () => openBoxInternal({ isBig: false, consumeReady: false, skipSave: true }),
   },
   {
     id: 'buy_box_big',
@@ -90,7 +90,7 @@ const STORE_ITEMS = [
     description: 'Better odds and bigger rewards.',
     icon: '📦',
     price: 120,
-    apply: () => openBoxInternal({ isBig: true, consumeReady: false }),
+    apply: () => openBoxInternal({ isBig: true, consumeReady: false, skipSave: true }),
   },
 ];
 
@@ -442,7 +442,7 @@ export function isBoxReady() { return load().boxReady; }
 export function setBoxReady() { const s = load(); s.boxReady = true; save(); }
 export function getBoxUpgradeCost() { return BIG_BOX_UPGRADE_COST; }
 
-function openBoxInternal({ isBig = false, consumeReady = false } = {}) {
+function openBoxInternal({ isBig = false, consumeReady = false, skipSave = false } = {}) {
   const s = load();
   if (consumeReady && !s.boxReady) return null;
   if (consumeReady) s.boxReady = false;
@@ -472,7 +472,7 @@ function openBoxInternal({ isBig = false, consumeReady = false } = {}) {
   if (item.item === 'streak_freeze') s.inventory.streakFreezes++;
   if (item.item === 'double_xp') s.inventory.doubleXp++;
 
-  save();
+  if (!skipSave) save();
   return item;
 }
 
