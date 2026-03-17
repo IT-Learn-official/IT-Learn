@@ -20,6 +20,12 @@ function hasForcedOnboardingFlag() {
   return localStorage.getItem('itlearn_force_onboarding') === '1';
 }
 
+function requiresProfileOnboarding(profile) {
+  const username = String(profile?.username || '').trim().toLowerCase();
+  const validUsername = /^[a-z0-9_]{3,24}$/.test(username);
+  return !validUsername;
+}
+
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
   const globalStatusElement = document.getElementById('global-status');

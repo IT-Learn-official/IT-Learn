@@ -26,6 +26,30 @@ function t(key, fallback) {
     || key;
 }
 
+function normalizeLang(lang) {
+  const short = String(lang || '').toLowerCase().split('-')[0];
+  return ['en', 'nl', 'de', 'fr'].includes(short) ? short : 'en';
+}
+
+function t(key, fallback) {
+  let storedLang = '';
+  try {
+    storedLang = typeof localStorage !== 'undefined' ? localStorage.getItem('language') : '';
+  } catch (error) {
+    storedLang = '';
+  }
+
+  const lang = normalizeLang(
+    storedLang || document.documentElement.lang || 'en'
+  );
+
+  const globalTranslations = typeof window !== 'undefined' ? window.translations : null;
+  return globalTranslations?.[lang]?.[key]
+    || globalTranslations?.en?.[key]
+    || fallback
+    || key;
+}
+
 function createStatCard(label, value) {
   const card = document.createElement('div');
   card.className = 'profile-stat-card';
