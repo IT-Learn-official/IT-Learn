@@ -1,7 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
 export let practiceEditor = null;
-let practiceEditorAutoSaveId = null;
 
 export function setPracticeEditor(editor) {
   practiceEditor = editor;
@@ -9,20 +8,6 @@ export function setPracticeEditor(editor) {
 
 export function getCurrentPracticeEditor() {
   return practiceEditor;
-}
-
-export function setPracticeEditorAutoSaveId(intervalId) {
-  if (practiceEditorAutoSaveId) {
-    clearInterval(practiceEditorAutoSaveId);
-  }
-  practiceEditorAutoSaveId = intervalId;
-}
-
-export function clearPracticeEditorAutoSave() {
-  if (practiceEditorAutoSaveId) {
-    clearInterval(practiceEditorAutoSaveId);
-    practiceEditorAutoSaveId = null;
-  }
 }
 
 export function destroyPracticeEditor() {
@@ -36,5 +21,4 @@ export function destroyPracticeEditor() {
     }
     practiceEditor = null;
   }
-  clearPracticeEditorAutoSave();
 }

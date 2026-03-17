@@ -3,17 +3,15 @@
 //edited by: https://github.com/broodje565
 import { getState, setSelection, getTrialMode } from '../state/appState.js';
 import { isOnboardingRequired, setOnboardingRequired } from '../state/appState.js';
-import { renderCoursesScreen } from '../render/courseListView.js';
+import { renderCoursesScreen, renderChaptersScreen } from '../render/courseListView.js';
 import { renderChapterScreenContent } from '../render/chapterView.js';
 import { renderSettingsView } from '../render/settingsView.js';
-import { renderStoreView } from '../render/storeView.js';
 import { renderBadgesView } from '../render/badgesView.js';
 import { renderProfileView } from '../render/profileView.js';
 import { renderOnboardingView } from '../render/onboardingView.js';
 import { navigateTo } from '../state/router.js';
 import { createTrialInfoBanner, showTrialCompletionModal } from './trialRegistrationModal.js';
 import { completeTrialCourse, saveTrialProgress, getTrialSession } from '../services/trialMode.js';
-import { showPostLessonFlow } from './postLessonFlow.js';
 
 let globalStatusEl;
 let screenRootEl;
@@ -56,8 +54,6 @@ export async function handleRouteChange(route) {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else if (route.route === 'badges') {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
-  } else if (route.route === 'store') {
-    setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else if (route.route === 'profile') {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else if (route.route === 'onboarding') {
@@ -76,8 +72,6 @@ export async function handleRouteChange(route) {
 export async function renderApp(route) {
   if (!screenRootEl) return;
 
-  document.body.classList.toggle('onboarding-mode', route.route === 'onboarding');
-
   const state = getState();
   const { coursesDoc, selectedCourseId, selectedChapterId } = state;
 
@@ -85,11 +79,6 @@ export async function renderApp(route) {
 
   if (route.route === 'settings') {
     renderSettingsView(screenRootEl);
-    return;
-  }
-
-  if (route.route === 'store') {
-    renderStoreView(screenRootEl);
     return;
   }
 
@@ -105,9 +94,9 @@ export async function renderApp(route) {
 
   if (route.route === 'onboarding') {
     await renderOnboardingView(screenRootEl, {
-      onComplete: ({ selectedCourseId } = {}) => {
+      onComplete: () => {
         setOnboardingRequired(false);
-        navigateTo({ route: 'courses', courseId: selectedCourseId || null });
+        navigateTo({ route: 'courses' });
       },
     });
     return;
@@ -126,6 +115,8 @@ export async function renderApp(route) {
 
   if (route.route === 'chapter' && selectedCourseId && selectedChapterId) {
     renderChapterScreen(route, state);
+  } else if (route.route === 'courses' && selectedCourseId && !selectedChapterId) {
+    renderChaptersListScreen(state);
   } else if (route.route === 'settings') {
     renderSettingsScreen();
   } else {
@@ -189,9 +180,9 @@ function renderCoursesListScreen() {
   
   const trialMode = getTrialMode();
   if (trialMode.isActive) {
-    subtitle.textContent = 'Choose a course to try the first lesson for free.';
+    subtitle.textContent = 'Choose a course to try the first chapter for free.';
   } else {
-    subtitle.textContent = 'Pick a course to see its lessons.';
+    subtitle.textContent = 'Pick a course to see its chapters.';
   }
 
   mainHeader.appendChild(title);
@@ -211,12 +202,75 @@ function renderCoursesListScreen() {
   screenRootEl.appendChild(screen);
 }
 
+function renderChaptersListScreen(state) {
+  const screen = document.createElement('section');
+  screen.className = 'screen';
+
+  const header = document.createElement('header');
+  header.className = 'screen-header';
+
+  const backButton = document.createElement('button');
+  backButton.type = 'button';
+  backButton.className = 'back-button';
+  backButton.textContent = 'Back to courses';
+  backButton.addEventListener('click', () => {
+    navigateTo({ route: 'courses' });
+  });
+
+  const mainHeader = document.createElement('div');
+  mainHeader.className = 'screen-header-main screen-header-main--align-right';
+
+  const title = document.createElement('h2');
+  title.className = 'screen-header-title';
+  const course = (state.coursesDoc.courses || []).find((c) => c.id === state.selectedCourseId);
+  title.textContent = course ? course.title : 'Chapters';
+
+  const subtitle = document.createElement('p');
+  subtitle.className = 'screen-header-subtitle';
+  
+  const trialMode = getTrialMode();
+  if (trialMode.isActive) {
+    subtitle.textContent = 'Choose a chapter to complete your free trial';
+  } else {
+    subtitle.textContent = 'Choose a chapter to start reading or practicing.';
+  }
+
+  mainHeader.appendChild(title);
+  mainHeader.appendChild(subtitle);
+
+  // Layout: back button on far left, title on far right
+  header.appendChild(backButton);
+  header.appendChild(mainHeader);
+
+  const body = document.createElement('div');
+  body.className = 'screen-body';
+
+  if (trialMode.isActive && course) {
+    createTrialInfoBanner(body, course.title);
+  }
+
+  const courseForChapters = course || null;
+  renderChaptersScreen(body, courseForChapters);
+
+  screen.appendChild(header);
+  screen.appendChild(body);
+  screenRootEl.appendChild(screen);
+}
+
 function renderChapterScreen(route, state) {
   const screen = document.createElement('section');
   screen.className = 'screen';
 
   const header = document.createElement('header');
   header.className = 'screen-header';
+
+  const backButton = document.createElement('button');
+  backButton.type = 'button';
+  backButton.className = 'back-button';
+  backButton.textContent = 'Back to chapters';
+  backButton.addEventListener('click', () => {
+    navigateTo({ route: 'courses', courseId: state.selectedCourseId });
+  });
 
   const mainHeader = document.createElement('div');
   mainHeader.className = 'screen-header-main screen-header-main--align-right';
@@ -233,7 +287,7 @@ function renderChapterScreen(route, state) {
   // Tabs in the middle
   const tabsNav = document.createElement('nav');
   tabsNav.className = 'tabs tabs-in-header';
-  tabsNav.setAttribute('aria-label', 'Lesson sections');
+  tabsNav.setAttribute('aria-label', 'Chapter sections');
 
   const tabNames = [
     { id: 'theory', label: 'Theory' },
@@ -255,7 +309,8 @@ function renderChapterScreen(route, state) {
   const headerContent = document.createElement('div');
   headerContent.className = 'screen-header-content-with-tabs';
 
-  // Layout: tabs (middle) | title (right)
+  // Layout: back button (left) | tabs (middle) | title (right)
+  headerContent.appendChild(backButton);
   headerContent.appendChild(tabsNav);
   headerContent.appendChild(mainHeader);
 
@@ -315,16 +370,6 @@ function renderChapterScreen(route, state) {
           );
         }
       }
-    },
-    onLessonComplete: ({ correct, total, lessonTitle, awardXp }) => {
-      if (trialMode.isActive) return; // handled by onChapterComplete
-      showPostLessonFlow({
-        correctAnswers: correct,
-        totalQuestions: total,
-        lessonTitle: lessonTitle || 'Lesson',
-        awardXp,
-        onDone: () => navigateTo({ route: 'courses', courseId: state.selectedCourseId }),
-      });
     },
   });
 }

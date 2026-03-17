@@ -215,15 +215,3 @@ button:focus-visible,
   padding-left: 0.7rem;
   opacity: 0.95;
 }
-
-.chapter-list-button.is-locked {
-  opacity: 0.6;
-  cursor: not-allowed;
-  border-left: 3px solid rgba(148, 163, 184, 0.65);
-  padding-left: 0.7rem;
-}
-
-.chapter-list-button.is-locked .chapter-list-read-badge {
-  background: rgba(148, 163, 184, 0.16);
-  color: #94a3b8;
-}

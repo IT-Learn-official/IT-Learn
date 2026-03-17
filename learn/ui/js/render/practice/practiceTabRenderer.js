@@ -5,12 +5,8 @@ import { createEditorPanel, initializeAceEditor, createConsolePanel, createChatP
 import { createRunHandler } from './runHandler.js';
 import { createValidateHandler } from './validateHandler.js';
 import { initTeacherBotPanel } from '../teacherBotPanel.js';
-import { destroyPracticeEditor, setPracticeEditor, getCurrentPracticeEditor, setPracticeEditorAutoSaveId, clearPracticeEditorAutoSave } from './practiceEditor.js';
+import { destroyPracticeEditor, setPracticeEditor, getCurrentPracticeEditor } from './practiceEditor.js';
 import { loadTemplateSource } from './templateLoader.js';
-
-function getPracticeAutoSaveKey(courseId, chapterId, assignmentId, templatePath) {
-  return `itlearn:practice:autosave:${courseId}:${chapterId}:${assignmentId}:${templatePath}`;
-}
 
 export async function renderPracticeTab(course, chapter, tabContentEl) {
   const state = getState();
@@ -111,13 +107,6 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
   setPracticeEditor(initializeAceEditor(editorHost, editorLanguage));
   const practiceEditor = getCurrentPracticeEditor();
 
-  const autoSaveKey = getPracticeAutoSaveKey(
-    selectedCourseId,
-    selectedChapterId,
-    activeAssignment.id,
-    activeTemplate?.path || 'default'
-  );
-
   // Create run handler
   const { handler: runHandler, getLastRunResult } = createRunHandler({
     practiceEditor,
@@ -208,24 +197,4 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
     selectedChapterId,
     practiceEditor,
   });
-
-  // Restore previously autosaved code for this specific assignment/template if present.
-  if (practiceEditor) {
-    const savedEditorValue = localStorage.getItem(autoSaveKey);
-    if (savedEditorValue !== null) {
-      practiceEditor.setValue(savedEditorValue, -1);
-    }
-
-    // Start periodic autosave every 15 seconds.
-    const intervalId = setInterval(() => {
-      if (!practiceEditor) return;
-      try {
-        localStorage.setItem(autoSaveKey, practiceEditor.getValue());
-      } catch (err) {
-        console.warn('Practice editor autosave failed', err);
-      }
-    }, 15000);
-
-    setPracticeEditorAutoSaveId(intervalId);
-  }
 }
