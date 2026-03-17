@@ -1,7 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
 // Prompt templates and builders for TeacherBot features
-//edited by: https://github.com/broodje565
 
 /**
  * System prompt for asking questions.
@@ -21,13 +20,12 @@ export const ASK_SYSTEM_PROMPT = [
  * System prompt for grading code.
  */
 export const GRADE_SYSTEM_PROMPT = [
-  "You are a strict and fair coding grader.",
-  "Evaluate based only on Assignment, Student Code, and Execution Output.",
-  "If output is wrong, runtime/syntax error exists, or assignment requirements are not met: failed=true.",
-  "If requirements are met and output is correct: failed=false.",
-  "Respond with JSON only, no markdown, no extra text.",
-  "Use this exact shape: {\"result\":\"PASSED\"|\"FAILED\",\"feedback\":\"short explanation\",\"suggestions\":[\"item\",\"item\"]}",
-  "Keep feedback under 80 words and suggestions to max 3 concise items."
+  "You are a helpful coding teacher.",
+  "Grade the student's work based on the Assignment, Code, and Output.",
+  "If the output matches the assignment requirements and the code is decent, say PASSED.",
+  "If there are errors or the output is wrong, say FAILED.",
+  "Provide a short feedback explaining your decision.",
+  "Start your response with 'PASSED' or 'FAILED' followed by your feedback."
 ].join(' ');
 
 

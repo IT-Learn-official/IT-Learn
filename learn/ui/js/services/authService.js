@@ -275,7 +275,7 @@ export async function getMyProfile() {
     }
 }
 
-export async function updateProfile({ username, bio, avatarUrl, profileTagline }) {
+export async function updateProfile({ username, bio }) {
     try {
         const response = await fetch(`${API_BASE}/profile/update`, {
             method: 'POST',
@@ -283,12 +283,7 @@ export async function updateProfile({ username, bio, avatarUrl, profileTagline }
                 'Content-Type': 'application/json'
             },
             credentials: 'include',
-            body: JSON.stringify({
-                username,
-                bio,
-                avatar_url: avatarUrl,
-                profile_tagline: profileTagline,
-            })
+            body: JSON.stringify({ username, bio })
         });
 
         const data = await response.json();

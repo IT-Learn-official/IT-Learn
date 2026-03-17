@@ -166,50 +166,6 @@
   gap: 0.65rem;
 }
 
-.settings-avatar-row {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.settings-avatar-preview {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: 2px solid rgba(148, 163, 184, 0.38);
-  overflow: hidden;
-  background: linear-gradient(135deg, #22d3ee, #6366f1);
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-}
-
-.settings-avatar-preview-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.settings-avatar-preview-fallback {
-  color: #0b1020;
-  font-size: 1.25rem;
-  font-weight: 800;
-}
-
-.settings-avatar-controls {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.settings-avatar-controls input[type="file"] {
-  font-size: 0.8rem;
-  color: #cbd5e1;
-}
-
 .settings-form label,
 .danger-confirm-panel label {
   font-size: 0.8rem;
@@ -225,7 +181,6 @@
 
 .settings-form input[type="password"],
 .settings-form input[type="text"],
-.settings-form select,
 .settings-form textarea,
 .danger-confirm-panel input[type="text"] {
   width: 100%;
@@ -240,7 +195,6 @@
 
 .settings-form input[type="password"]:focus,
 .settings-form input[type="text"]:focus,
-.settings-form select:focus,
 .settings-form textarea:focus,
 .danger-confirm-panel input[type="text"]:focus {
   outline: none;
@@ -503,14 +457,6 @@
 
   .settings-button {
     width: 100%;
-  }
-
-  .settings-avatar-controls {
-    width: 100%;
-  }
-
-  .settings-avatar-controls .settings-button {
-    width: auto;
   }
 
   .danger-actions {
