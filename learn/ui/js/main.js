@@ -8,6 +8,17 @@ import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotServ
 import { showWelcomeMessage } from './mascot.js';
 import { checkSession, getMyProfile } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
+import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
+
+function requiresProfileOnboarding(profile) {
+  const username = String(profile?.username || '').trim().toLowerCase();
+  const validUsername = /^[a-z0-9_]{3,24}$/.test(username);
+  return !validUsername;
+}
+
+function hasForcedOnboardingFlag() {
+  return localStorage.getItem('itlearn_force_onboarding') === '1';
+}
 
 function requiresProfileOnboarding(profile) {
   const username = String(profile?.username || '').trim().toLowerCase();
@@ -18,6 +29,7 @@ function requiresProfileOnboarding(profile) {
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
   const globalStatusElement = document.getElementById('global-status');
+  let bootProfile = null;
 
   // Check if user is logged in
   const sessionData = await checkSession();
@@ -50,12 +62,18 @@ async function bootstrap() {
       if (!profileResult.success) {
         setOnboardingRequired(true);
       } else {
-        setOnboardingRequired(requiresProfileOnboarding(profileResult.profile));
+        bootProfile = profileResult.profile;
+        setOnboardingRequired(hasForcedOnboardingFlag() || requiresProfileOnboarding(profileResult.profile));
       }
     }
   }
   
   initLayout({ globalStatusElement, screenRootElement });
+
+  await syncGamificationWithProfileProgress(bootProfile);
+
+  // Populate sidebar gamification stats from localStorage
+  updateSidebarStats();
 
   setGlobalStatus('Loading courses...');
 
@@ -72,6 +90,7 @@ async function bootstrap() {
 
   initRouter(async (route) => {
     await handleRouteChange(route);
+    updateSidebarActive(route);
   });
 
   attachSidebarLinks();
@@ -84,10 +103,46 @@ async function bootstrap() {
 
 bootstrap();
 
+function updateSidebarActive(route) {
+  const dashboardLink = document.getElementById('dashboard-link');
+  const storeLink = document.getElementById('store-link');
+  const profileLink = document.getElementById('profile-link');
+  const badgesLink = document.getElementById('badges-link');
+  const settingsLink = document.getElementById('settings-link');
+  const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+
+  let activeLink = null;
+  switch (route.route) {
+    case 'courses':
+    case 'chapter':
+      activeLink = dashboardLink;
+      break;
+    case 'store':
+      activeLink = storeLink;
+      break;
+    case 'profile':
+      activeLink = profileLink;
+      break;
+    case 'badges':
+      activeLink = badgesLink;
+      break;
+    case 'settings':
+      activeLink = settingsLink;
+      break;
+    default:
+      activeLink = null;
+  }
+
+  sidebarLinks.forEach((link) => {
+    link.classList.toggle('is-active', link === activeLink);
+  });
+}
+
 function attachSidebarLinks() {
   const profileLink = document.getElementById('profile-link');
   const settingsLink = document.getElementById('settings-link');
   const badgesLink = document.getElementById('badges-link');
+  const storeLink = document.getElementById('store-link');
 
   if (profileLink) {
     profileLink.addEventListener('click', (e) => {
@@ -107,6 +162,13 @@ function attachSidebarLinks() {
     settingsLink.addEventListener('click', (e) => {
       e.preventDefault();
       navigateTo({ route: 'settings' });
+    });
+  }
+
+  if (storeLink) {
+    storeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'store' });
     });
   }
 }

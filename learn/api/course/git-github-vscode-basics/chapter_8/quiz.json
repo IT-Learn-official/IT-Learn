@@ -1,0 +1,89 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Chapter 8 - Good Habits: Clean History and Clear Messages",
+  "description": "Check your understanding of good Git habits and VS Code workflow tips.",
+  "questions": [
+    {
+      "id": "q1-commit-messages",
+      "type": "single-choice",
+      "prompt": "Which commit message is best?",
+      "options": [
+        { "id": "a", "label": "i did some stuff at school i forgor", "isCorrect": false },
+        { "id": "b", "label": "Fix navbar spacing on mobile", "isCorrect": true },
+        { "id": "c", "label": "bread", "isCorrect": false },
+        { "id": "d", "label": "i luv whoppers", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Good commit messages are short but specific, describing what changed.",
+        "byOptionId": {
+          "a": "Not quite. This message is vague and unprofessional.",
+          "b": "Correct. It describes a specific change clearly.",
+          "c": "Not quite. Bread is not a helpful commit message.",
+          "d": "Not quite. Personal preferences are not helpful in history."
+        }
+      }
+    },
+    {
+      "id": "q2-atomic-commits",
+      "type": "single-choice",
+      "prompt": "Why are small, focused commits helpful?",
+      "options": [
+        { "id": "a", "label": "They make your keyboard type faster", "isCorrect": false },
+        { "id": "b", "label": "They prevent merge conflicts forever", "isCorrect": false },
+        { "id": "c", "label": "They are easier to review and easier to undo", "isCorrect": true },
+        { "id": "d", "label": "They automatically create pull requests", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Focused commits keep history readable and make troubleshooting easier.",
+        "byOptionId": {
+          "a": "Incorrect. Commits do not affect typing speed.",
+          "b": "Incorrect. Conflicts can still happen, but good commits can make them easier to resolve.",
+          "c": "Correct. Small commits help with review, debugging, and undoing changes.",
+          "d": "Incorrect. Pull requests are created on GitHub."
+        }
+      }
+    },
+    {
+      "id": "q3-readme",
+      "type": "single-choice",
+      "prompt": "What is a README.md commonly used for?",
+      "options": [
+        { "id": "a", "label": "Explaining what the project is and how to use it", "isCorrect": true },
+        { "id": "b", "label": "Storing private API keys", "isCorrect": false },
+        { "id": "c", "label": "Replacing all code files", "isCorrect": false },
+        { "id": "d", "label": "Deleting merged branches automatically", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "READMEs document a project for users and future contributors.",
+        "byOptionId": {
+          "a": "Correct. A README explains what the repo is and how to work with it.",
+          "b": "Incorrect. Secrets should not be committed; use environment variables instead.",
+          "c": "Incorrect. A README is documentation, not the code itself.",
+          "d": "Incorrect. Branch cleanup is a Git/GitHub workflow, not the job of README."
+        }
+      }
+    },
+    {
+      "id": "q4-tags",
+      "type": "single-choice",
+      "prompt": "What is a Git tag best described as?",
+      "options": [
+        { "id": "a", "label": "A file that hides changes", "isCorrect": false },
+        { "id": "b", "label": "A branch that always has conflicts", "isCorrect": false },
+        { "id": "c", "label": "A tool that stages files", "isCorrect": false },
+        { "id": "d", "label": "A named bookmark pointing to a specific commit", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Tags mark important points in history, like a release version.",
+        "byOptionId": {
+          "a": "Incorrect. Hiding changes is more like stashing or ignoring.",
+          "b": "Incorrect. Tags are not branches.",
+          "c": "Incorrect. Tags are not staging tools.",
+          "d": "Correct. Tags point to commits as named markers."
+        }
+      }
+    }
+  ]
+}
+

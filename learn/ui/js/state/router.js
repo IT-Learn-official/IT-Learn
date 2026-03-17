@@ -25,6 +25,13 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'store') {
+    return {
+      route: 'store',
+      tab: query.tab || 'store',
+    };
+  }
+
   if (segments[0] === 'badges') {
     return {
       route: 'badges',
@@ -71,6 +78,10 @@ export function parseLocation(hash) {
 export function toHash(descriptor) {
   if (descriptor.route === 'settings') {
     return '#/settings';
+  }
+
+  if (descriptor.route === 'store') {
+    return '#/store';
   }
 
   if (descriptor.route === 'badges') {

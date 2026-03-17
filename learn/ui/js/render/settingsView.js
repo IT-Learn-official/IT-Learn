@@ -1,6 +1,81 @@
 import { changePassword, deleteAccount, getMyProfile, updateProfile } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
 
+const MAX_AVATAR_FILE_BYTES = 5 * 1024 * 1024;
+const AVATAR_MAX_DIMENSION = 320;
+const AVATAR_MAX_DATA_URL_LENGTH = 450_000;
+
+function createAvatarPreview(avatarUrl, fallbackText = 'U') {
+  if (avatarUrl) {
+    const img = document.createElement('img');
+    img.className = 'settings-avatar-preview-image';
+    img.src = avatarUrl;
+    img.alt = 'Profile avatar preview';
+    img.loading = 'lazy';
+    img.referrerPolicy = 'no-referrer';
+    return img;
+  }
+
+  const fallback = document.createElement('span');
+  fallback.className = 'settings-avatar-preview-fallback';
+  fallback.textContent = String(fallbackText || 'U').slice(0, 1).toUpperCase();
+  return fallback;
+}
+
+function setAvatarPreview(previewEl, avatarUrl, fallbackText = 'U') {
+  previewEl.replaceChildren(createAvatarPreview(avatarUrl, fallbackText));
+  previewEl.dataset.avatarUrl = avatarUrl || '';
+}
+
+function fileToDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error('Could not read file.'));
+    reader.onload = () => {
+      const value = typeof reader.result === 'string' ? reader.result : '';
+      resolve(value);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function loadImageFromDataUrl(dataUrl) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error('Could not decode image.'));
+    image.src = dataUrl;
+  });
+}
+
+async function optimizeAvatarDataUrl(originalDataUrl) {
+  const image = await loadImageFromDataUrl(originalDataUrl);
+  const sourceWidth = Math.max(1, image.naturalWidth || image.width || 1);
+  const sourceHeight = Math.max(1, image.naturalHeight || image.height || 1);
+  const scale = Math.min(1, AVATAR_MAX_DIMENSION / Math.max(sourceWidth, sourceHeight));
+  const targetWidth = Math.max(1, Math.round(sourceWidth * scale));
+  const targetHeight = Math.max(1, Math.round(sourceHeight * scale));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = targetWidth;
+  canvas.height = targetHeight;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return originalDataUrl;
+
+  ctx.drawImage(image, 0, 0, targetWidth, targetHeight);
+
+  const candidates = [
+    canvas.toDataURL('image/webp', 0.85),
+    canvas.toDataURL('image/webp', 0.7),
+    canvas.toDataURL('image/jpeg', 0.82),
+    canvas.toDataURL('image/jpeg', 0.68),
+  ];
+
+  const fitting = candidates.find((value) => value.length <= AVATAR_MAX_DATA_URL_LENGTH);
+  return fitting || candidates[candidates.length - 1] || originalDataUrl;
+}
+
 export function renderSettingsView(screenRootEl) {
   const screen = document.createElement('section');
   screen.className = 'screen';
@@ -117,6 +192,41 @@ export function renderSettingsView(screenRootEl) {
   const profileForm = document.createElement('form');
   profileForm.className = 'settings-form';
 
+  const avatarLabel = document.createElement('label');
+  avatarLabel.htmlFor = 'profile-avatar';
+  avatarLabel.textContent = 'Profile picture';
+
+  const avatarRow = document.createElement('div');
+  avatarRow.className = 'settings-avatar-row';
+
+  const avatarPreview = document.createElement('div');
+  avatarPreview.className = 'settings-avatar-preview';
+  avatarPreview.setAttribute('aria-live', 'polite');
+  avatarPreview.dataset.avatarUrl = '';
+  setAvatarPreview(avatarPreview, '', 'U');
+
+  const avatarControls = document.createElement('div');
+  avatarControls.className = 'settings-avatar-controls';
+
+  const avatarInput = document.createElement('input');
+  avatarInput.id = 'profile-avatar';
+  avatarInput.type = 'file';
+  avatarInput.accept = 'image/png,image/jpeg,image/jpg,image/webp,image/gif';
+
+  const clearAvatarButton = document.createElement('button');
+  clearAvatarButton.type = 'button';
+  clearAvatarButton.className = 'settings-button settings-button-ghost';
+  clearAvatarButton.textContent = 'Remove picture';
+
+  avatarControls.appendChild(avatarInput);
+  avatarControls.appendChild(clearAvatarButton);
+  avatarRow.appendChild(avatarPreview);
+  avatarRow.appendChild(avatarControls);
+
+  const avatarInfo = document.createElement('p');
+  avatarInfo.className = 'settings-info';
+  avatarInfo.textContent = 'PNG, JPG, WEBP or GIF. Max 5 MB.';
+
   const usernameLabel = document.createElement('label');
   usernameLabel.htmlFor = 'profile-username';
   usernameLabel.textContent = 'Username';
@@ -147,6 +257,20 @@ export function renderSettingsView(screenRootEl) {
   bioInfo.className = 'settings-info';
   bioInfo.textContent = 'Up to 280 characters. This appears on your public profile.';
 
+  const taglineLabel = document.createElement('label');
+  taglineLabel.htmlFor = 'profile-tagline';
+  taglineLabel.textContent = 'Tagline';
+
+  const taglineInput = document.createElement('input');
+  taglineInput.id = 'profile-tagline';
+  taglineInput.type = 'text';
+  taglineInput.placeholder = 'Short one-liner for your profile';
+  taglineInput.maxLength = 60;
+
+  const taglineInfo = document.createElement('p');
+  taglineInfo.className = 'settings-info';
+  taglineInfo.textContent = 'Optional. Up to 60 characters.';
+
   const profileStatus = document.createElement('div');
   profileStatus.className = 'settings-status';
 
@@ -155,12 +279,18 @@ export function renderSettingsView(screenRootEl) {
   profileButton.className = 'settings-button';
   profileButton.textContent = 'Save profile';
 
+  profileForm.appendChild(avatarLabel);
+  profileForm.appendChild(avatarRow);
+  profileForm.appendChild(avatarInfo);
   profileForm.appendChild(usernameLabel);
   profileForm.appendChild(usernameInput);
   profileForm.appendChild(usernamePreview);
   profileForm.appendChild(bioLabel);
   profileForm.appendChild(bioInput);
   profileForm.appendChild(bioInfo);
+  profileForm.appendChild(taglineLabel);
+  profileForm.appendChild(taglineInput);
+  profileForm.appendChild(taglineInfo);
   profileForm.appendChild(profileStatus);
   profileForm.appendChild(profileButton);
 
@@ -413,6 +543,47 @@ export function renderSettingsView(screenRootEl) {
       return;
     }
     usernamePreview.textContent = `Public link: itlearn.be/@${candidate}`;
+    const currentAvatarUrl = avatarPreview.dataset.avatarUrl || '';
+    if (!currentAvatarUrl) {
+      setAvatarPreview(avatarPreview, '', candidate || 'U');
+    }
+  });
+
+  avatarInput.addEventListener('change', async () => {
+    const file = avatarInput.files && avatarInput.files[0] ? avatarInput.files[0] : null;
+    if (!file) return;
+
+    if (!/^image\/(png|jpeg|jpg|webp|gif)$/i.test(file.type)) {
+      showProfileStatus('Use a PNG, JPG, WEBP, or GIF image.', 'error');
+      avatarInput.value = '';
+      return;
+    }
+
+    if (file.size > MAX_AVATAR_FILE_BYTES) {
+      showProfileStatus('Image is too large. Maximum is 5 MB.', 'error');
+      avatarInput.value = '';
+      return;
+    }
+
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      const optimized = await optimizeAvatarDataUrl(dataUrl);
+      if (optimized.length > AVATAR_MAX_DATA_URL_LENGTH) {
+        showProfileStatus('Image is still too heavy after optimization. Try another image.', 'error');
+        avatarInput.value = '';
+        return;
+      }
+      setAvatarPreview(avatarPreview, optimized, usernameInput.value.trim().toLowerCase() || 'U');
+      showProfileStatus('Picture selected. Click Save profile to apply.', 'success');
+    } catch (error) {
+      showProfileStatus('Could not read image file.', 'error');
+    }
+  });
+
+  clearAvatarButton.addEventListener('click', () => {
+    avatarInput.value = '';
+    setAvatarPreview(avatarPreview, '', usernameInput.value.trim().toLowerCase() || 'U');
+    showProfileStatus('Profile picture removed. Click Save profile to apply.', 'success');
   });
 
   void (async () => {
@@ -425,8 +596,12 @@ export function renderSettingsView(screenRootEl) {
     }
     const username = profileResult.profile?.username || '';
     const bio = typeof profileResult.profile?.bio === 'string' ? profileResult.profile.bio : '';
+    const avatarUrl = typeof profileResult.profile?.avatar_url === 'string' ? profileResult.profile.avatar_url : '';
+    const profileTagline = typeof profileResult.profile?.profile_tagline === 'string' ? profileResult.profile.profile_tagline : '';
     usernameInput.value = username;
     bioInput.value = bio;
+    taglineInput.value = profileTagline;
+    setAvatarPreview(avatarPreview, avatarUrl, username || 'U');
     usernamePreview.textContent = username
       ? `Public link: itlearn.be/@${username}`
       : 'Public link: itlearn.be/@username';
@@ -436,6 +611,8 @@ export function renderSettingsView(screenRootEl) {
     event.preventDefault();
     const username = usernameInput.value.trim().toLowerCase();
     const bio = bioInput.value.trim();
+    const avatarUrl = avatarPreview.dataset.avatarUrl || '';
+    const profileTagline = taglineInput.value.trim();
     if (!/^[a-z0-9_]{3,24}$/.test(username)) {
       showProfileStatus('Username must be 3-24 chars with letters, numbers, underscore.', 'error');
       return;
@@ -446,9 +623,14 @@ export function renderSettingsView(screenRootEl) {
       return;
     }
 
+    if (profileTagline.length > 60) {
+      showProfileStatus('Tagline can be up to 60 characters.', 'error');
+      return;
+    }
+
     setButtonLoading(profileButton, true, 'Save profile', 'Saving...');
     showProfileStatus('Saving profile...', 'loading');
-    const result = await updateProfile({ username, bio });
+    const result = await updateProfile({ username, bio, avatarUrl, profileTagline });
     setButtonLoading(profileButton, false, 'Save profile', 'Saving...');
 
     if (!result.success) {
@@ -457,8 +639,12 @@ export function renderSettingsView(screenRootEl) {
     }
     const savedUsername = result.profile?.username || username;
     const savedBio = typeof result.profile?.bio === 'string' ? result.profile.bio : bio;
+    const savedAvatarUrl = typeof result.profile?.avatar_url === 'string' ? result.profile.avatar_url : avatarUrl;
+    const savedTagline = typeof result.profile?.profile_tagline === 'string' ? result.profile.profile_tagline : profileTagline;
     usernameInput.value = savedUsername;
     bioInput.value = savedBio;
+    taglineInput.value = savedTagline;
+    setAvatarPreview(avatarPreview, savedAvatarUrl, savedUsername || 'U');
     usernamePreview.textContent = `Public link: itlearn.be/@${savedUsername}`;
     showProfileStatus('Profile updated successfully.', 'success');
   });

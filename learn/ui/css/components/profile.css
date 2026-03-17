@@ -12,6 +12,22 @@
   overflow: hidden;
 }
 
+.profile-card.profile-card--glow {
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow:
+    0 22px 40px rgba(2, 6, 23, 0.55),
+    0 0 0 1px rgba(167, 139, 250, 0.25),
+    0 0 34px rgba(129, 140, 248, 0.45);
+}
+
+.profile-card.profile-card--glow .profile-banner {
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.86), rgba(56, 189, 248, 0.8), rgba(167, 139, 250, 0.72));
+}
+
+.profile-card.profile-card--glow .profile-avatar {
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.45), 0 0 24px rgba(56, 189, 248, 0.4);
+}
+
 .profile-banner {
   height: 110px;
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(14, 165, 233, 0.7));
@@ -28,6 +44,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
+  overflow: hidden;
   display: grid;
   place-items: center;
   font-size: 1.6rem;
@@ -36,6 +53,20 @@
   color: #0b1020;
   border: 3px solid rgba(255, 255, 255, 0.25);
   margin-top: -40px;
+}
+
+.profile-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-tagline {
+  margin: 0.3rem 0 0;
+  color: #e2e8f0;
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
 .profile-identity h3 {

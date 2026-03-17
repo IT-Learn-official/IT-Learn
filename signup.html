@@ -443,6 +443,7 @@ s0.parentNode.insertBefore(s1,s0);
         
         console.log('[SIGNUP] Signup complete, redirecting to /learn/index.html');
         alert('Signup successful!');
+        localStorage.setItem('itlearn_force_onboarding', '1');
         window.location.href = '/learn/index.html';
     } catch (err) {
         console.error('[SIGNUP] Exception:', err);

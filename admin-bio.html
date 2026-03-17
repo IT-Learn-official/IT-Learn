@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT Learn | Bio Moderation Admin</title>
+  <title>IT Learn | Profile Moderation Admin</title>
   <style>
     :root {
       --bg: #0b1020;
@@ -233,6 +233,37 @@
       gap: 8px;
     }
 
+    .profile-mini-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      background: rgba(20, 33, 60, 0.9);
+      flex: 0 0 auto;
+    }
+
+    .profile-avatar-fallback {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      background: rgba(20, 33, 60, 0.9);
+      color: #c7d8ff;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+    }
+
     .profile-mini .bio-box {
       margin: 0;
     }
@@ -266,8 +297,8 @@
   <div class="wrap">
     <div class="topbar">
       <div>
-        <h1>Bio Moderation Admin</h1>
-        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel.</p>
+        <h1>Profile Moderation Admin</h1>
+        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel (bio + account moderation).</p>
       </div>
       <a href="/index.html" class="muted">Back to home</a>
     </div>
@@ -298,6 +329,12 @@
           <option value="50">50</option>
           <option value="100" selected>100</option>
           <option value="250">250</option>
+        </select>
+        <label for="account-ban-filter">Accounts:</label>
+        <select id="account-ban-filter">
+          <option value="all" selected>All</option>
+          <option value="banned">Banned only</option>
+          <option value="not-banned">Not banned</option>
         </select>
         <input id="profile-search" type="text" placeholder="Search @username or bio" />
       </div>
@@ -338,6 +375,7 @@
     const limitFilter = document.getElementById('limit-filter');
     const profileSearchInput = document.getElementById('profile-search');
     const profilePageSizeSelect = document.getElementById('profile-page-size');
+    const accountBanFilter = document.getElementById('account-ban-filter');
     const profilesPrevBtn = document.getElementById('profiles-prev');
     const profilesNextBtn = document.getElementById('profiles-next');
     const profilesPageInfo = document.getElementById('profiles-page-info');
@@ -375,6 +413,13 @@
         .replaceAll('>', '&gt;')
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#39;');
+    }
+
+    function formatLastActive(value) {
+      if (!value) return 'n/a';
+      const parsed = new Date(value);
+      if (Number.isNaN(parsed.getTime())) return String(value);
+      return parsed.toLocaleString();
     }
 
     function reportCard(report) {
@@ -558,12 +603,29 @@
       const username = profile.username ? `@${profile.username}` : '(no username)';
       const bio = profile.bio || 'No bio';
       const banned = profile.bio_banned ? 'yes' : 'no';
+      const accountBanned = profile.account_banned ? 'yes' : 'no';
+      const badgesUnlocked = Number.isFinite(profile.badges_unlocked) ? profile.badges_unlocked : (profile.badges_unlocked || 0);
+      const lastActive = formatLastActive(profile.last_active);
+      const avatarUrl = typeof profile.avatar_url === 'string' ? profile.avatar_url.trim() : '';
+      const avatarFallback = (profile.username || profile.user_id || 'u').slice(0, 1);
+
+      const avatarMarkup = avatarUrl
+        ? `<img class="profile-avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(username)} avatar" loading="lazy" referrerpolicy="no-referrer" />`
+        : `<div class="profile-avatar-fallback">${escapeHtml(avatarFallback)}</div>`;
 
       card.innerHTML = `
+        <div class="profile-mini-top">
+          ${avatarMarkup}
+          <div class="meta">
+            ${cardLabel('User', escapeHtml(username))}
+            ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
+          </div>
+        </div>
         <div class="meta">
-          ${cardLabel('User', escapeHtml(username))}
-          ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
-          ${cardLabel('Banned', escapeHtml(banned))}
+          ${cardLabel('Bio banned', escapeHtml(banned))}
+          ${cardLabel('Account banned', escapeHtml(accountBanned))}
+          ${cardLabel('Badges', escapeHtml(badgesUnlocked))}
+          ${cardLabel('Last active', escapeHtml(lastActive))}
           ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
           ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
         </div>
@@ -583,6 +645,21 @@
       banBtn.className = 'button-danger';
       banBtn.textContent = 'Ban Bio';
 
+      const accountReasonInput = document.createElement('input');
+      accountReasonInput.type = 'text';
+      accountReasonInput.maxLength = 300;
+      accountReasonInput.placeholder = 'Account ban reason (visible on ban screen)';
+
+      const banAccountBtn = document.createElement('button');
+      banAccountBtn.type = 'button';
+      banAccountBtn.className = 'button-danger';
+      banAccountBtn.textContent = 'Ban Account';
+
+      const unbanAccountBtn = document.createElement('button');
+      unbanAccountBtn.type = 'button';
+      unbanAccountBtn.className = 'button-primary';
+      unbanAccountBtn.textContent = 'Unban Account';
+
       if (!profile.username) {
         banBtn.disabled = true;
         replacementInput.disabled = true;
@@ -590,6 +667,7 @@
       } else {
         banBtn.addEventListener('click', async () => {
           banBtn.disabled = true;
+          banAccountBtn.disabled = true;
           setProfilesStatus(`Applying bio ban for @${profile.username}...`);
 
           try {
@@ -615,12 +693,99 @@
             setProfilesStatus('Network error while banning bio.', 'error');
           } finally {
             banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+          }
+        });
+      }
+
+      if (!profile.user_id) {
+        banAccountBtn.disabled = true;
+        accountReasonInput.disabled = true;
+        accountReasonInput.placeholder = 'Cannot ban account without user_id';
+      } else {
+        banAccountBtn.addEventListener('click', async () => {
+          if (!confirm(`Ban account for ${username}?`)) {
+            return;
+          }
+
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
+          setProfilesStatus(`Banning account ${username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-account`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_id: profile.user_id,
+                reason: accountReasonInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban account.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Account banned for ${username}.`, 'ok');
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            setProfilesStatus('Network error while banning account.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
+          }
+        });
+      }
+
+      if (!profile.user_id || !profile.account_banned) {
+        unbanAccountBtn.disabled = true;
+      } else {
+        unbanAccountBtn.addEventListener('click', async () => {
+          if (!confirm(`Unban account for ${username}?`)) {
+            return;
+          }
+
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
+          setProfilesStatus(`Unbanning account ${username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/unban-account`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_id: profile.user_id,
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to unban account.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Account unbanned for ${username}.`, 'ok');
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            setProfilesStatus('Network error while unbanning account.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
           }
         });
       }
 
       actions.appendChild(replacementInput);
       actions.appendChild(banBtn);
+      actions.appendChild(accountReasonInput);
+      actions.appendChild(banAccountBtn);
+      actions.appendChild(unbanAccountBtn);
       card.appendChild(actions);
 
       return card;
@@ -629,8 +794,13 @@
     function renderProfiles() {
       profilesListEl.innerHTML = '';
       const q = (profileSearchInput.value || '').trim().toLowerCase();
+      const banFilter = (accountBanFilter.value || 'all').trim();
 
       const filtered = allProfiles.filter((p) => {
+        const isBanned = Boolean(p.account_banned);
+        if (banFilter === 'banned' && !isBanned) return false;
+        if (banFilter === 'not-banned' && isBanned) return false;
+
         if (!q) return true;
         const username = (p.username || '').toLowerCase();
         const bio = (p.bio || '').toLowerCase();
@@ -764,6 +934,10 @@
     });
 
     profileSearchInput.addEventListener('input', () => {
+      renderProfiles();
+    });
+
+    accountBanFilter.addEventListener('change', () => {
       renderProfiles();
     });
 

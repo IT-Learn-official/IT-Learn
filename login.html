@@ -123,6 +123,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       credentials: 'include'
     });
     const session = await resp.json();
+    if (session && session.banned) {
+      redirectToBanScreen(session);
+      return;
+    }
     if (session.logged_in) {
       window.location.href = '/learn/index.html';
       return;
@@ -264,6 +268,12 @@ function initOAuthButtons() {
   initOAuthButton('discord', 'discord-login');
 }
 
+function redirectToBanScreen(payload) {
+  const reason = encodeURIComponent((payload && payload.ban_reason) || 'Account suspended for severe rule violations.');
+  const appeal = encodeURIComponent((payload && payload.ban_appeal_url) || 'https://discord.gg/rKgF9s32EV');
+  window.location.href = `/banned.html?reason=${reason}&appeal=${appeal}`;
+}
+
 const originalUpdatePageLanguage = window.updatePageLanguage;
 window.updatePageLanguage = function(lang) {
     originalUpdatePageLanguage(lang);
@@ -336,6 +346,11 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
           errorData = await res.json();
           if (errorData && errorData.error) msg = errorData.error;
         } catch {}
+
+        if (res.status === 403 && errorData && errorData.banned) {
+          redirectToBanScreen(errorData);
+          return;
+        }
 
         console.error('[LOGIN] Error details:', { 
           status: res.status, 

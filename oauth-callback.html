@@ -103,6 +103,12 @@
         retryBtn.hidden = false;
       };
 
+      const redirectToBanScreen = (payload) => {
+        const reason = encodeURIComponent((payload && payload.ban_reason) || 'Account suspended for severe rule violations.');
+        const appeal = encodeURIComponent((payload && payload.ban_appeal_url) || 'https://discord.gg/rKgF9s32EV');
+        window.location.replace(`${window.location.origin}/banned.html?reason=${reason}&appeal=${appeal}`);
+      };
+
       retryBtn.addEventListener('click', () => {
         window.location.href = `${window.location.origin}/login.html`;
       });
@@ -137,8 +143,17 @@
           }
 
           if (!res.ok || (data && data.error)) {
+            if (res.status === 403 && data && data.banned) {
+              redirectToBanScreen(data);
+              return;
+            }
             const msg = data && data.error ? data.error : 'Verification failed.';
             throw new Error(msg);
+          }
+
+          const isNewAccount = Boolean(data && (data.is_new_user === true || data.new_user === true || data.created === true));
+          if (isNewAccount) {
+            localStorage.setItem('itlearn_force_onboarding', '1');
           }
 
           const currentOrigin = window.location.origin;

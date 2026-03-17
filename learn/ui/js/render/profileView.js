@@ -1,5 +1,30 @@
 import { getMyProfile, getPublicProfile, reportProfileBio } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
+import { getInventory } from '../state/gamificationState.js';
+
+function normalizeLang(lang) {
+  const short = String(lang || '').toLowerCase().split('-')[0];
+  return ['en', 'nl', 'de', 'fr'].includes(short) ? short : 'en';
+}
+
+function t(key, fallback) {
+  let storedLang = '';
+  try {
+    storedLang = typeof localStorage !== 'undefined' ? localStorage.getItem('language') : '';
+  } catch (error) {
+    storedLang = '';
+  }
+
+  const lang = normalizeLang(
+    storedLang || document.documentElement.lang || 'en'
+  );
+
+  const globalTranslations = typeof window !== 'undefined' ? window.translations : null;
+  return globalTranslations?.[lang]?.[key]
+    || globalTranslations?.en?.[key]
+    || fallback
+    || key;
+}
 
 function normalizeLang(lang) {
   const short = String(lang || '').toLowerCase().split('-')[0];
@@ -72,12 +97,16 @@ function renderHeader(screen, titleText, subtitleText) {
   screen.appendChild(header);
 }
 
-function renderProfileCard(profile, isOwnProfile) {
+function renderProfileCard(profile, isOwnProfile, hasGlowEffect = false) {
   const section = document.createElement('section');
   section.className = 'profile-card';
+  if (isOwnProfile && hasGlowEffect) {
+    section.classList.add('profile-card--glow');
+  }
 
   const username = profile.username || 'no-username';
   const bio = profile.bio || (isOwnProfile ? 'Add a bio in settings so other learners know who you are.' : 'This learner has not added a bio yet.');
+  const tagline = typeof profile.profile_tagline === 'string' ? profile.profile_tagline.trim() : '';
 
   const banner = document.createElement('div');
   banner.className = 'profile-banner';
@@ -87,13 +116,33 @@ function renderProfileCard(profile, isOwnProfile) {
 
   const avatar = document.createElement('div');
   avatar.className = 'profile-avatar';
-  avatar.textContent = username.slice(0, 1).toUpperCase();
+  const avatarUrl = typeof profile.avatar_url === 'string' ? profile.avatar_url.trim() : '';
+  if (avatarUrl) {
+    const avatarImg = document.createElement('img');
+    avatarImg.className = 'profile-avatar-image';
+    avatarImg.src = avatarUrl;
+    avatarImg.alt = `${username} avatar`;
+    avatarImg.loading = 'lazy';
+    avatarImg.referrerPolicy = 'no-referrer';
+    avatarImg.addEventListener('error', () => {
+      avatar.replaceChildren();
+      avatar.textContent = username.slice(0, 1).toUpperCase();
+    }, { once: true });
+    avatar.appendChild(avatarImg);
+  } else {
+    avatar.textContent = username.slice(0, 1).toUpperCase();
+  }
 
   const identity = document.createElement('div');
   identity.className = 'profile-identity';
 
   const heading = document.createElement('h3');
   heading.textContent = `@${username}`;
+
+  const taglineEl = document.createElement('p');
+  taglineEl.className = 'profile-tagline';
+  taglineEl.textContent = tagline || (isOwnProfile ? 'Add a tagline to personalize your profile card.' : '');
+  taglineEl.hidden = !taglineEl.textContent;
 
   const bioEl = document.createElement('p');
   bioEl.textContent = bio;
@@ -104,6 +153,7 @@ function renderProfileCard(profile, isOwnProfile) {
   shareLink.textContent = `itlearn.be/@${username}`;
 
   identity.appendChild(heading);
+  identity.appendChild(taglineEl);
   identity.appendChild(bioEl);
   identity.appendChild(shareLink);
 
@@ -273,14 +323,17 @@ export async function renderProfileView(screenRootEl, { username } = {}) {
   }
 
   const profile = response.profile || {};
-  body.appendChild(renderProfileCard(profile, !isPublicProfile));
+  const isOwnProfile = !isPublicProfile;
+  const inventory = isOwnProfile ? getInventory() : null;
+  const hasGlowEffect = Boolean(inventory && Array.isArray(inventory.profileEffects) && inventory.profileEffects.includes('glow'));
+  body.appendChild(renderProfileCard(profile, isOwnProfile, hasGlowEffect));
 
   const hasPersistedBio = typeof profile.bio === 'string' && profile.bio.trim().length > 0;
   if (isPublicProfile && profile.username && hasPersistedBio) {
     body.appendChild(createReportBioPanel(profile.username));
   }
 
-  if (!isPublicProfile) {
+  if (isOwnProfile) {
     const note = document.createElement('p');
     note.className = 'profile-note';
     note.textContent = 'Want to change your username? Open Settings and update your profile handle.';

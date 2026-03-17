@@ -6,7 +6,7 @@ import { ensureQuizLoaded, renderQuiz } from './quiz.js';
 import { getChapterIndexForCourse, markChapterRead } from '../state/courseProgress.js';
 import { renderTheoryTab } from './theoryTab.js';
 import { renderPracticeTab } from './practice/practiceTabRenderer.js';
-import { triggerChapterComplete } from './chapterView.js';
+import { triggerChapterComplete, triggerLessonComplete } from './chapterView.js';
 
 export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabButtons, tabContentEl }) {
   const state = getState();
@@ -22,8 +22,8 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
   const course = coursesDoc.courses.find((c) => c.id === selectedCourseId) || null;
 
   if (!course || !selectedChapterId) {
-    if (headerTitleEl) headerTitleEl.textContent = 'Select a chapter';
-    if (headerSubtitleEl) headerSubtitleEl.textContent = 'Choose a course and chapter to get started.';
+    if (headerTitleEl)    headerTitleEl.textContent = 'Select a lesson';
+    if (headerSubtitleEl) headerSubtitleEl.textContent = 'Choose a course and lesson to get started.';
     if (tabContentEl) tabContentEl.innerHTML = '<p class="muted">No chapter selected yet.</p>';
     setActiveTabButton(tabButtons, null);
     return;
@@ -35,8 +35,8 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
   }) || null;
 
   if (!chapter) {
-    if (headerTitleEl) headerTitleEl.textContent = 'Chapter not found';
-    if (headerSubtitleEl) headerSubtitleEl.textContent = 'The selected chapter does not exist.';
+    if (headerTitleEl) headerTitleEl.textContent = 'Lesson not found';
+    if (headerSubtitleEl) headerSubtitleEl.textContent = 'The selected lesson does not exist.';
     if (tabContentEl) tabContentEl.innerHTML = '<p class="muted">Please pick another chapter.</p>';
     setActiveTabButton(tabButtons, null);
     return;
@@ -45,7 +45,7 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
   const trialMode = getTrialMode();
   const chapterIndex = getChapterIndexForCourse(course, selectedChapterId);
   if (trialMode.isActive && chapterIndex > 0) {
-    if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Chapter';
+    if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Lesson';
     if (headerSubtitleEl) headerSubtitleEl.textContent = course.title || '';
     setActiveTabButton(tabButtons, selectedTab);
     
@@ -53,9 +53,9 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
       <div class="trial-restricted-content">
         <div class="trial-lock-icon">🔒</div>
         <h2>Keep Learning For Free</h2>
-        <p>Great start! Create a free account to unlock every chapter in this course and keep your progress synced.</p>
+        <p>Great start! Create a free account to unlock every lesson in this course and keep your progress synced.</p>
         <ul class="trial-benefits">
-          <li>All chapters unlocked instantly</li>
+          <li>All lessons unlocked instantly</li>
           <li>Progress and streaks saved</li>
           <li>Practice and quizzes included</li>
         </ul>
@@ -72,7 +72,7 @@ export async function renderChapterView({ headerTitleEl, headerSubtitleEl, tabBu
     }
   }
 
-  if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Chapter';
+  if (headerTitleEl) headerTitleEl.textContent = chapter.title || 'Lesson';
   if (headerSubtitleEl) headerSubtitleEl.textContent = course.title || '';
 
   setActiveTabButton(tabButtons, selectedTab);
@@ -125,7 +125,13 @@ async function renderQuizTab(course, chapter, tabContentEl) {
       setChapterContent,
       fetchChapterQuiz,
     });
-    renderQuiz({ container: tabContentEl, quiz });
+    renderQuiz({
+      container: tabContentEl,
+      quiz,
+      onComplete: ({ correct, total, awardXp }) => {
+        triggerLessonComplete({ correct, total, awardXp, lessonTitle: chapter.title || 'Lesson' });
+      },
+    });
   } catch (error) {
     console.error(error);
     tabContentEl.innerHTML = '<p class="quiz-feedback is-incorrect">Failed to load quiz.</p>';

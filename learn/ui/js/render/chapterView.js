@@ -9,6 +9,7 @@ import { getCurrentPracticeEditor } from './practice/practiceEditor.js';
 export { getCurrentPracticeEditor };
 
 let onChapterCompleteCallback = null;
+let onLessonCompleteCallback  = null;
 
 export function setChapterCompleteCallback(callback) {
   onChapterCompleteCallback = callback;
@@ -20,15 +21,24 @@ export function triggerChapterComplete() {
   }
 }
 
-export async function renderChapterScreenContent({ headerTitleElement, headerSubtitleElement, tabButtons: providedTabButtons, tabContentElement, onChapterComplete }) {
+export function setLessonCompleteCallback(callback) {
+  onLessonCompleteCallback = callback;
+}
+
+export function triggerLessonComplete(stats) {
+  if (onLessonCompleteCallback) {
+    onLessonCompleteCallback(stats);
+  }
+}
+
+export async function renderChapterScreenContent({ headerTitleElement, headerSubtitleElement, tabButtons: providedTabButtons, tabContentElement, onChapterComplete, onLessonComplete }) {
   const headerTitleEl = headerTitleElement;
   const headerSubtitleEl = headerSubtitleElement;
   const tabButtons = providedTabButtons;
   const tabContentEl = tabContentElement;
 
-  if (onChapterComplete) {
-    setChapterCompleteCallback(onChapterComplete);
-  }
+  if (onChapterComplete)  setChapterCompleteCallback(onChapterComplete);
+  if (onLessonComplete)   setLessonCompleteCallback(onLessonComplete);
 
   tabButtons.forEach((button) => {
     button.addEventListener('click', () => {
