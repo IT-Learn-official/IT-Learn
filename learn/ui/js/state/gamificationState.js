@@ -114,6 +114,49 @@ function formatRewardLabel(item) {
   if (item.xp) return `+${item.xp} XP Bonus`;
   return item.label;
 }
+function normalizeQuest(rawQuest, fallbackQuest = null) {
+  const baseQuest = fallbackQuest || QUEST_POOL.find((quest) => quest.id === rawQuest?.id) || null;
+  const target = Number.isFinite(rawQuest?.target)
+    ? Math.max(1, rawQuest.target)
+    : Math.max(1, Number(baseQuest?.target) || 1);
+  const progress = Number.isFinite(rawQuest?.progress)
+    ? Math.max(0, rawQuest.progress)
+    : 0;
+
+  return {
+    id: String(rawQuest?.id || baseQuest?.id || ''),
+    label: String(rawQuest?.label || baseQuest?.label || 'Daily quest'),
+    target,
+    reward: Number.isFinite(rawQuest?.reward)
+      ? Math.max(0, rawQuest.reward)
+      : Math.max(0, Number(baseQuest?.reward) || 0),
+    icon: String(rawQuest?.icon || baseQuest?.icon || '⭐'),
+    progress: Math.min(progress, target),
+    completed: Boolean(rawQuest?.completed || progress >= target),
+    claimed: Boolean(rawQuest?.claimed),
+  };
+}
+
+function normalizeQuestList(rawList) {
+  if (!Array.isArray(rawList) || rawList.length === 0) {
+    return makeDailyQuests();
+  }
+
+  const normalized = rawList
+    .map((quest) => normalizeQuest(quest))
+    .filter((quest) => quest.id);
+
+  return normalized.length > 0 ? normalized : makeDailyQuests();
+}
+
+function buildLegacyMissionMap(quests) {
+  const missionMap = {};
+  normalizeQuestList(quests).forEach((quest) => {
+    missionMap[quest.id] = Boolean(quest.claimed || quest.completed);
+  });
+  return missionMap;
+}
+
 function makeDailyQuests() {
   return [...QUEST_POOL]
     .sort(() => Math.random() - 0.5)
@@ -170,6 +213,11 @@ function load() {
     // New day quests
     if (!_state.quests || _state.quests.date !== todayStr()) {
       _state.quests = { date: todayStr(), list: makeDailyQuests() };
+    } else {
+      _state.quests = {
+        date: _state.quests.date || todayStr(),
+        list: normalizeQuestList(_state.quests.list),
+      };
     }
     // Weekly leaderboard reset
     if (_state.leaderboard.weekStart !== weekStartStr()) {
@@ -218,6 +266,7 @@ function scheduleRemoteGamificationSync() {
         xp: payload.xp.total,
         streak: payload.streak.current,
         last_active: payload.streak.lastDate || normalizeDateOnly(remote?.last_active) || null,
+        missions: buildLegacyMissionMap(payload.quests.list),
       };
     });
   }, REMOTE_SYNC_DEBOUNCE_MS);
@@ -286,7 +335,11 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
         s.leaderboard = { ...s.leaderboard, ...(remoteGamification.leaderboard || {}) };
         s.quests = {
           date: remoteGamification.quests?.date || s.quests.date,
-          list: Array.isArray(remoteGamification.quests?.list) ? remoteGamification.quests.list.map(q => ({ ...q })) : s.quests.list,
+          list: normalizeQuestList(
+            Array.isArray(remoteGamification.quests?.list) && remoteGamification.quests.list.length > 0
+              ? remoteGamification.quests.list
+              : s.quests.list
+          ),
         };
         s.inventory = {
           ...s.inventory,
@@ -423,10 +476,11 @@ export function getLeaderboard() {
 }
 
 // ─── Quests ──────────────────────────────────────────────────────────────────
-export function getQuests() { return load().quests.list.map(q => ({ ...q })); }
+export function getQuests() { return normalizeQuestList(load().quests.list).map(q => ({ ...q })); }
 
 function _progressQuest(id, amount = 1) {
   const s = load();
+  if (!Number.isFinite(amount) || amount <= 0) return;
   const q = s.quests.list.find(q => q.id === id && !q.completed);
   if (!q) return;
   q.progress = Math.min(q.progress + amount, q.target);

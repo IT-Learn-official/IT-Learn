@@ -17,6 +17,13 @@ function normalizeRemoteProgress(raw) {
   const taskStateByChapter = ensureObject(
     progressRoot.taskStateByChapter || progressRoot.taskState || raw?.taskStateByChapter || raw?.taskState
   );
+  const gamification = ensureObject(progressRoot.gamification);
+  const gamificationQuests = Array.isArray(gamification.quests?.list) ? gamification.quests.list : [];
+  const derivedMissionMap = gamificationQuests.reduce((acc, quest) => {
+    if (!quest || typeof quest !== 'object' || !quest.id) return acc;
+    acc[quest.id] = Boolean(quest.claimed || quest.completed);
+    return acc;
+  }, {});
 
   return {
     ...ensureObject(raw),
@@ -26,7 +33,9 @@ function normalizeRemoteProgress(raw) {
     },
     xp: typeof raw?.xp === 'number' ? raw.xp : 0,
     streak: typeof raw?.streak === 'number' ? raw.streak : 0,
-    missions: ensureObject(raw?.missions),
+    missions: Object.keys(derivedMissionMap).length > 0
+      ? { ...ensureObject(raw?.missions), ...derivedMissionMap }
+      : ensureObject(raw?.missions),
     mistakes: Array.isArray(raw?.mistakes) ? raw.mistakes : [],
   };
 }

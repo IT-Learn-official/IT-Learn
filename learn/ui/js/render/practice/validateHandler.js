@@ -8,6 +8,7 @@ import { updateConsoleOutput } from './outputUpdater.js';
 import { createTeacherContext } from './teacherContext.js';
 import { runCode, prepareLastRun } from './runExecutor.js';
 import { initFreshTeacherPanel } from './teacherPanelManager.js';
+import { progressQuest, updateSidebarStats } from '../../state/gamificationState.js';
 
 /**
  * Create and attach validate button event handler.
@@ -190,6 +191,11 @@ export function createValidateHandler({
       const finalMessage = feedbackText + verdictMessage;
       if (teacherPanelApi && typeof teacherPanelApi.appendAssistantMessage === 'function') {
         teacherPanelApi.appendAssistantMessage(finalMessage);
+      }
+
+      if (validation?.passed) {
+        progressQuest('practice_once', 1);
+        updateSidebarStats();
       }
     } catch (err) {
       console.error('Teacher validation run failed:', err);
