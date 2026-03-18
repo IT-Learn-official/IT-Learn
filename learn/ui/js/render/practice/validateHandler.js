@@ -176,10 +176,12 @@ export function createValidateHandler({
 
       // Add verdict message after the feedback
       let verdictMessage = '';
-      if (validation && typeof validation.feedbackText === 'string') {
-        const passed = typeof validation.passed === 'boolean'
+      const passed = validation && typeof validation.feedbackText === 'string'
+        ? (typeof validation.passed === 'boolean'
           ? validation.passed
-          : /pass(ed)?|success|congrat/i.test(validation.feedbackText);
+          : /pass(ed)?|success|congrat/i.test(validation.feedbackText))
+        : false;
+      if (validation && typeof validation.feedbackText === 'string') {
         if (passed) {
           verdictMessage = '\n✅ Congratulations! Your assignment passed all checks.';
         } else {
@@ -193,7 +195,7 @@ export function createValidateHandler({
         teacherPanelApi.appendAssistantMessage(finalMessage);
       }
 
-      if (validation?.passed) {
+      if (passed) {
         progressQuest('practice_once', 1);
         updateSidebarStats();
       }

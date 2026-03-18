@@ -1,5 +1,6 @@
 import { loadBadges, loadProgress, saveBadges, saveProgress } from './authService.js';
 import { getTrialProgress, getTrialSession, isTrialCompleted } from './trialMode.js';
+import { buildLegacyMissionMap } from '../state/gamificationState.js';
 
 let remoteProgressCache = null;
 let remoteBadgesCache = null;
@@ -18,12 +19,7 @@ function normalizeRemoteProgress(raw) {
     progressRoot.taskStateByChapter || progressRoot.taskState || raw?.taskStateByChapter || raw?.taskState
   );
   const gamification = ensureObject(progressRoot.gamification);
-  const gamificationQuests = Array.isArray(gamification.quests?.list) ? gamification.quests.list : [];
-  const derivedMissionMap = gamificationQuests.reduce((acc, quest) => {
-    if (!quest || typeof quest !== 'object' || !quest.id) return acc;
-    acc[quest.id] = Boolean(quest.claimed || quest.completed);
-    return acc;
-  }, {});
+  const derivedMissionMap = buildLegacyMissionMap(gamification.quests?.list);
 
   return {
     ...ensureObject(raw),

@@ -149,7 +149,11 @@ function normalizeQuestList(rawList) {
   return normalized.length > 0 ? normalized : makeDailyQuests();
 }
 
-function buildLegacyMissionMap(quests) {
+export function buildLegacyMissionMap(quests) {
+  if (!Array.isArray(quests) || quests.length === 0) {
+    return {};
+  }
+
   const missionMap = {};
   normalizeQuestList(quests).forEach((quest) => {
     missionMap[quest.id] = Boolean(quest.claimed || quest.completed);
@@ -266,7 +270,10 @@ function scheduleRemoteGamificationSync() {
         xp: payload.xp.total,
         streak: payload.streak.current,
         last_active: payload.streak.lastDate || normalizeDateOnly(remote?.last_active) || null,
-        missions: buildLegacyMissionMap(payload.quests.list),
+        missions: {
+          ...((remote && typeof remote.missions === 'object') ? remote.missions : {}),
+          ...buildLegacyMissionMap(payload.quests.list),
+        },
       };
     });
   }, REMOTE_SYNC_DEBOUNCE_MS);
