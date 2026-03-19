@@ -3,6 +3,7 @@
 import { getState, getChapterContent, setChapterContent, getTrialMode } from '../state/appState.js';
 import { fetchChapterQuiz } from '../services/apiClient.js';
 import { ensureQuizLoaded, renderQuiz } from './quiz.js';
+import { markLessonCompletedInProgress } from '../services/progressService.js';
 import { getChapterIndexForCourse, markChapterRead } from '../state/courseProgress.js';
 import { renderTheoryTab } from './theoryTab.js';
 import { renderPracticeTab } from './practice/practiceTabRenderer.js';
@@ -129,6 +130,13 @@ async function renderQuizTab(course, chapter, tabContentEl) {
       container: tabContentEl,
       quiz,
       onComplete: ({ correct, total, awardXp }) => {
+        void markLessonCompletedInProgress({
+          courseId: selectedCourseId,
+          chapterId: selectedChapterId,
+          correct,
+          total,
+          awardXp,
+        });
         triggerLessonComplete({ correct, total, awardXp, lessonTitle: chapter.title || 'Lesson' });
       },
     });

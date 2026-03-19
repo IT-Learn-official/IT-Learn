@@ -21,14 +21,9 @@ export async function renderTheoryTab({ course, chapter, container, courseId, ch
   container.innerHTML = '<p class="muted">Loading theory...</p>';
 
   async function applyTaskStateAndHandlers() {
-    const localTaskState = loadTaskState(courseId, chapterId);
-    const remoteTaskState = await getRemoteTaskStateForChapter(courseId, chapterId);
-    const taskState = { ...localTaskState, ...(remoteTaskState ?? {}) };
-
-    if (Object.keys(taskState).length > Object.keys(localTaskState).length) {
-      // Persist merged state locally so chapter UI remains consistent after reload.
+      const remoteTaskState = await getRemoteTaskStateForChapter(courseId, chapterId);
+      const taskState = remoteTaskState ?? {};
       saveTaskState(courseId, chapterId, taskState);
-    }
 
     const markdownContainer = container.querySelector('.markdown-body');
     if (!markdownContainer) return;

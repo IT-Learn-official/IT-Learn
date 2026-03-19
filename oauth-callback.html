@@ -153,11 +153,6 @@
             throw new Error(msg);
           }
 
-          const isNewAccount = Boolean(data && (data.is_new_user === true || data.new_user === true || data.created === true));
-          if (isNewAccount) {
-            localStorage.setItem('itlearn_force_onboarding', '1');
-          }
-
           const currentOrigin = window.location.origin;
           const redirectTo = `${currentOrigin}/learn/index.html`;
 

@@ -1,9 +1,8 @@
 // Gamification state — hearts, XP, coins, streak, leaderboard, quests, reward box, inventory
-// All persisted to localStorage
+// Persisted via backend progress sync.
 
 import { checkSession, loadProgress, saveProgress } from '../services/authService.js';
 
-const STORAGE_KEY = 'itlearn_gamification';
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
 const REWARD_MIN_FACTOR = 0.8;
@@ -146,39 +145,34 @@ let _suppressRemoteSync = false;
 
 function load() {
   if (_state) return _state;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    _state = raw ? Object.assign(defaultState(), JSON.parse(raw)) : defaultState();
+  _state = defaultState();
 
-    // Ensure nested objects are not missing keys after a partial restore
-    _state.hearts      = Object.assign(defaultState().hearts,      _state.hearts      || {});
-    _state.xp         = Object.assign(defaultState().xp,          _state.xp          || {});
-    _state.streak     = Object.assign(defaultState().streak,       _state.streak      || {});
-    _state.leaderboard= Object.assign(defaultState().leaderboard,  _state.leaderboard || {});
-    _state.inventory  = Object.assign(defaultState().inventory,    _state.inventory   || {});
+  // Ensure nested objects are not missing keys after a partial restore
+  _state.hearts      = Object.assign(defaultState().hearts,      _state.hearts      || {});
+  _state.xp         = Object.assign(defaultState().xp,          _state.xp          || {});
+  _state.streak     = Object.assign(defaultState().streak,       _state.streak      || {});
+  _state.leaderboard= Object.assign(defaultState().leaderboard,  _state.leaderboard || {});
+  _state.inventory  = Object.assign(defaultState().inventory,    _state.inventory   || {});
 
-    // Daily heart refill
-    if (_state.hearts.lastRefillDate !== todayStr()) {
-      _state.hearts.current      = _state.hearts.max;
-      _state.hearts.lastRefillDate = todayStr();
-    }
-    // Daily XP reset
-    if (_state.xp.dailyDate !== todayStr()) {
-      _state.xp.daily    = 0;
-      _state.xp.dailyDate = todayStr();
-    }
-    // New day quests
-    if (!_state.quests || _state.quests.date !== todayStr()) {
-      _state.quests = { date: todayStr(), list: makeDailyQuests() };
-    }
-    // Weekly leaderboard reset
-    if (_state.leaderboard.weekStart !== weekStartStr()) {
-      _state.leaderboard.weeklyXp  = 0;
-      _state.leaderboard.weekStart = weekStartStr();
-      updateLeagueIndex(_state);
-    }
-  } catch {
-    _state = defaultState();
+  // Daily heart refill
+  if (_state.hearts.lastRefillDate !== todayStr()) {
+    _state.hearts.current      = _state.hearts.max;
+    _state.hearts.lastRefillDate = todayStr();
+  }
+  // Daily XP reset
+  if (_state.xp.dailyDate !== todayStr()) {
+    _state.xp.daily    = 0;
+    _state.xp.dailyDate = todayStr();
+  }
+  // New day quests
+  if (!_state.quests || _state.quests.date !== todayStr()) {
+    _state.quests = { date: todayStr(), list: makeDailyQuests() };
+  }
+  // Weekly leaderboard reset
+  if (_state.leaderboard.weekStart !== weekStartStr()) {
+    _state.leaderboard.weeklyXp  = 0;
+    _state.leaderboard.weekStart = weekStartStr();
+    updateLeagueIndex(_state);
   }
   return _state;
 }
@@ -223,12 +217,7 @@ function scheduleRemoteGamificationSync() {
   }, REMOTE_SYNC_DEBOUNCE_MS);
 }
 
-function saveLocalOnly() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(_state)); } catch {}
-}
-
 function save() {
-  saveLocalOnly();
   scheduleRemoteGamificationSync();
 }
 
@@ -299,7 +288,6 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
         s.lessonsSinceBox = Number.isFinite(remoteGamification.lessonsSinceBox)
           ? Math.max(0, remoteGamification.lessonsSinceBox)
           : (Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0);
-        saveLocalOnly();
       } finally {
         _suppressRemoteSync = false;
       }

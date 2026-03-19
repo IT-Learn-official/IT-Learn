@@ -16,10 +16,6 @@ function requiresProfileOnboarding(profile) {
   return !validUsername;
 }
 
-function hasForcedOnboardingFlag() {
-  return localStorage.getItem('itlearn_force_onboarding') === '1';
-}
-
 async function bootstrap() {
   const screenRootElement = document.getElementById('screen-root');
   const globalStatusElement = document.getElementById('global-status');
@@ -57,7 +53,8 @@ async function bootstrap() {
         setOnboardingRequired(true);
       } else {
         bootProfile = profileResult.profile;
-        setOnboardingRequired(hasForcedOnboardingFlag() || requiresProfileOnboarding(profileResult.profile));
+        const profileNeedsOnboarding = requiresProfileOnboarding(profileResult.profile);
+        setOnboardingRequired(profileNeedsOnboarding);
       }
     }
   }
@@ -66,7 +63,7 @@ async function bootstrap() {
 
   await syncGamificationWithProfileProgress(bootProfile);
 
-  // Populate sidebar gamification stats from localStorage
+  // Populate sidebar gamification stats from synced state
   updateSidebarStats();
 
   setGlobalStatus('Loading courses...');

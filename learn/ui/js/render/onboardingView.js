@@ -1,4 +1,5 @@
 import { getMyProfile, updateProfile } from '../services/authService.js';
+import { saveOnboardingPreferencesToProgress } from '../services/progressService.js';
 import { getState } from '../state/appState.js';
 
 function showStatus(element, message, type) {
@@ -9,12 +10,12 @@ function showStatus(element, message, type) {
 const MASCOT_IMAGE_URL = 'https://files.itlearn.be/images/branding/logo/IT_Learn.png';
 
 const LEARNING_CHOICES = [
-  { id: 'help-me-choose', icon: '...', label: 'Help me choose', learners: 'Smart match' },
-  { id: 'python', icon: '🐍', label: 'Python', learners: '1.45M learners' },
-  { id: 'html', icon: '🌐', label: 'HTML', learners: '221K learners' },
-  { id: 'sql', icon: '🗃️', label: 'SQL', learners: '107K learners' },
-  { id: 'css', icon: '🎨', label: 'CSS', learners: '32K learners' },
-  { id: 'git', icon: '🧭', label: 'Git & GitHub', learners: '95K learners' },
+  { id: 'help-me-choose', icon: '...', label: 'Help me choose' },
+  { id: 'python', icon: '🐍', label: 'Python' },
+  { id: 'html', icon: '🌐', label: 'HTML' },
+  { id: 'sql', icon: '🗃️', label: 'SQL' },
+  { id: 'css', icon: '🎨', label: 'CSS' },
+  { id: 'git', icon: '🧭', label: 'Git & GitHub' },
 ];
 
 const GOAL_CHOICES = [
@@ -162,18 +163,15 @@ export async function renderOnboardingView(screenRootEl, { onComplete } = {}) {
     state.bio = String(profile.profile.bio || '');
   }
 
-  function saveOnboardingPreferences() {
-    const userId = String(window.currentUserId || 'unknown');
-    const key = `itlearn_onboarding_prefs_${userId}`;
+  async function saveOnboardingPreferences() {
     const payload = {
       learningPath: state.learningPath,
       goal: state.goal,
       level: state.level,
       commitment: state.commitment,
-      updatedAt: Date.now(),
+      updatedAt: new Date().toISOString(),
     };
-    localStorage.setItem(key, JSON.stringify(payload));
-    localStorage.removeItem('itlearn_force_onboarding');
+    await saveOnboardingPreferencesToProgress(payload);
   }
 
   function isStepValid(step) {
@@ -350,7 +348,7 @@ export async function renderOnboardingView(screenRootEl, { onComplete } = {}) {
       return;
     }
 
-    saveOnboardingPreferences();
+    await saveOnboardingPreferences();
     showStatus(status, 'Profile completed. Redirecting...', 'success');
 
     const courses = getState()?.coursesDoc?.courses || [];
