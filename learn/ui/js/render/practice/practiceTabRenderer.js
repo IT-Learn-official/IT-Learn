@@ -7,6 +7,7 @@ import { createValidateHandler } from './validateHandler.js';
 import { initTeacherBotPanel } from '../teacherBotPanel.js';
 import { destroyPracticeEditor, setPracticeEditor, getCurrentPracticeEditor, setPracticeEditorAutoSaveId, clearPracticeEditorAutoSave } from './practiceEditor.js';
 import { loadTemplateSource } from './templateLoader.js';
+import { getPracticeAutoSaveValue, savePracticeAutoSaveValue } from '../../services/progressService.js';
 
 function getPracticeAutoSaveKey(courseId, chapterId, assignmentId, templatePath) {
   return `itlearn:practice:autosave:${courseId}:${chapterId}:${assignmentId}:${templatePath}`;
@@ -211,7 +212,7 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
 
   // Restore previously autosaved code for this specific assignment/template if present.
   if (practiceEditor) {
-    const savedEditorValue = localStorage.getItem(autoSaveKey);
+    const savedEditorValue = await getPracticeAutoSaveValue(autoSaveKey);
     if (savedEditorValue !== null) {
       practiceEditor.setValue(savedEditorValue, -1);
     }
@@ -219,11 +220,7 @@ export async function renderPracticeTab(course, chapter, tabContentEl) {
     // Start periodic autosave every 15 seconds.
     const intervalId = setInterval(() => {
       if (!practiceEditor) return;
-      try {
-        localStorage.setItem(autoSaveKey, practiceEditor.getValue());
-      } catch (err) {
-        console.warn('Practice editor autosave failed', err);
-      }
+      void savePracticeAutoSaveValue(autoSaveKey, practiceEditor.getValue());
     }, 15000);
 
     setPracticeEditorAutoSaveId(intervalId);

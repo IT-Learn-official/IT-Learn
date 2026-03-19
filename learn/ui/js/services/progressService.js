@@ -12,6 +12,11 @@ function ensureObject(value) {
   return value && typeof value === 'object' ? value : {};
 }
 
+function normalizeOptionalText(value) {
+  if (typeof value !== 'string') return null;
+  return value;
+}
+
 function normalizeRemoteProgress(raw) {
   const progressRoot = ensureObject(raw?.progress);
   const taskStateByChapter = ensureObject(
@@ -63,42 +68,6 @@ async function ensureRemoteBadgesLoaded() {
   } finally {
     remoteBadgesPromise = null;
   }
-}
-
-function collectLocalTaskStateByChapter() {
-  const taskStateByChapter = {};
-
-  if (typeof window === 'undefined' || !window.localStorage) {
-    return taskStateByChapter;
-  }
-
-  for (let i = 0; i < window.localStorage.length; i += 1) {
-    const key = window.localStorage.key(i);
-    if (!key || !key.startsWith('taskState:')) continue;
-
-    const chapterKey = key.replace(/^taskState:/, '');
-    try {
-      const raw = window.localStorage.getItem(key);
-      taskStateByChapter[chapterKey] = ensureObject(raw ? JSON.parse(raw) : {});
-    } catch (error) {
-      // Ignore malformed local cache entry.
-    }
-  }
-
-  return taskStateByChapter;
-}
-
-function mergeTaskStateByChapter(primary, fallback) {
-  const merged = { ...ensureObject(fallback), ...ensureObject(primary) };
-
-  Object.keys(ensureObject(fallback)).forEach((chapterKey) => {
-    merged[chapterKey] = {
-      ...ensureObject(fallback[chapterKey]),
-      ...ensureObject(primary?.[chapterKey]),
-    };
-  });
-
-  return merged;
 }
 
 function computeStatsFromTaskState(taskStateByChapter) {
@@ -194,10 +163,8 @@ export async function getRemoteTaskStateForChapter(courseId, chapterId) {
 export async function getBadgeStatsFromBackend() {
   const remote = await ensureRemoteProgressLoaded();
   const remoteTaskStateByChapter = ensureObject(remote.progress?.taskStateByChapter);
-  const localTaskStateByChapter = collectLocalTaskStateByChapter();
-  const mergedTaskStateByChapter = mergeTaskStateByChapter(remoteTaskStateByChapter, localTaskStateByChapter);
 
-  const taskStats = computeStatsFromTaskState(mergedTaskStateByChapter);
+  const taskStats = computeStatsFromTaskState(remoteTaskStateByChapter);
   const missionsCompleted = Object.values(ensureObject(remote.missions)).filter(Boolean).length;
   const mistakesCount = Array.isArray(remote.mistakes) ? remote.mistakes.length : 0;
 
@@ -247,4 +214,97 @@ export async function syncBadgeUnlocks(computedBadges) {
   }
 
   return payload;
+}
+
+export async function updateRemoteProgress(mutation) {
+  const remote = await ensureRemoteProgressLoaded();
+  const base = normalizeRemoteProgress(remote);
+  const changes = typeof mutation === 'function' ? mutation(base) : mutation;
+  if (!changes || typeof changes !== 'object') {
+    return { success: false };
+  }
+
+  const payload = normalizeRemoteProgress({
+    ...base,
+    ...changes,
+    progress: {
+      ...ensureObject(base.progress),
+      ...ensureObject(changes.progress),
+    },
+  });
+
+  const result = await saveProgress(payload);
+  if (result?.success) {
+    remoteProgressCache = payload;
+  }
+  return result;
+}
+
+export async function saveOnboardingPreferencesToProgress(preferences) {
+  const safePrefs = {
+    learningPath: String(preferences?.learningPath || '').slice(0, 64),
+    goal: String(preferences?.goal || '').slice(0, 64),
+    level: String(preferences?.level || '').slice(0, 64),
+    commitment: String(preferences?.commitment || '').slice(0, 16),
+    updatedAt: new Date().toISOString(),
+  };
+
+  return updateRemoteProgress((remote) => ({
+    progress: {
+      ...ensureObject(remote.progress),
+      onboardingPreferences: safePrefs,
+    },
+  }));
+}
+
+export async function getPracticeAutoSaveValue(autoSaveKey) {
+  const remote = await ensureRemoteProgressLoaded();
+  const autosaveRoot = ensureObject(remote.progress?.practiceAutosaveByTemplate);
+  return normalizeOptionalText(autosaveRoot[autoSaveKey]);
+}
+
+export async function savePracticeAutoSaveValue(autoSaveKey, code) {
+  const key = String(autoSaveKey || '').slice(0, 256);
+  if (!key) return { success: false };
+
+  const safeCode = String(code || '');
+  return updateRemoteProgress((remote) => ({
+    progress: {
+      ...ensureObject(remote.progress),
+      practiceAutosaveByTemplate: {
+        ...ensureObject(remote.progress?.practiceAutosaveByTemplate),
+        [key]: safeCode,
+      },
+      lastPracticeAutosaveAt: new Date().toISOString(),
+    },
+  }));
+}
+
+export async function markLessonCompletedInProgress({ courseId, chapterId, correct, total, awardXp = true }) {
+  const chapterKey = `${courseId || ''}:${chapterId || ''}`;
+  if (!chapterKey || chapterKey === ':') {
+    return { success: false };
+  }
+
+  const safeCorrect = Number.isFinite(correct) ? Math.max(0, Math.trunc(correct)) : 0;
+  const safeTotal = Number.isFinite(total) ? Math.max(0, Math.trunc(total)) : 0;
+  const safeScore = safeTotal > 0 ? Math.max(0, Math.min(1, safeCorrect / safeTotal)) : 0;
+
+  return updateRemoteProgress((remote) => ({
+    progress: {
+      ...ensureObject(remote.progress),
+      lessonCompletionByChapter: {
+        ...ensureObject(remote.progress?.lessonCompletionByChapter),
+        [chapterKey]: {
+          completed: true,
+          correct: safeCorrect,
+          total: safeTotal,
+          score: safeScore,
+          awardXp: Boolean(awardXp),
+          completedAt: new Date().toISOString(),
+        },
+      },
+    },
+    last_active: new Date().toISOString().slice(0, 10),
+  }));
 }
