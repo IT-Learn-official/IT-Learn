@@ -536,9 +536,17 @@ export function renderSettingsView(screenRootEl, options = {}) {
   notificationsReadAllButton.type = 'button';
   notificationsReadAllButton.className = 'settings-button settings-button-ghost';
   notificationsReadAllButton.textContent = 'Mark all as read';
+  notificationsReadAllButton.disabled = true;
+
+  const notificationsLoadMoreButton = document.createElement('button');
+  notificationsLoadMoreButton.type = 'button';
+  notificationsLoadMoreButton.className = 'settings-button settings-button-ghost';
+  notificationsLoadMoreButton.textContent = 'Load more';
+  notificationsLoadMoreButton.hidden = true;
 
   notificationsActions.appendChild(notificationsRefreshButton);
   notificationsActions.appendChild(notificationsReadAllButton);
+  notificationsActions.appendChild(notificationsLoadMoreButton);
 
   const notificationsStatus = document.createElement('div');
   notificationsStatus.className = 'settings-status';
@@ -615,6 +623,9 @@ export function renderSettingsView(screenRootEl, options = {}) {
   });
 
   let notificationsLoadedOnce = false;
+  const NOTIFICATIONS_DEFAULT_LIMIT = 50;
+  const NOTIFICATIONS_LIMIT_STEP = 50;
+  let notificationsCurrentLimit = NOTIFICATIONS_DEFAULT_LIMIT;
 
   function formatNotificationDate(value) {
     const parsed = new Date(value || '');
@@ -685,23 +696,33 @@ export function renderSettingsView(screenRootEl, options = {}) {
     });
   }
 
-  async function loadNotificationsView(showLoading = true) {
+  async function loadNotificationsView(showLoading = true, { limit = notificationsCurrentLimit } = {}) {
+    notificationsCurrentLimit = Math.max(1, Number(limit) || NOTIFICATIONS_DEFAULT_LIMIT);
+    notificationsReadAllButton.disabled = true;
     if (showLoading) {
       notificationsStatus.textContent = 'Loading notifications...';
       notificationsStatus.className = 'settings-status status-loading';
     }
 
-    const result = await getNotifications({ limit: 100, unreadOnly: false });
+    const result = await getNotifications({ limit: notificationsCurrentLimit, unreadOnly: false });
     if (!result.success) {
       notificationsStatus.textContent = result.error || 'Could not load notifications.';
       notificationsStatus.className = 'settings-status status-error';
+      notificationsLoadMoreButton.hidden = true;
       renderNotificationsList([]);
       return;
     }
 
     renderNotificationsList(result.notifications);
-    notificationsStatus.textContent = `Loaded ${result.notifications.length} notification(s). Unread: ${result.unreadCount}.`;
+    const totalCount = Number(result.totalCount || 0);
+    const hasMore = totalCount > notificationsCurrentLimit;
+    notificationsStatus.textContent = hasMore
+      ? `Loaded ${result.notifications.length} of ${totalCount} notification(s). Unread: ${result.unreadCount}. Showing a truncated list.`
+      : `Loaded ${result.notifications.length} notification(s). Unread: ${result.unreadCount}.`;
     notificationsStatus.className = 'settings-status status-success';
+    notificationsLoadMoreButton.hidden = !hasMore;
+    notificationsLoadMoreButton.disabled = false;
+    notificationsReadAllButton.disabled = false;
     notificationsReadAllButton.disabled = result.unreadCount <= 0;
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('notifications:unread-count', {
@@ -712,10 +733,20 @@ export function renderSettingsView(screenRootEl, options = {}) {
   }
 
   notificationsRefreshButton.addEventListener('click', async () => {
-    await loadNotificationsView(true);
+    notificationsCurrentLimit = NOTIFICATIONS_DEFAULT_LIMIT;
+    await loadNotificationsView(true, { limit: notificationsCurrentLimit });
+  });
+
+  notificationsLoadMoreButton.addEventListener('click', async () => {
+    notificationsLoadMoreButton.disabled = true;
+    await loadNotificationsView(true, { limit: notificationsCurrentLimit + NOTIFICATIONS_LIMIT_STEP });
   });
 
   notificationsReadAllButton.addEventListener('click', async () => {
+    if (!notificationsLoadedOnce || notificationsReadAllButton.disabled) {
+      return;
+    }
+
     notificationsReadAllButton.disabled = true;
     notificationsStatus.textContent = 'Marking all as read...';
     notificationsStatus.className = 'settings-status status-loading';

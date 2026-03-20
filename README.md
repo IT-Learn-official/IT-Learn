@@ -37,8 +37,8 @@ Improved design and animations
 💬 Join Us!
 Have feedback or ideas? Come chat with us on our Discord! https://discord.itlearn.be
 
-### Top contributors:
+## Top contributors:
 
 <a href="https://github.com/IT-Learn-official/IT-Learn/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=IT-Learn-official/IT-Learn" />
+  <img src="https://contrib.rocks/image?repo=IT-Learn-official/IT-Learn" alt="Contributors to IT-Learn" />
 </a>

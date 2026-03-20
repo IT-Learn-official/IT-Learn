@@ -10,6 +10,13 @@ import { checkSession, getMyProfile, getNotifications } from './services/authSer
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
 import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
 
+const NOTIFICATIONS_BADGE_CACHE_TTL_MS = 15000;
+let notificationsBadgeCache = {
+  unreadCount: null,
+  expiresAt: 0,
+  pendingPromise: null,
+};
+
 function requiresProfileOnboarding(profile) {
   const username = String(profile?.username || '').trim().toLowerCase();
   const validUsername = /^[a-z0-9_]{3,24}$/.test(username);
@@ -61,7 +68,14 @@ async function bootstrap() {
   
   initLayout({ globalStatusElement, screenRootElement });
 
-  await syncGamificationWithProfileProgress(bootProfile);
+  const gamificationSync = await syncGamificationWithProfileProgress(bootProfile);
+  if (gamificationSync && typeof gamificationSync === 'object') {
+    console.info('Gamification sync source:', gamificationSync.source, {
+      chosenTimestamp: gamificationSync.timestamp,
+      remoteTimestamp: gamificationSync.remoteTimestamp,
+      localTimestamp: gamificationSync.localTimestamp,
+    });
+  }
 
   // Populate sidebar gamification stats from synced state
   updateSidebarStats();
@@ -83,12 +97,12 @@ async function bootstrap() {
     await handleRouteChange(route);
     updateSidebarActive(route);
     if (route.route === 'settings' || route.route === 'profile' || route.route === 'courses' || route.route === 'chapter') {
-      void refreshNotificationsBadge();
+      void refreshNotificationsBadgeCached();
     }
   });
 
   attachSidebarLinks();
-  void refreshNotificationsBadge();
+  void refreshNotificationsBadgeCached();
 
   // If no hash present, ensure we start from courses route.
   if (!window.location.hash) {
@@ -199,12 +213,56 @@ async function refreshNotificationsBadge() {
   badge.textContent = unread > 99 ? '99+' : String(unread);
 }
 
+function applyNotificationsBadgeCount(unreadCount) {
+  const badge = document.getElementById('notifications-badge');
+  if (!badge) return;
+
+  const unread = Math.max(0, Number(unreadCount || 0));
+  if (unread <= 0) {
+    badge.hidden = true;
+    badge.textContent = '0';
+    return;
+  }
+
+  badge.hidden = false;
+  badge.textContent = unread > 99 ? '99+' : String(unread);
+}
+
+async function refreshNotificationsBadgeCached({ force = false } = {}) {
+  const now = Date.now();
+  if (!force && notificationsBadgeCache.unreadCount !== null && now < notificationsBadgeCache.expiresAt) {
+    applyNotificationsBadgeCount(notificationsBadgeCache.unreadCount);
+    return;
+  }
+
+  if (notificationsBadgeCache.pendingPromise) {
+    await notificationsBadgeCache.pendingPromise;
+    return;
+  }
+
+  notificationsBadgeCache.pendingPromise = (async () => {
+    const result = await getNotifications({ limit: 1, unreadOnly: false });
+    const unread = result.success ? Math.max(0, Number(result.unreadCount || 0)) : 0;
+    notificationsBadgeCache.unreadCount = unread;
+    notificationsBadgeCache.expiresAt = Date.now() + NOTIFICATIONS_BADGE_CACHE_TTL_MS;
+    applyNotificationsBadgeCount(unread);
+  })();
+
+  try {
+    await notificationsBadgeCache.pendingPromise;
+  } finally {
+    notificationsBadgeCache.pendingPromise = null;
+  }
+}
+
 if (typeof window !== 'undefined') {
   window.addEventListener('notifications:unread-count', (event) => {
     const badge = document.getElementById('notifications-badge');
     if (!badge) return;
 
     const unread = Math.max(0, Number(event?.detail?.unreadCount || 0));
+    notificationsBadgeCache.unreadCount = unread;
+    notificationsBadgeCache.expiresAt = Date.now() + NOTIFICATIONS_BADGE_CACHE_TTL_MS;
     badge.hidden = unread <= 0;
     badge.textContent = unread > 99 ? '99+' : String(unread || 0);
   });

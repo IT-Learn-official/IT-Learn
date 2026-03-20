@@ -32,8 +32,8 @@
         <div class="scroll" role="region" aria-label="Volledige gebruiksvoorwaarden">
             <section>
                 <p><strong>Terms and Conditions | IT Learn</strong></p>
-                <p><strong>Effective date:</strong> 2026-03-19<br/>
-                <strong>Last updated:</strong> 2026-03-19</p>
+                <p><strong>Effective date:</strong> <span id="effective-date">2026-03-19</span><br/>
+                <strong>Last updated:</strong> <span id="intro-last-updated">2026-03-19</span></p>
             </section>
 
             <section>
@@ -80,7 +80,7 @@
             <section>
                 <h2>5. Enforcement, Suspensions, and Appeals</h2>
                 <p>We may investigate suspected abuse and take action including warning, feature restriction, content moderation, temporary suspension, or permanent account ban.</p>
-                <p>Where available, banned users may appeal via the published appeal channel (currently Discord support ticket flow).</p>
+                <p>Where available, banned users may appeal <span id="appeals-channel-text">via our published appeals process (see Help/Support page)</span>.</p>
                 <p>If you abuse the Service, engage in fraud, or commit unlawful conduct, we may report relevant information to competent authorities, including your local police, to the extent permitted by law.</p>
             </section>
 
@@ -172,8 +172,21 @@
             setTimeout(() => URL.revokeObjectURL(url), 10000);
         });
 
+        const TERMS_APPEALS_URL = 'https://itlearn.be/help#appeals';
+        const TERMS_APPEALS_LABEL = 'Help/Support page';
         const updatedEl = document.getElementById('last-updated');
         if (!updatedEl.textContent.trim()) updatedEl.textContent = new Date().toISOString().slice(0, 10);
+
+        const canonicalDate = updatedEl.textContent.trim();
+        const effectiveDateEl = document.getElementById('effective-date');
+        const introLastUpdatedEl = document.getElementById('intro-last-updated');
+        if (effectiveDateEl) effectiveDateEl.textContent = canonicalDate;
+        if (introLastUpdatedEl) introLastUpdatedEl.textContent = canonicalDate;
+
+        const appealsChannelTextEl = document.getElementById('appeals-channel-text');
+        if (appealsChannelTextEl) {
+            appealsChannelTextEl.innerHTML = `via our published appeals process (<a href="${TERMS_APPEALS_URL}" target="_blank" rel="noopener noreferrer">${TERMS_APPEALS_LABEL}</a>)`;
+        }
     </script>
 </body>
 
