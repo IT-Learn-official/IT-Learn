@@ -5,6 +5,7 @@ import { checkSession, loadProgress, saveProgress } from '../services/authServic
 
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
+const LOCAL_GAMIFICATION_KEY = 'itlearn.gamification.v1';
 const REWARD_MIN_FACTOR = 0.8;
 const REWARD_MAX_FACTOR = 1.2;
 const XP_PER_RANK = 12;
@@ -137,6 +138,27 @@ function defaultState() {
   };
 }
 
+function readLocalGamificationSnapshot() {
+  if (typeof localStorage === 'undefined') return null;
+  try {
+    const raw = localStorage.getItem(LOCAL_GAMIFICATION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveLocalGamificationSnapshot(snapshot) {
+  if (typeof localStorage === 'undefined') return;
+  try {
+    localStorage.setItem(LOCAL_GAMIFICATION_KEY, JSON.stringify(snapshot));
+  } catch {
+    // Ignore storage quota/privacy errors; remote sync still attempts to persist state.
+  }
+}
+
 // ─── Load / Save ─────────────────────────────────────────────────────────────
 let _state = null;
 let _remoteProgressCache = null;
@@ -145,7 +167,10 @@ let _suppressRemoteSync = false;
 
 function load() {
   if (_state) return _state;
-  _state = defaultState();
+  const localSnapshot = readLocalGamificationSnapshot();
+  _state = (localSnapshot && typeof localSnapshot === 'object')
+    ? { ...defaultState(), ...localSnapshot }
+    : defaultState();
 
   // Ensure nested objects are not missing keys after a partial restore
   _state.hearts      = Object.assign(defaultState().hearts,      _state.hearts      || {});
@@ -177,7 +202,13 @@ function load() {
   return _state;
 }
 
-function buildRemoteGamificationPayload() {
+function snapshotTimestampMs(snapshot) {
+  if (!snapshot || typeof snapshot.savedAt !== 'string') return 0;
+  const parsed = Date.parse(snapshot.savedAt);
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
+function buildGamificationSnapshot() {
   const s = load();
   return {
     hearts: { ...s.hearts },
@@ -194,6 +225,10 @@ function buildRemoteGamificationPayload() {
     lessonsSinceBox: Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0,
     savedAt: new Date().toISOString(),
   };
+}
+
+function buildRemoteGamificationPayload() {
+  return buildGamificationSnapshot();
 }
 
 function scheduleRemoteGamificationSync() {
@@ -218,6 +253,7 @@ function scheduleRemoteGamificationSync() {
 }
 
 function save() {
+  saveLocalGamificationSnapshot(buildGamificationSnapshot());
   scheduleRemoteGamificationSync();
 }
 
@@ -264,8 +300,13 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
 
     const remote = await getRemoteProgressSnapshot();
     const remoteGamification = remote?.progress?.gamification;
+    const localSnapshot = readLocalGamificationSnapshot();
+    const localSnapshotTs = snapshotTimestampMs(localSnapshot);
+    const remoteSnapshotTs = snapshotTimestampMs(remoteGamification);
+    const shouldUseRemoteGamification = Boolean(remoteGamification && typeof remoteGamification === 'object')
+      && (localSnapshotTs === 0 || remoteSnapshotTs >= localSnapshotTs);
 
-    if (remoteGamification && typeof remoteGamification === 'object') {
+    if (shouldUseRemoteGamification) {
       _suppressRemoteSync = true;
       try {
         s.hearts = { ...s.hearts, ...(remoteGamification.hearts || {}) };
