@@ -164,10 +164,12 @@ let _state = null;
 let _remoteProgressCache = null;
 let _remoteSyncTimer = null;
 let _suppressRemoteSync = false;
+let _localSnapshotTimestampMs = 0;
 
 function load() {
   if (_state) return _state;
   const localSnapshot = readLocalGamificationSnapshot();
+  _localSnapshotTimestampMs = snapshotTimestampMs(localSnapshot);
   _state = (localSnapshot && typeof localSnapshot === 'object')
     ? { ...defaultState(), ...localSnapshot }
     : defaultState();
@@ -253,8 +255,30 @@ function scheduleRemoteGamificationSync() {
 }
 
 function save() {
-  saveLocalGamificationSnapshot(buildGamificationSnapshot());
+  const snapshot = buildGamificationSnapshot();
+  saveLocalGamificationSnapshot(snapshot);
+  _localSnapshotTimestampMs = snapshotTimestampMs(snapshot);
   scheduleRemoteGamificationSync();
+}
+
+function snapshotStateForSync(state) {
+  return {
+    hearts: { ...state.hearts },
+    xp: { ...state.xp },
+    coins: state.coins,
+    streak: { ...state.streak },
+    leaderboard: { ...state.leaderboard },
+    quests: {
+      date: state.quests?.date || todayStr(),
+      list: Array.isArray(state.quests?.list) ? state.quests.list.map((q) => ({ ...q })) : [],
+    },
+    inventory: {
+      ...state.inventory,
+      profileEffects: Array.isArray(state.inventory?.profileEffects) ? [...state.inventory.profileEffects] : [],
+    },
+    boxReady: Boolean(state.boxReady),
+    lessonsSinceBox: Number.isFinite(state.lessonsSinceBox) ? state.lessonsSinceBox : 0,
+  };
 }
 
 function normalizeDateOnly(value) {
@@ -300,11 +324,14 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
 
     const remote = await getRemoteProgressSnapshot();
     const remoteGamification = remote?.progress?.gamification;
-    const localSnapshot = readLocalGamificationSnapshot();
-    const localSnapshotTs = snapshotTimestampMs(localSnapshot);
+    const localSnapshotTs = _localSnapshotTimestampMs;
     const remoteSnapshotTs = snapshotTimestampMs(remoteGamification);
     const shouldUseRemoteGamification = Boolean(remoteGamification && typeof remoteGamification === 'object')
       && (localSnapshotTs === 0 || remoteSnapshotTs >= localSnapshotTs);
+
+    // TODO: Replace timestamp-based conflict checks with a server-issued monotonic sequence number.
+    const syncSource = shouldUseRemoteGamification ? 'remote' : 'local';
+    const chosenTimestamp = shouldUseRemoteGamification ? remoteSnapshotTs : localSnapshotTs;
 
     if (shouldUseRemoteGamification) {
       _suppressRemoteSync = true;
@@ -339,10 +366,24 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
       s.streak.longest = Math.max(s.streak.longest, profileStreak);
       if (profileLastActive) s.streak.lastDate = profileLastActive;
       save();
-      return { ...s.streak };
+      return {
+        state: snapshotStateForSync(s),
+        source: syncSource,
+        timestamp: chosenTimestamp,
+        remoteTimestamp: remoteSnapshotTs,
+        localTimestamp: _localSnapshotTimestampMs,
+      };
     }
 
-    if (!remote) return { ...s.streak };
+    if (!remote) {
+      return {
+        state: snapshotStateForSync(s),
+        source: syncSource,
+        timestamp: chosenTimestamp,
+        remoteTimestamp: remoteSnapshotTs,
+        localTimestamp: localSnapshotTs,
+      };
+    }
 
     const remoteStreak = typeof remote.streak === 'number' ? Math.max(0, remote.streak) : s.streak.current;
     const remoteLastActive = normalizeDateOnly(remote.last_active);
@@ -351,10 +392,23 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
     s.streak.longest = Math.max(s.streak.longest, remoteStreak);
     if (remoteLastActive) s.streak.lastDate = remoteLastActive;
     save();
-    return { ...s.streak };
+    return {
+      state: snapshotStateForSync(s),
+      source: syncSource,
+      timestamp: chosenTimestamp,
+      remoteTimestamp: remoteSnapshotTs,
+      localTimestamp: _localSnapshotTimestampMs,
+    };
   } catch (error) {
     console.error('Failed loading profile streak sync:', error);
-    return { ...load().streak };
+    const fallbackState = load();
+    return {
+      state: snapshotStateForSync(fallbackState),
+      source: 'local',
+      timestamp: _localSnapshotTimestampMs,
+      remoteTimestamp: 0,
+      localTimestamp: _localSnapshotTimestampMs,
+    };
   }
 }
 

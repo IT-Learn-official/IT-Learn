@@ -179,18 +179,6 @@
         console.error('Store link not found!');
       }
 
-      if (notificationsLink) {
-        notificationsLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          console.log('Notifications link clicked');
-          setActiveSidebarLink(notificationsLink);
-          navigateTo({ route: 'settings', tab: 'notifications' });
-        });
-        console.log('Event listener attached to notifications link');
-      } else {
-        console.error('Notifications link not found!');
-      }
-
       if (badgesLink) {
         badgesLink.addEventListener('click', function(e) {
           e.preventDefault();

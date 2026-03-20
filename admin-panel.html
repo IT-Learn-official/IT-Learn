@@ -837,10 +837,23 @@
   </div>
 
   <script>
-    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+    const API_BASE = (() => {
+      const configuredBase = window.IT_LEARN_API_BASE || window.__IT_LEARN_API_BASE;
+      if (configuredBase && typeof configuredBase === 'string') {
+        return configuredBase.replace(/\/$/, '');
+      }
+
+      const hostname = String(window.location.hostname || '').toLowerCase();
+      const isProductionHost = hostname === 'itlearn.be' || hostname.endsWith('.itlearn.be');
+
+      // Use same-origin API by default for local/dev and non-production hosts.
+      return isProductionHost ? 'https://itlearn.pythonanywhere.com/api' : '/api';
+    })();
     const SEARCH_DEBOUNCE_MS = 300;
     const REQUEST_TIMEOUT_MS = 15000;
     const LIVE_TRAFFIC_POLL_MS = 10000;
+    const BULK_CLOSE_BATCH_SIZE = 10;
+    const BULK_CLOSE_BATCH_DELAY_MS = 200;
 
     const authBlock = document.getElementById('auth-block');
     const panel = document.getElementById('panel');
@@ -1024,6 +1037,65 @@
       renderRecentAdminActions();
     }
 
+    async function recordAuditLog(eventType, details = {}) {
+      const payload = {
+        event_type: String(eventType || 'admin_action'),
+        timestamp: new Date().toISOString(),
+        details,
+      };
+
+      try {
+        await apiCall('/admin/audit-log', {
+          method: 'POST',
+          body: payload,
+        });
+      } catch (error) {
+        // Fallback keeps exports functional if audit endpoint is unavailable.
+        console.warn('Audit log endpoint unavailable. Event:', payload, error);
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, Math.max(0, Number(ms) || 0));
+      });
+    }
+
+    function getFocusableElements(container) {
+      if (!container) return [];
+      return Array.from(
+        container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+      ).filter((el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+    }
+
+    function extractTotalCount(payload, fallbackArray = null) {
+      if (!payload || typeof payload !== 'object') {
+        return Array.isArray(fallbackArray) ? fallbackArray.length : 0;
+      }
+
+      const directCandidates = [
+        payload.total,
+        payload.count,
+        payload.total_count,
+        payload.totalCount,
+      ];
+
+      for (const candidate of directCandidates) {
+        const parsed = Number(candidate);
+        if (Number.isFinite(parsed)) return parsed;
+      }
+
+      if (payload.pagination && typeof payload.pagination === 'object') {
+        const paginationCandidates = [payload.pagination.total, payload.pagination.count];
+        for (const candidate of paginationCandidates) {
+          const parsed = Number(candidate);
+          if (Number.isFinite(parsed)) return parsed;
+        }
+      }
+
+      return Array.isArray(fallbackArray) ? fallbackArray.length : 0;
+    }
+
     /**
      * Create fetch with timeout and abort controller
      */
@@ -1081,15 +1153,26 @@
     /**
      * Show custom confirmation modal
      */
-    function confirmAction(message) {
+    function confirmAction(message, options = {}) {
       return new Promise((resolve) => {
         const backdrop = document.getElementById('modal-backdrop');
+        const dialog = document.getElementById('modal-dialog');
         const bodyEl = document.getElementById('modal-body');
         const cancelBtn = document.getElementById('modal-cancel');
         const confirmBtn = document.getElementById('modal-confirm');
+        const isDestructive = Boolean(options.isDestructive || options.actionType === 'ban' || options.actionType === 'bulk-close');
+        const previousActiveElement = document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
+        const rootSiblings = Array.from(document.body.children).filter((child) => child !== backdrop);
 
         bodyEl.textContent = message;
         backdrop.classList.add('visible');
+
+        rootSiblings.forEach((element) => {
+          element.setAttribute('aria-hidden', 'true');
+          element.inert = true;
+        });
 
         const handleCancel = () => {
           cleanup();
@@ -1103,7 +1186,32 @@
 
         const handleKeyDown = (e) => {
           if (e.key === 'Escape') handleCancel();
-          if (e.key === 'Enter') handleConfirm();
+
+          if (e.key === 'Tab') {
+            const focusable = getFocusableElements(dialog);
+            if (!focusable.length) {
+              e.preventDefault();
+              return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+            if (e.shiftKey && active === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && active === last) {
+              e.preventDefault();
+              first.focus();
+            }
+            return;
+          }
+
+          if (e.key === 'Enter') {
+            if (!isDestructive || e.ctrlKey || e.metaKey) {
+              handleConfirm();
+            }
+          }
         };
 
         const cleanup = () => {
@@ -1111,13 +1219,24 @@
           cancelBtn.removeEventListener('click', handleCancel);
           confirmBtn.removeEventListener('click', handleConfirm);
           document.removeEventListener('keydown', handleKeyDown);
+
+          rootSiblings.forEach((element) => {
+            element.removeAttribute('aria-hidden');
+            element.inert = false;
+          });
+
+          if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+            previousActiveElement.focus();
+          }
         };
 
         cancelBtn.addEventListener('click', handleCancel);
         confirmBtn.addEventListener('click', handleConfirm);
         document.addEventListener('keydown', handleKeyDown);
 
-        confirmBtn.focus();
+        const focusable = getFocusableElements(dialog);
+        const firstFocusable = focusable[0] || confirmBtn || cancelBtn;
+        firstFocusable.focus();
       });
     }
 
@@ -1284,7 +1403,7 @@
         closeBtn.textContent = 'Close Report';
 
         banBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban bio for @${report.reported_username}?`))) {
+          if (!(await confirmAction(`Ban bio for @${report.reported_username}?`, { isDestructive: true, actionType: 'ban' }))) {
             showToast('Bio ban cancelled.', 'info');
             return;
           }
@@ -1525,7 +1644,7 @@
         replacementInput.placeholder = 'Cannot ban: user has no username yet';
       } else {
         banBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban bio for @${profile.username}?`))) {
+          if (!(await confirmAction(`Ban bio for @${profile.username}?`, { isDestructive: true, actionType: 'ban' }))) {
             showToast('Bio ban cancelled.', 'info');
             return;
           }
@@ -1566,7 +1685,7 @@
         accountReasonInput.placeholder = 'Cannot ban account without user_id';
       } else {
         banAccountBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban account for ${username}? This action cannot be easily undone.`))) {
+          if (!(await confirmAction(`Ban account for ${username}? This action cannot be easily undone.`, { isDestructive: true, actionType: 'ban' }))) {
             showToast('Account ban cancelled.', 'info');
             return;
           }
@@ -1727,7 +1846,8 @@
 
       const closeNote = (bulkCloseNoteInput?.value || '').trim();
       const confirmed = await confirmAction(
-        `Close ${visibleOpenReports.length} visible open report(s)? This cannot be undone.`
+        `Close ${visibleOpenReports.length} visible open report(s)? This cannot be undone.`,
+        { isDestructive: true, actionType: 'bulk-close' }
       );
       if (!confirmed) {
         showToast('Bulk close cancelled.', 'info');
@@ -1739,19 +1859,26 @@
 
       let successCount = 0;
       let failedCount = 0;
-      for (const report of visibleOpenReports) {
-        try {
-          await apiCall('/admin/bio-reports/close', {
-            method: 'POST',
-            body: {
-              report_id: report.report_id,
-              close_note: closeNote,
-            },
-          });
-          successCount += 1;
-        } catch (error) {
-          failedCount += 1;
-          console.error('Bulk close failed for report:', report.report_id, error);
+      for (let start = 0; start < visibleOpenReports.length; start += BULK_CLOSE_BATCH_SIZE) {
+        const batch = visibleOpenReports.slice(start, start + BULK_CLOSE_BATCH_SIZE);
+        await Promise.all(batch.map(async (report) => {
+          try {
+            await apiCall('/admin/bio-reports/close', {
+              method: 'POST',
+              body: {
+                report_id: report.report_id,
+                close_note: closeNote,
+              },
+            });
+            successCount += 1;
+          } catch (error) {
+            failedCount += 1;
+            console.error('Bulk close failed for report:', report.report_id, error);
+          }
+        }));
+
+        if (start + BULK_CLOSE_BATCH_SIZE < visibleOpenReports.length && BULK_CLOSE_BATCH_DELAY_MS > 0) {
+          await sleep(BULK_CLOSE_BATCH_DELAY_MS);
         }
       }
 
@@ -1778,13 +1905,24 @@
     async function loadStats() {
       const statsContainer = document.getElementById('stats-container');
       try {
-        const reports = await apiCall('/admin/bio-reports?status=open&limit=999', { method: 'GET' });
-        const profiles = await apiCall('/admin/profiles?page=1&pageSize=1000', { method: 'GET' });
-        
-        const openReports = Array.isArray(reports.reports) ? reports.reports.length : 0;
-        const totalUsers = Array.isArray(profiles.profiles) ? profiles.profiles.length : 0;
-        const bannedAccounts = Array.isArray(profiles.profiles) ? profiles.profiles.filter(p => p.account_banned).length : 0;
-        const bioBans = Array.isArray(profiles.profiles) ? profiles.profiles.filter(p => p.bio_banned).length : 0;
+        const [reports, profiles, bannedCountPayload, bioBanCountPayload] = await Promise.all([
+          apiCall('/admin/bio-reports?status=open&limit=999', { method: 'GET' }),
+          apiCall('/admin/profiles?page=1&pageSize=1000', { method: 'GET' }),
+          apiCall('/admin/profiles/count?account_banned=true', { method: 'GET' }).catch(() => null),
+          apiCall('/admin/profiles/count?bio_banned=true', { method: 'GET' }).catch(() => null),
+        ]);
+
+        const reportsList = Array.isArray(reports?.reports) ? reports.reports : [];
+        const profilesList = Array.isArray(profiles?.profiles) ? profiles.profiles : [];
+
+        const openReports = extractTotalCount(reports, reportsList);
+        const totalUsers = extractTotalCount(profiles, profilesList);
+        const bannedAccounts = bannedCountPayload
+          ? extractTotalCount(bannedCountPayload)
+          : profilesList.filter((p) => Boolean(p.account_banned)).length;
+        const bioBans = bioBanCountPayload
+          ? extractTotalCount(bioBanCountPayload)
+          : profilesList.filter((p) => Boolean(p.bio_banned)).length;
 
         document.getElementById('stat-open-reports').textContent = openReports;
         document.getElementById('stat-total-users').textContent = totalUsers;
@@ -1853,16 +1991,20 @@
      * Export data to CSV
      */
     function downloadCSV(data, filename) {
-      const csv = data.map(row => 
-        Object.values(row).map(val => {
-          const str = String(val || '');
-          return str.includes(',') || str.includes('"') 
-            ? `"${str.replace(/"/g, '""')}"` 
-            : str;
-        }).join(',')
+      const quoteCsvValue = (value) => {
+        const raw = value === null || value === undefined ? '' : String(value);
+        const escaped = raw.replace(/"/g, '""');
+        const needsQuotes = /\r|\n|,/.test(raw) || /"/.test(raw);
+        return needsQuotes ? `"${escaped}"` : escaped;
+      };
+
+      const headers = Object.keys(data[0] || {}).map(quoteCsvValue).join(',');
+      const csv = data.map((row) =>
+        Object.values(row)
+          .map((val) => quoteCsvValue(val))
+          .join(',')
       ).join('\n');
 
-      const headers = Object.keys(data[0] || {}).join(',');
       const blob = new Blob([headers + '\n' + csv], { type: 'text/csv' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -1875,30 +2017,48 @@
     /**
      * Export profiles as CSV
      */
-    function exportProfiles() {
+    async function exportProfiles() {
       if (!allProfiles.length) {
         showToast('No profiles loaded. Load profiles first.', 'info');
         return;
       }
 
-      const data = allProfiles.map(p => ({
-        'User ID': p.user_id,
-        'Username': p.username,
-        'Email': p.email,
-        'Bio': p.bio,
-        'XP': p.xp,
-        'Coins': p.coins,
-        'Streak': p.streak,
-        'Badges': p.badges_unlocked,
-        'Bio Banned': p.bio_banned ? 'Yes' : 'No',
-        'Account Banned': p.account_banned ? 'Yes' : 'No',
-        'Last Active': p.last_active,
-      }));
+      const includeEmail = await confirmAction(
+        'Include email addresses in this export (PII)? Choose Cancel to export without emails.'
+      );
+
+      const data = allProfiles.map((p) => {
+        const row = {
+          'User ID': p.user_id,
+          'Username': p.username,
+          'Bio': p.bio,
+          'XP': p.xp,
+          'Coins': p.coins,
+          'Streak': p.streak,
+          'Badges': p.badges_unlocked,
+          'Bio Banned': p.bio_banned ? 'Yes' : 'No',
+          'Account Banned': p.account_banned ? 'Yes' : 'No',
+          'Last Active': p.last_active,
+        };
+        if (includeEmail === true) {
+          row.Email = p.email;
+        }
+        return row;
+      });
+
+      if (includeEmail === true) {
+        await recordAuditLog('pii_export', {
+          exportType: 'profiles_csv',
+          actor: 'current_admin_session',
+          fields: ['Email'],
+          rowCount: data.length,
+        });
+      }
 
       const date = new Date().toISOString().split('T')[0];
       downloadCSV(data, `profiles-${date}.csv`);
-      showToast('Profiles export downloaded.', 'ok');
-      logRecentAdminAction('Profiles CSV exported');
+      showToast(includeEmail ? 'Profiles export with emails downloaded.' : 'Profiles export downloaded.', 'ok');
+      logRecentAdminAction(includeEmail ? 'Profiles CSV exported (with Email)' : 'Profiles CSV exported');
     }
 
     /**
@@ -2090,7 +2250,7 @@
         return;
       }
 
-      if (!(await confirmAction('Send this notification? This action cannot be undone.'))) {
+      if (!(await confirmAction('Send this notification? This action cannot be undone.', { isDestructive: true, actionType: 'broadcast' }))) {
         showToast('Notification cancelled.', 'info');
         return;
       }
@@ -2217,9 +2377,9 @@
 
   <!-- Custom Confirmation Modal -->
   <div id="modal-backdrop" class="modal-backdrop">
-    <div class="modal-dialog">
+    <div id="modal-dialog" class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
       <div class="modal-header">
-        <h2 class="modal-title">Confirm Action</h2>
+        <h2 id="modal-title" class="modal-title">Confirm Action</h2>
       </div>
       <div id="modal-body" class="modal-body"></div>
       <div class="modal-footer">

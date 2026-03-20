@@ -21,7 +21,7 @@ export function parseLocation(hash) {
   if (segments[0] === 'settings') {
     return {
       route: 'settings',
-      tab: query.tab || 'settings',
+      tab: query.tab || 'profile',
     };
   }
 

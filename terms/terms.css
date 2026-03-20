@@ -15,7 +15,7 @@
     --container: 920px;
 }
 
-@keyframes fadeUp {
+@keyframes fade-up {
     from {
         opacity: 0;
         transform: translateY(12px);
@@ -106,7 +106,7 @@ main {
     border: 1px solid var(--line);
     opacity: 0;
     transform: translateY(12px);
-    animation-name: fadeUp;
+    animation-name: fade-up;
     animation-duration: 560ms;
     animation-timing-function: cubic-bezier(0.16, 0.8, 0.36, 1);
     animation-fill-mode: both;
@@ -149,7 +149,7 @@ main {
     padding: 0.95rem;
     opacity: 0;
     transform: translateY(8px);
-    animation-name: fadeUp;
+    animation-name: fade-up;
     animation-duration: 420ms;
     animation-timing-function: cubic-bezier(0.16, 0.8, 0.36, 1);
     animation-fill-mode: both;
@@ -277,6 +277,19 @@ footer {
 
     .scroll {
         max-height: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header,
+    main,
+    .scroll > section {
+        animation: none !important;
+        animation-name: none !important;
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
