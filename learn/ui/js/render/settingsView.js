@@ -536,6 +536,7 @@ export function renderSettingsView(screenRootEl, options = {}) {
   notificationsReadAllButton.type = 'button';
   notificationsReadAllButton.className = 'settings-button settings-button-ghost';
   notificationsReadAllButton.textContent = 'Mark all as read';
+  notificationsReadAllButton.disabled = true;
 
   const notificationsLoadMoreButton = document.createElement('button');
   notificationsLoadMoreButton.type = 'button';
@@ -697,6 +698,7 @@ export function renderSettingsView(screenRootEl, options = {}) {
 
   async function loadNotificationsView(showLoading = true, { limit = notificationsCurrentLimit } = {}) {
     notificationsCurrentLimit = Math.max(1, Number(limit) || NOTIFICATIONS_DEFAULT_LIMIT);
+    notificationsReadAllButton.disabled = true;
     if (showLoading) {
       notificationsStatus.textContent = 'Loading notifications...';
       notificationsStatus.className = 'settings-status status-loading';
@@ -720,6 +722,7 @@ export function renderSettingsView(screenRootEl, options = {}) {
     notificationsStatus.className = 'settings-status status-success';
     notificationsLoadMoreButton.hidden = !hasMore;
     notificationsLoadMoreButton.disabled = false;
+    notificationsReadAllButton.disabled = false;
     notificationsReadAllButton.disabled = result.unreadCount <= 0;
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('notifications:unread-count', {
@@ -740,6 +743,10 @@ export function renderSettingsView(screenRootEl, options = {}) {
   });
 
   notificationsReadAllButton.addEventListener('click', async () => {
+    if (!notificationsLoadedOnce || notificationsReadAllButton.disabled) {
+      return;
+    }
+
     notificationsReadAllButton.disabled = true;
     notificationsStatus.textContent = 'Marking all as read...';
     notificationsStatus.className = 'settings-status status-loading';
