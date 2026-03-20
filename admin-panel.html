@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://itlearn.be/admin">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Admin Panel</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #101a33;
+      --panel-2: #1a2747;
+      --text: #ecf2ff;
+      --muted: #93a3c7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #22d3ee;
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.18);
+      --ok: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -5%, #1d2f5e, var(--bg) 70%);
+      padding: 24px 16px 48px;
+    }
+
+    .wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.78);
+      backdrop-filter: blur(8px);
+      padding: 14px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.82);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    select,
+    input,
+    button,
+    textarea {
+      font: inherit;
+      color: var(--text);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      padding: 8px 10px;
+    }
+
+    button {
+      cursor: pointer;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .button-primary {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .button-danger {
+      background: var(--danger-soft);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .status {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16, 26, 51, 0.8);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .status.ok {
+      color: var(--ok);
+    }
+
+    .status.error {
+      color: #fda4af;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .grid.two-cols {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 1000px) {
+      .grid.two-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .panel-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    #list,
+    #profiles-list {
+      align-content: start;
+      max-height: 65vh;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(26, 39, 71, 0.8);
+    }
+
+    .chip.live {
+      border-color: rgba(34, 211, 238, 0.5);
+      color: var(--accent);
+    }
+
+    .bio-box,
+    .details-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 9px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #dbe7ff;
+      font-size: 0.93rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .actions input {
+      flex: 1 1 320px;
+      min-width: 220px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1rem;
+      color: #dbeafe;
+    }
+
+    .profile-mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .profile-mini-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      background: rgba(20, 33, 60, 0.9);
+      flex: 0 0 auto;
+    }
+
+    .profile-avatar-fallback {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      background: rgba(20, 33, 60, 0.9);
+      color: #c7d8ff;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+    }
+
+    .profile-mini .bio-box {
+      margin: 0;
+    }
+
+    .report-actions-inline {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .profiles-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .profiles-pagination .muted {
+      margin-left: auto;
+    }
+
+    @media (max-width: 700px) {
+      .report-actions-inline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom Modal Styles */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      animation: fadeIn 150ms ease;
+    }
+
+    .modal-backdrop.visible {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+      }
+      to {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-dialog {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideDown 200ms ease;
+    }
+
+    .modal-header {
+      margin-bottom: 16px;
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .modal-body {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .modal-footer button {
+      min-width: 100px;
+      padding: 10px 16px;
+    }
+
+    .modal-footer button:first-child {
+      background: rgba(20, 33, 60, 0.8);
+      border-color: var(--line);
+    }
+
+    .modal-footer button:first-child:hover {
+      background: rgba(30, 43, 80, 0.9);
+    }
+
+    .modal-footer button:last-child {
+      background: linear-gradient(140deg, #ef4444, #dc2626);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+      background: rgba(16, 26, 51, 0.5);
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+
+    .tab-button {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 150ms ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab-button:hover {
+      color: var(--text);
+      background: rgba(34, 211, 238, 0.05);
+      transform: none;
+    }
+
+    .tab-button.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: rgba(34, 211, 238, 0.1);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Stats Dashboard */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: rgba(16, 26, 51, 0.6);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-trend {
+      font-size: 0.8rem;
+      color: var(--ok);
+    }
+
+    .stat-card.warning .stat-value {
+      color: #f59e0b;
+    }
+
+    .stat-card.danger .stat-value {
+      color: var(--danger);
+    }
+
+    /* Action Bar */
+    .action-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .action-bar button,
+    .action-bar select {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(34, 211, 238, 0.15);
+      color: var(--accent);
+    }
+
+    .badge.danger {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+    }
+
+    .badge.ok {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--ok);
+    }
+
+    /* Improved Table/List Styling */
+    .list-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      background: rgba(16, 26, 51, 0.5);
+      transition: background 150ms ease;
+    }
+
+    .list-item:hover {
+      background: rgba(16, 26, 51, 0.7);
+    }
+
+    .list-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .list-item-title {
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .list-item-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .list-item-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .list-item-actions button {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    /* Loading Skeleton */
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+      border-radius: 8px;
+    }
+
+    /* Export Button */
+    .export-section {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 16px;
+      background: rgba(16, 26, 51, 0.5);
+    }
+
+    .export-section p {
+      margin: 0 0 10px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .recent-actions-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: #dbe7ff;
+      font-size: 0.9rem;
+    }
+
+    .recent-actions-list li {
+      line-height: 1.35;
+    }
+
+    .recent-actions-empty {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .recent-actions-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .action-bar input {
+      min-width: 180px;
+    }
+
+    .button-ghost {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--line);
+    }
+
+    .button-ghost.active {
+      border-color: rgba(34, 211, 238, 0.5);
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.2) inset;
+      color: var(--accent);
+    }
+
+    .toast-stack {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 1200;
+      display: grid;
+      gap: 8px;
+      max-width: 340px;
+    }
+
+    .toast {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(16, 26, 51, 0.94);
+      color: var(--text);
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      animation: slideDown 180ms ease;
+    }
+
+    .toast.ok {
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .toast.error {
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .toast.info {
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>Admin Panel</h1>
+        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel (bio + account moderation).</p>
+      </div>
+      <div class="actions">
+        <span id="pending-requests-chip" class="chip">Active visitors: -</span>
+        <a href="/index.html" class="muted">Back to home</a>
+      </div>
+    </div>
+
+    <div id="auth-block" class="status">Checking your admin session...</div>
+
+    <section id="panel" class="hidden">
+      <!-- Dashboard Stats -->
+      <div class="stats-grid" id="stats-container" style="display: none;">
+        <div class="stat-card">
+          <div class="stat-label">Open Reports</div>
+          <div class="stat-value" id="stat-open-reports">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Users</div>
+          <div class="stat-value" id="stat-total-users">0</div>
+        </div>
+        <div class="stat-card danger">
+          <div class="stat-label">Banned Accounts</div>
+          <div class="stat-value" id="stat-banned-accounts">0</div>
+        </div>
+        <div class="stat-card warning">
+          <div class="stat-label">Bio Bans</div>
+          <div class="stat-value" id="stat-bio-bans">0</div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="reports">📋 Reports</button>
+        <button class="tab-button" data-tab="profiles">👥 Profiles</button>
+        <button class="tab-button" data-tab="notifications">🔔 Notifications</button>
+      </div>
+
+      <!-- Reports Tab -->
+      <div id="reports" class="tab-content active">
+        <div class="action-bar">
+          <label for="status-filter" style="white-space: nowrap; display: flex; align-items: center;">Status:</label>
+          <select id="status-filter">
+            <option value="open" selected>Open</option>
+            <option value="resolved">Resolved</option>
+            <option value="all">All</option>
+          </select>
+
+          <label for="limit-filter" style="white-space: nowrap; display: flex; align-items: center;">Limit:</label>
+          <select id="limit-filter">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="250">250</option>
+            <option value="500">500</option>
+          </select>
+
+          <button id="refresh" class="button-primary" type="button">🔄 Refresh</button>
+          <button id="refresh-stats" class="button-primary" type="button">📊 Refresh Stats</button>
+          <input id="report-reason-filter" type="text" placeholder="Reason contains..." />
+          <select id="report-time-filter">
+            <option value="all" selected>All time</option>
+            <option value="24h">Last 24h</option>
+            <option value="7d">Last 7 days</option>
+          </select>
+          <select id="auto-refresh-interval">
+            <option value="15000" selected>15s</option>
+            <option value="30000">30s</option>
+            <option value="60000">60s</option>
+          </select>
+          <button id="auto-refresh-toggle" class="button-ghost" type="button">⏱ Auto-refresh off</button>
+          <input id="bulk-close-note" type="text" maxlength="240" placeholder="Bulk close note (optional)" />
+          <button id="bulk-close-visible" class="button-danger" type="button">✅ Close Visible Open Reports</button>
+        </div>
+        <div id="status" class="status">Loading reports...</div>
+        <div id="list" class="grid"></div>
+      </div>
+
+      <!-- Profiles Tab -->
+      <div id="profiles" class="tab-content">
+        <div class="action-bar">
+          <label for="profile-page-size" style="white-space: nowrap; display: flex; align-items: center;">Per page:</label>
+          <select id="profile-page-size">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="250">250</option>
+          </select>
+
+          <label for="account-ban-filter" style="white-space: nowrap; display: flex; align-items: center;">Filter:</label>
+          <select id="account-ban-filter">
+            <option value="all" selected>All</option>
+            <option value="banned">Banned only</option>
+            <option value="not-banned">Not banned</option>
+          </select>
+
+          <label for="profile-sort" style="white-space: nowrap; display: flex; align-items: center;">Sort:</label>
+          <select id="profile-sort">
+            <option value="last_active" selected>Last Active</option>
+            <option value="xp">XP</option>
+            <option value="streak">Streak</option>
+            <option value="badges_unlocked">Badges</option>
+            <option value="username">Username</option>
+          </select>
+          <button id="profile-sort-dir" class="button-ghost" type="button" aria-label="Toggle sort direction">⬇ Desc</button>
+
+          <input id="profile-search" type="text" placeholder="🔍 Search @username or bio" />
+          <button id="refresh-profiles" class="button-primary" type="button">🔄 Refresh</button>
+        </div>
+
+        <div class="profiles-pagination">
+          <button id="profiles-prev" type="button">← Prev</button>
+          <button id="profiles-next" type="button">Next →</button>
+          <p id="profiles-page-info" class="muted">Page 1</p>
+        </div>
+
+        <div id="profiles-insights" class="meta"></div>
+        <div id="profiles-status" class="status">Loading profiles...</div>
+        <div id="profiles-list" class="grid"></div>
+      </div>
+
+      <!-- Notifications Tab -->
+      <div id="notifications" class="tab-content">
+        <div class="panel-card">
+          <h2 class="section-title">Send Notification</h2>
+          <p class="muted">Send to everyone or target a single user ID.</p>
+          <div class="actions">
+            <input id="notif-title" type="text" maxlength="120" placeholder="Notification title" />
+            <input id="notif-target-user-id" type="text" maxlength="128" placeholder="Target user_id (leave empty for broadcast)" />
+            <label for="notif-broadcast" class="muted">
+              <input id="notif-broadcast" type="checkbox" checked /> Broadcast to all users
+            </label>
+          </div>
+          <textarea id="notif-message" rows="4" maxlength="1200" placeholder="Notification message"></textarea>
+          <div class="actions">
+            <button id="notif-send" class="button-primary" type="button">📤 Send Notification</button>
+          </div>
+          <div id="notif-status" class="status">Ready to send.</div>
+        </div>
+
+        <div class="export-section">
+          <p><strong>📥 Export Data</strong></p>
+          <p class="muted">Export user profiles and reports for backup or analysis.</p>
+          <div class="action-bar">
+            <button id="export-profiles" class="button-primary" type="button">📋 Export Profiles (CSV)</button>
+            <button id="export-reports" class="button-primary" type="button">📋 Export Reports (CSV)</button>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="recent-actions-head">
+            <h2 class="section-title">Last 3 Admin Actions (Local)</h2>
+            <button id="clear-recent-actions" class="button-ghost" type="button">Clear</button>
+          </div>
+          <p class="muted">Only stored on this browser/device.</p>
+          <div id="recent-actions-container"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+    const SEARCH_DEBOUNCE_MS = 300;
+    const REQUEST_TIMEOUT_MS = 15000;
+    const LIVE_TRAFFIC_POLL_MS = 10000;
+
+    const authBlock = document.getElementById('auth-block');
+    const panel = document.getElementById('panel');
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('list');
+    const profilesStatusEl = document.getElementById('profiles-status');
+    const profilesListEl = document.getElementById('profiles-list');
+    const refreshBtn = document.getElementById('refresh');
+    const refreshProfilesBtn = document.getElementById('refresh-profiles');
+    const reportReasonFilterInput = document.getElementById('report-reason-filter');
+    const reportTimeFilter = document.getElementById('report-time-filter');
+    const autoRefreshIntervalSelect = document.getElementById('auto-refresh-interval');
+    const autoRefreshToggleBtn = document.getElementById('auto-refresh-toggle');
+    const bulkCloseNoteInput = document.getElementById('bulk-close-note');
+    const bulkCloseVisibleBtn = document.getElementById('bulk-close-visible');
+    const statusFilter = document.getElementById('status-filter');
+    const limitFilter = document.getElementById('limit-filter');
+    const profileSearchInput = document.getElementById('profile-search');
+    const profilePageSizeSelect = document.getElementById('profile-page-size');
+    const accountBanFilter = document.getElementById('account-ban-filter');
+    const profileSortSelect = document.getElementById('profile-sort');
+    const profileSortDirBtn = document.getElementById('profile-sort-dir');
+    const profilesInsightsEl = document.getElementById('profiles-insights');
+    const profilesPrevBtn = document.getElementById('profiles-prev');
+    const profilesNextBtn = document.getElementById('profiles-next');
+    const profilesPageInfo = document.getElementById('profiles-page-info');
+    const notifTitleInput = document.getElementById('notif-title');
+    const notifTargetUserIdInput = document.getElementById('notif-target-user-id');
+    const notifBroadcastInput = document.getElementById('notif-broadcast');
+    const notifMessageInput = document.getElementById('notif-message');
+    const notifSendBtn = document.getElementById('notif-send');
+    const notifStatusEl = document.getElementById('notif-status');
+    const clearRecentActionsBtn = document.getElementById('clear-recent-actions');
+    const recentActionsContainer = document.getElementById('recent-actions-container');
+    const pendingRequestsChip = document.getElementById('pending-requests-chip');
+    const LOCAL_PREFS_KEY = 'it-learn-admin-panel-prefs-v1';
+    const LOCAL_RECENT_ACTIONS_KEY = 'it-learn-admin-panel-recent-actions-v1';
+    const RECENT_ACTIONS_LIMIT = 3;
+    notifTargetUserIdInput.disabled = Boolean(notifBroadcastInput.checked);
+    let allProfiles = [];
+    let reportsCache = [];
+    let profilesPage = 1;
+    let profilesPageSize = Number(profilePageSizeSelect?.value || 100);
+    let profilesHasNextPage = true;
+    let profileSortDirection = 'desc';
+    let autoRefreshTimerId = null;
+    let liveTrafficTimerId = null;
+    let autoRefreshEnabled = false;
+    let pendingRequests = new Set();
+
+    function updatePendingRequestsUI() {
+      if (!pendingRequestsChip) return;
+      const activeCount = pendingRequests.size;
+      pendingRequestsChip.dataset.localPending = String(activeCount);
+    }
+
+    function updateLiveTrafficUI(activeVisitors, windowSeconds) {
+      if (!pendingRequestsChip) return;
+      const pending = Number(pendingRequestsChip.dataset.localPending || '0');
+      pendingRequestsChip.textContent = `Active visitors: ${activeVisitors} (${windowSeconds}s) | Panel req: ${pending}`;
+      pendingRequestsChip.classList.toggle('live', Number(activeVisitors) > 0);
+    }
+
+    async function loadLiveTraffic() {
+      try {
+        const data = await apiCall('/admin/live-traffic', { method: 'GET' });
+        const activeVisitors = Number(data.active_visitors || 0);
+        const windowSeconds = Number(data.window_seconds || 300);
+        updateLiveTrafficUI(activeVisitors, windowSeconds);
+      } catch (error) {
+        // Keep panel usable even if this metric endpoint fails.
+        pendingRequestsChip.textContent = 'Active visitors: unavailable';
+        pendingRequestsChip.classList.remove('live');
+      }
+    }
+
+    function startLiveTrafficPolling() {
+      if (liveTrafficTimerId) {
+        clearInterval(liveTrafficTimerId);
+      }
+      liveTrafficTimerId = setInterval(() => {
+        void loadLiveTraffic();
+      }, LIVE_TRAFFIC_POLL_MS);
+    }
+
+    function loadPreferences() {
+      try {
+        const raw = localStorage.getItem(LOCAL_PREFS_KEY);
+        if (!raw) return;
+        const prefs = JSON.parse(raw);
+
+        if (prefs.statusFilter && statusFilter) statusFilter.value = prefs.statusFilter;
+        if (prefs.limitFilter && limitFilter) limitFilter.value = prefs.limitFilter;
+        if (prefs.reportReasonFilter && reportReasonFilterInput) reportReasonFilterInput.value = prefs.reportReasonFilter;
+        if (prefs.reportTimeFilter && reportTimeFilter) reportTimeFilter.value = prefs.reportTimeFilter;
+        if (prefs.autoRefreshInterval && autoRefreshIntervalSelect) autoRefreshIntervalSelect.value = String(prefs.autoRefreshInterval);
+        if (prefs.profileSearch && profileSearchInput) profileSearchInput.value = prefs.profileSearch;
+        if (prefs.accountBanFilter && accountBanFilter) accountBanFilter.value = prefs.accountBanFilter;
+        if (prefs.profilePageSize && profilePageSizeSelect) profilePageSizeSelect.value = String(prefs.profilePageSize);
+        if (prefs.profileSort && profileSortSelect) profileSortSelect.value = prefs.profileSort;
+        if (prefs.profileSortDirection === 'asc' || prefs.profileSortDirection === 'desc') {
+          profileSortDirection = prefs.profileSortDirection;
+        }
+      } catch (error) {
+        console.warn('Could not load panel preferences.', error);
+      }
+    }
+
+    function savePreferences() {
+      try {
+        localStorage.setItem(LOCAL_PREFS_KEY, JSON.stringify({
+          statusFilter: statusFilter?.value || 'open',
+          limitFilter: limitFilter?.value || '100',
+          reportReasonFilter: reportReasonFilterInput?.value || '',
+          reportTimeFilter: reportTimeFilter?.value || 'all',
+          autoRefreshInterval: autoRefreshIntervalSelect?.value || '15000',
+          profileSearch: profileSearchInput?.value || '',
+          accountBanFilter: accountBanFilter?.value || 'all',
+          profilePageSize: profilePageSizeSelect?.value || '100',
+          profileSort: profileSortSelect?.value || 'last_active',
+          profileSortDirection,
+        }));
+      } catch (error) {
+        console.warn('Could not save panel preferences.', error);
+      }
+    }
+
+    function formatActionTimestamp(ts) {
+      const parsed = new Date(ts || Date.now());
+      if (Number.isNaN(parsed.getTime())) return 'unknown time';
+      return parsed.toLocaleString();
+    }
+
+    function getRecentAdminActions() {
+      try {
+        const raw = localStorage.getItem(LOCAL_RECENT_ACTIONS_KEY);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        console.warn('Could not read recent admin actions.', error);
+        return [];
+      }
+    }
+
+    function renderRecentAdminActions() {
+      if (!recentActionsContainer) return;
+      const actions = getRecentAdminActions();
+
+      if (!actions.length) {
+        recentActionsContainer.innerHTML = '<p class="recent-actions-empty">No recent actions yet.</p>';
+        return;
+      }
+
+      const listItems = actions
+        .map((item) => `<li><strong>${escapeHtml(item.label || 'Action')}</strong> <span class="muted">(${escapeHtml(formatActionTimestamp(item.created_at))})</span></li>`)
+        .join('');
+      recentActionsContainer.innerHTML = `<ol class="recent-actions-list">${listItems}</ol>`;
+    }
+
+    function logRecentAdminAction(label) {
+      try {
+        const actions = getRecentAdminActions();
+        const next = [
+          { label: String(label || 'Action'), created_at: new Date().toISOString() },
+          ...actions,
+        ].slice(0, RECENT_ACTIONS_LIMIT);
+        localStorage.setItem(LOCAL_RECENT_ACTIONS_KEY, JSON.stringify(next));
+        renderRecentAdminActions();
+      } catch (error) {
+        console.warn('Could not store recent admin action.', error);
+      }
+    }
+
+    function clearRecentAdminActions() {
+      try {
+        localStorage.removeItem(LOCAL_RECENT_ACTIONS_KEY);
+      } catch (error) {
+        console.warn('Could not clear recent admin actions.', error);
+      }
+      renderRecentAdminActions();
+    }
+
+    /**
+     * Create fetch with timeout and abort controller
+     */
+    async function fetchWithTimeout(url, options = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+      const requestId = Math.random();
+      pendingRequests.add(requestId);
+      updatePendingRequestsUI();
+
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+          credentials: 'include',
+        });
+        return response;
+      } finally {
+        clearTimeout(timeoutId);
+        pendingRequests.delete(requestId);
+        updatePendingRequestsUI();
+      }
+    }
+
+    /**
+     * Wrapper for API calls with error handling
+     */
+    async function apiCall(endpoint, options = {}) {
+      try {
+        const url = `${API_BASE}${endpoint}`;
+        const response = await fetchWithTimeout(url, {
+          method: options.method || 'GET',
+          headers: options.headers || { 'Content-Type': 'application/json' },
+          body: options.body ? JSON.stringify(options.body) : undefined,
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          const error = new Error(data.error || `HTTP ${response.status}`);
+          error.status = response.status;
+          error.data = data;
+          throw error;
+        }
+
+        return data;
+      } catch (error) {
+        if (error.name === 'AbortError') {
+          throw new Error('Request timeout - server took too long to respond');
+        }
+        throw error;
+      }
+    }
+
+    /**
+     * Show custom confirmation modal
+     */
+    function confirmAction(message) {
+      return new Promise((resolve) => {
+        const backdrop = document.getElementById('modal-backdrop');
+        const bodyEl = document.getElementById('modal-body');
+        const cancelBtn = document.getElementById('modal-cancel');
+        const confirmBtn = document.getElementById('modal-confirm');
+
+        bodyEl.textContent = message;
+        backdrop.classList.add('visible');
+
+        const handleCancel = () => {
+          cleanup();
+          resolve(false);
+        };
+
+        const handleConfirm = () => {
+          cleanup();
+          resolve(true);
+        };
+
+        const handleKeyDown = (e) => {
+          if (e.key === 'Escape') handleCancel();
+          if (e.key === 'Enter') handleConfirm();
+        };
+
+        const cleanup = () => {
+          backdrop.classList.remove('visible');
+          cancelBtn.removeEventListener('click', handleCancel);
+          confirmBtn.removeEventListener('click', handleConfirm);
+          document.removeEventListener('keydown', handleKeyDown);
+        };
+
+        cancelBtn.addEventListener('click', handleCancel);
+        confirmBtn.addEventListener('click', handleConfirm);
+        document.addEventListener('keydown', handleKeyDown);
+
+        confirmBtn.focus();
+      });
+    }
+
+    /**
+     * Debounce utility
+     */
+    function debounce(callback, delayMs) {
+      let timeoutId;
+      return function debounced(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => callback.apply(this, args), delayMs);
+      };
+    }
+
+    function setStatus(message, type) {
+      statusEl.textContent = message;
+      statusEl.className = 'status';
+      if (type) statusEl.classList.add(type);
+      // Announce to screen readers
+      statusEl.setAttribute('role', 'status');
+      statusEl.setAttribute('aria-live', 'polite');
+    }
+
+    function cardLabel(title, value) {
+      return `<span class="chip"><strong>${title}:</strong> ${value}</span>`;
+    }
+
+    function setProfilesStatus(message, type) {
+      profilesStatusEl.textContent = message;
+      profilesStatusEl.className = 'status';
+      if (type) profilesStatusEl.classList.add(type);
+      profilesStatusEl.setAttribute('role', 'status');
+      profilesStatusEl.setAttribute('aria-live', 'polite');
+    }
+
+    function updateProfilesPaginationUI() {
+      profilesPageInfo.textContent = `Page ${profilesPage}`;
+      profilesPrevBtn.disabled = profilesPage <= 1;
+      profilesNextBtn.disabled = !profilesHasNextPage;
+    }
+
+    function setNotifStatus(message, type) {
+      notifStatusEl.textContent = message;
+      notifStatusEl.className = 'status';
+      if (type) notifStatusEl.classList.add(type);
+      notifStatusEl.setAttribute('role', 'status');
+      notifStatusEl.setAttribute('aria-live', 'polite');
+    }
+
+    function showToast(message, type = 'info') {
+      const toastStack = document.getElementById('toast-stack');
+      if (!toastStack) return;
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      toastStack.appendChild(toast);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 3200);
+    }
+
+    /**
+     * Manage button loading state
+     */
+    function setButtonLoading(button, isLoading) {
+      button.disabled = isLoading;
+      if (isLoading) {
+        button.setAttribute('aria-busy', 'true');
+        button.setAttribute('data-loading', 'true');
+      } else {
+        button.removeAttribute('aria-busy');
+        button.removeAttribute('data-loading');
+      }
+    }
+
+    /**
+     * Manage container loading state
+     */
+    function setContainerLoading(container, isLoading) {
+      if (isLoading) {
+        container.classList.add('loading');
+        container.setAttribute('aria-busy', 'true');
+      } else {
+        container.classList.remove('loading');
+        container.removeAttribute('aria-busy');
+      }
+    }
+
+    function escapeHtml(input) {
+      return String(input || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function formatLastActive(value) {
+      if (!value) return 'n/a';
+      const parsed = new Date(value);
+      if (Number.isNaN(parsed.getTime())) return String(value);
+      return parsed.toLocaleString();
+    }
+
+    function reportCard(report) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.setAttribute('data-report-id', report.report_id || '');
+
+      const username = escapeHtml(report.reported_username || 'unknown');
+      const reason = escapeHtml(report.reason || 'No reason');
+      const statusText = escapeHtml(report.status || 'open');
+      const statusBadge = statusText.toLowerCase() === 'open' 
+        ? `<span class="badge danger">${statusText}</span>`
+        : `<span class="badge ok">${statusText}</span>`;
+      const reporter = escapeHtml(report.reporter_user_id || 'unknown');
+      const createdAt = escapeHtml(report.created_at || 'n/a');
+      const currentBio = escapeHtml(report.current_bio || '');
+      const details = escapeHtml(report.details || 'No details');
+
+      card.innerHTML = `
+        <div class="list-item-header">
+          <h3 class="list-item-title">📋 Report for @${username}</h3>
+          ${statusBadge}
+        </div>
+        <div class="list-item-meta">
+          ${cardLabel('Reason', reason)}
+          ${cardLabel('By', reporter)}
+          ${cardLabel('Date', createdAt)}
+        </div>
+        <div>
+          <p class="muted">Current bio</p>
+          <div class="bio-box">${currentBio || 'No bio text'}</div>
+        </div>
+        <div>
+          <p class="muted">Report details</p>
+          <div class="details-box">${details}</div>
+        </div>
+      `;
+
+      if ((report.status || '').toLowerCase() === 'open') {
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const replacementInput = document.createElement('input');
+        replacementInput.type = 'text';
+        replacementInput.maxLength = 180;
+        replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+        const closeNoteInput = document.createElement('input');
+        closeNoteInput.type = 'text';
+        closeNoteInput.maxLength = 240;
+        closeNoteInput.placeholder = 'Close note for false report (optional)';
+
+        const banBtn = document.createElement('button');
+        banBtn.type = 'button';
+        banBtn.className = 'button-danger';
+        banBtn.textContent = 'Ban Bio';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'button-primary';
+        closeBtn.textContent = 'Close Report';
+
+        banBtn.addEventListener('click', async () => {
+          if (!(await confirmAction(`Ban bio for @${report.reported_username}?`))) {
+            showToast('Bio ban cancelled.', 'info');
+            return;
+          }
+
+          setButtonLoading(banBtn, true);
+          setButtonLoading(closeBtn, true);
+          setStatus(`Applying bio ban for @${report.reported_username}...`);
+
+          try {
+            await apiCall('/admin/profile/ban-bio', {
+              method: 'POST',
+              body: {
+                username: report.reported_username,
+                replacement_bio: replacementInput.value.trim(),
+              },
+            });
+
+            setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
+            showToast(`Bio banned for @${report.reported_username}.`, 'ok');
+            logRecentAdminAction(`Bio banned for @${report.reported_username}`);
+            await Promise.all([loadReports(), loadProfiles()]);
+          } catch (error) {
+            const message = error.status === 401 ? 'Session expired.' : error.message;
+            setStatus(message, 'error');
+            showToast(message, 'error');
+            console.error('Ban bio error:', error);
+          } finally {
+            setButtonLoading(banBtn, false);
+            setButtonLoading(closeBtn, false);
+          }
+        });
+
+        closeBtn.addEventListener('click', async () => {
+          setButtonLoading(banBtn, true);
+          setButtonLoading(closeBtn, true);
+          setStatus(`Closing report ${report.report_id}...`);
+
+          try {
+            await apiCall('/admin/bio-reports/close', {
+              method: 'POST',
+              body: {
+                report_id: report.report_id,
+                close_note: closeNoteInput.value.trim(),
+              },
+            });
+
+            setStatus(`Report ${report.report_id} closed.`, 'ok');
+            showToast(`Report ${report.report_id} closed.`, 'ok');
+            logRecentAdminAction(`Report ${report.report_id} closed`);
+            await loadReports();
+          } catch (error) {
+            const message = error.status === 401 ? 'Session expired.' : error.message;
+            setStatus(message, 'error');
+            showToast(message, 'error');
+            console.error('Close report error:', error);
+          } finally {
+            setButtonLoading(banBtn, false);
+            setButtonLoading(closeBtn, false);
+          }
+        });
+
+        const inline = document.createElement('div');
+        inline.className = 'report-actions-inline';
+        inline.appendChild(closeNoteInput);
+        inline.appendChild(closeBtn);
+        inline.appendChild(banBtn);
+
+        actions.appendChild(replacementInput);
+        actions.appendChild(inline);
+        card.appendChild(actions);
+      }
+
+      return card;
+    }
+
+    async function loadSession() {
+      try {
+        const data = await apiCall('/session', { method: 'GET' });
+        return data;
+      } catch (error) {
+        console.error('Session load error:', error);
+        throw error;
+      }
+    }
+
+    async function loadReports() {
+      setStatus('Loading reports...');
+      listEl.innerHTML = '';
+      setContainerLoading(listEl, true);
+
+      const status = encodeURIComponent(statusFilter.value);
+      const limit = encodeURIComponent(limitFilter.value);
+
+      try {
+        const data = await apiCall(`/admin/bio-reports?status=${status}&limit=${limit}`, {
+          method: 'GET',
+        });
+
+        reportsCache = Array.isArray(data.reports) ? data.reports : [];
+        renderReports();
+      } catch (error) {
+        const message = error.status === 401 
+          ? 'Session expired. Please refresh the page.'
+          : error.message || 'Network error while loading reports.';
+        setStatus(message, 'error');
+        showToast(message, 'error');
+        console.error('Report load error:', error);
+      } finally {
+        setContainerLoading(listEl, false);
+      }
+    }
+
+    function filterReports(reports) {
+      const reasonQuery = (reportReasonFilterInput?.value || '').trim().toLowerCase();
+      const timeFilter = reportTimeFilter?.value || 'all';
+      const now = Date.now();
+
+      return reports.filter((report) => {
+        if (reasonQuery) {
+          const reason = String(report.reason || '').toLowerCase();
+          const details = String(report.details || '').toLowerCase();
+          if (!reason.includes(reasonQuery) && !details.includes(reasonQuery)) {
+            return false;
+          }
+        }
+
+        if (timeFilter !== 'all') {
+          const createdTs = new Date(report.created_at || '').getTime();
+          if (Number.isNaN(createdTs)) return false;
+          const ageMs = now - createdTs;
+          if (timeFilter === '24h' && ageMs > 24 * 60 * 60 * 1000) return false;
+          if (timeFilter === '7d' && ageMs > 7 * 24 * 60 * 60 * 1000) return false;
+        }
+
+        return true;
+      });
+    }
+
+    function renderReports() {
+      listEl.innerHTML = '';
+      const filteredReports = filterReports(reportsCache);
+
+      if (!filteredReports.length) {
+        setStatus('No reports matched your current filters.', 'ok');
+        showToast('No reports matched your filters.', 'info');
+        return;
+      }
+
+      filteredReports.forEach((report) => {
+        listEl.appendChild(reportCard(report));
+      });
+      setStatus(`Loaded ${filteredReports.length} report(s).`, 'ok');
+    }
+
+    function profileCard(profile) {
+      const card = document.createElement('article');
+      card.className = 'profile-mini';
+      card.setAttribute('data-user-id', profile.user_id || '');
+
+      const username = profile.username ? `@${profile.username}` : '(no username)';
+      const bio = profile.bio || 'No bio';
+      const banned = profile.bio_banned ? 'yes' : 'no';
+      const accountBanned = profile.account_banned ? 'yes' : 'no';
+      const badgesUnlocked = Number.isFinite(profile.badges_unlocked) ? profile.badges_unlocked : (profile.badges_unlocked || 0);
+      const lastActive = formatLastActive(profile.last_active);
+      const avatarUrl = typeof profile.avatar_url === 'string' ? profile.avatar_url.trim() : '';
+      const avatarFallback = (profile.username || profile.user_id || 'u').slice(0, 1);
+
+      const avatarMarkup = avatarUrl
+        ? `<img class="profile-avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(username)} avatar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'" />`
+        : `<div class="profile-avatar-fallback">${escapeHtml(avatarFallback)}</div>`;
+
+      card.innerHTML = `
+        <div class="profile-mini-top">
+          ${avatarMarkup}
+          <div class="meta">
+            ${cardLabel('User', escapeHtml(username))}
+            ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
+          </div>
+        </div>
+        <div class="meta">
+          ${cardLabel('Bio banned', escapeHtml(banned))}
+          ${cardLabel('Account banned', escapeHtml(accountBanned))}
+          ${cardLabel('Badges', escapeHtml(badgesUnlocked))}
+          ${cardLabel('Last active', escapeHtml(lastActive))}
+          ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
+          ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
+        </div>
+        <div class="bio-box">${escapeHtml(bio)}</div>
+      `;
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const copyUserIdBtn = document.createElement('button');
+      copyUserIdBtn.type = 'button';
+      copyUserIdBtn.className = 'button-ghost';
+      copyUserIdBtn.textContent = 'Copy User ID';
+      copyUserIdBtn.disabled = !profile.user_id;
+      copyUserIdBtn.addEventListener('click', async () => {
+        if (!profile.user_id) return;
+        try {
+          await navigator.clipboard.writeText(String(profile.user_id));
+          showToast(`User ID copied for ${username}`, 'ok');
+        } catch (error) {
+          showToast('Could not copy user ID.', 'error');
+        }
+      });
+
+      const replacementInput = document.createElement('input');
+      replacementInput.type = 'text';
+      replacementInput.maxLength = 180;
+      replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+      const banBtn = document.createElement('button');
+      banBtn.type = 'button';
+      banBtn.className = 'button-danger';
+      banBtn.textContent = 'Ban Bio';
+
+      const accountReasonInput = document.createElement('input');
+      accountReasonInput.type = 'text';
+      accountReasonInput.maxLength = 300;
+      accountReasonInput.placeholder = 'Account ban reason (visible on ban screen)';
+
+      const banAccountBtn = document.createElement('button');
+      banAccountBtn.type = 'button';
+      banAccountBtn.className = 'button-danger';
+      banAccountBtn.textContent = 'Ban Account';
+
+      const unbanAccountBtn = document.createElement('button');
+      unbanAccountBtn.type = 'button';
+      unbanAccountBtn.className = 'button-primary';
+      unbanAccountBtn.textContent = 'Unban Account';
+
+      if (!profile.username) {
+        banBtn.disabled = true;
+        replacementInput.disabled = true;
+        replacementInput.placeholder = 'Cannot ban: user has no username yet';
+      } else {
+        banBtn.addEventListener('click', async () => {
+          if (!(await confirmAction(`Ban bio for @${profile.username}?`))) {
+            showToast('Bio ban cancelled.', 'info');
+            return;
+          }
+
+          setButtonLoading(banBtn, true);
+          setButtonLoading(banAccountBtn, true);
+          setProfilesStatus(`Applying bio ban for @${profile.username}...`);
+
+          try {
+            await apiCall('/admin/profile/ban-bio', {
+              method: 'POST',
+              body: {
+                username: profile.username,
+                replacement_bio: replacementInput.value.trim(),
+              },
+            });
+
+            setProfilesStatus(`Bio banned for @${profile.username}.`, 'ok');
+            showToast(`Bio banned for @${profile.username}.`, 'ok');
+            logRecentAdminAction(`Bio banned for @${profile.username}`);
+            await Promise.all([loadProfiles(), loadReports()]);
+          } catch (error) {
+            const message = error.status === 401 ? 'Session expired.' : error.message;
+            setProfilesStatus(message, 'error');
+            showToast(message, 'error');
+            console.error('Ban bio error:', error);
+          } finally {
+            setButtonLoading(banBtn, false);
+            setButtonLoading(banAccountBtn, false);
+          }
+        });
+      }
+
+      if (!profile.user_id) {
+        banAccountBtn.disabled = true;
+        unbanAccountBtn.disabled = true;
+        accountReasonInput.disabled = true;
+        accountReasonInput.placeholder = 'Cannot ban account without user_id';
+      } else {
+        banAccountBtn.addEventListener('click', async () => {
+          if (!(await confirmAction(`Ban account for ${username}? This action cannot be easily undone.`))) {
+            showToast('Account ban cancelled.', 'info');
+            return;
+          }
+
+          setButtonLoading(banBtn, true);
+          setButtonLoading(banAccountBtn, true);
+          setButtonLoading(unbanAccountBtn, true);
+          setProfilesStatus(`Banning account ${username}...`);
+
+          try {
+            await apiCall('/admin/profile/ban-account', {
+              method: 'POST',
+              body: {
+                user_id: profile.user_id,
+                reason: accountReasonInput.value.trim(),
+              },
+            });
+
+            setProfilesStatus(`Account banned for ${username}.`, 'ok');
+            showToast(`Account banned for ${username}.`, 'ok');
+            logRecentAdminAction(`Account banned for ${username}`);
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            const message = error.status === 401 ? 'Session expired.' : error.message;
+            setProfilesStatus(message, 'error');
+            showToast(message, 'error');
+            console.error('Ban account error:', error);
+          } finally {
+            setButtonLoading(banBtn, false);
+            setButtonLoading(banAccountBtn, false);
+            setButtonLoading(unbanAccountBtn, !Boolean(profile.account_banned));
+          }
+        });
+
+        unbanAccountBtn.addEventListener('click', async () => {
+          if (!(await confirmAction(`Unban account for ${username}?`))) {
+            showToast('Unban cancelled.', 'info');
+            return;
+          }
+
+          setButtonLoading(banBtn, true);
+          setButtonLoading(banAccountBtn, true);
+          setButtonLoading(unbanAccountBtn, true);
+          setProfilesStatus(`Unbanning account ${username}...`);
+
+          try {
+            await apiCall('/admin/profile/unban-account', {
+              method: 'POST',
+              body: {
+                user_id: profile.user_id,
+              },
+            });
+
+            setProfilesStatus(`Account unbanned for ${username}.`, 'ok');
+            showToast(`Account unbanned for ${username}.`, 'ok');
+            logRecentAdminAction(`Account unbanned for ${username}`);
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            const message = error.status === 401 ? 'Session expired.' : error.message;
+            setProfilesStatus(message, 'error');
+            showToast(message, 'error');
+            console.error('Unban account error:', error);
+          } finally {
+            setButtonLoading(banBtn, false);
+            setButtonLoading(banAccountBtn, false);
+            setButtonLoading(unbanAccountBtn, Boolean(profile.account_banned));
+          }
+        });
+      }
+
+      if (!profile.user_id || !profile.account_banned) {
+        unbanAccountBtn.disabled = true;
+      }
+
+      actions.appendChild(replacementInput);
+      actions.appendChild(copyUserIdBtn);
+      actions.appendChild(banBtn);
+      actions.appendChild(accountReasonInput);
+      actions.appendChild(banAccountBtn);
+      actions.appendChild(unbanAccountBtn);
+      card.appendChild(actions);
+
+      return card;
+    }
+
+    function renderProfiles() {
+      profilesListEl.innerHTML = '';
+      const q = (profileSearchInput.value || '').trim().toLowerCase();
+      const banFilter = (accountBanFilter.value || 'all').trim();
+
+      const filtered = allProfiles.filter((p) => {
+        const isBanned = Boolean(p.account_banned);
+        if (banFilter === 'banned' && !isBanned) return false;
+        if (banFilter === 'not-banned' && isBanned) return false;
+
+        if (!q) return true;
+        const username = (p.username || '').toLowerCase();
+        const bio = (p.bio || '').toLowerCase();
+        return username.includes(q) || bio.includes(q);
+      });
+
+      const sorted = [...filtered].sort((a, b) => {
+        const sortKey = profileSortSelect?.value || 'last_active';
+
+        if (sortKey === 'username') {
+          const av = String(a.username || '').toLowerCase();
+          const bv = String(b.username || '').toLowerCase();
+          if (av < bv) return profileSortDirection === 'asc' ? -1 : 1;
+          if (av > bv) return profileSortDirection === 'asc' ? 1 : -1;
+          return 0;
+        }
+
+        if (sortKey === 'last_active') {
+          const av = new Date(a.last_active || 0).getTime() || 0;
+          const bv = new Date(b.last_active || 0).getTime() || 0;
+          return profileSortDirection === 'asc' ? av - bv : bv - av;
+        }
+
+        const av = Number(a[sortKey] || 0);
+        const bv = Number(b[sortKey] || 0);
+        return profileSortDirection === 'asc' ? av - bv : bv - av;
+      });
+
+      if (profilesInsightsEl) {
+        const bannedCount = sorted.filter((p) => Boolean(p.account_banned)).length;
+        const bioBannedCount = sorted.filter((p) => Boolean(p.bio_banned)).length;
+        const avgXp = sorted.length
+          ? Math.round(sorted.reduce((sum, p) => sum + Number(p.xp || 0), 0) / sorted.length)
+          : 0;
+        profilesInsightsEl.innerHTML = [
+          cardLabel('Filtered', sorted.length),
+          cardLabel('Account banned', bannedCount),
+          cardLabel('Bio banned', bioBannedCount),
+          cardLabel('Avg XP', avgXp),
+        ].join(' ');
+      }
+
+      if (!sorted.length) {
+        setProfilesStatus('No profiles matched your filter.', 'ok');
+        return;
+      }
+
+      sorted.forEach((profile) => {
+        profilesListEl.appendChild(profileCard(profile));
+      });
+      setProfilesStatus(`Showing ${sorted.length} profile(s).`, 'ok');
+    }
+
+    async function closeVisibleOpenReports() {
+      const visibleOpenReports = filterReports(reportsCache).filter(
+        (report) => String(report.status || '').toLowerCase() === 'open'
+      );
+
+      if (!visibleOpenReports.length) {
+        showToast('No visible open reports to close.', 'info');
+        return;
+      }
+
+      const closeNote = (bulkCloseNoteInput?.value || '').trim();
+      const confirmed = await confirmAction(
+        `Close ${visibleOpenReports.length} visible open report(s)? This cannot be undone.`
+      );
+      if (!confirmed) {
+        showToast('Bulk close cancelled.', 'info');
+        return;
+      }
+
+      setButtonLoading(bulkCloseVisibleBtn, true);
+      setStatus(`Closing ${visibleOpenReports.length} report(s)...`);
+
+      let successCount = 0;
+      let failedCount = 0;
+      for (const report of visibleOpenReports) {
+        try {
+          await apiCall('/admin/bio-reports/close', {
+            method: 'POST',
+            body: {
+              report_id: report.report_id,
+              close_note: closeNote,
+            },
+          });
+          successCount += 1;
+        } catch (error) {
+          failedCount += 1;
+          console.error('Bulk close failed for report:', report.report_id, error);
+        }
+      }
+
+      if (failedCount === 0) {
+        setStatus(`Closed ${successCount} report(s).`, 'ok');
+        showToast(`Closed ${successCount} report(s).`, 'ok');
+        logRecentAdminAction(`Bulk closed ${successCount} report(s)`);
+      } else {
+        setStatus(`Closed ${successCount} report(s), ${failedCount} failed.`, 'error');
+        showToast(`Closed ${successCount}, failed ${failedCount}.`, 'error');
+        logRecentAdminAction(`Bulk close: ${successCount} closed, ${failedCount} failed`);
+      }
+
+      await Promise.all([loadReports(), loadStats()]);
+      setButtonLoading(bulkCloseVisibleBtn, false);
+    }
+
+    // Debounce search input to avoid excessive filtering
+    const debouncedRenderProfiles = debounce(renderProfiles, SEARCH_DEBOUNCE_MS);
+
+    /**
+     * Load and display admin statistics
+     */
+    async function loadStats() {
+      const statsContainer = document.getElementById('stats-container');
+      try {
+        const reports = await apiCall('/admin/bio-reports?status=open&limit=999', { method: 'GET' });
+        const profiles = await apiCall('/admin/profiles?page=1&pageSize=1000', { method: 'GET' });
+        
+        const openReports = Array.isArray(reports.reports) ? reports.reports.length : 0;
+        const totalUsers = Array.isArray(profiles.profiles) ? profiles.profiles.length : 0;
+        const bannedAccounts = Array.isArray(profiles.profiles) ? profiles.profiles.filter(p => p.account_banned).length : 0;
+        const bioBans = Array.isArray(profiles.profiles) ? profiles.profiles.filter(p => p.bio_banned).length : 0;
+
+        document.getElementById('stat-open-reports').textContent = openReports;
+        document.getElementById('stat-total-users').textContent = totalUsers;
+        document.getElementById('stat-banned-accounts').textContent = bannedAccounts;
+        document.getElementById('stat-bio-bans').textContent = bioBans;
+        
+        statsContainer.style.display = 'grid';
+      } catch (error) {
+        console.error('Stats load error:', error);
+        statsContainer.style.display = 'none';
+      }
+    }
+
+    /**
+     * Handle tab switching
+     */
+    function setupTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabName = button.dataset.tab;
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          button.classList.add('active');
+          document.getElementById(tabName).classList.add('active');
+        });
+      });
+    }
+
+    function updateAutoRefreshUI() {
+      if (!autoRefreshToggleBtn) return;
+      autoRefreshToggleBtn.classList.toggle('active', autoRefreshEnabled);
+      autoRefreshToggleBtn.textContent = autoRefreshEnabled
+        ? '⏱ Auto-refresh on'
+        : '⏱ Auto-refresh off';
+    }
+
+    function clearAutoRefreshTimer() {
+      if (autoRefreshTimerId) {
+        clearInterval(autoRefreshTimerId);
+        autoRefreshTimerId = null;
+      }
+    }
+
+    function setAutoRefresh(enabled) {
+      autoRefreshEnabled = Boolean(enabled);
+      clearAutoRefreshTimer();
+
+      if (autoRefreshEnabled) {
+        const intervalMs = Number(autoRefreshIntervalSelect?.value || 15000);
+        autoRefreshTimerId = setInterval(() => {
+          void Promise.all([loadReports(), loadStats()]);
+        }, intervalMs);
+      }
+
+      updateAutoRefreshUI();
+    }
+
+    /**
+     * Export data to CSV
+     */
+    function downloadCSV(data, filename) {
+      const csv = data.map(row => 
+        Object.values(row).map(val => {
+          const str = String(val || '');
+          return str.includes(',') || str.includes('"') 
+            ? `"${str.replace(/"/g, '""')}"` 
+            : str;
+        }).join(',')
+      ).join('\n');
+
+      const headers = Object.keys(data[0] || {}).join(',');
+      const blob = new Blob([headers + '\n' + csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    /**
+     * Export profiles as CSV
+     */
+    function exportProfiles() {
+      if (!allProfiles.length) {
+        showToast('No profiles loaded. Load profiles first.', 'info');
+        return;
+      }
+
+      const data = allProfiles.map(p => ({
+        'User ID': p.user_id,
+        'Username': p.username,
+        'Email': p.email,
+        'Bio': p.bio,
+        'XP': p.xp,
+        'Coins': p.coins,
+        'Streak': p.streak,
+        'Badges': p.badges_unlocked,
+        'Bio Banned': p.bio_banned ? 'Yes' : 'No',
+        'Account Banned': p.account_banned ? 'Yes' : 'No',
+        'Last Active': p.last_active,
+      }));
+
+      const date = new Date().toISOString().split('T')[0];
+      downloadCSV(data, `profiles-${date}.csv`);
+      showToast('Profiles export downloaded.', 'ok');
+      logRecentAdminAction('Profiles CSV exported');
+    }
+
+    /**
+     * Export reports as CSV
+     */
+    async function exportReports() {
+      try {
+        const response = await apiCall('/admin/bio-reports?status=all&limit=5000', { method: 'GET' });
+        const reports = Array.isArray(response.reports) ? response.reports : [];
+
+        if (!reports.length) {
+          showToast('No reports found.', 'info');
+          return;
+        }
+
+        const data = reports.map(r => ({
+          'Report ID': r.report_id,
+          'Reported User': r.reported_username,
+          'Reason': r.reason,
+          'Status': r.status,
+          'Reporter': r.reporter_user_id,
+          'Bio': r.current_bio,
+          'Details': r.details,
+          'Created': r.created_at,
+        }));
+
+        const date = new Date().toISOString().split('T')[0];
+        downloadCSV(data, `reports-${date}.csv`);
+        showToast('Reports export downloaded.', 'ok');
+        logRecentAdminAction('Reports CSV exported');
+      } catch (error) {
+        showToast(`Failed to export reports: ${error.message}`, 'error');
+        console.error('Export error:', error);
+      }
+    }
+
+    async function loadProfiles(page = 1, pageSize = profilesPageSize) {
+      const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+      const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
+
+      setProfilesStatus(`Loading profiles page ${safePage}...`);
+      setContainerLoading(profilesListEl, true);
+      profilesNextBtn.disabled = true;
+      profilesPrevBtn.disabled = true;
+
+      try {
+        const params = new URLSearchParams({
+          page: String(safePage),
+          pageSize: String(safePageSize),
+          page_size: String(safePageSize),
+        });
+
+        const data = await apiCall(`/admin/profiles?${params.toString()}`, {
+          method: 'GET',
+        });
+
+        const fetchedProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+
+        if (!fetchedProfiles.length && safePage > 1) {
+          profilesHasNextPage = false;
+          setProfilesStatus('No more profiles to load.', 'ok');
+          renderProfiles();
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        allProfiles = fetchedProfiles;
+        profilesPage = safePage;
+        profilesPageSize = safePageSize;
+        profilesHasNextPage = fetchedProfiles.length >= safePageSize;
+
+        if (!allProfiles.length) {
+          setProfilesStatus('No profiles found on this page.', 'ok');
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        renderProfiles();
+        updateProfilesPaginationUI();
+      } catch (error) {
+        const message = error.status === 401 
+          ? 'Session expired. Please refresh the page.'
+          : error.message || 'Network error while loading profiles.';
+        setProfilesStatus(message, 'error');
+        showToast(message, 'error');
+        console.error('Profile load error:', error);
+        updateProfilesPaginationUI();
+      } finally {
+        setContainerLoading(profilesListEl, false);
+      }
+    }
+
+    async function init() {
+      try {
+        const session = await loadSession();
+        if (!session.logged_in) {
+          authBlock.textContent = 'You must be logged in to access this page.';
+          authBlock.classList.add('error');
+          return;
+        }
+        if (!session.is_bio_admin) {
+          authBlock.textContent = 'Access denied. Your account is not in BIO_MOD_ADMIN_USER_IDS.';
+          authBlock.classList.add('error');
+          return;
+        }
+
+        authBlock.classList.add('hidden');
+        panel.classList.remove('hidden');
+        
+        // Setup tabs and load initial data
+        setupTabs();
+        await loadLiveTraffic();
+        startLiveTrafficPolling();
+        await loadStats();
+        await loadReports();
+        await loadProfiles(1, profilesPageSize);
+      } catch (error) {
+        authBlock.textContent = 'Could not verify your session.';
+        authBlock.classList.add('error');
+        showToast('Could not verify your session.', 'error');
+      }
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      void loadReports();
+    });
+
+    refreshProfilesBtn.addEventListener('click', () => {
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    document.getElementById('refresh-stats')?.addEventListener('click', () => {
+      void loadStats();
+    });
+
+    autoRefreshToggleBtn?.addEventListener('click', () => {
+      setAutoRefresh(!autoRefreshEnabled);
+      showToast(autoRefreshEnabled ? 'Auto-refresh enabled.' : 'Auto-refresh disabled.', 'info');
+      savePreferences();
+    });
+
+    autoRefreshIntervalSelect?.addEventListener('change', () => {
+      if (autoRefreshEnabled) {
+        setAutoRefresh(true);
+        showToast('Auto-refresh interval updated.', 'info');
+      }
+      savePreferences();
+    });
+
+    bulkCloseVisibleBtn?.addEventListener('click', () => {
+      void closeVisibleOpenReports();
+    });
+
+    document.getElementById('export-profiles')?.addEventListener('click', exportProfiles);
+    document.getElementById('export-reports')?.addEventListener('click', exportReports);
+
+    notifBroadcastInput.addEventListener('change', () => {
+      const isBroadcast = Boolean(notifBroadcastInput.checked);
+      notifTargetUserIdInput.disabled = isBroadcast;
+      if (isBroadcast) {
+        notifTargetUserIdInput.value = '';
+      }
+    });
+
+    notifSendBtn.addEventListener('click', async () => {
+      const title = notifTitleInput.value.trim();
+      const message = notifMessageInput.value.trim();
+      const broadcast = Boolean(notifBroadcastInput.checked);
+      const targetUserId = notifTargetUserIdInput.value.trim();
+
+      if (!title) {
+        setNotifStatus('Title is required.', 'error');
+        showToast('Title is required.', 'error');
+        notifTitleInput.focus();
+        return;
+      }
+
+      if (!message) {
+        setNotifStatus('Message is required.', 'error');
+        showToast('Message is required.', 'error');
+        notifMessageInput.focus();
+        return;
+      }
+
+      if (!broadcast && !targetUserId) {
+        setNotifStatus('Enter a target user_id or enable broadcast.', 'error');
+        showToast('Target user_id is required when broadcast is off.', 'error');
+        notifTargetUserIdInput.focus();
+        return;
+      }
+
+      if (!(await confirmAction('Send this notification? This action cannot be undone.'))) {
+        showToast('Notification cancelled.', 'info');
+        return;
+      }
+
+      setButtonLoading(notifSendBtn, true);
+      setNotifStatus('Sending notification...');
+
+      try {
+        const data = await apiCall('/admin/notifications/send', {
+          method: 'POST',
+          body: {
+            title,
+            message,
+            broadcast,
+            target_user_id: broadcast ? null : targetUserId,
+          },
+        });
+
+        const sentCount = Number(data.sent_count || 0);
+        if (broadcast) {
+          setNotifStatus(`Broadcast sent to ${sentCount} user(s).`, 'ok');
+          showToast(`Broadcast sent to ${sentCount} users.`, 'ok');
+          logRecentAdminAction(`Broadcast notification sent to ${sentCount} users`);
+        } else {
+          setNotifStatus('Notification sent successfully.', 'ok');
+          showToast('Notification sent successfully.', 'ok');
+          logRecentAdminAction(`Notification sent to user ${targetUserId}`);
+        }
+
+        notifTitleInput.value = '';
+        notifMessageInput.value = '';
+        if (!broadcast) {
+          notifTargetUserIdInput.value = '';
+        }
+      } catch (error) {
+        const message = error.status === 401 
+          ? 'Session expired. Please refresh the page.'
+          : error.message || 'Failed to send notification.';
+        setNotifStatus(message, 'error');
+        showToast(message, 'error');
+        console.error('Notification send error:', error);
+      } finally {
+        setButtonLoading(notifSendBtn, false);
+      }
+    });
+
+    profilePageSizeSelect.addEventListener('change', () => {
+      const selected = Number(profilePageSizeSelect.value);
+      profilesPageSize = Number.isFinite(selected) && selected > 0 ? selected : 100;
+      profilesPage = 1;
+      savePreferences();
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profileSortSelect?.addEventListener('change', () => {
+      savePreferences();
+      renderProfiles();
+    });
+
+    profileSortDirBtn?.addEventListener('click', () => {
+      profileSortDirection = profileSortDirection === 'desc' ? 'asc' : 'desc';
+      profileSortDirBtn.textContent = profileSortDirection === 'desc' ? '⬇ Desc' : '⬆ Asc';
+      savePreferences();
+      renderProfiles();
+    });
+
+    profilesPrevBtn.addEventListener('click', () => {
+      if (profilesPage <= 1) return;
+      void loadProfiles(profilesPage - 1, profilesPageSize);
+    });
+
+    profilesNextBtn.addEventListener('click', () => {
+      if (!profilesHasNextPage) {
+        setProfilesStatus('No more profiles to load.', 'ok');
+        return;
+      }
+      void loadProfiles(profilesPage + 1, profilesPageSize);
+    });
+
+    statusFilter.addEventListener('change', () => {
+      savePreferences();
+      void loadReports();
+    });
+
+    limitFilter.addEventListener('change', () => {
+      savePreferences();
+      void loadReports();
+    });
+
+    reportReasonFilterInput?.addEventListener('input', () => {
+      savePreferences();
+      renderReports();
+    });
+
+    reportTimeFilter?.addEventListener('change', () => {
+      savePreferences();
+      renderReports();
+    });
+
+    // Use debounced search to avoid excessive filtering
+    profileSearchInput.addEventListener('input', () => {
+      savePreferences();
+      debouncedRenderProfiles();
+    });
+
+    accountBanFilter.addEventListener('change', () => {
+      savePreferences();
+      renderProfiles();
+    });
+
+    clearRecentActionsBtn?.addEventListener('click', () => {
+      clearRecentAdminActions();
+      showToast('Recent actions cleared.', 'info');
+    });
+
+    loadPreferences();
+    renderRecentAdminActions();
+    profileSortDirBtn.textContent = profileSortDirection === 'desc' ? '⬇ Desc' : '⬆ Asc';
+    updateAutoRefreshUI();
+    void init();
+  </script>
+
+  <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Custom Confirmation Modal -->
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title">Confirm Action</h2>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button id="modal-cancel" type="button">Cancel</button>
+        <button id="modal-confirm" type="button">Confirm</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

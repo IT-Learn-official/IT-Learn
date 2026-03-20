@@ -1,4 +1,4 @@
-import { changePassword, deleteAccount, getMyProfile, updateProfile } from '../services/authService.js';
+import { changePassword, deleteAccount, getMyProfile, getNotifications, markNotificationsRead, updateProfile } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
 
 const MAX_AVATAR_FILE_BYTES = 5 * 1024 * 1024;
@@ -76,7 +76,7 @@ async function optimizeAvatarDataUrl(originalDataUrl) {
   return fitting || candidates[candidates.length - 1] || originalDataUrl;
 }
 
-export function renderSettingsView(screenRootEl) {
+export function renderSettingsView(screenRootEl, options = {}) {
   const screen = document.createElement('section');
   screen.className = 'screen';
 
@@ -132,6 +132,15 @@ export function renderSettingsView(screenRootEl) {
     </article>
   `;
 
+  const notificationsOverview = document.createElement('div');
+  notificationsOverview.className = 'settings-overview';
+  notificationsOverview.innerHTML = `
+    <article class="settings-overview-card">
+      <h3>Notifications</h3>
+      <p>Read important platform updates and admin announcements.</p>
+    </article>
+  `;
+
   const tabs = document.createElement('div');
   tabs.className = 'settings-tabs';
   tabs.setAttribute('role', 'tablist');
@@ -156,8 +165,19 @@ export function renderSettingsView(screenRootEl) {
   accountTab.setAttribute('tabindex', '-1');
   accountTab.textContent = 'Account';
 
+  const notificationsTab = document.createElement('button');
+  notificationsTab.type = 'button';
+  notificationsTab.className = 'settings-tab';
+  notificationsTab.id = 'settings-tab-notifications';
+  notificationsTab.setAttribute('role', 'tab');
+  notificationsTab.setAttribute('aria-controls', 'settings-panel-notifications');
+  notificationsTab.setAttribute('aria-selected', 'false');
+  notificationsTab.setAttribute('tabindex', '-1');
+  notificationsTab.textContent = 'Notifications';
+
   tabs.appendChild(profileTab);
   tabs.appendChild(accountTab);
+  tabs.appendChild(notificationsTab);
 
   const profileGroup = document.createElement('section');
   profileGroup.className = 'settings-group';
@@ -177,6 +197,16 @@ export function renderSettingsView(screenRootEl) {
 
   const accountGroupContent = document.createElement('div');
   accountGroupContent.className = 'settings-group-content';
+
+  const notificationsGroup = document.createElement('section');
+  notificationsGroup.className = 'settings-group';
+  notificationsGroup.id = 'settings-panel-notifications';
+  notificationsGroup.setAttribute('role', 'tabpanel');
+  notificationsGroup.setAttribute('aria-labelledby', 'settings-tab-notifications');
+  notificationsGroup.hidden = true;
+
+  const notificationsGroupContent = document.createElement('div');
+  notificationsGroupContent.className = 'settings-group-content';
 
   const profileSection = document.createElement('div');
   profileSection.className = 'settings-section';
@@ -483,6 +513,39 @@ export function renderSettingsView(screenRootEl) {
   deleteSection.appendChild(deleteStatus);
   deleteSection.appendChild(deleteButton);
 
+  const notificationsSection = document.createElement('div');
+  notificationsSection.className = 'settings-section';
+
+  const notificationsTitle = document.createElement('h3');
+  notificationsTitle.className = 'settings-title';
+  notificationsTitle.textContent = 'Inbox';
+
+  const notificationsInfo = document.createElement('p');
+  notificationsInfo.className = 'settings-info';
+  notificationsInfo.textContent = 'Notifications are only visible to your account.';
+
+  const notificationsActions = document.createElement('div');
+  notificationsActions.className = 'settings-notifications-actions';
+
+  const notificationsRefreshButton = document.createElement('button');
+  notificationsRefreshButton.type = 'button';
+  notificationsRefreshButton.className = 'settings-button settings-button-ghost';
+  notificationsRefreshButton.textContent = 'Refresh';
+
+  const notificationsReadAllButton = document.createElement('button');
+  notificationsReadAllButton.type = 'button';
+  notificationsReadAllButton.className = 'settings-button settings-button-ghost';
+  notificationsReadAllButton.textContent = 'Mark all as read';
+
+  notificationsActions.appendChild(notificationsRefreshButton);
+  notificationsActions.appendChild(notificationsReadAllButton);
+
+  const notificationsStatus = document.createElement('div');
+  notificationsStatus.className = 'settings-status';
+
+  const notificationsList = document.createElement('div');
+  notificationsList.className = 'settings-notifications-list';
+
   profileGroupContent.appendChild(profileOverview);
   profileGroupContent.appendChild(profileSection);
   profileGroup.appendChild(profileGroupContent);
@@ -492,9 +555,20 @@ export function renderSettingsView(screenRootEl) {
   accountGroupContent.appendChild(deleteSection);
   accountGroup.appendChild(accountGroupContent);
 
+  notificationsSection.appendChild(notificationsTitle);
+  notificationsSection.appendChild(notificationsInfo);
+  notificationsSection.appendChild(notificationsActions);
+  notificationsSection.appendChild(notificationsStatus);
+  notificationsSection.appendChild(notificationsList);
+
+  notificationsGroupContent.appendChild(notificationsOverview);
+  notificationsGroupContent.appendChild(notificationsSection);
+  notificationsGroup.appendChild(notificationsGroupContent);
+
   body.appendChild(tabs);
   body.appendChild(profileGroup);
   body.appendChild(accountGroup);
+  body.appendChild(notificationsGroup);
 
   screen.appendChild(header);
   screen.appendChild(body);
@@ -511,12 +585,17 @@ export function renderSettingsView(screenRootEl) {
     activateTab('account');
   });
 
+  notificationsTab.addEventListener('click', () => {
+    activateTab('notifications');
+  });
+
   tabs.addEventListener('keydown', (event) => {
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
       return;
     }
     event.preventDefault();
-    const isProfileSelected = profileTab.getAttribute('aria-selected') === 'true';
+    const orderedTabs = [profileTab, accountTab, notificationsTab];
+    const currentIndex = orderedTabs.findIndex((tab) => tab.getAttribute('aria-selected') === 'true');
 
     if (event.key === 'Home') {
       activateTab('profile', { focusTab: true });
@@ -524,16 +603,163 @@ export function renderSettingsView(screenRootEl) {
     }
 
     if (event.key === 'End') {
-      activateTab('account', { focusTab: true });
+      activateTab('notifications', { focusTab: true });
       return;
     }
 
-    if (event.key === 'ArrowRight') {
-      activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+    const delta = event.key === 'ArrowRight' ? 1 : -1;
+    const nextIndex = (currentIndex + delta + orderedTabs.length) % orderedTabs.length;
+    const nextTab = orderedTabs[nextIndex];
+    const nextTabName = nextTab === profileTab ? 'profile' : (nextTab === accountTab ? 'account' : 'notifications');
+    activateTab(nextTabName, { focusTab: true });
+  });
+
+  let notificationsLoadedOnce = false;
+
+  function formatNotificationDate(value) {
+    const parsed = new Date(value || '');
+    if (Number.isNaN(parsed.getTime())) {
+      return String(value || 'Unknown date');
+    }
+    return parsed.toLocaleString();
+  }
+
+  function renderNotificationsList(items) {
+    notificationsList.innerHTML = '';
+
+    if (!Array.isArray(items) || !items.length) {
+      const empty = document.createElement('p');
+      empty.className = 'settings-notification-empty';
+      empty.textContent = 'No notifications yet.';
+      notificationsList.appendChild(empty);
       return;
     }
 
-    activateTab(isProfileSelected ? 'account' : 'profile', { focusTab: true });
+    items.forEach((item) => {
+      const card = document.createElement('article');
+      card.className = 'settings-notification-item';
+      if (item.is_read) {
+        card.classList.add('is-read');
+      }
+
+      const head = document.createElement('div');
+      head.className = 'settings-notification-head';
+
+      const title = document.createElement('h4');
+      title.className = 'settings-notification-title';
+      title.textContent = item.title || 'Notification';
+
+      const date = document.createElement('span');
+      date.className = 'settings-notification-date';
+      date.textContent = formatNotificationDate(item.created_at);
+
+      head.appendChild(title);
+      head.appendChild(date);
+
+      const body = document.createElement('p');
+      body.className = 'settings-notification-message';
+      body.textContent = item.message || '';
+
+      const foot = document.createElement('div');
+      foot.className = 'settings-notification-foot';
+
+      const state = document.createElement('span');
+      state.className = 'settings-notification-state';
+      state.textContent = item.is_read ? 'Read' : 'Unread';
+
+      foot.appendChild(state);
+
+      if (!item.is_read && item.id) {
+        const markReadButton = document.createElement('button');
+        markReadButton.type = 'button';
+        markReadButton.className = 'settings-button settings-button-ghost';
+        markReadButton.textContent = 'Mark as read';
+        markReadButton.dataset.notificationId = String(item.id);
+        foot.appendChild(markReadButton);
+      }
+
+      card.appendChild(head);
+      card.appendChild(body);
+      card.appendChild(foot);
+      notificationsList.appendChild(card);
+    });
+  }
+
+  async function loadNotificationsView(showLoading = true) {
+    if (showLoading) {
+      notificationsStatus.textContent = 'Loading notifications...';
+      notificationsStatus.className = 'settings-status status-loading';
+    }
+
+    const result = await getNotifications({ limit: 100, unreadOnly: false });
+    if (!result.success) {
+      notificationsStatus.textContent = result.error || 'Could not load notifications.';
+      notificationsStatus.className = 'settings-status status-error';
+      renderNotificationsList([]);
+      return;
+    }
+
+    renderNotificationsList(result.notifications);
+    notificationsStatus.textContent = `Loaded ${result.notifications.length} notification(s). Unread: ${result.unreadCount}.`;
+    notificationsStatus.className = 'settings-status status-success';
+    notificationsReadAllButton.disabled = result.unreadCount <= 0;
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('notifications:unread-count', {
+        detail: { unreadCount: result.unreadCount }
+      }));
+    }
+    notificationsLoadedOnce = true;
+  }
+
+  notificationsRefreshButton.addEventListener('click', async () => {
+    await loadNotificationsView(true);
+  });
+
+  notificationsReadAllButton.addEventListener('click', async () => {
+    notificationsReadAllButton.disabled = true;
+    notificationsStatus.textContent = 'Marking all as read...';
+    notificationsStatus.className = 'settings-status status-loading';
+
+    const result = await markNotificationsRead({ markAll: true });
+    if (!result.success) {
+      notificationsStatus.textContent = result.error || 'Could not mark notifications as read.';
+      notificationsStatus.className = 'settings-status status-error';
+      await loadNotificationsView(false);
+      return;
+    }
+
+    await loadNotificationsView(false);
+    notificationsStatus.textContent = `Marked ${result.markedCount} notification(s) as read.`;
+    notificationsStatus.className = 'settings-status status-success';
+  });
+
+  notificationsList.addEventListener('click', async (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+    const button = target.closest('button[data-notification-id]');
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const notificationId = button.dataset.notificationId || '';
+    if (!notificationId) {
+      return;
+    }
+
+    button.disabled = true;
+    const result = await markNotificationsRead({ notificationId });
+    if (!result.success) {
+      notificationsStatus.textContent = result.error || 'Could not mark notification as read.';
+      notificationsStatus.className = 'settings-status status-error';
+      button.disabled = false;
+      return;
+    }
+
+    await loadNotificationsView(false);
+    notificationsStatus.textContent = 'Notification marked as read.';
+    notificationsStatus.className = 'settings-status status-success';
   });
 
   usernameInput.addEventListener('input', () => {
@@ -764,20 +990,37 @@ export function renderSettingsView(screenRootEl) {
 
   function activateTab(tabName, options = {}) {
     const isProfileTab = tabName === 'profile';
+    const isAccountTab = tabName === 'account';
+    const isNotificationsTab = tabName === 'notifications';
 
     profileTab.classList.toggle('is-active', isProfileTab);
     profileTab.setAttribute('aria-selected', String(isProfileTab));
     profileTab.setAttribute('tabindex', isProfileTab ? '0' : '-1');
 
-    accountTab.classList.toggle('is-active', !isProfileTab);
-    accountTab.setAttribute('aria-selected', String(!isProfileTab));
-    accountTab.setAttribute('tabindex', isProfileTab ? '-1' : '0');
+    accountTab.classList.toggle('is-active', isAccountTab);
+    accountTab.setAttribute('aria-selected', String(isAccountTab));
+    accountTab.setAttribute('tabindex', isAccountTab ? '0' : '-1');
+
+    notificationsTab.classList.toggle('is-active', isNotificationsTab);
+    notificationsTab.setAttribute('aria-selected', String(isNotificationsTab));
+    notificationsTab.setAttribute('tabindex', isNotificationsTab ? '0' : '-1');
 
     profileGroup.hidden = !isProfileTab;
-    accountGroup.hidden = isProfileTab;
+    accountGroup.hidden = !isAccountTab;
+    notificationsGroup.hidden = !isNotificationsTab;
+
+    if (isNotificationsTab && !notificationsLoadedOnce) {
+      void loadNotificationsView(true);
+    }
 
     if (options.focusTab) {
-      (isProfileTab ? profileTab : accountTab).focus();
+      if (isProfileTab) {
+        profileTab.focus();
+      } else if (isAccountTab) {
+        accountTab.focus();
+      } else {
+        notificationsTab.focus();
+      }
     }
   }
 
@@ -819,5 +1062,14 @@ export function renderSettingsView(screenRootEl) {
     } else {
       strengthLabel.textContent = 'Strength: Strong';
     }
+  }
+
+  const requestedTab = String(options.initialTab || '').toLowerCase();
+  if (requestedTab === 'notifications') {
+    activateTab('notifications');
+  } else if (requestedTab === 'account') {
+    activateTab('account');
+  } else {
+    activateTab('profile');
   }
 }

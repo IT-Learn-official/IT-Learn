@@ -6,7 +6,7 @@ import { initRouter, navigateTo } from './state/router.js';
 import { initLayout, handleRouteChange, setGlobalStatus } from './render/layout.js';
 import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotService.js';
 import { showWelcomeMessage } from './mascot.js';
-import { checkSession, getMyProfile } from './services/authService.js';
+import { checkSession, getMyProfile, getNotifications } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
 import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
 
@@ -82,9 +82,13 @@ async function bootstrap() {
   initRouter(async (route) => {
     await handleRouteChange(route);
     updateSidebarActive(route);
+    if (route.route === 'settings' || route.route === 'profile' || route.route === 'courses' || route.route === 'chapter') {
+      void refreshNotificationsBadge();
+    }
   });
 
   attachSidebarLinks();
+  void refreshNotificationsBadge();
 
   // If no hash present, ensure we start from courses route.
   if (!window.location.hash) {
@@ -97,10 +101,11 @@ bootstrap();
 function updateSidebarActive(route) {
   const dashboardLink = document.getElementById('dashboard-link');
   const storeLink = document.getElementById('store-link');
+  const notificationsLink = document.getElementById('notifications-link');
   const profileLink = document.getElementById('profile-link');
   const badgesLink = document.getElementById('badges-link');
   const settingsLink = document.getElementById('settings-link');
-  const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+  const sidebarLinks = [dashboardLink, storeLink, notificationsLink, profileLink, badgesLink, settingsLink].filter(Boolean);
 
   let activeLink = null;
   switch (route.route) {
@@ -118,7 +123,7 @@ function updateSidebarActive(route) {
       activeLink = badgesLink;
       break;
     case 'settings':
-      activeLink = settingsLink;
+      activeLink = route.tab === 'notifications' ? notificationsLink : settingsLink;
       break;
     default:
       activeLink = null;
@@ -130,10 +135,18 @@ function updateSidebarActive(route) {
 }
 
 function attachSidebarLinks() {
+  const notificationsLink = document.getElementById('notifications-link');
   const profileLink = document.getElementById('profile-link');
   const settingsLink = document.getElementById('settings-link');
   const badgesLink = document.getElementById('badges-link');
   const storeLink = document.getElementById('store-link');
+
+  if (notificationsLink) {
+    notificationsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'settings', tab: 'notifications' });
+    });
+  }
 
   if (profileLink) {
     profileLink.addEventListener('click', (e) => {
@@ -162,6 +175,39 @@ function attachSidebarLinks() {
       navigateTo({ route: 'store' });
     });
   }
+}
+
+async function refreshNotificationsBadge() {
+  const badge = document.getElementById('notifications-badge');
+  if (!badge) return;
+
+  const result = await getNotifications({ limit: 1, unreadOnly: false });
+  if (!result.success) {
+    badge.hidden = true;
+    badge.textContent = '0';
+    return;
+  }
+
+  const unread = Math.max(0, Number(result.unreadCount || 0));
+  if (unread <= 0) {
+    badge.hidden = true;
+    badge.textContent = '0';
+    return;
+  }
+
+  badge.hidden = false;
+  badge.textContent = unread > 99 ? '99+' : String(unread);
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('notifications:unread-count', (event) => {
+    const badge = document.getElementById('notifications-badge');
+    if (!badge) return;
+
+    const unread = Math.max(0, Number(event?.detail?.unreadCount || 0));
+    badge.hidden = unread <= 0;
+    badge.textContent = unread > 99 ? '99+' : String(unread || 0);
+  });
 }
 
 // Expose debug helper for manual inspection in browser console.

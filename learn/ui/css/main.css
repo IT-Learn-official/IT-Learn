@@ -101,6 +101,22 @@ body {
   transition: background 0.18s, transform 0.12s, color 0.18s;
 }
 
+.sidebar-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  margin-left: 0.45rem;
+  padding: 0 0.38rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .sidebar li a:hover {
   background: linear-gradient(90deg, rgba(79,70,229,0.06), rgba(139,92,246,0.03));
   color: #fff;
