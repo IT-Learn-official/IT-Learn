@@ -77,7 +77,12 @@ export function parseLocation(hash) {
 
 export function toHash(descriptor) {
   if (descriptor.route === 'settings') {
-    return '#/settings';
+    const params = new URLSearchParams();
+    if (descriptor.tab && descriptor.tab !== 'settings') {
+      params.set('tab', descriptor.tab);
+    }
+    const query = params.toString();
+    return query ? `#/settings?${query}` : '#/settings';
   }
 
   if (descriptor.route === 'store') {

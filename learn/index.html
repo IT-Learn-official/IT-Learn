@@ -38,6 +38,7 @@
     <ul>
       <li><a href="#" id="dashboard-link">Courses</a></li>
       <li><a href="#" id="store-link">Shop</a></li>
+      <li><a href="#" id="notifications-link">Notifications <span id="notifications-badge" class="sidebar-pill" hidden>0</span></a></li>
       <li><a href="#" id="profile-link">Profile</a></li>
       <li><a href="#" id="badges-link">Badges</a></li>
       <li><a href="#" id="settings-link">Settings</a></li>
@@ -101,7 +102,8 @@
       const profileLink = document.getElementById('profile-link');
       const settingsLink = document.getElementById('settings-link');
       const badgesLink = document.getElementById('badges-link');
-      const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+      const notificationsLink = document.getElementById('notifications-link');
+      const sidebarLinks = [dashboardLink, storeLink, notificationsLink, profileLink, badgesLink, settingsLink].filter(Boolean);
 
       function setActiveSidebarLink(activeLink) {
         sidebarLinks.forEach((link) => {
@@ -175,6 +177,18 @@
         console.log('Event listener attached to store link');
       } else {
         console.error('Store link not found!');
+      }
+
+      if (notificationsLink) {
+        notificationsLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Notifications link clicked');
+          setActiveSidebarLink(notificationsLink);
+          navigateTo({ route: 'settings', tab: 'notifications' });
+        });
+        console.log('Event listener attached to notifications link');
+      } else {
+        console.error('Notifications link not found!');
       }
 
       if (badgesLink) {
