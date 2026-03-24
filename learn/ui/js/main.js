@@ -9,6 +9,7 @@ import { showWelcomeMessage } from './mascot.js';
 import { checkSession, getMyProfile, getNotifications } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
 import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
+import { hydrateCourseProgressFromRemote } from './state/courseProgress.js';
 
 const NOTIFICATIONS_BADGE_CACHE_TTL_MS = 15000;
 let notificationsBadgeCache = {
@@ -79,6 +80,9 @@ async function bootstrap() {
 
   // Populate sidebar gamification stats from synced state
   updateSidebarStats();
+
+  // Ensure course/chapter completion state is loaded from backend for this user.
+  await hydrateCourseProgressFromRemote();
 
   setGlobalStatus('Loading courses...');
 

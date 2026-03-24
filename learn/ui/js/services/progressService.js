@@ -1,15 +1,58 @@
-import { loadBadges, loadProgress, saveBadges, saveProgress } from './authService.js';
+import { checkSession, loadBadges, loadProgress, saveBadges, saveProgress } from './authService.js';
 import { getTrialProgress, getTrialSession, isTrialCompleted } from './trialMode.js';
 
 let remoteProgressCache = null;
 let remoteBadgesCache = null;
 let remoteProgressPromise = null;
 let remoteBadgesPromise = null;
+let activeProgressUserId = null;
 const chapterFlushTimers = new Map();
 const pendingChapterStates = new Map();
 
+function clearInMemoryProgressState() {
+  remoteProgressCache = null;
+  remoteBadgesCache = null;
+  remoteProgressPromise = null;
+  remoteBadgesPromise = null;
+  pendingChapterStates.clear();
+  chapterFlushTimers.forEach((timerId) => clearTimeout(timerId));
+  chapterFlushTimers.clear();
+}
+
+function normalizeUserId(value) {
+  if (value === null || value === undefined) return null;
+  const text = String(value).trim();
+  return text || null;
+}
+
+async function ensureUserBoundCaches() {
+  const windowUserId = normalizeUserId(typeof window !== 'undefined' ? window.currentUserId : null);
+  if (windowUserId) {
+    if (activeProgressUserId !== windowUserId) {
+      clearInMemoryProgressState();
+      activeProgressUserId = windowUserId;
+    }
+    return;
+  }
+
+  const session = await checkSession();
+  const sessionUserId = normalizeUserId(session?.logged_in ? session.user_id : null);
+  if (activeProgressUserId !== sessionUserId) {
+    clearInMemoryProgressState();
+    activeProgressUserId = sessionUserId;
+  }
+}
+
 function ensureObject(value) {
   return value && typeof value === 'object' ? value : {};
+}
+
+function toSafeNumber(value, fallback = 0) {
+  return Number.isFinite(value) ? value : fallback;
+}
+
+function hasOwnKeys(value) {
+  return value && typeof value === 'object' && Object.keys(value).length > 0;
 }
 
 function normalizeOptionalText(value) {
@@ -22,6 +65,13 @@ function normalizeRemoteProgress(raw) {
   const taskStateByChapter = ensureObject(
     progressRoot.taskStateByChapter || progressRoot.taskState || raw?.taskStateByChapter || raw?.taskState
   );
+  const progressGamification = ensureObject(progressRoot.gamification);
+  const progressXp = ensureObject(progressGamification.xp);
+  const progressStreak = ensureObject(progressGamification.streak);
+  const missionsFromTopLevel = ensureObject(raw?.missions);
+  const missionsFromProgress = ensureObject(progressRoot.missions);
+  const mistakesFromTopLevel = Array.isArray(raw?.mistakes) ? raw.mistakes : null;
+  const mistakesFromProgress = Array.isArray(progressRoot.mistakes) ? progressRoot.mistakes : null;
 
   return {
     ...ensureObject(raw),
@@ -29,14 +79,15 @@ function normalizeRemoteProgress(raw) {
       ...progressRoot,
       taskStateByChapter,
     },
-    xp: typeof raw?.xp === 'number' ? raw.xp : 0,
-    streak: typeof raw?.streak === 'number' ? raw.streak : 0,
-    missions: ensureObject(raw?.missions),
-    mistakes: Array.isArray(raw?.mistakes) ? raw.mistakes : [],
+    xp: toSafeNumber(raw?.xp, toSafeNumber(progressXp.total, 0)),
+    streak: toSafeNumber(raw?.streak, toSafeNumber(progressStreak.current, 0)),
+    missions: hasOwnKeys(missionsFromTopLevel) ? missionsFromTopLevel : missionsFromProgress,
+    mistakes: mistakesFromTopLevel ?? mistakesFromProgress ?? [],
   };
 }
 
 async function ensureRemoteProgressLoaded() {
+  await ensureUserBoundCaches();
   if (remoteProgressCache) return remoteProgressCache;
   if (remoteProgressPromise) return remoteProgressPromise;
 
@@ -54,6 +105,7 @@ async function ensureRemoteProgressLoaded() {
 }
 
 async function ensureRemoteBadgesLoaded() {
+  await ensureUserBoundCaches();
   if (remoteBadgesCache) return remoteBadgesCache;
   if (remoteBadgesPromise) return remoteBadgesPromise;
 
@@ -165,7 +217,8 @@ export async function getBadgeStatsFromBackend() {
   const remoteTaskStateByChapter = ensureObject(remote.progress?.taskStateByChapter);
 
   const taskStats = computeStatsFromTaskState(remoteTaskStateByChapter);
-  const missionsCompleted = Object.values(ensureObject(remote.missions)).filter(Boolean).length;
+  const missionsSource = hasOwnKeys(remote.missions) ? remote.missions : ensureObject(remote.progress?.missions);
+  const missionsCompleted = Object.values(ensureObject(missionsSource)).filter(Boolean).length;
   const mistakesCount = Array.isArray(remote.mistakes) ? remote.mistakes.length : 0;
 
   const trialProgress = getTrialProgress();
@@ -174,8 +227,8 @@ export async function getBadgeStatsFromBackend() {
 
   return {
     ...taskStats,
-    xp: typeof remote.xp === 'number' ? remote.xp : 0,
-    streak: typeof remote.streak === 'number' ? remote.streak : 0,
+    xp: toSafeNumber(remote.xp, 0),
+    streak: toSafeNumber(remote.streak, 0),
     missionsCompleted,
     mistakesCount,
     hasTrialData: Boolean(trialSession || trialProgress),

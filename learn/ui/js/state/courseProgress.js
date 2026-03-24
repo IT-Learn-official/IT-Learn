@@ -1,105 +1,178 @@
 //author: https://github.com/nhermab
 //licence: MIT
 //edited by: https://github.com/broodje565
-const READ_CHAPTERS_COOKIE = 'itskill_read_chapters';
-const READ_CHAPTERS_MAX_AGE_SECONDS = 60 * 60 * 24 * 90; // 90 days
+import { checkSession, loadProgress, saveProgress } from '../services/authService.js';
 
-// In-memory cache of parsed cookie: { [courseId: string]: Uint8Array }
-let readChaptersByCourse = null;
+const LEGACY_READ_CHAPTERS_COOKIE = 'itskill_read_chapters';
+const COURSE_READ_CHAPTERS_KEY = 'courseReadChapters';
 
-function parseReadChaptersCookie() {
-  if (readChaptersByCourse) return readChaptersByCourse;
-  readChaptersByCourse = Object.create(null);
+let readChaptersByCourse = Object.create(null);
+let hydratedForUserId = null;
+let hydrationPromise = null;
 
-  const cookie = document.cookie || '';
-  const parts = cookie.split(';').map((p) => p.trim());
-  const entry = parts.find((p) => p.startsWith(`${READ_CHAPTERS_COOKIE}=`));
-  if (!entry) return readChaptersByCourse;
-
-  const value = decodeURIComponent(entry.split('=').slice(1).join('='));
-  if (!value) return readChaptersByCourse;
-
-  // Format: courseId1:hex,courseId2:hex
-  value.split(',').forEach((pair) => {
-    const [courseId, hex] = pair.split(':');
-    if (!courseId || !hex) return;
-    const cleanHex = hex.replace(/[^0-9a-fA-F]/g, '');
-    if (!cleanHex || cleanHex.length % 2 !== 0) return;
-    const bytes = new Uint8Array(cleanHex.length / 2);
-    for (let i = 0; i < cleanHex.length; i += 2) {
-      bytes[i / 2] = parseInt(cleanHex.substring(i, i + 2), 16) & 0xff;
-    }
-    readChaptersByCourse[courseId] = bytes;
-  });
-
-  return readChaptersByCourse;
+function normalizeUserId(value) {
+  const text = String(value || '').trim();
+  return text || null;
 }
 
-function serializeReadChaptersCookie(map) {
-  const pairs = [];
-  Object.keys(map).forEach((courseId) => {
-    const bytes = map[courseId];
-    if (!bytes || !bytes.length) return;
-    let hex = '';
-    for (let i = 0; i < bytes.length; i += 1) {
-      const b = bytes[i].toString(16).padStart(2, '0');
-      hex += b;
-    }
-    if (hex) {
-      pairs.push(`${courseId}:${hex}`);
-    }
-  });
-  return pairs.join(',');
+function getCurrentUserId() {
+  return normalizeUserId(typeof window !== 'undefined' ? window.currentUserId : null);
 }
 
-function saveReadChaptersCookie() {
-  const map = parseReadChaptersCookie();
-  const value = serializeReadChaptersCookie(map);
-  const encoded = encodeURIComponent(value);
-  document.cookie = `${READ_CHAPTERS_COOKIE}=${encoded}; path=/; max-age=${READ_CHAPTERS_MAX_AGE_SECONDS}`;
-}
-
-function ensureCourseBytes(courseId, requiredBits) {
-  const map = parseReadChaptersCookie();
-  const neededBytes = Math.ceil(requiredBits / 8) || 1;
-  let bytes = map[courseId];
-  if (!bytes || bytes.length < neededBytes) {
-    const newBytes = new Uint8Array(neededBytes);
-    if (bytes) {
-      newBytes.set(bytes.subarray(0, Math.min(bytes.length, neededBytes)));
-    }
-    bytes = newBytes;
-    map[courseId] = bytes;
+function ensureCourseSet(courseId) {
+  const key = String(courseId || '').trim();
+  if (!key) return null;
+  if (!(readChaptersByCourse[key] instanceof Set)) {
+    readChaptersByCourse[key] = new Set();
   }
-  return bytes;
+  return readChaptersByCourse[key];
+}
+
+function parseReadMapFromProgress(progressPayload) {
+  const result = Object.create(null);
+  const progressRoot = progressPayload && typeof progressPayload.progress === 'object' ? progressPayload.progress : {};
+  const rawReadMap = progressRoot && typeof progressRoot[COURSE_READ_CHAPTERS_KEY] === 'object'
+    ? progressRoot[COURSE_READ_CHAPTERS_KEY]
+    : {};
+
+  Object.entries(rawReadMap || {}).forEach(([courseId, rawValue]) => {
+    const set = new Set();
+
+    if (Array.isArray(rawValue)) {
+      rawValue.forEach((entry) => {
+        const index = Number.parseInt(entry, 10);
+        if (Number.isInteger(index) && index >= 0) {
+          set.add(index);
+        }
+      });
+    } else if (rawValue && typeof rawValue === 'object') {
+      Object.entries(rawValue).forEach(([indexKey, isRead]) => {
+        if (!isRead) return;
+        const index = Number.parseInt(indexKey, 10);
+        if (Number.isInteger(index) && index >= 0) {
+          set.add(index);
+        }
+      });
+    }
+
+    if (set.size > 0) {
+      result[String(courseId)] = set;
+    }
+  });
+
+  return result;
+}
+
+function serializeReadMapForProgress(map) {
+  const out = {};
+  Object.entries(map).forEach(([courseId, set]) => {
+    if (!(set instanceof Set) || set.size === 0) return;
+    out[courseId] = Array.from(set).sort((a, b) => a - b);
+  });
+  return out;
+}
+
+function clearLegacyReadCookie() {
+  if (typeof document === 'undefined') return;
+  try {
+    document.cookie = `${LEGACY_READ_CHAPTERS_COOKIE}=; path=/; max-age=0`;
+  } catch {
+    // Ignore cookie cleanup errors.
+  }
+}
+
+async function persistReadMapToRemote() {
+  const userId = getCurrentUserId();
+  if (!userId) return;
+
+  try {
+    const remote = await loadProgress();
+    const progressRoot = remote && typeof remote.progress === 'object' ? remote.progress : {};
+    const nextProgressRoot = {
+      ...progressRoot,
+      [COURSE_READ_CHAPTERS_KEY]: serializeReadMapForProgress(readChaptersByCourse),
+    };
+
+    const payload = {
+      ...(remote && typeof remote === 'object' ? remote : {}),
+      progress: nextProgressRoot,
+    };
+
+    await saveProgress(payload);
+  } catch (error) {
+    console.error('Failed to persist read chapters to backend:', error);
+  }
+}
+
+export async function hydrateCourseProgressFromRemote() {
+  const userId = getCurrentUserId();
+  if (!userId) {
+    hydratedForUserId = null;
+    readChaptersByCourse = Object.create(null);
+    clearLegacyReadCookie();
+    return;
+  }
+
+  if (hydratedForUserId === userId) return;
+  if (hydrationPromise) {
+    await hydrationPromise;
+    if (hydratedForUserId === userId) return;
+  }
+
+  hydrationPromise = (async () => {
+    try {
+      const session = await checkSession();
+      if (!session?.logged_in || normalizeUserId(session.user_id) !== userId) {
+        readChaptersByCourse = Object.create(null);
+        hydratedForUserId = userId;
+        clearLegacyReadCookie();
+        return;
+      }
+
+      const remote = await loadProgress();
+      readChaptersByCourse = parseReadMapFromProgress(remote);
+      hydratedForUserId = userId;
+      clearLegacyReadCookie();
+    } catch (error) {
+      console.error('Failed to hydrate course progress from backend:', error);
+      readChaptersByCourse = Object.create(null);
+      hydratedForUserId = userId;
+      clearLegacyReadCookie();
+    }
+  })();
+
+  try {
+    await hydrationPromise;
+  } finally {
+    hydrationPromise = null;
+  }
 }
 
 export function isChapterRead(courseId, chapterIndex) {
   if (!courseId || chapterIndex == null || chapterIndex < 0) return false;
-  const map = parseReadChaptersCookie();
-  const bytes = map[courseId];
-  if (!bytes) return false;
-  const byteIndex = Math.floor(chapterIndex / 8);
-  const bitIndex = chapterIndex % 8;
-  if (byteIndex >= bytes.length) return false;
-  return (bytes[byteIndex] & (1 << bitIndex)) !== 0;
+  const set = readChaptersByCourse[String(courseId)];
+  return set instanceof Set ? set.has(chapterIndex) : false;
 }
 
-export function markChapterRead(courseId, chapterIndex, totalChaptersHint) {
+export function markChapterRead(courseId, chapterIndex, _totalChaptersHint) {
   if (!courseId || chapterIndex == null || chapterIndex < 0) return false;
-  
-  const wasAlreadyRead = isChapterRead(courseId, chapterIndex);
-  
-  const totalBits = typeof totalChaptersHint === 'number' && totalChaptersHint > 0
-    ? Math.max(totalChaptersHint, chapterIndex + 1)
-    : (chapterIndex + 1);
-  const byteIndex = Math.floor(chapterIndex / 8);
-  const bitIndex = chapterIndex % 8;
-  const bitsNeeded = Math.max(totalBits, (byteIndex + 1) * 8);
-  const bytes = ensureCourseBytes(courseId, bitsNeeded);
-  bytes[byteIndex] = bytes[byteIndex] | (1 << bitIndex);
-  saveReadChaptersCookie();
+
+  const set = ensureCourseSet(courseId);
+  if (!set) return false;
+
+  const wasAlreadyRead = set.has(chapterIndex);
+  if (!wasAlreadyRead) {
+    set.add(chapterIndex);
+    void persistReadMapToRemote();
+  }
+
   return wasAlreadyRead;
+}
+
+export function resetCourseProgressState() {
+  readChaptersByCourse = Object.create(null);
+  hydratedForUserId = null;
+  hydrationPromise = null;
 }
 
 export function getChapterIndexForCourse(course, chapterId) {
