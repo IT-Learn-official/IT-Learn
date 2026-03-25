@@ -10,6 +10,7 @@ import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './s
 import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
 import { getStoredCourseLanguage } from './services/courseLanguageService.js';
 import { loadCoursesDoc } from './services/coursesService.js';
+import { hydrateCourseProgressFromRemote } from './state/courseProgress.js';
 
 const NOTIFICATIONS_BADGE_CACHE_TTL_MS = 15000;
 let notificationsBadgeCache = {
@@ -84,6 +85,10 @@ async function bootstrap() {
   // Initialize course language (defaults to English if not set yet)
   const storedLanguage = getStoredCourseLanguage();
   setCourseLanguage(storedLanguage || 'en');
+  // Ensure course/chapter completion state is loaded from backend for this user.
+  await hydrateCourseProgressFromRemote();
+
+  setGlobalStatus('Loading courses...');
 
   setGlobalStatus('Loading courses...');
   try {
