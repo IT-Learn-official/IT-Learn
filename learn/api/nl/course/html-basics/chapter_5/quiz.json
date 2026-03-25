@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_5",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 5 - Kopteksten Check",
+    "description":  "Controleer je kennis:  Heading-elementen h1 tot h6 en hun gebruik voor structuur en SEO.",
+    "questions":  [
+                      {
+                          "id":  "q-h1",
+                          "type":  "single-choice",
+                          "prompt":  "Which heading should usually be used only once per page?",
+                          "options":  [
+                                          {
+                                              "id":  "h1",
+                                              "label":  "\u003ch1\u003e",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "h2",
+                                              "label":  "\u003ch2\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "h3",
+                                              "label":  "\u003ch3\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "h6",
+                                              "label":  "\u003ch6\u003e",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "\u003ch1\u003e is typically the main title of the page.",
+                                               "byOptionId":  {
+                                                                  "h1":  "Correct â€” \u003ch1\u003e is usually the single main title of a page.",
+                                                                  "h2":  "Incorrect â€” \u003ch2\u003e is for subsection titles, not usually the main page title.",
+                                                                  "h3":  "Incorrect â€” \u003ch3\u003e is for lower-level headings.",
+                                                                  "h6":  "Incorrect â€” \u003ch6\u003e is a very low-level heading."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-heading-order",
+                          "type":  "single-choice",
+                          "prompt":  "If you have a main title and two subsections, a good order of tags is:",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "\u003ch1\u003e, \u003ch2\u003e, \u003ch2\u003e",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "\u003ch2\u003e, \u003ch1\u003e, \u003ch3\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "\u003ch1\u003e, \u003ch2\u003e, \u003ch3\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "\u003ch3\u003e, \u003ch2\u003e, \u003ch1\u003e",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Keep headings in logical descending order for clarity and accessibility.",
+                                               "byOptionId":  {
+                                                                  "a":  "Correct â€” a main \u003ch1\u003e followed by \u003ch2\u003e subsections is logical.",
+                                                                  "b":  "Incorrect â€” keep the main title at \u003ch1\u003e.",
+                                                                  "c":  "Incorrect â€” you need 2 equal-level headings (\u003ch2\u003e and \u003ch2\u003e).",
+                                                                  "d":  "Incorrect â€” this reverses the proper hierarchy. \u003ch1\u003e is big, and \u003ch3\u003e is small."
+                                                              }
+                                           }
+                      }
+                  ]
+}

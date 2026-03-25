@@ -1,0 +1,89 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Kapitel 3 - Dein erstes Repo: Status, Add, Commit",
+  "description": "Prüfe dein Verständnis von Staging und Committen.",
+  "questions": [
+    {
+      "id": "q1-git-status",
+      "type": "single-choice",
+      "prompt": "Was zeigt dir `git status`?",
+      "options": [
+        { "id": "a", "label": "Das aktuelle Wetter", "isCorrect": false },
+        { "id": "b", "label": "Welche Dateien geändert wurden und ob sie staged oder unstaged sind", "isCorrect": true },
+        { "id": "c", "label": "Deine GitHub-Follower", "isCorrect": false },
+        { "id": "d", "label": "Eine Liste aller Programmiersprachen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`git status` zeigt dir, was sich geändert hat und was bereit zum Committen ist.",
+        "byOptionId": {
+          "a": "Nicht ganz. Git trackt kein Wetter.",
+          "b": "Richtig. Es zeigt geänderte Dateien und ihren Staging-Status.",
+          "c": "Nicht ganz. GitHub-Follower haben nichts mit Git status zu tun.",
+          "d": "Nicht ganz. Git status geht um den Zustand deines Repositories."
+        }
+      }
+    },
+    {
+      "id": "q2-what-is-staging",
+      "type": "single-choice",
+      "prompt": "Wofür ist die Staging Area da?",
+      "options": [
+        { "id": "a", "label": "Dateien automatisch zu GitHub hochladen", "isCorrect": false },
+        { "id": "b", "label": "Alte Commits löschen", "isCorrect": false },
+        { "id": "c", "label": "Dein Repository umbenennen", "isCorrect": false },
+        { "id": "d", "label": "Auswählen, welche Änderungen in den nächsten Commit kommen", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Staging ist der Auswahl-Schritt, bevor du commitest.",
+        "byOptionId": {
+          "a": "Nicht ganz. Staging ist Auswählen, nicht Hochladen.",
+          "b": "Nicht ganz. Staging löscht keine Historie.",
+          "c": "Nicht ganz. Staging benennt Repositories nicht um.",
+          "d": "Richtig. Mit Staging wählst du aus, was in den nächsten Commit kommt."
+        }
+      }
+    },
+    {
+      "id": "q3-git-add-does",
+      "type": "single-choice",
+      "prompt": "Was macht `git add`?",
+      "options": [
+        { "id": "a", "label": "Ein neues GitHub-Repository erstellen", "isCorrect": false },
+        { "id": "b", "label": "Änderungen stagen, damit sie committed werden können", "isCorrect": true },
+        { "id": "c", "label": "Eine Commit-Nachricht für dich schreiben", "isCorrect": false },
+        { "id": "d", "label": "Eine Datei vom Computer löschen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`git add` staged Änderungen für den nächsten Commit.",
+        "byOptionId": {
+          "a": "Falsch. Ein GitHub-Repo zu erstellen ist ein eigener Schritt.",
+          "b": "Richtig. `git add` staged Änderungen.",
+          "c": "Falsch. Commit-Nachrichten schreibst du beim Committen.",
+          "d": "Falsch. `git add` löscht keine Dateien."
+        }
+      }
+    },
+    {
+      "id": "q4-gitignore",
+      "type": "single-choice",
+      "prompt": "Warum würdest du eine `.gitignore`-Datei verwenden?",
+      "options": [
+        { "id": "a", "label": "Um die Internetverbindung schneller zu machen", "isCorrect": false },
+        { "id": "b", "label": "Um Commits anonym zu machen", "isCorrect": false },
+        { "id": "c", "label": "Um Git zu zwingen, jede Datei zu tracken", "isCorrect": false },
+        { "id": "d", "label": "Um Dateien zu ignorieren, die du nicht in Git tracken willst", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "`.gitignore` hilft, temporäre Dateien, Build-Output und Secrets nicht zu committen.",
+        "byOptionId": {
+          "a": "Nicht ganz. `.gitignore` ändert nichts an der Internetgeschwindigkeit.",
+          "b": "Nicht ganz. Es macht Commits nicht anonym.",
+          "c": "Nicht ganz. Es macht das Gegenteil und sagt Git, was es ignorieren soll.",
+          "d": "Richtig. `.gitignore` sagt Git, was es nicht tracken soll."
+        }
+      }
+    }
+  ]
+}
+

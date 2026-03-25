@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_11",
+    "kind":  "assessment",
+    "title":  "Kapitel 11 - Display und positioning Check",
+    "description":  "Wissenscheck:  Block vs inline und positioning (static, relative, absolute, fixed).",
+    "questions":  [
+                      {
+                          "id":  "q1-display-block",
+                          "type":  "single-choice",
+                          "prompt":  "What is true about display: block elements?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "They always stay on the same line as text",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "They ignore width and height",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "They usually take a full row",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "They can only be used in tables",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Block elements start on a new line and usually take full available width.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. Block elements start on a new line and usually take full available width.",
+                                                                  "b":  "Not quite. Block elements start on a new line and usually take full available width.",
+                                                                  "c":  "Correct. Block elements start on a new line and usually take full available width.",
+                                                                  "d":  "Not quite. Block elements start on a new line and usually take full available width."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-position-absolute",
+                          "type":  "single-choice",
+                          "prompt":  "position: absolute is positioned relative to what?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "The browser history",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "The nearest positioned ancestor",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "Only the body, always",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "The text content length",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "It is relative to the nearest ancestor with position set (not static).",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. It is relative to the nearest ancestor with position set (not static).",
+                                                                  "b":  "Correct. It is relative to the nearest ancestor with position set (not static).",
+                                                                  "c":  "Not quite. It is relative to the nearest ancestor with position set (not static).",
+                                                                  "d":  "Not quite. It is relative to the nearest ancestor with position set (not static)."
+                                                              }
+                                           }
+                      }
+                  ]
+}

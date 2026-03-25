@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_13",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 13 - Formulieren: basis Check",
+    "description":  "Controleer je kennis:  Het form-element en eenvoudige inputs met labels.",
+    "questions":  [
+                      {
+                          "id":  "q-form",
+                          "type":  "single-choice",
+                          "prompt":  "Which tag groups form controls for submission?",
+                          "options":  [
+                                          {
+                                              "id":  "form",
+                                              "label":  "\u003cform\u003e",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "fieldset",
+                                              "label":  "\u003cfieldset\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "input",
+                                              "label":  "\u003cinput\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "label",
+                                              "label":  "\u003clabel\u003e",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "\u003cform\u003e wraps controls and can be submitted to a server.",
+                                               "byOptionId":  {
+                                                                  "form":  "Correct â€” \u003cform\u003e groups inputs and submission behavior.",
+                                                                  "fieldset":  "Incorrect â€” \u003cfieldset\u003e groups related controls but doesn\u0027t enable submission on its own.",
+                                                                  "input":  "Incorrect â€” \u003cinput\u003e is a control inside a form, not the form container.",
+                                                                  "label":  "Incorrect â€” \u003clabel\u003e labels a control but isn\u0027t the form container."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-label",
+                          "type":  "single-choice",
+                          "prompt":  "Why use \u003clabel\u003e with form controls?",
+                          "options":  [
+                                          {
+                                              "id":  "style",
+                                              "label":  "To style the control",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "access",
+                                              "label":  "To improve accessibility and connect text to controls",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "submit",
+                                              "label":  "To submit the form automatically",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "It\u0027s optional and has no benefit",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Labels help screen readers and allow clicking the text to focus the control.",
+                                               "byOptionId":  {
+                                                                  "access":  "Correct â€” \u003clabel\u003e improves accessibility and focus behavior.",
+                                                                  "style":  "Incorrect â€” styling is done via CSS, not the label element itself.",
+                                                                  "submit":  "Incorrect â€” \u003clabel\u003e does not submit forms automatically.",
+                                                                  "none":  "Incorrect â€” labels provide accessibility benefits and should be used."
+                                                              }
+                                           }
+                      }
+                  ]
+}

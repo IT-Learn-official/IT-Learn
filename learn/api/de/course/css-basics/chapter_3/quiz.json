@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_3",
+    "kind":  "assessment",
+    "title":  "Kapitel 3 - Selektoren und Properties verstehen Check",
+    "description":  "Wissenscheck:  Wie man Elemente targetet und grundlegende Styling-Regeln anwendet.",
+    "questions":  [
+                      {
+                          "id":  "q1-class-selector",
+                          "type":  "single-choice",
+                          "prompt":  "Which selector targets elements with class \"menu\"?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "#menu",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  ".menu",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "menu#",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "*menu",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "A class selector starts with a dot.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. A class selector starts with a dot.",
+                                                                  "b":  "Correct. A class selector starts with a dot.",
+                                                                  "c":  "Not quite. A class selector starts with a dot.",
+                                                                  "d":  "Not quite. A class selector starts with a dot."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-property-value",
+                          "type":  "single-choice",
+                          "prompt":  "What is the correct CSS declaration format?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "color = blue",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "color: blue;",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "(color, blue)",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "color -\u003e blue",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "A declaration uses property: value; with a colon and semicolon.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. A declaration uses property: value; with a colon and semicolon.",
+                                                                  "b":  "Correct. A declaration uses property: value; with a colon and semicolon.",
+                                                                  "c":  "Not quite. A declaration uses property: value; with a colon and semicolon.",
+                                                                  "d":  "Not quite. A declaration uses property: value; with a colon and semicolon."
+                                                              }
+                                           }
+                      }
+                  ]
+}

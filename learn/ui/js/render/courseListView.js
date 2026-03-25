@@ -2,12 +2,14 @@
 //licence: MIT
 //edited by: https://github.com/broodje565
 import { navigateTo } from '../state/router.js';
-import { getState } from '../state/appState.js';
+import { getState, getCourseLanguage, setCourseLanguage } from '../state/appState.js';
 import { isChapterRead } from '../state/courseProgress.js';
 import { getTrialMode } from '../state/appState.js';
 import { startTrialCourse } from '../services/trialMode.js';
 import { createTrialBadge } from './trialRegistrationModal.js';
 import { getCoins, getHearts, getInventory, getQuests, getStreak } from '../state/gamificationState.js';
+import { getCourseLanguageOptions, setStoredCourseLanguage } from '../services/courseLanguageService.js';
+import { loadCoursesDoc } from '../services/coursesService.js';
 
 export function renderCoursesScreen(container) {
   const state = getState();
@@ -80,37 +82,97 @@ function buildActiveUnitCard(course, courses, trialMode) {
     <h3 class="learn-unit-title">${course.title || 'Your path'}</h3>
   `;
 
-  const languagePicker = document.createElement('label');
-  languagePicker.className = 'learn-language-picker';
-  languagePicker.setAttribute('aria-label', 'Choose learning language');
+  const pickerStack = document.createElement('div');
+  pickerStack.className = 'learn-picker-stack';
 
-  const flag = document.createElement('span');
-  flag.className = 'learn-language-flag';
-  flag.textContent = getCourseFlag(course);
+  const coursePicker = document.createElement('label');
+  coursePicker.className = 'learn-course-picker';
+  coursePicker.setAttribute('aria-label', 'Choose course');
 
-  const select = document.createElement('select');
-  select.className = 'learn-language-select';
+  const courseFlag = document.createElement('span');
+  courseFlag.className = 'learn-language-flag';
+  courseFlag.textContent = getCourseFlag(course);
+
+  const courseSelect = document.createElement('select');
+  courseSelect.className = 'learn-language-select';
   courses.forEach((entry) => {
     const option = document.createElement('option');
     option.value = String(entry.id);
     option.textContent = entry.title || String(entry.id);
     if (String(entry.id) === String(course.id)) option.selected = true;
-    select.appendChild(option);
+    courseSelect.appendChild(option);
   });
 
-  select.addEventListener('change', () => {
-    const selectedId = select.value;
+  courseSelect.addEventListener('change', () => {
+    const selectedId = courseSelect.value;
     const selectedCourse = courses.find((entry) => String(entry.id) === String(selectedId));
-    if (selectedCourse) flag.textContent = getCourseFlag(selectedCourse);
+    if (selectedCourse) courseFlag.textContent = getCourseFlag(selectedCourse);
     if (trialMode.isActive) startTrialCourse(selectedId);
     navigateTo({ route: 'courses', courseId: selectedId, tab: 'theory' });
   });
 
-  languagePicker.appendChild(flag);
-  languagePicker.appendChild(select);
+  coursePicker.appendChild(courseFlag);
+  coursePicker.appendChild(courseSelect);
+
+  const languagePicker = document.createElement('label');
+  languagePicker.className = 'learn-language-picker';
+  languagePicker.setAttribute('aria-label', 'Choose course language');
+
+  const languageFlag = document.createElement('span');
+  languageFlag.className = 'learn-language-flag';
+
+  function languageEmoji(code) {
+    const cleaned = String(code || '').trim().toLowerCase();
+    if (cleaned === 'en') return '🇬🇧';
+    if (cleaned === 'nl') return '🇳🇱';
+    if (cleaned === 'fr') return '🇫🇷';
+    if (cleaned === 'de') return '🇩🇪';
+    return '🌐';
+  }
+
+  const languageOptions = getCourseLanguageOptions();
+  const activeLang = getCourseLanguage() || 'en';
+  languageFlag.textContent = languageEmoji(activeLang);
+
+  const languageSelect = document.createElement('select');
+  languageSelect.className = 'learn-language-select';
+  languageOptions.forEach((lang) => {
+    const option = document.createElement('option');
+    option.value = lang.code;
+    option.textContent = lang.available ? lang.label : `${lang.label} (soon)`;
+    option.disabled = !lang.available;
+    if (String(lang.code) === String(activeLang)) option.selected = true;
+    languageSelect.appendChild(option);
+  });
+
+  languageSelect.addEventListener('change', async () => {
+    const nextLang = String(languageSelect.value || '').trim().toLowerCase();
+    languageFlag.textContent = languageEmoji(nextLang);
+
+    languageSelect.disabled = true;
+    courseSelect.disabled = true;
+
+    setStoredCourseLanguage(nextLang);
+    setCourseLanguage(nextLang);
+
+    try {
+      await loadCoursesDoc();
+      window.dispatchEvent(new Event('app:rerender'));
+    } catch (error) {
+      console.error('Failed to load courses for language', nextLang, error);
+      languageSelect.disabled = false;
+      courseSelect.disabled = false;
+    }
+  });
+
+  languagePicker.appendChild(languageFlag);
+  languagePicker.appendChild(languageSelect);
+
+  pickerStack.appendChild(coursePicker);
+  pickerStack.appendChild(languagePicker);
 
   top.appendChild(unitInfo);
-  top.appendChild(languagePicker);
+  top.appendChild(pickerStack);
   card.appendChild(top);
 
   if (trialMode.isActive) {

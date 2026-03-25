@@ -1,0 +1,89 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Hoofdstuk 7 - Fouten ongedaan maken (zonder paniek)",
+  "description": "Test je begrip van undo-tools zoals restore, revert, reset en stash.",
+  "questions": [
+    {
+      "id": "q1-restore",
+      "type": "single-choice",
+      "prompt": "Waarvoor wordt `git restore` meestal gebruikt?",
+      "options": [
+        { "id": "a", "label": "Commits uploaden naar GitHub", "isCorrect": false },
+        { "id": "b", "label": "Niet-gecommit wijzigingen in een bestand weggooien", "isCorrect": true },
+        { "id": "c", "label": "Een nieuwe repository maken", "isCorrect": false },
+        { "id": "d", "label": "Een remote toevoegen met de naam origin", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`git restore` helpt je wijzigingen in je werkmap ongedaan maken vóór je commit.",
+        "byOptionId": {
+          "a": "Fout. Uploaden doe je met `git push`.",
+          "b": "Correct. Het gooit lokale wijzigingen in een bestand weg.",
+          "c": "Fout. Repo's maak je met `git init` (of op GitHub).",
+          "d": "Fout. Remotes beheer je met `git remote`."
+        }
+      }
+    },
+    {
+      "id": "q2-revert",
+      "type": "single-choice",
+      "prompt": "Waarom is `git revert` vaak de veiligste manier om een gepushte commit ongedaan te maken?",
+      "options": [
+        { "id": "a", "label": "Het verwijdert de repository van GitHub", "isCorrect": false },
+        { "id": "b", "label": "Het maakt je branch privé", "isCorrect": false },
+        { "id": "c", "label": "Het lost alle mergeconflicten automatisch op", "isCorrect": false },
+        { "id": "d", "label": "Het maakt een nieuwe commit die de wijziging ongedaan maakt, zonder geschiedenis te herschrijven", "isCorrect": true }
+      ],
+      "explanations": {
+        "overview": "Revert houdt gedeelde geschiedenis stabiel door een undo-commit toe te voegen in plaats van commits te herschrijven.",
+        "byOptionId": {
+          "a": "Fout. Revert verwijdert geen repositories.",
+          "b": "Fout. Revert maakt branches niet privé.",
+          "c": "Fout. Revert lost mergeconflicten niet automatisch op.",
+          "d": "Correct. Revert maakt een nieuwe commit om wijzigingen ongedaan te maken zonder geschiedenis te herschrijven."
+        }
+      }
+    },
+    {
+      "id": "q3-reset-risk",
+      "type": "single-choice",
+      "prompt": "Waarom kan `git reset` riskant zijn op een branch die anderen ook gebruiken?",
+      "options": [
+        { "id": "a", "label": "Het kan geschiedenis herschrijven en teamgenoten in de war brengen", "isCorrect": true },
+        { "id": "b", "label": "Het verandert de resolutie van je monitor", "isCorrect": false },
+        { "id": "c", "label": "Het maakt GitHub kapot", "isCorrect": false },
+        { "id": "d", "label": "Het voorkomt voor altijd commits", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Reset kan een branch-pointer terugzetten, waardoor je het gedeelde verhaal van commits herschrijft.",
+        "byOptionId": {
+          "a": "Correct. Gedeelde geschiedenis herschrijven kan problemen geven voor anderen.",
+          "b": "Niet helemaal. Reset verandert je scherm niet.",
+          "c": "Niet helemaal. GitHub blijft werken; het probleem is een geschiedenis die niet meer overeenkomt.",
+          "d": "Fout. Je kunt nog altijd committen na reset."
+        }
+      }
+    },
+    {
+      "id": "q4-stash",
+      "type": "single-choice",
+      "prompt": "Wat doet `git stash`?",
+      "options": [
+        { "id": "a", "label": "Een nieuwe branch maken op GitHub", "isCorrect": false },
+        { "id": "b", "label": "Je laatste vijf commits verwijderen", "isCorrect": false },
+        { "id": "c", "label": "Niet-gecommit wijzigingen tijdelijk bewaren zodat je van taak kan wisselen", "isCorrect": true },
+        { "id": "d", "label": "Automatisch alle bestanden stagen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Stash bewaart je lokale work-in-progress, zodat je werkmap weer proper wordt.",
+        "byOptionId": {
+          "a": "Fout. Stash maakt geen branches.",
+          "b": "Fout. Stash verwijdert geen commits.",
+          "c": "Correct. Stash bewaart wijzigingen tijdelijk.",
+          "d": "Fout. Stagen doe je met `git add`."
+        }
+      }
+    }
+  ]
+}
+

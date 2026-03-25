@@ -1,0 +1,705 @@
+﻿{
+    "courses":  [
+                    {
+                        "id":  "python-programming-for-young-advanced-hackers",
+                        "title":  "Python programmeren voor jonge gevorderde hackers",
+                        "description":  "Een praktische, projectgerichte introductie tot programmeren voor beginners, kinderen en tieners: van basisconcepten tot objectgeoriënteerd programmeren.",
+                        "authors":  [
+                                        "Nick Hermans, Broodje56"
+                                    ],
+                        "chapters":  [
+                                         {
+                                             "id":  "chapter_1",
+                                             "title":  "Opstarten: je Python-krachten",
+                                             "description":  "Wat code en programmeren is, en hoe je Python start (REPL vs script).",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_2",
+                                             "title":  "Variabelen en basistypes",
+                                             "description":  "Variabelen, strings, getallen en booleans, en hoe je ermee werkt.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_3",
+                                             "title":  "Input en output",
+                                             "description":  "Werken met input(), print(), en simpele interactie met je gebruiker.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_4",
+                                             "title":  "If/else: beslissingen nemen",
+                                             "description":  "Voorwaarden met if/elif/else en logische operatoren.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_5",
+                                             "title":  "Loops: herhalen zonder saai gedoe",
+                                             "description":  "for- en while-loops om herhaling efficiënt te maken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_6",
+                                             "title":  "Functies: je eigen tools bouwen",
+                                             "description":  "Functies schrijven, parameters en return-waarden gebruiken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_7",
+                                             "title":  "Lists: je eerste databak",
+                                             "description":  "Lists maken, aanpassen, doorlopen en nuttige list-trucs.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_8",
+                                             "title":  "Tuples: vaste pakketjes data",
+                                             "description":  "Tuples gebruiken voor data die niet mag veranderen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_9",
+                                             "title":  "Dictionaries: key-value magie",
+                                             "description":  "Dictionaries gebruiken om data op te slaan met keys en values.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_10",
+                                             "title":  "Sets: geen duplicaten",
+                                             "description":  "Sets gebruiken voor unieke waarden en snelle checks/vergelijkingen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_11",
+                                             "title":  "Bestanden lezen en schrijven",
+                                             "description":  "Data opslaan en teruglezen met bestanden (read/write).",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_12",
+                                             "title":  "Fouten en exceptions",
+                                             "description":  "Exceptions begrijpen en je code robuuster maken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_13",
+                                             "title":  "Modules en packages",
+                                             "description":  "Code hergebruiken met imports, modules en packages.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_14",
+                                             "title":  "OOP: classes en objecten",
+                                             "description":  "Objectgeoriënteerd denken: classes, objecten en methods.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_15",
+                                             "title":  "Eindmissie: mini-project",
+                                             "description":  "Alles samenbrengen in een klein eindproject.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         }
+                                     ]
+                    },
+                    {
+                        "id":  "sql-data-hacking-for-young-pros",
+                        "title":  "SQL Data Hacking for Young Pros",
+                        "description":  "Master the language of data. A hands-on, project-based course using SQLite to query, analyze, and build databases from scratch.",
+                        "language":  "sql",
+                        "authors":  [
+                                        "Nick Hermans"
+                                    ],
+                        "chapters":  [
+                                         {
+                                             "id":  "chapter_1",
+                                             "title":  "The Data Matrix: Intro to SQLite \u0026 Tables",
+                                             "description":  "Understand what a database is, how SQLite works, and run your first query to peek inside a table.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_2",
+                                             "title":  "Selecting Your Target: The SELECT Statement",
+                                             "description":  "The \u0027Hello World\u0027 of SQL. Learn to retrieve specific columns, use aliases, and fetch all data with the wild card (*).",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_3",
+                                             "title":  "Filtering the Noise: The WHERE Clause",
+                                             "description":  "Filter results to find exactly what you need using equality, inequality, and comparison operators.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_4",
+                                             "title":  "Advanced Search Patterns: LIKE and Logical Operators",
+                                             "description":  "Combine conditions with AND/OR/NOT and use wildcard pattern matching (LIKE) to find text that \u0027looks like\u0027 your query.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_5",
+                                             "title":  "Ranking and Slicing: ORDER BY and LIMIT",
+                                             "description":  "Sort your data alphabetically or numerically and limit the output to see only the top-tier results.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_6",
+                                             "title":  "Computed Columns and Nulls",
+                                             "description":  "Perform basic math directly in your queries, handle missing data (NULL), and format your output results.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_7",
+                                             "title":  "Data Intelligence: Aggregation Functions",
+                                             "description":  "Don\u0027t just read data, understand it. Use COUNT, MAX, MIN, SUM, and AVG to get statistics from your tables.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_8",
+                                             "title":  "Categorizing Data: GROUP BY and HAVING",
+                                             "description":  "Group rows into buckets to summarize data by category and filter those groups using the HAVING clause.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_9",
+                                             "title":  "Inserting New Data: The INSERT Statement",
+                                             "description":  "Stop just looking and start creating. Learn how to add single or multiple rows of new data into your tables.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_10",
+                                             "title":  "Modifying History: UPDATE and DELETE",
+                                             "description":  "Learn the dangerous art of modifying existing records and permanently deleting data from your database.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_11",
+                                             "title":  "Architecting the Base: CREATE TABLE and Data Types",
+                                             "description":  "Design your own schema. Create tables, define column data types (INTEGER, TEXT, REAL), and understand constraints.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_12",
+                                             "title":  "The Relational Model: Keys and Constraints",
+                                             "description":  "Understand how tables talk to each other using Primary Keys and Foreign Keys to keep data integrity.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_13",
+                                             "title":  "Connecting Tables: INNER and LEFT JOINS",
+                                             "description":  "The power of SQL lies in connections. Merge data from multiple tables into a single result set using JOINs.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_14",
+                                             "title":  "Inception Queries: Subqueries",
+                                             "description":  "Write queries inside queries. Use the result of one select statement to drive the filter or logic of another.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_15",
+                                             "title":  "Optimization and Views",
+                                             "description":  "Save complex queries as virtual tables (Views) and learn the basics of Indexes to make your searches lightning fast.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         }
+                                     ]
+                    },
+                    {
+                        "id":  "html-basics",
+                        "title":  "HTML-basis voor jonge pro\u0027s",
+                        "description":  "Een beginnersvriendelijke cursus die je de fundamenten van HTML, structuur en best practices aanleert.",
+                        "language":  "html",
+                        "authors":  [
+                                        "super_man2775"
+                                    ],
+                        "chapters":  [
+                                         {
+                                             "id":  "chapter_1",
+                                             "title":  "Wat is HTML?",
+                                             "description":  "Wat HTML betekent en wat het wel/niet doet; vergelijking met CSS en JavaScript.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_2",
+                                             "title":  "Vereisten",
+                                             "description":  "Tools die je nodig hebt: code-editor, browser en je eerste HTML-bestand maken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_3",
+                                             "title":  "HTML-documentstructuur",
+                                             "description":  "DOCTYPE, html, head en body en hun rol.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_4",
+                                             "title":  "Head \u0026 meta",
+                                             "description":  "Title, meta charset en viewport meta tags correct gebruiken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_5",
+                                             "title":  "Kopteksten",
+                                             "description":  "Heading-elementen h1 tot h6 en hun gebruik voor structuur en SEO.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_6",
+                                             "title":  "Paragrafen \u0026 tekst",
+                                             "description":  "Paragrafen, line breaks, horizontale lijnen en tags voor tekstaccent.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_7",
+                                             "title":  "Links",
+                                             "description":  "Anchor tags, interne vs externe links en het gebruik van target-attributen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_8",
+                                             "title":  "Afbeeldingen",
+                                             "description":  "Het img-element, src- en alt-attributen en de basis van paden naar afbeeldingen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_9",
+                                             "title":  "Lijsten",
+                                             "description":  "Unordered en ordered lists met list items.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_10",
+                                             "title":  "Tabellen",
+                                             "description":  "Basisstructuur van tabellen met table-, tr-, td- en th-elementen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_11",
+                                             "title":  "Divs \u0026 spans",
+                                             "description":  "Verschil tussen block- en inline-elementen met div en span.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_12",
+                                             "title":  "Semantische HTML",
+                                             "description":  "Semantische elementen gebruiken zoals header, nav, main, section, article en footer.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_13",
+                                             "title":  "Formulieren: basis",
+                                             "description":  "Het form-element en eenvoudige inputs met labels.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_14",
+                                             "title":  "Formulierinputs: overzicht",
+                                             "description":  "Alle input types: text, email, password, checkbox, radio, textarea en select.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_15",
+                                             "title":  "Attributen",
+                                             "description":  "id, class, title, placeholder, required, disabled en hoe je ze gebruikt.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_16",
+                                             "title":  "HTML best practices",
+                                             "description":  "Indentatie, leesbare code en HTML comments.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_17",
+                                             "title":  "Toegankelijkheid: basis",
+                                             "description":  "Alt-tekst, formlabels en semantische markup voor toegankelijkheid.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_18",
+                                             "title":  "SEO: basis",
+                                             "description":  "Headings, meta description en een goede structuur voor zoekmachines.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_19",
+                                             "title":  "HTML + CSS",
+                                             "description":  "Stylesheets linken en waar CSS voor dient.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_20",
+                                             "title":  "Waarom JavaScript en CSS belangrijk zijn",
+                                             "description":  "Hoe je JS en CSS koppelt, en een recap van frontend vs backend.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         }
+                                     ]
+                    },
+                    {
+                        "id":  "css-basics",
+                        "title":  "CSS-basis voor jonge pro\u0027s",
+                        "description":  "Een beginnersvriendelijke CSS-cursus voor kids en tieners, met duidelijke voorbeelden om webpagina\u0027s te stylen.",
+                        "language":  "css",
+                        "authors":  [
+                                        "super_man2775"
+                                    ],
+                        "chapters":  [
+                                         {
+                                             "id":  "chapter_1",
+                                             "title":  "Wat is CSS en waarom gebruik je het?",
+                                             "description":  "Hoe CSS HTML-pagina\u0027s verbetert en het verschil tussen styling en structuur.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_2",
+                                             "title":  "CSS toevoegen aan je HTML",
+                                             "description":  "Inline styles, internal styles en externe stylesheets.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_3",
+                                             "title":  "Selectors en properties begrijpen",
+                                             "description":  "Hoe je elementen target en basis stylingregels toepast.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_4",
+                                             "title":  "Kleuren en units",
+                                             "description":  "Kleurwaarden (naam, HEX, RGB, HSL) en groottes (px, %, em, rem).",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_5",
+                                             "title":  "Basis tekstopmaak",
+                                             "description":  "Font families, groottes, weights en kleuren.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_6",
+                                             "title":  "Tekstuitlijning en spacing",
+                                             "description":  "Line height, uitlijning en letter spacing controleren.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_7",
+                                             "title":  "Links stylen",
+                                             "description":  "Linkkleuren aanpassen, hover effects en onderlijning weghalen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_8",
+                                             "title":  "Het CSS box model uitgelegd",
+                                             "description":  "Content, padding, border en margin.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_9",
+                                             "title":  "Box sizing en borders",
+                                             "description":  "Hoe borders en box-sizing je layout beÃ¯nvloeden.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_10",
+                                             "title":  "Achtergronden toevoegen",
+                                             "description":  "Kleuren, gradients en afbeeldingen als achtergrond.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_11",
+                                             "title":  "Display en positioning",
+                                             "description":  "Block vs inline en positioning (static, relative, absolute, fixed).",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_12",
+                                             "title":  "Flexbox voor beginners",
+                                             "description":  "Elementen makkelijk uitlijnen en spacing geven met flexbox.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_13",
+                                             "title":  "Intro tot CSS Grid",
+                                             "description":  "Eenvoudige grids maken voor moderne layouts.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_14",
+                                             "title":  "Schaduwen en randen",
+                                             "description":  "Drop shadows voor diepte en afgeronde hoeken voor een zachtere look.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_15",
+                                             "title":  "Transitions en eenvoudige animaties",
+                                             "description":  "Hover- en kleureffecten tot leven brengen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_16",
+                                             "title":  "Wat is responsive design?",
+                                             "description":  "Je pagina er goed laten uitzien op gsm, tablet en desktop.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_17",
+                                             "title":  "Media queries gebruiken",
+                                             "description":  "Layout en font sizes aanpassen voor verschillende schermbreedtes.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_18",
+                                             "title":  "Je CSS organiseren",
+                                             "description":  "Code leesbaar houden met comments en indentatie.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_19",
+                                             "title":  "Styles hergebruiken met CSS-variabelen",
+                                             "description":  "Color themes en herbruikbare parameters maken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_20",
+                                             "title":  "Snelle intro tot frameworks",
+                                             "description":  "Wat frameworks zijn (zoals Bootstrap of Tailwind) en wanneer je ze kunt proberen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_21",
+                                             "title":  "CSS-referentie: selectors, properties en values",
+                                             "description":  "Een gestructureerd referentiehoofdstuk met CSS-bouwblokken op Ã©Ã©n plek.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         }
+                                     ]
+                    },
+                    {
+                        "id":  "git-github-vscode-basics",
+                        "title":  "Git, GitHub en VS Code: basis voor jonge leerlingen",
+                        "description":  "Een beginnersvriendelijke cursus die je de basis van Git-versiebeheer, samenwerken via GitHub en werken met Git in VS Code aanleert.",
+                        "authors":  [
+                                        "super_man2775"
+                                    ],
+                        "chapters":  [
+                                         {
+                                             "id":  "chapter_1",
+                                             "title":  "Versiebeheer, Git en GitHub",
+                                             "description":  "Wat versiebeheer is, wat Git lokaal doet en wat GitHub online toevoegt.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_2",
+                                             "title":  "Git en VS Code instellen",
+                                             "description":  "Stel je Git-identiteit in en leer de belangrijkste Git-functies in VS Code.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_3",
+                                             "title":  "Je eerste repo: status, add, commit",
+                                             "description":  "Bekijk wijzigingen, stage de juiste bestanden, schrijf duidelijke commits en leer waar `.gitignore` voor dient.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_4",
+                                             "title":  "Branches, mergen en conflicten",
+                                             "description":  "Werk in feature-branches, merge veilig en leer mergeconflicten oplossen in VS Code.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_5",
+                                             "title":  "GitHub remotes: clone, push, pull",
+                                             "description":  "Synchroniseer met GitHub via clone, push, pull en de `origin` remote.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_6",
+                                             "title":  "Samenwerken: pull requests, reviews en issues",
+                                             "description":  "Gebruik pull requests, reviews en issues om samen te werken zonder elkaars werk te overschrijven.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_7",
+                                             "title":  "Fouten ongedaan maken (zonder paniek)",
+                                             "description":  "Leer veilige manieren om wijzigingen terug te draaien met restore, revert, stash en de basis van reflog.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_8",
+                                             "title":  "Goede gewoontes: nette geschiedenis en duidelijke berichten",
+                                             "description":  "Schrijf goede commitberichten, houd commits gefocust en leer eenvoudige gewoontes rond tags en documentatie.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_9",
+                                             "title":  "Handige VS Code-extensies",
+                                             "description":  "Een korte lijst met beginnersvriendelijke extensies die je workflow verbeteren zonder te overweldigen.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         },
+                                         {
+                                             "id":  "chapter_10",
+                                             "title":  "Git-spiekbrief",
+                                             "description":  "Een snelle referentie met veelgebruikte Git-commando\u0027s voor dagelijks werk: branches, synchroniseren en fouten ongedaan maken.",
+                                             "theoryResourceUid":  "theory.md",
+                                             "quizResourceUid":  "quiz.json",
+                                             "practiceResourceUid":  "practice.json"
+                                         }
+                                     ]
+                    }
+                ]
+}

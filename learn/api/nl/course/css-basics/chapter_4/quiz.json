@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_4",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 4 - Kleuren en units Check",
+    "description":  "Controleer je kennis:  Kleurwaarden (naam, HEX, RGB, HSL) en groottes (px, %, em, rem).",
+    "questions":  [
+                      {
+                          "id":  "q1-hex-color",
+                          "type":  "single-choice",
+                          "prompt":  "Which option is a valid HEX color value?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "#12ABEF",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "rgb#123",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "color(blue)",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "hsl#fff",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+                                               "byOptionId":  {
+                                                                  "a":  "Correct. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+                                                                  "b":  "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+                                                                  "c":  "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+                                                                  "d":  "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-rem-unit",
+                          "type":  "single-choice",
+                          "prompt":  "What is rem based on?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "The parent element font size",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "The browser tab width",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "The root html font size",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "The current element width",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "rem is based on the root html font size.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. rem is based on the root html font size.",
+                                                                  "b":  "Not quite. rem is based on the root html font size.",
+                                                                  "c":  "Correct. rem is based on the root html font size.",
+                                                                  "d":  "Not quite. rem is based on the root html font size."
+                                                              }
+                                           }
+                      }
+                  ]
+}

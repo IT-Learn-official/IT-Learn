@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_15",
+    "kind":  "assessment",
+    "title":  "Kapitel 15 - Transitions und einfache Animationen Check",
+    "description":  "Wissenscheck:  hover- und Farbeffekte lebendig machen.",
+    "questions":  [
+                      {
+                          "id":  "q1-transition-purpose",
+                          "type":  "single-choice",
+                          "prompt":  "What does CSS transition do?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "It creates database tables",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "It smooths style changes",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "It only works on text",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "It replaces hover states",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "transition smooths style changes over time.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. transition smooths style changes over time.",
+                                                                  "b":  "Correct. transition smooths style changes over time.",
+                                                                  "c":  "Not quite. transition smooths style changes over time.",
+                                                                  "d":  "Not quite. transition smooths style changes over time."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-keyframes",
+                          "type":  "single-choice",
+                          "prompt":  "Which rule is used to define animation steps?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "@animate",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "@frames",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "@keyframes",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "@transition",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Use @keyframes to define animation states.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. Use @keyframes to define animation states.",
+                                                                  "b":  "Not quite. Use @keyframes to define animation states.",
+                                                                  "c":  "Correct. Use @keyframes to define animation states.",
+                                                                  "d":  "Not quite. Use @keyframes to define animation states."
+                                                              }
+                                           }
+                      }
+                  ]
+}

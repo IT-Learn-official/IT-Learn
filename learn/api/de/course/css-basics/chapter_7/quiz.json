@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_7",
+    "kind":  "assessment",
+    "title":  "Kapitel 7 - Links stylen Check",
+    "description":  "Wissenscheck:  Linkfarben Ã¤ndern, hover effects und Unterstreichungen entfernen.",
+    "questions":  [
+                      {
+                          "id":  "q1-hover-state",
+                          "type":  "single-choice",
+                          "prompt":  "Which selector styles a link while the mouse is over it?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "a:focus-visible-only",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "a:hover",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "a:clicked-now",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "a:ready",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Use the :hover pseudo-class for hover state styling.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. Use the :hover pseudo-class for hover state styling.",
+                                                                  "b":  "Correct. Use the :hover pseudo-class for hover state styling.",
+                                                                  "c":  "Not quite. Use the :hover pseudo-class for hover state styling.",
+                                                                  "d":  "Not quite. Use the :hover pseudo-class for hover state styling."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-remove-underline",
+                          "type":  "single-choice",
+                          "prompt":  "Which declaration removes the default link underline?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "text-style: none;",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "link-decoration: off;",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "text-decoration: none;",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "underline: false;",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "text-decoration: none; removes the underline.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. text-decoration: none; removes the underline.",
+                                                                  "b":  "Not quite. text-decoration: none; removes the underline.",
+                                                                  "c":  "Correct. text-decoration: none; removes the underline.",
+                                                                  "d":  "Not quite. text-decoration: none; removes the underline."
+                                                              }
+                                           }
+                      }
+                  ]
+}

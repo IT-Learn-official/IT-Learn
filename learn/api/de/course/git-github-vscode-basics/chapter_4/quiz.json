@@ -1,0 +1,89 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Kapitel 4 - Branches, Mergen und Konflikte",
+  "description": "Prüfe dein Verständnis von Branches und Mergen.",
+  "questions": [
+    {
+      "id": "q1-why-branches",
+      "type": "single-choice",
+      "prompt": "Warum sind Branches nützlich?",
+      "options": [
+        { "id": "a", "label": "Du kannst Änderungen machen, ohne den main-Branch kaputt zu machen", "isCorrect": true },
+        { "id": "b", "label": "Sie löschen alte Commits automatisch", "isCorrect": false },
+        { "id": "c", "label": "Sie existieren nur auf GitHub, nicht lokal", "isCorrect": false },
+        { "id": "d", "label": "Sie sind zwingend nötig, um Git zu nutzen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Branches sind getrennte Arbeitslinien, die den main-Branch stabil halten.",
+        "byOptionId": {
+          "a": "Richtig. Branches isolieren Arbeit, damit main stabil bleibt.",
+          "b": "Falsch. Branches löschen keine Historie automatisch.",
+          "c": "Falsch. Branches existieren lokal und können auch auf Remotes existieren.",
+          "d": "Falsch. Du kannst Git auch mit nur einem Branch nutzen, aber Branches helfen sehr."
+        }
+      }
+    },
+    {
+      "id": "q2-switch-c",
+      "type": "single-choice",
+      "prompt": "Was macht `git switch -c feature/x`?",
+      "options": [
+        { "id": "a", "label": "Den aktuellen Branch löschen", "isCorrect": false },
+        { "id": "b", "label": "Einen neuen Branch erstellen und dorthin wechseln", "isCorrect": true },
+        { "id": "c", "label": "Alle Dateien automatisch committen", "isCorrect": false },
+        { "id": "d", "label": "Den Branch zu GitHub pushen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "`-c` bedeutet create. `switch` wechselt deinen aktuellen Branch.",
+        "byOptionId": {
+          "a": "Falsch. Es löscht keine Branches.",
+          "b": "Richtig. Es erstellt und wechselt in einem Befehl.",
+          "c": "Falsch. Committen ist ein eigener Schritt.",
+          "d": "Falsch. Pushen auf ein Remote ist ein anderer Befehl."
+        }
+      }
+    },
+    {
+      "id": "q3-merge-meaning",
+      "type": "single-choice",
+      "prompt": "Was bedeutet es, einen Branch zu mergen?",
+      "options": [
+        { "id": "a", "label": "Commits von einem Branch in einen anderen zusammenführen", "isCorrect": true },
+        { "id": "b", "label": "Eine Datei umbenennen", "isCorrect": false },
+        { "id": "c", "label": "Bilder zu GitHub hochladen", "isCorrect": false },
+        { "id": "d", "label": "Die Commit-Historie löschen", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Mergen bringt Änderungen von einem Branch in einen Ziel-Branch (z. B. main).",
+        "byOptionId": {
+          "a": "Richtig. Merge kombiniert Arbeit aus Branches.",
+          "b": "Falsch. Dateien umbenennen ist unabhängig vom Mergen.",
+          "c": "Falsch. Hochladen passiert via push und über deinen Repo-Inhalt.",
+          "d": "Falsch. Mergen behält die Historie; es löscht sie nicht."
+        }
+      }
+    },
+    {
+      "id": "q4-conflict",
+      "type": "single-choice",
+      "prompt": "Wann passiert ein Merge-Konflikt typischerweise?",
+      "options": [
+        { "id": "a", "label": "Wenn dein Monitor zu klein ist", "isCorrect": false },
+        { "id": "b", "label": "Wenn du `git status` ausführst", "isCorrect": false },
+        { "id": "c", "label": "Wenn zwei Branches dieselben Zeilen in einer Datei ändern", "isCorrect": true },
+        { "id": "d", "label": "Wenn GitHub offline ist", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Konflikte passieren, wenn Git Änderungen nicht automatisch kombinieren kann.",
+        "byOptionId": {
+          "a": "Nicht ganz. Bildschirmgröße verursacht keine Git-Konflikte.",
+          "b": "Nicht ganz. `git status` zeigt Konflikte, verursacht sie aber nicht.",
+          "c": "Richtig. Änderungen an denselben Zeilen verursachen oft Konflikte.",
+          "d": "Falsch. Konflikte gehen um Änderungen, nicht um GitHub-Verfügbarkeit."
+        }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_5",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 5 - Basis tekstopmaak Check",
+    "description":  "Controleer je kennis:  Font families, groottes, weights en kleuren.",
+    "questions":  [
+                      {
+                          "id":  "q1-font-weight",
+                          "type":  "single-choice",
+                          "prompt":  "Which value makes text bold?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "font-weight: 100;",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "font-style: bold;",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "font-weight: 700;",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "text-size: bold;",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "font-weight: 700 (or bold) makes text bold.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. font-weight: 700 (or bold) makes text bold.",
+                                                                  "b":  "Not quite. font-weight: 700 (or bold) makes text bold.",
+                                                                  "c":  "Correct. font-weight: 700 (or bold) makes text bold.",
+                                                                  "d":  "Not quite. font-weight: 700 (or bold) makes text bold."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q2-font-family",
+                          "type":  "single-choice",
+                          "prompt":  "Why do we often list multiple fonts in font-family?",
+                          "options":  [
+                                          {
+                                              "id":  "a",
+                                              "label":  "To slow down the page",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "b",
+                                              "label":  "To create fallback choices",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "c",
+                                              "label":  "Because CSS requires exactly three fonts",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "d",
+                                              "label":  "To add animation",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Multiple fonts create fallbacks if one font is not available.",
+                                               "byOptionId":  {
+                                                                  "a":  "Not quite. Multiple fonts create fallbacks if one font is not available.",
+                                                                  "b":  "Correct. Multiple fonts create fallbacks if one font is not available.",
+                                                                  "c":  "Not quite. Multiple fonts create fallbacks if one font is not available.",
+                                                                  "d":  "Not quite. Multiple fonts create fallbacks if one font is not available."
+                                                              }
+                                           }
+                      }
+                  ]
+}

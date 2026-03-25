@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_9",
+    "kind":  "assessment",
+    "title":  "Kapitel 9 - Listen Check",
+    "description":  "Wissenscheck:  Unordered und ordered lists mit list items.",
+    "questions":  [
+                      {
+                          "id":  "q-ul-ol",
+                          "type":  "single-choice",
+                          "prompt":  "Which tag creates a bulleted list?",
+                          "options":  [
+                                          {
+                                              "id":  "ol",
+                                              "label":  "\u003col\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "ul",
+                                              "label":  "\u003cul\u003e",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "li",
+                                              "label":  "\u003cli\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "list",
+                                              "label":  "\u003clist\u003e",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "\u003cul\u003e is for unordered, bulleted lists.",
+                                               "byOptionId":  {
+                                                                  "ul":  "Correct â€” \u003cul\u003e creates an unordered (bulleted) list.",
+                                                                  "ol":  "Incorrect â€” \u003col\u003e creates a numbered list.",
+                                                                  "li":  "Incorrect â€” \u003cli\u003e is a list item tag used inside \u003cul\u003e or \u003col\u003e.",
+                                                                  "list":  "Incorrect â€” \u003clist\u003e is not a valid HTML element."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-li",
+                          "type":  "single-choice",
+                          "prompt":  "Which tag wraps each list item?",
+                          "options":  [
+                                          {
+                                              "id":  "p",
+                                              "label":  "\u003cp\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "div",
+                                              "label":  "\u003cdiv\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "span",
+                                              "label":  "\u003cspan\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "li",
+                                              "label":  "\u003cli\u003e",
+                                              "isCorrect":  true
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Use \u003cli\u003e inside \u003cul\u003e or \u003col\u003e for each item.",
+                                               "byOptionId":  {
+                                                                  "li":  "Correct â€” \u003cli\u003e wraps each list item inside \u003cul\u003e or \u003col\u003e.",
+                                                                  "p":  "Incorrect â€” \u003cp\u003e is for paragraphs, not list items.",
+                                                                  "div":  "Incorrect â€” \u003cdiv\u003e may contain list elements but \u003cli\u003e is the semantic list item.",
+                                                                  "span":  "Incorrect â€” \u003cspan\u003e is inline and not a list item wrapper."
+                                                              }
+                                           }
+                      }
+                  ]
+}

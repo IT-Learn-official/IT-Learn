@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_19",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 19 - HTML + CSS Check",
+    "description":  "Controleer je kennis:  Stylesheets linken en waar CSS voor dient.",
+    "questions":  [
+                      {
+                          "id":  "q-link-css",
+                          "type":  "single-choice",
+                          "prompt":  "Which tag links an external CSS stylesheet?",
+                          "options":  [
+                                          {
+                                              "id":  "style",
+                                              "label":  "\u003cstyle\u003e...\u003c/style\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "script",
+                                              "label":  "\u003cscript src=\"style.js\"\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "css",
+                                              "label":  "\u003ccss\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "link",
+                                              "label":  "\u003clink rel=\"stylesheet\" href=\"style.css\"\u003e",
+                                              "isCorrect":  true
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Use \u003clink rel=\"stylesheet\"\u003e in the head to attach CSS.",
+                                               "byOptionId":  {
+                                                                  "link":  "Correct â€” \u003clink rel=\"stylesheet\"\u003e in \u003chead\u003e loads external CSS.",
+                                                                  "style":  "Incorrect â€” \u003cstyle\u003e contains inline CSS, not an external link.",
+                                                                  "script":  "Incorrect â€” \u003cscript\u003e loads JS, not CSS.",
+                                                                  "css":  "Incorrect â€” \u003ccss\u003e is not a valid HTML tag."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-css-purpose",
+                          "type":  "single-choice",
+                          "prompt":  "What is CSS used for?",
+                          "options":  [
+                                          {
+                                              "id":  "data",
+                                              "label":  "Stores user data",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "presentation",
+                                              "label":  "Controls look and layout (colors, fonts, spacing)",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "server",
+                                              "label":  "Runs server code",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "html",
+                                              "label":  "Replaces HTML structure",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "CSS handles presentation while HTML handles structure.",
+                                               "byOptionId":  {
+                                                                  "presentation":  "Correct â€” CSS controls presentation like colors, layout, and fonts.",
+                                                                  "data":  "Incorrect â€” CSS is not for storing user data.",
+                                                                  "server":  "Incorrect â€” CSS runs in the browser, not on the server.",
+                                                                  "html":  "Incorrect â€” CSS complements HTML but does not replace structure."
+                                                              }
+                                           }
+                      }
+                  ]
+}

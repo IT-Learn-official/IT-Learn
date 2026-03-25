@@ -1,0 +1,68 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "practice",
+  "title": "Hoofdstuk 8 - Oefeningen",
+  "description": "Praktische missies voor hoofdstuk 8.",
+  "practices": [
+    {
+      "id": "p-secret-name-tag",
+      "title": "Missie: Secret name tag",
+      "assignmentResourceUid": "assignments/secret_name_tag.md",
+      "templates": [
+        {
+          "path": "attachments/secret_name_tag.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should slice parts of first and last name and combine them into a code name using an f-string, then print it in a clear sentence."
+      }
+    },
+    {
+      "id": "p-message-analyzer",
+      "title": "Missie: Message analyzer",
+      "assignmentResourceUid": "assignments/message_analyzer.md",
+      "templates": [
+        {
+          "path": "attachments/message_analyzer.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use indexing, slicing, and .lower()/.upper() on a provided message string and print the results."
+      }
+    },
+    {
+      "id": "p-cleaner-bot",
+      "title": "Missie: Cleaner bot",
+      "assignmentResourceUid": "assignments/cleaner_bot.md",
+      "templates": [
+        {
+          "path": "attachments/cleaner_bot.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should use .strip(), .replace(), and .split() on prepared messy strings, then print cleaned results and list items."
+      }
+    },
+    {
+      "id": "p-status-line-generator",
+      "title": "Missie: Status line generator",
+      "assignmentResourceUid": "assignments/status_line_generator.md",
+      "templates": [
+        {
+          "path": "attachments/status_line_generator.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should combine several variables into a single readable status line using an f-string and print it."
+      }
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+﻿{
+    "chapterId":  "chapter_2",
+    "kind":  "assessment",
+    "title":  "Kapitel 2 - Voraussetzungen Check",
+    "description":  "Wissenscheck:  Tools, die du brauchst: Code-Editor, Browser und deine erste HTML-Datei erstellen.",
+    "questions":  [
+                      {
+                          "id":  "q-editor",
+                          "type":  "single-choice",
+                          "prompt":  "Which tool is best for writing HTML code?",
+                          "options":  [
+                                          {
+                                              "id":  "notepad",
+                                              "label":  "A plain text editor like Notepad",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "browseronly",
+                                              "label":  "A browser only (no editor needed)",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "vscode",
+                                              "label":  "A code editor like VS Code",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "spreadsheet",
+                                              "label":  "A spreadsheet program like Excel",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "imageeditor",
+                                              "label":  "An image editor like Photoshop",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "You need a text editor to create and edit HTML files.",
+                                               "byOptionId":  {
+                                                                  "vscode":  "Correct â€” a code editor like VS Code is recommended for writing HTML.",
+                                                                  "notepad":  "Incorrect â€” a plain text editor like Notepad works only for basic HTML editing. When you start working on larger projects, you will get confused by missing syntax highlighting and formatting.",
+                                                                  "browseronly":  "Incorrect â€” a browser displays HTML but doesn\u0027t let you author files effectively.",
+                                                                  "spreadsheet":  "Incorrect â€” spreadsheets are not intended for coding HTML.",
+                                                                  "imageeditor":  "Incorrect â€” image editors edit images, not HTML source."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-file-name",
+                          "type":  "single-choice",
+                          "prompt":  "What file extension should your HTML file have?",
+                          "options":  [
+                                          {
+                                              "id":  ".ht",
+                                              "label":  ".ht",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  ".html",
+                                              "label":  ".html",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  ".docx",
+                                              "label":  ".docx",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  ".exe",
+                                              "label":  ".exe",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "HTML files use the .html extension.",
+                                               "byOptionId":  {
+                                                                  ".html":  "Correct â€” .html is the standard extension for HTML documents.",
+                                                                  ".ht":  "Incorrect â€” .ht is not related to HTML at all.",
+                                                                  ".docx":  "Incorrect â€” .docx is a Word document format, not HTML source.",
+                                                                  ".exe":  "Incorrect â€” .exe is an executable file format, not a source file."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-preview",
+                          "type":  "single-choice",
+                          "prompt":  "How do you check your HTML in a browser?",
+                          "options":  [
+                                          {
+                                              "id":  "upload",
+                                              "label":  "Only by uploading to a server",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "print",
+                                              "label":  "By printing it on paper",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "compile",
+                                              "label":  "By compiling it into an .exe",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "open-file",
+                                              "label":  "Open the saved .html file in a browser",
+                                              "isCorrect":  true
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Open the file locally in a browser to preview changes during development.",
+                                               "byOptionId":  {
+                                                                  "open-file":  "Correct â€” opening the saved .html file in a browser shows the rendered page.",
+                                                                  "upload":  "Incorrect â€” uploading is optional; you can preview files locally.",
+                                                                  "print":  "Incorrect â€” printing doesn\u0027t render interactive HTML in a browser.",
+                                                                  "compile":  "Incorrect â€” HTML is not compiled into executables."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-livepreview",
+                          "type":  "single-choice",
+                          "prompt":  "What is the fastest way to see changes in your HTML file?",
+                          "options":  [
+                                          {
+                                              "id":  "livepreview",
+                                              "label":  "Live preview or auto-reload in the editor",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "whoppergods",
+                                              "label":  "Pray to the Whopper Gods to see changes faster",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "githubpages",
+                                              "label":  "Commit and push to GitHub every hour to see changes on GitHub Pages",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "restartpc",
+                                              "label":  "Restarting the computer each time",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Live preview saves time by automatically refreshing the browser when you save the file.",
+                                               "byOptionId":  {
+                                                                  "livepreview":  "Correct â€” live preview or auto-reload shows changes instantly.",
+                                                                  "manual-refresh":  "Incorrect â€” manual refresh works, but live preview is faster.",
+                                                                  "githubpages":  "Incorrect â€” GitHub Pages is not a fast preview method.",
+                                                                  "restartpc":  "Incorrect â€” restarting is unnecessary for previewing changes."
+                                                              }
+                                           }
+                      }
+                  ]
+}

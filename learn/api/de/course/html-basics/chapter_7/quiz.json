@@ -1,0 +1,116 @@
+﻿{
+    "chapterId":  "chapter_7",
+    "kind":  "assessment",
+    "title":  "Kapitel 7 - Links Check",
+    "description":  "Wissenscheck:  Anchor Tags, interne vs. externe Links und target-Attribute verwenden.",
+    "questions":  [
+                      {
+                          "id":  "q-a-tag",
+                          "type":  "single-choice",
+                          "prompt":  "Which attribute holds the destination URL for a link?",
+                          "options":  [
+                                          {
+                                              "id":  "src",
+                                              "label":  "src",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "href",
+                                              "label":  "href",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "link",
+                                              "label":  "link",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "url",
+                                              "label":  "url",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "The href attribute on \u003ca\u003e defines where the link goes.",
+                                               "byOptionId":  {
+                                                                  "href":  "Correct â€” href on \u003ca\u003e specifies the link destination.",
+                                                                  "src":  "Incorrect â€” src is used for resources like images and scripts, not for anchor destinations.",
+                                                                  "link":  "Incorrect â€” \u0027link\u0027 is not an attribute for anchors.",
+                                                                  "url":  "Incorrect â€” \u0027url\u0027 is a generic term but not the anchor attribute name."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-internal-vs-external",
+                          "type":  "single-choice",
+                          "prompt":  "What is an internal link?",
+                          "options":  [
+                                          {
+                                              "id":  "same-site",
+                                              "label":  "A link to another page on the same website",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "external",
+                                              "label":  "A link to a different domain",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "file",
+                                              "label":  "A link to a local file only",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "image",
+                                              "label":  "A link that only points to images",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Internal links point to pages within the same site.",
+                                               "byOptionId":  {
+                                                                  "same-site":  "Correct â€” internal links target pages on the same domain or site.",
+                                                                  "external":  "Incorrect â€” external links point to different domains.",
+                                                                  "file":  "Incorrect â€” linking to local files is possible but not the typical definition of internal links.",
+                                                                  "image":  "Incorrect â€” the target can be any resource, not specifically images."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-target-blank",
+                          "type":  "single-choice",
+                          "prompt":  "What does target=\"_blank\" do?",
+                          "options":  [
+                                          {
+                                              "id":  "internal",
+                                              "label":  "Makes it an internal link",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "nofollow",
+                                              "label":  "Tells search engines not to follow the link",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "newtab",
+                                              "label":  "Opens the link in a new tab or window",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "download",
+                                              "label":  "Forces the browser to download the link",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "target=\"_blank\" opens the target in a new tab.",
+                                               "byOptionId":  {
+                                                                  "newtab":  "Correct â€” target=\"_blank\" opens the destination in a new tab or window.",
+                                                                  "internal":  "Incorrect â€” target does not change whether a link is internal or external.",
+                                                                  "nofollow":  "Incorrect â€” rel=\"nofollow\" is used for search engine hints, not target behavior.",
+                                                                  "download":  "Incorrect â€” the download attribute suggests downloading; target=_blank opens in a new tab."
+                                                              }
+                                           }
+                      }
+                  ]
+}

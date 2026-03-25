@@ -1,0 +1,80 @@
+﻿{
+    "chapterId":  "chapter_17",
+    "kind":  "assessment",
+    "title":  "Hoofdstuk 17 - Toegankelijkheid: basis Check",
+    "description":  "Controleer je kennis:  Alt-tekst, formlabels en semantische markup voor toegankelijkheid.",
+    "questions":  [
+                      {
+                          "id":  "q-alt-required",
+                          "type":  "single-choice",
+                          "prompt":  "Why should images have alt text?",
+                          "options":  [
+                                          {
+                                              "id":  "style",
+                                              "label":  "To style the image",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "access",
+                                              "label":  "To help people using screen readers and when images fail to load",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "seoonly",
+                                              "label":  "Only for SEO, not accessibility",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "optional",
+                                              "label":  "Never necessary",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Alt text ensures non-visual users understand image content.",
+                                               "byOptionId":  {
+                                                                  "access":  "Correct â€” alt text aids disabled users and provides fallback descriptions.",
+                                                                  "style":  "Incorrect â€” styling is done with CSS, not alt attributes.",
+                                                                  "seoonly":  "Incorrect â€” while alt can help SEO, its primary purpose is accessibility.",
+                                                                  "optional":  "Incorrect â€” alt is important for accessibility and should usually be provided."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-labels",
+                          "type":  "single-choice",
+                          "prompt":  "Which helps users with screen readers interact with forms?",
+                          "options":  [
+                                          {
+                                              "id":  "divs",
+                                              "label":  "Wrapping inputs in divs only",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "spans",
+                                              "label":  "Using \u003cspan\u003e instead of labels",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Nothing helps",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "label",
+                                              "label":  "Using \u003clabel\u003e elements connected to inputs",
+                                              "isCorrect":  true
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Labels improve form accessibility by describing inputs.",
+                                               "byOptionId":  {
+                                                                  "label":  "Correct â€” \u003clabel\u003e elements improve accessibility and clickable area for controls.",
+                                                                  "divs":  "Incorrect â€” wrapping in \u003cdiv\u003e alone does not provide the same semantics as \u003clabel\u003e.",
+                                                                  "spans":  "Incorrect â€” \u003cspan\u003e is not a replacement for a properly associated label.",
+                                                                  "none":  "Incorrect â€” proper labeling and semantics significantly improve accessibility."
+                                                              }
+                                           }
+                      }
+                  ]
+}

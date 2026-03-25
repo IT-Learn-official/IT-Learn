@@ -1,0 +1,112 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Kapitel 6 - Operatoren und Vergleiche Check",
+  "description": "Kurzer Check für Kapitel 6. Teste dein Verständnis von Rechen-, Vergleichs-, Zuweisungs- und logischen Operatoren.",
+  "questions": [
+    {
+      "id": "q-arithmetic-operator",
+      "type": "single-choice",
+      "prompt": "Was macht der Operator `**` in Python?",
+      "options": [
+        { "id": "a", "label": "Addiert zwei Zahlen.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Teilt eine Zahl durch eine andere.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Potenzieren: eine Zahl zur Potenz einer anderen erheben.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Berechnet den Rest nach einer Division.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Der Operator `**` wird in Python für Potenzieren (Exponentiation) verwendet.",
+        "byOptionId": {
+          "a": "Addieren machst du mit dem `+`-Operator.",
+          "b": "Division machst du mit `/` oder `//`.",
+          "c": "Richtig! `**` bedeutet Potenzieren.",
+          "d": "Den Rest bekommst du mit `%`."
+        }
+      }
+    },
+    {
+      "id": "q-comparison-operator",
+      "type": "single-choice",
+      "prompt": "Welcher Operator prüft, ob zwei Werte NICHT gleich sind?",
+      "options": [
+        { "id": "a", "label": "==", "isCorrect": false },
+        { "id": "b", "label": "!=", "isCorrect": true },
+        { "id": "c", "label": ">", "isCorrect": false },
+        { "id": "d", "label": "<=", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Der Operator `!=` prüft auf Ungleichheit.",
+        "byOptionId": {
+          "a": "`==` prüft Gleichheit, nicht Ungleichheit.",
+          "b": "Richtig! `!=` bedeutet nicht gleich.",
+          "c": "`>` prüft, ob ein Wert größer als ein anderer ist.",
+          "d": "`<=` prüft kleiner gleich."
+        }
+      }
+    },
+    {
+      "id": "q-assignment-operator",
+      "type": "single-choice",
+      "prompt": "Was macht der Operator `+=`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Er addiert einen Wert zu einer Variable und aktualisiert die Variable.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Er prüft, ob zwei Werte gleich sind.",
+          "isCorrect": false
+        },
+        { "id": "c", "label": "Er multipliziert zwei Werte.", "isCorrect": false },
+        {
+          "id": "d",
+          "label": "Er zieht einen Wert von einer Variable ab.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`+=` ist ein Zuweisungsoperator: addieren und gleichzeitig aktualisieren.",
+        "byOptionId": {
+          "a": "Richtig! `x += 2` ist dasselbe wie `x = x + 2`.",
+          "b": "Gleichheit prüfst du mit `==`.",
+          "c": "Multiplizieren machst du mit `*`.",
+          "d": "Subtrahieren und updaten machst du mit `-=`."
+        }
+      }
+    },
+    {
+      "id": "q-logical-operator",
+      "type": "single-choice",
+      "prompt": "Welche davon ist ein logischer Operator in Python?",
+      "options": [
+        { "id": "a", "label": "and", "isCorrect": true },
+        { "id": "b", "label": "++", "isCorrect": false },
+        { "id": "c", "label": "==", "isCorrect": false },
+        { "id": "d", "label": "**", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "Logische Operatoren sind `and`, `or` und `not`.",
+        "byOptionId": {
+          "a": "Richtig! `and` ist ein logischer Operator.",
+          "b": "`++` ist kein Python-Operator.",
+          "c": "`==` ist ein Vergleichsoperator.",
+          "d": "`**` ist ein Rechenoperator."
+        }
+      }
+    }
+  ]
+}

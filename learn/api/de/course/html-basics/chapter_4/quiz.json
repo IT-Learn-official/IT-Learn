@@ -1,0 +1,122 @@
+﻿{
+    "chapterId":  "chapter_4",
+    "kind":  "assessment",
+    "title":  "Kapitel 4 - Head \u0026 Meta Check",
+    "description":  "Wissenscheck:  title, meta charset und viewport meta tags richtig verwenden.",
+    "questions":  [
+                      {
+                          "id":  "q-title",
+                          "type":  "single-choice",
+                          "prompt":  "Where does the \u003ctitle\u003e tag belong?",
+                          "options":  [
+                                          {
+                                              "id":  "head",
+                                              "label":  "Inside \u003chead\u003e",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "body",
+                                              "label":  "Inside \u003cbody\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "html",
+                                              "label":  "Outside \u003chtml\u003e",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "meta",
+                                              "label":  "Inside \u003cmeta\u003e",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "\u003ctitle\u003e belongs in the head and appears in the browser tab.",
+                                               "byOptionId":  {
+                                                                  "head":  "Correct â€” \u003ctitle\u003e belongs inside \u003chead\u003e and shows in the browser tab.",
+                                                                  "body":  "Incorrect â€” \u003ctitle\u003e should be placed inside \u003chead\u003e, not in \u003cbody\u003e.",
+                                                                  "html":  "Incorrect â€” \u003ctitle\u003e must be inside \u003chead\u003e within the \u003chtml\u003e element.",
+                                                                  "meta":  "Incorrect â€” \u003cmeta\u003e is for metadata like charset or viewport, not the page title."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-charset",
+                          "type":  "single-choice",
+                          "prompt":  "What does \u003cmeta charset=\"utf-8\"\u003e do?",
+                          "options":  [
+                                          {
+                                              "id":  "language",
+                                              "label":  "Sets the page language",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "style",
+                                              "label":  "Applies styles to the page",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "linkcss",
+                                              "label":  "Links a CSS file",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "encoding",
+                                              "label":  "Sets character encoding so text displays correctly",
+                                              "isCorrect":  true
+                                          },
+                                          {
+                                              "id":  "runjs",
+                                              "label":  "Runs JavaScript",
+                                              "isCorrect":  false
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Character encoding ensures characters like accents show properly.",
+                                               "byOptionId":  {
+                                                                  "encoding":  "Correct â€” charset sets the document character encoding so text renders correctly.",
+                                                                  "style":  "Incorrect â€” styling is handled by CSS, not the charset meta tag.",
+                                                                  "linkcss":  "Incorrect â€” CSS is linked with \u003clink\u003e, not with a charset meta tag.",
+                                                                  "runjs":  "Incorrect â€” meta tags do not execute JavaScript.",
+                                                                  "language":  "Incorrect â€” the charset meta tag does not set the page language."
+                                                              }
+                                           }
+                      },
+                      {
+                          "id":  "q-viewport",
+                          "type":  "single-choice",
+                          "prompt":  "Why add the viewport meta tag on mobile pages?",
+                          "options":  [
+                                          {
+                                              "id":  "speed",
+                                              "label":  "To make the page load faster",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "security",
+                                              "label":  "To secure the page",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "title",
+                                              "label":  "To set the page title",
+                                              "isCorrect":  false
+                                          },
+                                          {
+                                              "id":  "responsive",
+                                              "label":  "To make the page scale correctly on small screens",
+                                              "isCorrect":  true
+                                          }
+                                      ],
+                          "explanations":  {
+                                               "overview":  "Viewport controls layout on mobile devices so designs are responsive.",
+                                               "byOptionId":  {
+                                                                  "responsive":  "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
+                                                                  "speed":  "Incorrect â€” viewport affects layout, not network speed.",
+                                                                  "security":  "Incorrect â€” viewport does not add security features.",
+                                                                  "title":  "Incorrect â€” the page title is set with the \u003ctitle\u003e tag, not the viewport meta tag."
+                                                              }
+                                           }
+                      }
+                  ]
+}

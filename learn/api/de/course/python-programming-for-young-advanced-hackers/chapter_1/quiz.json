@@ -1,0 +1,404 @@
+{
+  "chapterId": "chapter-1",
+  "kind": "assessment",
+  "title": "Kapitel 1 - Starten: deine Python-Power Check",
+  "description": "Kurzer Konzept-Check für Kapitel 1. Nutze das, um zu sehen, was du über Python, Code vs Programmieren und REPL vs Script-Modus mitgenommen hast.",
+  "questions": [
+    {
+      "id": "q-programming-language",
+      "type": "single-choice",
+      "prompt": "Du willst einem Computer beibringen, dir jeden Tag um 19:00 eine Erinnerung zu schicken. Was ist in dieser Situation eine Programmiersprache?",
+      "options": [
+        {
+          "id": "human-language",
+          "label": "Eine Sprache, die Menschen sprechen, z. B. Englisch oder Französisch",
+          "isCorrect": false
+        },
+        {
+          "id": "computer-instructions",
+          "label": "Eine spezielle Sprache, um Anweisungen zu schreiben, die Computer ausführen können",
+          "isCorrect": true
+        },
+        {
+          "id": "hardware",
+          "label": "Eine Art Computer-Hardware (z. B. Tastatur oder Maus)",
+          "isCorrect": false
+        },
+        {
+          "id": "os",
+          "label": "Ein Betriebssystem wie Windows oder macOS",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Mit einer Programmiersprache gibst du dem Computer präzise Anweisungen.",
+        "byOptionId": {
+          "human-language": "Menschliche Sprachen sind für Menschen – nicht direkt für Computer.",
+          "computer-instructions": "Correct: Das ist die Sprache, in der du Code schreibst, den der Computer versteht.",
+          "hardware": "Hardware ist das Physische (Tastatur, Maus, CPU) – nicht die Sprache.",
+          "os": "Ein Betriebssystem verwaltet Hardware und Apps, aber es ist nicht die Sprache, in der du Programme schreibst."
+        }
+      }
+    },
+    {
+      "id": "q-code-vs-programming",
+      "type": "single-choice",
+      "prompt": "Du designst ein kleines Game, das den Player begrüßt. Welche Option beschreibt den Unterschied zwischen **Programmieren** und **Code** am besten?",
+      "options": [
+        {
+          "id": "no-difference",
+          "label": "Es gibt keinen echten Unterschied, das sind nur andere Wörter.",
+          "isCorrect": false
+        },
+        {
+          "id": "reversed-definition",
+          "label": "Code ist das Planen der Schritte, Programmieren ist das exakte Tippen der Anweisungen.",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-definition",
+          "label": "Programmieren ist Planen/Designen, und Code sind die konkreten Python-Anweisungen, die du schreibst.",
+          "isCorrect": true
+        },
+        {
+          "id": "experts-only",
+          "label": "Programmieren ist nur für Experten, Code ist für Anfänger.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Programmieren ist der große Prozess; Code ist der konkrete Text für den Computer.",
+        "byOptionId": {
+          "no-difference": "Doch, es gibt einen Unterschied: Programmieren ist der ganze Prozess, nicht nur Tippen.",
+          "reversed-definition": "Das ist vertauscht: Planen ist Programmieren, nicht Code.",
+          "correct-definition": "Correct: Programmieren ist Plan + Code zusammen.",
+          "experts-only": "Jeder kann Programmieren lernen – das ist nicht nur für Experten."
+        }
+      }
+    },
+    {
+      "id": "q-compiled-language",
+      "type": "single-choice",
+      "prompt": "Du drückst auf einen großen BUILD-Button und dein Code wird zu einer `.exe`, die du immer wieder starten kannst. Welche Art Sprache verwendest du am wahrscheinlichsten?",
+      "options": [
+        {
+          "id": "python",
+          "label": "Python",
+          "isCorrect": false
+        },
+        {
+          "id": "cpp",
+          "label": "C++",
+          "isCorrect": true
+        },
+        {
+          "id": "javascript",
+          "label": "JavaScript",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "HTML",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "C++ ist kompiliert: Der Code wird vor dem Ausführen in Maschinencode übersetzt.",
+        "byOptionId": {
+          "python": "Python ist normalerweise interpretiert, nicht so kompiliert.",
+          "cpp": "Correct: C++ Programme werden typischerweise zu Executables kompiliert.",
+          "javascript": "JavaScript wird meist vom Browser oder einer Runtime interpretiert.",
+          "html": "HTML ist eine Markup-Sprache für Webseitenstruktur – keine kompilierte Programmiersprache."
+        }
+      }
+    },
+    {
+      "id": "q-repl",
+      "type": "single-choice",
+      "prompt": "Du öffnest eine Python-Konsole, tippst `1 + 2`, drückst Enter und siehst `3`. Das passiert in der REPL. Wofür steht **REPL**?",
+      "options": [
+        {
+          "id": "read-eval-print-loop",
+          "label": "Read, Evaluate, Print, Loop",
+          "isCorrect": true
+        },
+        {
+          "id": "run-edit-print-load",
+          "label": "Run, Edit, Print, Load",
+          "isCorrect": false
+        },
+        {
+          "id": "read-execute-print-learn",
+          "label": "Read, Execute, Print, Learn",
+          "isCorrect": false
+        },
+        {
+          "id": "repeat-eval-print-loop",
+          "label": "Repeat, Evaluate, Print, Loop",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "REPL beschreibt den Zyklus im interaktiven Modus: Eingabe lesen, ausführen/evaluieren, Ergebnis ausgeben und wiederholen.",
+        "byOptionId": {
+          "read-eval-print-loop": "Correct: Das ist die offizielle Bedeutung von REPL.",
+          "run-edit-print-load": "Klingt ähnlich, ist aber nicht richtig.",
+          "read-execute-print-learn": "Gute Idee, aber nicht die Bedeutung von REPL.",
+          "repeat-eval-print-loop": "Ein paar Wörter stimmen, aber der erste Schritt ist READ, nicht REPEAT."
+        }
+      }
+    },
+    {
+      "id": "q-python-creator",
+      "type": "single-choice",
+      "prompt": "Python wurde Ende der 1980er entwickelt. Wer hat damit angefangen?",
+      "options": [
+        {
+          "id": "dennis-ritchie",
+          "label": "Dennis Ritchie",
+          "isCorrect": false
+        },
+        {
+          "id": "guido-van-rossum",
+          "label": "Guido van Rossum",
+          "isCorrect": true
+        },
+        {
+          "id": "james-gosling",
+          "label": "James Gosling",
+          "isCorrect": false
+        },
+        {
+          "id": "bjarne-stroustrup",
+          "label": "Bjarne Stroustrup",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Guido van Rossum hat Python entwickelt – anfängerfreundlich, aber stark genug für Profis.",
+        "byOptionId": {
+          "dennis-ritchie": "Dennis Ritchie hat die Programmiersprache C entwickelt.",
+          "guido-van-rossum": "Correct.",
+          "james-gosling": "James Gosling hat Java entwickelt.",
+          "bjarne-stroustrup": "Bjarne Stroustrup hat C++ entwickelt."
+        }
+      }
+    },
+    {
+      "id": "q-why-name-python",
+      "type": "single-choice",
+      "prompt": "Warum heißt die Sprache \"Python\"? (Nein, es geht nicht nur um Schlangen.)",
+      "options": [
+        {
+          "id": "snake",
+          "label": "Sie ist nach einer Schlange benannt, weil der Erfinder Reptilien mochte.",
+          "isCorrect": false
+        },
+        {
+          "id": "pet",
+          "label": "Sie ist nach dem Haustier des Erfinders benannt.",
+          "isCorrect": false
+        },
+        {
+          "id": "monty-python",
+          "label": "Sie ist nach der britischen Comedyserie \"Monty Python's Flying Circus\" benannt.",
+          "isCorrect": true
+        },
+        {
+          "id": "acronym",
+          "label": "Sie ist ein Akronym für etwas Geheimes und Technisches.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Python ist nach der Comedyshow \"Monty Python's Flying Circus\" benannt.",
+        "byOptionId": {
+          "snake": "Es gibt eine Schlange namens Python, aber der Sprachname kommt von der TV-Show.",
+          "pet": "Python ist nicht nach einem Haustier benannt.",
+          "monty-python": "Correct: Der Erfinder wollte einen lustigen Namen.",
+          "acronym": "Python ist kein Akronym – es steht nicht heimlich für etwas."
+        }
+      }
+    },
+    {
+      "id": "q-python-extension",
+      "type": "single-choice",
+      "prompt": "Du speicherst dein erstes Hacker-Script, damit du es später wieder starten kannst. Welche Dateiendung hat eine Python-Datei?",
+      "options": [
+        {
+          "id": "txt",
+          "label": ".txt",
+          "isCorrect": false
+        },
+        {
+          "id": "exe",
+          "label": ".exe",
+          "isCorrect": false
+        },
+        {
+          "id": "py",
+          "label": ".py",
+          "isCorrect": true
+        },
+        {
+          "id": "java",
+          "label": ".java",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Python-Scripts verwenden die Dateiendung `.py`.",
+        "byOptionId": {
+          "txt": "`.txt` ist reiner Text; Python erkennt das nicht als Script-Datei.",
+          "exe": "`.exe` ist für kompilierte Programme, nicht für Quellcode.",
+          "py": "Correct: `.py` ist die Standard-Endung für Python-Quellcode.",
+          "java": "`.java` ist für Java-Quellcode, nicht für Python."
+        }
+      }
+    },
+    {
+      "id": "q-print-hello-world",
+      "type": "single-choice",
+      "prompt": "Schau dir diese Python-Zeile an:\n\n```python\nprint(\"Hello, World!\")\n```\n\nWas zeigt der Computer tatsächlich an, wenn du das ausführst?",
+      "options": [
+        {
+          "id": "hello-world-no-punct",
+          "label": "Hello World",
+          "isCorrect": false
+        },
+        {
+          "id": "prints-code",
+          "label": "print(\"Hello, World!\")",
+          "isCorrect": false
+        },
+        {
+          "id": "hello-world-with-punct",
+          "label": "Hello, World!",
+          "isCorrect": true
+        },
+        {
+          "id": "error",
+          "label": "Es gibt einen Fehler.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die `print`-Funktion gibt exakt das aus, was in den Anführungszeichen steht.",
+        "byOptionId": {
+          "hello-world-no-punct": "Die Ausgabe enthält ein Komma und ein Rufzeichen: `Hello, World!`.",
+          "prints-code": "Das ist der Code selbst, nicht die Ausgabe beim Ausführen.",
+          "hello-world-with-punct": "Correct: `print` schreibt diesen Text auf den Screen.",
+          "error": "Hier gibt es keinen Fehler – das ist gültiges Python."
+        }
+      }
+    },
+    {
+      "id": "q-repl-or-script",
+      "type": "single-choice",
+      "prompt": "Du willst schnell testen, was `10 / 3` in Python macht, und du musst es nicht speichern. Welcher Modus ist die bessere Wahl?",
+      "options": [
+        {
+          "id": "repl",
+          "label": "Interaktiver Modus (die Python-REPL)",
+          "isCorrect": true
+        },
+        {
+          "id": "script",
+          "label": "Script-Modus (zuerst in einer `.py` Datei speichern)",
+          "isCorrect": false
+        },
+        {
+          "id": "text-editor",
+          "label": "In einen Editor tippen und nie ausführen",
+          "isCorrect": false
+        },
+        {
+          "id": "spreadsheet",
+          "label": "In eine Spreadsheet-Zelle schreiben",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die REPL ist perfekt für schnelle Experimente.",
+        "byOptionId": {
+          "repl": "Correct: Im interaktiven Modus probierst du `10 / 3` in einer Zeile und siehst das Ergebnis sofort.",
+          "script": "Du könntest es in einem Script machen, aber für Mini-Tests, die du nicht speichern willst, ist das langsamer.",
+          "text-editor": "Nur in eine Textdatei tippen heißt noch nicht, dass Python es ausführt.",
+          "spreadsheet": "Python-Code gehört in Python, nicht in eine Spreadsheet-Zelle."
+        }
+      }
+    },
+    {
+      "id": "q-spot-the-error",
+      "type": "single-choice",
+      "prompt": "Ein Freund schreibt diese Zeile und sie crasht:\n\n```python\nprint(\"Hello, World!)\n```\n\nWas ist das Hauptproblem?",
+      "options": [
+        {
+          "id": "missing-quote",
+          "label": "Ein Anführungszeichen fehlt.",
+          "isCorrect": true
+        },
+        {
+          "id": "missing-comma",
+          "label": "Nach `print` sollte ein Komma stehen.",
+          "isCorrect": false
+        },
+        {
+          "id": "missing-space",
+          "label": "Nach Hello sollte ein Leerzeichen stehen.",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong-word",
+          "label": "Das Wort World ist in Python verboten.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Strings in Python brauchen passende öffnende und schließende Anführungszeichen.",
+        "byOptionId": {
+          "missing-quote": "Correct: Das schließende Anführungszeichen nach `!` fehlt.",
+          "missing-comma": "In dieser Python-Version setzt du kein Komma nach `print`.",
+          "missing-space": "Leerzeichen im String sind ok – das crasht dein Programm nicht.",
+          "wrong-word": "`World` ist nur Text; Python ist egal, welche menschlichen Wörter da drin stehen."
+        }
+      }
+    },
+    {
+      "id": "q-programming-vs-code-scenario",
+      "type": "single-choice",
+      "prompt": "Du willst ein kleines „hello“-Programm bauen. Welche Aktion ist ein Beispiel für **Programmieren** (nicht nur Code tippen)?",
+      "options": [
+        {
+          "id": "write-print-line",
+          "label": "`print(\"Hello, World!\")` in den Editor tippen.",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-steps",
+          "label": "Eine Schrittliste schreiben: Name abfragen, hallo sagen, später vielleicht Features ergänzen.",
+          "isCorrect": true
+        },
+        {
+          "id": "save-file",
+          "label": "Die Datei als `test.py` speichern.",
+          "isCorrect": false
+        },
+        {
+          "id": "run-program",
+          "label": "Auf Run klicken, um die Ausgabe zu sehen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Programmieren heißt auch zu planen, was das Programm tun soll, bevor oder während du Code schreibst.",
+        "byOptionId": {
+          "write-print-line": "Das ist Code schreiben, nicht Schritte planen.",
+          "plan-steps": "Correct: Der Schritt-für-Schritt-Plan ist Programmieren.",
+          "save-file": "Speichern ist wichtig, aber das ist nicht wirklich Programmieren oder Code an sich.",
+          "run-program": "Ausführen testet den Code, ist aber nicht der Plan-Teil."
+        }
+      }
+    }
+  ]
+}

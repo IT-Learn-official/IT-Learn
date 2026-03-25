@@ -1,0 +1,292 @@
+{
+  "chapterId": "chapter-3",
+  "kind": "assessment",
+  "title": "Hoofdstuk 3 - Functies en ingebouwde helpers Check",
+  "description": "Check je begrip van functies, argumenten, returnwaarden en veelgebruikte ingebouwde helpers zoals len, abs, round en type.",
+  "questions": [
+    {
+      "id": "q-what-is-a-function",
+      "type": "single-choice",
+      "prompt": "In Python, wat is een functie zoals len of round?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een herbruikbare helper die een specifieke taak doet wanneer je die oproept.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een speciaal soort commentaar dat Python negeert.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een variabele die alleen getallen bewaart.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een venster dat op het scherm verschijnt.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Functies zijn mini-programma's die je kan hergebruiken: je roept ze aan met haakjes, geeft argumenten mee, en vaak geven ze een waarde terug.",
+        "byOptionId": {
+          "a": "Juist! Een functie is een herbruikbare helper: je roept ze aan door haar naam te schrijven gevolgd door `()`.",
+          "b": "Nee. Commentaarregels beginnen met `#` en worden door Python genegeerd.",
+          "c": "Niet helemaal. Variabelen bewaren waarden; functies zijn acties die je kan oproepen.",
+          "d": "Nee. Een functie kan dingen printen, maar ze is geen venster."
+        }
+      }
+    },
+    {
+      "id": "q-parentheses-meaning",
+      "type": "single-choice",
+      "prompt": "Wat doen de haakjes in deze regel code?\\n\\n```python\\nprint(\"Hello\")\\n```",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ze roepen de functie print aan en bevatten de argumenten.",
+          "isCorrect": true
+        },
+        { "id": "b", "label": "Ze maken een lijst.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Ze zijn maar versiering; ze doen niets.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ze zeggen Python om in een oneindige lus te gaan.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Wanneer je name(... ) ziet, roept Python de functie aan met de waarden tussen de haakjes als argumenten.",
+        "byOptionId": {
+          "a": "Ja. De haakjes betekenen \"roep deze functie nu aan\" en geef de waarden binnenin mee.",
+          "b": "Lijsten in Python gebruiken vierkante haakjes `[]`, geen ronde haakjes `()`.",
+          "c": "Ze zijn heel belangrijk. Zonder haakjes zou Python de functie niet aanroepen.",
+          "d": "Lussen maak je met `for`/`while`, niet met haakjes na `print`."
+        }
+      }
+    },
+    {
+      "id": "q-arguments-meaning",
+      "type": "single-choice",
+      "prompt": "In de code `round(3.14159, 2)`, wat betekent de `2`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het zegt tegen round dat hij 2 decimalen moet behouden.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Het verdubbelt het getal vóór het afronden.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het laat de functie 2 keer lopen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het heeft geen betekenis; het is maar willekeurig.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het tweede argument van round bepaalt hoeveel decimalen je behoudt.",
+        "byOptionId": {
+          "a": "Juist. `round(x, n)` geeft `x` terug afgerond op `n` decimalen.",
+          "b": "Nee. round vermenigvuldigt niets in het geheim.",
+          "c": "Nee. De functie draait nog altijd maar één keer.",
+          "d": "Het heeft zeker betekenis: het is een argument van de functie."
+        }
+      }
+    },
+    {
+      "id": "q-return-value",
+      "type": "single-choice",
+      "prompt": "Welke waarde zit er in length nadat deze code heeft gedraaid?\\n\\n```python\\nlength = len(\"wizard\")\\n```",
+      "options": [
+        { "id": "a", "label": "6", "isCorrect": true },
+        { "id": "b", "label": "7", "isCorrect": false },
+        { "id": "c", "label": "\"wizard\"", "isCorrect": false },
+        {
+          "id": "d",
+          "label": "Niets, length blijft leeg.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "len(\"wizard\") telt hoeveel tekens er in de string zitten en geeft dat getal terug.",
+        "byOptionId": {
+          "a": "Juist. 'wizard' heeft 6 tekens, dus len geeft 6 terug.",
+          "b": "Tel de letters: w i z a r d = 6.",
+          "c": "De variabele length bewaart het getal 6, niet de originele tekst.",
+          "d": "Nee, length krijgt wél een waarde: de returnwaarde van len(\"wizard\")."
+        }
+      }
+    },
+    {
+      "id": "q-len-behavior",
+      "type": "single-choice",
+      "prompt": "Wat zal `len(\"hello!\")` teruggeven?",
+      "options": [
+        { "id": "a", "label": "6", "isCorrect": true },
+        { "id": "b", "label": "5", "isCorrect": false },
+        { "id": "c", "label": "1", "isCorrect": false },
+        { "id": "d", "label": "Het geeft een fout.", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "len telt alle tekens, inclusief leestekens.",
+        "byOptionId": {
+          "a": "Juist. 'hello!' heeft 6 tekens: h e l l o !",
+          "b": "Vergeet het uitroepteken op het einde niet.",
+          "c": "Er is duidelijk meer dan 1 teken.",
+          "d": "len werkt prima op strings zoals 'hello!'."
+        }
+      }
+    },
+    {
+      "id": "q-abs-behavior",
+      "type": "single-choice",
+      "prompt": "Wat is het resultaat van `abs(-10)`?",
+      "options": [
+        { "id": "a", "label": "10", "isCorrect": true },
+        { "id": "b", "label": "-10", "isCorrect": false },
+        { "id": "c", "label": "0", "isCorrect": false },
+        {
+          "id": "d",
+          "label": "Het print -10 maar geeft niets terug.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "abs geeft de afstand tot nul, en die is altijd niet-negatief.",
+        "byOptionId": {
+          "a": "Ja. De absolute waarde van -10 is 10.",
+          "b": "abs haalt het minteken weg; het houdt het niet bij.",
+          "c": "De afstand van 0 tot -10 is niet 0.",
+          "d": "abs geeft een getal terug; het print niet vanzelf."
+        }
+      }
+    },
+    {
+      "id": "q-round-usage",
+      "type": "single-choice",
+      "prompt": "Wat geeft `round(5.678, 1)` terug?",
+      "options": [
+        { "id": "a", "label": "5.7", "isCorrect": true },
+        { "id": "b", "label": "5.6", "isCorrect": false },
+        { "id": "c", "label": "6.0", "isCorrect": false },
+        { "id": "d", "label": "567.8", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "round(x, 1) behoudt één cijfer na de decimale punt.",
+        "byOptionId": {
+          "a": "Juist. 5.678 afgerond op één decimaal is 5.7.",
+          "b": "5.6 zou te veel naar beneden afronden.",
+          "c": "Dat zou afronden naar een geheel getal zijn, niet naar één decimaal.",
+          "d": "Dat zou vermenigvuldigen met 100 zijn; round doet dat niet."
+        }
+      }
+    },
+    {
+      "id": "q-type-debugging",
+      "type": "single-choice",
+      "prompt": "Waarom zou een programmeur `print(type(coins))` in code zetten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om te checken welk type waarde coins is (zoals int of str).",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Om coins te veranderen naar een andere waarde.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om de variabele coins te verwijderen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om heel vaak over coins te loopen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "type helpt je debuggen door te tonen welk type waarde een variabele momenteel bewaart.",
+        "byOptionId": {
+          "a": "Ja. type(x) toont of x een int, float, str, ... is.",
+          "b": "type verandert de waarde niet; het geeft alleen informatie.",
+          "c": "Variabelen verwijder je niet met type.",
+          "d": "Lussen maak je met for of while, niet met type."
+        }
+      }
+    },
+    {
+      "id": "q-console-vs-print",
+      "type": "single-choice",
+      "prompt": "In de Python REPL zie je dit: \\n\\n```python\\n>>> len(\"cat\")\\n3\\n>>> print(len(\"cat\"))\\n3\\n```\\nWat is waar over deze twee regels?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Beide gebruiken len, maar de tweede gebruikt ook print om het resultaat te tonen.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Alleen de eerste regel gebruikt len.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De tweede regel verandert de waarde die len teruggeeft.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De eerste regel geeft een fout.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "In de REPL toont een expressie op zichzelf zijn waarde. print(len(...)) print dezelfde waarde.",
+        "byOptionId": {
+          "a": "Juist. Beide roepen len('cat') aan; de ene toont de waarde als expressie, de andere print ze.",
+          "b": "Kijk goed: len('cat') staat in beide regels.",
+          "c": "print verandert de waarde van len niet; het toont ze alleen.",
+          "d": "len('cat') is perfect geldig."
+        }
+      }
+    },
+    {
+      "id": "q-print-vs-returning",
+      "type": "single-choice",
+      "prompt": "Welke functie hieronder gebruik je vooral om tekst op het scherm te tonen, in plaats van een getal terug te geven dat je in berekeningen gebruikt?",
+      "options": [
+        { "id": "a", "label": "print", "isCorrect": true },
+        { "id": "b", "label": "len", "isCorrect": false },
+        { "id": "c", "label": "round", "isCorrect": false },
+        { "id": "d", "label": "abs", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "print is voor output; len, round en abs gebruik je meestal om hun returnwaarde.",
+        "byOptionId": {
+          "a": "Ja. print is gemaakt om dingen op het scherm te tonen.",
+          "b": "len geeft een getal terug dat je vaak bewaart of in een expressie gebruikt.",
+          "c": "round geeft een afgerond getal terug.",
+          "d": "abs geeft de afstand tot nul terug als een getal."
+        }
+      }
+    }
+  ]
+}
