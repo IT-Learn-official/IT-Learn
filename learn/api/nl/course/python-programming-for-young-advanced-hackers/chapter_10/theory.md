@@ -3,6 +3,7 @@
 Welkom terug, hacker. Je hebt al lists, tuples en dictionaries gebruikt om data te organiseren. Nu is het tijd voor een meer gespecialiseerde tool: de **set**.
 
 Een set gebruik je wanneer je geeft om:
+
 - welke waarden minstens één keer voorkomen,
 - snel duplicaten weggooien,
 - supersnel membership checken,
@@ -41,6 +42,7 @@ print(unique_ports)  # {80, 22, 443}
 ```
 
 Reality check voorbeelden:
+
 - unieke usernames in een Discord server,
 - unieke IP’s die je school‑wifi geraakt hebben,
 - unieke punten die een leerkracht gaf op één examen.
@@ -84,6 +86,7 @@ vulnerabilities.discard("Buffer Overflow")
 ## 3. Set‑operaties: data vergelijken zoals een analyst
 
 Nu wordt het leuk. Sets kan je combineren met operatoren die lijken op wiskunde:
+
 - `|` → union
 - `&` → intersection
 - `-` → difference
@@ -123,6 +126,7 @@ print(unique_to_A)  # {'CVE-2021-44228'}
 ```
 
 School‑analogie met sets:
+
 - `passed_math` en `passed_french` zijn sets van leerlingennamen.
 - Intersection = wie **beide** vakken gehaald heeft.
 - Difference = wie wiskunde haalde maar **niet** Frans.
@@ -134,17 +138,20 @@ School‑analogie met sets:
 ## 4. Wanneer gebruik je een set vs een list?
 
 **Gebruik een list wanneer:**
+
 - volgorde belangrijk is (`[first, second, third]`),
 - duplicaten toegestaan of belangrijk zijn,
 - je indexing nodig hebt zoals `my_list[0]`.
 
 **Gebruik een set wanneer:**
+
 - items **uniek** moeten zijn,
 - je veel **membership checks** doet (`if x in my_set:`),
 - je collecties wil vergelijken (union, intersection, difference),
 - volgorde niet belangrijk is.
 
 Real‑life voorbeelden voor sets:
+
 - alle unieke usernames die vandaag inlogden,
 - alle unieke antwoorden in een quiz,
 - alle unieke tags in een notitie‑app.
@@ -185,6 +192,7 @@ else:
 ```
 
 Zelfde idee voor:
+
 - verboden woorden in een chatfilter,
 - banned usernames in een server,
 - leerlingen die hun huiswerk al ingediend hebben.

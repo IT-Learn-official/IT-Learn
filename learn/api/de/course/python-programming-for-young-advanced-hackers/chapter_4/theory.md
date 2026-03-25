@@ -3,6 +3,7 @@
 Willkommen zurück, Hacker. Du hast Python schon Zahlen und Text hingeworfen, und es ist irgendwie nicht explodiert. Jetzt sorgen wir dafür, dass Python auch wirklich **versteht**, was du ihm gibst.
 
 Für Python gibt es einen riesigen Unterschied zwischen:
+
 - `15` als **Zahl** (deine Mathe‑Note von 20), und
 - `"15"` als **Text** (vielleicht Teil deines WLAN‑Passworts).
 
@@ -33,7 +34,7 @@ Python macht das Gleiche mit **Datentypen**. Jeder Wert hat ein Label in Pythons
 - **Text** – für Usernames, Chat‑Messages, Passwörter.
 - **True/False‑Flag** – für einfache Ja/Nein‑Entscheidungen.
 
-Wenn Python nicht weiß, *welche Art* von Wert es gerade hat, weiß es auch nicht, welche Operationen erlaubt sind. Du kannst keine Mathematik auf einen Snapchat‑Username anwenden, und du kannst dich nicht mit der Zahl `1234` einloggen, wenn die Website den **String** `"1234"` erwartet.
+Wenn Python nicht weiß, _welche Art_ von Wert es gerade hat, weiß es auch nicht, welche Operationen erlaubt sind. Du kannst keine Mathematik auf einen Snapchat‑Username anwenden, und du kannst dich nicht mit der Zahl `1234` einloggen, wenn die Website den **String** `"1234"` erwartet.
 
 > Key takeaway: Ein Datentyp sagt Python **was** ein Wert ist, damit es weiß, **was du damit machen darfst**.
 
@@ -61,6 +62,7 @@ print(type(100))  # <class 'int'>
 ```
 
 Nutze `int` für Dinge wie:
+
 - Score in EA FC oder Fortnite,
 - Anzahl verpasster Anrufe,
 - deine Punkte von 20.
@@ -83,6 +85,7 @@ print(type(99.9))  # <class 'float'>
 ```
 
 Nutze `float` für:
+
 - Prozentwerte (`87.5`% bei einem Test),
 - Distanzen (`2.75` km zur Schule),
 - präzise Health‑Bars (`72.5` HP).
@@ -117,7 +120,7 @@ username = "hacker_" + "be"
 print(username)  # hacker_be
 ```
 
-Python behandelt *alles* in Anführungszeichen als Text:
+Python behandelt _alles_ in Anführungszeichen als Text:
 
 - `"15"` – vielleicht dein Alter als Text.
 - `15` – die Zahl fünfzehn.
@@ -148,6 +151,7 @@ print(type(is_logged_in))  # <class 'bool'>
 Später siehst du, dass Vergleiche wie `score >= 10` ebenfalls Booleans liefern.
 
 Beispiele aus dem Alltag:
+
 - `wifi_on = True`
 - `is_exam_week = False`
 - `has_enough_sleep = False`
@@ -158,7 +162,7 @@ Beispiele aus dem Alltag:
 
 ## 5. `type()`: dein Data‑Scanner
 
-`type()` ist, als würdest du einen Scanner auf einen Wert richten und Python fragen: *„Was glaubst du, was das ist?“*
+`type()` ist, als würdest du einen Scanner auf einen Wert richten und Python fragen: _„Was glaubst du, was das ist?“_
 
 ```python
 print(type(10))       # <class 'int'>

@@ -14,4 +14,3 @@ Write a tiny program that checks if a number is big enough.
 
 - Use `>=` to check "greater than or equal to".
 - Make sure the code inside `if` is indented.
-

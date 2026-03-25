@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Waarom zijn branches handig?",
       "options": [
-        { "id": "a", "label": "Je kan eraan werken zonder de main-branch kapot te maken", "isCorrect": true },
-        { "id": "b", "label": "Ze verwijderen automatisch oude commits", "isCorrect": false },
-        { "id": "c", "label": "Ze bestaan alleen op GitHub, niet lokaal", "isCorrect": false },
-        { "id": "d", "label": "Ze zijn verplicht om Git te kunnen gebruiken", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Je kan eraan werken zonder de main-branch kapot te maken",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Ze verwijderen automatisch oude commits",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze bestaan alleen op GitHub, niet lokaal",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ze zijn verplicht om Git te kunnen gebruiken",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Branches zijn aparte werklijnen die de main-branch stabiel houden.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Wat doet `git switch -c feature/x`?",
       "options": [
-        { "id": "a", "label": "Verwijdert de huidige branch", "isCorrect": false },
-        { "id": "b", "label": "Maakt een nieuwe branch en switcht ernaartoe", "isCorrect": true },
-        { "id": "c", "label": "Commit automatisch alle bestanden", "isCorrect": false },
-        { "id": "d", "label": "Pusht je branch naar GitHub", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Verwijdert de huidige branch",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Maakt een nieuwe branch en switcht ernaartoe",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Commit automatisch alle bestanden",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Pusht je branch naar GitHub",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`-c` betekent create. `switch` verandert je huidige branch.",
@@ -49,10 +81,22 @@
       "type": "single-choice",
       "prompt": "Wat betekent het om een branch te mergen?",
       "options": [
-        { "id": "a", "label": "Commits van de ene branch samenvoegen in een andere", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Commits van de ene branch samenvoegen in een andere",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Een bestand hernoemen", "isCorrect": false },
-        { "id": "c", "label": "Afbeeldingen uploaden naar GitHub", "isCorrect": false },
-        { "id": "d", "label": "Je commitgeschiedenis wissen", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Afbeeldingen uploaden naar GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Je commitgeschiedenis wissen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Mergen brengt wijzigingen van één branch naar een doel-branch (zoals main).",
@@ -69,9 +113,21 @@
       "type": "single-choice",
       "prompt": "Wanneer gebeurt er meestal een mergeconflict?",
       "options": [
-        { "id": "a", "label": "Als je monitor te klein is", "isCorrect": false },
-        { "id": "b", "label": "Als je `git status` uitvoert", "isCorrect": false },
-        { "id": "c", "label": "Als twee branches dezelfde regels in een bestand wijzigen", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Als je monitor te klein is",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Als je `git status` uitvoert",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Als twee branches dezelfde regels in een bestand wijzigen",
+          "isCorrect": true
+        },
         { "id": "d", "label": "Als GitHub offline is", "isCorrect": false }
       ],
       "explanations": {
@@ -86,4 +142,3 @@
     }
   ]
 }
-

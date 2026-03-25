@@ -17,4 +17,3 @@ Compare a guess to a secret number using if and else.
 
 - Use `==` to compare values.
 - Use `if ... else ...` with proper indentation.
-

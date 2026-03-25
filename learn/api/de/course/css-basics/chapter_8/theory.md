@@ -14,6 +14,7 @@ content, padding, border und margin.
 ```
 
 Stell dir ein Gemälde im Rahmen vor. Du kannst es in 4 Teile teilen:
+
 - Das Gemälde selbst (der content)
 - Der Abstand zwischen Gemälde und Rahmen (das padding)
 - Der Rahmen (der border)

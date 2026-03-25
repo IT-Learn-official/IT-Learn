@@ -3,6 +3,7 @@
 Welcome back, hacker. You’ve already used lists, tuples, and dictionaries to organise data. Now it’s time for a more specialised tool: the **set**.
 
 A set is what you use when you care about:
+
 - what values appear at least once,
 - removing duplicates quickly,
 - checking membership super fast,
@@ -41,6 +42,7 @@ print(unique_ports)  # {80, 22, 443}
 ```
 
 Reality check examples:
+
 - unique usernames in a Discord server,
 - unique IPs that hit your school wifi,
 - unique grades a teacher gave in one exam.
@@ -84,6 +86,7 @@ vulnerabilities.discard("Buffer Overflow")
 ## 3. Set Operations: Comparing Data Like an Analyst
 
 Now for the fun part. Sets can be combined with operators that look like math:
+
 - `|` → union
 - `&` → intersection
 - `-` → difference
@@ -123,6 +126,7 @@ print(unique_to_A)  # {'CVE-2021-44228'}
 ```
 
 School‑style analogy with sets:
+
 - `passed_math` and `passed_french` are sets of student names.
 - Intersection = those who passed **both**.
 - Difference = those who passed math but **not** French.
@@ -134,17 +138,20 @@ School‑style analogy with sets:
 ## 4. When to Use a Set vs a List
 
 **Use a list when:**
+
 - order matters (`[first, second, third]`),
 - duplicates are allowed or important,
 - you need to index like `my_list[0]`.
 
 **Use a set when:**
+
 - you need items to be **unique**,
 - you’re doing a lot of **membership checks** (`if x in my_set:`),
 - you want to compare collections (union, intersection, difference),
 - order doesn’t matter.
 
 Reality examples for sets:
+
 - all unique usernames that logged into a site today,
 - all unique answers given in a quiz,
 - all unique tags used in a note‑taking app.
@@ -185,6 +192,7 @@ else:
 ```
 
 Same idea works for:
+
 - banned words in a chat filter,
 - banned usernames in a server,
 - students who already submitted homework.

@@ -3,6 +3,7 @@
 Welkom, hacker. Je kan loopen als een champ, maar voor elke mini‑actie een volledige `for` loop schrijven begint te voelen als extra huiswerk.
 
 Python heeft een paar **pro‑level shortcuts** voor data:
+
 - nieuwe lists bouwen in één regel,
 - waarden filteren zonder lange loops te schrijven,
 - twee lists parallel verwerken alsof ze samen “gezip’t” zijn.
@@ -43,6 +44,7 @@ print(upper_hostnames)
 ```
 
 Zelfde resultaat, minder boilerplate. Het leest bijna als Engels:
+
 > “`host.upper()` voor elke `host` in `hostnames`.”
 
 > Key takeaway: Comprehensions zijn compacte loops om nieuwe collecties te bouwen.
@@ -190,6 +192,7 @@ doubled = [x * 2 for x in numbers]
 ```
 
 Wanneer gebruik je `lambda`?
+
 - snelle throwaway logica,
 - wanneer een library “een functie” verwacht en je die niet wil benoemen.
 

@@ -13,4 +13,3 @@ Turn book data into a simple class.
 
 - Remember to use `self.title = title` and `self.pages = pages` in `__init__`.
 - `description` should use `return`, not `print`, so you can print its result outside the class.
-

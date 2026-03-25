@@ -3,6 +3,7 @@
 Tekst is het eerste wat mensen lezen, dus het is belangrijk dat je die netjes stylet.
 
 De meest voorkomende tekstinstellingen zijn:
+
 - `font-family`
 - `font-size`
 - `font-weight`

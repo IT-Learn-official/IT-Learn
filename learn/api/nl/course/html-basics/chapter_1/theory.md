@@ -4,11 +4,12 @@ HTML staat voor **HyperText Markup Language.** Zie een webpagina als een huis: H
 
 ---
 
-*Bijvoorbeeld: als je een recept schrijft, lijst je ingrediënten en stappen op. HTML is zoals die lijst: het benoemt de onderdelen van de pagina (kopteksten, paragrafen, afbeeldingen), niet hoe ze eruit moeten zien. Als HTML de ingrediënten zijn, dan is CSS de presentatie (hoe je het opdient) en JavaScript de kok die afwerkt en interactie toevoegt.*
+_Bijvoorbeeld: als je een recept schrijft, lijst je ingrediënten en stappen op. HTML is zoals die lijst: het benoemt de onderdelen van de pagina (kopteksten, paragrafen, afbeeldingen), niet hoe ze eruit moeten zien. Als HTML de ingrediënten zijn, dan is CSS de presentatie (hoe je het opdient) en JavaScript de kok die afwerkt en interactie toevoegt._
 
 ---
 
 ## Wat HTML wel en niet doet:
+
 - Het structureert content: kopteksten, paragrafen, lijsten, links, afbeeldingen, formulieren.
 - Het bepaalt NIET de styling (kleuren, fonts, layout) – dat is CSS.
 - Het voert NIET logisch werk uit en verandert zichzelf niet dynamisch – dat is JavaScript.

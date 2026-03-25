@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_19",
-    "kind":  "assessment",
-    "title":  "Hoofdstuk 19 - Styles hergebruiken met CSS-variabelen Check",
-    "description":  "Controleer je kennis:  Color themes en herbruikbare parameters maken.",
-    "questions":  [
-                      {
-                          "id":  "q1-variable-define",
-                          "type":  "single-choice",
-                          "prompt":  "How do you define a CSS variable?",
-                          "options":  [
-                                          {
-                                              "id":  "a",
-                                              "label":  "--main-color: #333;",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "b",
-                                              "label":  "$main-color: #333;",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "c",
-                                              "label":  "var main-color = #333;",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "d",
-                                              "label":  "color-variable: #333;",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "Variables are declared with names that start with two dashes.",
-                                               "byOptionId":  {
-                                                                  "a":  "Correct. Variables are declared with names that start with two dashes.",
-                                                                  "b":  "Not quite. Variables are declared with names that start with two dashes.",
-                                                                  "c":  "Not quite. Variables are declared with names that start with two dashes.",
-                                                                  "d":  "Not quite. Variables are declared with names that start with two dashes."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q2-variable-use",
-                          "type":  "single-choice",
-                          "prompt":  "How do you use a CSS variable in a property value?",
-                          "options":  [
-                                          {
-                                              "id":  "a",
-                                              "label":  "use(--main-color)",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "b",
-                                              "label":  "read(--main-color)",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "c",
-                                              "label":  "var(--main-color)",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "d",
-                                              "label":  "${--main-color}",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "Use the var() function to read a variable value.",
-                                               "byOptionId":  {
-                                                                  "a":  "Not quite. Use the var() function to read a variable value.",
-                                                                  "b":  "Not quite. Use the var() function to read a variable value.",
-                                                                  "c":  "Correct. Use the var() function to read a variable value.",
-                                                                  "d":  "Not quite. Use the var() function to read a variable value."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_19",
+
+  "kind": "assessment",
+
+  "title": "Hoofdstuk 19 - Styles hergebruiken met CSS-variabelen Check",
+
+  "description": "Controleer je kennis:  Color themes en herbruikbare parameters maken.",
+
+  "questions": [
+    {
+      "id": "q1-variable-define",
+
+      "type": "single-choice",
+
+      "prompt": "How do you define a CSS variable?",
+
+      "options": [
+        {
+          "id": "a",
+
+          "label": "--main-color: #333;",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "b",
+
+          "label": "$main-color: #333;",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "c",
+
+          "label": "var main-color = #333;",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "d",
+
+          "label": "color-variable: #333;",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "Variables are declared with names that start with two dashes.",
+
+        "byOptionId": {
+          "a": "Correct. Variables are declared with names that start with two dashes.",
+
+          "b": "Not quite. Variables are declared with names that start with two dashes.",
+
+          "c": "Not quite. Variables are declared with names that start with two dashes.",
+
+          "d": "Not quite. Variables are declared with names that start with two dashes."
+        }
+      }
+    },
+
+    {
+      "id": "q2-variable-use",
+
+      "type": "single-choice",
+
+      "prompt": "How do you use a CSS variable in a property value?",
+
+      "options": [
+        {
+          "id": "a",
+
+          "label": "use(--main-color)",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "b",
+
+          "label": "read(--main-color)",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "c",
+
+          "label": "var(--main-color)",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "d",
+
+          "label": "${--main-color}",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "Use the var() function to read a variable value.",
+
+        "byOptionId": {
+          "a": "Not quite. Use the var() function to read a variable value.",
+
+          "b": "Not quite. Use the var() function to read a variable value.",
+
+          "c": "Correct. Use the var() function to read a variable value.",
+
+          "d": "Not quite. Use the var() function to read a variable value."
+        }
+      }
+    }
+  ]
 }

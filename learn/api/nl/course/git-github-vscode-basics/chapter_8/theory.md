@@ -4,6 +4,7 @@ Git-geschiedenis is voor mensen.
 Maak ze makkelijk om te lezen.
 
 Goede commitboodschappen zijn kort en specifiek:
+
 - slecht: `i did something cool`
 - goed: `Fix navbar spacing on mobile`
 

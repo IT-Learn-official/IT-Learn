@@ -30,14 +30,14 @@ Als Hacker nutzt du diese Sprachen, um Computern Anweisungen zu geben. Diese Anw
 Viele werfen das durcheinander, aber ein echter Hacker kennt den Unterschied:
 
 - **Code:** die einzelnen Zaubersprüche. Die Textzeilen, die du in einer Sprache wie Python schreibst, damit der Computer etwas Konkretes macht.
-- **Programmieren:** der Masterplan. Die Kunst herauszufinden, *was* du willst, das in Schritte zu zerlegen und dann den Code zu schreiben, der diese Schritte ausführt.
+- **Programmieren:** der Masterplan. Die Kunst herauszufinden, _was_ du willst, das in Schritte zu zerlegen und dann den Code zu schreiben, der diese Schritte ausführt.
 
 Echte Programmierer hämmern nicht einfach auf die Tastatur. Sie:
 
 1. **Planen die Mission:** „Ich baue einen Bot, der automatisch meinen Online‑Unterricht beitritt.“
 2. **Sammeln Infos:** „Welche Daten braucht der Bot? Den Klassenlink? Die Uhrzeit?“
 3. **Erstellen eine Strategie:** Große Mission in kleine, machbare Aufgaben zerlegen.
-4. **Schreiben den Code:** *Dann* kommen die Zaubersprüche.
+4. **Schreiben den Code:** _Dann_ kommen die Zaubersprüche.
 
 Zum Beispiel:
 
@@ -66,6 +66,7 @@ Sprachen wie **C++ oder Java** sind wie ein Roboterbau nach Bauplan. Du schreibs
 **Python** ist eine **interpretierte** Sprache. Das ist eher wie ein Live‑Gespräch mit deinem Roboter: Du gibst einen Befehl nach dem anderen, und er führt ihn sofort aus.
 
 **Hacker‑Vorteile:**
+
 - **Speed:** Ideen sofort testen. Kein Warten auf lange Builds.
 - **Flexibilität:** Code „on the fly“ ändern und sofort Ergebnis sehen. Perfekt zum Experimentieren und schnellen Zusammenhacken.
 
@@ -75,9 +76,10 @@ Sprachen wie **C++ oder Java** sind wie ein Roboterbau nach Bauplan. Du schreibs
 
 ## Über Python
 
-Python wurde Ende der 1980er von **Guido van Rossum** entwickelt. Er benannte es nach der britischen Comedy‑Gruppe *Monty Python’s Flying Circus*, weil Programmieren Spaß machen sollte. (Spoiler: tut es.)
+Python wurde Ende der 1980er von **Guido van Rossum** entwickelt. Er benannte es nach der britischen Comedy‑Gruppe _Monty Python’s Flying Circus_, weil Programmieren Spaß machen sollte. (Spoiler: tut es.)
 
 **Was kannst du mit Python machen?**
+
 - Websites und Web‑Apps bauen.
 - **Videospiele** erstellen.
 - **Discord‑Bots** schreiben und Dinge automatisieren.
@@ -127,7 +129,7 @@ Die erste Tradition für jeden angehenden Hacker: Die Maschine soll dich „aner
 print("Hello, World!")
 ```
 
-Wenn du das ausführst, zeigt der Computer `Hello, World!` am Bildschirm. Das ist dein erster Schritt, damit die Maschine macht, was *du* willst.
+Wenn du das ausführst, zeigt der Computer `Hello, World!` am Bildschirm. Das ist dein erster Schritt, damit die Maschine macht, was _du_ willst.
 
 In den kommenden Practice‑Missionen erstellst du dieses Script und lernst außerdem, ein kaputtes zu debuggen – wie ein echter digitaler Detektiv.
 

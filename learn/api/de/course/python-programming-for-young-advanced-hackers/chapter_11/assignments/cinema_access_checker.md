@@ -19,4 +19,3 @@ Decide if someone is allowed to watch a PG-13 movie.
 
 - Use `or` to allow any of the conditions.
 - You can experiment with `and` and `not` in extra checks if you like.
-

@@ -5,6 +5,7 @@ Welkom, hacker. Tot nu toe volgden je scripts meestal één vast pad: bovenaan s
 In dit hoofdstuk geef je je programma’s een echte **brain**.
 
 Met **conditionele logica** (`if / elif / else`) kan je code:
+
 - reageren op user input,
 - anders werken wanneer een login faalt,
 - een andere boodschap tonen afhankelijk van je examenscore,
@@ -25,6 +26,7 @@ Tegen het einde van dit hoofdstuk kan je:
 Een **condition** is eender welke expressie die je kan beantwoorden met `True` of `False`.
 
 Voorbeelden:
+
 - Is de firewall actief?
 - Is de examenscore minstens 10?
 - Is de username gelijk aan `"admin"`?
@@ -51,12 +53,12 @@ Later laat je meestal `== True` weg en schrijf je gewoon `if is_open:`, maar voo
 
 Deze operatoren vergelijken twee waarden en geven een boolean terug:
 
-- `==`  : is gelijk aan?
-- `!=`  : is niet gelijk aan?
-- `<`   : is kleiner dan?
-- `>`   : is groter dan?
-- `<=`  : is kleiner dan of gelijk aan?
-- `>=`  : is groter dan of gelijk aan?
+- `==` : is gelijk aan?
+- `!=` : is niet gelijk aan?
+- `<` : is kleiner dan?
+- `>` : is groter dan?
+- `<=` : is kleiner dan of gelijk aan?
+- `>=` : is groter dan of gelijk aan?
 
 **Belangrijke val:** verwar `=` niet met `==`.
 
@@ -80,6 +82,7 @@ print(score != 0)   # True
 ## 3. De `if`‑statement: je eerste poort
 
 Een `if`‑statement is zoals een security gate:
+
 - als de condition `True` is, gaat Python binnen en runt hij de code.
 - als het `False` is, slaat hij dat blok over.
 
@@ -135,6 +138,7 @@ else:
 ## 5. `elif`: meer dan twee opties
 
 Soms heeft het leven meer dan “ja” of “nee”. Bijvoorbeeld punten:
+
 - 16+ → excellent,
 - 12–15 → goed,
 - 10–11 → net geslaagd,
@@ -185,7 +189,7 @@ Echte beslissingen hebben vaak **meer dan één** voorwaarde:
 Python heeft drie logische operatoren:
 
 - `and` – alle conditions moeten `True` zijn.
-- `or`  – minstens één condition moet `True` zijn.
+- `or` – minstens één condition moet `True` zijn.
 - `not` – keert `True` ↔ `False` om.
 
 ### `and`: alles moet waar zijn
@@ -231,6 +235,7 @@ print(can_play)
 ```
 
 Lees het zo:
+
 - Huiswerk moet af zijn.
 - EN (het is vóór 22:00 OF ouders zijn nog niet thuis).
 

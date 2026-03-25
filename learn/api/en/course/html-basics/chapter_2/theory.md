@@ -9,6 +9,7 @@ Everyday example: think of a pencil and a sketchbook. The pencil is your editor 
 ---
 
 ## Quick steps to create your first HTML file:
+
 - Open your editor and create a file named `index.html`.
 - Add the basic HTML skeleton and a small heading.
 - Save and open the file in your browser to see the result.
@@ -18,13 +19,13 @@ Here is a basic HTML template to get you started:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My first html page</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello World!</h1>
-</body>
+  </body>
 </html>
 ```

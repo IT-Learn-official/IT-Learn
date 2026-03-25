@@ -31,4 +31,3 @@ Create a simple code-breaking game using two classes.
   - `"CodeBreaker(name='Neo', attempts=3)"`.
 - Give `CodeBreaker` a `history` list to remember every guessed number.
 - At the end of the game, print the full guess history.
-

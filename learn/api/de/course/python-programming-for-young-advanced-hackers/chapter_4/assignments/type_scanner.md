@@ -1,9 +1,11 @@
 # Mission: Type-Scanner
 
 Ziel
+
 - Erstelle Variablen mit unterschiedlichen Datentypen und gib jeweils den Wert und `type(...)` aus.
 
 Schritte
+
 1. Öffne `attachments/type_scanner.py`.
 2. Erstelle mindestens 4 Variablen mit unterschiedlichen Typen:
    - 1 `int` (z. B. `42`)
@@ -13,7 +15,7 @@ Schritte
 3. Drucke pro Variable den Wert und den Typ mit `type()`.
 
 Checkliste
+
 - [ ] Mindestens 4 Variablen, alle mit unterschiedlichen Typen.
 - [ ] Mindestens 4 Zeilen Output mit Wert + `type(...)`.
 - [ ] Script läuft ohne Fehler.
-

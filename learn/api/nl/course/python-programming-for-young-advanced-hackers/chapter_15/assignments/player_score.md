@@ -18,4 +18,3 @@ Create a Player class that can track and change a score.
 
 - Inside methods, always use `self.score`, not just `score`.
 - Use `self.score += points` to add points.
-

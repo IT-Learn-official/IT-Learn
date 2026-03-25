@@ -38,4 +38,3 @@ Coins after bonus: 15
 ```
 
 Tip: If you are stuck, print the `type(...)` of a variable to see what it is right now.
-

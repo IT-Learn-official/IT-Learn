@@ -12,4 +12,3 @@ Turn your greeting code into a reusable function.
 - Remember to use `def greet(name):` to define the function.
 - Inside the function, use `print` with the `name` parameter.
 - At the bottom of the file, call `greet("Alice")`, `greet("Bob")`, etc.
-

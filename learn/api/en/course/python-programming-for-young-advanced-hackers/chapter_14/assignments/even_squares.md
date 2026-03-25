@@ -12,4 +12,3 @@ Use a list comprehension to get the squares of only the even numbers.
 
 - Remember the pattern: `[expression for item in iterable if condition]`.
 - Use `n % 2 == 0` to test if `n` is even.
-

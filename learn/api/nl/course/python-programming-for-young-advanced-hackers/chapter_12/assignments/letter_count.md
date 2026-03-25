@@ -16,4 +16,3 @@ Count how many times a certain letter appears in a word.
 
 - Use a counter variable, for example `count = 0` before the loop.
 - Inside the loop, if `ch == target_letter`, increase the counter.
-

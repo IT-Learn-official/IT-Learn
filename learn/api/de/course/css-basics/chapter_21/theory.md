@@ -22,27 +22,32 @@ selector {
 ## 2) Selektor-Typen
 
 ### Basis-Selektoren
+
 - `*` (alle Elemente)
 - `p`, `h1`, `button` (Element-Selektor)
 - `.card`, `.menu-item` (Class-Selektor)
 - `#header`, `#main` (ID-Selektor)
 
 ### Gruppieren
+
 - `h1, h2, h3`
 
 ### Beziehungs-Selektoren
+
 - `div p` (descendant)
 - `ul > li` (direct child)
 - `h2 + p` (next sibling)
 - `h2 ~ p` (general sibling)
 
 ### Attribute-Selektoren
+
 - `[disabled]`
 - `[type="text"]`
 - `[href^="https"]`
 - `[class*="btn"]`
 
 ### Pseudo-Classes (Zustand)
+
 - `:hover`
 - `:focus`
 - `:active`
@@ -53,6 +58,7 @@ selector {
 - `:not(...)`
 
 ### Pseudo-Elements (Teil eines Elements)
+
 - `::before`
 - `::after`
 - `::first-letter`
@@ -115,12 +121,14 @@ selector {
 ## 7) Layout-Properties
 
 ### Display und Position
+
 - `display`
 - `position`
 - `top`, `right`, `bottom`, `left`
 - `z-index`
 
 ### Flexbox
+
 - `display: flex`
 - `flex-direction`
 - `flex-wrap`
@@ -131,6 +139,7 @@ selector {
 - `flex-grow`, `flex-shrink`, `flex-basis`
 
 ### Grid
+
 - `display: grid`
 - `grid-template-columns`
 - `grid-template-rows`
@@ -188,6 +197,7 @@ selector {
 Du musst nicht alles auswendig können.
 
 Ein guter Weg ist:
+
 1. Selektoren lernen
 2. Abstände und Text lernen
 3. Layout lernen (Flexbox und Grid)

@@ -9,6 +9,7 @@ selector {
 ```
 
 Easy meanings:
+
 - selector = what you pick
 - property = what you change
 - value = new setting
@@ -24,6 +25,7 @@ h1 {
 ```
 
 Here:
+
 - h1 picks all h1 titles
 - color changes text color
 - font-size changes text size

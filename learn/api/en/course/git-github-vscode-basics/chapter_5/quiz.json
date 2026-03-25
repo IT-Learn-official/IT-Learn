@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "What does `git clone` do?",
       "options": [
-        { "id": "a", "label": "Deletes a repository from GitHub", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Deletes a repository from GitHub",
+          "isCorrect": false
+        },
         { "id": "b", "label": "Creates a commit message", "isCorrect": false },
-        { "id": "c", "label": "Renames your branch to main", "isCorrect": false },
-        { "id": "d", "label": "Copies a remote repository to your computer", "isCorrect": true }
+        {
+          "id": "c",
+          "label": "Renames your branch to main",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Copies a remote repository to your computer",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Cloning downloads a repository so you can work on it locally.",
@@ -29,9 +41,21 @@
       "type": "single-choice",
       "prompt": "In Git, what is `origin` usually used for?",
       "options": [
-        { "id": "a", "label": "A special branch that cannot be changed", "isCorrect": false },
-        { "id": "b", "label": "A Git command that stages files", "isCorrect": false },
-        { "id": "c", "label": "The default nickname for the main remote", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "A special branch that cannot be changed",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A Git command that stages files",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The default nickname for the main remote",
+          "isCorrect": true
+        },
         { "id": "d", "label": "A file extension", "isCorrect": false }
       ],
       "explanations": {
@@ -49,10 +73,26 @@
       "type": "single-choice",
       "prompt": "What does `git push` do?",
       "options": [
-        { "id": "a", "label": "Downloads commits from the remote", "isCorrect": false },
-        { "id": "b", "label": "Sends your local commits to the remote", "isCorrect": true },
-        { "id": "c", "label": "Creates a new `.gitignore` file", "isCorrect": false },
-        { "id": "d", "label": "Turns your code into a website", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Downloads commits from the remote",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sends your local commits to the remote",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Creates a new `.gitignore` file",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Turns your code into a website",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Push uploads your commits to the remote repository.",
@@ -69,10 +109,22 @@
       "type": "single-choice",
       "prompt": "What does `git pull` do?",
       "options": [
-        { "id": "a", "label": "Brings remote commits into your local branch", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Brings remote commits into your local branch",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Deletes your last commit", "isCorrect": false },
-        { "id": "c", "label": "Forces everyone to use your code", "isCorrect": false },
-        { "id": "d", "label": "Creates a brand new repository", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Forces everyone to use your code",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Creates a brand new repository",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Pull updates your local branch with commits from the remote.",
@@ -86,4 +138,3 @@
     }
   ]
 }
-

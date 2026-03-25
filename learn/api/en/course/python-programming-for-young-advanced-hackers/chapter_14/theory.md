@@ -3,6 +3,7 @@
 Welcome, hacker. You’ve learned how to loop like a champ, but writing full `for` loops for every tiny thing can start to feel like doing extra homework.
 
 Python has some **pro‑level shortcuts** for working with data:
+
 - build new lists in one line,
 - filter values without writing long loops,
 - process two lists in parallel like they’re zipped together.
@@ -42,7 +43,8 @@ upper_hostnames = [host.upper() for host in hostnames]
 print(upper_hostnames)
 ```
 
-Same result, less boilerplate. It reads almost like English: 
+Same result, less boilerplate. It reads almost like English:
+
 > “`host.upper()` for each `host` in `hostnames`.”
 
 > Key takeaway: Comprehensions are just compact loops for building new collections.
@@ -167,7 +169,7 @@ privileged = [p for p in ports if is_privileged_port(p)]
 
 ## 5. `lambda`: Tiny Anonymous Functions
 
-Sometimes you need a super small function, just once. 
+Sometimes you need a super small function, just once.
 Instead of writing:
 
 ```python
@@ -190,6 +192,7 @@ doubled = [x * 2 for x in numbers]
 ```
 
 So when should you use `lambda`?
+
 - quick throwaway logic,
 - when some library expects “a function” and you don’t want to name it.
 

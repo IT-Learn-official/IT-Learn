@@ -2,6 +2,7 @@
 
 Semantisches HTML verwendet aussagekräftige Tags, um Inhalte zu strukturieren.
 Arten semantischer Elemente:
+
 - `<header>`: Einleitender Inhalt, oft mit Logo, Seitentitel und Navigation.
 - `<nav>`: Navigationslinks.
 - `<main>`: Hauptinhalt der Seite, pro Seite einzigartig.
@@ -10,6 +11,7 @@ Arten semantischer Elemente:
 - `<footer>`: Footer-Inhalt, oft mit Copyright und Kontaktinfos.
 
 So wird semantisches HTML verwendet (Beispiel):
+
 ```html
 <header>
   <h1>My Website</h1>

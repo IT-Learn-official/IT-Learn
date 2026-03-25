@@ -32,6 +32,7 @@ dist/
 ```
 
 This way, git would ignore:
+
 - `node_modules/` (huge folder with dependencies)
 - `.env` (file with secrets)
 - `dist/` (compiled code you don't edit)

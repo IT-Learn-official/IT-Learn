@@ -1,6 +1,6 @@
 # Mission: String vs Number Detective
 
-Some values *look* like numbers but are actually **strings**. Your job is to be a data type detective and convert them correctly.
+Some values _look_ like numbers but are actually **strings**. Your job is to be a data type detective and convert them correctly.
 
 ## Starter idea
 
@@ -40,4 +40,3 @@ When you run your script, you should see:
 - The converted numbers.
 - A correct total.
 - At least one friendly sentence that glues text and numbers together **without** causing a `TypeError`.
-

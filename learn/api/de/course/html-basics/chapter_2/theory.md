@@ -9,6 +9,7 @@ Alltagsvergleich: Stell dir einen Bleistift und ein Skizzenbuch vor. Der Bleisti
 ---
 
 ## Schnelle Schritte für deine erste HTML-Datei:
+
 - Öffne deinen Editor und erstelle eine Datei namens `index.html`.
 - Füge das grundlegende HTML-Grundgerüst ein und eine kleine Überschrift.
 - Speichere und öffne die Datei im Browser, um das Ergebnis zu sehen.
@@ -18,13 +19,13 @@ Hier ist eine einfache HTML-Vorlage zum Start:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My first html page</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello World!</h1>
-</body>
+  </body>
 </html>
 ```

@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Why are branches useful?",
       "options": [
-        { "id": "a", "label": "They let you work on changes without breaking the main branch", "isCorrect": true },
-        { "id": "b", "label": "They delete old commits automatically", "isCorrect": false },
-        { "id": "c", "label": "They only exist on GitHub, not locally", "isCorrect": false },
-        { "id": "d", "label": "They are required to use Git at all", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "They let you work on changes without breaking the main branch",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "They delete old commits automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "They only exist on GitHub, not locally",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "They are required to use Git at all",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Branches are separate lines of work that keep the main branch stable.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "What does `git switch -c feature/x` do?",
       "options": [
-        { "id": "a", "label": "Deletes the current branch", "isCorrect": false },
-        { "id": "b", "label": "Creates a new branch and switches to it", "isCorrect": true },
-        { "id": "c", "label": "Commits all files automatically", "isCorrect": false },
-        { "id": "d", "label": "Pushes your branch to GitHub", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Deletes the current branch",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Creates a new branch and switches to it",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Commits all files automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Pushes your branch to GitHub",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`-c` means create. `switch` changes your current branch.",
@@ -49,7 +81,11 @@
       "type": "single-choice",
       "prompt": "What does it mean to merge a branch?",
       "options": [
-        { "id": "a", "label": "Combine commits from one branch into another", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Combine commits from one branch into another",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Rename a file", "isCorrect": false },
         { "id": "c", "label": "Upload images to GitHub", "isCorrect": false },
         { "id": "d", "label": "Erase your commit history", "isCorrect": false }
@@ -69,9 +105,17 @@
       "type": "single-choice",
       "prompt": "When does a merge conflict usually happen?",
       "options": [
-        { "id": "a", "label": "When your monitor is too small", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "When your monitor is too small",
+          "isCorrect": false
+        },
         { "id": "b", "label": "When you run `git status`", "isCorrect": false },
-        { "id": "c", "label": "When two branches change the same lines in a file", "isCorrect": true },
+        {
+          "id": "c",
+          "label": "When two branches change the same lines in a file",
+          "isCorrect": true
+        },
         { "id": "d", "label": "When GitHub is offline", "isCorrect": false }
       ],
       "explanations": {
@@ -86,4 +130,3 @@
     }
   ]
 }
-

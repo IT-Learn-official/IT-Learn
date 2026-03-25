@@ -13,4 +13,3 @@ Give a class a friendly string representation.
 - `__str__` should return a string, not print it.
 - Inside `__str__`, you can use an f-string like:
   - `return f"Player {self.name} (score: {self.score})"`.
-

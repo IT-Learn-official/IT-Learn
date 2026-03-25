@@ -34,6 +34,7 @@ status = "Math test tomorrow… send help"
 ```
 
 Strings kunnen bevatten:
+
 - letters,
 - cijfers,
 - emoji’s,
@@ -71,6 +72,7 @@ print(command[-1])   # E (last)
 ```
 
 Zo kan je:
+
 - de eerste letter van een username checken,
 - een specifiek karakter zoeken in een wachtwoord,
 - snel inspecteren wat er in een string zit.
@@ -88,7 +90,7 @@ Als indexing één letter pakken is, dan is **slicing** een heel woord uitsnijde
 Syntax: `text[start:end]`
 
 - `start` → waar je begint (inclusief)
-- `end`   → waar je stopt (exclusief)
+- `end` → waar je stopt (exclusief)
 
 ```python
 data_packet = "ID:user_42|payload:data"
@@ -166,6 +168,7 @@ print(sanitized_log)
 ```
 
 Je kan dit ook gebruiken om:
+
 - scheldwoorden te censureren,
 - namen te anonimiseren in datasets,
 - snel messages aan te passen.

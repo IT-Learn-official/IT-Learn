@@ -9,6 +9,7 @@ selector {
 ```
 
 Eenvoudig uitgelegd:
+
 - selector = wat je selecteert
 - property = wat je verandert
 - value = de nieuwe instelling
@@ -24,6 +25,7 @@ h1 {
 ```
 
 Hier:
+
 - h1 selecteert alle h1-titels
 - color verandert de tekstkleur
 - font-size verandert de tekstgrootte

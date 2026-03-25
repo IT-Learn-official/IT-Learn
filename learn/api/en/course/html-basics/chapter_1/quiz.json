@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "What does HTML stand for?",
       "options": [
-        { "id": "lemonade", "label": "How To Make Lemonade", "isCorrect": false },
-        { "id": "missile", "label": "Hawaiian Test Missile Launcher", "isCorrect": false},
-        { "id": "hopelayout", "label": "Hope This Makes Layouts", "isCorrect": false },
-        { "id": "hypertextmarkuplanguage", "label": "HyperText Markup Language", "isCorrect": true }
+        {
+          "id": "lemonade",
+          "label": "How To Make Lemonade",
+          "isCorrect": false
+        },
+        {
+          "id": "missile",
+          "label": "Hawaiian Test Missile Launcher",
+          "isCorrect": false
+        },
+        {
+          "id": "hopelayout",
+          "label": "Hope This Makes Layouts",
+          "isCorrect": false
+        },
+        {
+          "id": "hypertextmarkuplanguage",
+          "label": "HyperText Markup Language",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "HTML stands for HyperText Markup Language.",
@@ -29,9 +45,21 @@
       "type": "single-choice",
       "prompt": "What does HTML primarily describe on a web page?",
       "options": [
-        { "id": "structure", "label": "The structure and meaning of content (headings, paragraphs, lists)", "isCorrect": true },
-        { "id": "styles", "label": "The exact colors and fonts used on the page", "isCorrect": false },
-        { "id": "server", "label": "How the server stores data", "isCorrect": false },
+        {
+          "id": "structure",
+          "label": "The structure and meaning of content (headings, paragraphs, lists)",
+          "isCorrect": true
+        },
+        {
+          "id": "styles",
+          "label": "The exact colors and fonts used on the page",
+          "isCorrect": false
+        },
+        {
+          "id": "server",
+          "label": "How the server stores data",
+          "isCorrect": false
+        },
         { "id": "database", "label": "The database schema", "isCorrect": false }
       ],
       "explanations": {
@@ -49,9 +77,21 @@
       "type": "single-choice",
       "prompt": "Which comparison is correct?",
       "options": [
-        { "id": "a1", "label": "HTML = frame, CSS = paint, JavaScript = electric wiring", "isCorrect": true },
-        { "id": "a2", "label": "HTML = paint, CSS = frame, JavaScript = wallpaper", "isCorrect": false },
-        { "id": "a3", "label": "HTML = server code, CSS = client storage, JavaScript = database", "isCorrect": false },
+        {
+          "id": "a1",
+          "label": "HTML = frame, CSS = paint, JavaScript = electric wiring",
+          "isCorrect": true
+        },
+        {
+          "id": "a2",
+          "label": "HTML = paint, CSS = frame, JavaScript = wallpaper",
+          "isCorrect": false
+        },
+        {
+          "id": "a3",
+          "label": "HTML = server code, CSS = client storage, JavaScript = database",
+          "isCorrect": false
+        },
         { "id": "a4", "label": "All three are the same", "isCorrect": false }
       ],
       "explanations": {
@@ -69,10 +109,26 @@
       "type": "single-choice",
       "prompt": "Which of these is NOT a responsibility of HTML?",
       "options": [
-        { "id": "layout", "label": "Defining the logical sections of a page", "isCorrect": false },
-        { "id": "style-tricks", "label": "Running animations and complex interactive logic", "isCorrect": true },
-        { "id": "images", "label": "Referencing images to display", "isCorrect": false },
-        { "id": "links", "label": "Creating links to other pages", "isCorrect": false }
+        {
+          "id": "layout",
+          "label": "Defining the logical sections of a page",
+          "isCorrect": false
+        },
+        {
+          "id": "style-tricks",
+          "label": "Running animations and complex interactive logic",
+          "isCorrect": true
+        },
+        {
+          "id": "images",
+          "label": "Referencing images to display",
+          "isCorrect": false
+        },
+        {
+          "id": "links",
+          "label": "Creating links to other pages",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Animations and runtime logic are the job of JavaScript, not HTML.",

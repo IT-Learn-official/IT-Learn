@@ -16,6 +16,7 @@ Tegen het einde van dit hoofdstuk kan je:
 Wanneer je een Python‑script runt, ziet de interpreter niet het hele bestand “in één keer”. Hij werkt als een detective die een dossier leest: hij start bovenaan en leest naar beneden, regel per regel. Dat voorspelbare top‑to‑bottom pad heet de **execution flow**.
 
 Bekijk dit script:
+
 ```python
 # Line 1
 print("Initializing program...")
@@ -34,6 +35,7 @@ print("New level:", level)
 ```
 
 Python voert dit in strikte volgorde uit:
+
 1. Hij print `"Initializing program..."`.
 2. Hij maakt de variabele `username` en print die.
 3. Hij maakt de variabele `level` en print die.
@@ -68,12 +70,12 @@ health = health + 50
 
 Een trace ziet er zo uit:
 
-| Line # | Code Executed | `health` value | `mana` value | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | `health = 100`, `mana = 50` | 100 | 50 | Initial state |
-| 2 | `health = health - 30` | 70 | 50 | `health` is updated |
-| 3 | `mana = mana - 20` | 70 | 30 | `mana` is updated |
-| 4 | `health = health + 50` | 120 | 30 | `health` is updated again |
+| Line # | Code Executed               | `health` value | `mana` value | Notes                     |
+| :----- | :-------------------------- | :------------- | :----------- | :------------------------ |
+| 1      | `health = 100`, `mana = 50` | 100            | 50           | Initial state             |
+| 2      | `health = health - 30`      | 70             | 50           | `health` is updated       |
+| 3      | `mana = mana - 20`          | 70             | 30           | `mana` is updated         |
+| 4      | `health = health + 50`      | 120            | 30           | `health` is updated again |
 
 Aan het einde is `health` `120` en `mana` `30`. Manueel tracen (op papier of in je hoofd) is een sterke manier om logische fouten te vinden.
 
@@ -90,6 +92,7 @@ Het doel: toon de waarden van je variabelen op belangrijke momenten in de execut
 ### Scenario: een buggy berekening
 
 Stel dat deze code de totale kost moet berekenen, maar het antwoord is verkeerd:
+
 ```python
 price = 10
 quantity = 3
@@ -135,6 +138,7 @@ Door elke stap te printen, kan je exact zien waar de logische fout zit. In de or
 Error messages, of **tracebacks**, zijn geen failures. Het zijn clues. Een goede hacker leest ze aandachtig.
 
 Een traceback vertelt je drie dingen:
+
 1. **Het bestand en regelnummer** waar de error gebeurde.
 2. **De code‑regel** die de error veroorzaakte.
 3. **Het type error** (`NameError`, `TypeError`, `ValueError`, …).
@@ -147,6 +151,7 @@ NameError: name 'scor' is not defined
 ```
 
 **Forensic analyse:**
+
 - **Waar?** `my_script.py`, regel 5.
 - **Wat?** `print("Score: " + scor)`.
 - **Waarom?** `NameError`. Het programma weet niet wat `scor` is.

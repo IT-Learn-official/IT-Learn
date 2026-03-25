@@ -9,8 +9,16 @@
       "type": "single-choice",
       "prompt": "Welche Commit-Message ist am besten?",
       "options": [
-        { "id": "a", "label": "ich hab in der Schule irgendwas gemacht, hab's vergessen", "isCorrect": false },
-        { "id": "b", "label": "Fix navbar spacing on mobile", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "ich hab in der Schule irgendwas gemacht, hab's vergessen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Fix navbar spacing on mobile",
+          "isCorrect": true
+        },
         { "id": "c", "label": "Semmel", "isCorrect": false },
         { "id": "d", "label": "ich liebe Whoppers", "isCorrect": false }
       ],
@@ -29,10 +37,26 @@
       "type": "single-choice",
       "prompt": "Warum sind kleine, fokussierte Commits hilfreich?",
       "options": [
-        { "id": "a", "label": "Damit tippt deine Tastatur schneller", "isCorrect": false },
-        { "id": "b", "label": "Sie verhindern Merge-Konflikte für immer", "isCorrect": false },
-        { "id": "c", "label": "Sie sind leichter zu reviewen und leichter rückgängig zu machen", "isCorrect": true },
-        { "id": "d", "label": "Sie erstellen automatisch Pull Requests", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Damit tippt deine Tastatur schneller",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie verhindern Merge-Konflikte für immer",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie sind leichter zu reviewen und leichter rückgängig zu machen",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie erstellen automatisch Pull Requests",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Fokussierte Commits halten die Historie lesbar und machen Troubleshooting einfacher.",
@@ -49,10 +73,26 @@
       "type": "single-choice",
       "prompt": "Wofür wird eine README.md typischerweise verwendet?",
       "options": [
-        { "id": "a", "label": "Erklären, was das Projekt ist und wie man es nutzt", "isCorrect": true },
-        { "id": "b", "label": "Private API-Keys speichern", "isCorrect": false },
-        { "id": "c", "label": "Alle Code-Dateien ersetzen", "isCorrect": false },
-        { "id": "d", "label": "Gemergte Branches automatisch löschen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Erklären, was das Projekt ist und wie man es nutzt",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Private API-Keys speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alle Code-Dateien ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Gemergte Branches automatisch löschen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "READMEs dokumentieren ein Projekt für Nutzer:innen und zukünftige Contributor.",
@@ -69,10 +109,26 @@
       "type": "single-choice",
       "prompt": "Wie beschreibt man einen Git-Tag am besten?",
       "options": [
-        { "id": "a", "label": "Eine Datei, die Änderungen versteckt", "isCorrect": false },
-        { "id": "b", "label": "Ein Branch, der immer Konflikte hat", "isCorrect": false },
-        { "id": "c", "label": "Ein Tool zum Stagen von Dateien", "isCorrect": false },
-        { "id": "d", "label": "Ein benanntes Lesezeichen, das auf einen bestimmten Commit zeigt", "isCorrect": true }
+        {
+          "id": "a",
+          "label": "Eine Datei, die Änderungen versteckt",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Branch, der immer Konflikte hat",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein Tool zum Stagen von Dateien",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein benanntes Lesezeichen, das auf einen bestimmten Commit zeigt",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Tags markieren wichtige Punkte in der Historie, z. B. eine Release-Version.",
@@ -86,4 +142,3 @@
     }
   ]
 }
-

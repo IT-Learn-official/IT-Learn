@@ -98,7 +98,7 @@ In der Python‑REPL (interaktive Shell) wird dieser Return Value automatisch an
 8
 ```
 
-Die `8` ist der *Return Value* von `len("password")`.
+Die `8` ist der _Return Value_ von `len("password")`.
 
 In einem Script willst du diesen Return Value fast immer **speichern**, um ihn später zu nutzen:
 

@@ -30,14 +30,14 @@ Als hacker gebruik je zulke talen om computers instructies te geven. Die instruc
 Mensen halen dit vaak door elkaar, maar een echte hacker kent het verschil:
 
 - **Code:** de losse spreuken. De regels tekst die je in een taal zoals Python schrijft om de computer iets specifieks te laten doen.
-- **Programmeren:** het masterplan. Het is de kunst van uitzoeken *wat* je wil doen, dat opdelen in stappen, en dan de code schrijven die die stappen uitvoert.
+- **Programmeren:** het masterplan. Het is de kunst van uitzoeken _wat_ je wil doen, dat opdelen in stappen, en dan de code schrijven die die stappen uitvoert.
 
 Echte programmeurs rammen niet zomaar op een toetsenbord. Ze:
 
 1. **Plannen de missie:** “Ik ga een bot bouwen die automatisch mijn online lessen join’t.”
 2. **Verzamelen intel:** “Welke info heeft de bot nodig? De leslink? Het tijdstip?”
 3. **Maken een strategie:** breek de grote missie op in kleine, haalbare taken.
-4. **Schrijven de code:** *pas dan* schrijven ze de spreuken om het te laten gebeuren.
+4. **Schrijven de code:** _pas dan_ schrijven ze de spreuken om het te laten gebeuren.
 
 Bijvoorbeeld:
 
@@ -66,6 +66,7 @@ Talen zoals **C++ of Java** zijn alsof je een robot bouwt op basis van een plan.
 **Python** is een **geïnterpreteerde** taal. Dat is meer alsof je live met je robot praat. Je geeft één opdracht tegelijk, en die wordt meteen uitgevoerd.
 
 **Hacker-voordelen:**
+
 - **Snelheid:** je test ideeën meteen. Geen wachttijd voor een lange build.
 - **Flexibiliteit:** pas je code “on the fly” aan en zie direct resultaat. Perfect om te experimenteren en snel iets in elkaar te hacken.
 
@@ -75,9 +76,10 @@ Talen zoals **C++ of Java** zijn alsof je een robot bouwt op basis van een plan.
 
 ## Over Python
 
-Python werd in de late jaren 80 gemaakt door **Guido van Rossum**. Hij noemde het naar de Britse comedygroep *Monty Python’s Flying Circus*, omdat hij wou dat programmeren leuk zou zijn. (Spoiler: dat is het.)
+Python werd in de late jaren 80 gemaakt door **Guido van Rossum**. Hij noemde het naar de Britse comedygroep _Monty Python’s Flying Circus_, omdat hij wou dat programmeren leuk zou zijn. (Spoiler: dat is het.)
 
 **Wat kan je met Python doen?**
+
 - Websites en webapps bouwen.
 - **Videogames** maken.
 - **Discord bots** schrijven en je social life automatiseren.
@@ -127,7 +129,7 @@ De eerste traditie voor elke beginnende hacker: de machine laten erkennen dat ji
 print("Hello, World!")
 ```
 
-Als je dit runt, toont de computer `Hello, World!` op het scherm. Het is je eerste stap om de machine te laten doen wat *jij* wil.
+Als je dit runt, toont de computer `Hello, World!` op het scherm. Het is je eerste stap om de machine te laten doen wat _jij_ wil.
 
 In de komende practice-missies maak je dit script en leer je ook een kapotte versie debuggen—zoals een echte digitale detective.
 

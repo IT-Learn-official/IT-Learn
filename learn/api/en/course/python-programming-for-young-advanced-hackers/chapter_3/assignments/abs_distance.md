@@ -25,4 +25,3 @@ Open `abs_distance.py` in the editor.
 - [ ] My program runs without errors.
 
 Remember: `abs(x)` is always zero or positive.
-

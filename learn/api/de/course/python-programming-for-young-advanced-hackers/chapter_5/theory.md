@@ -16,6 +16,7 @@ Am Ende dieses Kapitels kannst du:
 Wenn du ein Python‑Script ausführst, „sieht“ der Interpreter nicht die ganze Datei auf einmal. Er arbeitet wie ein Detektiv, der eine Akte liest: Er startet **oben** und geht **nach unten**, Zeile für Zeile. Dieser verlässliche Top‑Down‑Pfad ist der **Execution Flow**.
 
 Schau dir dieses Script an:
+
 ```python
 # Line 1
 print("Initializing program...")
@@ -34,6 +35,7 @@ print("New level:", level)
 ```
 
 Python führt es in strikter Reihenfolge aus:
+
 1. Es printet `"Initializing program..."`.
 2. Es erstellt `username` und printet den Wert.
 3. Es erstellt `level` und printet den Wert.
@@ -68,12 +70,12 @@ health = health + 50
 
 Ein Trace sieht so aus:
 
-| Line # | Code Executed | `health` value | `mana` value | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | `health = 100`, `mana = 50` | 100 | 50 | Initial state |
-| 2 | `health = health - 30` | 70 | 50 | `health` is updated |
-| 3 | `mana = mana - 20` | 70 | 30 | `mana` is updated |
-| 4 | `health = health + 50` | 120 | 30 | `health` is updated again |
+| Line # | Code Executed               | `health` value | `mana` value | Notes                     |
+| :----- | :-------------------------- | :------------- | :----------- | :------------------------ |
+| 1      | `health = 100`, `mana = 50` | 100            | 50           | Initial state             |
+| 2      | `health = health - 30`      | 70             | 50           | `health` is updated       |
+| 3      | `mana = mana - 20`          | 70             | 30           | `mana` is updated         |
+| 4      | `health = health + 50`      | 120            | 30           | `health` is updated again |
 
 Am Ende ist `health` `120` und `mana` `30`. Manuelles Tracing (am Papier oder im Kopf) ist extrem hilfreich, um Logikfehler zu finden.
 
@@ -90,6 +92,7 @@ Ziel: Werte und Typen deiner Variablen an wichtigen Stellen im Execution Flow si
 ### Szenario: eine buggy Berechnung
 
 Stell dir vor, dieser Code soll die Gesamtkosten berechnen, liefert aber das falsche Ergebnis:
+
 ```python
 price = 10
 quantity = 3
@@ -135,6 +138,7 @@ Wenn du jeden Schritt ausgibst, siehst du sofort, wo der Logikfehler steckt. Im 
 Fehlermeldungen, also **Tracebacks**, sind keine Niederlagen. Das sind Hinweise. Ein guter Hacker liest sie genau.
 
 Ein Traceback sagt dir drei Dinge:
+
 1. **Datei und Zeilennummer**, wo der Fehler passiert ist.
 2. **Die Codezeile**, die den Fehler ausgelöst hat.
 3. **Den Fehlertyp** (`NameError`, `TypeError`, `ValueError`, …).
@@ -147,6 +151,7 @@ NameError: name 'scor' is not defined
 ```
 
 **Forensik‑Analyse:**
+
 - **Wo?** `my_script.py`, Zeile 5.
 - **Was?** `print("Score: " + scor)`.
 - **Warum?** `NameError`. Das Programm kennt `scor` nicht.

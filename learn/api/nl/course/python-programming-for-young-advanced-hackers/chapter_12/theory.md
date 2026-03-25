@@ -3,11 +3,13 @@
 Welkom, hacker. Je hebt je programma’s geleerd om te **denken** met `if/else`. Nu is het tijd om ze te laten **grinden**.
 
 Loops zijn hoe je tegen Python zegt:
+
 - “Doe dit 10 keer.”
 - “Doe dit voor elke target in de lijst.”
 - “Blijf doorgaan tot we klaar zijn.”
 
 In plaats van dezelfde code 100 keer te copy‑pasten, schrijf je ze **één keer** en laat je Python het herhalen. Zo kan je:
+
 - hele netwerken scannen,
 - wachtwoorden brute‑forcen (ethisch—in een lab),
 - grote log files verwerken,
@@ -29,9 +31,11 @@ Tegen het einde van dit hoofdstuk kan je:
 Een **loop** is een structuur die een blok code herhaalt zolang een regel zegt: “ga door”.
 
 Zonder loops:
+
 - Als je 100 servers wil pingen, schrijf je 100 regels.
 
 Met loops:
+
 - Je schrijft de ping‑code één keer,
 - zegt “doe dit 100 keer”,
 - en gaat ondertussen een koek pakken.

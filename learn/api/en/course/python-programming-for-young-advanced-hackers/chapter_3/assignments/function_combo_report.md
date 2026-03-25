@@ -38,4 +38,3 @@ Open `function_combo_report.py` in the editor.
 - [ ] My program runs without errors.
 
 You just built a tiny dashboard powered by functions!
-

@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "What is the main purpose of version control?",
       "options": [
-        { "id": "a", "label": "Make your computer run faster", "isCorrect": false },
-        { "id": "b", "label": "Replace the need for folders", "isCorrect": false },
-        { "id": "c", "label": "Track changes and keep history of files", "isCorrect": true },
-        { "id": "d", "label": "Automatically fix bugs in your code", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Make your computer run faster",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Replace the need for folders",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Track changes and keep history of files",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Automatically fix bugs in your code",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Version control keeps a history of changes so you can review and undo work safely.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Which statement is correct?",
       "options": [
-        { "id": "a", "label": "Git is a website, and GitHub is a tool on your computer", "isCorrect": false },
-        { "id": "b", "label": "Git is a tool, and GitHub is a website that hosts repos", "isCorrect": true },
-        { "id": "c", "label": "Git and GitHub are the exact same thing", "isCorrect": false },
-        { "id": "d", "label": "You must use GitHub to use Git", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Git is a website, and GitHub is a tool on your computer",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Git is a tool, and GitHub is a website that hosts repos",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Git and GitHub are the exact same thing",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "You must use GitHub to use Git",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Git runs on your computer; GitHub is a popular place to store and share Git repositories online.",
@@ -51,8 +83,16 @@
       "options": [
         { "id": "a", "label": "A folder on your desktop", "isCorrect": false },
         { "id": "b", "label": "A password for GitHub", "isCorrect": false },
-        { "id": "c", "label": "A file that deletes old code", "isCorrect": false },
-        { "id": "d", "label": "A saved snapshot of your project with a message", "isCorrect": true }
+        {
+          "id": "c",
+          "label": "A file that deletes old code",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A saved snapshot of your project with a message",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "A commit records a point-in-time snapshot of your project, plus a message describing it.",
@@ -86,4 +126,3 @@
     }
   ]
 }
-

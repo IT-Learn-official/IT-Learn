@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Was macht `git clone`?",
       "options": [
-        { "id": "a", "label": "Ein Repository von GitHub löschen", "isCorrect": false },
-        { "id": "b", "label": "Eine Commit-Nachricht erstellen", "isCorrect": false },
-        { "id": "c", "label": "Deinen Branch in main umbenennen", "isCorrect": false },
-        { "id": "d", "label": "Ein Remote-Repository auf deinen Computer kopieren", "isCorrect": true }
+        {
+          "id": "a",
+          "label": "Ein Repository von GitHub löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Eine Commit-Nachricht erstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Deinen Branch in main umbenennen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Remote-Repository auf deinen Computer kopieren",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Clonen lädt ein Repository herunter, damit du lokal daran arbeiten kannst.",
@@ -29,9 +45,17 @@
       "type": "single-choice",
       "prompt": "Wofür wird `origin` in Git üblicherweise verwendet?",
       "options": [
-        { "id": "a", "label": "Ein spezieller Branch, der nicht geändert werden kann", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Ein spezieller Branch, der nicht geändert werden kann",
+          "isCorrect": false
+        },
         { "id": "b", "label": "Ein Git-Befehl zum Stagen", "isCorrect": false },
-        { "id": "c", "label": "Der Standard-Spitzname für das wichtigste Remote", "isCorrect": true },
+        {
+          "id": "c",
+          "label": "Der Standard-Spitzname für das wichtigste Remote",
+          "isCorrect": true
+        },
         { "id": "d", "label": "Eine Dateiendung", "isCorrect": false }
       ],
       "explanations": {
@@ -49,10 +73,26 @@
       "type": "single-choice",
       "prompt": "Was macht `git push`?",
       "options": [
-        { "id": "a", "label": "Commits vom Remote herunterladen", "isCorrect": false },
-        { "id": "b", "label": "Deine lokalen Commits zum Remote senden", "isCorrect": true },
-        { "id": "c", "label": "Eine neue `.gitignore`-Datei erstellen", "isCorrect": false },
-        { "id": "d", "label": "Deinen Code in eine Website verwandeln", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Commits vom Remote herunterladen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Deine lokalen Commits zum Remote senden",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Eine neue `.gitignore`-Datei erstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Deinen Code in eine Website verwandeln",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Push lädt deine Commits in das Remote-Repository hoch.",
@@ -69,10 +109,26 @@
       "type": "single-choice",
       "prompt": "Was macht `git pull`?",
       "options": [
-        { "id": "a", "label": "Remote-Commits in deinen lokalen Branch holen", "isCorrect": true },
-        { "id": "b", "label": "Deinen letzten Commit löschen", "isCorrect": false },
-        { "id": "c", "label": "Alle zwingen, deinen Code zu verwenden", "isCorrect": false },
-        { "id": "d", "label": "Ein brandneues Repository erstellen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Remote-Commits in deinen lokalen Branch holen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Deinen letzten Commit löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alle zwingen, deinen Code zu verwenden",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein brandneues Repository erstellen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Pull aktualisiert deinen lokalen Branch mit Commits vom Remote.",
@@ -86,4 +142,3 @@
     }
   ]
 }
-

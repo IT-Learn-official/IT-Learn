@@ -5,6 +5,7 @@ Willkommen, Hacker. Bis jetzt sind deine Scripts meistens einem festen Pfad gefo
 In diesem Kapitel gibst du deinen Programmen ein echtes **Gehirn**.
 
 Mit **Conditional Logic** (`if / elif / else`) kann dein Code:
+
 - auf User‑Input reagieren,
 - sich anders verhalten, wenn ein Login scheitert,
 - je nach Prüfungsergebnis andere Messages zeigen,
@@ -25,6 +26,7 @@ Am Ende dieses Kapitels kannst du:
 Eine **Bedingung** ist ein Ausdruck, der mit `True` oder `False` beantwortet werden kann.
 
 Beispiele:
+
 - Ist die Firewall aktiv?
 - Ist der Score mindestens 10?
 - Ist der Username gleich `"admin"`?
@@ -51,12 +53,12 @@ Später lässt du `== True` meistens weg und schreibst `if is_open:` direkt – 
 
 Diese Operatoren vergleichen zwei Werte und geben einen Boolean zurück:
 
-- `==`  : ist gleich?
-- `!=`  : ist nicht gleich?
-- `<`   : ist kleiner?
-- `>`   : ist größer?
-- `<=`  : ist kleiner oder gleich?
-- `>=`  : ist größer oder gleich?
+- `==` : ist gleich?
+- `!=` : ist nicht gleich?
+- `<` : ist kleiner?
+- `>` : ist größer?
+- `<=` : ist kleiner oder gleich?
+- `>=` : ist größer oder gleich?
 
 **Wichtige Falle:** Verwechsle `=` nicht mit `==`.
 
@@ -80,6 +82,7 @@ print(score != 0)   # True
 ## 3. Das `if`‑Statement: dein erstes Gate
 
 Ein `if` ist wie ein Security‑Gate:
+
 - ist die Bedingung `True`, geht Python hinein und führt den Block aus.
 - ist sie `False`, überspringt es den Block.
 
@@ -135,6 +138,7 @@ else:
 ## 5. `elif`: mehr als zwei Optionen
 
 Manchmal gibt’s mehr als „ja“ oder „nein“. Beispiel Noten:
+
 - 16+ → excellent,
 - 12–15 → gut,
 - 10–11 → knapp bestanden,
@@ -185,7 +189,7 @@ Reale Entscheidungen brauchen oft **mehr als eine** Bedingung:
 Python hat drei logische Operatoren:
 
 - `and` – alle Bedingungen müssen `True` sein.
-- `or`  – mindestens eine Bedingung muss `True` sein.
+- `or` – mindestens eine Bedingung muss `True` sein.
 - `not` – kippt `True` ↔ `False`.
 
 ### `and`: alles muss stimmen
@@ -231,6 +235,7 @@ print(can_play)
 ```
 
 Lies es so:
+
 - Hausaufgaben müssen fertig sein.
 - UND (vor 22:00 ODER Eltern noch nicht zu Hause).
 

@@ -37,4 +37,3 @@ Simulate a digital vault that tracks password attempts and locks after too many 
   - `"Vault(locked=True, failed_attempts=3)"`.
 - Add a method `clear_failed_attempts(self)` that empties `self.failed_attempts` and sets `self.locked` back to `False`.
 - Store a list of raw guess strings and loop over them, creating an `Attempt` object in a `for` loop for each guess.
-

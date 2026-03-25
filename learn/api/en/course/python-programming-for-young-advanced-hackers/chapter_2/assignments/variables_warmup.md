@@ -53,4 +53,3 @@ In this mission, you'll create a few variables and print them out like a mini "s
   What does it show now?
 
 > Achievement idea: You just built your first tiny **game status panel** using Python variables.
-

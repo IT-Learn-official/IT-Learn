@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_10",
-    "kind":  "assessment",
-    "title":  "Hoofdstuk 10 - Achtergronden toevoegen Check",
-    "description":  "Controleer je kennis:  Kleuren, gradients en afbeeldingen als achtergrond.",
-    "questions":  [
-                      {
-                          "id":  "q1-gradient",
-                          "type":  "single-choice",
-                          "prompt":  "Which function creates a gradient background in CSS?",
-                          "options":  [
-                                          {
-                                              "id":  "a",
-                                              "label":  "color-mix()",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "b",
-                                              "label":  "paint-gradient()",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "c",
-                                              "label":  "linear-gradient()",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "d",
-                                              "label":  "bg-gradient()",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "linear-gradient() is used to create gradient backgrounds.",
-                                               "byOptionId":  {
-                                                                  "a":  "Not quite. linear-gradient() is used to create gradient backgrounds.",
-                                                                  "b":  "Not quite. linear-gradient() is used to create gradient backgrounds.",
-                                                                  "c":  "Correct. linear-gradient() is used to create gradient backgrounds.",
-                                                                  "d":  "Not quite. linear-gradient() is used to create gradient backgrounds."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q2-bg-cover",
-                          "type":  "single-choice",
-                          "prompt":  "What does background-size: cover usually do?",
-                          "options":  [
-                                          {
-                                              "id":  "a",
-                                              "label":  "Repeats the image many times",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "b",
-                                              "label":  "Stretches image to fill height only",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "c",
-                                              "label":  "Scales image to cover the element",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "d",
-                                              "label":  "Hides the image",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "It scales the background image to cover the entire element area.",
-                                               "byOptionId":  {
-                                                                  "a":  "Not quite. It scales the background image to cover the entire element area.",
-                                                                  "b":  "Not quite. It scales the background image to cover the entire element area.",
-                                                                  "c":  "Correct. It scales the background image to cover the entire element area.",
-                                                                  "d":  "Not quite. It scales the background image to cover the entire element area."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_10",
+
+  "kind": "assessment",
+
+  "title": "Hoofdstuk 10 - Achtergronden toevoegen Check",
+
+  "description": "Controleer je kennis:  Kleuren, gradients en afbeeldingen als achtergrond.",
+
+  "questions": [
+    {
+      "id": "q1-gradient",
+
+      "type": "single-choice",
+
+      "prompt": "Which function creates a gradient background in CSS?",
+
+      "options": [
+        {
+          "id": "a",
+
+          "label": "color-mix()",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "b",
+
+          "label": "paint-gradient()",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "c",
+
+          "label": "linear-gradient()",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "d",
+
+          "label": "bg-gradient()",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "linear-gradient() is used to create gradient backgrounds.",
+
+        "byOptionId": {
+          "a": "Not quite. linear-gradient() is used to create gradient backgrounds.",
+
+          "b": "Not quite. linear-gradient() is used to create gradient backgrounds.",
+
+          "c": "Correct. linear-gradient() is used to create gradient backgrounds.",
+
+          "d": "Not quite. linear-gradient() is used to create gradient backgrounds."
+        }
+      }
+    },
+
+    {
+      "id": "q2-bg-cover",
+
+      "type": "single-choice",
+
+      "prompt": "What does background-size: cover usually do?",
+
+      "options": [
+        {
+          "id": "a",
+
+          "label": "Repeats the image many times",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "b",
+
+          "label": "Stretches image to fill height only",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "c",
+
+          "label": "Scales image to cover the element",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "d",
+
+          "label": "Hides the image",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "It scales the background image to cover the entire element area.",
+
+        "byOptionId": {
+          "a": "Not quite. It scales the background image to cover the entire element area.",
+
+          "b": "Not quite. It scales the background image to cover the entire element area.",
+
+          "c": "Correct. It scales the background image to cover the entire element area.",
+
+          "d": "Not quite. It scales the background image to cover the entire element area."
+        }
+      }
+    }
+  ]
 }

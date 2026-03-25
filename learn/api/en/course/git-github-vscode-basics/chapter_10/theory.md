@@ -42,4 +42,3 @@ git revert <commit-id>
 git stash
 git stash pop
 ```
-

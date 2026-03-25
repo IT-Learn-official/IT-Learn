@@ -5,6 +5,7 @@ Barrierefreiheit (Accessibility) sorgt dafür, dass alle User – auch Menschen 
 ---
 
 Ein paar Gründe, warum Barrierefreiheit wichtig ist:
+
 1. Inklusion: Menschen mit Behinderungen können Informationen und Services online nutzen.
 
 2. Rechtliche Vorgaben: In vielen Ländern gibt es Gesetze, die barrierefreie Websites verlangen.

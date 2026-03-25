@@ -21,7 +21,7 @@ The second is internal CSS. You write styles in a `<style>` tag in the same file
 The third is external CSS. You put styles in a separate file like `styles.css`.
 
 ```html
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css" />
 ```
 
 For real projects, external CSS is usually the best choice because it keeps your HTML clean.

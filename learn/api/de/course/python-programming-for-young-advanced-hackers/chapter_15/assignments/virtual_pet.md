@@ -17,4 +17,3 @@ Create a simple virtual pet that can get hungry and be fed.
 
 - To keep hunger from going below 0, you can use:
   - `self.hunger = max(0, self.hunger - amount)`.
-

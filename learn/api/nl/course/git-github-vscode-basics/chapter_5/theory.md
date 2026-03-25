@@ -1,6 +1,7 @@
 # GitHub remotes: clone, push, pull
 
 Je repo kan op twee plaatsen staan:
+
 - lokaal (je computer)
 - remote (GitHub)
 

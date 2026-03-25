@@ -51,4 +51,3 @@ You're going to use **integer division** (`//`) and **remainder** (`%`) to figur
 - What happens when `total_coins` is exactly divisible by `players` (like 20 and 5)?
 
 > Achievement idea: You just turned Python into a **loot sharing calculator** for your game.
-

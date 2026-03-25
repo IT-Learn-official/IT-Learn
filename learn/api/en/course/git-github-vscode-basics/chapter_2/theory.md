@@ -1,6 +1,7 @@
 # Setting Up Git and VS Code
 
 You can use Git in two places:
+
 - the terminal (commands)
 - VS Code (buttons + diffs)
 
@@ -18,11 +19,13 @@ It is just your commit signature.
 ---
 
 In VS Code, open **Source Control** to:
+
 - see changed files
 - stage changes
 - write commit messages
 
 Diff colors usually mean:
+
 - green = added
 - red = removed
 

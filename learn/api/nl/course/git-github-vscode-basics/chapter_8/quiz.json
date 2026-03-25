@@ -9,8 +9,16 @@
       "type": "single-choice",
       "prompt": "Welke commitboodschap is het best?",
       "options": [
-        { "id": "a", "label": "ik deed wat dingen op school k was het vergeten", "isCorrect": false },
-        { "id": "b", "label": "Fix navbar spacing on mobile", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "ik deed wat dingen op school k was het vergeten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Fix navbar spacing on mobile",
+          "isCorrect": true
+        },
         { "id": "c", "label": "boterham", "isCorrect": false },
         { "id": "d", "label": "ik hou van whoppers", "isCorrect": false }
       ],
@@ -29,10 +37,26 @@
       "type": "single-choice",
       "prompt": "Waarom zijn kleine, gefocuste commits handig?",
       "options": [
-        { "id": "a", "label": "Je toetsenbord typt er sneller door", "isCorrect": false },
-        { "id": "b", "label": "Ze voorkomen mergeconflicten voor altijd", "isCorrect": false },
-        { "id": "c", "label": "Ze zijn makkelijker te reviewen en makkelijker ongedaan te maken", "isCorrect": true },
-        { "id": "d", "label": "Ze maken automatisch pull requests", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Je toetsenbord typt er sneller door",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze voorkomen mergeconflicten voor altijd",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze zijn makkelijker te reviewen en makkelijker ongedaan te maken",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ze maken automatisch pull requests",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Gefocuste commits houden je geschiedenis leesbaar en maken problemen oplossen makkelijker.",
@@ -49,10 +73,22 @@
       "type": "single-choice",
       "prompt": "Waarvoor wordt een README.md meestal gebruikt?",
       "options": [
-        { "id": "a", "label": "Uitleggen wat het project is en hoe je het gebruikt", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Uitleggen wat het project is en hoe je het gebruikt",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Privé API-keys opslaan", "isCorrect": false },
-        { "id": "c", "label": "Alle codebestanden vervangen", "isCorrect": false },
-        { "id": "d", "label": "Gemergde branches automatisch verwijderen", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Alle codebestanden vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Gemergde branches automatisch verwijderen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "READMEs documenteren een project voor gebruikers en toekomstige bijdragers.",
@@ -69,10 +105,26 @@
       "type": "single-choice",
       "prompt": "Hoe beschrijf je een Git tag het best?",
       "options": [
-        { "id": "a", "label": "Een bestand dat wijzigingen verstopt", "isCorrect": false },
-        { "id": "b", "label": "Een branch die altijd conflicten heeft", "isCorrect": false },
-        { "id": "c", "label": "Een tool om bestanden te stagen", "isCorrect": false },
-        { "id": "d", "label": "Een benoemde bladwijzer die naar een specifieke commit wijst", "isCorrect": true }
+        {
+          "id": "a",
+          "label": "Een bestand dat wijzigingen verstopt",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een branch die altijd conflicten heeft",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een tool om bestanden te stagen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een benoemde bladwijzer die naar een specifieke commit wijst",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Tags markeren belangrijke punten in de geschiedenis, zoals een releaseversie.",
@@ -86,4 +138,3 @@
     }
   ]
 }
-

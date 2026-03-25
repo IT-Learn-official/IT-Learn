@@ -14,6 +14,7 @@ content, padding, border en margin.
 ```
 
 Denk aan een schilderij in een kader. Je kan het opdelen in 4 stukken:
+
 - Het schilderij zelf (de content)
 - De witruimte tussen schilderij en kader (de padding)
 - Het kader (de border)

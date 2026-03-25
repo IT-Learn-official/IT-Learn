@@ -24,7 +24,11 @@
           "label": "Een geheime code die Python niet kan lezen.",
           "isCorrect": false
         },
-        { "id": "d", "label": "Een lijst met alleen getallen.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Een lijst met alleen getallen.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Een string (str) stelt tekst voor: tekens die je tussen aanhalingstekens schrijft.",

@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Warum sind Branches nützlich?",
       "options": [
-        { "id": "a", "label": "Du kannst Änderungen machen, ohne den main-Branch kaputt zu machen", "isCorrect": true },
-        { "id": "b", "label": "Sie löschen alte Commits automatisch", "isCorrect": false },
-        { "id": "c", "label": "Sie existieren nur auf GitHub, nicht lokal", "isCorrect": false },
-        { "id": "d", "label": "Sie sind zwingend nötig, um Git zu nutzen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Du kannst Änderungen machen, ohne den main-Branch kaputt zu machen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Sie löschen alte Commits automatisch",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie existieren nur auf GitHub, nicht lokal",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sie sind zwingend nötig, um Git zu nutzen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Branches sind getrennte Arbeitslinien, die den main-Branch stabil halten.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Was macht `git switch -c feature/x`?",
       "options": [
-        { "id": "a", "label": "Den aktuellen Branch löschen", "isCorrect": false },
-        { "id": "b", "label": "Einen neuen Branch erstellen und dorthin wechseln", "isCorrect": true },
-        { "id": "c", "label": "Alle Dateien automatisch committen", "isCorrect": false },
-        { "id": "d", "label": "Den Branch zu GitHub pushen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Den aktuellen Branch löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Einen neuen Branch erstellen und dorthin wechseln",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Alle Dateien automatisch committen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Den Branch zu GitHub pushen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`-c` bedeutet create. `switch` wechselt deinen aktuellen Branch.",
@@ -49,10 +81,22 @@
       "type": "single-choice",
       "prompt": "Was bedeutet es, einen Branch zu mergen?",
       "options": [
-        { "id": "a", "label": "Commits von einem Branch in einen anderen zusammenführen", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Commits von einem Branch in einen anderen zusammenführen",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Eine Datei umbenennen", "isCorrect": false },
-        { "id": "c", "label": "Bilder zu GitHub hochladen", "isCorrect": false },
-        { "id": "d", "label": "Die Commit-Historie löschen", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Bilder zu GitHub hochladen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die Commit-Historie löschen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Mergen bringt Änderungen von einem Branch in einen Ziel-Branch (z. B. main).",
@@ -69,9 +113,21 @@
       "type": "single-choice",
       "prompt": "Wann passiert ein Merge-Konflikt typischerweise?",
       "options": [
-        { "id": "a", "label": "Wenn dein Monitor zu klein ist", "isCorrect": false },
-        { "id": "b", "label": "Wenn du `git status` ausführst", "isCorrect": false },
-        { "id": "c", "label": "Wenn zwei Branches dieselben Zeilen in einer Datei ändern", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Wenn dein Monitor zu klein ist",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wenn du `git status` ausführst",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Wenn zwei Branches dieselben Zeilen in einer Datei ändern",
+          "isCorrect": true
+        },
         { "id": "d", "label": "Wenn GitHub offline ist", "isCorrect": false }
       ],
       "explanations": {
@@ -86,4 +142,3 @@
     }
   ]
 }
-

@@ -15,4 +15,3 @@ Write a function with a default parameter value.
 
 - The default value goes in the function definition.
 - Inside the function, print both `greeting` and `name`.
-

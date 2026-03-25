@@ -50,7 +50,11 @@
           "label": "Nachverfolgen, wie sich ihr Wert während der Programmausführung verändert.",
           "isCorrect": true
         },
-        { "id": "b", "label": "Ihr einen neuen Namen geben.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Ihr einen neuen Namen geben.",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Sie aus dem Programm löschen.",

@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_10",
-    "kind":  "assessment",
-    "title":  "Hoofdstuk 10 - Tabellen Check",
-    "description":  "Controleer je kennis:  Basisstructuur van tabellen met table-, tr-, td- en th-elementen.",
-    "questions":  [
-                      {
-                          "id":  "q-table",
-                          "type":  "single-choice",
-                          "prompt":  "Which tag starts a table?",
-                          "options":  [
-                                          {
-                                              "id":  "table",
-                                              "label":  "\u003ctable\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "tr",
-                                              "label":  "\u003ctr\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "td",
-                                              "label":  "\u003ctd\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "th",
-                                              "label":  "\u003cth\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "\u003ctable\u003e wraps the whole table structure.",
-                                               "byOptionId":  {
-                                                                  "table":  "Correct â€” \u003ctable\u003e is the container for rows and cells.",
-                                                                  "tr":  "Incorrect â€” \u003ctr\u003e defines a table row within \u003ctable\u003e.",
-                                                                  "td":  "Incorrect â€” \u003ctd\u003e is a table cell, not the table root.",
-                                                                  "th":  "Incorrect â€” \u003cth\u003e is for header cells inside rows."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q-th-td",
-                          "type":  "single-choice",
-                          "prompt":  "Which tag is used for header cells?",
-                          "options":  [
-                                          {
-                                              "id":  "td",
-                                              "label":  "\u003ctd\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "th",
-                                              "label":  "\u003cth\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "tr",
-                                              "label":  "\u003ctr\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "thead",
-                                              "label":  "\u003cthead\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "\u003cth\u003e defines a header cell, often bold and centered by default.",
-                                               "byOptionId":  {
-                                                                  "th":  "Correct â€” \u003cth\u003e indicates header cells within a table row.",
-                                                                  "td":  "Incorrect â€” \u003ctd\u003e is for regular cells, not headers.",
-                                                                  "tr":  "Incorrect â€” \u003ctr\u003e is a row wrapper, not a cell.",
-                                                                  "thead":  "Incorrect â€” \u003cthead\u003e groups header rows, but \u003cth\u003e is the header cell element."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_10",
+
+  "kind": "assessment",
+
+  "title": "Hoofdstuk 10 - Tabellen Check",
+
+  "description": "Controleer je kennis:  Basisstructuur van tabellen met table-, tr-, td- en th-elementen.",
+
+  "questions": [
+    {
+      "id": "q-table",
+
+      "type": "single-choice",
+
+      "prompt": "Which tag starts a table?",
+
+      "options": [
+        {
+          "id": "table",
+
+          "label": "\u003ctable\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "tr",
+
+          "label": "\u003ctr\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "td",
+
+          "label": "\u003ctd\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "th",
+
+          "label": "\u003cth\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "\u003ctable\u003e wraps the whole table structure.",
+
+        "byOptionId": {
+          "table": "Correct â€” \u003ctable\u003e is the container for rows and cells.",
+
+          "tr": "Incorrect â€” \u003ctr\u003e defines a table row within \u003ctable\u003e.",
+
+          "td": "Incorrect â€” \u003ctd\u003e is a table cell, not the table root.",
+
+          "th": "Incorrect â€” \u003cth\u003e is for header cells inside rows."
+        }
+      }
+    },
+
+    {
+      "id": "q-th-td",
+
+      "type": "single-choice",
+
+      "prompt": "Which tag is used for header cells?",
+
+      "options": [
+        {
+          "id": "td",
+
+          "label": "\u003ctd\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "th",
+
+          "label": "\u003cth\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "tr",
+
+          "label": "\u003ctr\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "thead",
+
+          "label": "\u003cthead\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "\u003cth\u003e defines a header cell, often bold and centered by default.",
+
+        "byOptionId": {
+          "th": "Correct â€” \u003cth\u003e indicates header cells within a table row.",
+
+          "td": "Incorrect â€” \u003ctd\u003e is for regular cells, not headers.",
+
+          "tr": "Incorrect â€” \u003ctr\u003e is a row wrapper, not a cell.",
+
+          "thead": "Incorrect â€” \u003cthead\u003e groups header rows, but \u003cth\u003e is the header cell element."
+        }
+      }
+    }
+  ]
 }

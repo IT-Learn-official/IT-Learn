@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Waarvoor gebruik je een pull request (PR)?",
       "options": [
-        { "id": "a", "label": "Vragen om wijzigingen van één branch in een andere te mergen", "isCorrect": true },
-        { "id": "b", "label": "Vragen om iemands repository te verwijderen", "isCorrect": false },
-        { "id": "c", "label": "Vragen om Git te hernoemen", "isCorrect": false },
-        { "id": "d", "label": "Een bestand waarin wachtwoorden staan", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Vragen om wijzigingen van één branch in een andere te mergen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Vragen om iemands repository te verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Vragen om Git te hernoemen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een bestand waarin wachtwoorden staan",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "PR's helpen teams wijzigingen te reviewen vóór ze mergen naar belangrijke branches zoals main.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Waarom zijn code reviews nuttig?",
       "options": [
-        { "id": "a", "label": "Ze laten Git sneller draaien", "isCorrect": false },
-        { "id": "b", "label": "Ze blokkeren mergen voor altijd", "isCorrect": false },
-        { "id": "c", "label": "Ze kunnen fouten vinden en de leesbaarheid verbeteren", "isCorrect": true },
-        { "id": "d", "label": "Ze vervangen de nood aan testen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Ze laten Git sneller draaien",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze blokkeren mergen voor altijd",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze kunnen fouten vinden en de leesbaarheid verbeteren",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ze vervangen de nood aan testen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Reviews geven een extra paar ogen en helpen de codekwaliteit hoog houden.",
@@ -49,10 +81,26 @@
       "type": "single-choice",
       "prompt": "Waarvoor gebruik je Issues meestal op GitHub?",
       "options": [
-        { "id": "a", "label": "Gecompileerde programma's opslaan", "isCorrect": false },
-        { "id": "b", "label": "Bugs, taken en feature-ideeën opvolgen", "isCorrect": true },
-        { "id": "c", "label": "Je repository versleutelen", "isCorrect": false },
-        { "id": "d", "label": "Privé-repo's automatisch publiek maken", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Gecompileerde programma's opslaan",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Bugs, taken en feature-ideeën opvolgen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Je repository versleutelen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Privé-repo's automatisch publiek maken",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Issues zijn een tool om werkitems te plannen en te bespreken.",
@@ -69,10 +117,22 @@
       "type": "single-choice",
       "prompt": "Wat is een fork op GitHub?",
       "options": [
-        { "id": "a", "label": "Je eigen kopie van iemands repository op GitHub", "isCorrect": true },
-        { "id": "b", "label": "Een manier om alle branches te verwijderen", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Je eigen kopie van iemands repository op GitHub",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een manier om alle branches te verwijderen",
+          "isCorrect": false
+        },
         { "id": "c", "label": "Een soort commitboodschap", "isCorrect": false },
-        { "id": "d", "label": "Een Git-commando om bestanden te stagen", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Een Git-commando om bestanden te stagen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Met forks kan je aan een repo werken wanneer je geen directe schrijfrechten hebt op het origineel.",
@@ -86,4 +146,3 @@
     }
   ]
 }
-

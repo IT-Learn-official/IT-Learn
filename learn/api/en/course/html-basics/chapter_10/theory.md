@@ -5,6 +5,7 @@ Tables display tabular data using `<table>`. Rows are created with `<tr>`, heade
 ---
 
 Example of a simple table:
+
 ```html
 <table>
   <tr>
@@ -32,10 +33,9 @@ Example of a simple table:
 
 The code will have an output like this:
 
-| Name      | Age |
-|-----------|-----|
-| Alice     | 30  |
-| Bob       | 25  |
-| Charlie   | 35  |
-| Diana     | 28  |
-
+| Name    | Age |
+| ------- | --- |
+| Alice   | 30  |
+| Bob     | 25  |
+| Charlie | 35  |
+| Diana   | 28  |

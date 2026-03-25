@@ -1,11 +1,13 @@
 # Kapitel 9: Datenstrukturen – Lists, Tuples und Dictionaries im echten Leben
 
 Willkommen zurück, Hacker. Bis jetzt hast du meistens mit **einer** Sache gleichzeitig gearbeitet:
+
 - ein Username,
 - eine IP‑Adresse,
 - ein Passwort.
 
 Aber dein echtes digitales Leben ist nicht „eine Sache“ – es ist:
+
 - eine ganze Friends‑List,
 - viele Prüfungsnoten,
 - mehrere Game‑Accounts,
@@ -24,6 +26,7 @@ In diesem Kapitel lernst du Pythons wichtigste **Datenstrukturen**, um **Sammlun
 Eine **List** ist eine geordnete, veränderbare Sammlung von Items, in eckigen Klammern `[]`.
 
 Denk an eine List wie:
+
 - dein Game‑Inventory,
 - deine Spotify‑Playlist,
 - eine Liste deiner nächsten Schularbeiten.
@@ -86,6 +89,7 @@ for target in targets:
 ```
 
 Dieses Pattern nutzt du ständig:
+
 - durch alle Noten gehen,
 - alle IP‑Adressen checken,
 - jedem User in einer Liste eine Message schicken.
@@ -122,6 +126,7 @@ Aber wenn du einen Wert ändern willst:
 ```
 
 Wann sind Tuples sinnvoll?
+
 - fixe Settings wie Screen‑Resolution `(1920, 1080)`,
 - ein Prüfungsdatum `(year, month, day)`,
 - Koordinaten, die sich während einer Berechnung nicht ändern sollen.
@@ -137,6 +142,7 @@ Außerdem ist es ein Signal an dein Zukunfts‑Ich: „Diese Daten sind **nicht 
 Ein **Dictionary** (`dict`) ist eine (prinzipiell) ungeordnete Sammlung von **Key‑Value‑Pairs**.
 
 Denk an deine Kontaktliste:
+
 - du suchst nach **Name** (Key),
 - du bekommst die **Nummer** (Value).
 
@@ -209,6 +215,7 @@ for key, value in system_profile.items():
 ```
 
 Das Pattern ist superhäufig, wenn du:
+
 - alle Daten in einem Profil ausgeben willst,
 - einen Report aus einer Config generierst,
 - JSON‑ähnliche Daten inspizierst.

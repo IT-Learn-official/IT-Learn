@@ -1,292 +1,368 @@
 {
-  "chapterId": "chapter-3",
-  "kind": "assessment",
-  "title": "Kapitel 3 - Funktionsgrundlagen und eingebaute Helfer Check",
-  "description": "Prüfe dein Verständnis von Funktionen, Argumenten, Rückgabewerten und häufigen Built-ins wie len, abs, round und type.",
-  "questions": [
-    {
-      "id": "q-what-is-a-function",
-      "type": "single-choice",
-      "prompt": "Was ist in Python eine Funktion wie len oder round?",
-      "options": [
+    "chapterId": "chapter-3",
+    "kind": "assessment",
+    "title": "Kapitel 3 - Funktionsgrundlagen und eingebaute Helfer Check",
+    "description": "Prüfe dein Verständnis von Funktionen, Argumenten, Rückgabewerten und häufigen Built-ins wie len, abs, round und type.",
+    "questions": [
         {
-          "id": "a",
-          "label": "Ein wiederverwendbarer Helfer, der eine bestimmte Aufgabe erledigt, wenn du ihn aufrufst.",
-          "isCorrect": true
+            "id": "q-what-is-a-function",
+            "type": "single-choice",
+            "prompt": "Was ist in Python eine Funktion wie len oder round?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Ein wiederverwendbarer Helfer, der eine bestimmte Aufgabe erledigt, wenn du ihn aufrufst.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "Eine besondere Art Kommentar, die Python ignoriert.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "Eine Variable, die nur Zahlen speichert.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Ein Fenster, das am Bildschirm aufpoppt.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Funktionen sind Mini-Programme, die du wiederverwenden kannst: du rufst sie mit Klammern auf, gibst Argumente mit und oft liefern sie einen Wert zurück.",
+                "byOptionId": {
+                    "a": "Richtig! Eine Funktion ist ein wiederverwendbarer Helfer: du rufst sie auf, indem du ihren Namen gefolgt von `()` schreibst.",
+                    "b": "Nein. Kommentare sind Zeilen, die mit `#` beginnen und von Python ignoriert werden.",
+                    "c": "Nicht ganz. Variablen speichern Werte; Funktionen sind Aktionen, die du aufrufen kannst.",
+                    "d": "Nein. Eine Funktion kann Dinge ausgeben, aber sie ist kein Fenster."
+                }
+            }
         },
         {
-          "id": "b",
-          "label": "Eine besondere Art Kommentar, die Python ignoriert.",
-          "isCorrect": false
+            "id": "q-parentheses-meaning",
+            "type": "single-choice",
+            "prompt": "Was bewirken die Klammern in dieser Codezeile?\\n\\n```python\\nprint(\"Hello\")\\n```",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Sie rufen die Funktion print auf und enthalten ihre Argumente.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "Sie erzeugen eine Liste.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "Sie sind nur Deko; sie tun nichts.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Sie sagen Python, dass es in einer Endlosschleife laufen soll.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Wenn du name(... ) siehst, ruft Python die Funktion mit den Werten in den Klammern als Argumente auf.",
+                "byOptionId": {
+                    "a": "Ja. Die Klammern bedeuten \"ruf diese Funktion jetzt auf\" und übergib die Werte darin.",
+                    "b": "Listen in Python verwenden eckige Klammern `[]`, nicht runde Klammern `()`.",
+                    "c": "Sie sind sehr wichtig. Ohne sie würde Python die Funktion nicht aufrufen.",
+                    "d": "Schleifen machst du mit `for`/`while`, nicht mit Klammern hinter `print`."
+                }
+            }
         },
         {
-          "id": "c",
-          "label": "Eine Variable, die nur Zahlen speichert.",
-          "isCorrect": false
+            "id": "q-arguments-meaning",
+            "type": "single-choice",
+            "prompt": "In `round(3.14159, 2)`: Was bedeutet die `2`?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Sie sagt round, dass 2 Nachkommastellen behalten werden.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "Sie verdoppelt die Zahl vor dem Runden.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "Sie lässt die Funktion 2-mal laufen.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Sie hat keine Bedeutung; sie ist nur zufällig.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Das zweite Argument von round steuert, wie viele Nachkommastellen behalten werden.",
+                "byOptionId": {
+                    "a": "Richtig. `round(x, n)` gibt `x` auf `n` Nachkommastellen gerundet zurück.",
+                    "b": "Nein. round multipliziert nicht heimlich für dich.",
+                    "c": "Nein. Die Funktion läuft trotzdem nur einmal.",
+                    "d": "Sie hat definitiv Bedeutung: sie ist ein Argument der Funktion."
+                }
+            }
         },
         {
-          "id": "d",
-          "label": "Ein Fenster, das am Bildschirm aufpoppt.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Funktionen sind Mini-Programme, die du wiederverwenden kannst: du rufst sie mit Klammern auf, gibst Argumente mit und oft liefern sie einen Wert zurück.",
-        "byOptionId": {
-          "a": "Richtig! Eine Funktion ist ein wiederverwendbarer Helfer: du rufst sie auf, indem du ihren Namen gefolgt von `()` schreibst.",
-          "b": "Nein. Kommentare sind Zeilen, die mit `#` beginnen und von Python ignoriert werden.",
-          "c": "Nicht ganz. Variablen speichern Werte; Funktionen sind Aktionen, die du aufrufen kannst.",
-          "d": "Nein. Eine Funktion kann Dinge ausgeben, aber sie ist kein Fenster."
-        }
-      }
-    },
-    {
-      "id": "q-parentheses-meaning",
-      "type": "single-choice",
-      "prompt": "Was bewirken die Klammern in dieser Codezeile?\\n\\n```python\\nprint(\"Hello\")\\n```",
-      "options": [
-        {
-          "id": "a",
-          "label": "Sie rufen die Funktion print auf und enthalten ihre Argumente.",
-          "isCorrect": true
-        },
-        { "id": "b", "label": "Sie erzeugen eine Liste.", "isCorrect": false },
-        {
-          "id": "c",
-          "label": "Sie sind nur Deko; sie tun nichts.",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "Sie sagen Python, dass es in einer Endlosschleife laufen soll.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Wenn du name(... ) siehst, ruft Python die Funktion mit den Werten in den Klammern als Argumente auf.",
-        "byOptionId": {
-          "a": "Ja. Die Klammern bedeuten \"ruf diese Funktion jetzt auf\" und übergib die Werte darin.",
-          "b": "Listen in Python verwenden eckige Klammern `[]`, nicht runde Klammern `()`.",
-          "c": "Sie sind sehr wichtig. Ohne sie würde Python die Funktion nicht aufrufen.",
-          "d": "Schleifen machst du mit `for`/`while`, nicht mit Klammern hinter `print`."
-        }
-      }
-    },
-    {
-      "id": "q-arguments-meaning",
-      "type": "single-choice",
-      "prompt": "In `round(3.14159, 2)`: Was bedeutet die `2`?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Sie sagt round, dass 2 Nachkommastellen behalten werden.",
-          "isCorrect": true
+            "id": "q-return-value",
+            "type": "single-choice",
+            "prompt": "Welcher Wert steckt in length, nachdem dieser Code gelaufen ist?\\n\\n```python\\nlength = len(\"wizard\")\\n```",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "6",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "7",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "\"wizard\"",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Nichts, length bleibt leer.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "len(\"wizard\") zählt, wie viele Zeichen im String sind, und liefert diese Zahl zurück.",
+                "byOptionId": {
+                    "a": "Richtig. 'wizard' hat 6 Zeichen, also liefert len 6.",
+                    "b": "Zähle die Buchstaben: w i z a r d = 6.",
+                    "c": "Die Variable length speichert die Zahl 6, nicht den Originaltext.",
+                    "d": "Nein, length bekommt einen Wert: den Rückgabewert von len(\"wizard\")."
+                }
+            }
         },
         {
-          "id": "b",
-          "label": "Sie verdoppelt die Zahl vor dem Runden.",
-          "isCorrect": false
+            "id": "q-len-behavior",
+            "type": "single-choice",
+            "prompt": "Was liefert `len(\"hello!\")` zurück?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "6",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "5",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "1",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Es gibt einen Fehler.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "len zählt alle Zeichen, auch Satzzeichen.",
+                "byOptionId": {
+                    "a": "Richtig. 'hello!' hat 6 Zeichen: h e l l o !",
+                    "b": "Vergiss das Ausrufezeichen am Ende nicht.",
+                    "c": "Das sind eindeutig mehr als 1 Zeichen.",
+                    "d": "len funktioniert problemlos mit Strings wie 'hello!'."
+                }
+            }
         },
         {
-          "id": "c",
-          "label": "Sie lässt die Funktion 2-mal laufen.",
-          "isCorrect": false
+            "id": "q-abs-behavior",
+            "type": "single-choice",
+            "prompt": "Was ist das Ergebnis von `abs(-10)`?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "10",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "-10",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "0",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Es gibt -10 aus, aber liefert nichts zurück.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "abs liefert den Abstand zu 0, und der ist immer nicht-negativ.",
+                "byOptionId": {
+                    "a": "Ja. Der Betrag von -10 ist 10.",
+                    "b": "abs entfernt das Minuszeichen; es behält es nicht.",
+                    "c": "Der Abstand von 0 zu -10 ist nicht 0.",
+                    "d": "abs liefert eine Zahl zurück; es druckt nicht von selbst."
+                }
+            }
         },
         {
-          "id": "d",
-          "label": "Sie hat keine Bedeutung; sie ist nur zufällig.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Das zweite Argument von round steuert, wie viele Nachkommastellen behalten werden.",
-        "byOptionId": {
-          "a": "Richtig. `round(x, n)` gibt `x` auf `n` Nachkommastellen gerundet zurück.",
-          "b": "Nein. round multipliziert nicht heimlich für dich.",
-          "c": "Nein. Die Funktion läuft trotzdem nur einmal.",
-          "d": "Sie hat definitiv Bedeutung: sie ist ein Argument der Funktion."
-        }
-      }
-    },
-    {
-      "id": "q-return-value",
-      "type": "single-choice",
-      "prompt": "Welcher Wert steckt in length, nachdem dieser Code gelaufen ist?\\n\\n```python\\nlength = len(\"wizard\")\\n```",
-      "options": [
-        { "id": "a", "label": "6", "isCorrect": true },
-        { "id": "b", "label": "7", "isCorrect": false },
-        { "id": "c", "label": "\"wizard\"", "isCorrect": false },
-        {
-          "id": "d",
-          "label": "Nichts, length bleibt leer.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "len(\"wizard\") zählt, wie viele Zeichen im String sind, und liefert diese Zahl zurück.",
-        "byOptionId": {
-          "a": "Richtig. 'wizard' hat 6 Zeichen, also liefert len 6.",
-          "b": "Zähle die Buchstaben: w i z a r d = 6.",
-          "c": "Die Variable length speichert die Zahl 6, nicht den Originaltext.",
-          "d": "Nein, length bekommt einen Wert: den Rückgabewert von len(\"wizard\")."
-        }
-      }
-    },
-    {
-      "id": "q-len-behavior",
-      "type": "single-choice",
-      "prompt": "Was liefert `len(\"hello!\")` zurück?",
-      "options": [
-        { "id": "a", "label": "6", "isCorrect": true },
-        { "id": "b", "label": "5", "isCorrect": false },
-        { "id": "c", "label": "1", "isCorrect": false },
-        { "id": "d", "label": "Es gibt einen Fehler.", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "len zählt alle Zeichen, auch Satzzeichen.",
-        "byOptionId": {
-          "a": "Richtig. 'hello!' hat 6 Zeichen: h e l l o !",
-          "b": "Vergiss das Ausrufezeichen am Ende nicht.",
-          "c": "Das sind eindeutig mehr als 1 Zeichen.",
-          "d": "len funktioniert problemlos mit Strings wie 'hello!'."
-        }
-      }
-    },
-    {
-      "id": "q-abs-behavior",
-      "type": "single-choice",
-      "prompt": "Was ist das Ergebnis von `abs(-10)`?",
-      "options": [
-        { "id": "a", "label": "10", "isCorrect": true },
-        { "id": "b", "label": "-10", "isCorrect": false },
-        { "id": "c", "label": "0", "isCorrect": false },
-        {
-          "id": "d",
-          "label": "Es gibt -10 aus, aber liefert nichts zurück.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "abs liefert den Abstand zu 0, und der ist immer nicht-negativ.",
-        "byOptionId": {
-          "a": "Ja. Der Betrag von -10 ist 10.",
-          "b": "abs entfernt das Minuszeichen; es behält es nicht.",
-          "c": "Der Abstand von 0 zu -10 ist nicht 0.",
-          "d": "abs liefert eine Zahl zurück; es druckt nicht von selbst."
-        }
-      }
-    },
-    {
-      "id": "q-round-usage",
-      "type": "single-choice",
-      "prompt": "Was liefert `round(5.678, 1)` zurück?",
-      "options": [
-        { "id": "a", "label": "5.7", "isCorrect": true },
-        { "id": "b", "label": "5.6", "isCorrect": false },
-        { "id": "c", "label": "6.0", "isCorrect": false },
-        { "id": "d", "label": "567.8", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "round(x, 1) behält eine Ziffer nach dem Dezimalpunkt.",
-        "byOptionId": {
-          "a": "Richtig. 5.678 auf eine Nachkommastelle gerundet ist 5.7.",
-          "b": "5.6 wäre zu stark nach unten gerundet.",
-          "c": "Das wäre Runden auf eine ganze Zahl, nicht auf eine Nachkommastelle.",
-          "d": "Das wäre eine Multiplikation mit 100; das macht round nicht."
-        }
-      }
-    },
-    {
-      "id": "q-type-debugging",
-      "type": "single-choice",
-      "prompt": "Warum schreibt jemand `print(type(coins))` in seinen Code?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Um zu prüfen, welchen Typ coins hat (z. B. int oder str).",
-          "isCorrect": true
+            "id": "q-round-usage",
+            "type": "single-choice",
+            "prompt": "Was liefert `round(5.678, 1)` zurück?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "5.7",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "5.6",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "6.0",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "567.8",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "round(x, 1) behält eine Ziffer nach dem Dezimalpunkt.",
+                "byOptionId": {
+                    "a": "Richtig. 5.678 auf eine Nachkommastelle gerundet ist 5.7.",
+                    "b": "5.6 wäre zu stark nach unten gerundet.",
+                    "c": "Das wäre Runden auf eine ganze Zahl, nicht auf eine Nachkommastelle.",
+                    "d": "Das wäre eine Multiplikation mit 100; das macht round nicht."
+                }
+            }
         },
         {
-          "id": "b",
-          "label": "Um coins in einen anderen Wert zu verwandeln.",
-          "isCorrect": false
+            "id": "q-type-debugging",
+            "type": "single-choice",
+            "prompt": "Warum schreibt jemand `print(type(coins))` in seinen Code?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Um zu prüfen, welchen Typ coins hat (z. B. int oder str).",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "Um coins in einen anderen Wert zu verwandeln.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "Um die Variable coins zu löschen.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Um sehr oft über coins zu loopen.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "type hilft beim Debuggen, weil es dir sagt, welchen Typ ein Wert aktuell hat.",
+                "byOptionId": {
+                    "a": "Ja. type(x) zeigt, ob x ein int, float, str, usw. ist.",
+                    "b": "type verändert den Wert nicht; es liefert nur Informationen.",
+                    "c": "Variablen löscht man nicht mit type.",
+                    "d": "Schleifen machst du mit for oder while, nicht mit type."
+                }
+            }
         },
         {
-          "id": "c",
-          "label": "Um die Variable coins zu löschen.",
-          "isCorrect": false
+            "id": "q-console-vs-print",
+            "type": "single-choice",
+            "prompt": "In der Python-REPL siehst du das: \\n\\n```python\\n>>> len(\"cat\")\\n3\\n>>> print(len(\"cat\"))\\n3\\n```\\nWas stimmt über diese zwei Zeilen?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Beide verwenden len, aber die zweite verwendet zusätzlich print, um das Ergebnis anzuzeigen.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "Nur die erste Zeile verwendet len.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "Die zweite Zeile verändert den Wert, den len zurückgibt.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "Die erste Zeile verursacht einen Fehler.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "In der REPL zeigt ein Ausdruck allein seinen Wert an. print(len(...)) gibt denselben Wert aus.",
+                "byOptionId": {
+                    "a": "Richtig. Beide rufen len('cat') auf; einmal wird der Wert als Ausdruck angezeigt, einmal wird er gedruckt.",
+                    "b": "Schau genau: len('cat') steht in beiden Zeilen.",
+                    "c": "print verändert den Rückgabewert von len nicht; es zeigt ihn nur an.",
+                    "d": "len('cat') ist völlig gültig."
+                }
+            }
         },
         {
-          "id": "d",
-          "label": "Um sehr oft über coins zu loopen.",
-          "isCorrect": false
+            "id": "q-print-vs-returning",
+            "type": "single-choice",
+            "prompt": "Welche Funktion unten wird hauptsächlich verwendet, um Text am Bildschirm anzuzeigen, statt eine Zahl zurückzugeben, die du in Rechnungen verwendest?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "print",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "len",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "round",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "abs",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "print ist für Output; len, round und abs nutzt man meistens wegen ihrer Rückgabewerte.",
+                "byOptionId": {
+                    "a": "Ja. print ist dafür da, Dinge am Bildschirm anzuzeigen.",
+                    "b": "len liefert eine Zahl zurück, die du oft speicherst oder in einer Expression verwendest.",
+                    "c": "round liefert eine gerundete Zahl zurück.",
+                    "d": "abs liefert den Abstand zu 0 als Zahl zurück."
+                }
+            }
         }
-      ],
-      "explanations": {
-        "overview": "type hilft beim Debuggen, weil es dir sagt, welchen Typ ein Wert aktuell hat.",
-        "byOptionId": {
-          "a": "Ja. type(x) zeigt, ob x ein int, float, str, usw. ist.",
-          "b": "type verändert den Wert nicht; es liefert nur Informationen.",
-          "c": "Variablen löscht man nicht mit type.",
-          "d": "Schleifen machst du mit for oder while, nicht mit type."
-        }
-      }
-    },
-    {
-      "id": "q-console-vs-print",
-      "type": "single-choice",
-      "prompt": "In der Python-REPL siehst du das: \\n\\n```python\\n>>> len(\"cat\")\\n3\\n>>> print(len(\"cat\"))\\n3\\n```\\nWas stimmt über diese zwei Zeilen?",
-      "options": [
-        {
-          "id": "a",
-          "label": "Beide verwenden len, aber die zweite verwendet zusätzlich print, um das Ergebnis anzuzeigen.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Nur die erste Zeile verwendet len.",
-          "isCorrect": false
-        },
-        {
-          "id": "c",
-          "label": "Die zweite Zeile verändert den Wert, den len zurückgibt.",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "Die erste Zeile verursacht einen Fehler.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "In der REPL zeigt ein Ausdruck allein seinen Wert an. print(len(...)) gibt denselben Wert aus.",
-        "byOptionId": {
-          "a": "Richtig. Beide rufen len('cat') auf; einmal wird der Wert als Ausdruck angezeigt, einmal wird er gedruckt.",
-          "b": "Schau genau: len('cat') steht in beiden Zeilen.",
-          "c": "print verändert den Rückgabewert von len nicht; es zeigt ihn nur an.",
-          "d": "len('cat') ist völlig gültig."
-        }
-      }
-    },
-    {
-      "id": "q-print-vs-returning",
-      "type": "single-choice",
-      "prompt": "Welche Funktion unten wird hauptsächlich verwendet, um Text am Bildschirm anzuzeigen, statt eine Zahl zurückzugeben, die du in Rechnungen verwendest?",
-      "options": [
-        { "id": "a", "label": "print", "isCorrect": true },
-        { "id": "b", "label": "len", "isCorrect": false },
-        { "id": "c", "label": "round", "isCorrect": false },
-        { "id": "d", "label": "abs", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "print ist für Output; len, round und abs nutzt man meistens wegen ihrer Rückgabewerte.",
-        "byOptionId": {
-          "a": "Ja. print ist dafür da, Dinge am Bildschirm anzuzeigen.",
-          "b": "len liefert eine Zahl zurück, die du oft speicherst oder in einer Expression verwendest.",
-          "c": "round liefert eine gerundete Zahl zurück.",
-          "d": "abs liefert den Abstand zu 0 als Zahl zurück."
-        }
-      }
-    }
-  ]
+    ]
 }

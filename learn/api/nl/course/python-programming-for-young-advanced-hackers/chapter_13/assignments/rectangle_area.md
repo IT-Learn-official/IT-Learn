@@ -13,4 +13,3 @@ Write a function that calculates the area of a rectangle.
 
 - Use `return width * height` inside the function.
 - Store the result in variables like `area1` and `area2`.
-

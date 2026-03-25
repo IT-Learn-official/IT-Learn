@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_11",
-    "kind":  "assessment",
-    "title":  "Hoofdstuk 11 - Divs \u0026 spans Check",
-    "description":  "Controleer je kennis:  Verschil tussen block- en inline-elementen met div en span.",
-    "questions":  [
-                      {
-                          "id":  "q-div-block",
-                          "type":  "single-choice",
-                          "prompt":  "Which element is block-level by default?",
-                          "options":  [
-                                          {
-                                              "id":  "span",
-                                              "label":  "\u003cspan\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "img",
-                                              "label":  "\u003cimg\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "div",
-                                              "label":  "\u003cdiv\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "a",
-                                              "label":  "\u003ca\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "\u003cdiv\u003e is a block-level container; \u003cspan\u003e is inline.",
-                                               "byOptionId":  {
-                                                                  "div":  "Correct â€” \u003cdiv\u003e is block-level and takes full width by default.",
-                                                                  "span":  "Incorrect â€” \u003cspan\u003e is inline and flows within lines of text.",
-                                                                  "img":  "Incorrect â€” \u003cimg\u003e is inline (or replaced) by default, not a block container.",
-                                                                  "a":  "Incorrect â€” \u003ca\u003e is inline; it creates links not block-level layout."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q-span-use",
-                          "type":  "single-choice",
-                          "prompt":  "When should you use \u003cspan\u003e?",
-                          "options":  [
-                                          {
-                                              "id":  "large",
-                                              "label":  "To create large page sections",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "table",
-                                              "label":  "To make table rows",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "image",
-                                              "label":  "To include images",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "inline",
-                                              "label":  "To wrap small inline parts of text for styling or scripts",
-                                              "isCorrect":  true
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "Use \u003cspan\u003e for inline grouping only.",
-                                               "byOptionId":  {
-                                                                  "inline":  "Correct â€” \u003cspan\u003e is for inline grouping and small styling hooks.",
-                                                                  "large":  "Incorrect â€” use block containers like \u003cdiv\u003e or semantic sections for large sections.",
-                                                                  "table":  "Incorrect â€” table rows use \u003ctr\u003e, not \u003cspan\u003e.",
-                                                                  "image":  "Incorrect â€” \u003cimg\u003e embeds images; \u003cspan\u003e does not replace it."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_11",
+
+  "kind": "assessment",
+
+  "title": "Hoofdstuk 11 - Divs \u0026 spans Check",
+
+  "description": "Controleer je kennis:  Verschil tussen block- en inline-elementen met div en span.",
+
+  "questions": [
+    {
+      "id": "q-div-block",
+
+      "type": "single-choice",
+
+      "prompt": "Which element is block-level by default?",
+
+      "options": [
+        {
+          "id": "span",
+
+          "label": "\u003cspan\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "img",
+
+          "label": "\u003cimg\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "div",
+
+          "label": "\u003cdiv\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "a",
+
+          "label": "\u003ca\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "\u003cdiv\u003e is a block-level container; \u003cspan\u003e is inline.",
+
+        "byOptionId": {
+          "div": "Correct â€” \u003cdiv\u003e is block-level and takes full width by default.",
+
+          "span": "Incorrect â€” \u003cspan\u003e is inline and flows within lines of text.",
+
+          "img": "Incorrect â€” \u003cimg\u003e is inline (or replaced) by default, not a block container.",
+
+          "a": "Incorrect â€” \u003ca\u003e is inline; it creates links not block-level layout."
+        }
+      }
+    },
+
+    {
+      "id": "q-span-use",
+
+      "type": "single-choice",
+
+      "prompt": "When should you use \u003cspan\u003e?",
+
+      "options": [
+        {
+          "id": "large",
+
+          "label": "To create large page sections",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "table",
+
+          "label": "To make table rows",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "image",
+
+          "label": "To include images",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "inline",
+
+          "label": "To wrap small inline parts of text for styling or scripts",
+
+          "isCorrect": true
+        }
+      ],
+
+      "explanations": {
+        "overview": "Use \u003cspan\u003e for inline grouping only.",
+
+        "byOptionId": {
+          "inline": "Correct â€” \u003cspan\u003e is for inline grouping and small styling hooks.",
+
+          "large": "Incorrect â€” use block containers like \u003cdiv\u003e or semantic sections for large sections.",
+
+          "table": "Incorrect â€” table rows use \u003ctr\u003e, not \u003cspan\u003e.",
+
+          "image": "Incorrect â€” \u003cimg\u003e embeds images; \u003cspan\u003e does not replace it."
+        }
+      }
+    }
+  ]
 }

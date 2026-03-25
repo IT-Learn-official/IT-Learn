@@ -16,4 +16,3 @@ Take a list of words, keep only the long ones, and make them uppercase.
   - `map` to turn them into uppercase.
 - Or use one list comprehension:
   - `[word.upper() for word in words if len(word) >= 5]`.
-

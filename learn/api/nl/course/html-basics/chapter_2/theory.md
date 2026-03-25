@@ -9,6 +9,7 @@ Alledaags voorbeeld: denk aan een potlood en een schetsboek. Het potlood is je e
 ---
 
 ## Snelle stappen om je eerste HTML-bestand te maken:
+
 - Open je editor en maak een bestand met de naam `index.html`.
 - Zet er een basis HTML-skelet in en voeg een kleine koptekst toe.
 - Sla op en open het bestand in je browser om het resultaat te zien.
@@ -18,13 +19,13 @@ Hier is een basis HTML-template om te starten:
 ```html
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mijn eerste HTML-pagina</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hallo wereld!</h1>
-</body>
+  </body>
 </html>
 ```

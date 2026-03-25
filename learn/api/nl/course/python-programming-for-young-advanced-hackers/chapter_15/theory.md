@@ -43,7 +43,7 @@ Met OOP maak je één keer een `Server` **class**, en dan “spawn” je zoveel 
 
 ## 2. Class vs object: blueprint en instance
 
-- Een **class** is de **blueprint**. Ze definieert wat alle objects van dat type *hebben* en *kunnen*. Een `Server` class kan zeggen: elke server heeft een IP, een OS en kan gepingd worden.
+- Een **class** is de **blueprint**. Ze definieert wat alle objects van dat type _hebben_ en _kunnen_. Een `Server` class kan zeggen: elke server heeft een IP, een OS en kan gepingd worden.
 - Een **object** (of **instance**) is een **echt ding** dat je maakt uit die blueprint. `server1` en `server2` zijn twee verschillende objects uit dezelfde class, elk met hun eigen IP en OS.
 
 Je definieert een class met het keyword `class`:
@@ -108,7 +108,7 @@ Zoals twee aparte Discord servers: zelfde platform, totaal andere settings en co
 
 ## 4. Methods: wat een object kan doen
 
-**Methods** zijn functies die je *in* een class definieert. Ze beschrijven wat een object kan **doen**. Elke method krijgt `self` als eerste parameter zodat ze de attributes van het object kan lezen en aanpassen.
+**Methods** zijn functies die je _in_ een class definieert. Ze beschrijven wat een object kan **doen**. Elke method krijgt `self` als eerste parameter zodat ze de attributes van het object kan lezen en aanpassen.
 
 ```python
 class Server:
@@ -269,7 +269,7 @@ In dit hoofdstuk ging je van losse scripts naar digitale modellen bouwen.
 - `__init__(self, ...)` zet de startdata van een object klaar.
 - **Attributes** (zoals `self.ip`) zijn variabelen die aan een object hangen.
 - **Methods** (zoals `def ping(self):`) zijn acties die een object kan uitvoeren.
-- `self` verwijst altijd naar *dit* specifieke object in een method.
+- `self` verwijst altijd naar _dit_ specifieke object in een method.
 - Met `__str__` bepaal je hoe je object eruitziet wanneer je het print.
 
 > Achievement Unlocked: Je kan nu je eigen datatypes ontwerpen met classes en ze tot leven brengen als objects—zoals de systemen achter je favoriete games, apps en Discord bots.

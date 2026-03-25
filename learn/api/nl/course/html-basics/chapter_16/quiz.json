@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_16",
-    "kind":  "assessment",
-    "title":  "Hoofdstuk 16 - HTML best practices Check",
-    "description":  "Controleer je kennis:  Indentatie, leesbare code en HTML comments.",
-    "questions":  [
-                      {
-                          "id":  "q-comments",
-                          "type":  "single-choice",
-                          "prompt":  "How do you write a comment in HTML?",
-                          "options":  [
-                                          {
-                                              "id":  "comment",
-                                              "label":  "\u003c!-- This is a comment --\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "slash",
-                                              "label":  "// This is a comment",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "star",
-                                              "label":  "/* This is a comment */",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "weirdhtmlcomment",
-                                              "label":  "\u003c! comment !\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "HTML comments use \u003c!-- and --\u003e.",
-                                               "byOptionId":  {
-                                                                  "comment":  "Correct â€” HTML comments use \u003c!-- and --\u003e.",
-                                                                  "slash":  "Incorrect â€” // is used in JS/CSS, not HTML comments.",
-                                                                  "star":  "Incorrect â€” /* */ is used in CSS/JS, not HTML.",
-                                                                  "weirdhtmlcomment":  "Incorrect â€” \u003c! comment !\u003e is not valid HTML comment syntax."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q-indentation",
-                          "type":  "single-choice",
-                          "prompt":  "Why are comments useful?",
-                          "options":  [
-                                          {
-                                              "id":  "speed",
-                                              "label":  "Makes the page load faster",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "search",
-                                              "label":  "Improves search ranking automatically",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "security",
-                                              "label":  "Secures the site",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "readability",
-                                              "label":  "Improves readability and maintainability",
-                                              "isCorrect":  true
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "Comments help humans read and maintain code.",
-                                               "byOptionId":  {
-                                                                  "readability":  "Correct â€” comments improve readability and maintainability.",
-                                                                  "speed":  "Incorrect â€” comments do not affect runtime load speed.",
-                                                                  "search":  "Incorrect â€” comments alone don\u0027t improve search ranking.",
-                                                                  "security":  "Incorrect â€” comments do not provide security benefits."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_16",
+
+  "kind": "assessment",
+
+  "title": "Hoofdstuk 16 - HTML best practices Check",
+
+  "description": "Controleer je kennis:  Indentatie, leesbare code en HTML comments.",
+
+  "questions": [
+    {
+      "id": "q-comments",
+
+      "type": "single-choice",
+
+      "prompt": "How do you write a comment in HTML?",
+
+      "options": [
+        {
+          "id": "comment",
+
+          "label": "\u003c!-- This is a comment --\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "slash",
+
+          "label": "// This is a comment",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "star",
+
+          "label": "/* This is a comment */",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "weirdhtmlcomment",
+
+          "label": "\u003c! comment !\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "HTML comments use \u003c!-- and --\u003e.",
+
+        "byOptionId": {
+          "comment": "Correct â€” HTML comments use \u003c!-- and --\u003e.",
+
+          "slash": "Incorrect â€” // is used in JS/CSS, not HTML comments.",
+
+          "star": "Incorrect â€” /* */ is used in CSS/JS, not HTML.",
+
+          "weirdhtmlcomment": "Incorrect â€” \u003c! comment !\u003e is not valid HTML comment syntax."
+        }
+      }
+    },
+
+    {
+      "id": "q-indentation",
+
+      "type": "single-choice",
+
+      "prompt": "Why are comments useful?",
+
+      "options": [
+        {
+          "id": "speed",
+
+          "label": "Makes the page load faster",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "search",
+
+          "label": "Improves search ranking automatically",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "security",
+
+          "label": "Secures the site",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "readability",
+
+          "label": "Improves readability and maintainability",
+
+          "isCorrect": true
+        }
+      ],
+
+      "explanations": {
+        "overview": "Comments help humans read and maintain code.",
+
+        "byOptionId": {
+          "readability": "Correct â€” comments improve readability and maintainability.",
+
+          "speed": "Incorrect â€” comments do not affect runtime load speed.",
+
+          "search": "Incorrect â€” comments alone don\u0027t improve search ranking.",
+
+          "security": "Incorrect â€” comments do not provide security benefits."
+        }
+      }
+    }
+  ]
 }

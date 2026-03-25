@@ -5,6 +5,7 @@ Lists organize related items. Use `<ul>` for unordered (bulleted) lists and `<ol
 ---
 
 Example of an unordered list:
+
 ```html
 <ul>
   <li>Milk</li>
@@ -12,7 +13,9 @@ Example of an unordered list:
   <li>Eggs</li>
 </ul>
 ```
+
 This will look like this:
+
 - Milk
 - Bread
 - Eggs
@@ -20,6 +23,7 @@ This will look like this:
 ---
 
 Example of an ordered list:
+
 ```html
 <ol>
   <li>Preheat the oven to 350°F.</li>
@@ -27,8 +31,9 @@ Example of an ordered list:
   <li>Bake for 30 minutes.</li>
 </ol>
 ```
+
 This will be displayed as:
+
 1. Preheat the oven to 350°F.
 2. Mix the ingredients.
 3. Bake for 30 minutes.
-

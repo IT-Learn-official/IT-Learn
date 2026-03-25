@@ -11,4 +11,3 @@ Use a for loop to count from 1 to 10.
 ## Hints
 
 - `range(1, 11)` generates numbers from 1 up to (but not including) 11.
-

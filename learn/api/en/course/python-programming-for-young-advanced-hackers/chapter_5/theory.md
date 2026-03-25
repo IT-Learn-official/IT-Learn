@@ -16,6 +16,7 @@ By the end of this chapter, you'll be able to:
 When you run a Python script, the interpreter doesn't see the whole file at once. It acts like a detective reading a case file, starting at the **top** and reading **down**, one line at a time. This predictable, top-to-bottom path is the **execution flow**.
 
 Consider this script:
+
 ```python
 # Line 1
 print("Initializing program...")
@@ -32,7 +33,9 @@ print("Level:", level)
 level = level + 1
 print("New level:", level)
 ```
+
 Python executes this in a strict order:
+
 1.  It prints "Initializing program...".
 2.  It creates the `username` variable, then prints it.
 3.  It creates the `level` variable, then prints it.
@@ -67,12 +70,12 @@ health = health + 50
 
 A trace would look like this:
 
-| Line # | Code Executed | `health` value | `mana` value | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | `health = 100`, `mana = 50` | 100 | 50 | Initial state |
-| 2 | `health = health - 30` | 70 | 50 | `health` is updated |
-| 3 | `mana = mana - 20` | 70 | 30 | `mana` is updated |
-| 4 | `health = health + 50` | 120 | 30 | `health` is updated again |
+| Line # | Code Executed               | `health` value | `mana` value | Notes                     |
+| :----- | :-------------------------- | :------------- | :----------- | :------------------------ |
+| 1      | `health = 100`, `mana = 50` | 100            | 50           | Initial state             |
+| 2      | `health = health - 30`      | 70             | 50           | `health` is updated       |
+| 3      | `mana = mana - 20`          | 70             | 30           | `mana` is updated         |
+| 4      | `health = health + 50`      | 120            | 30           | `health` is updated again |
 
 By the end of the script, `health` is `120` and `mana` is `30`. Manually tracing your code like this on paper or in your head is a powerful way to find logical errors.
 
@@ -87,7 +90,9 @@ When your code doesn't work and you don't know why, don't just stare at it. **In
 The goal is to expose the values of your variables at key points in the execution flow.
 
 ### Scenario: A Buggy Calculation
+
 Imagine this code is supposed to calculate the total cost of items, but it's giving the wrong answer.
+
 ```python
 price = 10
 quantity = 3
@@ -97,6 +102,7 @@ tax = 0.05
 total = price + quantity * tax
 print("Total cost:", total)
 ```
+
 The output is `10.15`, but you expected `10 * 3` plus tax. What's wrong? Let's use print-debugging to investigate.
 
 ```python
@@ -120,6 +126,7 @@ total = subtotal + total_tax
 
 print("Final total:", total)
 ```
+
 By printing out each step, you can pinpoint the exact location of the logical error. In the original buggy code, the order of operations was wrong. Your investigation reveals the correct steps, and you can now fix the code.
 
 > **Key takeaway:** When your code is broken, add `print()` statements to check the values and types of your variables at every step. This will lead you to the source of the bug.
@@ -131,6 +138,7 @@ By printing out each step, you can pinpoint the exact location of the logical er
 Error messages, or **tracebacks**, are not failures. They are clues. A good hacker reads them carefully.
 
 A traceback tells you three things:
+
 1.  **The file and line number** where the error occurred.
 2.  **The line of code** that caused the error.
 3.  **The type of error** (`NameError`, `TypeError`, `ValueError`, etc.).
@@ -141,7 +149,9 @@ Traceback (most recent call last):
     print("Score: " + scor)
 NameError: name 'scor' is not defined
 ```
+
 **Forensic Analysis:**
+
 - **Where?** `my_script.py`, line 5.
 - **What?** The line `print("Score: " + scor)`.
 - **Why?** `NameError`. The program doesn't know what `scor` is.

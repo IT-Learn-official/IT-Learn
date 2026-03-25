@@ -33,4 +33,3 @@ Build a tiny network of nodes and ping between them.
 - Add a method `show_online(self)` that prints all currently online nodes.
 - Give each `Node` a `latency` attribute (for example, milliseconds) and show it in `__str__`.
 - Make `ping` print different messages depending on latency (for example, label anything over 100 ms as `"slow"`).
-

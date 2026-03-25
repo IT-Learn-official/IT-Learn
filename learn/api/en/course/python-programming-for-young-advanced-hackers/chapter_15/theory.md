@@ -43,7 +43,7 @@ With OOP, you create a `Server` **class** once, and then you spawn as many `Serv
 
 ## 2. Classes vs. Objects: Blueprints and Instances
 
-- A **class** is the **blueprint**. It defines what all objects of that type *have* and *can do*. A `Server` class might say: every server has an IP, an OS, and can be pinged.
+- A **class** is the **blueprint**. It defines what all objects of that type _have_ and _can do_. A `Server` class might say: every server has an IP, an OS, and can be pinged.
 - An **object** (or **instance**) is a **real thing** created from that blueprint. `server1` and `server2` are two different objects from the `Server` class, each with its own IP and OS.
 
 You define a class with the `class` keyword:
@@ -108,7 +108,7 @@ This is like having two separate Discord servers: same platform, totally differe
 
 ## 4. Methods: An Object’s Abilities
 
-**Methods** are functions defined *inside* a class. They describe what an object can **do**. Every method takes `self` as the first parameter so it can access and modify the object’s own attributes.
+**Methods** are functions defined _inside_ a class. They describe what an object can **do**. Every method takes `self` as the first parameter so it can access and modify the object’s own attributes.
 
 ```python
 class Server:
@@ -269,7 +269,7 @@ In this chapter, you leveled up from writing standalone scripts to building digi
 - The `__init__(self, ...)` constructor sets up a new object’s starting data.
 - **Attributes** (like `self.ip`) are variables attached to each object.
 - **Methods** (like `def ping(self):`) are actions an object can perform using its own data.
-- `self` always refers to *this* specific object instance inside a method.
+- `self` always refers to _this_ specific object instance inside a method.
 - `__str__` lets you control how your object is displayed when you print it.
 
 > Achievement Unlocked: You can now design your own data types with classes and bring them to life as objects—just like the systems behind your favorite games, apps, and Discord bots.

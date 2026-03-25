@@ -17,4 +17,3 @@ Turn a numeric score into a letter grade.
 - Check the highest grades first (A, then B, then C, ...).
 - Make sure your ranges do **not** overlap.
 - Use `>=` comparisons like `score >= 90`.
-

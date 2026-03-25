@@ -1,80 +1,123 @@
-﻿{
-    "chapterId":  "chapter_12",
-    "kind":  "assessment",
-    "title":  "Kapitel 12 - Semantisches HTML Check",
-    "description":  "Wissenscheck:  Semantische Elemente wie header, nav, main, section, article und footer verwenden.",
-    "questions":  [
-                      {
-                          "id":  "q-header",
-                          "type":  "single-choice",
-                          "prompt":  "Which element is intended for the top of a page or section?",
-                          "options":  [
-                                          {
-                                              "id":  "footer",
-                                              "label":  "\u003cfooter\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "header",
-                                              "label":  "\u003cheader\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "nav",
-                                              "label":  "\u003cnav\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "div",
-                                              "label":  "\u003cdiv\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "\u003cheader\u003e is used for introductory content or navigational aids at the top.",
-                                               "byOptionId":  {
-                                                                  "header":  "Correct â€” \u003cheader\u003e is intended for the top area of a page or section.",
-                                                                  "footer":  "Incorrect â€” \u003cfooter\u003e belongs at the end of a page or section.",
-                                                                  "nav":  "Incorrect â€” \u003cnav\u003e is for navigation links, often inside a header, but not the header itself.",
-                                                                  "div":  "Incorrect â€” \u003cdiv\u003e is generic; semantic elements like \u003cheader\u003e are preferred when appropriate."
-                                                              }
-                                           }
-                      },
-                      {
-                          "id":  "q-main",
-                          "type":  "single-choice",
-                          "prompt":  "Which element should appear only once and contain the central content?",
-                          "options":  [
-                                          {
-                                              "id":  "article",
-                                              "label":  "\u003carticle\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "main",
-                                              "label":  "\u003cmain\u003e",
-                                              "isCorrect":  true
-                                          },
-                                          {
-                                              "id":  "section",
-                                              "label":  "\u003csection\u003e",
-                                              "isCorrect":  false
-                                          },
-                                          {
-                                              "id":  "nav",
-                                              "label":  "\u003cnav\u003e",
-                                              "isCorrect":  false
-                                          }
-                                      ],
-                          "explanations":  {
-                                               "overview":  "\u003cmain\u003e contains the main content of the document and should be unique per page.",
-                                               "byOptionId":  {
-                                                                  "main":  "Correct â€” \u003cmain\u003e designates the central content unique to the page.",
-                                                                  "article":  "Incorrect â€” \u003carticle\u003e represents a self-contained composition, not necessarily the whole main content.",
-                                                                  "section":  "Incorrect â€” \u003csection\u003e is a thematic grouping and can appear multiple times.",
-                                                                  "nav":  "Incorrect â€” \u003cnav\u003e is for navigation links, not the main content."
-                                                              }
-                                           }
-                      }
-                  ]
+﻿{
+  "chapterId": "chapter_12",
+
+  "kind": "assessment",
+
+  "title": "Kapitel 12 - Semantisches HTML Check",
+
+  "description": "Wissenscheck:  Semantische Elemente wie header, nav, main, section, article und footer verwenden.",
+
+  "questions": [
+    {
+      "id": "q-header",
+
+      "type": "single-choice",
+
+      "prompt": "Which element is intended for the top of a page or section?",
+
+      "options": [
+        {
+          "id": "footer",
+
+          "label": "\u003cfooter\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "header",
+
+          "label": "\u003cheader\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "nav",
+
+          "label": "\u003cnav\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "div",
+
+          "label": "\u003cdiv\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "\u003cheader\u003e is used for introductory content or navigational aids at the top.",
+
+        "byOptionId": {
+          "header": "Correct â€” \u003cheader\u003e is intended for the top area of a page or section.",
+
+          "footer": "Incorrect â€” \u003cfooter\u003e belongs at the end of a page or section.",
+
+          "nav": "Incorrect â€” \u003cnav\u003e is for navigation links, often inside a header, but not the header itself.",
+
+          "div": "Incorrect â€” \u003cdiv\u003e is generic; semantic elements like \u003cheader\u003e are preferred when appropriate."
+        }
+      }
+    },
+
+    {
+      "id": "q-main",
+
+      "type": "single-choice",
+
+      "prompt": "Which element should appear only once and contain the central content?",
+
+      "options": [
+        {
+          "id": "article",
+
+          "label": "\u003carticle\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "main",
+
+          "label": "\u003cmain\u003e",
+
+          "isCorrect": true
+        },
+
+        {
+          "id": "section",
+
+          "label": "\u003csection\u003e",
+
+          "isCorrect": false
+        },
+
+        {
+          "id": "nav",
+
+          "label": "\u003cnav\u003e",
+
+          "isCorrect": false
+        }
+      ],
+
+      "explanations": {
+        "overview": "\u003cmain\u003e contains the main content of the document and should be unique per page.",
+
+        "byOptionId": {
+          "main": "Correct â€” \u003cmain\u003e designates the central content unique to the page.",
+
+          "article": "Incorrect â€” \u003carticle\u003e represents a self-contained composition, not necessarily the whole main content.",
+
+          "section": "Incorrect â€” \u003csection\u003e is a thematic grouping and can appear multiple times.",
+
+          "nav": "Incorrect â€” \u003cnav\u003e is for navigation links, not the main content."
+        }
+      }
+    }
+  ]
 }

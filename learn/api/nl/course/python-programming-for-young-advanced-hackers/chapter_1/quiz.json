@@ -1,404 +1,404 @@
 {
-  "chapterId": "chapter-1",
-  "kind": "assessment",
-  "title": "Hoofdstuk 1 - Opstarten: je Python-krachten Check",
-  "description": "Korte conceptcheck voor hoofdstuk 1. Gebruik dit om te zien wat je al oppikte over Python, code vs programmeren, en REPL vs scriptmodus.",
-  "questions": [
-    {
-      "id": "q-programming-language",
-      "type": "single-choice",
-      "prompt": "Je wil een computer leren om je elke dag om 19:00 een reminder te sturen. Wat is in deze situatie een programmeertaal?",
-      "options": [
+    "chapterId": "chapter-1",
+    "kind": "assessment",
+    "title": "Hoofdstuk 1 - Opstarten: je Python-krachten Check",
+    "description": "Korte conceptcheck voor hoofdstuk 1. Gebruik dit om te zien wat je al oppikte over Python, code vs programmeren, en REPL vs scriptmodus.",
+    "questions": [
         {
-          "id": "human-language",
-          "label": "Een taal die mensen spreken, zoals Engels of Frans",
-          "isCorrect": false
+            "id": "q-programming-language",
+            "type": "single-choice",
+            "prompt": "Je wil een computer leren om je elke dag om 19:00 een reminder te sturen. Wat is in deze situatie een programmeertaal?",
+            "options": [
+                {
+                    "id": "human-language",
+                    "label": "Een taal die mensen spreken, zoals Engels of Frans",
+                    "isCorrect": false
+                },
+                {
+                    "id": "computer-instructions",
+                    "label": "Een speciale taal om instructies te schrijven die een computer kan volgen",
+                    "isCorrect": true
+                },
+                {
+                    "id": "hardware",
+                    "label": "Een soort computer hardware (zoals toetsenbord of muis)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "os",
+                    "label": "Een besturingssysteem, zoals Windows of macOS",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Een programmeertaal is hoe je heel precies instructies geeft aan een computer.",
+                "byOptionId": {
+                    "human-language": "Mensentaal is om met mensen te praten, niet rechtstreeks met computers.",
+                    "computer-instructions": "Correct: dit is de taal waarin je code schrijft die de computer begrijpt.",
+                    "hardware": "Hardware is het fysieke spul (toetsenbord, muis, CPU), niet de taal.",
+                    "os": "Een besturingssysteem beheert hardware en apps, maar het is niet de taal waarin je programma’s schrijft."
+                }
+            }
         },
         {
-          "id": "computer-instructions",
-          "label": "Een speciale taal om instructies te schrijven die een computer kan volgen",
-          "isCorrect": true
+            "id": "q-code-vs-programming",
+            "type": "single-choice",
+            "prompt": "Je ontwerpt een klein spelletje dat hallo zegt tegen de speler. Welke optie beschrijft het verschil tussen **programmeren** en **code** het best?",
+            "options": [
+                {
+                    "id": "no-difference",
+                    "label": "Er is geen echt verschil; mensen gebruiken gewoon andere woorden.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "reversed-definition",
+                    "label": "Code is het plannen van stappen; programmeren is het exact intypen van instructies.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "correct-definition",
+                    "label": "Programmeren is plannen en ontwerpen; code zijn de exacte Python-instructies die je schrijft.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "experts-only",
+                    "label": "Programmeren is alleen voor experts; code is voor beginners.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Programmeren is het proces op hoog niveau; code is de concrete tekst die je aan de computer geeft.",
+                "byOptionId": {
+                    "no-difference": "Er is wel een verschil: programmeren is het volledige proces, niet alleen typen.",
+                    "reversed-definition": "Dit draait het om: plannen hoort bij programmeren, niet bij code.",
+                    "correct-definition": "Correct: zie programmeren als het plan + de code samen.",
+                    "experts-only": "Iedereen kan programmeren leren; het is niet alleen voor experts."
+                }
+            }
         },
         {
-          "id": "hardware",
-          "label": "Een soort computer hardware (zoals toetsenbord of muis)",
-          "isCorrect": false
+            "id": "q-compiled-language",
+            "type": "single-choice",
+            "prompt": "Je drukt op een grote BUILD-knop en je code wordt een `.exe` die je telkens opnieuw kan uitvoeren. Wat voor soort taal gebruik je dan het meest waarschijnlijk?",
+            "options": [
+                {
+                    "id": "python",
+                    "label": "Python",
+                    "isCorrect": false
+                },
+                {
+                    "id": "cpp",
+                    "label": "C++",
+                    "isCorrect": true
+                },
+                {
+                    "id": "javascript",
+                    "label": "JavaScript",
+                    "isCorrect": false
+                },
+                {
+                    "id": "html",
+                    "label": "HTML",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "C++ is een gecompileerde taal: je code wordt eerst vertaald naar machinecode vóór ze runt.",
+                "byOptionId": {
+                    "python": "Python is meestal geïnterpreteerd, niet op deze manier gecompileerd.",
+                    "cpp": "Correct: C++ programma’s worden normaal gecompileerd naar uitvoerbare bestanden.",
+                    "javascript": "JavaScript wordt typisch geïnterpreteerd door de browser of runtime.",
+                    "html": "HTML is een markup language om webpagina’s te structureren, geen gecompileerde programmeertaal."
+                }
+            }
         },
         {
-          "id": "os",
-          "label": "Een besturingssysteem, zoals Windows of macOS",
-          "isCorrect": false
+            "id": "q-repl",
+            "type": "single-choice",
+            "prompt": "Je opent een Python-console en typt `1 + 2`, drukt op Enter en ziet `3`. Dit gebeurt in de REPL. Waar staat **REPL** voor?",
+            "options": [
+                {
+                    "id": "read-eval-print-loop",
+                    "label": "Read, Evaluate, Print, Loop",
+                    "isCorrect": true
+                },
+                {
+                    "id": "run-edit-print-load",
+                    "label": "Run, Edit, Print, Load",
+                    "isCorrect": false
+                },
+                {
+                    "id": "read-execute-print-learn",
+                    "label": "Read, Execute, Print, Learn",
+                    "isCorrect": false
+                },
+                {
+                    "id": "repeat-eval-print-loop",
+                    "label": "Repeat, Evaluate, Print, Loop",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "REPL beschrijft de cyclus van interactieve modus: input lezen, evalueren, resultaat printen en opnieuw beginnen.",
+                "byOptionId": {
+                    "read-eval-print-loop": "Correct: dit is de volledige betekenis van REPL.",
+                    "run-edit-print-load": "Klinkt logisch, maar het is niet de officiële betekenis.",
+                    "read-execute-print-learn": "Leuk idee, maar dit is niet waar REPL voor staat.",
+                    "repeat-eval-print-loop": "Er zitten juiste woorden in, maar de eerste stap is READ, niet REPEAT."
+                }
+            }
+        },
+        {
+            "id": "q-python-creator",
+            "type": "single-choice",
+            "prompt": "Python werd gemaakt in de late jaren 80. Wie is ermee begonnen?",
+            "options": [
+                {
+                    "id": "dennis-ritchie",
+                    "label": "Dennis Ritchie",
+                    "isCorrect": false
+                },
+                {
+                    "id": "guido-van-rossum",
+                    "label": "Guido van Rossum",
+                    "isCorrect": true
+                },
+                {
+                    "id": "james-gosling",
+                    "label": "James Gosling",
+                    "isCorrect": false
+                },
+                {
+                    "id": "bjarne-stroustrup",
+                    "label": "Bjarne Stroustrup",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Guido van Rossum maakte Python: beginnervriendelijk, maar krachtig genoeg voor professionals.",
+                "byOptionId": {
+                    "dennis-ritchie": "Dennis Ritchie maakte de programmeertaal C.",
+                    "guido-van-rossum": "Correct.",
+                    "james-gosling": "James Gosling maakte Java.",
+                    "bjarne-stroustrup": "Bjarne Stroustrup maakte C++."
+                }
+            }
+        },
+        {
+            "id": "q-why-name-python",
+            "type": "single-choice",
+            "prompt": "Waarom heet de programmeertaal \"Python\"? (Nee, het gaat niet alleen over slangen.)",
+            "options": [
+                {
+                    "id": "snake",
+                    "label": "Ze is genoemd naar een slang omdat de maker reptielen tof vond.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "pet",
+                    "label": "Ze is genoemd naar het huisdier van de maker.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "monty-python",
+                    "label": "Ze is genoemd naar een Britse comedyreeks: \"Monty Python's Flying Circus\".",
+                    "isCorrect": true
+                },
+                {
+                    "id": "acronym",
+                    "label": "Het is een afkorting van iets geheim en technisch.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Python is genoemd naar de comedyshow \"Monty Python's Flying Circus\".",
+                "byOptionId": {
+                    "snake": "Er bestaat een slang die python heet, maar de taalnaam komt van de tv‑show.",
+                    "pet": "Python is niet genoemd naar een huisdier.",
+                    "monty-python": "Correct: de maker wou een leuke naam.",
+                    "acronym": "Python is geen afkorting; het staat niet stiekem voor iets."
+                }
+            }
+        },
+        {
+            "id": "q-python-extension",
+            "type": "single-choice",
+            "prompt": "Je bewaart je eerste hacker‑script zodat je het later opnieuw kan runnen. Welke file extension gebruik je voor een Python‑bestand?",
+            "options": [
+                {
+                    "id": "txt",
+                    "label": ".txt",
+                    "isCorrect": false
+                },
+                {
+                    "id": "exe",
+                    "label": ".exe",
+                    "isCorrect": false
+                },
+                {
+                    "id": "py",
+                    "label": ".py",
+                    "isCorrect": true
+                },
+                {
+                    "id": "java",
+                    "label": ".java",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Python‑scripts gebruiken de `.py` file extension.",
+                "byOptionId": {
+                    "txt": "`.txt` is voor platte tekst; Python herkent dat niet als scriptbestand.",
+                    "exe": "`.exe` is voor gecompileerde programma’s, niet voor broncode.",
+                    "py": "Correct: `.py` is de standaard extensie voor Python‑broncode.",
+                    "java": "`.java` is voor Java‑bronbestanden, niet voor Python."
+                }
+            }
+        },
+        {
+            "id": "q-print-hello-world",
+            "type": "single-choice",
+            "prompt": "Kijk naar deze Python‑regel:\n\n```python\nprint(\"Hello, World!\")\n```\n\nWat toont de computer effectief wanneer je dit runt?",
+            "options": [
+                {
+                    "id": "hello-world-no-punct",
+                    "label": "Hello World",
+                    "isCorrect": false
+                },
+                {
+                    "id": "prints-code",
+                    "label": "print(\"Hello, World!\")",
+                    "isCorrect": false
+                },
+                {
+                    "id": "hello-world-with-punct",
+                    "label": "Hello, World!",
+                    "isCorrect": true
+                },
+                {
+                    "id": "error",
+                    "label": "Het geeft een error.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "De `print` functie toont exact wat er tussen de quotes staat.",
+                "byOptionId": {
+                    "hello-world-no-punct": "De output heeft ook een komma en een uitroepteken: `Hello, World!`.",
+                    "prints-code": "Dat is de code zelf, niet wat er verschijnt wanneer je het runt.",
+                    "hello-world-with-punct": "Correct: `print` stuurt deze tekst naar je scherm.",
+                    "error": "Hier is geen error: dit is geldige Python."
+                }
+            }
+        },
+        {
+            "id": "q-repl-or-script",
+            "type": "single-choice",
+            "prompt": "Je wil snel testen wat `10 / 3` doet in Python, en je hoeft het niet op te slaan. Welke modus is de beste keuze?",
+            "options": [
+                {
+                    "id": "repl",
+                    "label": "Interactieve modus (de Python REPL)",
+                    "isCorrect": true
+                },
+                {
+                    "id": "script",
+                    "label": "Scriptmodus (eerst opslaan in een `.py` bestand)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "text-editor",
+                    "label": "Het typen in een text editor en het nooit uitvoeren",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spreadsheet",
+                    "label": "Het in een spreadsheet‑cel zetten",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "De REPL is perfect voor snelle experimenten zoals dit.",
+                "byOptionId": {
+                    "repl": "Correct: interactieve modus laat je `10 / 3` in één regel proberen en meteen het resultaat zien.",
+                    "script": "Je kan dit in een script doen, maar voor mini‑tests die je niet wil bewaren is dat trager.",
+                    "text-editor": "Het in een tekstbestand typen zorgt er niet voor dat Python het ook effectief runt.",
+                    "spreadsheet": "Python‑code hoort in Python, niet in een spreadsheetcel."
+                }
+            }
+        },
+        {
+            "id": "q-spot-the-error",
+            "type": "single-choice",
+            "prompt": "Een vriend schrijft deze regel en het crasht:\n\n```python\nprint(\"Hello, World!)\n```\n\nWat is het grootste probleem?",
+            "options": [
+                {
+                    "id": "missing-quote",
+                    "label": "Eén van de aanhalingstekens (quotes) ontbreekt.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "missing-comma",
+                    "label": "Er moet een komma na `print` staan.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "missing-space",
+                    "label": "Er moet een spatie na Hello staan.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "wrong-word",
+                    "label": "Het woord World mag niet in Python.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Strings in Python hebben een opening‑ en sluitquote nodig.",
+                "byOptionId": {
+                    "missing-quote": "Correct: de sluitquote na de `!` ontbreekt.",
+                    "missing-comma": "Je zet in deze Python‑versie geen komma na `print`.",
+                    "missing-space": "Spaties in de string zijn oké; dat laat je programma niet crashen.",
+                    "wrong-word": "`World` is gewoon tekst; Python maakt het niet uit welke menselijke woorden je gebruikt."
+                }
+            }
+        },
+        {
+            "id": "q-programming-vs-code-scenario",
+            "type": "single-choice",
+            "prompt": "Je wil een klein “hello”‑programma bouwen. Welke actie is een voorbeeld van **programmeren** (en niet enkel code schrijven)?",
+            "options": [
+                {
+                    "id": "write-print-line",
+                    "label": "`print(\"Hello, World!\")` in je editor typen.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "plan-steps",
+                    "label": "Een lijst stappen uitschrijven: vraag een naam, zeg hallo, en voeg later misschien extra features toe.",
+                    "isCorrect": true
+                },
+                {
+                    "id": "save-file",
+                    "label": "Het bestand opslaan als `test.py`.",
+                    "isCorrect": false
+                },
+                {
+                    "id": "run-program",
+                    "label": "Op Run klikken om de output te zien.",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Programmeren omvat plannen wat het programma moet doen, vóór of terwijl je code schrijft.",
+                "byOptionId": {
+                    "write-print-line": "Dat is code schrijven, niet stappen plannen.",
+                    "plan-steps": "Correct: het stap‑voor‑stap plan maken is programmeren.",
+                    "save-file": "Opslaan is belangrijk, maar op zichzelf is het geen programmeren of code.",
+                    "run-program": "Runnen test je code, maar het is niet het plan‑gedeelte."
+                }
+            }
         }
-      ],
-      "explanations": {
-        "overview": "Een programmeertaal is hoe je heel precies instructies geeft aan een computer.",
-        "byOptionId": {
-          "human-language": "Mensentaal is om met mensen te praten, niet rechtstreeks met computers.",
-          "computer-instructions": "Correct: dit is de taal waarin je code schrijft die de computer begrijpt.",
-          "hardware": "Hardware is het fysieke spul (toetsenbord, muis, CPU), niet de taal.",
-          "os": "Een besturingssysteem beheert hardware en apps, maar het is niet de taal waarin je programma’s schrijft."
-        }
-      }
-    },
-    {
-      "id": "q-code-vs-programming",
-      "type": "single-choice",
-      "prompt": "Je ontwerpt een klein spelletje dat hallo zegt tegen de speler. Welke optie beschrijft het verschil tussen **programmeren** en **code** het best?",
-      "options": [
-        {
-          "id": "no-difference",
-          "label": "Er is geen echt verschil; mensen gebruiken gewoon andere woorden.",
-          "isCorrect": false
-        },
-        {
-          "id": "reversed-definition",
-          "label": "Code is het plannen van stappen; programmeren is het exact intypen van instructies.",
-          "isCorrect": false
-        },
-        {
-          "id": "correct-definition",
-          "label": "Programmeren is plannen en ontwerpen; code zijn de exacte Python-instructies die je schrijft.",
-          "isCorrect": true
-        },
-        {
-          "id": "experts-only",
-          "label": "Programmeren is alleen voor experts; code is voor beginners.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Programmeren is het proces op hoog niveau; code is de concrete tekst die je aan de computer geeft.",
-        "byOptionId": {
-          "no-difference": "Er is wel een verschil: programmeren is het volledige proces, niet alleen typen.",
-          "reversed-definition": "Dit draait het om: plannen hoort bij programmeren, niet bij code.",
-          "correct-definition": "Correct: zie programmeren als het plan + de code samen.",
-          "experts-only": "Iedereen kan programmeren leren; het is niet alleen voor experts."
-        }
-      }
-    },
-    {
-      "id": "q-compiled-language",
-      "type": "single-choice",
-      "prompt": "Je drukt op een grote BUILD-knop en je code wordt een `.exe` die je telkens opnieuw kan uitvoeren. Wat voor soort taal gebruik je dan het meest waarschijnlijk?",
-      "options": [
-        {
-          "id": "python",
-          "label": "Python",
-          "isCorrect": false
-        },
-        {
-          "id": "cpp",
-          "label": "C++",
-          "isCorrect": true
-        },
-        {
-          "id": "javascript",
-          "label": "JavaScript",
-          "isCorrect": false
-        },
-        {
-          "id": "html",
-          "label": "HTML",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "C++ is een gecompileerde taal: je code wordt eerst vertaald naar machinecode vóór ze runt.",
-        "byOptionId": {
-          "python": "Python is meestal geïnterpreteerd, niet op deze manier gecompileerd.",
-          "cpp": "Correct: C++ programma’s worden normaal gecompileerd naar uitvoerbare bestanden.",
-          "javascript": "JavaScript wordt typisch geïnterpreteerd door de browser of runtime.",
-          "html": "HTML is een markup language om webpagina’s te structureren, geen gecompileerde programmeertaal."
-        }
-      }
-    },
-    {
-      "id": "q-repl",
-      "type": "single-choice",
-      "prompt": "Je opent een Python-console en typt `1 + 2`, drukt op Enter en ziet `3`. Dit gebeurt in de REPL. Waar staat **REPL** voor?",
-      "options": [
-        {
-          "id": "read-eval-print-loop",
-          "label": "Read, Evaluate, Print, Loop",
-          "isCorrect": true
-        },
-        {
-          "id": "run-edit-print-load",
-          "label": "Run, Edit, Print, Load",
-          "isCorrect": false
-        },
-        {
-          "id": "read-execute-print-learn",
-          "label": "Read, Execute, Print, Learn",
-          "isCorrect": false
-        },
-        {
-          "id": "repeat-eval-print-loop",
-          "label": "Repeat, Evaluate, Print, Loop",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "REPL beschrijft de cyclus van interactieve modus: input lezen, evalueren, resultaat printen en opnieuw beginnen.",
-        "byOptionId": {
-          "read-eval-print-loop": "Correct: dit is de volledige betekenis van REPL.",
-          "run-edit-print-load": "Klinkt logisch, maar het is niet de officiële betekenis.",
-          "read-execute-print-learn": "Leuk idee, maar dit is niet waar REPL voor staat.",
-          "repeat-eval-print-loop": "Er zitten juiste woorden in, maar de eerste stap is READ, niet REPEAT."
-        }
-      }
-    },
-    {
-      "id": "q-python-creator",
-      "type": "single-choice",
-      "prompt": "Python werd gemaakt in de late jaren 80. Wie is ermee begonnen?",
-      "options": [
-        {
-          "id": "dennis-ritchie",
-          "label": "Dennis Ritchie",
-          "isCorrect": false
-        },
-        {
-          "id": "guido-van-rossum",
-          "label": "Guido van Rossum",
-          "isCorrect": true
-        },
-        {
-          "id": "james-gosling",
-          "label": "James Gosling",
-          "isCorrect": false
-        },
-        {
-          "id": "bjarne-stroustrup",
-          "label": "Bjarne Stroustrup",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Guido van Rossum maakte Python: beginnervriendelijk, maar krachtig genoeg voor professionals.",
-        "byOptionId": {
-          "dennis-ritchie": "Dennis Ritchie maakte de programmeertaal C.",
-          "guido-van-rossum": "Correct.",
-          "james-gosling": "James Gosling maakte Java.",
-          "bjarne-stroustrup": "Bjarne Stroustrup maakte C++."
-        }
-      }
-    },
-    {
-      "id": "q-why-name-python",
-      "type": "single-choice",
-      "prompt": "Waarom heet de programmeertaal \"Python\"? (Nee, het gaat niet alleen over slangen.)",
-      "options": [
-        {
-          "id": "snake",
-          "label": "Ze is genoemd naar een slang omdat de maker reptielen tof vond.",
-          "isCorrect": false
-        },
-        {
-          "id": "pet",
-          "label": "Ze is genoemd naar het huisdier van de maker.",
-          "isCorrect": false
-        },
-        {
-          "id": "monty-python",
-          "label": "Ze is genoemd naar een Britse comedyreeks: \"Monty Python's Flying Circus\".",
-          "isCorrect": true
-        },
-        {
-          "id": "acronym",
-          "label": "Het is een afkorting van iets geheim en technisch.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Python is genoemd naar de comedyshow \"Monty Python's Flying Circus\".",
-        "byOptionId": {
-          "snake": "Er bestaat een slang die python heet, maar de taalnaam komt van de tv‑show.",
-          "pet": "Python is niet genoemd naar een huisdier.",
-          "monty-python": "Correct: de maker wou een leuke naam.",
-          "acronym": "Python is geen afkorting; het staat niet stiekem voor iets."
-        }
-      }
-    },
-    {
-      "id": "q-python-extension",
-      "type": "single-choice",
-      "prompt": "Je bewaart je eerste hacker‑script zodat je het later opnieuw kan runnen. Welke file extension gebruik je voor een Python‑bestand?",
-      "options": [
-        {
-          "id": "txt",
-          "label": ".txt",
-          "isCorrect": false
-        },
-        {
-          "id": "exe",
-          "label": ".exe",
-          "isCorrect": false
-        },
-        {
-          "id": "py",
-          "label": ".py",
-          "isCorrect": true
-        },
-        {
-          "id": "java",
-          "label": ".java",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Python‑scripts gebruiken de `.py` file extension.",
-        "byOptionId": {
-          "txt": "`.txt` is voor platte tekst; Python herkent dat niet als scriptbestand.",
-          "exe": "`.exe` is voor gecompileerde programma’s, niet voor broncode.",
-          "py": "Correct: `.py` is de standaard extensie voor Python‑broncode.",
-          "java": "`.java` is voor Java‑bronbestanden, niet voor Python."
-        }
-      }
-    },
-    {
-      "id": "q-print-hello-world",
-      "type": "single-choice",
-      "prompt": "Kijk naar deze Python‑regel:\n\n```python\nprint(\"Hello, World!\")\n```\n\nWat toont de computer effectief wanneer je dit runt?",
-      "options": [
-        {
-          "id": "hello-world-no-punct",
-          "label": "Hello World",
-          "isCorrect": false
-        },
-        {
-          "id": "prints-code",
-          "label": "print(\"Hello, World!\")",
-          "isCorrect": false
-        },
-        {
-          "id": "hello-world-with-punct",
-          "label": "Hello, World!",
-          "isCorrect": true
-        },
-        {
-          "id": "error",
-          "label": "Het geeft een error.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "De `print` functie toont exact wat er tussen de quotes staat.",
-        "byOptionId": {
-          "hello-world-no-punct": "De output heeft ook een komma en een uitroepteken: `Hello, World!`.",
-          "prints-code": "Dat is de code zelf, niet wat er verschijnt wanneer je het runt.",
-          "hello-world-with-punct": "Correct: `print` stuurt deze tekst naar je scherm.",
-          "error": "Hier is geen error: dit is geldige Python."
-        }
-      }
-    },
-    {
-      "id": "q-repl-or-script",
-      "type": "single-choice",
-      "prompt": "Je wil snel testen wat `10 / 3` doet in Python, en je hoeft het niet op te slaan. Welke modus is de beste keuze?",
-      "options": [
-        {
-          "id": "repl",
-          "label": "Interactieve modus (de Python REPL)",
-          "isCorrect": true
-        },
-        {
-          "id": "script",
-          "label": "Scriptmodus (eerst opslaan in een `.py` bestand)",
-          "isCorrect": false
-        },
-        {
-          "id": "text-editor",
-          "label": "Het typen in een text editor en het nooit uitvoeren",
-          "isCorrect": false
-        },
-        {
-          "id": "spreadsheet",
-          "label": "Het in een spreadsheet‑cel zetten",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "De REPL is perfect voor snelle experimenten zoals dit.",
-        "byOptionId": {
-          "repl": "Correct: interactieve modus laat je `10 / 3` in één regel proberen en meteen het resultaat zien.",
-          "script": "Je kan dit in een script doen, maar voor mini‑tests die je niet wil bewaren is dat trager.",
-          "text-editor": "Het in een tekstbestand typen zorgt er niet voor dat Python het ook effectief runt.",
-          "spreadsheet": "Python‑code hoort in Python, niet in een spreadsheetcel."
-        }
-      }
-    },
-    {
-      "id": "q-spot-the-error",
-      "type": "single-choice",
-      "prompt": "Een vriend schrijft deze regel en het crasht:\n\n```python\nprint(\"Hello, World!)\n```\n\nWat is het grootste probleem?",
-      "options": [
-        {
-          "id": "missing-quote",
-          "label": "Eén van de aanhalingstekens (quotes) ontbreekt.",
-          "isCorrect": true
-        },
-        {
-          "id": "missing-comma",
-          "label": "Er moet een komma na `print` staan.",
-          "isCorrect": false
-        },
-        {
-          "id": "missing-space",
-          "label": "Er moet een spatie na Hello staan.",
-          "isCorrect": false
-        },
-        {
-          "id": "wrong-word",
-          "label": "Het woord World mag niet in Python.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Strings in Python hebben een opening‑ en sluitquote nodig.",
-        "byOptionId": {
-          "missing-quote": "Correct: de sluitquote na de `!` ontbreekt.",
-          "missing-comma": "Je zet in deze Python‑versie geen komma na `print`.",
-          "missing-space": "Spaties in de string zijn oké; dat laat je programma niet crashen.",
-          "wrong-word": "`World` is gewoon tekst; Python maakt het niet uit welke menselijke woorden je gebruikt."
-        }
-      }
-    },
-    {
-      "id": "q-programming-vs-code-scenario",
-      "type": "single-choice",
-      "prompt": "Je wil een klein “hello”‑programma bouwen. Welke actie is een voorbeeld van **programmeren** (en niet enkel code schrijven)?",
-      "options": [
-        {
-          "id": "write-print-line",
-          "label": "`print(\"Hello, World!\")` in je editor typen.",
-          "isCorrect": false
-        },
-        {
-          "id": "plan-steps",
-          "label": "Een lijst stappen uitschrijven: vraag een naam, zeg hallo, en voeg later misschien extra features toe.",
-          "isCorrect": true
-        },
-        {
-          "id": "save-file",
-          "label": "Het bestand opslaan als `test.py`.",
-          "isCorrect": false
-        },
-        {
-          "id": "run-program",
-          "label": "Op Run klikken om de output te zien.",
-          "isCorrect": false
-        }
-      ],
-      "explanations": {
-        "overview": "Programmeren omvat plannen wat het programma moet doen, vóór of terwijl je code schrijft.",
-        "byOptionId": {
-          "write-print-line": "Dat is code schrijven, niet stappen plannen.",
-          "plan-steps": "Correct: het stap‑voor‑stap plan maken is programmeren.",
-          "save-file": "Opslaan is belangrijk, maar op zichzelf is het geen programmeren of code.",
-          "run-program": "Runnen test je code, maar het is niet het plan‑gedeelte."
-        }
-      }
-    }
-  ]
+    ]
 }

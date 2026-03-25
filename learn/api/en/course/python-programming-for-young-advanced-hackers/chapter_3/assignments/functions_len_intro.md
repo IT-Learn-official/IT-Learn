@@ -26,4 +26,3 @@ Open `functions_len_intro.py` in the editor.
 - [ ] I ran the code and saw the correct lengths in the output.
 
 Have fun counting characters!
-

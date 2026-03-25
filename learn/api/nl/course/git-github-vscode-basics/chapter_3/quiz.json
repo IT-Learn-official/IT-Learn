@@ -10,9 +10,17 @@
       "prompt": "Wat helpt `git status` je te zien?",
       "options": [
         { "id": "a", "label": "Het weer van vandaag", "isCorrect": false },
-        { "id": "b", "label": "Welke bestanden gewijzigd zijn en staged of niet-staged zijn", "isCorrect": true },
+        {
+          "id": "b",
+          "label": "Welke bestanden gewijzigd zijn en staged of niet-staged zijn",
+          "isCorrect": true
+        },
         { "id": "c", "label": "Je GitHub-volgers", "isCorrect": false },
-        { "id": "d", "label": "Een lijst van alle programmeertalen", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Een lijst van alle programmeertalen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`git status` vertelt je wat er veranderde en wat klaarstaat om te committen.",
@@ -29,10 +37,18 @@
       "type": "single-choice",
       "prompt": "Waarvoor gebruik je de staging area?",
       "options": [
-        { "id": "a", "label": "Bestanden automatisch uploaden naar GitHub", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Bestanden automatisch uploaden naar GitHub",
+          "isCorrect": false
+        },
         { "id": "b", "label": "Oude commits verwijderen", "isCorrect": false },
         { "id": "c", "label": "Je repository hernoemen", "isCorrect": false },
-        { "id": "d", "label": "Kiezen welke wijzigingen in de volgende commit komen", "isCorrect": true }
+        {
+          "id": "d",
+          "label": "Kiezen welke wijzigingen in de volgende commit komen",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Stagen is de selectiestap vóór je commit.",
@@ -49,10 +65,26 @@
       "type": "single-choice",
       "prompt": "Wat doet `git add`?",
       "options": [
-        { "id": "a", "label": "Een nieuwe GitHub-repository aanmaken", "isCorrect": false },
-        { "id": "b", "label": "Wijzigingen stagen zodat je ze kunt committen", "isCorrect": true },
-        { "id": "c", "label": "Automatisch een commitboodschap schrijven", "isCorrect": false },
-        { "id": "d", "label": "Een bestand van je computer verwijderen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Een nieuwe GitHub-repository aanmaken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wijzigingen stagen zodat je ze kunt committen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Automatisch een commitboodschap schrijven",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een bestand van je computer verwijderen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`git add` staged wijzigingen voor de volgende commit.",
@@ -69,10 +101,26 @@
       "type": "single-choice",
       "prompt": "Waarom zou je een `.gitignore`-bestand gebruiken?",
       "options": [
-        { "id": "a", "label": "Om je internetverbinding sneller te maken", "isCorrect": false },
-        { "id": "b", "label": "Om commits anoniem te maken", "isCorrect": false },
-        { "id": "c", "label": "Om Git te dwingen elk bestand te volgen", "isCorrect": false },
-        { "id": "d", "label": "Om bestanden te negeren die je niet wilt tracken in Git", "isCorrect": true }
+        {
+          "id": "a",
+          "label": "Om je internetverbinding sneller te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om commits anoniem te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om Git te dwingen elk bestand te volgen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om bestanden te negeren die je niet wilt tracken in Git",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "`.gitignore` helpt vermijden dat je tijdelijke bestanden, build-output en secrets commit.",
@@ -86,4 +134,3 @@
     }
   ]
 }
-

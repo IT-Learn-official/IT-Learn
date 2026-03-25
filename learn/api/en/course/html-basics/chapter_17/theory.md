@@ -5,6 +5,7 @@ Accessibility ensures that all users, including those with disabilities, can acc
 ---
 
 Here are some reasons why accessibility is important:
+
 1. Inclusivity: It allows people with disabilities to access information and services online.
 
 2. Legal Compliance: Many countries have laws that require websites to be accessible.

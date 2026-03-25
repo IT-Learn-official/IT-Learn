@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "Wofür verwendet man einen Pull Request (PR)?",
       "options": [
-        { "id": "a", "label": "Anfrage, Änderungen von einem Branch in einen anderen zu mergen", "isCorrect": true },
-        { "id": "b", "label": "Anfrage, das Repository von jemand anderem zu löschen", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Anfrage, Änderungen von einem Branch in einen anderen zu mergen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Anfrage, das Repository von jemand anderem zu löschen",
+          "isCorrect": false
+        },
         { "id": "c", "label": "Anfrage, Git umzubenennen", "isCorrect": false },
-        { "id": "d", "label": "Eine Datei, die Passwörter speichert", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Eine Datei, die Passwörter speichert",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "PRs helfen Teams, Änderungen zu reviewen, bevor sie in wichtige Branches wie main gemerged werden.",
@@ -29,10 +41,26 @@
       "type": "single-choice",
       "prompt": "Warum sind Code-Reviews nützlich?",
       "options": [
-        { "id": "a", "label": "Sie machen Git automatisch schneller", "isCorrect": false },
-        { "id": "b", "label": "Sie blockieren Merges dauerhaft", "isCorrect": false },
-        { "id": "c", "label": "Sie können Fehler finden und die Lesbarkeit verbessern", "isCorrect": true },
-        { "id": "d", "label": "Sie ersetzen Tests komplett", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Sie machen Git automatisch schneller",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie blockieren Merges dauerhaft",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie können Fehler finden und die Lesbarkeit verbessern",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie ersetzen Tests komplett",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Reviews bringen ein zweites Paar Augen und helfen, die Codequalität hoch zu halten.",
@@ -49,10 +77,26 @@
       "type": "single-choice",
       "prompt": "Wofür werden Issues auf GitHub typischerweise verwendet?",
       "options": [
-        { "id": "a", "label": "Kompilierte Programme speichern", "isCorrect": false },
-        { "id": "b", "label": "Bugs, Aufgaben und Feature-Ideen verfolgen", "isCorrect": true },
-        { "id": "c", "label": "Dein Repository verschlüsseln", "isCorrect": false },
-        { "id": "d", "label": "Private Repos automatisch öffentlich machen", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Kompilierte Programme speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Bugs, Aufgaben und Feature-Ideen verfolgen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Dein Repository verschlüsseln",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Private Repos automatisch öffentlich machen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Issues sind ein Planungs- und Diskussionstool für Arbeitspakete.",
@@ -69,9 +113,21 @@
       "type": "single-choice",
       "prompt": "Was ist ein Fork auf GitHub?",
       "options": [
-        { "id": "a", "label": "Deine eigene Kopie vom Repository einer anderen Person auf GitHub", "isCorrect": true },
-        { "id": "b", "label": "Eine Methode, alle Branches zu löschen", "isCorrect": false },
-        { "id": "c", "label": "Eine Art von Commit-Nachricht", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Deine eigene Kopie vom Repository einer anderen Person auf GitHub",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Eine Methode, alle Branches zu löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Eine Art von Commit-Nachricht",
+          "isCorrect": false
+        },
         { "id": "d", "label": "Ein Git-Befehl zum Stagen", "isCorrect": false }
       ],
       "explanations": {
@@ -86,4 +142,3 @@
     }
   ]
 }
-

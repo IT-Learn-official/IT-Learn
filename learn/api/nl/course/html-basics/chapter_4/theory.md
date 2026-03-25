@@ -5,6 +5,7 @@ De `<head>` bevat metadata: informatie over de pagina die browsers en zoekmachin
 ---
 
 Belangrijke onderdelen in de head:
+
 - `<title>`: dit is de tekst die je ziet op het tabblad in je browser. Meestal is dat de titel van de pagina.
 - `<meta charset="utf-8">`: zegt aan de browser welke tekens/encoding je gebruikt, zodat tekst correct weergegeven wordt.
 - `<meta name="viewport" content="width=device-width, initial-scale=1">`: maakt pagina’s responsief op telefoons.

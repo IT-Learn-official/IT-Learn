@@ -8,6 +8,3 @@ Every HTML page follows a predictable skeleton. It **starts** with `<!DOCTYPE ht
 ---
 
 **For example:** imagine writing a letter. The `<head>` is the letterhead (who it's from and how to read it), and the `<body>` is the message itself.
-
-
-

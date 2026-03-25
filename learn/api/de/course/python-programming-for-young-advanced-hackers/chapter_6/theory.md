@@ -3,6 +3,7 @@
 Du hast Python beigebracht, Daten zu speichern – jetzt soll es auch etwas **damit tun**. Operatoren sind die Symbole, mit denen Python rechnet, vergleicht und entscheidet – wie die Regeln in deinem Lieblingsspiel.
 
 Wenn du wissen willst:
+
 - „Reicht mein Prüfungsergebnis zum Bestehen?“
 - „Hab ich genug Coins für den Skin?“
 - „Kann ich noch ein Match spielen oder ist es schon zu spät?“
@@ -23,12 +24,12 @@ Am Ende dieses Kapitels kannst du:
 
 Das sind die Grundtools für Zahlen. Einiges kennst du schon, aber hier ist die ganze Squad:
 
-- `+`  : Addition
-- `-`  : Subtraktion
-- `*`  : Multiplikation
-- `/`  : Division (liefert immer `float`)
+- `+` : Addition
+- `-` : Subtraktion
+- `*` : Multiplikation
+- `/` : Division (liefert immer `float`)
 - `//` : Integer Division (wirft Nachkommastellen weg)
-- `%`  : Modulo (liefert den Rest)
+- `%` : Modulo (liefert den Rest)
 - `**` : Exponent (Potenz)
 
 ```python
@@ -43,6 +44,7 @@ print(10 % 3)   # 1
 ```
 
 So rechnest du z. B.:
+
 - wie viele Busse du für einen Schulausflug brauchst,
 - wie viele Packs du mit deinen Coins kaufen kannst,
 - wie viel Damage ein Combo macht, wenn Power mit dem Level skaliert.
@@ -57,8 +59,8 @@ Vergleichsoperatoren lassen dich **Ja/Nein**‑Fragen zu deinen Daten stellen. D
 
 - `==` : ist gleich?
 - `!=` : ist nicht gleich?
-- `<`  : ist kleiner?
-- `>`  : ist größer?
+- `<` : ist kleiner?
+- `>` : ist größer?
 - `<=` : ist kleiner oder gleich?
 - `>=` : ist größer oder gleich?
 
@@ -94,17 +96,17 @@ score = 0
 
 Aber oft willst du eine Variable **updaten**, basierend auf ihrem aktuellen Wert:
 
-- `x = x + 1`  → +1
-- `x = x - 5`  → -5
+- `x = x + 1` → +1
+- `x = x - 5` → -5
 
 Python hat dafür saubere Shortcuts: **augmented assignment operators**:
 
 | Operator | Example        | Equivalent to          |
-|---------|----------------|------------------------|
-| `+=`    | `score += 10`  | `score = score + 10`   |
-| `-=`    | `health -= 25` | `health = health - 25` |
-| `*=`    | `mana *= 2`    | `mana = mana * 2`      |
-| `/=`    | `speed /= 2`   | `speed = speed / 2`    |
+| -------- | -------------- | ---------------------- |
+| `+=`     | `score += 10`  | `score = score + 10`   |
+| `-=`     | `health -= 25` | `health = health - 25` |
+| `*=`     | `mana *= 2`    | `mana = mana * 2`      |
+| `/=`     | `speed /= 2`   | `speed = speed / 2`    |
 
 ```python
 score = 100
@@ -133,7 +135,7 @@ Logische Operatoren kombinieren mehrere `True`/`False`‑Bedingungen zu größer
 Python hat drei logische Operatoren:
 
 - `and` – **alle** Bedingungen müssen `True` sein.
-- `or`  – **mindestens eine** Bedingung muss `True` sein.
+- `or` – **mindestens eine** Bedingung muss `True` sein.
 - `not` – kippt `True` ↔ `False`.
 
 ### `and`: alles muss passen
@@ -159,6 +161,7 @@ print(can_fight)  # True
 ```
 
 Perfekt für Regeln wie:
+
 - „Du darfst dem Server beitreten, wenn du Admin **oder** Moderator bist.“
 
 ### `not`: umdrehen
@@ -214,6 +217,7 @@ print(can_play)
 ```
 
 Lies es so:
+
 - Hausaufgaben müssen fertig sein.
 - UND (es ist vor 22:00 ODER die Eltern sind noch nicht da).
 

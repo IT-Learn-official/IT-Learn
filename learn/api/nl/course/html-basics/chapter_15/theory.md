@@ -5,10 +5,12 @@ Attributen zijn extra stukjes info die je aan HTML-elementen kan toevoegen. Ze s
 Sommige attributen komen vaak voor bij veel elementen, terwijl andere specifiek zijn voor bepaalde tags. `class` en `id` kan je bijna overal gebruiken, terwijl `src` typisch bij `<img>` hoort.
 
 Algemene attributen:
+
 - `class`: om CSS-stijlen toe te passen. Je kan meerdere classes op één element hebben, gescheiden door spaties. Bijvoorbeeld: `<div class="container highlight">`.
 - `id`: een unieke identifier voor een element. Die hoort uniek te zijn binnen de pagina. Bijvoorbeeld: `<h1 id="main-title">`.
 
 Voorbeeld van class en id:
+
 ```html
 <div class="container">
   <h1 id="main-title">Welcome to My Website</h1>

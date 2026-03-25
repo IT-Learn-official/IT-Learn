@@ -19,9 +19,10 @@ Stell dir vor, du führst oft dieselbe Befehlsfolge aus – z. B. einen Target�
 Eine **Funktion** lässt dich diese Befehlsfolge „einpacken“, benennen und überall mit einer Zeile wiederverwenden.
 
 Funktionen helfen dir:
+
 - **D.R.Y. (Don't Repeat Yourself):** einmal schreiben, immer wieder nutzen.
 - **Organisation:** ein großes Script in kleine, verständliche Teile zerlegen.
-- **Abstraktion:** komplexe Logik hinter einem einfachen Namen verstecken. Du musst nicht wissen, *wie* `scan_target()` funktioniert – nur, dass es funktioniert.
+- **Abstraktion:** komplexe Logik hinter einem einfachen Namen verstecken. Du musst nicht wissen, _wie_ `scan_target()` funktioniert – nur, dass es funktioniert.
 
 ---
 
@@ -107,6 +108,7 @@ else:
 - Der aufrufende Code kann den Wert speichern (`result`) und damit entscheiden.
 
 **`print` vs `return`:**
+
 - `print()` ist Output für Menschen.
 - `return` ist Output für dein Programm.
 

@@ -12,4 +12,3 @@ Use a while loop to count down and then launch the rocket.
 
 - The condition can be `while count > 0:`.
 - Inside the loop, remember to do `count = count - 1` so it eventually stops.
-

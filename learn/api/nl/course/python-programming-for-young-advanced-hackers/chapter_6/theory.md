@@ -3,6 +3,7 @@
 Je hebt Python geleerd om data op te slaan; nu is het tijd om hem dingen te laten **doen** met die data. Operatoren zijn de symbolen die Python gebruikt om te rekenen, te vergelijken en te beslissen—zoals de regels in je favoriete game.
 
 Als je wil weten:
+
 - “Is mijn examenscore hoog genoeg om te slagen?”
 - “Heb ik genoeg coins om die skin te kopen?”
 - “Kan ik nog een match spelen, of is het al te laat?”
@@ -23,12 +24,12 @@ Tegen het einde van dit hoofdstuk kan je:
 
 Dit zijn de basis‑tools voor getallen. Je hebt er al een paar gezien, maar laten we de squad compleet maken:
 
-- `+`  : optellen
-- `-`  : aftrekken
-- `*`  : vermenigvuldigen
-- `/`  : delen (geeft altijd een `float`)
+- `+` : optellen
+- `-` : aftrekken
+- `*` : vermenigvuldigen
+- `/` : delen (geeft altijd een `float`)
 - `//` : integer division (gooit de decimalen weg)
-- `%`  : modulo (geeft de rest)
+- `%` : modulo (geeft de rest)
 - `**` : exponent (macht)
 
 ```python
@@ -43,6 +44,7 @@ print(10 % 3)   # 1
 ```
 
 Zo bereken je bijvoorbeeld:
+
 - hoeveel bussen je nodig hebt voor een schooluitstap,
 - hoeveel packs je kan kopen met je coins,
 - hoeveel damage een combo doet als power mee schaalt met level.
@@ -57,8 +59,8 @@ Vergelijkingsoperatoren laten je **ja/nee**‑vragen stellen over je data. Het r
 
 - `==` : is gelijk aan?
 - `!=` : is niet gelijk aan?
-- `<`  : is kleiner dan?
-- `>`  : is groter dan?
+- `<` : is kleiner dan?
+- `>` : is groter dan?
 - `<=` : is kleiner dan of gelijk aan?
 - `>=` : is groter dan of gelijk aan?
 
@@ -94,17 +96,17 @@ score = 0
 
 Maar vaak wil je een variabele **updaten** op basis van haar huidige waarde:
 
-- `x = x + 1`  → verhogen met 1
-- `x = x - 5`  → verlagen met 5
+- `x = x + 1` → verhogen met 1
+- `x = x - 5` → verlagen met 5
 
 Python heeft hiervoor nette shortcuts: **augmented assignment operators**:
 
 | Operator | Example        | Equivalent to          |
-|---------|----------------|------------------------|
-| `+=`    | `score += 10`  | `score = score + 10`   |
-| `-=`    | `health -= 25` | `health = health - 25` |
-| `*=`    | `mana *= 2`    | `mana = mana * 2`      |
-| `/=`    | `speed /= 2`   | `speed = speed / 2`    |
+| -------- | -------------- | ---------------------- |
+| `+=`     | `score += 10`  | `score = score + 10`   |
+| `-=`     | `health -= 25` | `health = health - 25` |
+| `*=`     | `mana *= 2`    | `mana = mana * 2`      |
+| `/=`     | `speed /= 2`   | `speed = speed / 2`    |
 
 ```python
 score = 100
@@ -133,7 +135,7 @@ Logische operatoren laten je meerdere `True`/`False`‑voorwaarden combineren to
 Python heeft drie logische operatoren:
 
 - `and` – **alle** voorwaarden moeten `True` zijn.
-- `or`  – **minstens één** voorwaarde moet `True` zijn.
+- `or` – **minstens één** voorwaarde moet `True` zijn.
 - `not` – keert `True` ↔ `False` om.
 
 ### `and`: alles moet kloppen
@@ -159,6 +161,7 @@ print(can_fight)  # True
 ```
 
 Perfect voor regels zoals:
+
 - “Je mag de server joinen als je admin **of** moderator bent.”
 
 ### `not`: omkeren
@@ -214,6 +217,7 @@ print(can_play)
 ```
 
 Lees het zo:
+
 - Huiswerk moet af zijn.
 - EN (het is vóór 22:00 OF je ouders zijn nog niet thuis).
 

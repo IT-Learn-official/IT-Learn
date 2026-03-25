@@ -1,124 +1,188 @@
 {
-  "chapterId": "chapter_7",
-  "kind": "assessment",
-  "title": "Hoofdstuk 7 - Getallen, math-bibliotheek en random Check",
-  "description": "Snelle check voor hoofdstuk 7. Test je begrip van machten, de math-module, afronden en random.",
-  "questions": [
-    {
-      "id": "q-exponent-operator",
-      "type": "single-choice",
-      "prompt": "Welke expressie berekent correct 2 tot de macht 5 in Python?",
-      "options": [
-        { "id": "a", "label": "2 ^ 5", "isCorrect": false },
-        { "id": "b", "label": "2 ** 5", "isCorrect": true },
-        { "id": "c", "label": "2 ^^ 5", "isCorrect": false },
-        { "id": "d", "label": "pow(2, 5, 0)", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "De operator `**` gebruik je voor exponenten (machten) in Python.",
-        "byOptionId": {
-          "a": "In Python is `^` bitwise XOR, geen machtsverheffen.",
-          "b": "Juist, `2 ** 5` betekent 2 tot de macht 5.",
-          "c": "Er bestaat geen `^^`-operator in Python.",
-          "d": "`pow(2, 5)` zou werken, maar `pow(2, 5, 0)` betekent iets anders en geeft een error."
-        }
-      }
-    },
-    {
-      "id": "q-math-sqrt",
-      "type": "single-choice",
-      "prompt": "Je importeerde de math-module met `import math`. Hoe bereken je correct de vierkantswortel van 16?",
-      "options": [
-        { "id": "a", "label": "sqrt(16)", "isCorrect": false },
-        { "id": "b", "label": "math.sqrt(16)", "isCorrect": true },
-        { "id": "c", "label": "math.square_root(16)", "isCorrect": false },
-        { "id": "d", "label": "math.sqrt = 16", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "Functies uit de math-module gebruik je als `math.functieNaam(...)`.",
-        "byOptionId": {
-          "a": "Zonder `math.` weet Python niet wat `sqrt` is.",
-          "b": "Juist, `math.sqrt(16)` geeft 4.0 terug.",
-          "c": "Er is geen functie `square_root` in de math-module.",
-          "d": "Dit probeert `math.sqrt` te overschrijven in plaats van het aan te roepen."
-        }
-      }
-    },
-    {
-      "id": "q-floor-ceil",
-      "type": "single-choice",
-      "prompt": "Wat zijn de resultaten van `math.floor(3.7)` en `math.ceil(3.7)`?",
-      "options": [
+    "chapterId": "chapter_7",
+    "kind": "assessment",
+    "title": "Hoofdstuk 7 - Getallen, math-bibliotheek en random Check",
+    "description": "Snelle check voor hoofdstuk 7. Test je begrip van machten, de math-module, afronden en random.",
+    "questions": [
         {
-          "id": "a",
-          "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4",
-          "isCorrect": true
+            "id": "q-exponent-operator",
+            "type": "single-choice",
+            "prompt": "Welke expressie berekent correct 2 tot de macht 5 in Python?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "2 ^ 5",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "label": "2 ** 5",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "label": "2 ^^ 5",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "pow(2, 5, 0)",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "De operator `**` gebruik je voor exponenten (machten) in Python.",
+                "byOptionId": {
+                    "a": "In Python is `^` bitwise XOR, geen machtsverheffen.",
+                    "b": "Juist, `2 ** 5` betekent 2 tot de macht 5.",
+                    "c": "Er bestaat geen `^^`-operator in Python.",
+                    "d": "`pow(2, 5)` zou werken, maar `pow(2, 5, 0)` betekent iets anders en geeft een error."
+                }
+            }
         },
         {
-          "id": "b",
-          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
-          "isCorrect": false
+            "id": "q-math-sqrt",
+            "type": "single-choice",
+            "prompt": "Je importeerde de math-module met `import math`. Hoe bereken je correct de vierkantswortel van 16?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "sqrt(16)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "label": "math.sqrt(16)",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "label": "math.square_root(16)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "math.sqrt = 16",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "Functies uit de math-module gebruik je als `math.functieNaam(...)`.",
+                "byOptionId": {
+                    "a": "Zonder `math.` weet Python niet wat `sqrt` is.",
+                    "b": "Juist, `math.sqrt(16)` geeft 4.0 terug.",
+                    "c": "Er is geen functie `square_root` in de math-module.",
+                    "d": "Dit probeert `math.sqrt` te overschrijven in plaats van het aan te roepen."
+                }
+            }
         },
         {
-          "id": "c",
-          "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7",
-          "isCorrect": false
+            "id": "q-floor-ceil",
+            "type": "single-choice",
+            "prompt": "Wat zijn de resultaten van `math.floor(3.7)` en `math.ceil(3.7)`?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "math.floor(3.7) = 4, math.ceil(3.7) = 4",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "floor gaat altijd naar beneden, ceil gaat altijd naar boven (naar het dichtstbijzijnde hele getal).",
+                "byOptionId": {
+                    "a": "Juist, floor(3.7) is 3 en ceil(3.7) is 4.",
+                    "b": "Dit verwisselt de betekenis van floor en ceil.",
+                    "c": "Floor en ceil geven altijd hele getallen terug, niet het originele decimale getal.",
+                    "d": "Beide naar 4 is niet correct voor floor."
+                }
+            }
         },
         {
-          "id": "d",
-          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 4",
-          "isCorrect": false
+            "id": "q-rounding",
+            "type": "single-choice",
+            "prompt": "Wat geeft `round(2.6)` terug in Python?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "2",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "label": "2.0",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "3",
+                    "isCorrect": true
+                },
+                {
+                    "id": "d",
+                    "label": "3.0",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "round(x) geeft het dichtstbijzijnde hele getal terug.",
+                "byOptionId": {
+                    "a": "2.6 ligt dichter bij 3 dan bij 2, dus afronden naar 2 is fout.",
+                    "b": "Zelfde reden als bij '2' - 2.6 ligt dichter bij 3.",
+                    "c": "Juist, round(2.6) is 3.",
+                    "d": "In de buurt, maar in deze quiz gebruiken we gewone ints voor hele getallen."
+                }
+            }
+        },
+        {
+            "id": "q-random-randint",
+            "type": "single-choice",
+            "prompt": "Je wil een random integer tussen 1 en 10, inclusief 1 en 10. Welke code gebruik je na `import random`?",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "random.randint(1, 10)",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "label": "random.randint(0, 9)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "label": "random.random(1, 10)",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "label": "random.choice(1, 10)",
+                    "isCorrect": false
+                }
+            ],
+            "explanations": {
+                "overview": "randint(a, b) geeft een integer tussen a en b terug, inclusief beide.",
+                "byOptionId": {
+                    "a": "Juist, random.randint(1, 10) bevat zowel 1 als 10.",
+                    "b": "Dit geeft getallen van 0 tot 9, niet van 1 tot 10.",
+                    "c": "random.random() neemt geen argumenten en geeft een float tussen 0 en 1 terug.",
+                    "d": "random.choice() verwacht een reeks (zoals een lijst), niet twee losse getallen."
+                }
+            }
         }
-      ],
-      "explanations": {
-        "overview": "floor gaat altijd naar beneden, ceil gaat altijd naar boven (naar het dichtstbijzijnde hele getal).",
-        "byOptionId": {
-          "a": "Juist, floor(3.7) is 3 en ceil(3.7) is 4.",
-          "b": "Dit verwisselt de betekenis van floor en ceil.",
-          "c": "Floor en ceil geven altijd hele getallen terug, niet het originele decimale getal.",
-          "d": "Beide naar 4 is niet correct voor floor."
-        }
-      }
-    },
-    {
-      "id": "q-rounding",
-      "type": "single-choice",
-      "prompt": "Wat geeft `round(2.6)` terug in Python?",
-      "options": [
-        { "id": "a", "label": "2", "isCorrect": false },
-        { "id": "b", "label": "2.0", "isCorrect": false },
-        { "id": "c", "label": "3", "isCorrect": true },
-        { "id": "d", "label": "3.0", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "round(x) geeft het dichtstbijzijnde hele getal terug.",
-        "byOptionId": {
-          "a": "2.6 ligt dichter bij 3 dan bij 2, dus afronden naar 2 is fout.",
-          "b": "Zelfde reden als bij '2' - 2.6 ligt dichter bij 3.",
-          "c": "Juist, round(2.6) is 3.",
-          "d": "In de buurt, maar in deze quiz gebruiken we gewone ints voor hele getallen."
-        }
-      }
-    },
-    {
-      "id": "q-random-randint",
-      "type": "single-choice",
-      "prompt": "Je wil een random integer tussen 1 en 10, inclusief 1 en 10. Welke code gebruik je na `import random`?",
-      "options": [
-        { "id": "a", "label": "random.randint(1, 10)", "isCorrect": true },
-        { "id": "b", "label": "random.randint(0, 9)", "isCorrect": false },
-        { "id": "c", "label": "random.random(1, 10)", "isCorrect": false },
-        { "id": "d", "label": "random.choice(1, 10)", "isCorrect": false }
-      ],
-      "explanations": {
-        "overview": "randint(a, b) geeft een integer tussen a en b terug, inclusief beide.",
-        "byOptionId": {
-          "a": "Juist, random.randint(1, 10) bevat zowel 1 als 10.",
-          "b": "Dit geeft getallen van 0 tot 9, niet van 1 tot 10.",
-          "c": "random.random() neemt geen argumenten en geeft een float tussen 0 en 1 terug.",
-          "d": "random.choice() verwacht een reeks (zoals een lijst), niet twee losse getallen."
-        }
-      }
-    }
-  ]
+    ]
 }

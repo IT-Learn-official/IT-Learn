@@ -1,9 +1,11 @@
-﻿{
-    "chapterId":  "chapter_2",
-    "kind":  "practice",
-    "title":  "Hoofdstuk 2 - Oefeningen (placeholder)",
-    "description":  "Er zijn nog geen oefening(en) gedefinieerd voor dit hoofdstuk.",
-    "practices":  [
-
-                  ]
+﻿{
+  "chapterId": "chapter_2",
+
+  "kind": "practice",
+
+  "title": "Hoofdstuk 2 - Oefeningen (placeholder)",
+
+  "description": "Er zijn nog geen oefening(en) gedefinieerd voor dit hoofdstuk.",
+
+  "practices": []
 }

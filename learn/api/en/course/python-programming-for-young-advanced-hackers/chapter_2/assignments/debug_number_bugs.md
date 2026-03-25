@@ -39,4 +39,3 @@ In this mission, you'll hunt down and fix small bugs in a script that uses varia
 - Make up one tiny bug of your own, try to guess what error message you'll get, then run the script and see if you were right.
 
 > Achievement idea: You just leveled up from **coder** to **bug hunter**.
-

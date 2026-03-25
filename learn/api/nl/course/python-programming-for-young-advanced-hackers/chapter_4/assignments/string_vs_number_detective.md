@@ -1,9 +1,11 @@
 # Missie: String vs number detective
 
 Doel
+
 - Zet waarden die op getallen lijken (maar strings zijn) om naar echte getallen, doe minstens 1 berekening en print alles zonder `TypeError`.
 
 Stappen
+
 1. Open `attachments/string_vs_number_detective.py`.
 2. Zet minstens 2 string-waarden om naar getallen met `int()` (of `float()`).
 3. Doe minstens 1 berekening, bijvoorbeeld `total_score = score + bonus`.
@@ -11,8 +13,8 @@ Stappen
 5. Print ook minstens 1 vriendelijke zin die tekst en getallen combineert met `str()` of komma's.
 
 Checklist
+
 - [ ] Minstens 2 conversies van string -> getal.
 - [ ] Minstens 1 numerieke berekening.
 - [ ] Tekst + getal gemixt zonder fouten (`str()` of komma's).
 - [ ] Script draait zonder errors.
-

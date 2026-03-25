@@ -5,6 +5,7 @@ Welcome, hacker. Up to now, your scripts have mostly followed one fixed path: st
 In this chapter, you’ll give your programs an actual **brain**.
 
 With **conditional logic** (`if / elif / else`), your code can:
+
 - react to user input,
 - behave differently when a login fails,
 - show a different message depending on your exam score,
@@ -25,6 +26,7 @@ By the end of this chapter, you’ll be able to:
 A **condition** is any expression that can be answered with `True` or `False`.
 
 Examples your code might ask:
+
 - Is the firewall active?
 - Is the exam score at least 10?
 - Is the username equal to "admin"?
@@ -51,12 +53,12 @@ Later you’ll mostly skip `== True` and write `if is_open:` directly, but for n
 
 These operators compare two values and return a boolean:
 
-- `==`  : is equal to?
-- `!=`  : is not equal to?
-- `<`   : is less than?
-- `>`   : is greater than?
-- `<=`  : is less than or equal to?
-- `>=`  : is greater than or equal to?
+- `==` : is equal to?
+- `!=` : is not equal to?
+- `<` : is less than?
+- `>` : is greater than?
+- `<=` : is less than or equal to?
+- `>=` : is greater than or equal to?
 
 **Important trap:** Never confuse `=` with `==`.
 
@@ -80,6 +82,7 @@ print(score != 0)   # True
 ## 3. The `if` Statement: Your First Gate
 
 An `if` statement is like a security gate:
+
 - if the condition is `True`, Python goes inside the gate and runs the code.
 - if it’s `False`, it skips that block.
 
@@ -135,6 +138,7 @@ else:
 ## 5. `elif`: More Than Two Options
 
 Sometimes life has more than “yes” or “no”. Think of grade categories:
+
 - 16+ → excellent,
 - 12–15 → good,
 - 10–11 → just passed,
@@ -185,7 +189,7 @@ Real decisions often need **more than one** condition:
 Python has three logical operators:
 
 - `and` – all conditions must be `True`.
-- `or`  – at least one condition must be `True`.
+- `or` – at least one condition must be `True`.
 - `not` – flips `True` ↔ `False`.
 
 ### `and`: Everything Must Be True
@@ -233,6 +237,7 @@ print(can_play)
 ```
 
 Read it as:
+
 - Homework must be done.
 - AND (it’s before 22:00 OR parents are not home yet).
 

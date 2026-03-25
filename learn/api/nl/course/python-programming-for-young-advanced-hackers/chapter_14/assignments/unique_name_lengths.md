@@ -12,4 +12,3 @@ Use a set comprehension to find all different name lengths in a list.
 
 - Set comprehension pattern: `{expression for item in iterable}`.
 - Use `len(name)` inside the comprehension.
-

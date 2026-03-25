@@ -5,6 +5,7 @@ Der `<head>` enthält Metadaten – Informationen über die Seite, die Browser u
 ---
 
 Wichtige Elemente im head:
+
 - `<title>`: Das ist der Text, der im Browser-Tab angezeigt wird. Meist ist das der Seitentitel.
 - `<meta charset="utf-8">`: sagt dem Browser, welche Zeichenkodierung verwendet wird, damit Text korrekt angezeigt wird.
 - `<meta name="viewport" content="width=device-width, initial-scale=1">`: sorgt dafür, dass Seiten am Handy responsiv skalieren.

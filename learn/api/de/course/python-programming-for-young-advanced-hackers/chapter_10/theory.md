@@ -3,6 +3,7 @@
 Willkommen zurück, Hacker. Du hast bereits Lists, Tuples und Dictionaries genutzt, um Daten zu organisieren. Jetzt kommt ein spezialisiertes Tool: das **Set**.
 
 Ein Set nutzt du, wenn dir wichtig ist:
+
 - welche Werte mindestens einmal vorkommen,
 - Duplikate schnell entfernen,
 - Membership super schnell prüfen,
@@ -41,6 +42,7 @@ print(unique_ports)  # {80, 22, 443}
 ```
 
 Reality‑Check Beispiele:
+
 - einzigartige Usernames in einem Discord‑Server,
 - einzigartige IPs, die dein Schul‑WLAN getroffen haben,
 - einzigartige Noten, die ein Lehrer in einer Prüfung vergeben hat.
@@ -84,6 +86,7 @@ vulnerabilities.discard("Buffer Overflow")
 ## 3. Set‑Operationen: Daten vergleichen wie ein Analyst
 
 Jetzt wird’s spannend. Sets kannst du mit Operatoren kombinieren, die wie Mathe aussehen:
+
 - `|` → Union
 - `&` → Intersection
 - `-` → Difference
@@ -123,6 +126,7 @@ print(unique_to_A)  # {'CVE-2021-44228'}
 ```
 
 Schul‑Analogie:
+
 - `passed_math` und `passed_french` sind Sets von Schülernamen.
 - Intersection = jene, die **beides** bestanden haben.
 - Difference = jene, die Mathe bestanden haben, aber **nicht** Französisch.
@@ -134,17 +138,20 @@ Schul‑Analogie:
 ## 4. Wann Set statt List?
 
 **Nutze eine List, wenn:**
+
 - Reihenfolge wichtig ist (`[first, second, third]`),
 - Duplikate erlaubt oder wichtig sind,
 - du Indexing brauchst wie `my_list[0]`.
 
 **Nutze ein Set, wenn:**
+
 - Items **einzigartig** sein müssen,
 - du viele **Membership Checks** machst (`if x in my_set:`),
 - du Sammlungen vergleichen willst (Union/Intersection/Difference),
 - Reihenfolge egal ist.
 
 Reality‑Beispiele:
+
 - alle einzigartigen Usernames, die heute eingeloggt sind,
 - alle einzigartigen Antworten in einem Quiz,
 - alle einzigartigen Tags in einer Notiz‑App.
@@ -185,6 +192,7 @@ else:
 ```
 
 Gleiches Prinzip für:
+
 - verbotene Wörter in einem Chat‑Filter,
 - gebannte Usernames auf einem Server,
 - Schüler, die Hausaufgaben schon abgegeben haben.

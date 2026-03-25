@@ -14,4 +14,3 @@ Add up a list of scores using a for loop.
 
 - Inside the loop, do: `total = total + score`.
 - Don't use the built-in `sum()` yet  practice the loop yourself.
-

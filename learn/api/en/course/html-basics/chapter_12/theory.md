@@ -2,6 +2,7 @@
 
 Semantic HTML uses meaningful tags to structure content.
 Types of semantic elements:
+
 - `<header>`: Introductory content, often contains logo, site title, and navigation.
 - `<nav>`: Navigation links.
 - `<main>`: Main content of the page, unique per page.
@@ -10,6 +11,7 @@ Types of semantic elements:
 - `<footer>`: Footer content, often contains copyright and contact info.
 
 How semantic HTML is used (example):
+
 ```html
 <header>
   <h1>My Website</h1>

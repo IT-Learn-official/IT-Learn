@@ -1,11 +1,13 @@
 # Chapter 9: Data Structures – Lists, Tuples, and Dictionaries in Real Life
 
 Welcome back, hacker. Up to now you’ve mostly worked with **one** thing at a time:
+
 - one username,
 - one IP address,
 - one password.
 
 But your actual digital life is not “one thing” — it’s:
+
 - a whole friends list,
 - a bunch of exam scores,
 - multiple game accounts,
@@ -24,6 +26,7 @@ In this chapter, you’ll learn Python’s core **data structures** for handling
 A **list** is an ordered, changeable collection of items, enclosed in square brackets `[]`.
 
 Think of a list as:
+
 - your game inventory,
 - your Spotify playlist,
 - a list of upcoming tests.
@@ -86,6 +89,7 @@ for target in targets:
 ```
 
 You’ll use this pattern all the time:
+
 - going through all exam scores,
 - checking all IP addresses,
 - sending a message to each user in a list.
@@ -122,6 +126,7 @@ But if you try to change a value:
 ```
 
 Where do tuples make sense?
+
 - fixed settings like a screen resolution `(1920, 1080)",
 - exam date `(year, month, day)",
 - coordinates that shouldn’t change during a calculation.
@@ -137,6 +142,7 @@ They’re also a signal to future‑you: “this data is **not meant to change**
 A **dictionary** (`dict`) is an unordered collection of **key–value pairs**.
 
 Think of it like a contact list on your phone:
+
 - you look up by **name** (the key),
 - you get the **number** (the value).
 
@@ -209,6 +215,7 @@ for key, value in system_profile.items():
 ```
 
 This pattern is super common when:
+
 - showing all data in a profile,
 - generating a report from a config,
 - inspecting JSON‑like data.

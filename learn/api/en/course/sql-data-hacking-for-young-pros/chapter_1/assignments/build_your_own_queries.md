@@ -1,6 +1,7 @@
 # Assignment: Build Your Own Queries
 
 ## 🎯 Objective
+
 Gain confidence by writing SQL queries independently based on real-world scenarios.
 
 ## 📋 Instructions
@@ -128,17 +129,21 @@ Read each scenario and write the appropriate SQL query. Think about what informa
 Now it's your turn! Create three scenarios and write the queries:
 
 ### Your Scenario 1:
-**Context:** 
+
+**Context:**
+
 ```
 [Describe your scenario]
 ```
 
 **Task:**
+
 ```
 [Describe what data is needed]
 ```
 
 **Query:**
+
 ```sql
 -- Your query:
 ```
@@ -146,17 +151,21 @@ Now it's your turn! Create three scenarios and write the queries:
 ---
 
 ### Your Scenario 2:
-**Context:** 
+
+**Context:**
+
 ```
 [Describe your scenario]
 ```
 
 **Task:**
+
 ```
 [Describe what data is needed]
 ```
 
 **Query:**
+
 ```sql
 -- Your query:
 ```
@@ -164,17 +173,21 @@ Now it's your turn! Create three scenarios and write the queries:
 ---
 
 ### Your Scenario 3:
-**Context:** 
+
+**Context:**
+
 ```
 [Describe your scenario]
 ```
 
 **Task:**
+
 ```
 [Describe what data is needed]
 ```
 
 **Query:**
+
 ```sql
 -- Your query:
 ```
@@ -195,7 +208,7 @@ Before writing complex queries in the future, answer these planning questions:
    - What are the exact column names?
 
 4. **Do I need all columns or specific ones?**
-   - Should I use * or list columns?
+   - Should I use \* or list columns?
 
 ---
 
@@ -204,26 +217,31 @@ Before writing complex queries in the future, answer these planning questions:
 Translate these plain English requests into SQL queries:
 
 ### 1. "Show me everything about skills"
+
 ```sql
 
 ```
 
 ### 2. "I need the names and levels of all hackers"
+
 ```sql
 
 ```
 
 ### 3. "Get all the project details"
+
 ```sql
 
 ```
 
 ### 4. "Show me skill names with their difficulty ratings"
+
 ```sql
 
 ```
 
 ### 5. "List all hacker usernames"
+
 ```sql
 
 ```
@@ -234,13 +252,13 @@ Translate these plain English requests into SQL queries:
 
 After completing all scenarios, rate yourself:
 
-| Skill | Can't Do Yet | Need Practice | Got It! | Mastered! |
-|-------|--------------|---------------|---------|-----------|
-| Writing SELECT * queries | ☐ | ☐ | ☐ | ☐ |
-| Selecting specific columns | ☐ | ☐ | ☐ | ☐ |
-| Choosing the right columns for a task | ☐ | ☐ | ☐ | ☐ |
-| Switching between different tables | ☐ | ☐ | ☐ | ☐ |
-| Understanding what data to retrieve | ☐ | ☐ | ☐ | ☐ |
+| Skill                                 | Can't Do Yet | Need Practice | Got It! | Mastered! |
+| ------------------------------------- | ------------ | ------------- | ------- | --------- |
+| Writing SELECT \* queries             | ☐            | ☐             | ☐       | ☐         |
+| Selecting specific columns            | ☐            | ☐             | ☐       | ☐         |
+| Choosing the right columns for a task | ☐            | ☐             | ☐       | ☐         |
+| Switching between different tables    | ☐            | ☐             | ☐       | ☐         |
+| Understanding what data to retrieve   | ☐            | ☐             | ☐       | ☐         |
 
 ---
 
@@ -251,16 +269,19 @@ Write two queries for the same goal using different approaches:
 **Goal:** Get information about hackers
 
 **Approach 1 (Get everything):**
+
 ```sql
 
 ```
 
 **Approach 2 (Get only what you need: username, level):**
+
 ```sql
 
 ```
 
 **Reflection:** Which approach is better? Why?
+
 ```
 Your answer:
 ```
@@ -288,4 +309,3 @@ Your answer:
 - **Real-world context helps**: Understanding why you need data makes writing queries easier
 
 Congratulations! You can now write basic SQL SELECT queries for real-world scenarios! 🎉
-

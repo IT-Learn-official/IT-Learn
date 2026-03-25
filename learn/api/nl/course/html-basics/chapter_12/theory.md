@@ -2,6 +2,7 @@
 
 Semantische HTML gebruikt betekenisvolle tags om content te structureren.
 Soorten semantische elementen:
+
 - `<header>`: inleidende content, vaak met logo, sitetitel en navigatie.
 - `<nav>`: navigatielinks.
 - `<main>`: hoofdinhoud van de pagina, uniek per pagina.
@@ -10,6 +11,7 @@ Soorten semantische elementen:
 - `<footer>`: footer-inhoud, vaak met copyright en contactinfo.
 
 Hoe semantische HTML gebruikt wordt (voorbeeld):
+
 ```html
 <header>
   <h1>My Website</h1>

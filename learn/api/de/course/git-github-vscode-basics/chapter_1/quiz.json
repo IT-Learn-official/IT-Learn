@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "Wozu dient Versionsverwaltung hauptsächlich?",
       "options": [
-        { "id": "a", "label": "Den Computer schneller machen", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Den Computer schneller machen",
+          "isCorrect": false
+        },
         { "id": "b", "label": "Ordner unnötig machen", "isCorrect": false },
-        { "id": "c", "label": "Änderungen verfolgen und eine Datei-Historie behalten", "isCorrect": true },
-        { "id": "d", "label": "Bugs im Code automatisch beheben", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Änderungen verfolgen und eine Datei-Historie behalten",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Bugs im Code automatisch beheben",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Versionsverwaltung speichert eine Historie von Änderungen, damit du Arbeit sicher prüfen und rückgängig machen kannst.",
@@ -29,10 +41,26 @@
       "type": "single-choice",
       "prompt": "Welche Aussage stimmt?",
       "options": [
-        { "id": "a", "label": "Git ist eine Website und GitHub ist ein Tool am Computer", "isCorrect": false },
-        { "id": "b", "label": "Git ist ein Tool und GitHub ist eine Website, die Repos hostet", "isCorrect": true },
-        { "id": "c", "label": "Git und GitHub sind genau dasselbe", "isCorrect": false },
-        { "id": "d", "label": "Man muss GitHub verwenden, um Git zu verwenden", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Git ist eine Website und GitHub ist ein Tool am Computer",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Git ist ein Tool und GitHub ist eine Website, die Repos hostet",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Git und GitHub sind genau dasselbe",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Man muss GitHub verwenden, um Git zu verwenden",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Git läuft auf deinem Computer; GitHub ist ein beliebter Ort, um Git-Repositories online zu speichern und zu teilen.",
@@ -51,8 +79,16 @@
       "options": [
         { "id": "a", "label": "Ein Ordner am Desktop", "isCorrect": false },
         { "id": "b", "label": "Ein Passwort für GitHub", "isCorrect": false },
-        { "id": "c", "label": "Eine Datei, die alten Code löscht", "isCorrect": false },
-        { "id": "d", "label": "Ein gespeicherter Schnappschuss des Projekts mit Nachricht", "isCorrect": true }
+        {
+          "id": "c",
+          "label": "Eine Datei, die alten Code löscht",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein gespeicherter Schnappschuss des Projekts mit Nachricht",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Ein Commit speichert einen Schnappschuss deines Projekts zu einem Zeitpunkt – plus Nachricht, was geändert wurde.",
@@ -69,9 +105,21 @@
       "type": "single-choice",
       "prompt": "Was ist ein Repository (Repo)?",
       "options": [
-        { "id": "a", "label": "Ein Ordner, den Git verfolgt", "isCorrect": true },
-        { "id": "b", "label": "Eine zufällige temporäre Datei", "isCorrect": false },
-        { "id": "c", "label": "Eine besondere Art von Bild", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Ein Ordner, den Git verfolgt",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Eine zufällige temporäre Datei",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Eine besondere Art von Bild",
+          "isCorrect": false
+        },
         { "id": "d", "label": "Eine Programmiersprache", "isCorrect": false }
       ],
       "explanations": {
@@ -86,4 +134,3 @@
     }
   ]
 }
-

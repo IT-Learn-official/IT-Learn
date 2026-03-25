@@ -23,7 +23,8 @@
           "id": "title",
           "label": "title",
           "isCorrect": false
-        },        {
+        },
+        {
           "id": "src",
           "label": "src",
           "isCorrect": true
@@ -48,7 +49,8 @@
           "id": "style",
           "label": "It styles the image",
           "isCorrect": false
-        },        {
+        },
+        {
           "id": "accessibility",
           "label": "It helps users with screen readers (blind users) and describes the image if it fails to load",
           "isCorrect": true

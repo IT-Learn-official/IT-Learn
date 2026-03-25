@@ -5,10 +5,12 @@ Attribute sind zusätzliche Infos, die du HTML-Elementen geben kannst. Sie stehe
 Manche Attribute sind bei vielen Elementen üblich, andere sind tag-spezifisch. `class` und `id` kannst du fast überall verwenden, `src` ist typisch für `<img>`.
 
 Allgemeine Attribute:
+
 - `class`: um CSS-Styles anzuwenden. Du kannst mehrere Klassen auf einem Element haben, getrennt durch Leerzeichen. Beispiel: `<div class="container highlight">`.
 - `id`: eine eindeutige Kennung für ein Element. Sie sollte innerhalb der Seite einzigartig sein. Beispiel: `<h1 id="main-title">`.
 
 Beispiel für class und id:
+
 ```html
 <div class="container">
   <h1 id="main-title">Welcome to My Website</h1>

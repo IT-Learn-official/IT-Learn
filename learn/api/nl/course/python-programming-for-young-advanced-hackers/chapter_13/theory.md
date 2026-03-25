@@ -19,9 +19,10 @@ Stel dat je vaak dezelfde reeks commando’s uitvoert, zoals een target scannen 
 Een **functie** laat je die reeks code “inpakken”, een naam geven, en overal hergebruiken met één regel.
 
 Functies helpen je om:
+
 - **D.R.Y. (Don't Repeat Yourself):** schrijf code één keer, gebruik ze forever.
 - **Organiseren:** breek een groot script op in kleine, begrijpelijke stukjes.
-- **Abstractie:** verstop complexe logica achter een simpele naam. Je hoeft niet te weten *hoe* `scan_target()` werkt, alleen dat het werkt.
+- **Abstractie:** verstop complexe logica achter een simpele naam. Je hoeft niet te weten _hoe_ `scan_target()` werkt, alleen dat het werkt.
 
 ---
 
@@ -107,6 +108,7 @@ else:
 - De code die de functie opriep kan die waarde opslaan (`result`) en gebruiken in beslissingen.
 
 **`print` vs `return`:**
+
 - `print()` toont info aan de mens.
 - `return` stuurt data terug naar het programma zelf.
 

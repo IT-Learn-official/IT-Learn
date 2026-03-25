@@ -3,6 +3,7 @@
 Welcome back, hacker. You’ve already thrown numbers and text at Python, and it somehow didn’t explode. Now we’re going to make sure it actually **understands** what you give it.
 
 For Python, there’s a huge difference between:
+
 - `15` as a **number** (your math grade out of 20), and
 - `"15"` as **text** (maybe part of your Wi‑Fi password).
 
@@ -33,7 +34,7 @@ Python does the same thing with **data types**. Every value has a label in Pytho
 - **Text** – for usernames, chat messages, passwords.
 - **True/False flag** – for simple yes/no decisions.
 
-If Python doesn’t know *what kind* of value it’s dealing with, it has no idea what operations are allowed. You can’t do maths on a Snapchat username, and you can’t log in with the number `1234` if the website expects the **string** `"1234"`.
+If Python doesn’t know _what kind_ of value it’s dealing with, it has no idea what operations are allowed. You can’t do maths on a Snapchat username, and you can’t log in with the number `1234` if the website expects the **string** `"1234"`.
 
 > Key takeaway: A data type tells Python **what** a value is, so it knows **what you’re allowed to do** with it.
 
@@ -61,6 +62,7 @@ print(type(100))  # <class 'int'>
 ```
 
 Use `int` for things like:
+
 - score in EA FC or Fortnite,
 - number of missed calls,
 - your grade out of 20.
@@ -83,6 +85,7 @@ print(type(99.9))  # <class 'float'>
 ```
 
 Use `float` for:
+
 - percentages (`87.5`% on a test),
 - distances (`2.75` km to school),
 - precise health bars (`72.5` HP).
@@ -117,7 +120,7 @@ username = "hacker_" + "be"
 print(username)  # hacker_be
 ```
 
-Python treats *anything* in quotes as text:
+Python treats _anything_ in quotes as text:
 
 - `"15"` — maybe your age as text.
 - `15` — the number fifteen.
@@ -148,6 +151,7 @@ print(type(is_logged_in))  # <class 'bool'>
 Later, you’ll see that comparisons like `score >= 10` produce booleans too.
 
 Examples from daily life:
+
 - `wifi_on = True`
 - `is_exam_week = False`
 - `has_enough_sleep = False`
@@ -158,7 +162,7 @@ Examples from daily life:
 
 ## 5. `type()`: Your Data Scanner
 
-`type()` is like pointing a scanner at a value to ask Python: *“What do you think this is?”*
+`type()` is like pointing a scanner at a value to ask Python: _“What do you think this is?”_
 
 ```python
 print(type(10))       # <class 'int'>
@@ -289,7 +293,7 @@ else:
 
 ---
 
-## 9. `bool()`: Is This “Something” or “Nothing”? 
+## 9. `bool()`: Is This “Something” or “Nothing”?
 
 `bool()` converts any value into `True` or `False`. The rule:
 

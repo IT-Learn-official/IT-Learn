@@ -41,4 +41,3 @@ When you run your script, you should see at least four lines, each clearly showi
 - The type (something like `<class 'str'>` or `<class 'int'>`)
 
 Use this mission to practice **seeing** types while you code.
-

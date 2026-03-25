@@ -15,4 +15,3 @@ Use zip to combine two lists into a score dictionary.
 
 - You can do `score_map = dict(zip(names, scores))`.
 - Or use a dict comprehension: `{name: score for name, score in zip(names, scores)}`.
-

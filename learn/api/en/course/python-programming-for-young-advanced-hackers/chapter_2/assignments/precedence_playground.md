@@ -55,4 +55,3 @@ print("7 % 2 =", 7 % 2)
 - Did parentheses ever change the result from what you first guessed?
 
 > Achievement idea: You just learned how to control math expressions like a **parentheses power user**.
-

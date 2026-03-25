@@ -21,7 +21,7 @@ De tweede is interne CSS. Je schrijft stijlen in een `<style>`-tag in hetzelfde 
 De derde is externe CSS. Je zet stijlen in een apart bestand, zoals `styles.css`.
 
 ```html
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css" />
 ```
 
 Voor echte projecten is externe CSS meestal de beste keuze, omdat je HTML zo netjes en overzichtelijk blijft.

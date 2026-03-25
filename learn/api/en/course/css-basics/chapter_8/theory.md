@@ -14,6 +14,7 @@ content, padding, border, and margin.
 ```
 
 This is a painting. You can divide it in 4 parts:
+
 - The painting itself (the content)
 - The whitespace between the painting and the cadre (the padding)
 - The cadre (the border)

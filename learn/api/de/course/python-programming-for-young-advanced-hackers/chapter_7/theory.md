@@ -328,7 +328,7 @@ Klein, aber aus **denselben Zutaten** wie echte Games und Simulationen gebaut.
 ## Zusammenfassung
 
 - **`int` vs `float`**: ints für Counts, floats für präzise Werte.
-- **`**`**: Exponent‑Operator für schnelles Wachstum.
+- **`**`\*\*: Exponent‑Operator für schnelles Wachstum.
 - **`math`‑Modul**: Tools wie `sqrt()` und `pi`.
 - **Runden**:
   - `round()` – normal,

@@ -3,6 +3,7 @@
 ## 🎯 What You'll Learn
 
 In this chapter, you'll discover:
+
 - What databases are and why they matter
 - The difference between SQLite and other databases
 - How data is organized in tables (rows and columns)
@@ -16,6 +17,7 @@ In this chapter, you'll discover:
 A **database** is an organized collection of data. Think of it like a super-powered spreadsheet that can handle millions of rows and perform complex operations in milliseconds.
 
 Instead of keeping data scattered across multiple files, a database:
+
 - **Organizes** information in a structured way
 - **Stores** data efficiently
 - **Retrieves** information quickly
@@ -24,6 +26,7 @@ Instead of keeping data scattered across multiple files, a database:
 ### Why SQLite?
 
 **SQLite** is a lightweight database engine that's perfect for learning:
+
 - **No server needed** - it's just a file on your computer
 - **Fast** - great for small to medium projects
 - **Everywhere** - used in phones, browsers, and apps
@@ -36,20 +39,22 @@ Popular apps using SQLite: Firefox, Chrome, WhatsApp, and thousands more!
 ### What is a Table?
 
 A **table** is where data lives in a database. It's organized like a grid:
+
 - **Rows** (also called records) - each row is one entry
 - **Columns** (also called fields) - each column is one type of information
 
 Example: A `students` table might look like this:
 
-| id | name      | age | grade |
-|----|-----------|-----|-------|
-| 1  | Alice     | 14  | 8     |
-| 2  | Bob       | 15  | 9     |
-| 3  | Charlie   | 14  | 8     |
+| id  | name    | age | grade |
+| --- | ------- | --- | ----- |
+| 1   | Alice   | 14  | 8     |
+| 2   | Bob     | 15  | 9     |
+| 3   | Charlie | 14  | 8     |
 
 ### Table Structure
 
 Every table has:
+
 1. **Table name** - identifies the table (e.g., `students`)
 2. **Column names** - describe what each column contains (e.g., `name`, `age`)
 3. **Data types** - define what kind of data each column holds (text, numbers, etc.)
@@ -62,11 +67,13 @@ Every table has:
 The most fundamental SQL command is `SELECT`. It lets you **retrieve** data from a table.
 
 **Basic syntax:**
+
 ```sql
 SELECT column1, column2 FROM table_name;
 ```
 
 **Example:**
+
 ```sql
 SELECT name, age FROM students;
 ```
@@ -74,6 +81,7 @@ SELECT name, age FROM students;
 This tells the database: "Show me the `name` and `age` columns from the `students` table."
 
 **Result:**
+
 ```
 name      | age
 ----------|----
@@ -91,6 +99,7 @@ SELECT * FROM students;
 ```
 
 **Result:**
+
 ```
 id | name      | age | grade
 ---|-----------|-----|------
@@ -120,6 +129,7 @@ SELECT name, age FROM students;
 ### Schema
 
 The **schema** is the blueprint of your database - the structure that defines:
+
 - What tables exist
 - What columns each table has
 - What type of data each column holds
@@ -127,6 +137,7 @@ The **schema** is the blueprint of your database - the structure that defines:
 ### Primary Key
 
 Most tables have a special column called a **primary key** (often named `id`) that:
+
 - Uniquely identifies each row
 - Is never duplicated
 - Makes it easy to reference specific records
@@ -140,15 +151,16 @@ Most tables have a special column called a **primary key** (often named `id`) th
 
 ## 🔑 Quick Reference
 
-| SQL Command | Purpose | Example |
-|-------------|---------|---------|
-| `SELECT` | Retrieve data | `SELECT name FROM students;` |
-| `SELECT *` | Get all columns | `SELECT * FROM students;` |
-| `FROM` | Specify table | `FROM students` |
+| SQL Command | Purpose         | Example                      |
+| ----------- | --------------- | ---------------------------- |
+| `SELECT`    | Retrieve data   | `SELECT name FROM students;` |
+| `SELECT *`  | Get all columns | `SELECT * FROM students;`    |
+| `FROM`      | Specify table   | `FROM students`              |
 
 ## 🎯 Summary
 
 You've learned:
+
 - ✅ Databases organize data into tables with rows and columns
 - ✅ SQLite is a lightweight, file-based database perfect for learning
 - ✅ `SELECT` retrieves data from tables
@@ -156,4 +168,3 @@ You've learned:
 - ✅ Every SQL statement ends with a semicolon (;)
 
 **Next up:** In Chapter 2, you'll master the SELECT statement, learn about column aliases, and start building more sophisticated queries!
-

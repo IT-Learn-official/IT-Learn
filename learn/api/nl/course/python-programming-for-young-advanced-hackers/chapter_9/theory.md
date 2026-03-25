@@ -1,11 +1,13 @@
 # Hoofdstuk 9: Datastructuren – lists, tuples en dictionaries in het echt
 
 Welkom terug, hacker. Tot nu toe werkte je meestal met **één** ding tegelijk:
+
 - één username,
 - één IP‑adres,
 - één wachtwoord.
 
 Maar je echte digitale leven is niet “één ding” – het is:
+
 - een hele friends list,
 - een hoop examenscores,
 - meerdere game accounts,
@@ -24,6 +26,7 @@ In dit hoofdstuk leer je Pythons kern‑**datastructuren** om **collecties** van
 Een **list** is een geordende, veranderbare collectie items, tussen vierkante haken `[]`.
 
 Denk aan een list als:
+
 - je game inventory,
 - je Spotify playlist,
 - een lijst van komende toetsen.
@@ -86,6 +89,7 @@ for target in targets:
 ```
 
 Dit patroon gebruik je constant:
+
 - door alle examenscores gaan,
 - alle IP‑adressen checken,
 - een bericht sturen naar elke gebruiker in een lijst.
@@ -122,6 +126,7 @@ Maar als je een waarde probeert te veranderen:
 ```
 
 Wanneer zijn tuples handig?
+
 - vaste settings zoals schermresolutie `(1920, 1080)`,
 - een examendatum `(year, month, day)`,
 - coördinaten die tijdens een berekening niet mogen veranderen.
@@ -137,6 +142,7 @@ Het is ook een signaal aan future‑you: “deze data is **niet bedoeld om te ve
 Een **dictionary** (`dict`) is een (in principe) ongeordende collectie **key‑value pairs**.
 
 Denk aan je contactenlijst:
+
 - je zoekt op **naam** (de key),
 - je krijgt het **nummer** (de value).
 
@@ -209,6 +215,7 @@ for key, value in system_profile.items():
 ```
 
 Dit patroon is heel common wanneer je:
+
 - alle data in een profiel wil tonen,
 - een rapport wil maken uit een config,
 - JSON‑achtige data wil inspecteren.

@@ -1,6 +1,7 @@
 # GitHub-Remotes: Clone, Push, Pull
 
 Dein Repo kann an zwei Orten leben:
+
 - lokal (dein Computer)
 - remote (GitHub)
 

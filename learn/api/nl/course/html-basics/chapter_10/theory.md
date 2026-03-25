@@ -5,6 +5,7 @@ Tabellen tonen gegevens in rijen en kolommen met `<table>`. Rijen maak je met `<
 ---
 
 Voorbeeld van een eenvoudige tabel:
+
 ```html
 <table>
   <tr>
@@ -32,9 +33,9 @@ Voorbeeld van een eenvoudige tabel:
 
 De output ziet er ongeveer zo uit:
 
-| Naam      | Leeftijd |
-|-----------|----------|
-| Alice     | 30       |
-| Bob       | 25       |
-| Charlie   | 35       |
-| Diana     | 28       |
+| Naam    | Leeftijd |
+| ------- | -------- |
+| Alice   | 30       |
+| Bob     | 25       |
+| Charlie | 35       |
+| Diana   | 28       |

@@ -5,6 +5,7 @@ Tabellen zeigen Daten in Zeilen und Spalten mit `<table>`. Zeilen erstellst du m
 ---
 
 Beispiel für eine einfache Tabelle:
+
 ```html
 <table>
   <tr>
@@ -32,9 +33,9 @@ Beispiel für eine einfache Tabelle:
 
 Die Ausgabe sieht ungefähr so aus:
 
-| Name      | Alter |
-|-----------|-------|
-| Alice     | 30    |
-| Bob       | 25    |
-| Charlie   | 35    |
-| Diana     | 28    |
+| Name    | Alter |
+| ------- | ----- |
+| Alice   | 30    |
+| Bob     | 25    |
+| Charlie | 35    |
+| Diana   | 28    |

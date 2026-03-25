@@ -39,7 +39,6 @@ These tools power everything from your TikTok “For You” randomness to matchm
 A true hacker knows exactly **what kind of number** they’re working with.
 
 - **Integers (`int`)**: Whole numbers.
-
   - examples: `-3`, `0`, `42`
   - good for: lives, login attempts, level, number of missed calls.
 

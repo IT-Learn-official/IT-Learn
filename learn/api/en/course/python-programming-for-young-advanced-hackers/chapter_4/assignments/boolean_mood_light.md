@@ -47,4 +47,3 @@ When you run your script, you should see:
 - Each line shows a value and its boolean form from `bool(...)`.
 
 Use this mission to get a feeling for which values are treated as **True** and which are **False**.
-

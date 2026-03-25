@@ -87,7 +87,11 @@
           "label": "Om het programma sneller te maken.",
           "isCorrect": false
         },
-        { "id": "c", "label": "Om variabelen te verwijderen.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Om variabelen te verwijderen.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Om de kleur van de tekst te veranderen.",

@@ -20,6 +20,7 @@ git merge feature/navbar
 
 Een **mergeconflict** gebeurt wanneer Git wijzigingen niet automatisch kan samenvoegen (vaak dezelfde regels).
 In VS Code kan je kiezen:
+
 - huidige wijziging
 - binnenkomende wijziging
 - allebei

@@ -22,27 +22,32 @@ selector {
 ## 2) Soorten selectors
 
 ### Basis selectors
+
 - `*` (alle elementen)
 - `p`, `h1`, `button` (element selector)
 - `.card`, `.menu-item` (class selector)
 - `#header`, `#main` (id selector)
 
 ### Groeperen
+
 - `h1, h2, h3`
 
 ### Relatie selectors
+
 - `div p` (descendant)
 - `ul > li` (direct child)
 - `h2 + p` (next sibling)
 - `h2 ~ p` (general sibling)
 
 ### Attribute selectors
+
 - `[disabled]`
 - `[type="text"]`
 - `[href^="https"]`
 - `[class*="btn"]`
 
 ### Pseudo-classes (toestand)
+
 - `:hover`
 - `:focus`
 - `:active`
@@ -53,6 +58,7 @@ selector {
 - `:not(...)`
 
 ### Pseudo-elements (deel van een element)
+
 - `::before`
 - `::after`
 - `::first-letter`
@@ -115,12 +121,14 @@ selector {
 ## 7) Layout properties
 
 ### Display en position
+
 - `display`
 - `position`
 - `top`, `right`, `bottom`, `left`
 - `z-index`
 
 ### Flexbox
+
 - `display: flex`
 - `flex-direction`
 - `flex-wrap`
@@ -131,6 +139,7 @@ selector {
 - `flex-grow`, `flex-shrink`, `flex-basis`
 
 ### Grid
+
 - `display: grid`
 - `grid-template-columns`
 - `grid-template-rows`
@@ -188,6 +197,7 @@ selector {
 Je hoeft niet alles vanbuiten te leren.
 
 Een sterk pad is:
+
 1. Leer selectors
 2. Leer spatiëring en tekst
 3. Leer layout (flexbox en grid)

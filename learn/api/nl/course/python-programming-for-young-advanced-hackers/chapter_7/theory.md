@@ -328,7 +328,7 @@ Ze voelen klein, maar ze zijn gemaakt uit **exact dezelfde ingrediënten** als e
 ## Samenvatting
 
 - **`int` vs `float`**: ints voor counts, floats voor precieze waarden.
-- **`**`**: exponent‑operator om snelle groei te modelleren.
+- **`**`\*\*: exponent‑operator om snelle groei te modelleren.
 - **`math` module**: extra tools zoals `sqrt()` en `pi`.
 - **Afronden**:
   - `round()` – normaal,

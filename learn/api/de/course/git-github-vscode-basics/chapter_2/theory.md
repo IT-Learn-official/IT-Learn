@@ -1,6 +1,7 @@
 # Git und VS Code einrichten
 
 Du kannst Git an zwei Stellen nutzen:
+
 - im Terminal (Befehle)
 - in VS Code (Buttons + Diffs)
 
@@ -18,11 +19,13 @@ Es ist nur deine Commit-Signatur.
 ---
 
 In VS Code öffne **Source Control**, um:
+
 - geänderte Dateien zu sehen
 - Änderungen zu stagen
 - Commit-Nachrichten zu schreiben
 
 Diff-Farben bedeuten meistens:
+
 - grün = hinzugefügt
 - rot = entfernt
 

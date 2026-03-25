@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "Wat doet `git clone`?",
       "options": [
-        { "id": "a", "label": "Een repository verwijderen van GitHub", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Een repository verwijderen van GitHub",
+          "isCorrect": false
+        },
         { "id": "b", "label": "Een commitboodschap maken", "isCorrect": false },
-        { "id": "c", "label": "Je branch hernoemen naar main", "isCorrect": false },
-        { "id": "d", "label": "Een remote repository kopiëren naar je computer", "isCorrect": true }
+        {
+          "id": "c",
+          "label": "Je branch hernoemen naar main",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een remote repository kopiëren naar je computer",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Clonen downloadt een repository zodat je er lokaal aan kunt werken.",
@@ -29,9 +41,21 @@
       "type": "single-choice",
       "prompt": "Waarvoor wordt `origin` meestal gebruikt in Git?",
       "options": [
-        { "id": "a", "label": "Een speciale branch die je niet kunt wijzigen", "isCorrect": false },
-        { "id": "b", "label": "Een Git-commando om te stagen", "isCorrect": false },
-        { "id": "c", "label": "De standaard bijnaam voor de belangrijkste remote", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "Een speciale branch die je niet kunt wijzigen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een Git-commando om te stagen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De standaard bijnaam voor de belangrijkste remote",
+          "isCorrect": true
+        },
         { "id": "d", "label": "Een bestands-extensie", "isCorrect": false }
       ],
       "explanations": {
@@ -49,10 +73,26 @@
       "type": "single-choice",
       "prompt": "Wat doet `git push`?",
       "options": [
-        { "id": "a", "label": "Commits downloaden van de remote", "isCorrect": false },
-        { "id": "b", "label": "Je lokale commits naar de remote sturen", "isCorrect": true },
-        { "id": "c", "label": "Een nieuw `.gitignore`-bestand maken", "isCorrect": false },
-        { "id": "d", "label": "Je code omzetten naar een website", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Commits downloaden van de remote",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Je lokale commits naar de remote sturen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Een nieuw `.gitignore`-bestand maken",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Je code omzetten naar een website",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Push uploadt je commits naar de remote repository.",
@@ -69,10 +109,26 @@
       "type": "single-choice",
       "prompt": "Wat doet `git pull`?",
       "options": [
-        { "id": "a", "label": "Remote commits binnenhalen in je lokale branch", "isCorrect": true },
-        { "id": "b", "label": "Je laatste commit verwijderen", "isCorrect": false },
-        { "id": "c", "label": "Iedereen dwingen jouw code te gebruiken", "isCorrect": false },
-        { "id": "d", "label": "Een gloednieuwe repository maken", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Remote commits binnenhalen in je lokale branch",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Je laatste commit verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Iedereen dwingen jouw code te gebruiken",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een gloednieuwe repository maken",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Pull update je lokale branch met commits van de remote.",
@@ -86,4 +142,3 @@
     }
   ]
 }
-

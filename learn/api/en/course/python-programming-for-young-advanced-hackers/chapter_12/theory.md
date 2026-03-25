@@ -3,11 +3,13 @@
 Welcome, hacker. You’ve taught your programs how to **think** with `if/else`. Now it’s time to make them **grind**.
 
 Loops are how you tell Python:
+
 - “Do this 10 times.”
 - “Do this for every target in the list.”
 - “Keep going until we’re done.”
 
 Instead of copy‑pasting the same code 100 times, you write it **once** and let Python repeat it for you. This is how you:
+
 - scan whole networks,
 - brute‑force passwords (ethically — in a lab),
 - process huge log files,
@@ -29,9 +31,11 @@ By the end of this chapter, you’ll be able to:
 A **loop** is a structure that repeats a block of code as long as a rule says “go”.
 
 Without loops:
+
 - If you wanted to ping 100 servers, you’d write 100 lines.
 
 With loops:
+
 - You write the ping code once,
 - tell Python “do this 100 times”,
 - and go grab a snack.

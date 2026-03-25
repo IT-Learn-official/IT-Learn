@@ -4,6 +4,7 @@ Git history is for humans.
 Make it easy to read.
 
 Good commit messages are short and specific:
+
 - bad: `i did something cool`
 - good: `Fix navbar spacing on mobile`
 
@@ -25,6 +26,5 @@ and after that, you can push the tag:
 ```bash
 git push origin v1.0.0
 ```
-
 
 In VS Code, always look at the diff before you commit.

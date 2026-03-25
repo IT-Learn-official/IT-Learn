@@ -34,6 +34,7 @@ status = "Math test tomorrow… send help"
 ```
 
 Strings können enthalten:
+
 - Buchstaben,
 - Zahlen,
 - Emojis,
@@ -71,6 +72,7 @@ print(command[-1])   # E (last)
 ```
 
 Damit kannst du:
+
 - den ersten Buchstaben eines Usernames checken,
 - nach einem bestimmten Zeichen in einem Passwort suchen,
 - schnell sehen, was in einem String steckt.
@@ -88,7 +90,7 @@ Wenn Indexing ein Buchstabe ist, dann ist **Slicing** ein ganzes Wort ausschneid
 Syntax: `text[start:end]`
 
 - `start` → Start (inklusive)
-- `end`   → Ende (exklusive)
+- `end` → Ende (exklusive)
 
 ```python
 data_packet = "ID:user_42|payload:data"
@@ -166,6 +168,7 @@ print(sanitized_log)
 ```
 
 Auch gut für:
+
 - Schimpfwörter zensieren,
 - Namen in Datensätzen anonymisieren,
 - Messages schnell anpassen.

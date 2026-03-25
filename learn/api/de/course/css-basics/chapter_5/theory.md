@@ -3,6 +3,7 @@
 Text ist das Erste, was Menschen lesen, daher ist gutes Styling wichtig.
 
 Die häufigsten Text-Einstellungen sind:
+
 - `font-family`
 - `font-size`
 - `font-weight`

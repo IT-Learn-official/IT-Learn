@@ -5,6 +5,7 @@ Lijsten organiseren items die bij elkaar horen. Gebruik `<ul>` voor ongeordende 
 ---
 
 Voorbeeld van een ongeordende lijst:
+
 ```html
 <ul>
   <li>Melk</li>
@@ -12,7 +13,9 @@ Voorbeeld van een ongeordende lijst:
   <li>Eieren</li>
 </ul>
 ```
+
 Dit ziet er zo uit:
+
 - Melk
 - Brood
 - Eieren
@@ -20,6 +23,7 @@ Dit ziet er zo uit:
 ---
 
 Voorbeeld van een geordende lijst:
+
 ```html
 <ol>
   <li>Verwarm de oven voor op 350°F.</li>
@@ -27,7 +31,9 @@ Voorbeeld van een geordende lijst:
   <li>Bak 30 minuten.</li>
 </ol>
 ```
+
 Dit wordt getoond als:
+
 1. Verwarm de oven voor op 350°F.
 2. Meng de ingrediënten.
 3. Bak 30 minuten.

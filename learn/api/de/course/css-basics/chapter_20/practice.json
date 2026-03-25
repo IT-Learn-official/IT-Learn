@@ -1,9 +1,11 @@
-﻿{
-    "chapterId":  "chapter_20",
-    "kind":  "practice",
-    "title":  "Kapitel 20 - Übungen (Platzhalter)",
-    "description":  "Für dieses Kapitel sind noch keine Übungsaufgaben definiert.",
-    "practices":  [
-
-                  ]
+﻿{
+  "chapterId": "chapter_20",
+
+  "kind": "practice",
+
+  "title": "Kapitel 20 - Übungen (Platzhalter)",
+
+  "description": "Für dieses Kapitel sind noch keine Übungsaufgaben definiert.",
+
+  "practices": []
 }

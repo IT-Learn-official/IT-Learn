@@ -20,6 +20,7 @@ git merge feature/navbar
 
 Ein **Merge-Konflikt** passiert, wenn Git Änderungen nicht automatisch zusammenführen kann (oft dieselben Zeilen).
 In VS Code kannst du wählen:
+
 - aktuelle Änderung
 - eingehende Änderung
 - beides

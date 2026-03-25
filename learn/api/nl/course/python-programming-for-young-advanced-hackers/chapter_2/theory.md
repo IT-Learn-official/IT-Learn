@@ -25,6 +25,7 @@ secret_code = "xY_z3n"
 ```
 
 Hier:
+
 - `player_score` is een doos met het getal `100`.
 - `health` is een doos met `95.5`.
 - `secret_code` is een doos met de tekst `"xY_z3n"`.
@@ -50,6 +51,7 @@ print(ammo)
 ```
 
 Python leest dit zo:
+
 1. `ammo = 50` → stop `50` in `ammo`.
 2. `ammo = ammo - 10` → neem de huidige waarde (50), trek 10 af (40), en stop `40` terug in `ammo`.
 3. `print(ammo)` → toont `40`.
@@ -64,11 +66,13 @@ Goede variabelenamen zijn cruciaal voor leesbare code—future-you gaat je bedan
 - Maak ze beschrijvend: `player_health` is beter dan `ph`.
 
 **Geldige namen:**
+
 - `score`
 - `player_health`
 - `level_2_boss`
 
 **Ongeldige namen:**
+
 - `2fast` (begint met een cijfer)
 - `my score` (spatie)
 
@@ -92,6 +96,7 @@ temperature = -10  # integer
 Zelfs `10.0` is een float door de `.0`.
 
 Je gebruikt vaak:
+
 - `int` voor dingen die je telt (lives, levels, coins…).
 - `float` voor dingen die je meet (snelheid, tijd, temperatuur…).
 
@@ -99,7 +104,7 @@ Je gebruikt vaak:
 
 ---
 
-## Basisrekenen: +, -, *, /
+## Basisrekenen: +, -, \*, /
 
 Python is je persoonlijke rekenmachine, maar met superkrachten.
 

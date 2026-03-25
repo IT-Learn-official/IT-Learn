@@ -25,6 +25,7 @@ secret_code = "xY_z3n"
 ```
 
 Hier:
+
 - `player_score` ist eine Box mit der Zahl `100`.
 - `health` ist eine Box mit `95.5`.
 - `secret_code` ist eine Box mit dem Text `"xY_z3n"`.
@@ -50,6 +51,7 @@ print(ammo)
 ```
 
 Python liest das so:
+
 1. `ammo = 50` → speichere `50` in `ammo`.
 2. `ammo = ammo - 10` → nimm den aktuellen Wert (50), minus 10 (40), speichere `40` zurück in `ammo`.
 3. `print(ammo)` → zeigt `40`.
@@ -64,11 +66,13 @@ Gute Namen sind entscheidend für sauberen, lesbaren Code – dein Zukunfts‑Ic
 - Beschreibend sein: `player_health` ist besser als `ph`.
 
 **Gültige Namen:**
+
 - `score`
 - `player_health`
 - `level_2_boss`
 
 **Ungültige Namen:**
+
 - `2fast` (beginnt mit einer Zahl)
 - `my score` (enthält ein Leerzeichen)
 
@@ -92,6 +96,7 @@ temperature = -10  # integer
 Auch `10.0` ist ein Float wegen `.0`.
 
 Typisch:
+
 - `int` für Dinge, die du zählst (Lives, Levels, Coins …).
 - `float` für Dinge, die du misst (Speed, Zeit, Temperatur …).
 
@@ -99,7 +104,7 @@ Typisch:
 
 ---
 
-## Grundrechenarten: +, -, *, /
+## Grundrechenarten: +, -, \*, /
 
 Python ist dein Taschenrechner – nur mit Superkräften.
 

@@ -1,11 +1,13 @@
 # Assignment: Database Explorer Challenge
 
 ## 🎯 Objective
+
 Practice exploring multiple tables and understanding their relationships by writing various SELECT queries.
 
 ## 📋 Instructions
 
 You're working with three tables:
+
 - `hackers` - Information about hackers
 - `skills` - Different skills that can be learned
 - `projects` - Hacking projects and challenges
@@ -15,6 +17,7 @@ Your mission: Explore each table and understand what data they contain.
 ## 🔍 Part 1: The Hackers Table
 
 ### Task 1.1: Complete Overview
+
 Write a query to see all data in the `hackers` table.
 
 ```sql
@@ -22,6 +25,7 @@ Write a query to see all data in the `hackers` table.
 ```
 
 ### Task 1.2: Identity Check
+
 Write a query to see only the `username` and `email` columns.
 
 ```sql
@@ -29,6 +33,7 @@ Write a query to see only the `username` and `email` columns.
 ```
 
 ### Task 1.3: Stats View
+
 Write a query to see `username`, `level`, and `xp_points` columns.
 
 ```sql
@@ -40,6 +45,7 @@ Write a query to see `username`, `level`, and `xp_points` columns.
 ## 🛠️ Part 2: The Skills Table
 
 ### Task 2.1: Full Inventory
+
 Write a query to see all available skills.
 
 ```sql
@@ -47,6 +53,7 @@ Write a query to see all available skills.
 ```
 
 ### Task 2.2: Skill Categories
+
 Write a query to see only `skill_name` and `category`.
 
 ```sql
@@ -54,6 +61,7 @@ Write a query to see only `skill_name` and `category`.
 ```
 
 ### Task 2.3: Difficulty Rating
+
 Write a query to see `skill_name`, `difficulty`, and `points`.
 
 ```sql
@@ -65,6 +73,7 @@ Write a query to see `skill_name`, `difficulty`, and `points`.
 ## 💼 Part 3: The Projects Table
 
 ### Task 3.1: All Projects
+
 Write a query to view all columns from the `projects` table.
 
 ```sql
@@ -72,6 +81,7 @@ Write a query to view all columns from the `projects` table.
 ```
 
 ### Task 3.2: Project Names
+
 Write a query to see only the `project_name` column.
 
 ```sql
@@ -79,6 +89,7 @@ Write a query to see only the `project_name` column.
 ```
 
 ### Task 3.3: Project Details
+
 Write a query to see `project_name`, `status`, and `difficulty`.
 
 ```sql
@@ -97,7 +108,7 @@ After exploring all three tables, answer these questions:
 
 3. **Data Types**: What kinds of data types do you see? (numbers, text, dates?)
 
-4. **Table Purposes**: 
+4. **Table Purposes**:
    - What is the `hackers` table used for?
    - What is the `skills` table used for?
    - What is the `projects` table used for?
@@ -109,6 +120,7 @@ After exploring all three tables, answer these questions:
 ## 🎓 Bonus Challenges
 
 ### Challenge 1: Custom Selection
+
 From the `hackers` table, select any 4 columns of your choice (not just the ones mentioned above).
 
 ```sql
@@ -116,6 +128,7 @@ From the `hackers` table, select any 4 columns of your choice (not just the ones
 ```
 
 ### Challenge 2: Different Order
+
 Write a query that selects columns from the `skills` table, but display them in reverse alphabetical order compared to how they appear in the table.
 
 ```sql
@@ -123,6 +136,7 @@ Write a query that selects columns from the `skills` table, but display them in 
 ```
 
 ### Challenge 3: Single Column from Each
+
 Write three separate queries, each selecting a single different column from each of the three tables.
 
 ```sql
@@ -140,6 +154,7 @@ Write three separate queries, each selecting a single different column from each
 ## ✅ Completion Checklist
 
 Mark each item as you complete it:
+
 - [ ] Completed all queries in Part 1
 - [ ] Completed all queries in Part 2
 - [ ] Completed all queries in Part 3
@@ -162,6 +177,7 @@ Mark each item as you complete it:
 ## 🏆 Mastery Goals
 
 You've mastered this assignment when you can:
+
 - ✅ Write SELECT queries for any table without looking at examples
 - ✅ Choose the right columns based on what information you need
 - ✅ Identify the structure and purpose of a table by querying it
@@ -182,9 +198,9 @@ You've mastered this assignment when you can:
 ## 🎯 Real-World Connection
 
 In real development:
+
 - **Hackers table** = Users table (storing user accounts)
 - **Skills table** = Course catalog or product inventory
 - **Projects table** = Orders, tasks, or assignments
 
 Understanding table structures is the first step to building powerful applications!
-

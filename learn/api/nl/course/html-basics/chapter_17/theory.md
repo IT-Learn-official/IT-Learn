@@ -5,6 +5,7 @@ Toegankelijkheid (accessibility) zorgt ervoor dat alle gebruikers, ook mensen me
 ---
 
 Enkele redenen waarom toegankelijkheid belangrijk is:
+
 1. Inclusie: mensen met een beperking kunnen informatie en diensten online gebruiken.
 
 2. Wetgeving: in veel landen zijn er regels die vereisen dat websites toegankelijk zijn.

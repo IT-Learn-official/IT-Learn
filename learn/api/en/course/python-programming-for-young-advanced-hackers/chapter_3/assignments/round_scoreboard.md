@@ -26,4 +26,3 @@ Open `round_scoreboard.py` in the editor.
 - [ ] I printed a clear scoreboard that shows original and rounded values.
 
 Rounding helps your players read their scores more easily!
-

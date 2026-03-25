@@ -8,7 +8,7 @@ In this mission, you will use your new **type scanner** ability: the `type()` fu
 2. Make at least **four** variables with different kinds of values:
    - One **int** (whole number), like `42`.
    - One **float** (decimal), like `3.14`.
-   - One **string** that *looks* like a number, like `'123'`.
+   - One **string** that _looks_ like a number, like `'123'`.
    - One **boolean**, like `True` or `False`.
 3. For each variable, print its value **and** its type using `type()`.
 
@@ -34,4 +34,3 @@ When you run your script, you should see at least **four lines** of output, and 
 - the result of `type(...)`
 
 Use this mission to get used to asking Python: **"What kind of thing are you?"**
-

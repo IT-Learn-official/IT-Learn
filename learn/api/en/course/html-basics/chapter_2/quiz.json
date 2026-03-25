@@ -56,7 +56,7 @@
           "label": ".ht",
           "isCorrect": false
         },
-                {
+        {
           "id": ".html",
           "label": ".html",
           "isCorrect": true
@@ -101,7 +101,7 @@
           "id": "compile",
           "label": "By compiling it into an .exe",
           "isCorrect": false
-        },       
+        },
         {
           "id": "open-file",
           "label": "Open the saved .html file in a browser",

@@ -3,6 +3,7 @@
 Willkommen, Hacker. Du kannst loopen wie ein Champ – aber für jede Kleinigkeit einen vollen `for`‑Loop zu schreiben fühlt sich irgendwann wie Extra‑Hausaufgaben an.
 
 Python hat ein paar **Pro‑Level Shortcuts** für Daten:
+
 - neue Lists in einer Zeile bauen,
 - Werte filtern ohne lange Loops,
 - zwei Lists parallel verarbeiten, als wären sie „zusammengezipt“.
@@ -43,6 +44,7 @@ print(upper_hostnames)
 ```
 
 Gleiches Ergebnis, weniger Boilerplate. Es liest sich fast wie Englisch:
+
 > „`host.upper()` for each `host` in `hostnames`.“
 
 > Key takeaway: Comprehensions sind kompakte Loops zum Bauen neuer Collections.
@@ -190,6 +192,7 @@ doubled = [x * 2 for x in numbers]
 ```
 
 Wann `lambda`?
+
 - schnelle Throwaway‑Logik,
 - wenn eine Library „eine Funktion“ erwartet und du sie nicht extra benennen willst.
 

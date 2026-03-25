@@ -32,6 +32,7 @@ dist/
 ```
 
 Dan zou git dit negeren:
+
 - `node_modules/` (gigantische map met dependencies)
 - `.env` (bestand met secrets)
 - `dist/` (gecompileerde code die je niet rechtstreeks bewerkt)

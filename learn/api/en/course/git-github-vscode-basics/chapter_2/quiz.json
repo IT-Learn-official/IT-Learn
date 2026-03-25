@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "What does `git config --global user.name` mainly affect?",
       "options": [
-        { "id": "a", "label": "The name shown as the author in your commits", "isCorrect": true },
-        { "id": "b", "label": "Your GitHub account username", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "The name shown as the author in your commits",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Your GitHub account username",
+          "isCorrect": false
+        },
         { "id": "c", "label": "The name of your computer", "isCorrect": false },
-        { "id": "d", "label": "The name of your main branch", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "The name of your main branch",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Git config sets commit metadata like author name and email.",
@@ -49,10 +61,26 @@
       "type": "single-choice",
       "prompt": "What is the `.git` folder?",
       "options": [
-        { "id": "a", "label": "A folder that stores Git history and data for the repo", "isCorrect": true },
-        { "id": "b", "label": "A folder that stores your VS Code settings", "isCorrect": false },
-        { "id": "c", "label": "A folder that stores images for GitHub", "isCorrect": false },
-        { "id": "d", "label": "A folder that makes your code faster", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "A folder that stores Git history and data for the repo",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "A folder that stores your VS Code settings",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A folder that stores images for GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A folder that makes your code faster",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The `.git` folder contains the repo database: commits, branches, and more.",
@@ -69,10 +97,26 @@
       "type": "single-choice",
       "prompt": "In most diffs, what do green and red usually mean?",
       "options": [
-        { "id": "a", "label": "Green = errors, Red = fixed code", "isCorrect": false },
-        { "id": "b", "label": "Green = added lines, Red = removed lines", "isCorrect": true },
-        { "id": "c", "label": "Green = old code, Red = new code", "isCorrect": false },
-        { "id": "d", "label": "They have no meaning at all", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Green = errors, Red = fixed code",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Green = added lines, Red = removed lines",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Green = old code, Red = new code",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "They have no meaning at all",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Diff colors commonly show added (green) and removed (red) content.",
@@ -86,4 +130,3 @@
     }
   ]
 }
-

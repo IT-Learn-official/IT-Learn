@@ -31,4 +31,3 @@ Open `type_detective.py` in the editor.
 - [ ] I can explain the difference between `int`, `float`, and `str`.
 
 `type` is your debugging detective when something looks strange!
-

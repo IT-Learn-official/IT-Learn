@@ -9,10 +9,22 @@
       "type": "single-choice",
       "prompt": "What is a pull request (PR) used for?",
       "options": [
-        { "id": "a", "label": "Request to merge changes from one branch into another", "isCorrect": true },
-        { "id": "b", "label": "Request to delete someone else's repository", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Request to merge changes from one branch into another",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Request to delete someone else's repository",
+          "isCorrect": false
+        },
         { "id": "c", "label": "Request to rename Git", "isCorrect": false },
-        { "id": "d", "label": "A file that stores passwords", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A file that stores passwords",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "PRs help teams review changes before merging into important branches like main.",
@@ -29,10 +41,26 @@
       "type": "single-choice",
       "prompt": "Why are code reviews useful?",
       "options": [
-        { "id": "a", "label": "They force Git to run faster", "isCorrect": false },
-        { "id": "b", "label": "They permanently block merging", "isCorrect": false },
-        { "id": "c", "label": "They can catch mistakes and improve readability", "isCorrect": true },
-        { "id": "d", "label": "They replace the need for testing", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "They force Git to run faster",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "They permanently block merging",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "They can catch mistakes and improve readability",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "They replace the need for testing",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Reviews add another set of eyes and help keep code quality high.",
@@ -50,9 +78,21 @@
       "prompt": "On GitHub, what are Issues commonly used for?",
       "options": [
         { "id": "a", "label": "Storing compiled programs", "isCorrect": false },
-        { "id": "b", "label": "Tracking bugs, tasks, and feature ideas", "isCorrect": true },
-        { "id": "c", "label": "Encrypting your repository", "isCorrect": false },
-        { "id": "d", "label": "Making private repos public automatically", "isCorrect": false }
+        {
+          "id": "b",
+          "label": "Tracking bugs, tasks, and feature ideas",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Encrypting your repository",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Making private repos public automatically",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Issues are a project planning and discussion tool for work items.",
@@ -69,10 +109,22 @@
       "type": "single-choice",
       "prompt": "What is a fork on GitHub?",
       "options": [
-        { "id": "a", "label": "Your own copy of someone else's repository on GitHub", "isCorrect": true },
-        { "id": "b", "label": "A way to delete all branches", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Your own copy of someone else's repository on GitHub",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "A way to delete all branches",
+          "isCorrect": false
+        },
         { "id": "c", "label": "A type of commit message", "isCorrect": false },
-        { "id": "d", "label": "A Git command that stages files", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A Git command that stages files",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Forks let you work on a repo when you do not have direct write access to the original.",
@@ -86,4 +138,3 @@
     }
   ]
 }
-

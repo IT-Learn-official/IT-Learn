@@ -3,6 +3,7 @@
 Text is the first thing people read, so styling it well matters.
 
 The most common text settings are:
+
 - `font-family`
 - `font-size`
 - `font-weight`

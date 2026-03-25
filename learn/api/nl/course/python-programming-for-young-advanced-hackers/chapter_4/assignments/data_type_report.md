@@ -1,9 +1,11 @@
 # Missie: Datatype-rapport
 
 Doel
+
 - Maak een klein rapport dat per variabele de waarde en het type toont met `type()`.
 
 Stappen
+
 1. Open `attachments/data_type_report.py`.
 2. Maak minstens 4 variabelen van verschillende types:
    - 1 `str`
@@ -16,8 +18,8 @@ Stappen
    - type (via `type(...)`)
 
 Checklist
+
 - [ ] Minstens 4 variabelen, allemaal van een ander type.
 - [ ] `type(...)` gebruikt voor elke variabele.
 - [ ] Minstens 4 duidelijke lijnen output.
 - [ ] Script draait zonder errors.
-

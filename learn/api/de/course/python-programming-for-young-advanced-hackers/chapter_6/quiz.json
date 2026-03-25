@@ -71,7 +71,11 @@
           "label": "Er prüft, ob zwei Werte gleich sind.",
           "isCorrect": false
         },
-        { "id": "c", "label": "Er multipliziert zwei Werte.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Er multipliziert zwei Werte.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Er zieht einen Wert von einer Variable ab.",

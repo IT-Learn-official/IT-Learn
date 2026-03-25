@@ -9,7 +9,11 @@
       "type": "single-choice",
       "prompt": "Wat beïnvloedt `git config --global user.name` vooral?",
       "options": [
-        { "id": "a", "label": "De naam die als auteur in je commits verschijnt", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "De naam die als auteur in je commits verschijnt",
+          "isCorrect": true
+        },
         { "id": "b", "label": "Je GitHub-gebruikersnaam", "isCorrect": false },
         { "id": "c", "label": "De naam van je computer", "isCorrect": false },
         { "id": "d", "label": "De naam van je main-branch", "isCorrect": false }
@@ -49,10 +53,26 @@
       "type": "single-choice",
       "prompt": "Wat is de `.git`-map?",
       "options": [
-        { "id": "a", "label": "Een map die de Git-geschiedenis en data van de repo bewaart", "isCorrect": true },
-        { "id": "b", "label": "Een map met je VS Code-instellingen", "isCorrect": false },
-        { "id": "c", "label": "Een map met afbeeldingen voor GitHub", "isCorrect": false },
-        { "id": "d", "label": "Een map die je code sneller maakt", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Een map die de Git-geschiedenis en data van de repo bewaart",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een map met je VS Code-instellingen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een map met afbeeldingen voor GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een map die je code sneller maakt",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "De `.git`-map bevat de repo-database: commits, branches en meer.",
@@ -69,10 +89,26 @@
       "type": "single-choice",
       "prompt": "Wat betekenen groen en rood meestal in een diff?",
       "options": [
-        { "id": "a", "label": "Groen = errors, rood = gefixte code", "isCorrect": false },
-        { "id": "b", "label": "Groen = toegevoegde regels, rood = verwijderde regels", "isCorrect": true },
-        { "id": "c", "label": "Groen = oude code, rood = nieuwe code", "isCorrect": false },
-        { "id": "d", "label": "Ze betekenen helemaal niets", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Groen = errors, rood = gefixte code",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Groen = toegevoegde regels, rood = verwijderde regels",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Groen = oude code, rood = nieuwe code",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ze betekenen helemaal niets",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Diff-kleuren tonen meestal toegevoegde (groen) en verwijderde (rood) inhoud.",
@@ -86,4 +122,3 @@
     }
   ]
 }
-

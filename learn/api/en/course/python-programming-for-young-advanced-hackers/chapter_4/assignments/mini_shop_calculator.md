@@ -35,4 +35,3 @@ Subtotal: 29.97
 ```
 
 (Don't worry if Python prints `29.969999999` because of float math. That's normal.)
-

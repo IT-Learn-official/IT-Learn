@@ -34,4 +34,3 @@ Try these if you finish early:
   - `"Rule: allow 10.0.0.5 on port 22"`.
 - Add a method `list_rules(self)` on `Firewall` that prints all rules using their `__str__` output.
 - Allow a special value `"ANY"` for `allowed_ip` or `allowed_port` that matches any IP or any port.
-

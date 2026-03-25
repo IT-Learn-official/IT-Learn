@@ -43,7 +43,7 @@ Mit OOP erstellst du einmal eine `Server`‑**Class** und spawnst dann so viele 
 
 ## 2. Class vs Object: Blueprint und Instance
 
-- Eine **Class** ist der **Blueprint**. Sie definiert, was Objects dieses Typs *haben* und *können*. Eine `Server`‑Class könnte sagen: jeder Server hat eine IP, ein OS und kann gepingt werden.
+- Eine **Class** ist der **Blueprint**. Sie definiert, was Objects dieses Typs _haben_ und _können_. Eine `Server`‑Class könnte sagen: jeder Server hat eine IP, ein OS und kann gepingt werden.
 - Ein **Object** (oder **Instance**) ist ein **konkretes Ding**, das aus dem Blueprint erzeugt wird. `server1` und `server2` sind zwei verschiedene Objects aus derselben Class, jeweils mit eigener IP und eigenem OS.
 
 Du definierst eine Class mit `class`:
@@ -108,7 +108,7 @@ Wie zwei unterschiedliche Discord‑Server: gleiche Plattform, aber komplett and
 
 ## 4. Methods: was ein Object kann
 
-**Methods** sind Funktionen, die *innerhalb* einer Class definiert sind. Sie beschreiben, was ein Object **tun** kann. Jede Method hat `self` als ersten Parameter, damit sie auf die eigenen Attributes zugreifen und sie ändern kann.
+**Methods** sind Funktionen, die _innerhalb_ einer Class definiert sind. Sie beschreiben, was ein Object **tun** kann. Jede Method hat `self` als ersten Parameter, damit sie auf die eigenen Attributes zugreifen und sie ändern kann.
 
 ```python
 class Server:
@@ -269,7 +269,7 @@ In diesem Kapitel bist du von Standalone‑Scripts zu digitalen Modellen aufgest
 - `__init__(self, ...)` setzt die Startdaten eines neuen Objects.
 - **Attributes** (z. B. `self.ip`) sind Variablen, die am Object hängen.
 - **Methods** (z. B. `def ping(self):`) sind Aktionen eines Objects, die dessen Daten nutzen.
-- `self` bezieht sich immer auf *dieses* konkrete Object.
+- `self` bezieht sich immer auf _dieses_ konkrete Object.
 - `__str__` steuert, wie dein Object beim Printen dargestellt wird.
 
 > Achievement Unlocked: Du kannst jetzt eigene Datentypen mit Classes designen und sie als Objects zum Leben erwecken – wie die Systeme hinter deinen Lieblingsgames, Apps und Discord‑Bots.

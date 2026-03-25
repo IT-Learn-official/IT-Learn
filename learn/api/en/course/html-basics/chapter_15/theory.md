@@ -5,10 +5,12 @@ Attributes are extra pieces of info you can add to HTML elements. They go inside
 Some attributes are common across many elements, while others are specific to certain tags. For example, `class` and `id` can be used on almost any element, while `src` is specific to `<img>` tags.
 
 Non-specific attributes:
+
 - `class`: Used to apply CSS styles to elements. You can have multiple classes on an element, separated by spaces. For example: `<div class="container highlight">`.
 - `id`: A unique identifier for an element. It should be unique within the page. For example: `<h1 id="main-title">`.
 
 Example usage of class and id:
+
 ```html
 <div class="container">
   <h1 id="main-title">Welcome to My Website</h1>

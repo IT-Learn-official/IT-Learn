@@ -25,6 +25,7 @@ secret_code = "xY_z3n"
 ```
 
 Here:
+
 - `player_score` is a box holding the number `100`.
 - `health` is a box holding `95.5`.
 - `secret_code` is a box holding the text `"xY_z3n"`.
@@ -50,6 +51,7 @@ print(ammo)
 ```
 
 Python reads this as:
+
 1. `ammo = 50` → Store `50` in `ammo`.
 2. `ammo = ammo - 10` → Take the current value of `ammo` (50), subtract 10 (now 40), and store `40` back into `ammo`.
 3. `print(ammo)` → It will show `40`.
@@ -64,11 +66,13 @@ Good variable names are crucial for writing clean, readable code—future-you wi
 - Make them descriptive! `player_health` is much better than `ph`.
 
 **Valid Names:**
+
 - `score`
 - `player_health`
 - `level_2_boss`
 
 **Invalid Names:**
+
 - `2fast` (starts with a number)
 - `my score` (contains a space)
 
@@ -92,6 +96,7 @@ temperature = -10  # An integer
 Even `10.0` is a float because of the decimal point.
 
 You’ll often use:
+
 - `int` for things you count (lives, tries, levels, coins).
 - `float` for things you measure (speed, time, accuracy, temperature).
 
@@ -99,7 +104,7 @@ You’ll often use:
 
 ---
 
-## Basic Arithmetic: +, -, *, /
+## Basic Arithmetic: +, -, \*, /
 
 Python is your personal calculator, but with superpowers.
 
@@ -249,7 +254,7 @@ print("Your age is", age)
 
 Both methods will correctly show: `Your age is 14`.
 
-Be careful with numbers that *look* like strings:
+Be careful with numbers that _look_ like strings:
 
 ```python
 print("5" + "5")  # "55" (gluing strings)

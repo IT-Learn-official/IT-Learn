@@ -30,24 +30,24 @@ As a hacker, you'll use these languages to give computers instructions. These in
 People often mix these up, but a true hacker knows the difference:
 
 - **Code:** These are the individual spells. The lines of text you write in a language like Python to make the computer do something specific.
-- **Programming:** This is the master plan. It’s the art of figuring out *what* you want to do, breaking it down into steps, and then writing the code to execute those steps.
+- **Programming:** This is the master plan. It’s the art of figuring out _what_ you want to do, breaking it down into steps, and then writing the code to execute those steps.
 
 Real programmers don’t just mash keys. They:
 
 1.  **Plan the mission:** "I'm going to build a bot that automatically joins my online classes."
 2.  **Gather intel:** "What information does the bot need? The class link? The time?"
 3.  **Create a strategy:** Break the big mission into smaller, manageable tasks.
-4.  **Write the code:** *Then* they write the spells to make it all happen.
+4.  **Write the code:** _Then_ they write the spells to make it all happen.
 
 For example:
 
 - **Programming (the plan):**
-    - "Step 1: Ask the user for their name."
-    - "Step 2: If they don’t enter a name, just say 'Hello, mysterious stranger!'"
-    - "Step 3: Later, I'll add a feature to ask for their hacker alias."
+  - "Step 1: Ask the user for their name."
+  - "Step 2: If they don’t enter a name, just say 'Hello, mysterious stranger!'"
+  - "Step 3: Later, I'll add a feature to ask for their hacker alias."
 - **Code (the spell):**
-    - `name = input("Enter your name: ")`
-    - `print("Hello, " + name + "!")`
+  - `name = input("Enter your name: ")`
+  - `print("Hello, " + name + "!")`
 
 > **Key takeaway:** **Programming** is the master plan. **Code** is the set of spells you write to execute it.
 
@@ -66,6 +66,7 @@ Languages like **C++ or Java** are like building a robot from a blueprint. You w
 **Python** is an **interpreted** language. This is more like having a live conversation with your robot. You give it one command at a time, and it executes it immediately.
 
 **Hacker Advantages:**
+
 - **Speed:** You can test your ideas instantly. No waiting for a long build process.
 - **Flexibility:** Change your code on the fly and see the results right away. This is perfect for experimenting and hacking things together.
 
@@ -75,9 +76,10 @@ Languages like **C++ or Java** are like building a robot from a blueprint. You w
 
 ## About Python
 
-Python was created by **Guido van Rossum** in the late 1980s. He named it after the British comedy group *Monty Python’s Flying Circus* because he wanted programming to be fun. (Spoiler: it is.)
+Python was created by **Guido van Rossum** in the late 1980s. He named it after the British comedy group _Monty Python’s Flying Circus_ because he wanted programming to be fun. (Spoiler: it is.)
 
 **What can you do with Python?**
+
 - Build websites and web apps.
 - Create **video games**.
 - Write **Discord bots** and automate your social life.
@@ -127,7 +129,7 @@ The first tradition for any aspiring hacker is to make the machine acknowledge y
 print("Hello, World!")
 ```
 
-When you run this, the computer will display `Hello, World!` on the screen. It’s your first step to making the machine do what *you* want.
+When you run this, the computer will display `Hello, World!` on the screen. It’s your first step to making the machine do what _you_ want.
 
 In the upcoming practice missions, you’ll create this script, then learn to debug a broken one like a true digital detective.
 

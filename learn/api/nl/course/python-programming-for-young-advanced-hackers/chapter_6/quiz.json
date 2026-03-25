@@ -71,7 +71,11 @@
           "label": "Hij checkt of twee waarden gelijk zijn.",
           "isCorrect": false
         },
-        { "id": "c", "label": "Hij vermenigvuldigt twee waarden.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Hij vermenigvuldigt twee waarden.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Hij trekt een waarde af van een variabele.",

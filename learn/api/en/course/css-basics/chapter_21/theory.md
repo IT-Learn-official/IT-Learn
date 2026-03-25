@@ -22,27 +22,32 @@ selector {
 ## 2) Selector Types
 
 ### Basic selectors
+
 - `*` (all elements)
 - `p`, `h1`, `button` (element selector)
 - `.card`, `.menu-item` (class selector)
 - `#header`, `#main` (id selector)
 
 ### Grouping selector
+
 - `h1, h2, h3`
 
 ### Relationship selectors
+
 - `div p` (descendant)
 - `ul > li` (direct child)
 - `h2 + p` (next sibling)
 - `h2 ~ p` (general sibling)
 
 ### Attribute selectors
+
 - `[disabled]`
 - `[type="text"]`
 - `[href^="https"]`
 - `[class*="btn"]`
 
 ### Pseudo-classes (state)
+
 - `:hover`
 - `:focus`
 - `:active`
@@ -53,6 +58,7 @@ selector {
 - `:not(...)`
 
 ### Pseudo-elements (part of element)
+
 - `::before`
 - `::after`
 - `::first-letter`
@@ -115,12 +121,14 @@ selector {
 ## 7) Layout Properties
 
 ### Display and position
+
 - `display`
 - `position`
 - `top`, `right`, `bottom`, `left`
 - `z-index`
 
 ### Flexbox
+
 - `display: flex`
 - `flex-direction`
 - `flex-wrap`
@@ -131,6 +139,7 @@ selector {
 - `flex-grow`, `flex-shrink`, `flex-basis`
 
 ### Grid
+
 - `display: grid`
 - `grid-template-columns`
 - `grid-template-rows`
@@ -188,6 +197,7 @@ selector {
 You do not need to memorize everything.
 
 A strong path is:
+
 1. Learn selectors
 2. Learn spacing and text
 3. Learn layout (flexbox and grid)

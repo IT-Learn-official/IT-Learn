@@ -1,6 +1,7 @@
 # Assignment: Your First SELECT Queries
 
 ## 🎯 Objective
+
 Master the basic SELECT statement by writing multiple queries to retrieve different data.
 
 ## 📋 Instructions
@@ -8,9 +9,11 @@ Master the basic SELECT statement by writing multiple queries to retrieve differ
 You have access to a table called `skills` that contains programming and hacking skills with their details.
 
 ### Exercise 1: See Everything
+
 Write a query to display all columns and all rows from the `skills` table.
 
 **Your Query:**
+
 ```sql
 -- Write your SELECT * query here
 ```
@@ -20,9 +23,11 @@ Write a query to display all columns and all rows from the `skills` table.
 ---
 
 ### Exercise 2: Just the Names
+
 Sometimes you only need one piece of information. Write a query to display only the `skill_name` column.
 
 **Your Query:**
+
 ```sql
 -- Write your query to get only skill names
 ```
@@ -32,9 +37,11 @@ Sometimes you only need one piece of information. Write a query to display only 
 ---
 
 ### Exercise 3: Two Columns
+
 Write a query to display both `skill_name` and `difficulty` columns from the skills table.
 
 **Your Query:**
+
 ```sql
 -- Write your query for two columns
 ```
@@ -44,9 +51,11 @@ Write a query to display both `skill_name` and `difficulty` columns from the ski
 ---
 
 ### Exercise 4: Three's Company
+
 Write a query to display `skill_name`, `category`, and `points` columns.
 
 **Your Query:**
+
 ```sql
 -- Write your query for three columns
 ```
@@ -58,6 +67,7 @@ Write a query to display `skill_name`, `category`, and `points` columns.
 ## ✅ Self-Check Questions
 
 After running each query, ask yourself:
+
 1. Did I get the expected columns?
 2. Did I remember the semicolon?
 3. Did I spell the column names correctly?
@@ -79,7 +89,8 @@ After running each query, ask yourself:
 ## 🏆 Success Criteria
 
 You've mastered this assignment when you can:
-- Write a SELECT * query without looking at examples
+
+- Write a SELECT \* query without looking at examples
 - Select multiple specific columns with proper syntax
 - Retrieve data from different tables confidently
 - Identify and fix simple syntax errors
@@ -87,7 +98,7 @@ You've mastered this assignment when you can:
 ## 📝 Reflection
 
 Write down your answers:
+
 1. What's the difference between `SELECT *` and `SELECT column_name`?
 2. Why might you want to select only specific columns instead of all columns?
 3. What error messages did you encounter, and how did you fix them?
-

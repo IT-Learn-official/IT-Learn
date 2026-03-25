@@ -19,9 +19,10 @@ Imagine you have a sequence of commands you run frequently, like scanning a targ
 A **function** lets you package that sequence of commands, give it a name, and run it anytime, anywhere, with a single line of code.
 
 Functions allow you to:
+
 - **D.R.Y. (Don't Repeat Yourself):** Write code once, use it forever.
 - **Organize:** Break a large, complex script into smaller, manageable, and understandable parts.
-- **Abstract:** Hide complex logic behind a simple name. You don't need to know *how* `scan_target()` works, only that it *does*.
+- **Abstract:** Hide complex logic behind a simple name. You don't need to know _how_ `scan_target()` works, only that it _does_.
 
 ---
 
@@ -36,12 +37,14 @@ def display_briefing():
     print("Objective: Locate the 'flag.txt' file.")
     print("Warning: Avoid detection.")
 ```
+
 - `def` is the keyword to **def**ine a function.
 - `display_briefing` is the name of your new tool.
 - `()` holds the parameters (inputs), which are empty for now.
-- `:` and the **indented block** below it define what the function *does*.
+- `:` and the **indented block** below it define what the function _does_.
 
 Defining a function doesn't run it. It just adds the tool to your arsenal. To run it, you must **call** it by its name:
+
 ```python
 display_briefing()
 ```
@@ -63,10 +66,12 @@ def ping_target(ip_address):
 ping_target("192.168.1.1")
 ping_target("google.com")
 ```
+
 - In the function definition, `ip_address` is a **parameter**.
 - When you call the function, `"192.168.1.1"` is an **argument**.
 
 You can have multiple parameters:
+
 ```python
 def attempt_login(username, password):
     print(f"Attempting login for user '{username}' with password '{password}'...")
@@ -98,10 +103,12 @@ if result == True:
 else:
     print(f"Port {port_to_check} is not a standard web port.")
 ```
+
 - The `return` keyword immediately ends the function and sends the specified value back.
 - The code that called the function can then store this value in a variable (`result`) and use it to make decisions.
 
 **`print` vs. `return`:**
+
 - `print()` displays information for the human user.
 - `return` sends data back to the program itself.
 
@@ -123,6 +130,7 @@ scan_target("192.168.1.100")
 # Override the default by providing an argument
 scan_target("192.168.1.200", scan_type="deep")
 ```
+
 This makes your functions more versatile without requiring the user to provide every single argument every time.
 
 ---

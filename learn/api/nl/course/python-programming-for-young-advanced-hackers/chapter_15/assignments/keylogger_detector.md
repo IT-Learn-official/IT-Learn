@@ -28,4 +28,3 @@ Track running processes and flag the risky ones.
 - Add a method `summary(self)` that returns a string like:
   - `"Total processes: 5, high risk (>=7): 2"`.
 - Give `SecurityMonitor` a `__str__(self)` method that returns the summary string.
-

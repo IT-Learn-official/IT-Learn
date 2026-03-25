@@ -4,6 +4,7 @@ Git-Historie ist für Menschen.
 Mach sie leicht lesbar.
 
 Gute Commit-Messages sind kurz und konkret:
+
 - schlecht: `i did something cool`
 - gut: `Fix navbar spacing on mobile`
 

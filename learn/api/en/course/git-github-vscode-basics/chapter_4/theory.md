@@ -20,6 +20,7 @@ git merge feature/navbar
 
 A **merge conflict** happens when Git cannot auto-combine changes (often the same lines).
 In VS Code you can pick:
+
 - current change
 - incoming change
 - both

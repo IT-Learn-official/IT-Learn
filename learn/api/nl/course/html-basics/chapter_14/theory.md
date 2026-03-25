@@ -3,6 +3,7 @@
 Dit is een snel overzicht van alle form input types die in HTML bestaan.
 
 ## Tekstinputs
+
 - `text`: tekstveld op één lijn (default).
 - `password`: tekstveld dat tekens maskeert.
 - `email`: e-mailadres met validatie-ondersteuning.
@@ -12,16 +13,19 @@ Dit is een snel overzicht van alle form input types die in HTML bestaan.
 - `number`: numerieke input met “spinner” controls.
 
 ## Selecteerbare inputs
+
 - `radio`: één keuze uit een groep.
 - `checkbox`: meerdere keuzes aan/uit.
 
 ## Knop-inputs
+
 - `submit`: knop om het formulier te verzenden.
 - `button`: klikbare knop voor eigen acties.
 - `reset`: zet het formulier terug naar defaults.
 - `image`: afbeelding die als submit-knop werkt.
 
 ## Datum- en tijdinputs
+
 - `date`: datumkiezer (YYYY-MM-DD).
 - `time`: tijdkiezer (HH:MM).
 - `datetime-local`: lokale datum en tijd.
@@ -29,6 +33,7 @@ Dit is een snel overzicht van alle form input types die in HTML bestaan.
 - `week`: weekkiezer.
 
 ## Andere inputs
+
 - `file`: bestand upload selector.
 - `hidden`: verborgen form data.
 - `color`: kleurkiezer.

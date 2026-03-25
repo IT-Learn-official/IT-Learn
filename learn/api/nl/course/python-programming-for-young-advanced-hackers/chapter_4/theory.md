@@ -3,6 +3,7 @@
 Welkom terug, hacker. Je hebt al getallen en tekst naar Python geslingerd, en op één of andere manier is het nog niet ontploft. Nu zorgen we ervoor dat Python ook écht **begrijpt** wat je hem geeft.
 
 Voor Python is er een groot verschil tussen:
+
 - `15` als **getal** (je wiskundescore op 20), en
 - `"15"` als **tekst** (misschien een stukje van je wifi-wachtwoord).
 
@@ -33,7 +34,7 @@ Python doet hetzelfde met **datatypes**. Elke waarde heeft een label in Pythons 
 - **Tekst** – voor usernames, chatberichten, wachtwoorden.
 - **True/False‑vlag** – voor simpele ja/nee‑beslissingen.
 
-Als Python niet weet *wat voor soort* waarde hij voor zich heeft, weet hij ook niet welke bewerkingen zijn toegestaan. Je kan geen wiskunde doen op een Snapchat‑username, en je kan niet inloggen met het getal `1234` als de website de **string** `"1234"` verwacht.
+Als Python niet weet _wat voor soort_ waarde hij voor zich heeft, weet hij ook niet welke bewerkingen zijn toegestaan. Je kan geen wiskunde doen op een Snapchat‑username, en je kan niet inloggen met het getal `1234` als de website de **string** `"1234"` verwacht.
 
 > Key takeaway: Een datatype zegt Python **wat** een waarde is, zodat hij weet **wat je ermee mag doen**.
 
@@ -61,6 +62,7 @@ print(type(100))  # <class 'int'>
 ```
 
 Gebruik `int` voor dingen zoals:
+
 - je score in EA FC of Fortnite,
 - het aantal gemiste oproepen,
 - je punten op 20.
@@ -83,6 +85,7 @@ print(type(99.9))  # <class 'float'>
 ```
 
 Gebruik `float` voor:
+
 - percentages (`87.5`% op een toets),
 - afstanden (`2.75` km naar school),
 - precieze health bars (`72.5` HP).
@@ -117,7 +120,7 @@ username = "hacker_" + "be"
 print(username)  # hacker_be
 ```
 
-Python behandelt *alles* tussen quotes als tekst:
+Python behandelt _alles_ tussen quotes als tekst:
 
 - `"15"` – misschien je leeftijd als tekst.
 - `15` – het getal vijftien.
@@ -148,6 +151,7 @@ print(type(is_logged_in))  # <class 'bool'>
 Later zie je dat vergelijkingen zoals `score >= 10` ook booleans opleveren.
 
 Voorbeelden uit het dagelijkse leven:
+
 - `wifi_on = True`
 - `is_exam_week = False`
 - `has_enough_sleep = False`
@@ -158,7 +162,7 @@ Voorbeelden uit het dagelijkse leven:
 
 ## 5. `type()`: je data‑scanner
 
-`type()` is alsof je een scanner op een waarde richt en aan Python vraagt: *“Wat denk jij dat dit is?”*
+`type()` is alsof je een scanner op een waarde richt en aan Python vraagt: _“Wat denk jij dat dit is?”_
 
 ```python
 print(type(10))       # <class 'int'>

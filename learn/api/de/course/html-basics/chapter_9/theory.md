@@ -5,6 +5,7 @@ Listen organisieren zusammengehörige Punkte. Verwende `<ul>` für ungeordnete L
 ---
 
 Beispiel für eine ungeordnete Liste:
+
 ```html
 <ul>
   <li>Milch</li>
@@ -12,7 +13,9 @@ Beispiel für eine ungeordnete Liste:
   <li>Eier</li>
 </ul>
 ```
+
 Das sieht so aus:
+
 - Milch
 - Brot
 - Eier
@@ -20,6 +23,7 @@ Das sieht so aus:
 ---
 
 Beispiel für eine geordnete Liste:
+
 ```html
 <ol>
   <li>Heize den Ofen auf 350°F vor.</li>
@@ -27,7 +31,9 @@ Beispiel für eine geordnete Liste:
   <li>Backe 30 Minuten.</li>
 </ol>
 ```
+
 Das wird angezeigt als:
+
 1. Heize den Ofen auf 350°F vor.
 2. Mische die Zutaten.
 3. Backe 30 Minuten.

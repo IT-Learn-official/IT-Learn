@@ -14,4 +14,3 @@ Write a function that adds two numbers and returns the result.
 - Use `result = a + b` and then `return result`.
 - Or simply `return a + b`.
 - Remember: `print` is different from `return`.
-
