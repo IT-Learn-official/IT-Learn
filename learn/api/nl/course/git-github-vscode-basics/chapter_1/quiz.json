@@ -9,8 +9,16 @@
       "type": "single-choice",
       "prompt": "Wat is het belangrijkste doel van versiebeheer?",
       "options": [
-        { "id": "a", "label": "Je computer sneller maken", "isCorrect": false },
-        { "id": "b", "label": "Mappen overbodig maken", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Je computer sneller maken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Mappen overbodig maken",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Wijzigingen bijhouden en een geschiedenis van bestanden bewaren",
@@ -73,7 +81,11 @@
       "type": "single-choice",
       "prompt": "Wat is in Git een commit?",
       "options": [
-        { "id": "a", "label": "Een map op je bureaublad", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Een map op je bureaublad",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Een wachtwoord voor GitHub",
@@ -120,7 +132,11 @@
           "label": "Een speciaal soort afbeelding",
           "isCorrect": false
         },
-        { "id": "d", "label": "Een programmeertaal", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Een programmeertaal",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Een repository is de map (en de geschiedenis) die Git bijhoudt.",

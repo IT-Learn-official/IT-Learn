@@ -19,8 +19,16 @@
           "label": "Fix navbar spacing on mobile",
           "isCorrect": true
         },
-        { "id": "c", "label": "Semmel", "isCorrect": false },
-        { "id": "d", "label": "ich liebe Whoppers", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Semmel",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "ich liebe Whoppers",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Gute Commit-Messages sind kurz, aber konkret: Sie beschreiben, was sich geändert hat.",

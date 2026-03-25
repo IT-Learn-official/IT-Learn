@@ -1,68 +1,68 @@
 {
-    "chapterId": "chapter_3",
-    "kind": "practice",
-    "title": "Kapitel 3 - Übungen",
-    "description": "Praktische Missionen für Kapitel 3.",
-    "practices": [
+  "chapterId": "chapter_3",
+  "kind": "practice",
+  "title": "Kapitel 3 - Übungen",
+  "description": "Praktische Missionen für Kapitel 3.",
+  "practices": [
+    {
+      "id": "p-functions-len-intro",
+      "title": "Zeichen zählen mit len",
+      "assignmentResourceUid": "functions_len_intro.md",
+      "templates": [
         {
-            "id": "p-functions-len-intro",
-            "title": "Zeichen zählen mit len",
-            "assignmentResourceUid": "functions_len_intro.md",
-            "templates": [
-                {
-                    "path": "attachments/functions_len_intro.py",
-                    "language": "python",
-                    "role": "starter"
-                }
-            ]
-        },
-        {
-            "id": "p-abs-distance",
-            "title": "Abstand zu 0 mit abs",
-            "assignmentResourceUid": "abs_distance.md",
-            "templates": [
-                {
-                    "path": "attachments/abs_distance.py",
-                    "language": "python",
-                    "role": "starter"
-                }
-            ]
-        },
-        {
-            "id": "p-round-scoreboard",
-            "title": "Scoreboard mit round runden",
-            "assignmentResourceUid": "round_scoreboard.md",
-            "templates": [
-                {
-                    "path": "attachments/round_scoreboard.py",
-                    "language": "python",
-                    "role": "starter"
-                }
-            ]
-        },
-        {
-            "id": "p-type-detective",
-            "title": "Type-Detektiv mit type",
-            "assignmentResourceUid": "type_detective.md",
-            "templates": [
-                {
-                    "path": "attachments/type_detective.py",
-                    "language": "python",
-                    "role": "starter"
-                }
-            ]
-        },
-        {
-            "id": "p-function-combo-mini-report",
-            "title": "Funktions-Combo Mini-Report",
-            "assignmentResourceUid": "function_combo_report.md",
-            "templates": [
-                {
-                    "path": "attachments/function_combo_report.py",
-                    "language": "python",
-                    "role": "starter"
-                }
-            ]
+          "path": "attachments/functions_len_intro.py",
+          "language": "python",
+          "role": "starter"
         }
-    ]
+      ]
+    },
+    {
+      "id": "p-abs-distance",
+      "title": "Abstand zu 0 mit abs",
+      "assignmentResourceUid": "abs_distance.md",
+      "templates": [
+        {
+          "path": "attachments/abs_distance.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-round-scoreboard",
+      "title": "Scoreboard mit round runden",
+      "assignmentResourceUid": "round_scoreboard.md",
+      "templates": [
+        {
+          "path": "attachments/round_scoreboard.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-type-detective",
+      "title": "Type-Detektiv mit type",
+      "assignmentResourceUid": "type_detective.md",
+      "templates": [
+        {
+          "path": "attachments/type_detective.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    },
+    {
+      "id": "p-function-combo-mini-report",
+      "title": "Funktions-Combo Mini-Report",
+      "assignmentResourceUid": "function_combo_report.md",
+      "templates": [
+        {
+          "path": "attachments/function_combo_report.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ]
+    }
+  ]
 }

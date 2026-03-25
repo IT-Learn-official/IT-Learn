@@ -19,7 +19,11 @@
           "label": "Request to delete someone else's repository",
           "isCorrect": false
         },
-        { "id": "c", "label": "Request to rename Git", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Request to rename Git",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "A file that stores passwords",
@@ -77,7 +81,11 @@
       "type": "single-choice",
       "prompt": "On GitHub, what are Issues commonly used for?",
       "options": [
-        { "id": "a", "label": "Storing compiled programs", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Storing compiled programs",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Tracking bugs, tasks, and feature ideas",
@@ -119,7 +127,11 @@
           "label": "A way to delete all branches",
           "isCorrect": false
         },
-        { "id": "c", "label": "A type of commit message", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "A type of commit message",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "A Git command that stages files",

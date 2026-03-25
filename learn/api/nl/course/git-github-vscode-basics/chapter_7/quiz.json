@@ -50,7 +50,11 @@
           "label": "Het verwijdert de repository van GitHub",
           "isCorrect": false
         },
-        { "id": "b", "label": "Het maakt je branch privé", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Het maakt je branch privé",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Het lost alle mergeconflicten automatisch op",
@@ -87,7 +91,11 @@
           "label": "Het verandert de resolutie van je monitor",
           "isCorrect": false
         },
-        { "id": "c", "label": "Het maakt GitHub kapot", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Het maakt GitHub kapot",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Het voorkomt voor altijd commits",

@@ -50,7 +50,11 @@
           "label": "Volgen hoe de waarde verandert terwijl het programma draait.",
           "isCorrect": true
         },
-        { "id": "b", "label": "Ze een nieuwe naam geven.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Ze een nieuwe naam geven.",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Ze verwijderen uit je programma.",

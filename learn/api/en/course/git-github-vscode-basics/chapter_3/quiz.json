@@ -9,13 +9,21 @@
       "type": "single-choice",
       "prompt": "What does `git status` help you see?",
       "options": [
-        { "id": "a", "label": "The current weather", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "The current weather",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Which files have changed and are staged or unstaged",
           "isCorrect": true
         },
-        { "id": "c", "label": "Your GitHub followers", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Your GitHub followers",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "A list of all programming languages",
@@ -42,8 +50,16 @@
           "label": "Automatically uploading files to GitHub",
           "isCorrect": false
         },
-        { "id": "b", "label": "Deleting old commits", "isCorrect": false },
-        { "id": "c", "label": "Renaming your repository", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Deleting old commits",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Renaming your repository",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Choosing which changes go into the next commit",
@@ -106,7 +122,11 @@
           "label": "To speed up your internet connection",
           "isCorrect": false
         },
-        { "id": "b", "label": "To make commits anonymous", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "To make commits anonymous",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "To force Git to track every file",

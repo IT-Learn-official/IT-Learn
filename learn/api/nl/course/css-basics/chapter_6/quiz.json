@@ -1,120 +1,77 @@
-﻿{
+{
   "chapterId": "chapter_6",
-
   "kind": "assessment",
-
   "title": "Hoofdstuk 6 - Tekstuitlijning en spacing Check",
-
   "description": "Controleer je kennis:  Line height, uitlijning en letter spacing controleren.",
-
   "questions": [
     {
       "id": "q1-line-height",
-
       "type": "single-choice",
-
       "prompt": "What does line-height control?",
-
       "options": [
         {
           "id": "a",
-
           "label": "The text color",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "The distance between lines",
-
           "isCorrect": true
         },
-
         {
           "id": "c",
-
           "label": "The border thickness",
-
           "isCorrect": false
         },
-
         {
           "id": "d",
-
           "label": "The font family",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "line-height controls vertical space between lines of text.",
-
         "byOptionId": {
           "a": "Not quite. line-height controls vertical space between lines of text.",
-
           "b": "Correct. line-height controls vertical space between lines of text.",
-
           "c": "Not quite. line-height controls vertical space between lines of text.",
-
           "d": "Not quite. line-height controls vertical space between lines of text."
         }
       }
     },
-
     {
       "id": "q2-text-align",
-
       "type": "single-choice",
-
       "prompt": "Which property centers text horizontally in its container?",
-
       "options": [
         {
           "id": "a",
-
           "label": "align-text: middle;",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "text-align: center;",
-
           "isCorrect": true
         },
-
         {
           "id": "c",
-
           "label": "font-align: center;",
-
           "isCorrect": false
         },
-
         {
           "id": "d",
-
           "label": "justify-items: center;",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "text-align: center; centers inline text content.",
-
         "byOptionId": {
           "a": "Not quite. text-align: center; centers inline text content.",
-
           "b": "Correct. text-align: center; centers inline text content.",
-
           "c": "Not quite. text-align: center; centers inline text content.",
-
           "d": "Not quite. text-align: center; centers inline text content."
         }
       }

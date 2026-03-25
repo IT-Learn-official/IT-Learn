@@ -50,13 +50,21 @@
           "label": "Replaces 'phone' with 'usb'.",
           "isCorrect": false
         },
-        { "id": "b", "label": "Deletes 'laptop'.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Deletes 'laptop'.",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Adds 'usb' to the end of the list.",
           "isCorrect": true
         },
-        { "id": "d", "label": "Does nothing.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Does nothing.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "append adds a new item to the end of the list.",
@@ -73,10 +81,26 @@
       "type": "single-choice",
       "prompt": "You have `player = {\"name\": \"Leo\", \"score\": 50}`. How do you get the score?",
       "options": [
-        { "id": "a", "label": "player[0]", "isCorrect": false },
-        { "id": "b", "label": "player(\"score\")", "isCorrect": false },
-        { "id": "c", "label": "player[\"score\"]", "isCorrect": true },
-        { "id": "d", "label": "player.score", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "player[0]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "player(\"score\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "player[\"score\"]",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "player.score",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Dictionary values are accessed by key using square brackets and the key string.",
@@ -108,7 +132,11 @@
           "label": "Tuples cannot be changed after creation.",
           "isCorrect": true
         },
-        { "id": "d", "label": "Tuples are always empty.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Tuples are always empty.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Tuples are immutable; lists are mutable.",
@@ -125,7 +153,11 @@
       "type": "single-choice",
       "prompt": "You want to store a player's name and score together and look them up by name. Which structure is best?",
       "options": [
-        { "id": "a", "label": "A list of names only.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "A list of names only.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "A tuple like (\"Mia\", 10).",

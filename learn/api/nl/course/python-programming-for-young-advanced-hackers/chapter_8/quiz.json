@@ -45,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Als `text = \"HACK\"`, wat geeft `text[1]` terug?",
       "options": [
-        { "id": "a", "label": "\"H\"", "isCorrect": false },
-        { "id": "b", "label": "\"HA\"", "isCorrect": false },
-        { "id": "c", "label": "\"A\"", "isCorrect": true },
-        { "id": "d", "label": "\"K\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"H\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"HA\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"A\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"K\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Indexing start bij 0, dus index 1 is het tweede teken.",
@@ -65,10 +81,26 @@
       "type": "single-choice",
       "prompt": "Als `word = \"PYTHON\"`, wat is `word[0:3]`?",
       "options": [
-        { "id": "a", "label": "\"PYTH\"", "isCorrect": false },
-        { "id": "b", "label": "\"P\"", "isCorrect": false },
-        { "id": "c", "label": "\"PYT\"", "isCorrect": true },
-        { "id": "d", "label": "\"HON\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"PYTH\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"P\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"PYT\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"HON\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Slicing `text[start:end]` pakt tekens van start tot (maar niet inclusief) end.",
@@ -85,10 +117,26 @@
       "type": "single-choice",
       "prompt": "Wat geeft \"hacker\".upper() terug?",
       "options": [
-        { "id": "a", "label": "\"hacker\"", "isCorrect": false },
-        { "id": "b", "label": "\"Hacker\"", "isCorrect": false },
-        { "id": "c", "label": "\"HACKER\"", "isCorrect": true },
-        { "id": "d", "label": "\"upper\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"Hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"HACKER\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"upper\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "De methode `.upper()` maakt alle letters hoofdletters.",
@@ -105,14 +153,26 @@
       "type": "single-choice",
       "prompt": "Je hebt `name = \"Mia\"`. Welke regel gebruikt correct een f-string om `Hello, Mia!` te printen?",
       "options": [
-        { "id": "a", "label": "print(\"Hello, {name}!\")", "isCorrect": false },
-        { "id": "b", "label": "print(f\"Hello, {name}!\")", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "print(\"Hello, {name}!\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "print(f\"Hello, {name}!\")",
+          "isCorrect": true
+        },
         {
           "id": "c",
           "label": "print(\"Hello, \" + name + \"!\")",
           "isCorrect": false
         },
-        { "id": "d", "label": "print(f'Hello, \"name\"!')", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "print(f'Hello, \"name\"!')",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "F-strings starten met `f` en vullen variabelen in met `{...}`.",

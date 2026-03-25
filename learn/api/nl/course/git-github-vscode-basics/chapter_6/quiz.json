@@ -127,7 +127,11 @@
           "label": "Een manier om alle branches te verwijderen",
           "isCorrect": false
         },
-        { "id": "c", "label": "Een soort commitboodschap", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Een soort commitboodschap",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Een Git-commando om bestanden te stagen",

@@ -50,13 +50,21 @@
           "label": "Ein spezieller Branch, der nicht geändert werden kann",
           "isCorrect": false
         },
-        { "id": "b", "label": "Ein Git-Befehl zum Stagen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Ein Git-Befehl zum Stagen",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Der Standard-Spitzname für das wichtigste Remote",
           "isCorrect": true
         },
-        { "id": "d", "label": "Eine Dateiendung", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Eine Dateiendung",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`origin` ist meist der Name, den Git der Remote-URL beim Clonen gibt.",

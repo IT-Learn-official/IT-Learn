@@ -9,7 +9,11 @@
       "type": "single-choice",
       "prompt": "Was macht der Operator `**` in Python?",
       "options": [
-        { "id": "a", "label": "Addiert zwei Zahlen.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Addiert zwei Zahlen.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Teilt eine Zahl durch eine andere.",
@@ -41,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Welcher Operator prüft, ob zwei Werte NICHT gleich sind?",
       "options": [
-        { "id": "a", "label": "==", "isCorrect": false },
-        { "id": "b", "label": "!=", "isCorrect": true },
-        { "id": "c", "label": ">", "isCorrect": false },
-        { "id": "d", "label": "<=", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "!=",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": ">",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<=",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Der Operator `!=` prüft auf Ungleichheit.",
@@ -97,10 +117,26 @@
       "type": "single-choice",
       "prompt": "Welche davon ist ein logischer Operator in Python?",
       "options": [
-        { "id": "a", "label": "and", "isCorrect": true },
-        { "id": "b", "label": "++", "isCorrect": false },
-        { "id": "c", "label": "==", "isCorrect": false },
-        { "id": "d", "label": "**", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "and",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "++",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "**",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Logische Operatoren sind `and`, `or` und `not`.",

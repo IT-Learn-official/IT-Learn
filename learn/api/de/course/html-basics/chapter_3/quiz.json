@@ -1,232 +1,149 @@
-﻿{
+{
   "chapterId": "chapter_3",
-
   "kind": "assessment",
-
   "title": "Kapitel 3 - HTML-Dokumentstruktur Check",
-
   "description": "Wissenscheck:  DOCTYPE, html, head und body und ihre Rollen.",
-
   "questions": [
     {
       "id": "q-doctype",
-
       "type": "single-choice",
-
-      "prompt": "What is the purpose of \u003c!DOCTYPE html\u003e?",
-
+      "prompt": "What is the purpose of <!DOCTYPE html>?",
       "options": [
         {
           "id": "tellwhatversion",
-
           "label": "It tells the browser to use modern HTML standards",
-
           "isCorrect": true
         },
-
         {
           "id": "displaytitle",
-
           "label": "It displays a title on the page",
-
           "isCorrect": false
         },
-
         {
           "id": "csslink",
-
           "label": "It links a CSS file",
-
           "isCorrect": false
         },
-
         {
           "id": "definebody",
-
           "label": "It defines the page body",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "The DOCTYPE ensures the browser parses the page with the correct rules.",
-
         "byOptionId": {
           "tellwhatversion": "Correct â€” DOCTYPE tells the browser to use the standard HTML parsing mode.",
-
           "displaytitle": "Incorrect â€” DOCTYPE does not display titles.",
-
-          "csslink": "Incorrect â€” CSS is linked with \u003clink\u003e, not DOCTYPE.",
-
+          "csslink": "Incorrect â€” CSS is linked with <link>, not DOCTYPE.",
           "definebody": "Incorrect â€” DOCTYPE does not define the body element."
         }
       }
     },
-
     {
       "id": "q-head-function",
-
       "type": "single-choice",
-
       "prompt": "Which tag contains the visible content of the page?",
-
       "options": [
         {
           "id": "head",
-
-          "label": "\u003chead\u003e",
-
+          "label": "<head>",
           "isCorrect": false
         },
-
         {
           "id": "html",
-
-          "label": "\u003chtml\u003e",
-
+          "label": "<html>",
           "isCorrect": false
         },
-
         {
           "id": "body",
-
-          "label": "\u003cbody\u003e",
-
+          "label": "<body>",
           "isCorrect": true
         },
-
         {
           "id": "meta",
-
-          "label": "\u003cmeta\u003e",
-
+          "label": "<meta>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "The \u003cbody\u003e contains content the user sees in the browser window.",
-
+        "overview": "The <body> contains content the user sees in the browser window.",
         "byOptionId": {
-          "body": "Correct â€” visible content goes inside \u003cbody\u003e.",
-
-          "head": "Incorrect â€” \u003chead\u003e holds metadata and resources, not the main visible content.",
-
-          "html": "Incorrect â€” \u003chtml\u003e is the root wrapper, not the visible content container.",
-
-          "meta": "Incorrect â€” \u003cmeta\u003e provides metadata such as charset or viewport info."
+          "body": "Correct â€” visible content goes inside <body>.",
+          "head": "Incorrect â€” <head> holds metadata and resources, not the main visible content.",
+          "html": "Incorrect â€” <html> is the root wrapper, not the visible content container.",
+          "meta": "Incorrect â€” <meta> provides metadata such as charset or viewport info."
         }
       }
     },
-
     {
       "id": "q-title-location",
-
       "type": "single-choice",
-
-      "prompt": "Where does the \u003ctitle\u003e tag go?",
-
+      "prompt": "Where does the <title> tag go?",
       "options": [
         {
           "id": "body",
-
-          "label": "Inside \u003cbody\u003e",
-
+          "label": "Inside <body>",
           "isCorrect": false
         },
-
         {
           "id": "footer",
-
-          "label": "Inside \u003cfooter\u003e",
-
+          "label": "Inside <footer>",
           "isCorrect": false
         },
-
         {
           "id": "head",
-
-          "label": "Inside \u003chead\u003e",
-
+          "label": "Inside <head>",
           "isCorrect": true
         },
-
         {
           "id": "outside",
-
-          "label": "Outside of \u003chtml\u003e",
-
+          "label": "Outside of <html>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "\u003ctitle\u003e belongs in the head and appears in the browser tab.",
-
+        "overview": "<title> belongs in the head and appears in the browser tab.",
         "byOptionId": {
-          "head": "Correct â€” \u003ctitle\u003e is placed in \u003chead\u003e and is shown in the browser tab.",
-
-          "body": "Incorrect â€” \u003ctitle\u003e should not be inside \u003cbody\u003e.",
-
-          "footer": "Incorrect â€” \u003cfooter\u003e is part of the page body, not where \u003ctitle\u003e belongs.",
-
-          "outside": "Incorrect â€” \u003ctitle\u003e must be inside \u003chead\u003e within \u003chtml\u003e."
+          "head": "Correct â€” <title> is placed in <head> and is shown in the browser tab.",
+          "body": "Incorrect â€” <title> should not be inside <body>.",
+          "footer": "Incorrect â€” <footer> is part of the page body, not where <title> belongs.",
+          "outside": "Incorrect â€” <title> must be inside <head> within <html>."
         }
       }
     },
-
     {
       "id": "q-html-root",
-
       "type": "single-choice",
-
       "prompt": "What is the root element of an HTML document?",
-
       "options": [
         {
           "id": "head",
-
-          "label": "\u003chead\u003e",
-
+          "label": "<head>",
           "isCorrect": false
         },
-
         {
           "id": "body",
-
-          "label": "\u003cbody\u003e",
-
+          "label": "<body>",
           "isCorrect": false
         },
-
         {
           "id": "doctype",
-
-          "label": "\u003c!DOCTYPE\u003e",
-
+          "label": "<!DOCTYPE>",
           "isCorrect": false
         },
-
         {
           "id": "html",
-
-          "label": "\u003chtml\u003e",
-
+          "label": "<html>",
           "isCorrect": true
         }
       ],
-
       "explanations": {
-        "overview": "\u003chtml\u003e is the outer element that wraps the whole document.",
-
+        "overview": "<html> is the outer element that wraps the whole document.",
         "byOptionId": {
-          "html": "Correct â€” \u003chtml\u003e is the document root.",
-
-          "head": "Incorrect â€” \u003chead\u003e is a child of \u003chtml\u003e.",
-
-          "body": "Incorrect â€” \u003cbody\u003e is also a child of \u003chtml\u003e, not the root.",
-
+          "html": "Correct â€” <html> is the document root.",
+          "head": "Incorrect â€” <head> is a child of <html>.",
+          "body": "Incorrect â€” <body> is also a child of <html>, not the root.",
           "doctype": "Incorrect â€” DOCTYPE is a declaration, not the root element."
         }
       }

@@ -4,7 +4,9 @@
       "id": "python-programming-for-young-advanced-hackers",
       "title": "Python Programming for young advanced hackers",
       "description": "A hands-on, project-based introduction to coding for beginners, kids, and teens, covering basics to object-oriented programming.",
-      "authors": ["Nick Hermans, Broodje56"],
+      "authors": [
+        "Nick Hermans, Broodje56"
+      ],
       "chapters": [
         {
           "id": "chapter_1",
@@ -133,7 +135,9 @@
       "title": "SQL Data Hacking for Young Pros",
       "description": "Master the language of data. A hands-on, project-based course using SQLite to query, analyze, and build databases from scratch.",
       "language": "sql",
-      "authors": ["Nick Hermans"],
+      "authors": [
+        "Nick Hermans"
+      ],
       "chapters": [
         {
           "id": "chapter_1",
@@ -262,7 +266,9 @@
       "title": "HTML Basics for Young Pros",
       "description": "A beginner-friendly course introducing HTML fundamentals, structure, and best practices.",
       "language": "html",
-      "authors": ["super_man2775"],
+      "authors": [
+        "super_man2775"
+      ],
       "chapters": [
         {
           "id": "chapter_1",
@@ -431,7 +437,9 @@
       "title": "CSS Basics for Young Pros",
       "description": "A beginner-friendly CSS course for kids and teens, focused on styling web pages with clear examples.",
       "language": "css",
-      "authors": ["super_man2775"],
+      "authors": [
+        "super_man2775"
+      ],
       "chapters": [
         {
           "id": "chapter_1",
@@ -607,7 +615,9 @@
       "id": "git-github-vscode-basics",
       "title": "Git, GitHub, and VS Code Basics for Young Students",
       "description": "A beginner-friendly course that teaches the basics of Git version control, GitHub collaboration, and how to use VS Code with Git.",
-      "authors": ["super_man2775"],
+      "authors": [
+        "super_man2775"
+      ],
       "chapters": [
         {
           "id": "chapter_1",

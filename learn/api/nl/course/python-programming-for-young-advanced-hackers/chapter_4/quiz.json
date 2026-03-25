@@ -1,392 +1,392 @@
 {
-    "chapterId": "chapter-4",
-    "kind": "assessment",
-    "title": "Hoofdstuk 4 - Datatypes en typeconversie Check",
-    "description": "Snelle check voor hoofdstuk 4. Gebruik dit om te zien wat je brein heeft opgepikt over ints, floats, strings, booleans en het omzetten tussen die types.",
-    "questions": [
+  "chapterId": "chapter-4",
+  "kind": "assessment",
+  "title": "Hoofdstuk 4 - Datatypes en typeconversie Check",
+  "description": "Snelle check voor hoofdstuk 4. Gebruik dit om te zien wat je brein heeft opgepikt over ints, floats, strings, booleans en het omzetten tussen die types.",
+  "questions": [
+    {
+      "id": "q-type-of-3-point-0",
+      "type": "single-choice",
+      "prompt": "In Python, wat is het type van de waarde `3.0`?",
+      "options": [
         {
-            "id": "q-type-of-3-point-0",
-            "type": "single-choice",
-            "prompt": "In Python, wat is het type van de waarde `3.0`?",
-            "options": [
-                {
-                    "id": "int",
-                    "label": "int",
-                    "isCorrect": false
-                },
-                {
-                    "id": "float",
-                    "label": "float",
-                    "isCorrect": true
-                },
-                {
-                    "id": "str",
-                    "label": "str",
-                    "isCorrect": false
-                },
-                {
-                    "id": "bool",
-                    "label": "bool",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Getallen met een decimale punt zijn floats.",
-                "byOptionId": {
-                    "int": "`3` zonder decimaal is een int, maar `3.0` is een float.",
-                    "float": "Juist, de decimale punt betekent dat dit een float is.",
-                    "str": "Een string heeft aanhalingstekens nodig, zoals `\"3.0\"`.",
-                    "bool": "Booleans zijn alleen `True` of `False`."
-                }
-            }
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
         },
         {
-            "id": "q-type-of-quoted-123",
-            "type": "single-choice",
-            "prompt": "Kijk naar deze waarde: `'123'` (met aanhalingstekens). Wat is het type in Python?",
-            "options": [
-                {
-                    "id": "int",
-                    "label": "int",
-                    "isCorrect": false
-                },
-                {
-                    "id": "float",
-                    "label": "float",
-                    "isCorrect": false
-                },
-                {
-                    "id": "str",
-                    "label": "str",
-                    "isCorrect": true
-                },
-                {
-                    "id": "bool",
-                    "label": "bool",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Aanhalingstekens betekenen string, ook al zijn de tekens cijfers.",
-                "byOptionId": {
-                    "int": "Het lijkt een getal, maar door de aanhalingstekens is het een string.",
-                    "float": "Floats zijn numerieke waarden met een decimale punt, geen tekst.",
-                    "str": "Juist, alles tussen aanhalingstekens is een string.",
-                    "bool": "Booleans zijn `True` of `False`, niet `'123'`."
-                }
-            }
+          "id": "float",
+          "label": "float",
+          "isCorrect": true
         },
         {
-            "id": "q-boolean-literal",
-            "type": "single-choice",
-            "prompt": "Welke hiervan is een **boolean literal** in Python?",
-            "options": [
-                {
-                    "id": "true-lower",
-                    "label": "true",
-                    "isCorrect": false
-                },
-                {
-                    "id": "true-string",
-                    "label": "\"True\"",
-                    "isCorrect": false
-                },
-                {
-                    "id": "True",
-                    "label": "True",
-                    "isCorrect": true
-                },
-                {
-                    "id": "one",
-                    "label": "1",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Python-booleans schrijf je als `True` en `False` met hoofdletters en zonder aanhalingstekens.",
-                "byOptionId": {
-                    "true-lower": "`true` (alles lowercase) is geen speciale waarde in Python.",
-                    "true-string": "`\"True\"` is een string van tekens, geen boolean.",
-                    "True": "Juist, dit is de booleanwaarde `True`.",
-                    "one": "`1` is een integer, geen boolean, ook al is `bool(1)` wel `True`."
-                }
-            }
+          "id": "str",
+          "label": "str",
+          "isCorrect": false
         },
         {
-            "id": "q-type-function",
-            "type": "single-choice",
-            "prompt": "Wat toont deze code?\\n\\n```python\\nprint(type(\"Hello\"))\\n```",
-            "options": [
-                {
-                    "id": "class-str",
-                    "label": "Iets zoals <class 'str'>",
-                    "isCorrect": true
-                },
-                {
-                    "id": "class-int",
-                    "label": "Iets zoals <class 'int'>",
-                    "isCorrect": false
-                },
-                {
-                    "id": "prints-hello",
-                    "label": "Het print `Hello`",
-                    "isCorrect": false
-                },
-                {
-                    "id": "error",
-                    "label": "Het geeft een fout.",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "De functie `type` vertelt je welk type een waarde is.",
-                "byOptionId": {
-                    "class-str": "Juist, het type van een string zoals `\"Hello\"` is `str`.",
-                    "class-int": "`\"Hello\"` is geen int; het is een string.",
-                    "prints-hello": "`type` print de waarde niet; het print informatie over het type.",
-                    "error": "Dit is geldige Python, geen fout hier."
-                }
-            }
-        },
-        {
-            "id": "q-implicit-int-float",
-            "type": "single-choice",
-            "prompt": "Wat is het **type** van het resultaat van `3 + 2.5` in Python?",
-            "options": [
-                {
-                    "id": "int",
-                    "label": "int",
-                    "isCorrect": false
-                },
-                {
-                    "id": "float",
-                    "label": "float",
-                    "isCorrect": true
-                },
-                {
-                    "id": "str",
-                    "label": "str",
-                    "isCorrect": false
-                },
-                {
-                    "id": "bool",
-                    "label": "bool",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Als je een int en een float optelt, maakt Python het resultaat een float.",
-                "byOptionId": {
-                    "int": "Het resultaat blijft geen int; Python promoot het naar een float.",
-                    "float": "Juist, int + float wordt een float.",
-                    "str": "Er zitten geen strings in deze expressie.",
-                    "bool": "Er spelen geen True/False-waarden mee."
-                }
-            }
-        },
-        {
-            "id": "q-string-plus-int-bug",
-            "type": "single-choice",
-            "prompt": "Wat gebeurt er als je deze code runt?\\n\\n```python\\nage = 12\\nprint(\"You are \" + age)\\n```",
-            "options": [
-                {
-                    "id": "prints-text-age",
-                    "label": "Het print `You are age`.",
-                    "isCorrect": false
-                },
-                {
-                    "id": "prints-you-are-12",
-                    "label": "Het print `You are 12`.",
-                    "isCorrect": false
-                },
-                {
-                    "id": "type-error",
-                    "label": "Het geeft een TypeError omdat je een string en een getal optelt.",
-                    "isCorrect": true
-                },
-                {
-                    "id": "crash",
-                    "label": "Het laat je hele computer crashen.",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Je kan niet rechtstreeks een string en een int aan elkaar plakken.",
-                "byOptionId": {
-                    "prints-text-age": "Python vervangt `age` niet automatisch door zijn waarde in de string.",
-                    "prints-you-are-12": "Dat zou werken als je `str(age)` gebruikte of een komma in `print`.",
-                    "type-error": "Juist, Python klaagt omdat `age` een `int` is, geen `str`.",
-                    "crash": "Fouten stoppen je programma, maar ze maken je computer niet kapot."
-                }
-            }
-        },
-        {
-            "id": "q-fix-string-plus-int",
-            "type": "single-choice",
-            "prompt": "Welke regel is de **beste** fix voor deze code zodat het `You are 12` print?\\n\\n```python\\nage = 12\\n# your code here\\n```",
-            "options": [
-                {
-                    "id": "use-str",
-                    "label": "print(\"You are \" + str(age))",
-                    "isCorrect": true
-                },
-                {
-                    "id": "use-int",
-                    "label": "print(\"You are \" + int(age))",
-                    "isCorrect": false
-                },
-                {
-                    "id": "use-bool",
-                    "label": "print(\"You are \" + bool(age))",
-                    "isCorrect": false
-                },
-                {
-                    "id": "just-age",
-                    "label": "print(age)",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Om tekst en getallen te plakken met `+`, zet je het getal om naar een string.",
-                "byOptionId": {
-                    "use-str": "Juist, `str(age)` maakt van de int tekst die je met een andere string kan optellen.",
-                    "use-int": "`int(age)` is nog altijd een getal, dus je krijgt nog steeds een TypeError.",
-                    "use-bool": "`bool(age)` zou `True` zijn, en dat is niet wat we willen.",
-                    "just-age": "Dit print `12`, maar verliest de tekst `You are` uit het oorspronkelijke doel."
-                }
-            }
-        },
-        {
-            "id": "q-safe-int-conversion",
-            "type": "single-choice",
-            "prompt": "Welke string kan je veilig met `int(...)` omzetten **zonder** dat je een fout krijgt?",
-            "options": [
-                {
-                    "id": "ten",
-                    "label": "\"10\"",
-                    "isCorrect": true
-                },
-                {
-                    "id": "three-point-five",
-                    "label": "\"3.5\"",
-                    "isCorrect": false
-                },
-                {
-                    "id": "word-ten",
-                    "label": "\"ten\"",
-                    "isCorrect": false
-                },
-                {
-                    "id": "empty",
-                    "label": "\"\" (lege string)",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "`int` verwacht een string die eruitziet als een heel getal.",
-                "byOptionId": {
-                    "ten": "Juist, `\"10\"` is een nette integer-string.",
-                    "three-point-five": "`int(\"3.5\")` crasht; gebruik `float` voor decimalen.",
-                    "word-ten": "Python weet niet hoe het Engelse woord 'ten' om te zetten naar een getal.",
-                    "empty": "Een lege string stelt geen getal voor."
-                }
-            }
-        },
-        {
-            "id": "q-bool-empty-string",
-            "type": "single-choice",
-            "prompt": "Wat is het resultaat van `bool(\"\")` (een lege string)?",
-            "options": [
-                {
-                    "id": "true",
-                    "label": "True",
-                    "isCorrect": false
-                },
-                {
-                    "id": "false",
-                    "label": "False",
-                    "isCorrect": true
-                },
-                {
-                    "id": "error",
-                    "label": "Het geeft een fout.",
-                    "isCorrect": false
-                },
-                {
-                    "id": "string-false",
-                    "label": "\"False\"",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "Lege strings worden als False gezien wanneer je ze omzet naar bool.",
-                "byOptionId": {
-                    "true": "Niet-lege strings zijn True, maar deze string is leeg.",
-                    "false": "Juist, `bool(\"\")` is False.",
-                    "error": "`bool` kan strings aan; geen fout hier.",
-                    "string-false": "Dit zou weer een string zijn, geen boolean."
-                }
-            }
-        },
-        {
-            "id": "q-type-for-debugging",
-            "type": "single-choice",
-            "prompt": "Je ziet deze code:\\n\\n```python\\ncoins = \"10\"\\nprint(type(coins))\\n```\\n\\nWat helpt deze regel je vooral te checken?",
-            "options": [
-                {
-                    "id": "coins-is-string",
-                    "label": "Dat `coins` een string is, geen getal.",
-                    "isCorrect": true
-                },
-                {
-                    "id": "coins-is-int",
-                    "label": "Dat `coins` een int is.",
-                    "isCorrect": false
-                },
-                {
-                    "id": "coins-will-auto-convert",
-                    "label": "Dat Python het later automatisch naar een getal zal omzetten.",
-                    "isCorrect": false
-                },
-                {
-                    "id": "coins-is-broken",
-                    "label": "Dat `coins` kapot en onbruikbaar is.",
-                    "isCorrect": false
-                }
-            ],
-            "explanations": {
-                "overview": "`type` is een debuggingtool: het vertelt je wat voor soort waarde je hebt.",
-                "byOptionId": {
-                    "coins-is-string": "Juist, het toont dat `coins` nu een `str` is, wat latere TypeErrors bij rekenen verklaart.",
-                    "coins-is-int": "Als je `<class 'str'>` ziet, dan is het geen int.",
-                    "coins-will-auto-convert": "Python zet number-like strings niet automatisch om in rekenoperaties.",
-                    "coins-is-broken": "De waarde is niet kapot; ze heeft gewoon een ander type dan je verwacht."
-                }
-            }
-        },
-        {
-            "id": "q-auto-convert-string-number",
-            "type": "single-choice",
-            "prompt": "Waar of niet waar: Python zet automatisch de string `'5'` om naar het getal 5 wanneer je `'5' + 3` doet.",
-            "options": [
-                {
-                    "id": "true",
-                    "label": "True",
-                    "isCorrect": false
-                },
-                {
-                    "id": "false",
-                    "label": "False",
-                    "isCorrect": true
-                }
-            ],
-            "explanations": {
-                "overview": "Python mixt strings en getallen niet automatisch in `+`-expressies.",
-                "byOptionId": {
-                    "true": "`'5' + 3` geeft in werkelijkheid een TypeError.",
-                    "false": "Juist, je moet zelf omzetten, bv. `int('5') + 3` of `'5' + str(3)`."
-                }
-            }
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
         }
-    ]
+      ],
+      "explanations": {
+        "overview": "Getallen met een decimale punt zijn floats.",
+        "byOptionId": {
+          "int": "`3` zonder decimaal is een int, maar `3.0` is een float.",
+          "float": "Juist, de decimale punt betekent dat dit een float is.",
+          "str": "Een string heeft aanhalingstekens nodig, zoals `\"3.0\"`.",
+          "bool": "Booleans zijn alleen `True` of `False`."
+        }
+      }
+    },
+    {
+      "id": "q-type-of-quoted-123",
+      "type": "single-choice",
+      "prompt": "Kijk naar deze waarde: `'123'` (met aanhalingstekens). Wat is het type in Python?",
+      "options": [
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
+        },
+        {
+          "id": "float",
+          "label": "float",
+          "isCorrect": false
+        },
+        {
+          "id": "str",
+          "label": "str",
+          "isCorrect": true
+        },
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Aanhalingstekens betekenen string, ook al zijn de tekens cijfers.",
+        "byOptionId": {
+          "int": "Het lijkt een getal, maar door de aanhalingstekens is het een string.",
+          "float": "Floats zijn numerieke waarden met een decimale punt, geen tekst.",
+          "str": "Juist, alles tussen aanhalingstekens is een string.",
+          "bool": "Booleans zijn `True` of `False`, niet `'123'`."
+        }
+      }
+    },
+    {
+      "id": "q-boolean-literal",
+      "type": "single-choice",
+      "prompt": "Welke hiervan is een **boolean literal** in Python?",
+      "options": [
+        {
+          "id": "true-lower",
+          "label": "true",
+          "isCorrect": false
+        },
+        {
+          "id": "true-string",
+          "label": "\"True\"",
+          "isCorrect": false
+        },
+        {
+          "id": "True",
+          "label": "True",
+          "isCorrect": true
+        },
+        {
+          "id": "one",
+          "label": "1",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Python-booleans schrijf je als `True` en `False` met hoofdletters en zonder aanhalingstekens.",
+        "byOptionId": {
+          "true-lower": "`true` (alles lowercase) is geen speciale waarde in Python.",
+          "true-string": "`\"True\"` is een string van tekens, geen boolean.",
+          "True": "Juist, dit is de booleanwaarde `True`.",
+          "one": "`1` is een integer, geen boolean, ook al is `bool(1)` wel `True`."
+        }
+      }
+    },
+    {
+      "id": "q-type-function",
+      "type": "single-choice",
+      "prompt": "Wat toont deze code?\\n\\n```python\\nprint(type(\"Hello\"))\\n```",
+      "options": [
+        {
+          "id": "class-str",
+          "label": "Iets zoals <class 'str'>",
+          "isCorrect": true
+        },
+        {
+          "id": "class-int",
+          "label": "Iets zoals <class 'int'>",
+          "isCorrect": false
+        },
+        {
+          "id": "prints-hello",
+          "label": "Het print `Hello`",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "label": "Het geeft een fout.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De functie `type` vertelt je welk type een waarde is.",
+        "byOptionId": {
+          "class-str": "Juist, het type van een string zoals `\"Hello\"` is `str`.",
+          "class-int": "`\"Hello\"` is geen int; het is een string.",
+          "prints-hello": "`type` print de waarde niet; het print informatie over het type.",
+          "error": "Dit is geldige Python, geen fout hier."
+        }
+      }
+    },
+    {
+      "id": "q-implicit-int-float",
+      "type": "single-choice",
+      "prompt": "Wat is het **type** van het resultaat van `3 + 2.5` in Python?",
+      "options": [
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
+        },
+        {
+          "id": "float",
+          "label": "float",
+          "isCorrect": true
+        },
+        {
+          "id": "str",
+          "label": "str",
+          "isCorrect": false
+        },
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Als je een int en een float optelt, maakt Python het resultaat een float.",
+        "byOptionId": {
+          "int": "Het resultaat blijft geen int; Python promoot het naar een float.",
+          "float": "Juist, int + float wordt een float.",
+          "str": "Er zitten geen strings in deze expressie.",
+          "bool": "Er spelen geen True/False-waarden mee."
+        }
+      }
+    },
+    {
+      "id": "q-string-plus-int-bug",
+      "type": "single-choice",
+      "prompt": "Wat gebeurt er als je deze code runt?\\n\\n```python\\nage = 12\\nprint(\"You are \" + age)\\n```",
+      "options": [
+        {
+          "id": "prints-text-age",
+          "label": "Het print `You are age`.",
+          "isCorrect": false
+        },
+        {
+          "id": "prints-you-are-12",
+          "label": "Het print `You are 12`.",
+          "isCorrect": false
+        },
+        {
+          "id": "type-error",
+          "label": "Het geeft een TypeError omdat je een string en een getal optelt.",
+          "isCorrect": true
+        },
+        {
+          "id": "crash",
+          "label": "Het laat je hele computer crashen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Je kan niet rechtstreeks een string en een int aan elkaar plakken.",
+        "byOptionId": {
+          "prints-text-age": "Python vervangt `age` niet automatisch door zijn waarde in de string.",
+          "prints-you-are-12": "Dat zou werken als je `str(age)` gebruikte of een komma in `print`.",
+          "type-error": "Juist, Python klaagt omdat `age` een `int` is, geen `str`.",
+          "crash": "Fouten stoppen je programma, maar ze maken je computer niet kapot."
+        }
+      }
+    },
+    {
+      "id": "q-fix-string-plus-int",
+      "type": "single-choice",
+      "prompt": "Welke regel is de **beste** fix voor deze code zodat het `You are 12` print?\\n\\n```python\\nage = 12\\n# your code here\\n```",
+      "options": [
+        {
+          "id": "use-str",
+          "label": "print(\"You are \" + str(age))",
+          "isCorrect": true
+        },
+        {
+          "id": "use-int",
+          "label": "print(\"You are \" + int(age))",
+          "isCorrect": false
+        },
+        {
+          "id": "use-bool",
+          "label": "print(\"You are \" + bool(age))",
+          "isCorrect": false
+        },
+        {
+          "id": "just-age",
+          "label": "print(age)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Om tekst en getallen te plakken met `+`, zet je het getal om naar een string.",
+        "byOptionId": {
+          "use-str": "Juist, `str(age)` maakt van de int tekst die je met een andere string kan optellen.",
+          "use-int": "`int(age)` is nog altijd een getal, dus je krijgt nog steeds een TypeError.",
+          "use-bool": "`bool(age)` zou `True` zijn, en dat is niet wat we willen.",
+          "just-age": "Dit print `12`, maar verliest de tekst `You are` uit het oorspronkelijke doel."
+        }
+      }
+    },
+    {
+      "id": "q-safe-int-conversion",
+      "type": "single-choice",
+      "prompt": "Welke string kan je veilig met `int(...)` omzetten **zonder** dat je een fout krijgt?",
+      "options": [
+        {
+          "id": "ten",
+          "label": "\"10\"",
+          "isCorrect": true
+        },
+        {
+          "id": "three-point-five",
+          "label": "\"3.5\"",
+          "isCorrect": false
+        },
+        {
+          "id": "word-ten",
+          "label": "\"ten\"",
+          "isCorrect": false
+        },
+        {
+          "id": "empty",
+          "label": "\"\" (lege string)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`int` verwacht een string die eruitziet als een heel getal.",
+        "byOptionId": {
+          "ten": "Juist, `\"10\"` is een nette integer-string.",
+          "three-point-five": "`int(\"3.5\")` crasht; gebruik `float` voor decimalen.",
+          "word-ten": "Python weet niet hoe het Engelse woord 'ten' om te zetten naar een getal.",
+          "empty": "Een lege string stelt geen getal voor."
+        }
+      }
+    },
+    {
+      "id": "q-bool-empty-string",
+      "type": "single-choice",
+      "prompt": "Wat is het resultaat van `bool(\"\")` (een lege string)?",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "isCorrect": false
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "isCorrect": true
+        },
+        {
+          "id": "error",
+          "label": "Het geeft een fout.",
+          "isCorrect": false
+        },
+        {
+          "id": "string-false",
+          "label": "\"False\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Lege strings worden als False gezien wanneer je ze omzet naar bool.",
+        "byOptionId": {
+          "true": "Niet-lege strings zijn True, maar deze string is leeg.",
+          "false": "Juist, `bool(\"\")` is False.",
+          "error": "`bool` kan strings aan; geen fout hier.",
+          "string-false": "Dit zou weer een string zijn, geen boolean."
+        }
+      }
+    },
+    {
+      "id": "q-type-for-debugging",
+      "type": "single-choice",
+      "prompt": "Je ziet deze code:\\n\\n```python\\ncoins = \"10\"\\nprint(type(coins))\\n```\\n\\nWat helpt deze regel je vooral te checken?",
+      "options": [
+        {
+          "id": "coins-is-string",
+          "label": "Dat `coins` een string is, geen getal.",
+          "isCorrect": true
+        },
+        {
+          "id": "coins-is-int",
+          "label": "Dat `coins` een int is.",
+          "isCorrect": false
+        },
+        {
+          "id": "coins-will-auto-convert",
+          "label": "Dat Python het later automatisch naar een getal zal omzetten.",
+          "isCorrect": false
+        },
+        {
+          "id": "coins-is-broken",
+          "label": "Dat `coins` kapot en onbruikbaar is.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`type` is een debuggingtool: het vertelt je wat voor soort waarde je hebt.",
+        "byOptionId": {
+          "coins-is-string": "Juist, het toont dat `coins` nu een `str` is, wat latere TypeErrors bij rekenen verklaart.",
+          "coins-is-int": "Als je `<class 'str'>` ziet, dan is het geen int.",
+          "coins-will-auto-convert": "Python zet number-like strings niet automatisch om in rekenoperaties.",
+          "coins-is-broken": "De waarde is niet kapot; ze heeft gewoon een ander type dan je verwacht."
+        }
+      }
+    },
+    {
+      "id": "q-auto-convert-string-number",
+      "type": "single-choice",
+      "prompt": "Waar of niet waar: Python zet automatisch de string `'5'` om naar het getal 5 wanneer je `'5' + 3` doet.",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "isCorrect": false
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Python mixt strings en getallen niet automatisch in `+`-expressies.",
+        "byOptionId": {
+          "true": "`'5' + 3` geeft in werkelijkheid een TypeError.",
+          "false": "Juist, je moet zelf omzetten, bv. `int('5') + 3` of `'5' + str(3)`."
+        }
+      }
+    }
+  ]
 }

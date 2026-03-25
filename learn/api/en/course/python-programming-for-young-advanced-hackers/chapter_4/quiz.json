@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "In Python, what is the type of the value `3.0`?",
       "options": [
-        { "id": "int", "label": "int", "isCorrect": false },
-        { "id": "float", "label": "float", "isCorrect": true },
-        { "id": "str", "label": "str", "isCorrect": false },
-        { "id": "bool", "label": "bool", "isCorrect": false }
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
+        },
+        {
+          "id": "float",
+          "label": "float",
+          "isCorrect": true
+        },
+        {
+          "id": "str",
+          "label": "str",
+          "isCorrect": false
+        },
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Numbers with a decimal point are floats.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Look at this value: `'123'` (with quotes). What is its type in Python?",
       "options": [
-        { "id": "int", "label": "int", "isCorrect": false },
-        { "id": "float", "label": "float", "isCorrect": false },
-        { "id": "str", "label": "str", "isCorrect": true },
-        { "id": "bool", "label": "bool", "isCorrect": false }
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
+        },
+        {
+          "id": "float",
+          "label": "float",
+          "isCorrect": false
+        },
+        {
+          "id": "str",
+          "label": "str",
+          "isCorrect": true
+        },
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Quotes mean string, even if the characters are digits.",
@@ -49,10 +81,26 @@
       "type": "single-choice",
       "prompt": "Which of these is a **boolean literal** in Python?",
       "options": [
-        { "id": "true-lower", "label": "true", "isCorrect": false },
-        { "id": "true-string", "label": "\"True\"", "isCorrect": false },
-        { "id": "True", "label": "True", "isCorrect": true },
-        { "id": "one", "label": "1", "isCorrect": false }
+        {
+          "id": "true-lower",
+          "label": "true",
+          "isCorrect": false
+        },
+        {
+          "id": "true-string",
+          "label": "\"True\"",
+          "isCorrect": false
+        },
+        {
+          "id": "True",
+          "label": "True",
+          "isCorrect": true
+        },
+        {
+          "id": "one",
+          "label": "1",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Python booleans are written as `True` and `False` with capital letters and no quotes.",
@@ -84,7 +132,11 @@
           "label": "It prints `Hello`",
           "isCorrect": false
         },
-        { "id": "error", "label": "It gives an error.", "isCorrect": false }
+        {
+          "id": "error",
+          "label": "It gives an error.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The `type` function tells you what type a value is.",
@@ -101,10 +153,26 @@
       "type": "single-choice",
       "prompt": "What is the **type** of the result of `3 + 2.5` in Python?",
       "options": [
-        { "id": "int", "label": "int", "isCorrect": false },
-        { "id": "float", "label": "float", "isCorrect": true },
-        { "id": "str", "label": "str", "isCorrect": false },
-        { "id": "bool", "label": "bool", "isCorrect": false }
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
+        },
+        {
+          "id": "float",
+          "label": "float",
+          "isCorrect": true
+        },
+        {
+          "id": "str",
+          "label": "str",
+          "isCorrect": false
+        },
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "When you add an int and a float, Python converts the result to a float.",
@@ -172,7 +240,11 @@
           "label": "print(\"You are \" + bool(age))",
           "isCorrect": false
         },
-        { "id": "just-age", "label": "print(age)", "isCorrect": false }
+        {
+          "id": "just-age",
+          "label": "print(age)",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "To glue text and numbers with `+`, turn the number into a string.",
@@ -189,10 +261,26 @@
       "type": "single-choice",
       "prompt": "Which string can be safely converted with `int(...)` **without** causing an error?",
       "options": [
-        { "id": "ten", "label": "\"10\"", "isCorrect": true },
-        { "id": "three-point-five", "label": "\"3.5\"", "isCorrect": false },
-        { "id": "word-ten", "label": "\"ten\"", "isCorrect": false },
-        { "id": "empty", "label": "\"\" (empty string)", "isCorrect": false }
+        {
+          "id": "ten",
+          "label": "\"10\"",
+          "isCorrect": true
+        },
+        {
+          "id": "three-point-five",
+          "label": "\"3.5\"",
+          "isCorrect": false
+        },
+        {
+          "id": "word-ten",
+          "label": "\"ten\"",
+          "isCorrect": false
+        },
+        {
+          "id": "empty",
+          "label": "\"\" (empty string)",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`int` expects a string that looks like a whole number.",
@@ -209,10 +297,26 @@
       "type": "single-choice",
       "prompt": "What is the result of `bool(\"\")` (an empty string)?",
       "options": [
-        { "id": "true", "label": "True", "isCorrect": false },
-        { "id": "false", "label": "False", "isCorrect": true },
-        { "id": "error", "label": "It gives an error.", "isCorrect": false },
-        { "id": "string-false", "label": "\"False\"", "isCorrect": false }
+        {
+          "id": "true",
+          "label": "True",
+          "isCorrect": false
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "isCorrect": true
+        },
+        {
+          "id": "error",
+          "label": "It gives an error.",
+          "isCorrect": false
+        },
+        {
+          "id": "string-false",
+          "label": "\"False\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Empty strings are considered False when converted to bool.",
@@ -265,8 +369,16 @@
       "type": "single-choice",
       "prompt": "True or False: Python will automatically turn the string `'5'` into the number 5 when you do `'5' + 3`.",
       "options": [
-        { "id": "true", "label": "True", "isCorrect": false },
-        { "id": "false", "label": "False", "isCorrect": true }
+        {
+          "id": "true",
+          "label": "True",
+          "isCorrect": false
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "isCorrect": true
+        }
       ],
       "explanations": {
         "overview": "Python does not automatically mix strings and numbers in `+` expressions.",

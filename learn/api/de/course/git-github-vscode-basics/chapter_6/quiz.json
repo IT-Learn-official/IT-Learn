@@ -19,7 +19,11 @@
           "label": "Anfrage, das Repository von jemand anderem zu löschen",
           "isCorrect": false
         },
-        { "id": "c", "label": "Anfrage, Git umzubenennen", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Anfrage, Git umzubenennen",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Eine Datei, die Passwörter speichert",
@@ -128,7 +132,11 @@
           "label": "Eine Art von Commit-Nachricht",
           "isCorrect": false
         },
-        { "id": "d", "label": "Ein Git-Befehl zum Stagen", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Ein Git-Befehl zum Stagen",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Forks erlauben dir, an einem Repo zu arbeiten, wenn du keinen direkten Schreibzugriff auf das Original hast.",

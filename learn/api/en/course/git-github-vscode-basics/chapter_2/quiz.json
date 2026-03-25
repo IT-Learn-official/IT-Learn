@@ -19,7 +19,11 @@
           "label": "Your GitHub account username",
           "isCorrect": false
         },
-        { "id": "c", "label": "The name of your computer", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "The name of your computer",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "The name of your main branch",
@@ -41,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Which VS Code feature helps you stage changes and write commit messages?",
       "options": [
-        { "id": "a", "label": "File Explorer only", "isCorrect": false },
-        { "id": "b", "label": "The Debug panel", "isCorrect": false },
-        { "id": "c", "label": "Source Control view", "isCorrect": true },
-        { "id": "d", "label": "The Extensions store only", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "File Explorer only",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The Debug panel",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Source Control view",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "The Extensions store only",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "VS Code's Source Control view integrates with Git for staging and committing.",

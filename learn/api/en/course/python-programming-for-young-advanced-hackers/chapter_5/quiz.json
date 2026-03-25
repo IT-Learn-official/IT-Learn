@@ -50,7 +50,11 @@
           "label": "Follow how its value changes as the program runs.",
           "isCorrect": true
         },
-        { "id": "b", "label": "Give it a new name.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Give it a new name.",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Delete it from your program.",
@@ -87,7 +91,11 @@
           "label": "To make the program run faster.",
           "isCorrect": false
         },
-        { "id": "c", "label": "To delete variables.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "To delete variables.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "To change the color of the text.",

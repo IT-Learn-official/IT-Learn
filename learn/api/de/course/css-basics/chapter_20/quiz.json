@@ -1,120 +1,77 @@
-﻿{
+{
   "chapterId": "chapter_20",
-
   "kind": "assessment",
-
   "title": "Kapitel 20 - Kurze EinfÃ¼hrung in Frameworks Check",
-
   "description": "Wissenscheck:  Was Frameworks sind (z. B. Bootstrap oder Tailwind) und wann man sie ausprobieren kann.",
-
   "questions": [
     {
       "id": "q1-framework-meaning",
-
       "type": "single-choice",
-
       "prompt": "What is a CSS framework?",
-
       "options": [
         {
           "id": "a",
-
           "label": "A browser extension for ads",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "A prebuilt CSS system you can use",
-
           "isCorrect": true
         },
-
         {
           "id": "c",
-
           "label": "A database engine",
-
           "isCorrect": false
         },
-
         {
           "id": "d",
-
           "label": "A replacement for HTML",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "A framework is a prebuilt collection of styles and UI utilities.",
-
         "byOptionId": {
           "a": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-
           "b": "Correct. A framework is a prebuilt collection of styles and UI utilities.",
-
           "c": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-
           "d": "Not quite. A framework is a prebuilt collection of styles and UI utilities."
         }
       }
     },
-
     {
       "id": "q2-framework-when",
-
       "type": "single-choice",
-
       "prompt": "When is a good time to start using frameworks?",
-
       "options": [
         {
           "id": "a",
-
           "label": "Before learning any CSS at all",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "Only for mobile apps",
-
           "isCorrect": false
         },
-
         {
           "id": "c",
-
           "label": "After learning CSS basics",
-
           "isCorrect": true
         },
-
         {
           "id": "d",
-
           "label": "Only when internet is slow",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
-
         "byOptionId": {
           "a": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-
           "b": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-
           "c": "Correct. After understanding basic CSS, frameworks can speed up bigger projects.",
-
           "d": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects."
         }
       }

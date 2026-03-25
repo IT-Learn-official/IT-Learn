@@ -1,120 +1,77 @@
-﻿{
+{
   "chapterId": "chapter_13",
-
   "kind": "assessment",
-
   "title": "Kapitel 13 - EinfÃ¼hrung in CSS Grid Check",
-
   "description": "Wissenscheck:  Einfache Grids fÃ¼r moderne Layouts erstellen.",
-
   "questions": [
     {
       "id": "q1-grid-enable",
-
       "type": "single-choice",
-
       "prompt": "Which declaration enables CSS Grid on a container?",
-
       "options": [
         {
           "id": "a",
-
           "label": "layout: grid;",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "display: grid;",
-
           "isCorrect": true
         },
-
         {
           "id": "c",
-
           "label": "grid: on;",
-
           "isCorrect": false
         },
-
         {
           "id": "d",
-
           "label": "position: grid;",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "display: grid makes the container use Grid layout.",
-
         "byOptionId": {
           "a": "Not quite. display: grid makes the container use Grid layout.",
-
           "b": "Correct. display: grid makes the container use Grid layout.",
-
           "c": "Not quite. display: grid makes the container use Grid layout.",
-
           "d": "Not quite. display: grid makes the container use Grid layout."
         }
       }
     },
-
     {
       "id": "q2-fr-unit",
-
       "type": "single-choice",
-
       "prompt": "In Grid, what does 1fr mean?",
-
       "options": [
         {
           "id": "a",
-
           "label": "One fixed pixel",
-
           "isCorrect": false
         },
-
         {
           "id": "b",
-
           "label": "One full row",
-
           "isCorrect": false
         },
-
         {
           "id": "c",
-
           "label": "One fraction of free space",
-
           "isCorrect": true
         },
-
         {
           "id": "d",
-
           "label": "One font size unit",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "1fr is one fraction of available space in the grid container.",
-
         "byOptionId": {
           "a": "Not quite. 1fr is one fraction of available space in the grid container.",
-
           "b": "Not quite. 1fr is one fraction of available space in the grid container.",
-
           "c": "Correct. 1fr is one fraction of available space in the grid container.",
-
           "d": "Not quite. 1fr is one fraction of available space in the grid container."
         }
       }

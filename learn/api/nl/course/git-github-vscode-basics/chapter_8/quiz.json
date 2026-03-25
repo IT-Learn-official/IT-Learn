@@ -19,8 +19,16 @@
           "label": "Fix navbar spacing on mobile",
           "isCorrect": true
         },
-        { "id": "c", "label": "boterham", "isCorrect": false },
-        { "id": "d", "label": "ik hou van whoppers", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "boterham",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "ik hou van whoppers",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Goede commitboodschappen zijn kort maar specifiek: ze zeggen wat er veranderde.",
@@ -78,7 +86,11 @@
           "label": "Uitleggen wat het project is en hoe je het gebruikt",
           "isCorrect": true
         },
-        { "id": "b", "label": "Privé API-keys opslaan", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Privé API-keys opslaan",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Alle codebestanden vervangen",

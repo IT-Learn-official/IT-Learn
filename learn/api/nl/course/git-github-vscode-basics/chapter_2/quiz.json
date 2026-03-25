@@ -14,9 +14,21 @@
           "label": "De naam die als auteur in je commits verschijnt",
           "isCorrect": true
         },
-        { "id": "b", "label": "Je GitHub-gebruikersnaam", "isCorrect": false },
-        { "id": "c", "label": "De naam van je computer", "isCorrect": false },
-        { "id": "d", "label": "De naam van je main-branch", "isCorrect": false }
+        {
+          "id": "b",
+          "label": "Je GitHub-gebruikersnaam",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De naam van je computer",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De naam van je main-branch",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Git config zet commit-metadata zoals auteurnaam en e-mail.",
@@ -33,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Welke VS Code-functie helpt je wijzigingen te stagen en commitboodschappen te schrijven?",
       "options": [
-        { "id": "a", "label": "Alleen de File Explorer", "isCorrect": false },
-        { "id": "b", "label": "Het Debug-paneel", "isCorrect": false },
-        { "id": "c", "label": "De Source Control-weergave", "isCorrect": true },
-        { "id": "d", "label": "Alleen de Extensions store", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "Alleen de File Explorer",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het Debug-paneel",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De Source Control-weergave",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Alleen de Extensions store",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "De Source Control-weergave van VS Code integreert met Git om te stagen en te committen.",

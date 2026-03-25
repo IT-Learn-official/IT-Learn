@@ -86,7 +86,11 @@
           "label": "Commits von einem Branch in einen anderen zusammenführen",
           "isCorrect": true
         },
-        { "id": "b", "label": "Eine Datei umbenennen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Eine Datei umbenennen",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Bilder zu GitHub hochladen",
@@ -128,7 +132,11 @@
           "label": "Wenn zwei Branches dieselben Zeilen in einer Datei ändern",
           "isCorrect": true
         },
-        { "id": "d", "label": "Wenn GitHub offline ist", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Wenn GitHub offline ist",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Konflikte passieren, wenn Git Änderungen nicht automatisch kombinieren kann.",

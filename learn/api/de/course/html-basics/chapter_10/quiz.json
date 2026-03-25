@@ -1,121 +1,78 @@
-﻿{
+{
   "chapterId": "chapter_10",
-
   "kind": "assessment",
-
   "title": "Kapitel 10 - Tabellen Check",
-
   "description": "Wissenscheck:  Grundaufbau von Tabellen mit table, tr, td und th.",
-
   "questions": [
     {
       "id": "q-table",
-
       "type": "single-choice",
-
       "prompt": "Which tag starts a table?",
-
       "options": [
         {
           "id": "table",
-
-          "label": "\u003ctable\u003e",
-
+          "label": "<table>",
           "isCorrect": true
         },
-
         {
           "id": "tr",
-
-          "label": "\u003ctr\u003e",
-
+          "label": "<tr>",
           "isCorrect": false
         },
-
         {
           "id": "td",
-
-          "label": "\u003ctd\u003e",
-
+          "label": "<td>",
           "isCorrect": false
         },
-
         {
           "id": "th",
-
-          "label": "\u003cth\u003e",
-
+          "label": "<th>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "\u003ctable\u003e wraps the whole table structure.",
-
+        "overview": "<table> wraps the whole table structure.",
         "byOptionId": {
-          "table": "Correct â€” \u003ctable\u003e is the container for rows and cells.",
-
-          "tr": "Incorrect â€” \u003ctr\u003e defines a table row within \u003ctable\u003e.",
-
-          "td": "Incorrect â€” \u003ctd\u003e is a table cell, not the table root.",
-
-          "th": "Incorrect â€” \u003cth\u003e is for header cells inside rows."
+          "table": "Correct â€” <table> is the container for rows and cells.",
+          "tr": "Incorrect â€” <tr> defines a table row within <table>.",
+          "td": "Incorrect â€” <td> is a table cell, not the table root.",
+          "th": "Incorrect â€” <th> is for header cells inside rows."
         }
       }
     },
-
     {
       "id": "q-th-td",
-
       "type": "single-choice",
-
       "prompt": "Which tag is used for header cells?",
-
       "options": [
         {
           "id": "td",
-
-          "label": "\u003ctd\u003e",
-
+          "label": "<td>",
           "isCorrect": false
         },
-
         {
           "id": "th",
-
-          "label": "\u003cth\u003e",
-
+          "label": "<th>",
           "isCorrect": true
         },
-
         {
           "id": "tr",
-
-          "label": "\u003ctr\u003e",
-
+          "label": "<tr>",
           "isCorrect": false
         },
-
         {
           "id": "thead",
-
-          "label": "\u003cthead\u003e",
-
+          "label": "<thead>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "\u003cth\u003e defines a header cell, often bold and centered by default.",
-
+        "overview": "<th> defines a header cell, often bold and centered by default.",
         "byOptionId": {
-          "th": "Correct â€” \u003cth\u003e indicates header cells within a table row.",
-
-          "td": "Incorrect â€” \u003ctd\u003e is for regular cells, not headers.",
-
-          "tr": "Incorrect â€” \u003ctr\u003e is a row wrapper, not a cell.",
-
-          "thead": "Incorrect â€” \u003cthead\u003e groups header rows, but \u003cth\u003e is the header cell element."
+          "th": "Correct â€” <th> indicates header cells within a table row.",
+          "td": "Incorrect â€” <td> is for regular cells, not headers.",
+          "tr": "Incorrect â€” <tr> is a row wrapper, not a cell.",
+          "thead": "Incorrect â€” <thead> groups header rows, but <th> is the header cell element."
         }
       }
     }

@@ -1,177 +1,114 @@
-﻿{
+{
   "chapterId": "chapter_6",
-
   "kind": "assessment",
-
-  "title": "Kapitel 6 - AbsÃ¤tze \u0026 Text Check",
-
+  "title": "Kapitel 6 - AbsÃ¤tze & Text Check",
   "description": "Wissenscheck:  AbsÃ¤tze, ZeilenumbrÃ¼che, horizontale Linien und Tags zur Textbetonung.",
-
   "questions": [
     {
       "id": "q-p-tag",
-
       "type": "single-choice",
-
       "prompt": "Which tag should you use for a paragraph?",
-
       "options": [
         {
           "id": "div",
-
-          "label": "\u003cdiv\u003e",
-
+          "label": "<div>",
           "isCorrect": false
         },
-
         {
           "id": "p",
-
-          "label": "\u003cp\u003e",
-
+          "label": "<p>",
           "isCorrect": true
         },
-
         {
           "id": "br",
-
-          "label": "\u003cbr\u003e",
-
+          "label": "<br>",
           "isCorrect": false
         },
-
         {
           "id": "span",
-
-          "label": "\u003cspan\u003e",
-
+          "label": "<span>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "Use \u003cp\u003e to mark blocks of text as paragraphs.",
-
+        "overview": "Use <p> to mark blocks of text as paragraphs.",
         "byOptionId": {
-          "p": "Correct â€” use \u003cp\u003e for paragraphs of text.",
-
-          "div": "Incorrect â€” \u003cdiv\u003e is a generic block container but not the semantic paragraph tag.",
-
-          "br": "Incorrect â€” \u003cbr\u003e inserts a line break, not a paragraph block.",
-
-          "span": "Incorrect â€” \u003cspan\u003e is inline and not for paragraph blocks."
+          "p": "Correct â€” use <p> for paragraphs of text.",
+          "div": "Incorrect â€” <div> is a generic block container but not the semantic paragraph tag.",
+          "br": "Incorrect â€” <br> inserts a line break, not a paragraph block.",
+          "span": "Incorrect â€” <span> is inline and not for paragraph blocks."
         }
       }
     },
-
     {
       "id": "q-strong-em",
-
       "type": "single-choice",
-
       "prompt": "Which tag semantically indicates strong importance?",
-
       "options": [
         {
           "id": "em",
-
-          "label": "\u003cem\u003e",
-
+          "label": "<em>",
           "isCorrect": false
         },
-
         {
           "id": "b",
-
-          "label": "\u003cb\u003e",
-
+          "label": "<b>",
           "isCorrect": false
         },
-
         {
           "id": "strong",
-
-          "label": "\u003cstrong\u003e",
-
+          "label": "<strong>",
           "isCorrect": true
         },
-
         {
           "id": "i",
-
-          "label": "\u003ci\u003e",
-
+          "label": "<i>",
           "isCorrect": false
         }
       ],
-
       "explanations": {
-        "overview": "\u003cstrong\u003e signals strong importance and is semantically meaningful.",
-
+        "overview": "<strong> signals strong importance and is semantically meaningful.",
         "byOptionId": {
-          "strong": "Correct â€” \u003cstrong\u003e conveys strong importance semantically.",
-
-          "em": "Incorrect â€” \u003cem\u003e indicates emphasis but not the same semantic weight as \u003cstrong\u003e.",
-
-          "b": "Incorrect â€” \u003cb\u003e is purely presentational; \u003cstrong\u003e adds semantic meaning.",
-
-          "i": "Incorrect â€” \u003ci\u003e is presentational and does not imply importance."
+          "strong": "Correct â€” <strong> conveys strong importance semantically.",
+          "em": "Incorrect â€” <em> indicates emphasis but not the same semantic weight as <strong>.",
+          "b": "Incorrect â€” <b> is purely presentational; <strong> adds semantic meaning.",
+          "i": "Incorrect â€” <i> is presentational and does not imply importance."
         }
       }
     },
-
     {
       "id": "q-br-hr",
-
       "type": "single-choice",
-
       "prompt": "Which tag creates a horizontal rule (a thematic break)?",
-
       "options": [
         {
           "id": "br",
-
-          "label": "\u003cbr\u003e",
-
+          "label": "<br>",
           "isCorrect": false
         },
-
         {
           "id": "p",
-
-          "label": "\u003cp\u003e",
-
+          "label": "<p>",
           "isCorrect": false
         },
-
         {
           "id": "hr2",
-
-          "label": "\u003chr2\u003e",
-
+          "label": "<hr2>",
           "isCorrect": false
         },
-
         {
           "id": "hr",
-
-          "label": "\u003chr\u003e",
-
+          "label": "<hr>",
           "isCorrect": true
         }
       ],
-
       "explanations": {
-        "overview": "\u003chr\u003e creates a thematic break line across the content.",
-
+        "overview": "<hr> creates a thematic break line across the content.",
         "byOptionId": {
-          "hr": "Correct â€” \u003chr\u003e represents a thematic break in content.",
-
-          "br": "Incorrect â€” \u003cbr\u003e is a line break, not a thematic rule.",
-
-          "p": "Incorrect â€” \u003cp\u003e is for paragraphs, not horizontal rules.",
-
-          "hr2": "Incorrect â€” \u003chr2\u003e is not a valid HTML element."
+          "hr": "Correct â€” <hr> represents a thematic break in content.",
+          "br": "Incorrect â€” <br> is a line break, not a thematic rule.",
+          "p": "Incorrect â€” <p> is for paragraphs, not horizontal rules.",
+          "hr2": "Incorrect â€” <hr2> is not a valid HTML element."
         }
       }
     }

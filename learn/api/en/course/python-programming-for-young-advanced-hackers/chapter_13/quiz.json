@@ -14,8 +14,16 @@
           "label": "A way to repeat code by giving it a name and calling it.",
           "isCorrect": true
         },
-        { "id": "b", "label": "A special kind of list.", "isCorrect": false },
-        { "id": "c", "label": "A built-in error message.", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "A special kind of list.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A built-in error message.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "A comment that Python ignores.",
@@ -37,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Which keyword is used to define a function in Python?",
       "options": [
-        { "id": "a", "label": "func", "isCorrect": false },
-        { "id": "b", "label": "def", "isCorrect": true },
-        { "id": "c", "label": "function", "isCorrect": false },
-        { "id": "d", "label": "call", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "func",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "def",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "call",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Function definitions always start with def.",
@@ -57,14 +81,26 @@
       "type": "single-choice",
       "prompt": "In `def greet(name):`, what is `name`?",
       "options": [
-        { "id": "a", "label": "A return value.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "A return value.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "A parameter (an input to the function).",
           "isCorrect": true
         },
-        { "id": "c", "label": "An error.", "isCorrect": false },
-        { "id": "d", "label": "A list item.", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "An error.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A list item.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Parameters are variables listed in the function definition header.",
@@ -91,8 +127,16 @@
           "label": "It stops the function and sends a value back.",
           "isCorrect": true
         },
-        { "id": "c", "label": "It starts a new loop.", "isCorrect": false },
-        { "id": "d", "label": "It deletes a variable.", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "It starts a new loop.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It deletes a variable.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "return exits the function and hands a value back to the caller.",
@@ -119,7 +163,11 @@
           "label": "greeting will automatically be 'Hi'.",
           "isCorrect": true
         },
-        { "id": "c", "label": "greeting will be None.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "greeting will be None.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Python ignores the second parameter.",

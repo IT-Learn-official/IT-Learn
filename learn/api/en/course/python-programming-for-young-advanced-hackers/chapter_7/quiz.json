@@ -9,10 +9,26 @@
       "type": "single-choice",
       "prompt": "Which expression correctly calculates 2 to the power of 5 in Python?",
       "options": [
-        { "id": "a", "label": "2 ^ 5", "isCorrect": false },
-        { "id": "b", "label": "2 ** 5", "isCorrect": true },
-        { "id": "c", "label": "2 ^^ 5", "isCorrect": false },
-        { "id": "d", "label": "pow(2, 5, 0)", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "2 ^ 5",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "2 ** 5",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "2 ^^ 5",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "pow(2, 5, 0)",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The ** operator is used for exponents (powers) in Python.",
@@ -29,10 +45,26 @@
       "type": "single-choice",
       "prompt": "You imported the math module with `import math`. How do you correctly calculate the square root of 16?",
       "options": [
-        { "id": "a", "label": "sqrt(16)", "isCorrect": false },
-        { "id": "b", "label": "math.sqrt(16)", "isCorrect": true },
-        { "id": "c", "label": "math.square_root(16)", "isCorrect": false },
-        { "id": "d", "label": "math.sqrt = 16", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "sqrt(16)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "math.sqrt(16)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "math.square_root(16)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "math.sqrt = 16",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Functions in the math module are accessed with math.function_name(...).",
@@ -85,10 +117,26 @@
       "type": "single-choice",
       "prompt": "What does `round(2.6)` return in Python?",
       "options": [
-        { "id": "a", "label": "2", "isCorrect": false },
-        { "id": "b", "label": "2.0", "isCorrect": false },
-        { "id": "c", "label": "3", "isCorrect": true },
-        { "id": "d", "label": "3.0", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "2.0",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "3",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "3.0",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "round(x) returns the nearest whole number.",
@@ -105,10 +153,26 @@
       "type": "single-choice",
       "prompt": "You want a random integer between 1 and 10, including both 1 and 10. Which code should you use after `import random`?",
       "options": [
-        { "id": "a", "label": "random.randint(1, 10)", "isCorrect": true },
-        { "id": "b", "label": "random.randint(0, 9)", "isCorrect": false },
-        { "id": "c", "label": "random.random(1, 10)", "isCorrect": false },
-        { "id": "d", "label": "random.choice(1, 10)", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "random.randint(1, 10)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "random.randint(0, 9)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "random.random(1, 10)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "random.choice(1, 10)",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "randint(a, b) returns an integer between a and b, including both.",

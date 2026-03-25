@@ -14,7 +14,11 @@
           "label": "Den Computer schneller machen",
           "isCorrect": false
         },
-        { "id": "b", "label": "Ordner unnötig machen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Ordner unnötig machen",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Änderungen verfolgen und eine Datei-Historie behalten",
@@ -77,8 +81,16 @@
       "type": "single-choice",
       "prompt": "Was ist in Git ein Commit?",
       "options": [
-        { "id": "a", "label": "Ein Ordner am Desktop", "isCorrect": false },
-        { "id": "b", "label": "Ein Passwort für GitHub", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Ein Ordner am Desktop",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Passwort für GitHub",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Eine Datei, die alten Code löscht",
@@ -120,7 +132,11 @@
           "label": "Eine besondere Art von Bild",
           "isCorrect": false
         },
-        { "id": "d", "label": "Eine Programmiersprache", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Eine Programmiersprache",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Ein Repository ist der Ordner (und seine Historie), den Git verfolgt.",

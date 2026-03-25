@@ -9,7 +9,11 @@
       "type": "single-choice",
       "prompt": "What is a for loop mainly used for in Python?",
       "options": [
-        { "id": "a", "label": "To define a function.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "To define a function.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "To repeat code for each item in a sequence.",
@@ -20,7 +24,11 @@
           "label": "To stop a program immediately.",
           "isCorrect": false
         },
-        { "id": "d", "label": "To create a new variable.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "To create a new variable.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "for loops are used to repeat code for each item in a range or collection.",
@@ -37,10 +45,26 @@
       "type": "single-choice",
       "prompt": "What numbers does range(3) generate?",
       "options": [
-        { "id": "a", "label": "1, 2, 3", "isCorrect": false },
-        { "id": "b", "label": "0, 1, 2", "isCorrect": true },
-        { "id": "c", "label": "0, 1, 2, 3", "isCorrect": false },
-        { "id": "d", "label": "Only 3", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "0, 1, 2",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "0, 1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Only 3",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "range(stop) starts at 0 and goes up to stop-1.",
@@ -57,7 +81,11 @@
       "type": "single-choice",
       "prompt": "When does a while loop stop running?",
       "options": [
-        { "id": "a", "label": "After exactly 10 loops.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "After exactly 10 loops.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "When its condition becomes False.",
@@ -89,14 +117,26 @@
       "type": "single-choice",
       "prompt": "Which mistake can easily create an infinite while loop?",
       "options": [
-        { "id": "a", "label": "Using a for loop instead.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Using a for loop instead.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Forgetting to change the variable used in the condition.",
           "isCorrect": true
         },
-        { "id": "c", "label": "Printing too many times.", "isCorrect": false },
-        { "id": "d", "label": "Using range() with 0.", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Printing too many times.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Using range() with 0.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "If the condition never becomes False, a while loop never stops.",
@@ -128,7 +168,11 @@
           "label": "Causes an error; you can't loop over strings.",
           "isCorrect": false
         },
-        { "id": "d", "label": "Deletes the string.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Deletes the string.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Strings are sequences of characters, so for can loop over each character.",

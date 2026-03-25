@@ -9,7 +9,11 @@
       "type": "single-choice",
       "prompt": "What does the operator `**` do in Python?",
       "options": [
-        { "id": "a", "label": "Adds two numbers.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Adds two numbers.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Divides one number by another.",
@@ -41,10 +45,26 @@
       "type": "single-choice",
       "prompt": "Which operator checks if two values are NOT equal?",
       "options": [
-        { "id": "a", "label": "==", "isCorrect": false },
-        { "id": "b", "label": "!=", "isCorrect": true },
-        { "id": "c", "label": ">", "isCorrect": false },
-        { "id": "d", "label": "<=", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "!=",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": ">",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<=",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The `!=` operator checks for inequality.",
@@ -71,7 +91,11 @@
           "label": "It checks if two values are equal.",
           "isCorrect": false
         },
-        { "id": "c", "label": "It multiplies two values.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "It multiplies two values.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "It subtracts a value from a variable.",
@@ -93,10 +117,26 @@
       "type": "single-choice",
       "prompt": "Which of these is a logical operator in Python?",
       "options": [
-        { "id": "a", "label": "and", "isCorrect": true },
-        { "id": "b", "label": "++", "isCorrect": false },
-        { "id": "c", "label": "==", "isCorrect": false },
-        { "id": "d", "label": "**", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "and",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "++",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "**",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Logical operators include `and`, `or`, and `not`.",

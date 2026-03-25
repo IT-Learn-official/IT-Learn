@@ -86,9 +86,21 @@
           "label": "p = Player.__init__(\"Alex\")",
           "isCorrect": false
         },
-        { "id": "b", "label": "p = new Player(\"Alex\")", "isCorrect": false },
-        { "id": "c", "label": "p = Player(\"Alex\")", "isCorrect": true },
-        { "id": "d", "label": "p = Player.init(\"Alex\")", "isCorrect": false }
+        {
+          "id": "b",
+          "label": "p = new Player(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "p = Player(\"Alex\")",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "p = Player.init(\"Alex\")",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "You create an instance by calling the class like a function.",
@@ -105,10 +117,26 @@
       "type": "single-choice",
       "prompt": "You have p = Player(\"Alex\") and inside __init__ you did self.name = name. How do you read the player's name outside the class?",
       "options": [
-        { "id": "a", "label": "name = Player.name", "isCorrect": false },
-        { "id": "b", "label": "name = self.name", "isCorrect": false },
-        { "id": "c", "label": "name = p.name", "isCorrect": true },
-        { "id": "d", "label": "name = name.self", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "name = Player.name",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "name = self.name",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "name = p.name",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "name = name.self",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Attributes are accessed through the instance variable.",
@@ -125,7 +153,11 @@
       "type": "single-choice",
       "prompt": "In a method defined as def greet(self):, what does self usually refer to?",
       "options": [
-        { "id": "a", "label": "The class itself.", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "The class itself.",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "The module where the class is defined.",
@@ -136,7 +168,11 @@
           "label": "The specific object (instance) that the method is called on.",
           "isCorrect": true
         },
-        { "id": "d", "label": "A random global variable.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A random global variable.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "self is the instance that the method is acting on.",
@@ -189,10 +225,26 @@
       "type": "single-choice",
       "prompt": "Given:\n\n```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n\n    def click(self):\n        self.value = self.value + 1\n        return self.value\n\nc = Counter()\nx = c.click()\ny = c.click()\n```\n\nWhat are the values of x and y?",
       "options": [
-        { "id": "a", "label": "x == 0 and y == 0", "isCorrect": false },
-        { "id": "b", "label": "x == 1 and y == 1", "isCorrect": false },
-        { "id": "c", "label": "x == 1 and y == 2", "isCorrect": true },
-        { "id": "d", "label": "x == 2 and y == 3", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "x == 0 and y == 0",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "x == 1 and y == 1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "x == 1 and y == 2",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "x == 2 and y == 3",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Each call to click changes the same object's value and returns the new value after incrementing.",

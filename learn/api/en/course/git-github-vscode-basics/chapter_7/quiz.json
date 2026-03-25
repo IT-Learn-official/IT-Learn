@@ -9,14 +9,26 @@
       "type": "single-choice",
       "prompt": "What is `git restore` commonly used for?",
       "options": [
-        { "id": "a", "label": "Upload commits to GitHub", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Upload commits to GitHub",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Throw away uncommitted changes in a file",
           "isCorrect": true
         },
-        { "id": "c", "label": "Create a new repository", "isCorrect": false },
-        { "id": "d", "label": "Add a remote named origin", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "Create a new repository",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Add a remote named origin",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`git restore` helps you undo changes in your working directory before committing.",

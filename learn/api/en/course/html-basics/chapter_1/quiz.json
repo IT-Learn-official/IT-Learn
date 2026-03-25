@@ -60,7 +60,11 @@
           "label": "How the server stores data",
           "isCorrect": false
         },
-        { "id": "database", "label": "The database schema", "isCorrect": false }
+        {
+          "id": "database",
+          "label": "The database schema",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "HTML marks up the content and structure; CSS handles style and JS handles behavior.",
@@ -92,7 +96,11 @@
           "label": "HTML = server code, CSS = client storage, JavaScript = database",
           "isCorrect": false
         },
-        { "id": "a4", "label": "All three are the same", "isCorrect": false }
+        {
+          "id": "a4",
+          "label": "All three are the same",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Think of HTML as the house frame, CSS as the styling, JS as the behavior.",

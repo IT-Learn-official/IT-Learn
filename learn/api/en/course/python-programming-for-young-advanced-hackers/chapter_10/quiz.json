@@ -81,10 +81,26 @@
       "type": "single-choice",
       "prompt": "You have `nums = [1, 2, 2, 3]`. What does `set(nums)` produce?",
       "options": [
-        { "id": "a", "label": "[1, 2, 2, 3]", "isCorrect": false },
-        { "id": "b", "label": "{1, 2, 2, 3}", "isCorrect": false },
-        { "id": "c", "label": "{1, 2, 3}", "isCorrect": true },
-        { "id": "d", "label": "(1, 2, 3)", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "[1, 2, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "(1, 2, 3)",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Converting a list to a set removes duplicate values.",
@@ -101,10 +117,26 @@
       "type": "single-choice",
       "prompt": "You have `a = {1, 2}` and `b = {2, 3}`. What is `a & b` (the intersection)?",
       "options": [
-        { "id": "a", "label": "{1, 2, 3}", "isCorrect": false },
-        { "id": "b", "label": "{1}", "isCorrect": false },
-        { "id": "c", "label": "{2}", "isCorrect": true },
-        { "id": "d", "label": "{}", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "{}",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Intersection keeps only elements that appear in both sets.",

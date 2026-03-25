@@ -91,7 +91,11 @@
           "label": "Um das Programm schneller zu machen.",
           "isCorrect": false
         },
-        { "id": "c", "label": "Um Variablen zu löschen.", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Um Variablen zu löschen.",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Um die Textfarbe zu ändern.",

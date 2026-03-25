@@ -86,7 +86,11 @@
           "label": "Commits van de ene branch samenvoegen in een andere",
           "isCorrect": true
         },
-        { "id": "b", "label": "Een bestand hernoemen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Een bestand hernoemen",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Afbeeldingen uploaden naar GitHub",
@@ -128,7 +132,11 @@
           "label": "Als twee branches dezelfde regels in een bestand wijzigen",
           "isCorrect": true
         },
-        { "id": "d", "label": "Als GitHub offline is", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "Als GitHub offline is",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Conflicten gebeuren wanneer Git wijzigingen niet automatisch kan combineren.",

@@ -19,8 +19,16 @@
           "label": "Fix navbar spacing on mobile",
           "isCorrect": true
         },
-        { "id": "c", "label": "bread", "isCorrect": false },
-        { "id": "d", "label": "i luv whoppers", "isCorrect": false }
+        {
+          "id": "c",
+          "label": "bread",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "i luv whoppers",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Good commit messages are short but specific, describing what changed.",
@@ -78,8 +86,16 @@
           "label": "Explaining what the project is and how to use it",
           "isCorrect": true
         },
-        { "id": "b", "label": "Storing private API keys", "isCorrect": false },
-        { "id": "c", "label": "Replacing all code files", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Storing private API keys",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Replacing all code files",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Deleting merged branches automatically",
@@ -101,13 +117,21 @@
       "type": "single-choice",
       "prompt": "What is a Git tag best described as?",
       "options": [
-        { "id": "a", "label": "A file that hides changes", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "A file that hides changes",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "A branch that always has conflicts",
           "isCorrect": false
         },
-        { "id": "c", "label": "A tool that stages files", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "A tool that stages files",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "A named bookmark pointing to a specific commit",

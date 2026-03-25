@@ -1,233 +1,150 @@
-﻿{
+{
   "chapterId": "chapter_1",
-
   "kind": "assessment",
-
   "title": "Hoofdstuk 1 - Wat is HTML? Check",
-
   "description": "Controleer je kennis:  Wat HTML betekent en wat het wel/niet doet; vergelijking met CSS en JavaScript.",
-
   "questions": [
     {
       "id": "q-html-definition",
-
       "type": "single-choice",
-
       "prompt": "Waar staat HTML voor?",
-
       "options": [
         {
           "id": "lemonade",
-
           "label": "Hoe maak je limonade",
-
           "isCorrect": false
         },
-
         {
           "id": "missile",
-
           "label": "HawaÃ¯aanse test-raketlanceerder",
-
           "isCorrect": false
         },
-
         {
           "id": "hopelayout",
-
           "label": "Hopelijk maakt dit layouts",
-
           "isCorrect": false
         },
-
         {
           "id": "hypertextmarkuplanguage",
-
           "label": "HyperText Markup Language",
-
           "isCorrect": true
         }
       ],
-
       "explanations": {
         "overview": "HTML staat voor HyperText Markup Language.",
-
         "byOptionId": {
           "lemonade": "Fout â€“ dat is een grappige zin, niet de betekenis van HTML.",
-
           "missile": "Fout â€“ dat heeft niets te maken met web markup.",
-
           "hopelayout": "Fout â€“ dat is een grapoptie; HTML is een markup language.",
-
           "hypertextmarkuplanguage": "Juist. HTML staat voor HyperText Markup Language."
         }
       }
     },
-
     {
       "id": "q-meaning-html",
-
       "type": "single-choice",
-
       "prompt": "Wat beschrijft HTML vooral op een webpagina?",
-
       "options": [
         {
           "id": "structure",
-
           "label": "De structuur en betekenis van content (kopteksten, paragrafen, lijsten)",
-
           "isCorrect": true
         },
-
         {
           "id": "styles",
-
           "label": "De exacte kleuren en fonts op de pagina",
-
           "isCorrect": false
         },
-
         {
           "id": "server",
-
           "label": "Hoe de server data opslaat",
-
           "isCorrect": false
         },
-
         {
           "id": "database",
-
           "label": "Het database schema",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "HTML markeert content en structuur; CSS doet styling en JS doet gedrag/interactie.",
-
         "byOptionId": {
           "structure": "Juist â€“ HTML structureert content met o.a. kopteksten en paragrafen.",
-
           "styles": "Fout â€“ kleuren en fonts zijn voor CSS, niet voor HTML.",
-
           "server": "Fout â€“ serveropslag staat los van HTML markup.",
-
-          "database": "Fout â€“ databaseschema\u0027s beschrijf je niet met HTML."
+          "database": "Fout â€“ databaseschema's beschrijf je niet met HTML."
         }
       }
     },
-
     {
       "id": "q-html-css-js",
-
       "type": "single-choice",
-
       "prompt": "Welke vergelijking klopt?",
-
       "options": [
         {
           "id": "a1",
-
           "label": "HTML = skelet, CSS = verf, JavaScript = elektrische bedrading",
-
           "isCorrect": true
         },
-
         {
           "id": "a2",
-
           "label": "HTML = verf, CSS = skelet, JavaScript = behang",
-
           "isCorrect": false
         },
-
         {
           "id": "a3",
-
           "label": "HTML = servercode, CSS = clientopslag, JavaScript = database",
-
           "isCorrect": false
         },
-
         {
           "id": "a4",
-
           "label": "Alle drie zijn hetzelfde",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "Denk: HTML is structuur, CSS is styling en JS is gedrag/interactie.",
-
         "byOptionId": {
           "a1": "Juist â€“ HTML geeft structuur, CSS stylet, en JS voegt gedrag toe.",
-
           "a2": "Fout â€“ hier worden de rollen van skelet en verf omgewisseld.",
-
           "a3": "Fout â€“ dit verwart markup met server- en opslagconcepten.",
-
           "a4": "Fout â€“ de drie technologieÃ«n hebben elk een ander doel."
         }
       }
     },
-
     {
       "id": "q-html-does-not",
-
       "type": "single-choice",
-
       "prompt": "Welke van deze is GEEN verantwoordelijkheid van HTML?",
-
       "options": [
         {
           "id": "layout",
-
           "label": "De logische onderdelen van een pagina afbakenen",
-
           "isCorrect": false
         },
-
         {
           "id": "style-tricks",
-
           "label": "Animaties en complexe interactieve logica uitvoeren",
-
           "isCorrect": true
         },
-
         {
           "id": "images",
-
           "label": "Afbeeldingen refereren om te tonen",
-
           "isCorrect": false
         },
-
         {
           "id": "links",
-
-          "label": "Links maken naar andere pagina\u0027s",
-
+          "label": "Links maken naar andere pagina's",
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "Animaties en runtime-logica zijn het werk van JavaScript, niet van HTML.",
-
         "byOptionId": {
           "layout": "Niet juist â€“ het structureren van een pagina is net een HTML-taak.",
-
           "style-tricks": "Juist â€“ animaties en interactieve logica horen bij JavaScript.",
-
-          "images": "Niet juist â€“ HTML verwijst naar afbeeldingen via `\u003cimg\u003e`.",
-
-          "links": "Niet juist â€“ HTML maakt links met `\u003ca\u003e`."
+          "images": "Niet juist â€“ HTML verwijst naar afbeeldingen via `<img>`.",
+          "links": "Niet juist â€“ HTML maakt links met `<a>`."
         }
       }
     }

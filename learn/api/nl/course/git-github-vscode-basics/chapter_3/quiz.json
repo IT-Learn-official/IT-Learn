@@ -9,13 +9,21 @@
       "type": "single-choice",
       "prompt": "Wat helpt `git status` je te zien?",
       "options": [
-        { "id": "a", "label": "Het weer van vandaag", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Het weer van vandaag",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Welke bestanden gewijzigd zijn en staged of niet-staged zijn",
           "isCorrect": true
         },
-        { "id": "c", "label": "Je GitHub-volgers", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Je GitHub-volgers",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Een lijst van alle programmeertalen",
@@ -42,8 +50,16 @@
           "label": "Bestanden automatisch uploaden naar GitHub",
           "isCorrect": false
         },
-        { "id": "b", "label": "Oude commits verwijderen", "isCorrect": false },
-        { "id": "c", "label": "Je repository hernoemen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Oude commits verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Je repository hernoemen",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Kiezen welke wijzigingen in de volgende commit komen",

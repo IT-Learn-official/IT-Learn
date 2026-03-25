@@ -86,9 +86,21 @@
           "label": "Combine commits from one branch into another",
           "isCorrect": true
         },
-        { "id": "b", "label": "Rename a file", "isCorrect": false },
-        { "id": "c", "label": "Upload images to GitHub", "isCorrect": false },
-        { "id": "d", "label": "Erase your commit history", "isCorrect": false }
+        {
+          "id": "b",
+          "label": "Rename a file",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Upload images to GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Erase your commit history",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Merging brings changes from one branch into a target branch (like main).",
@@ -110,13 +122,21 @@
           "label": "When your monitor is too small",
           "isCorrect": false
         },
-        { "id": "b", "label": "When you run `git status`", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "When you run `git status`",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "When two branches change the same lines in a file",
           "isCorrect": true
         },
-        { "id": "d", "label": "When GitHub is offline", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "When GitHub is offline",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Conflicts happen when Git cannot automatically combine changes.",

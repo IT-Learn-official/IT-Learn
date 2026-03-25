@@ -24,7 +24,11 @@
           "label": "A secret code Python cannot read.",
           "isCorrect": false
         },
-        { "id": "d", "label": "A list of only numbers.", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A list of only numbers.",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "A string (str) represents text characters written inside quotes.",
@@ -41,10 +45,26 @@
       "type": "single-choice",
       "prompt": "If `text = \"HACK\"`, what does `text[1]` return?",
       "options": [
-        { "id": "a", "label": "\"H\"", "isCorrect": false },
-        { "id": "b", "label": "\"HA\"", "isCorrect": false },
-        { "id": "c", "label": "\"A\"", "isCorrect": true },
-        { "id": "d", "label": "\"K\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"H\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"HA\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"A\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"K\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Indexing starts at 0, so index 1 is the second character.",
@@ -61,10 +81,26 @@
       "type": "single-choice",
       "prompt": "If `word = \"PYTHON\"`, what is `word[0:3]`?",
       "options": [
-        { "id": "a", "label": "\"PYTH\"", "isCorrect": false },
-        { "id": "b", "label": "\"P\"", "isCorrect": false },
-        { "id": "c", "label": "\"PYT\"", "isCorrect": true },
-        { "id": "d", "label": "\"HON\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"PYTH\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"P\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"PYT\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"HON\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "Slicing text[start:end] takes characters from start up to but not including end.",
@@ -81,10 +117,26 @@
       "type": "single-choice",
       "prompt": "What does \"hacker\".upper() return?",
       "options": [
-        { "id": "a", "label": "\"hacker\"", "isCorrect": false },
-        { "id": "b", "label": "\"Hacker\"", "isCorrect": false },
-        { "id": "c", "label": "\"HACKER\"", "isCorrect": true },
-        { "id": "d", "label": "\"upper\"", "isCorrect": false }
+        {
+          "id": "a",
+          "label": "\"hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"Hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"HACKER\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"upper\"",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "The .upper() method makes all letters uppercase.",
@@ -101,14 +153,26 @@
       "type": "single-choice",
       "prompt": "You have `name = \"Mia\"`. Which line correctly uses an f-string to print `Hello, Mia!`?",
       "options": [
-        { "id": "a", "label": "print(\"Hello, {name}!\")", "isCorrect": false },
-        { "id": "b", "label": "print(f\"Hello, {name}!\")", "isCorrect": true },
+        {
+          "id": "a",
+          "label": "print(\"Hello, {name}!\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "print(f\"Hello, {name}!\")",
+          "isCorrect": true
+        },
         {
           "id": "c",
           "label": "print(\"Hello, \" + name + \"!\")",
           "isCorrect": false
         },
-        { "id": "d", "label": "print(f'Hello, \"name\"!')", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "print(f'Hello, \"name\"!')",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "F-strings start with f and insert variable values into the text.",

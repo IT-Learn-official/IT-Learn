@@ -1,242 +1,155 @@
-﻿{
+{
   "chapterId": "chapter_2",
-
   "kind": "assessment",
-
   "title": "Hoofdstuk 2 - Vereisten Check",
-
   "description": "Controleer je kennis:  Tools die je nodig hebt: code-editor, browser en je eerste HTML-bestand maken.",
-
   "questions": [
     {
       "id": "q-editor",
-
       "type": "single-choice",
-
       "prompt": "Welke tool is het beste om HTML-code te schrijven?",
-
       "options": [
         {
           "id": "notepad",
-
           "label": "Een simpele teksteditor zoals Kladblok",
-
           "isCorrect": false
         },
-
         {
           "id": "browseronly",
-
           "label": "Alleen een browser (geen editor nodig)",
-
           "isCorrect": false
         },
-
         {
           "id": "vscode",
-
           "label": "Een code-editor zoals VS Code",
-
           "isCorrect": true
         },
-
         {
           "id": "spreadsheet",
-
           "label": "Een spreadsheetprogramma zoals Excel",
-
           "isCorrect": false
         },
-
         {
           "id": "imageeditor",
-
           "label": "Een afbeeldingseditor zoals Photoshop",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "Je hebt een teksteditor nodig om HTML-bestanden te maken en te bewerken.",
-
         "byOptionId": {
           "vscode": "Juist â€“ een code-editor zoals VS Code is aangeraden om HTML te schrijven.",
-
           "notepad": "Fout â€“ Kladblok kan voor basics, maar zonder syntax highlighting en formatting wordt het snel verwarrend.",
-
           "browseronly": "Fout â€“ een browser toont HTML, maar is geen goede tool om bestanden te schrijven.",
-
           "spreadsheet": "Fout â€“ spreadsheets zijn niet bedoeld om HTML te coderen.",
-
           "imageeditor": "Fout â€“ een image editor bewerkt afbeeldingen, geen HTML-broncode."
         }
       }
     },
-
     {
       "id": "q-file-name",
-
       "type": "single-choice",
-
       "prompt": "Welke file extension moet je HTML-bestand hebben?",
-
       "options": [
         {
           "id": ".ht",
-
           "label": ".ht",
-
           "isCorrect": false
         },
-
         {
           "id": ".html",
-
           "label": ".html",
-
           "isCorrect": true
         },
-
         {
           "id": ".docx",
-
           "label": ".docx",
-
           "isCorrect": false
         },
-
         {
           "id": ".exe",
-
           "label": ".exe",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "HTML-bestanden gebruiken de .html extensie.",
-
         "byOptionId": {
           ".html": "Juist â€“ .html is de standaard extensie voor HTML-documenten.",
-
           ".ht": "Fout â€“ .ht is niet specifiek voor HTML.",
-
           ".docx": "Fout â€“ .docx is een Word-formaat, geen HTML-broncode.",
-
           ".exe": "Fout â€“ .exe is een uitvoerbaar bestand, geen bronbestand."
         }
       }
     },
-
     {
       "id": "q-preview",
-
       "type": "single-choice",
-
       "prompt": "Hoe check je je HTML in een browser?",
-
       "options": [
         {
           "id": "upload",
-
           "label": "Alleen door te uploaden naar een server",
-
           "isCorrect": false
         },
-
         {
           "id": "print",
-
           "label": "Door het af te drukken op papier",
-
           "isCorrect": false
         },
-
         {
           "id": "compile",
-
           "label": "Door het te compileren naar een .exe",
-
           "isCorrect": false
         },
-
         {
           "id": "open-file",
-
           "label": "Open het opgeslagen .html bestand in een browser",
-
           "isCorrect": true
         }
       ],
-
       "explanations": {
         "overview": "Open het bestand lokaal in een browser om tijdens het ontwikkelen snel te previewen.",
-
         "byOptionId": {
           "open-file": "Juist â€“ door het opgeslagen .html bestand te openen zie je de gerenderde pagina.",
-
           "upload": "Fout â€“ uploaden is optioneel; lokaal previewen kan perfect.",
-
           "print": "Fout â€“ afdrukken rendert geen HTML in een browser.",
-
           "compile": "Fout â€“ HTML compileer je niet naar executables."
         }
       }
     },
-
     {
       "id": "q-livepreview",
-
       "type": "single-choice",
-
       "prompt": "Wat is de snelste manier om veranderingen in je HTML te zien?",
-
       "options": [
         {
           "id": "livepreview",
-
           "label": "Live preview of auto-reload in je editor",
-
           "isCorrect": true
         },
-
         {
           "id": "whoppergods",
-
           "label": "Bidden tot de Whopper-goden zodat alles sneller gaat",
-
           "isCorrect": false
         },
-
         {
           "id": "githubpages",
-
           "label": "Elk uur committen en pushen naar GitHub om het op GitHub Pages te zien",
-
           "isCorrect": false
         },
-
         {
           "id": "restartpc",
-
           "label": "Elke keer je computer herstarten",
-
           "isCorrect": false
         }
       ],
-
       "explanations": {
         "overview": "Live preview spaart tijd doordat de browser automatisch herlaadt wanneer je opslaat.",
-
         "byOptionId": {
           "livepreview": "Juist â€“ live preview of auto-reload toont wijzigingen bijna meteen.",
-
           "manual-refresh": "Fout â€“ handmatig refreshen werkt, maar live preview is sneller.",
-
           "githubpages": "Fout â€“ GitHub Pages is geen snelle preview-methode.",
-
           "restartpc": "Fout â€“ herstarten is totaal niet nodig om wijzigingen te bekijken."
         }
       }

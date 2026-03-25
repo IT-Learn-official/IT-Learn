@@ -14,7 +14,11 @@
           "label": "Deletes a repository from GitHub",
           "isCorrect": false
         },
-        { "id": "b", "label": "Creates a commit message", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Creates a commit message",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Renames your branch to main",
@@ -56,7 +60,11 @@
           "label": "The default nickname for the main remote",
           "isCorrect": true
         },
-        { "id": "d", "label": "A file extension", "isCorrect": false }
+        {
+          "id": "d",
+          "label": "A file extension",
+          "isCorrect": false
+        }
       ],
       "explanations": {
         "overview": "`origin` is typically the name given to the remote URL when you clone a repo.",
@@ -114,7 +122,11 @@
           "label": "Brings remote commits into your local branch",
           "isCorrect": true
         },
-        { "id": "b", "label": "Deletes your last commit", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Deletes your last commit",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Forces everyone to use your code",

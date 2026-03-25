@@ -9,13 +9,21 @@
       "type": "single-choice",
       "prompt": "Was zeigt dir `git status`?",
       "options": [
-        { "id": "a", "label": "Das aktuelle Wetter", "isCorrect": false },
+        {
+          "id": "a",
+          "label": "Das aktuelle Wetter",
+          "isCorrect": false
+        },
         {
           "id": "b",
           "label": "Welche Dateien geändert wurden und ob sie staged oder unstaged sind",
           "isCorrect": true
         },
-        { "id": "c", "label": "Deine GitHub-Follower", "isCorrect": false },
+        {
+          "id": "c",
+          "label": "Deine GitHub-Follower",
+          "isCorrect": false
+        },
         {
           "id": "d",
           "label": "Eine Liste aller Programmiersprachen",
@@ -42,7 +50,11 @@
           "label": "Dateien automatisch zu GitHub hochladen",
           "isCorrect": false
         },
-        { "id": "b", "label": "Alte Commits löschen", "isCorrect": false },
+        {
+          "id": "b",
+          "label": "Alte Commits löschen",
+          "isCorrect": false
+        },
         {
           "id": "c",
           "label": "Dein Repository umbenennen",
