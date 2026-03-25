@@ -1,6 +1,6 @@
 # Hoofdstuk 1: Je Python-krachten opstarten
 
-Welkom, jonge hacker. Je eerste missie—als je ze aanvaardt—is de geheime taal van computers leren. In dit hoofdstuk stop je met gewoon “gebruiker” zijn en start je je reis naar digitale meester.
+Welkom, jonge hacker. Je eerste missie, als je ze aanvaardt, is de geheime taal van computers leren. In dit hoofdstuk stop je met gewoon “gebruiker” zijn en start je je reis naar digitale meester.
 
 Tegen het einde van dit hoofdstuk kan je:
 
