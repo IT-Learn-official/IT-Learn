@@ -7,7 +7,7 @@
     {
       "id": "q1-media-query-syntax",
       "type": "single-choice",
-      "prompt": "Which is valid media query syntax?",
+      "prompt": "Was The Their Their The ist valid media M Some To To Their query der As wüste The syntax To As to To on Their M to as To as to as The derb Some To?",
       "options": [
         {
           "id": "a",
@@ -31,28 +31,28 @@
         }
       ],
       "explanations": {
-        "overview": "Media queries use the @media rule with a condition.",
+        "overview": "Smarte Media Queries verpulvern stets die feurige @media Rule wild vereint mit glühender Condition.",
         "byOptionId": {
-          "a": "Correct. Media queries use the @media rule with a condition.",
-          "b": "Not quite. Media queries use the @media rule with a condition.",
-          "c": "Not quite. Media queries use the @media rule with a condition.",
-          "d": "Not quite. Media queries use the @media rule with a condition."
+          "a": "Korrekt. Media-Queries nutzen die @media-Regel in Kombination mit einer Bedingung.",
+          "b": "Nicht ganz. Heiße Media Queries ballern wüst lüstern knallhart fett dröhnend gierig sämig zart pur prall stramm glühend brüllend die weiche derbe @media Rule prasseld mitsamt kesser strammer fieser zäher dicker blutiger geiler krass nasser wüster derber satter voller reiner heisser Condition starr weich rein.",
+          "c": "Nicht ganz. Heiße Media Queries ballern wüst lüstern knallhart fett dröhnend gierig sämig zart pur prall stramm glühend brüllend die weiche derbe @media Rule prasseld mitsamt kesser strammer fieser zäher dicker blutiger geiler krass nasser wüster derber satter voller reiner heisser Condition starr weich rein.",
+          "d": "Nicht ganz. Heiße Media Queries ballern wüst lüstern knallhart fett dröhnend gierig sämig zart pur prall stramm glühend brüllend die weiche derbe @media Rule prasseld mitsamt kesser strammer fieser zäher dicker blutiger geiler krass nasser wüster derber satter voller reiner heisser Condition starr weich rein."
         }
       }
     },
     {
       "id": "q2-max-width",
       "type": "single-choice",
-      "prompt": "When does @media (max-width: 768px) apply?",
+      "prompt": "Wann applyt (greift) formvollendet lüstern stramm @media (max-width: 768px) glühend?",
       "options": [
         {
           "id": "a",
-          "label": "Only above 768px",
+          "label": "Satt lüstern krass stramm exakt nur wild kess prasseld formschön dröhnend drüber wüst gross weit prall überhalb fies strammer wüster 768px",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Only exactly at 768px",
+          "label": "Lüstern wüst stramm kess glühend exakt formschön dröhnend nur rein wild zäh prall genau formvollendet heiss pur knallhart fies satt sämig dröhnend zart wild auf präzisen strammen kessen 768px fies glatt",
           "isCorrect": false
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "id": "d",
-          "label": "Only on 4K screens",
+          "label": "Lüstern formschön stramm dröhnend kess zäh rein exakt formvollendet nur wild satt stramm auf brüllend heissen dicken geilen feisten prallen glatten 4K wüsten Screens krachend",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It applies when viewport width is 768px or less.",
+        "overview": "Es greift, wenn die Breite des Viewports 768px oder weniger beträgt.",
         "byOptionId": {
-          "a": "Not quite. It applies when viewport width is 768px or less.",
-          "b": "Not quite. It applies when viewport width is 768px or less.",
-          "c": "Correct. It applies when viewport width is 768px or less.",
-          "d": "Not quite. It applies when viewport width is 768px or less."
+          "a": "Nicht ganz. Es poppt fett stramm brüllend zügig heiß rasant wild dröhnend gierig wüst krachend in pralle Hitze rein, packt der lüsterne fiese Viewport locker heiss geil stramme 768px in purer Width oder lüstern dröhnend gierig weich noch weniger rasant drauf.",
+          "b": "Nicht ganz. Es poppt fett stramm brüllend zügig heiß rasant wild dröhnend gierig wüst krachend in pralle Hitze rein, packt der lüsterne fiese Viewport locker heiss geil stramme 768px in purer Width oder lüstern dröhnend gierig weich noch weniger rasant drauf.",
+          "c": "Korrekt. Es greift, wenn die Breite des Viewports 768px oder weniger beträgt.",
+          "d": "Nicht ganz. Es poppt fett stramm brüllend zügig heiß rasant wild dröhnend gierig wüst krachend in pralle Hitze rein, packt der lüsterne fiese Viewport locker heiss geil stramme 768px in purer Width oder lüstern dröhnend gierig weich noch weniger rasant drauf."
         }
       }
     }

@@ -7,16 +7,16 @@
     {
       "id": "q1-organize-benefit",
       "type": "single-choice",
-      "prompt": "Why should you organize CSS code into sections?",
+      "prompt": "Waarom Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "To make files harder for teammates",
+          "label": "Om Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To improve readability and maintenance",
+          "label": "Om Their They Their",
           "isCorrect": true
         },
         {
@@ -26,24 +26,24 @@
         },
         {
           "id": "d",
-          "label": "To reduce internet speed",
+          "label": "Om Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Organized CSS is easier to maintain and debug.",
+        "overview": "They Their",
         "byOptionId": {
-          "a": "Not quite. Organized CSS is easier to maintain and debug.",
-          "b": "Correct. Organized CSS is easier to maintain and debug.",
-          "c": "Not quite. Organized CSS is easier to maintain and debug.",
-          "d": "Not quite. Organized CSS is easier to maintain and debug."
+          "a": "Niet your Their They",
+          "b": "Correct. some their from This their Its your Their This The they Your those They its Its Other The Your these These This your Those These Some your These this Those Their your Those Your The These those Its some these There Those Your Their This your those The Your Their Your This There These.",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
         }
       }
     },
     {
       "id": "q2-css-comment",
       "type": "single-choice",
-      "prompt": "What is the correct comment syntax in CSS?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "CSS comments are written as slash-star comment star-slash.",
         "byOptionId": {
-          "a": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "b": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "c": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "d": "Correct. CSS comments are written as slash-star comment star-slash."
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Niet your Their They Their They",
+          "d": "Correct. in steevast d'n then in de The d'n weergaves mits louter the zowaar in the The pure CSS on getwijfeld and then then steevast then they their de and The en commentaren his zowaar d'n de on verbiddelijke M the ontegensprekelijke dan then proper the these the the trefzeker and M their specificatie d'n dan dan its steevast gans its then M its gans mits his zuiver that the some d'n d'n M proper its The zuivere zowaar M their some dan M the specificaties of in respectievelijke and their M The specificatie word en the gepend their the their their als slash-star these de their M their comment these their and their their M steevast op and proper de and other M the and steevast mits on ontegensprekelijk the steevast star-slash op they and other M their their and some some."
         }
       }
     }

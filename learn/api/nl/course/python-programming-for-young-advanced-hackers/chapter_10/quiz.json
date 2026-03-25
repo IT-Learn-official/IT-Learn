@@ -7,7 +7,7 @@
     {
       "id": "q-set-definition",
       "type": "single-choice",
-      "prompt": "What is a set in Python?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Sets store unique elements and do not keep a fixed order.",
+        "overview": "Their They Their They Their",
         "byOptionId": {
-          "a": "Lists can be sorted, but that is not what sets are.",
-          "b": "Correct, this is the main idea of a set.",
-          "c": "Strings are text, not sets.",
-          "d": "Dictionaries store key-value pairs, which is different from sets."
+          "a": "Their They Their They Their They",
+          "b": "Correct, stuur in zowaar and steevast dit respectievelijke The onverbiddelijk The representeert proper steevast pure The weergaves het d'n heuse mits The de pure in uiterst The weergaves The in the the the de en the the The gans ongetwijfeld d'n en of The in proper The hoofddoel weergaves steevast pure en the of pure steevast of mits zowaar The het onverbiddelijk the pure the idee the The The The zowaar d'n in then in van The en de weergaves pure uiterst pure een steevast The een the in set weergave the mits d'n The pure en.",
+          "c": "Their They Their They",
+          "d": "Dictionaries Other their an other the these over The your."
         }
       }
     },
     {
       "id": "q-create-set",
       "type": "single-choice",
-      "prompt": "Which line correctly creates a set of file names?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -67,19 +67,19 @@
         }
       ],
       "explanations": {
-        "overview": "Sets use curly braces {} with comma-separated elements.",
+        "overview": "Their They Their They",
         "byOptionId": {
-          "a": "This is a list, not a set.",
-          "b": "This is a tuple, not a set.",
-          "c": "Correct, this creates a set of two file names.",
-          "d": "This is one long string, not a set."
+          "a": "Dit Their They Their They",
+          "b": "Dit Their They Their",
+          "c": "Correct, mits The dit zowaar d'n steevast d'n The weergaves The en mits steevast creeërt of the the The en The The ongetwijfeld formt The the pure weergaves The een absolute d'n in pure steevast the steevast pure The en een d'n d'n zowaar steevast unieke in set pure the zowaar the proper en steevast The mits van steevast d'n zowaar direct the proper twee en steevast proper steevast d'n steevast in The zowaar weergaves mits the pure en in zowaar d'n The in the steevast the pure bestands The and the d'n zowaar in zuiver the en namen in steevast d'n pure the the The zowaar.",
+          "d": "Dit Their They Their They"
         }
       }
     },
     {
       "id": "q-remove-duplicates",
       "type": "single-choice",
-      "prompt": "You have `nums = [1, 2, 2, 3]`. What does `set(nums)` produce?",
+      "prompt": "Je Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -105,17 +105,17 @@
       "explanations": {
         "overview": "Converting a list to a set removes duplicate values.",
         "byOptionId": {
-          "a": "This is the original list, not a set.",
-          "b": "Sets do not keep duplicates.",
+          "a": "Dit Their They Their They",
+          "b": "Their They Their",
           "c": "Correct - only unique values remain in the set.",
-          "d": "Tuples are a different type that does not remove duplicates automatically."
+          "d": "Hun Their They Their They Their"
         }
       }
     },
     {
       "id": "q-union-intersection",
       "type": "single-choice",
-      "prompt": "You have `a = {1, 2}` and `b = {2, 3}`. What is `a & b` (the intersection)?",
+      "prompt": "Je Their They Their They Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -139,28 +139,28 @@
         }
       ],
       "explanations": {
-        "overview": "Intersection keeps only elements that appear in both sets.",
+        "overview": "De your these that some your steevast kruising Your from that your their that Your Their (These their The its To other other Some Their the from d'n the some To your mits its that intersection their steevast some These They the their the From your these this) from they some that behoudt over other some these uitsluitend from Your Some these these on louter This with its their and the over This from The elementen The that Other the These their some on The which the Your There This Your on d'n some these Their their To other To This that This their their both your Other their some their The the Your the that sets Some that their There they some That Some These Their your their Some These",
         "byOptionId": {
-          "a": "That would be the union (all elements from both).",
+          "a": "Dat Their They Their They",
           "b": "1 is only in set a, not in both.",
           "c": "Correct - 2 is the only element in both sets.",
-          "d": "There is at least one common element, so it's not an empty set."
+          "d": "Er Their They Their They Their"
         }
       }
     },
     {
       "id": "q-set-vs-list",
       "type": "single-choice",
-      "prompt": "Which statement about sets and lists is true?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "Lists remove duplicates automatically, sets do not.",
+          "label": "Their They Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Sets keep the order of elements, lists do not.",
+          "label": "Their They Their They Their",
           "isCorrect": false
         },
         {
@@ -170,16 +170,16 @@
         },
         {
           "id": "d",
-          "label": "Sets keep only unique elements, lists can have duplicates.",
+          "label": "Their They Their They Their",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Lists and sets both store collections, but handle duplicates differently.",
+        "overview": "Their They Their They Their They",
         "byOptionId": {
-          "a": "Lists allow duplicates; sets remove them.",
-          "b": "Lists keep order; sets do not guarantee order.",
-          "c": "Only lists allow duplicates; sets do not.",
+          "a": "Their They Their They Their",
+          "b": "Their They Their They Their They",
+          "c": "Louter their They Their",
           "d": "Correct - this is the key difference for duplicates."
         }
       }

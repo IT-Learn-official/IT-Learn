@@ -7,43 +7,43 @@
     {
       "id": "q1-transition-purpose",
       "type": "single-choice",
-      "prompt": "What does CSS transition do?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "It creates database tables",
+          "label": "Het Their They There These",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It smooths style changes",
+          "label": "Het hun their",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It only works on text",
+          "label": "Het Their",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It replaces hover states",
+          "label": "Het hun their their They Their",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "transition smooths style changes over time.",
+        "overview": "transition Leur Leur Their Leur Их Leur",
         "byOptionId": {
-          "a": "Not quite. transition smooths style changes over time.",
-          "b": "Correct. transition smooths style changes over time.",
-          "c": "Not quite. transition smooths style changes over time.",
-          "d": "Not quite. transition smooths style changes over time."
+          "a": "Niet your their They Their",
+          "b": "Correct. They Its They Your They Their They Your Their They",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
         }
       }
     },
     {
       "id": "q2-keyframes",
       "type": "single-choice",
-      "prompt": "Which rule is used to define animation steps?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Use @keyframes to define animation states.",
+        "overview": "Gebruik Their They Their They",
         "byOptionId": {
-          "a": "Not quite. Use @keyframes to define animation states.",
-          "b": "Not quite. Use @keyframes to define animation states.",
-          "c": "Correct. Use @keyframes to define animation states.",
-          "d": "Not quite. Use @keyframes to define animation states."
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. Those Your They Some your Those Their Their Those Their Those Their Those Their Your Your Those Their Your Your Your Those Your Your Your These.",
+          "d": "Niet your their They Their"
         }
       }
     }

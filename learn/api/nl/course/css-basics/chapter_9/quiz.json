@@ -7,47 +7,47 @@
     {
       "id": "q1-border-box",
       "type": "single-choice",
-      "prompt": "What does box-sizing: border-box do?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "It removes all borders",
+          "label": "Het They Their They",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It includes padding and border in width and height",
+          "label": "Het Their They",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It doubles the size of the element",
+          "label": "Het Their They Their",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It only affects text",
+          "label": "Het ",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It includes padding and border inside the set width and height.",
+        "overview": "Het Their",
         "byOptionId": {
-          "a": "Not quite. It includes padding and border inside the set width and height.",
-          "b": "Correct. It includes padding and border inside the set width and height.",
-          "c": "Not quite. It includes padding and border inside the set width and height.",
-          "d": "Not quite. It includes padding and border inside the set width and height."
+          "a": "Niet your Their They Their They",
+          "b": "Correct. its their These from your an on These This from These there other their This these To other their its some To some they it This their these These from These these M these The your your These This with some The its their from an This their their these only the de some these there their its Other Padding The on The there an their Some that an padding their that de its These steevast their and the the the these The Only steevast These Their To This the its these the To some the This This their some de the grens Only The M the this the this steevast The their the steevast their the other from the an d'n inside other their This an the",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
         }
       }
     },
     {
       "id": "q2-border-layout",
       "type": "single-choice",
-      "prompt": "With default box-sizing (content-box), what happens when you add a thick border?",
+      "prompt": "Met Their They Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "Total element size can become larger",
+          "label": "De Their They Their",
           "isCorrect": true
         },
         {
@@ -57,22 +57,22 @@
         },
         {
           "id": "c",
-          "label": "The page crashes",
+          "label": "De Their They",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only margin changes",
+          "label": "Louter their",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The total rendered size gets larger because border is added outside content size.",
+        "overview": "De Their They Their They Their They",
         "byOptionId": {
-          "a": "Correct. The total rendered size gets larger because border is added outside content size.",
-          "b": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "c": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "d": "Not quite. The total rendered size gets larger because border is added outside content size."
+          "a": "Correct. those those Their Those those There Their those Their Their Those These Their Some Their This Your Those Your They Their Those Their Your Its Those Your Its Their Those Its. Its Their Their Your Their Those Their Those There Those.",
+          "b": "Niet your Their They",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
         }
       }
     }

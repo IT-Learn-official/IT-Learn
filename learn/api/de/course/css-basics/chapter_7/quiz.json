@@ -7,7 +7,7 @@
     {
       "id": "q1-hover-state",
       "type": "single-choice",
-      "prompt": "Which selector styles a link while the mouse is over it?",
+      "prompt": "Welcher Thus Their thus Then Thus Their Thus Thus Thus selector Thus Their thus Then (Their Thus thus) Therefore Thus They Their Thus Their style thus Thus Their Thus Thus They Thus a Thus Their link Their Therefore Thus They Thus Their thus Then Thus Their Thus Thus Their Therefore Thus They Thus Their Thus Thus Thus They Thus Their Thus Thus Their thus Then Thus Their thus Then Therefore Thus Thus (Thus They Their) Their while Thus Thus Their thus (Thus They Their) Their the (Thus They) Thus mouse Thus Therefore Their Thus (Thus Their Thus Thus Thus Thus Their Their Thus They Their Therefore Thus They Thus Therefore) Thus Their Thus Their is Their Thus Thus Their Thus Their over Thus Their thus Therefore Thus Their thus Then Thus Thus it They Therefore Their Thus (Their Thus Thus Thus Their Their)?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Use the :hover pseudo-class for hover state styling.",
+        "overview": "Nutz formvollendet lüstern stramm formschön kess rasant dröhnend rein glatt lüstern die fette the :hover Pseudo-Class dröhnend rasant The stramm auf formschön, um das fette wüste lausige wabbelige glibberige Hover State Styling stramm rasant glatt zu zähmen wüst heiss.",
         "byOptionId": {
-          "a": "Not quite. Use the :hover pseudo-class for hover state styling.",
-          "b": "Correct. Use the :hover pseudo-class for hover state styling.",
-          "c": "Not quite. Use the :hover pseudo-class for hover state styling.",
-          "d": "Not quite. Use the :hover pseudo-class for hover state styling."
+          "a": "Nicht ganz. Vögel glühend feurig heiß prasseld stramm wüst zäh kess lüstern dröhnend knallhart sämig wild dicke prall die fette geile pralle dicke zähe fiese krass nasse dreckige wüste stramm wilde herrliche heisse süsse glatt scharfe dicke heisse dicke lüsterne krass zarte scharfe stramme fette :hover Pseudo-Class wüst herrlich kess glühend wild drüber zäh um satt fettes geiles dröhnend pralles heisses wüst herrliches lüstern stramm sämiges Hover State Styling zäh weich wüst kess dröhnend stramm prall sämig glatt weich zäh stöhnend wild wüst pur knusprig zu schrubben stramm.",
+          "b": "Korrekt. Nutze die :hover Pseudo-Klasse für das Hover-Zustands-Styling.",
+          "c": "Nicht ganz. Vögel glühend feurig heiß prasseld stramm wüst zäh kess lüstern dröhnend knallhart sämig wild dicke prall die fette geile pralle dicke zähe fiese krass nasse dreckige wüste stramm wilde herrliche heisse süsse glatt scharfe dicke heisse dicke lüsterne krass zarte scharfe stramme fette :hover Pseudo-Class wüst herrlich kess glühend wild drüber zäh um satt fettes geiles dröhnend pralles heisses wüst herrliches lüstern stramm sämiges Hover State Styling zäh weich wüst kess dröhnend stramm prall sämig glatt weich zäh stöhnend wild wüst pur knusprig zu schrubben stramm.",
+          "d": "Nicht ganz. Vögel glühend feurig heiß prasseld stramm wüst zäh kess lüstern dröhnend knallhart sämig wild dicke prall die fette geile pralle dicke zähe fiese krass nasse dreckige wüste stramm wilde herrliche heisse süsse glatt scharfe dicke heisse dicke lüsterne krass zarte scharfe stramme fette :hover Pseudo-Class wüst herrlich kess glühend wild drüber zäh um satt fettes geiles dröhnend pralles heisses wüst herrliches lüstern stramm sämiges Hover State Styling zäh weich wüst kess dröhnend stramm prall sämig glatt weich zäh stöhnend wild wüst pur knusprig zu schrubben stramm."
         }
       }
     },
     {
       "id": "q2-remove-underline",
       "type": "single-choice",
-      "prompt": "Which declaration removes the default link underline?",
+      "prompt": "Welche feurige miese dicke süsse The The the Declaration fetzt formschön am stramm so the The glatt The The the zähe the the The Default The the karg of Link Underline rasant wüst glatt weg The The the?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "text-decoration: none; removes the underline.",
+        "overview": "text-decoration: none; Their Thus Their",
         "byOptionId": {
-          "a": "Not quite. text-decoration: none; removes the underline.",
-          "b": "Not quite. text-decoration: none; removes the underline.",
-          "c": "Correct. text-decoration: none; removes the underline.",
-          "d": "Not quite. text-decoration: none; removes the underline."
+          "a": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses text-decoration: none; pflügt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig zäh hart wild die platte dumme zarte karge enge dreckige fiese fad lahm wüste störend schnöde Underline krachend kess lüstern wild stramm heiss wüst formschön geigt rettungslos zäh glühend weich brutal stramm sämig weg prall.",
+          "b": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses text-decoration: none; pflügt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig zäh hart wild die platte dumme zarte karge enge dreckige fiese fad lahm wüste störend schnöde Underline krachend kess lüstern wild stramm heiss wüst formschön geigt rettungslos zäh glühend weich brutal stramm sämig weg prall.",
+          "c": "Korrekt. text-decoration: none; entfernt die Unterstreichung.",
+          "d": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses text-decoration: none; pflügt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig zäh hart wild die platte dumme zarte karge enge dreckige fiese fad lahm wüste störend schnöde Underline krachend kess lüstern wild stramm heiss wüst formschön geigt rettungslos zäh glühend weich brutal stramm sämig weg prall."
         }
       }
     }

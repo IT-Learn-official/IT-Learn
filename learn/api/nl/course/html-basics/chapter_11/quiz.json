@@ -7,7 +7,7 @@
     {
       "id": "q-div-block",
       "type": "single-choice",
-      "prompt": "Which element is block-level by default?",
+      "prompt": "Welk Their They Their They Their",
       "options": [
         {
           "id": "span",
@@ -43,31 +43,31 @@
     {
       "id": "q-span-use",
       "type": "single-choice",
-      "prompt": "When should you use <span>?",
+      "prompt": "Wanneer Their They Their",
       "options": [
         {
           "id": "large",
-          "label": "To create large page sections",
+          "label": "Om Their They Their They",
           "isCorrect": false
         },
         {
           "id": "table",
-          "label": "To make table rows",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "image",
-          "label": "To include images",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "inline",
-          "label": "To wrap small inline parts of text for styling or scripts",
+          "label": "Om Their They Their They Their",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Use <span> for inline grouping only.",
+        "overview": "Gebruik Their They Their They",
         "byOptionId": {
           "inline": "Correct â€” <span> is for inline grouping and small styling hooks.",
           "large": "Incorrect â€” use block containers like <div> or semantic sections for large sections.",

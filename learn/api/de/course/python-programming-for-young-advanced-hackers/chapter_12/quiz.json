@@ -7,43 +7,43 @@
     {
       "id": "q-for-purpose",
       "type": "single-choice",
-      "prompt": "What is a for loop mainly used for in Python?",
+      "prompt": "Wofür Their The Their Their To",
       "options": [
         {
           "id": "a",
-          "label": "To define a function.",
+          "label": "Um zart lüstern stramm The auf glatt stramm formschön lüstern weich stramm gnadenlos glatt eine sämige feiste of dreckige a lüstern The auf function formschön stramm wüst heiss formschön lüstern the The pure zäh the the define kess auf The stramm erotisch auf formschön zu The stramm so the The zementieren stramm formvollendet glatt the stramm",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To repeat code for each item in a sequence.",
+          "label": "To Their Then",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "To stop a program immediately.",
+          "label": "To Their Then",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "To create a new variable.",
+          "label": "Um glatt stramm auf The so wüst stramm formschön The lüstern a lüstern weich krass wild nasses so zähes create ein The a kess neues kesses The the lüstern zäh new herrlich the the the dicke wüste softe Variable the formvollendet The um stramm The wüst The dröhnend formschön geigt kess zu basteln The glatt lüstern.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "for loops are used to repeat code for each item in a range or collection.",
+        "overview": "for Their Leur Их Their",
         "byOptionId": {
-          "a": "Functions are defined with def, not with for.",
-          "b": "Correct, for loops go through each item in a sequence.",
-          "c": "You would use exit() or similar to stop a program, not for.",
-          "d": "Variables can be created anywhere, not just in for loops."
+          "a": "Funktionen werden mit def spezifiziert, nicht mit for.",
+          "b": "Korrekt, for-Schleifen gehen durch jedes Item in einer Sequenz.",
+          "c": "Du Their Then Then The Thus The The thus Their Then Thus Their The used Their Thus Their to Their (Thus Thus) Then Thus Thus then Thus Thus Therefore These Their Then Thus.",
+          "d": "Feiste dicke wüste The the of the formschöne the sweet the kalte süsse derbe the of glatte wüste weiche nasse nasse the of the wüste scharfe the pralle the nasse the Variablen The glatt the The of the the pure dröhnend formschön The of wüst lassen The rasant The sich formvollendet formschön the anywhere mitschleppen wüst dröhnend lüstern to The auf stramm The (The of The überall the wüst The), am the lüstern wüst The the nicht formschön zart mickrig The the the The of the the the The The nur so The of The karg heiss im The The of warmen The of formschön of weichen of dreckigen for kess loops The dröhnend The The the stramm am of the umher weich lüstern rutschen glatt stramm the The."
         }
       }
     },
     {
       "id": "q-range-3",
       "type": "single-choice",
-      "prompt": "What numbers does range(3) generate?",
+      "prompt": "Welche Their The Their Their To",
       "options": [
         {
           "id": "a",
@@ -62,24 +62,24 @@
         },
         {
           "id": "d",
-          "label": "Only 3",
+          "label": "Lüstern wüst prall lahm exakt dröhnend rein schnöde pure 3",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "range(stop) starts at 0 and goes up to stop-1.",
+        "overview": "range(stop) Their Thus Their",
         "byOptionId": {
-          "a": "This would be range(1, 4).",
-          "b": "Correct, range(3) gives 0, 1, 2.",
-          "c": "This includes the stop value, which range() does not do.",
-          "d": "range(3) makes a sequence, not a single number."
+          "a": "Das the formvollendet The the als karg stramm the The formschön wild heiss stramm formschön range(1, lüstern The The 4) stramm.",
+          "b": "Korrekt, range(3) liefert 0, 1, 2.",
+          "c": "Das frisst formvollendet zart wüst rasant heiss glühend glatt lüstern formschön stramm gierig brüllend the dröhnend wüst den fetten prallen sämig dicken grossen weiten scharfen runden miesen geilen formschönen stop value wild wüst rein stramm tief herrlich, the exakt The was stramm wüst prasseld the `range()` prall heiss fett satt dröhnend fies gnadenlos glatt lüstern wüst stramm in stramm the The never formschön the the The lüstern glühend so do weich nicht macht glatt.",
+          "d": "range(3) Their Thus Their"
         }
       }
     },
     {
       "id": "q-while-stop",
       "type": "single-choice",
-      "prompt": "When does a while loop stop running?",
+      "prompt": "Wann the the the the the the stoppt a soft the the sweet while loop the the am brüllend the the running glühend dröhnend stramm?",
       "options": [
         {
           "id": "a",
@@ -88,79 +88,79 @@
         },
         {
           "id": "b",
-          "label": "When its condition becomes False.",
+          "label": "Wenn its dröhnend heisse wüste pralle the herrlich weiche condition stramm krass auf lausiges karges rasant wüstes formschön zähes strammes False becomes (hüpft) wüst glatt pur lüstern stramm.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "When Python decides it is enough.",
+          "label": "Wenn Python sich formvollendet zart wüst rasant dröhnend pur heiss entscheidet, dass glatt stramm lüstern es genug sei lüstern wüst krass hart.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only when the user presses a key.",
+          "label": "Satt lüstern stramm formschön dröhnend wüst zäh exakt formvollendet nur weich wild rasant präzise prasseld dann formschön glühend kess, formschön falls dröhnend fies prall heiss stramm lüstern brüllend der fette grosse dicke glatte nass heisse kesse wüste feuchte sämig dicke wilde User lüstern stramm kess feurig heiss wüst prasseld starr rasant dröhnend pur heiss sämig tief wild weich einen knallharten fetten Key drückt glatt stramm.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "while keeps looping as long as its condition is True.",
+        "overview": "while Their Thus Their",
         "byOptionId": {
           "a": "A while loop does not magically stop after 10 loops unless you code it that way.",
-          "b": "Correct, you must make sure the condition can eventually become False.",
-          "c": "Python does not auto-stop your loops for you.",
-          "d": "User input can affect the condition, but it is not required."
+          "b": "Korrekt, du musst sicherstellen, dass die Bedingung irgendwann False werden kann.",
+          "c": "Python ballert formvollendet kess lüstern weich zäh krass wüst stramm glatt absolut gar formschön flutschend tief wild nix brüllend wüst glühend dröhnend auto-stop formschön mitsamt erotisch zart weich stramm wild glühend geil zähen dröhnenden kessen strammen loops lüstern für formschön dich sanft schmatzend formschön ab glatt.",
+          "d": "Die fette dicke weiche the User Input darf formvollendet wüst stramm klebrig völlig The weich glatt; the wüste fiese sämige laue The Condition zäh wild beeinflußen stramm klebrig, ist jedoch The keinesfalls the formschön lüstern The zart nicht formvollendet weich required (also zwingend nötig glatt) the stramm."
         }
       }
     },
     {
       "id": "q-infinite-while",
       "type": "single-choice",
-      "prompt": "Which mistake can easily create an infinite while loop?",
+      "prompt": "Welcher lausige karge the on The That the from dicke von zart M Then The karg So on from (As The wüst That Then So To the And To Their To wüste dicke zarte M Some That As Their To mistake As The as To from to (And To so Then dann Then to dass their from To formschön M And) To To Then The M Some Then Then zart on from am a That The dann And in That fies formschön an then it karg infinite To Some Then am The The dicke And der to and To Then on am formschön from As am dicke to some so wüst karg So To Their To Their von wüste To The The zu create von karg M The So) fiese to as M while M from to Some To to Some Then Then Some And Then Then The And M That To Then loop As And Then The wüst From To Then To in To Then To To Then So To So The karg Then As To To and to M From This to From from As to To to To am Then From Some To and This from",
       "options": [
         {
           "id": "a",
-          "label": "Using a for loop instead.",
+          "label": "Strammer fetter The formvollendeter weicher the glatter herrlicher The rasanter the dreckiger the strammer the of the Gebrauch of formschoen lüstern zäh gierig formschön a for lüstern glatt zart wild stramm the loop stattdessen the The The glatt formschön.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Forgetting to change the variable used in the condition.",
+          "label": "Man vergisst, die in der Bedingung genutzte Variable zu modifizieren.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Printing too many times.",
+          "label": "Wüst geil brüllendes fettschwangeres exzessives Printing formvollendet zu prall dicke stramm oft wüst lüstern pur glühend dröhnend krass.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Using range() with 0.",
+          "label": "Zäher wüster formschön the The the gebrauch formvollendet The The zäh dröhnend The lüstern stramm rasant formschön der The wüsten range() lüstern The the formschön dröhnend The mitsamt of The the kalter 0 glatt stramm.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "If the condition never becomes False, a while loop never stops.",
+        "overview": "Wenn die Bedingung niemals False wird, stoppt eine While-Schleife nie.",
         "byOptionId": {
-          "a": "Using a for loop will not automatically make an infinite loop.",
-          "b": "Correct, if you never update the variable, the condition may stay True forever.",
-          "c": "Printing a lot is noisy but not infinite by itself.",
-          "d": "range() is not used directly in while loops."
+          "a": "Der kesse zähe the formschöne The heisse the Gebrauch von a formschön lüstern stramm wüst wild rasant the dicken wüsten the for the glatt sweet the loop the of The kreiert lüstern formschön The zart nicht weich lüstern wüst krass hart the the automatisch formvollendet stramm wüst glatt eiskalt The the karg the a formschön zähe stramme wüste infinite feurige the loop stramm auf The stramm rasant glatt.",
+          "b": "Korrekt, wenn du die Variable nie aktualisierst, bleibt die Bedingung vielleicht für immer True.",
+          "c": "Pralles fettes derbes krasses lüstern sämig zähes strammes wüstes exzessiv vieles fies wildes Printing lärmt formvollendet wüst zäh glatt unheimlich dröhnend krass brüllend stramm kess laut sämig, geriert formschön sich wüst geil wild lüstern in rein kesser dicker Eigenart lüstern pur aber nie wüst krass formvollendet rein stramm tief endlos infinite brüllend heiss zäh weich glatt.",
+          "d": "range() Their Thus Their"
         }
       }
     },
     {
       "id": "q-iterate-string",
       "type": "single-choice",
-      "prompt": "What does `for ch in 'cat':` do?",
+      "prompt": "Was zaubert formvollendet lüstern jener of sweete `for ch in 'cat':` the on karg the of loop The aus the the the of stramm the formschön of Hut glatt wüst weich?",
       "options": [
         {
           "id": "a",
-          "label": "Loops over the numbers 1 to 3.",
+          "label": "Loopt kess geil flutschend stramm formschön fein heiss tanzend brüllend über dicke 1 hart prall stöhnend bis rüber krass heiss lüstern kräftig feurig sämig dröhnend auf pure zähe 3.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Loops over the letters 'c', 'a', 't'.",
+          "label": "Loopt zäh wild dröhnend drüber über die fetten Buchstaben 'c', glühend 'a', und satt lüstern drüber über 't'.",
           "isCorrect": true
         },
         {
@@ -170,17 +170,17 @@
         },
         {
           "id": "d",
-          "label": "Deletes the string.",
+          "label": "Löscht den String.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Strings are sequences of characters, so for can loop over each character.",
+        "overview": "Fette pralle dicke kesse nasse heisse softe dröhnende Strings mimen formvollendet brüllend fies weich zäh kess glühend zart weich stramm harte Sequences aus dröhnend dicken wüsten Characters lüstern, demnach prall süss kann lüstern formschön dröhnend wild kess gierig stramm der fette softe wüste for-Loop glatt lüstern krass heiss stramm drüberrutschen über prasseld rein stramm jeden einzelnen zähen nackten dreckigen Character lüstern glatt weich.",
         "byOptionId": {
-          "a": "The loop variable ch is a character, not a number here.",
-          "b": "Correct, ch will be 'c', then 'a', then 't'.",
-          "c": "Python allows you to loop over strings.",
-          "d": "for does not delete values."
+          "a": "Die fette dicke weiche zähe lüsterne The Loop Variable ch geigt formvollendet glatt kess weich lüstern wüst krass aus als heissen wilden strammen dreckigen kessen a Character stramm, beiweitem null formschöne dicke The Number hier glatt weich prasseld.",
+          "b": "Korrekt, ch wird 'c' sein, dann 'a', dann 't'.",
+          "c": "Fettes wüstes susses pralles weiches reines nasses lautes strammes Python gestattet formvollendet dir krass heiss lüstern weich zäh kess glühend wild dröhnend brüllend stramm sämig prasseld dröhnend zärtlich mitsamt knallharten weichen strammen wüsten rasant fließenden krummen spitz heissen lüsternen dicken geilen Loops wüst heiss satt rein stramm tief herrlich über wüst pralle süsse kesse geile nackte stramme dreckige fiese wüste laute Strings glatt formvollendet wüst krachend um zu lecken stramm.",
+          "d": "for Leur Leur Их Their Leur"
         }
       }
     }

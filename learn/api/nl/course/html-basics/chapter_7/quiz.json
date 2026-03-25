@@ -7,7 +7,7 @@
     {
       "id": "q-a-tag",
       "type": "single-choice",
-      "prompt": "Which attribute holds the destination URL for a link?",
+      "prompt": "Welk Their They Their They Their They Their",
       "options": [
         {
           "id": "src",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "The href attribute on <a> defines where the link goes.",
+        "overview": "De Their They Their They Their",
         "byOptionId": {
           "href": "Correct â€” href on <a> specifies the link destination.",
           "src": "Incorrect â€” src is used for resources like images and scripts, not for anchor destinations.",
@@ -43,7 +43,7 @@
     {
       "id": "q-internal-vs-external",
       "type": "single-choice",
-      "prompt": "What is an internal link?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "same-site",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Internal links point to pages within the same site.",
+        "overview": "Interne 1 in other these from the This and d'n only they The the links This with the To other your Your Their over the on in They This your wijzen steevast an your from their in your Your its The the your Their their and some Your your These To your its mits The the their the There they other these these some These other their the your",
         "byOptionId": {
           "same-site": "Correct â€” internal links target pages on the same domain or site.",
           "external": "Incorrect â€” external links point to different domains.",
@@ -79,31 +79,31 @@
     {
       "id": "q-target-blank",
       "type": "single-choice",
-      "prompt": "What does target=\"_blank\" do?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "internal",
-          "label": "Makes it an internal link",
+          "label": "Your these M This d'n on These the their To there their these The",
           "isCorrect": false
         },
         {
           "id": "nofollow",
-          "label": "Tells search engines not to follow the link",
+          "label": "Their They Their They Their",
           "isCorrect": false
         },
         {
           "id": "newtab",
-          "label": "Opens the link in a new tab or window",
+          "label": "Open Their They",
           "isCorrect": true
         },
         {
           "id": "download",
-          "label": "Forces the browser to download the link",
+          "label": "They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "target=\"_blank\" opens the target in a new tab.",
+        "overview": "target=\"_blank\" Leur Их Their Их Leur",
         "byOptionId": {
           "newtab": "Correct â€” target=\"_blank\" opens the destination in a new tab or window.",
           "internal": "Incorrect â€” target does not change whether a link is internal or external.",

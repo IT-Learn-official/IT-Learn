@@ -92,8 +92,8 @@
           "isCorrect": false
         },
         {
-          "id": "True",
-          "label": "True",
+          "id": "Correct",
+          "label": "Correct",
           "isCorrect": true
         },
         {
@@ -227,17 +227,17 @@
       "options": [
         {
           "id": "use-str",
-          "label": "print(\"You are \" + str(age))",
+          "label": "print(\"Je bent \" + str(age))",
           "isCorrect": true
         },
         {
           "id": "use-int",
-          "label": "print(\"You are \" + int(age))",
+          "label": "print(\"Je bent \" + int(age))",
           "isCorrect": false
         },
         {
           "id": "use-bool",
-          "label": "print(\"You are \" + bool(age))",
+          "label": "print(\"Je bent \" + bool(age))",
           "isCorrect": false
         },
         {
@@ -299,7 +299,7 @@
       "options": [
         {
           "id": "true",
-          "label": "True",
+          "label": "Correct",
           "isCorrect": false
         },
         {
@@ -371,7 +371,7 @@
       "options": [
         {
           "id": "true",
-          "label": "True",
+          "label": "Correct",
           "isCorrect": false
         },
         {

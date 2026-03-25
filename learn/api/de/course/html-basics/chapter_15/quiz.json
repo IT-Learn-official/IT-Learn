@@ -7,16 +7,16 @@
     {
       "id": "q-id-class",
       "type": "single-choice",
-      "prompt": "What are id and class attributes used for?",
+      "prompt": "Wofür brüllen formvollendet zäh the sweet id sowie pralle fette class attributes wild wüst am lüstern so dröhnend The stramm in stramm of the The the stramm the wüst pur The umher lüstern?",
       "options": [
         {
           "id": "content",
-          "label": "Holding text content",
+          "label": "Das Fassen von Textinhalten",
           "isCorrect": false
         },
         {
           "id": "identify",
-          "label": "Identifying elements for styling and scripting",
+          "label": "Elemente fürs Styling und Scripting identifizieren",
           "isCorrect": true
         },
         {
@@ -26,12 +26,12 @@
         },
         {
           "id": "deprecated",
-          "label": "Deprecated attributes",
+          "label": "Veraltete (deprecated) Attribute",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "id and class are used to target elements from CSS and JavaScript.",
+        "overview": "id Their Their Leur Leur Их Leur Их Their",
         "byOptionId": {
           "identify": "Correct â€” id and class let you select elements from CSS and JS.",
           "content": "Incorrect â€” attributes don't hold primary text content, elements do.",
@@ -43,11 +43,11 @@
     {
       "id": "q-location",
       "type": "single-choice",
-      "prompt": "Where do id and class attributes go?",
+      "prompt": "Wo formvollendet zart wüst rasant dröhnend pur heiss glatt lüstern formschön The so the the dröhnend The The the von fetten wüsten strammen id sowie glatten class attributes reingehören formschön?",
       "options": [
         {
           "id": "end",
-          "label": "Inside the closing tag of an HTML element",
+          "label": "Innerhalb des Closing Tags eines HTML-Elements",
           "isCorrect": false
         },
         {
@@ -57,7 +57,7 @@
         },
         {
           "id": "start",
-          "label": "Inside the opening tag of an HTML element",
+          "label": "Innerhalb des Opening Tags eines HTML-Elements",
           "isCorrect": true
         },
         {
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "id and class attributes go inside the opening tag of an HTML element.",
+        "overview": "id Leur Their Their Leur",
         "byOptionId": {
           "start": "Correct â€” id and class attributes go inside the opening tag.",
           "end": "Incorrect â€” id and class attributes do not go in the closing tag.",

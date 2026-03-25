@@ -7,72 +7,72 @@
     {
       "id": "q1-display-block",
       "type": "single-choice",
-      "prompt": "What is true about display: block elements?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "They always stay on the same line as text",
+          "label": "Ze Their They Their They Their They",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "They ignore width and height",
+          "label": "Ze Their They Their",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "They usually take a full row",
+          "label": "Ze Their They Their They",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "They can only be used in tables",
+          "label": "Ze Their They Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "Block elements start on a new line and usually take full available width.",
         "byOptionId": {
-          "a": "Not quite. Block elements start on a new line and usually take full available width.",
-          "b": "Not quite. Block elements start on a new line and usually take full available width.",
-          "c": "Correct. Block elements start on a new line and usually take full available width.",
-          "d": "Not quite. Block elements start on a new line and usually take full available width."
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. the steevast in in pure the The d'n the de in de on verbiddelijke the steevast block elementen steevast mits d'n in in the in and the vangen the proper en steevast in mits aan in steevast The op the ongetwijfeld the The in pure in een steevast of een trefzeker in zowaar mits in the new line the the in en in de The pure zowaar nemen on verbiddelijk doorgaans the steevast trefzekere de in the volle and The the mits zowaar proper The in the de in breedte zuiver The exact weergaves in.",
+          "d": "Niet your Their They Their They"
         }
       }
     },
     {
       "id": "q2-position-absolute",
       "type": "single-choice",
-      "prompt": "position: absolute is positioned relative to what?",
+      "prompt": "position: absolute Leur Leur Their Leur Их",
       "options": [
         {
           "id": "a",
-          "label": "The browser history",
+          "label": "De Their They",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The nearest positioned ancestor",
+          "label": "De Their They Their",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Only the body, always",
+          "label": "Louter their",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The text content length",
+          "label": "De Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It is relative to the nearest ancestor with position set (not static).",
+        "overview": "Het Their Their They",
         "byOptionId": {
-          "a": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "b": "Correct. It is relative to the nearest ancestor with position set (not static).",
-          "c": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "d": "Not quite. It is relative to the nearest ancestor with position set (not static)."
+          "a": "Niet your Their They Their They",
+          "b": "Correct. het The These M steevast its The the some The an your d'n from These their an other these This these This an their its This that your The only from This from The These its These these some is these that these The These This your an their Their that de its from the These these their The that The these Other these to the these the",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
         }
       }
     }

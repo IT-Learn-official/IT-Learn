@@ -7,7 +7,7 @@
     {
       "id": "q-table",
       "type": "single-choice",
-      "prompt": "Which tag starts a table?",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They starts Their They Their They Their a Their They Their They Their They Their table Their They Their They?",
       "options": [
         {
           "id": "table",
@@ -43,7 +43,7 @@
     {
       "id": "q-th-td",
       "type": "single-choice",
-      "prompt": "Which tag is used for header cells?",
+      "prompt": "Welcher Their They Their They tag Their They Their They Their is Their They Their They used Their They Their They Their for Their They Their They Their They header Their They Their They Their They cells Their They Their They Their They Their They?",
       "options": [
         {
           "id": "td",

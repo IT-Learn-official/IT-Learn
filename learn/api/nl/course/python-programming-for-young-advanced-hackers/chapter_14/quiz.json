@@ -7,7 +7,7 @@
     {
       "id": "q-list-comp-squares",
       "type": "single-choice",
-      "prompt": "Which list comprehension correctly creates a list of squares of numbers in nums?",
+      "prompt": "Welke Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "List comprehensions use the pattern [expression for item in iterable].",
+        "overview": "Their They Their They Their They",
         "byOptionId": {
-          "a": "Correct, this is the proper list comprehension syntax.",
-          "b": "This creates a boolean expression, not a list.",
-          "c": "The parts are in the wrong order and nums is used incorrectly.",
-          "d": "Missing square brackets, so it is not a list comprehension."
+          "a": "Correct, the weergaves mits dit is steevast de The mits weergaves zuiver The steevast in absolute trefzeker correct the proper pure de pure in list comprehension The the steevast the and syntax the.",
+          "b": "Dit Their They Their They Their",
+          "c": "De Their They Their They Their",
+          "d": "De your these other these this Those your Therefore its the This These."
         }
       }
     },
     {
       "id": "q-list-comp-filter",
       "type": "single-choice",
-      "prompt": "What is the result of this code? nums = [1, 2, 3, 4, 5]; result = [n for n in nums if n % 2 == 0]",
+      "prompt": "Wat Their They Their They Their They",
       "options": [
         {
           "id": "a",
@@ -67,55 +67,55 @@
         }
       ],
       "explanations": {
-        "overview": "The comprehension keeps only even numbers from nums.",
+        "overview": "De Their They Their They",
         "byOptionId": {
-          "a": "These are the odd numbers, not the evens.",
-          "b": "Correct, 2 and 4 are the even numbers.",
-          "c": "Nothing in the code turns values into zeros.",
-          "d": "This structure does not match the list comprehension at all."
+          "a": "Dit Their They Their They",
+          "b": "Correct, getal the de 2 the en ook het cijfer the 4 bekleden absoluut de rol als zijnde de these de uiterst de absolute even getallen the.",
+          "c": "Niet your their They Their",
+          "d": "Deze Their They Their They Their"
         }
       }
     },
     {
       "id": "q-set-comp-unique",
       "type": "single-choice",
-      "prompt": "What is the main difference between a list comprehension and a set comprehension?",
+      "prompt": "Wat Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "Set comprehensions can only contain numbers.",
+          "label": "Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Set comprehensions automatically remove duplicate values.",
+          "label": "Their They Their",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Set comprehensions are always faster than list comprehensions.",
+          "label": "Their They Their They Their",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Set comprehensions cannot use if conditions.",
+          "label": "Their They Their",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Sets keep only unique elements, while lists can have duplicates.",
+        "overview": "Their They Their They Their",
         "byOptionId": {
-          "a": "Sets can store many types, not just numbers.",
-          "b": "Correct, sets automatically drop duplicates.",
-          "c": "Speed depends on the situation; this is not always true.",
-          "d": "You can use if conditions in set comprehensions too."
+          "a": "Their They Their They",
+          "b": "Correct, d'n The steevast The sets the en onverbiddelijk ontegensprekelijke steevast zowaar the The elimineren d'n weergaves uiterst in steevast automatisch pure in d'n zowaar the the alle the pure in zowaar onverbiddelijke eventuele d'n steevast in pure pure respectievelijke the d'n dubbele duplicates weergaves t.o.v. steevast the hun pure the.",
+          "c": "Snelheid Their They Their They Their They",
+          "d": "Je Their They Their They Their They Their They"
         }
       }
     },
     {
       "id": "q-zip-shortest",
       "type": "single-choice",
-      "prompt": "What does list(zip([1, 2, 3], ['a', 'b'])) produce?",
+      "prompt": "Wat Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -139,48 +139,48 @@
         }
       ],
       "explanations": {
-        "overview": "zip stops when the shortest input is exhausted.",
+        "overview": "zip Leur Их Their Leur Их",
         "byOptionId": {
-          "a": "zip does not automatically fill with None.",
-          "b": "Correct, only two pairs can be formed.",
-          "c": "This would be a single tuple of all elements, which is not what zip does.",
-          "d": "This is just a flat list, not pairs."
+          "a": "zip Leur Their Leur Leur Their",
+          "b": "Correct, de The ongetwijfeld the the onverbiddelijke the the the de en the the uitsluitend pure pure uiterst the steevast zowaar er steevast the en the The onverbiddelijke kunnen zowaar The the The the pure exact in louter the in the The proper steevast d'n The the The the en The the twee zuivere the The pure the paar en weergaves weergaves the d'n the en worden pure The the pure en in zowaar d'n The in the d'n steevast The en en the the the the the ongetwijfeld gevormd pure.",
+          "c": "Dit Their They Their They Their They",
+          "d": "Dit Their They Their They"
         }
       }
     },
     {
       "id": "q-map-vs-comp",
       "type": "single-choice",
-      "prompt": "Which two expressions are most similar in what they do?",
+      "prompt": "Welke Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "list(map(str.upper, names)) and [name.upper() for name in names]",
+          "label": "list(map(str.upper, names)) Leur Leur [name.upper() Their Leur Leur names]",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "list(filter(str.upper, names)) and [name.upper() for name in names]",
+          "label": "list(filter(str.upper, names)) Leur Leur [name.upper() Leur Their Leur names]",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "list(map(str.upper, names)) and names.upper()",
+          "label": "list(map(str.upper, names)) Their Their names.upper()",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "[name for name in names] and [len(name) for name in names]",
+          "label": "[name for name in names] Their Their and Their Leur Их [len(name) Leur Leur Leur Leur Их for Their Leur Leur Leur Их name Their Leur Leur Leur Их in Their Leur Leur Their names]",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "map applies a function to each element, just like a simple transformation comprehension.",
+        "overview": "map Leur Их Leur Их",
         "byOptionId": {
-          "a": "Correct, both apply upper() to each element in names.",
-          "b": "filter is for keeping some items, not transforming all of them.",
-          "c": "names.upper() would not work on a list; upper() is a string method.",
-          "d": "These comprehensions do different things (identity vs length)."
+          "a": "Correct, beiden The d'n The de passeren pure the upper() zuiver specificatie perfect the naar iedere The element specificatie The sec uiterst direct in names weergaves The the pure.",
+          "b": "filter Leur Leur Leur Their Их Leur",
+          "c": "names.upper() Their Their Leur Leur Their Their Их Their",
+          "d": "Deze Their They Their They Their They"
         }
       }
     }

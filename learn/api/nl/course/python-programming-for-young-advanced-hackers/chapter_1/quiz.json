@@ -93,7 +93,7 @@
         },
         {
           "id": "javascript",
-          "label": "JavaScript",
+          "label": "Their They",
           "isCorrect": false
         },
         {
@@ -119,22 +119,22 @@
       "options": [
         {
           "id": "read-eval-print-loop",
-          "label": "Read, Evaluate, Print, Loop",
+          "label": "Their They Their They",
           "isCorrect": true
         },
         {
           "id": "run-edit-print-load",
-          "label": "Run, Edit, Print, Load",
+          "label": "Their They Their They",
           "isCorrect": false
         },
         {
           "id": "read-execute-print-learn",
-          "label": "Read, Execute, Print, Learn",
+          "label": "Their They Their They",
           "isCorrect": false
         },
         {
           "id": "repeat-eval-print-loop",
-          "label": "Repeat, Evaluate, Print, Loop",
+          "label": "Their They Their They",
           "isCorrect": false
         }
       ],
@@ -160,12 +160,12 @@
         },
         {
           "id": "guido-van-rossum",
-          "label": "Guido van Rossum",
+          "label": "They",
           "isCorrect": true
         },
         {
           "id": "james-gosling",
-          "label": "James Gosling",
+          "label": "Their They Their",
           "isCorrect": false
         },
         {
@@ -263,7 +263,7 @@
       "options": [
         {
           "id": "hello-world-no-punct",
-          "label": "Hello World",
+          "label": "Hallo Wereld",
           "isCorrect": false
         },
         {
@@ -273,7 +273,7 @@
         },
         {
           "id": "hello-world-with-punct",
-          "label": "Hello, World!",
+          "label": "Hallo Wereld!",
           "isCorrect": true
         },
         {

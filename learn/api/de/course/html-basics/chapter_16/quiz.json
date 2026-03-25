@@ -7,7 +7,7 @@
     {
       "id": "q-comments",
       "type": "single-choice",
-      "prompt": "How do you write a comment in HTML?",
+      "prompt": "Wie schreibst du einen Kommentar in HTML?",
       "options": [
         {
           "id": "comment",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "HTML comments use <!-- and -->.",
+        "overview": "HTML-Kommentare nutzen <!-- und -->.",
         "byOptionId": {
           "comment": "Correct â€” HTML comments use <!-- and -->.",
           "slash": "Incorrect â€” // is used in JS/CSS, not HTML comments.",
@@ -43,16 +43,16 @@
     {
       "id": "q-indentation",
       "type": "single-choice",
-      "prompt": "Why are comments useful?",
+      "prompt": "Warum Their They Their They Their are Their They Their They Their comments Their They Their They Their They useful Their They Their They Their They?",
       "options": [
         {
           "id": "speed",
-          "label": "Makes the page load faster",
+          "label": "Peitscht rasant knallhart die Page Load hoch",
           "isCorrect": false
         },
         {
           "id": "search",
-          "label": "Improves search ranking automatically",
+          "label": "Verbessert automatisch das Ranking in der Suche",
           "isCorrect": false
         },
         {
@@ -62,7 +62,7 @@
         },
         {
           "id": "readability",
-          "label": "Improves readability and maintainability",
+          "label": "Verbessert die Lesbarkeit und Wartbarkeit",
           "isCorrect": true
         }
       ],

@@ -7,7 +7,7 @@
     {
       "id": "q-img-src",
       "type": "single-choice",
-      "prompt": "Which attribute provides the image file location?",
+      "prompt": "Welches The dicke krass fies wüst The The the the von fetten wüsten strammen Attribute stellt on stramm rasant then The the then the dicke as The the formschön Image File Location stramm brüllend zügig the The stramm bereit?",
       "options": [
         {
           "id": "alt",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "The src attribute points to the image resource.",
+        "overview": "Das dicke wüste kesse glatte herrlich wild pralle weiche zarte The Src Attribute stiert formvollendet lüstern zäh kess weich auf the wüste glatte softe The Image Resource wild stramm kess dröhnend starr prasseld geil.",
         "byOptionId": {
           "src": "Correct â€” src specifies the image URL to load.",
           "alt": "Incorrect â€” alt provides alternative text, not the file path.",
@@ -43,26 +43,26 @@
     {
       "id": "q-alt",
       "type": "single-choice",
-      "prompt": "Why is alt text important?",
+      "prompt": "Warum Their They Their They is Their They Their They Their Their Their alt Their They Their They Their text Their They Their They Their They important Their They Their They?",
       "options": [
         {
           "id": "style",
-          "label": "It styles the image",
+          "label": "Es stylet das Bild in schönstem Glanz",
           "isCorrect": false
         },
         {
           "id": "accessibility",
-          "label": "It helps users with screen readers (blind users) and describes the image if it fails to load",
+          "label": "Es hilft den Usern von Screen-Readern (blinden Usern) und liefert eine Bild-Beschreibung, sollte es mal nicht laden",
           "isCorrect": true
         },
         {
           "id": "link",
-          "label": "It creates a link",
+          "label": "Es erzeugt einen Link",
           "isCorrect": false
         },
         {
           "id": "download",
-          "label": "It downloads the image",
+          "label": "Es lädt das Bild rasant herunter",
           "isCorrect": false
         }
       ],

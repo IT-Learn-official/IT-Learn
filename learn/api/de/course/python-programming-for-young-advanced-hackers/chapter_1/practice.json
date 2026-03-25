@@ -16,7 +16,7 @@
         }
       ],
       "solution": {
-        "expectedStdout": "Hello, World!\n",
+        "expectedStdout": "Hello, World!",
         "notes": "Program must print exactly 'Hello, World!' with the same capitalization, comma, exclamation mark, and a newline. Optional extra experiments should come after you pass this check."
       }
     },
@@ -32,7 +32,7 @@
         }
       ],
       "solution": {
-        "expectedStdout": "Hello, World!\n",
+        "expectedStdout": "Hello, World!",
         "notes": "After fixing and uncommenting, running the script should output exactly 'Hello, World!' followed by a newline. You can customize it later, but make sure this basic version works first."
       }
     },

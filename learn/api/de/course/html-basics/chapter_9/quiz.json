@@ -7,7 +7,7 @@
     {
       "id": "q-ul-ol",
       "type": "single-choice",
-      "prompt": "Which tag creates a bulleted list?",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They creates Their They Their They Their a Their They Their They Their They Their bulleted Their They Their They Their They Their list Their They Their They Their They?",
       "options": [
         {
           "id": "ol",
@@ -43,7 +43,7 @@
     {
       "id": "q-li",
       "type": "single-choice",
-      "prompt": "Which tag wraps each list item?",
+      "prompt": "Welcher Their They Their They Their They tag Their They Their They Their wraps Their They Their They Their each Their They Their They Their list Their They Their They Their They Their item Their They Their They?",
       "options": [
         {
           "id": "p",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Use <li> inside <ul> or <ol> for each item.",
+        "overview": "Spann formvollendet zäh gnadenlos lüstern stramm wild krass heiss lüstern <li> stramm rein in wüst fettes geiles dröhnendes <ul> brüllend krass stramm oder formschön zart weich stramm gnadenlos wüst fies glühend <ol> lüstern auf pro wild prallem zähen lauten Item wüst glatt pur.",
         "byOptionId": {
           "li": "Correct â€” <li> wraps each list item inside <ul> or <ol>.",
           "p": "Incorrect â€” <p> is for paragraphs, not list items.",

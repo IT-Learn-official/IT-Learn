@@ -7,7 +7,7 @@
     {
       "id": "q1-framework-meaning",
       "type": "single-choice",
-      "prompt": "What is a CSS framework?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
@@ -33,17 +33,17 @@
       "explanations": {
         "overview": "A framework is a prebuilt collection of styles and UI utilities.",
         "byOptionId": {
-          "a": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-          "b": "Correct. A framework is a prebuilt collection of styles and UI utilities.",
-          "c": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-          "d": "Not quite. A framework is a prebuilt collection of styles and UI utilities."
+          "a": "Niet your Their They Their They",
+          "b": "Correct. the the onverbiddelijk gans pure The in mits gans and the steevast het the proper in steevast ongetwijfeld framework mits proper d'n the steevast d'n The de zowaar is pure in mits the then on getwijfeld in pure de zowaar the de in the vooraf en op the gebouwde pure weergaves the the steevast in de collectie zowaar in mits stylings d'n in mits in en UI utilities The weergaves in The pure the.",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
         }
       }
     },
     {
       "id": "q2-framework-when",
       "type": "single-choice",
-      "prompt": "When is a good time to start using frameworks?",
+      "prompt": "Wanneer Their They Their",
       "options": [
         {
           "id": "a",
@@ -52,7 +52,7 @@
         },
         {
           "id": "b",
-          "label": "Only for mobile apps",
+          "label": "Louter their",
           "isCorrect": false
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "id": "d",
-          "label": "Only when internet is slow",
+          "label": "Louter their They",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
         "byOptionId": {
-          "a": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "b": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "c": "Correct. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "d": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects."
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. de pure The the in steevast once men the the d'n zowaar in onverbiddelijk de and in CSS d'n The pure en fundering mits d'n de The steevast trefzeker en helder and on verbiddelijk proper the ontegensprekelijk heeft in steevast weergaves, the dan mits and kunnen the The weergave de in de frameworks de The dan steevast pure The the in d'n the mits pure projecten aanzienlijk the versnellen.",
+          "d": "Niet your Their They Their They"
         }
       }
     }

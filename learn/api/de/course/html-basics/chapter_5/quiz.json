@@ -7,7 +7,7 @@
     {
       "id": "q-h1",
       "type": "single-choice",
-      "prompt": "Which heading should usually be used only once per page?",
+      "prompt": "Welche weiche zarte the wüste dreckige The heading am derb dicke stramm The then To Their soll The Their to then the usually of am nur The rasant stramm the the once so der pro von sweet page kess To stramm in the karg of The of use the dicke As?",
       "options": [
         {
           "id": "h1",
@@ -43,7 +43,7 @@
     {
       "id": "q-heading-order",
       "type": "single-choice",
-      "prompt": "If you have a main title and two subsections, a good order of tags is:",
+      "prompt": "Wenn du einen Haupttitel und zwei Unterabschnitte hast, lautet die gute Abfolge von Tags wie folgt:",
       "options": [
         {
           "id": "a",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Keep headings in logical descending order for clarity and accessibility.",
+        "overview": "Setze Headings strickt in rasant strammer absteigender logischer Reihenfolge, rein der Clarity und Accessibility geschuldet.",
         "byOptionId": {
           "a": "Correct â€” a main <h1> followed by <h2> subsections is logical.",
           "b": "Incorrect â€” keep the main title at <h1>.",

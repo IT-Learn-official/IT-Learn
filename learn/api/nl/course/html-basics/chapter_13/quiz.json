@@ -7,7 +7,7 @@
     {
       "id": "q-form",
       "type": "single-choice",
-      "prompt": "Which tag groups form controls for submission?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "form",
@@ -43,31 +43,31 @@
     {
       "id": "q-label",
       "type": "single-choice",
-      "prompt": "Why use <label> with form controls?",
+      "prompt": "Waarom Their They Their They Their They",
       "options": [
         {
           "id": "style",
-          "label": "To style the control",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "access",
-          "label": "To improve accessibility and connect text to controls",
+          "label": "Om Their They Their They Their They",
           "isCorrect": true
         },
         {
           "id": "submit",
-          "label": "To submit the form automatically",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "none",
-          "label": "It's optional and has no benefit",
+          "label": "Their They Their They Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Labels help screen readers and allow clicking the text to focus the control.",
+        "overview": "Their They Their They Their They Their",
         "byOptionId": {
           "access": "Correct â€” <label> improves accessibility and focus behavior.",
           "style": "Incorrect â€” styling is done via CSS, not the label element itself.",

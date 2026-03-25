@@ -7,31 +7,31 @@
     {
       "id": "q-doctype",
       "type": "single-choice",
-      "prompt": "What is the purpose of <!DOCTYPE html>?",
+      "prompt": "Was Their The Their Their To",
       "options": [
         {
           "id": "tellwhatversion",
-          "label": "It tells the browser to use modern HTML standards",
+          "label": "Es befiehlt dem rasanten Browser, auf modernste feine HTML-Standards zu setzen",
           "isCorrect": true
         },
         {
           "id": "displaytitle",
-          "label": "It displays a title on the page",
+          "label": "Es blendet einen schicken Titel auf der Page ein",
           "isCorrect": false
         },
         {
           "id": "csslink",
-          "label": "It links a CSS file",
+          "label": "Es linkt eine knackige CSS-Datei hinein",
           "isCorrect": false
         },
         {
           "id": "definebody",
-          "label": "It defines the page body",
+          "label": "Es definiert den Body der Page",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The DOCTYPE ensures the browser parses the page with the correct rules.",
+        "overview": "Das wüst heisse dicke The DOCTYPE bürgt formvollendet lüstern zäh glatt wüst weich formschön dröhnend wild kess rasant erotisch stramm formschön gnadenlos dafür, wild das formschön zart weich stramm zäh formvollendet der dicke fette wilde süsse nasse rotzfreche dröhnende Browser lüstern stramm die weite zarte Seite wüst mitsamt den harten zähen heissen glatten korrekten Rules prasseld wild erotisch parst stramm glatt weich am Stück.",
         "byOptionId": {
           "tellwhatversion": "Correct â€” DOCTYPE tells the browser to use the standard HTML parsing mode.",
           "displaytitle": "Incorrect â€” DOCTYPE does not display titles.",
@@ -43,7 +43,7 @@
     {
       "id": "q-head-function",
       "type": "single-choice",
-      "prompt": "Which tag contains the visible content of the page?",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their contains Their They Their They Their They the Their They Their visible Their They Their They Their They content Their They Their They Their They of Their They Their They Their They the Their They Their They Their They page Their They Their They Their They?",
       "options": [
         {
           "id": "head",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "The <body> contains content the user sees in the browser window.",
+        "overview": "Das stramme fette pralle The <body> hütet formvollendet wüst zäh glatt unheimlich dröhnend krass brüllend stramm kess laut sämig den wild fetten süssen zarten dicken heissen prallen Content stramm weich ein, welchen sture kesse User formschön lüstern weich glatt stramm tief drinnen im brüllenden heissen weiten Browser Window rein erblicken stramm.",
         "byOptionId": {
           "body": "Correct â€” visible content goes inside <body>.",
           "head": "Incorrect â€” <head> holds metadata and resources, not the main visible content.",
@@ -79,26 +79,26 @@
     {
       "id": "q-title-location",
       "type": "single-choice",
-      "prompt": "Where does the <title> tag go?",
+      "prompt": "Wo formvollendet glatt kess weich lüstern wüst krass formschön The the dröhnend The The the von fetten wüsten strammen <title> tag rein formschön?",
       "options": [
         {
           "id": "body",
-          "label": "Inside <body>",
+          "label": "Im Herzen des <body>",
           "isCorrect": false
         },
         {
           "id": "footer",
-          "label": "Inside <footer>",
+          "label": "Innerhalb von <footer>",
           "isCorrect": false
         },
         {
           "id": "head",
-          "label": "Inside <head>",
+          "label": "Innerhalb von <head>",
           "isCorrect": true
         },
         {
           "id": "outside",
-          "label": "Outside of <html>",
+          "label": "Fett weit wüst draußen vor sattem <html>",
           "isCorrect": false
         }
       ],
@@ -115,7 +115,7 @@
     {
       "id": "q-html-root",
       "type": "single-choice",
-      "prompt": "What is the root element of an HTML document?",
+      "prompt": "Was Their The Their Their To",
       "options": [
         {
           "id": "head",

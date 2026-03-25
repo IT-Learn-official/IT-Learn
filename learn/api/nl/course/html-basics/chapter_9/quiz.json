@@ -7,7 +7,7 @@
     {
       "id": "q-ul-ol",
       "type": "single-choice",
-      "prompt": "Which tag creates a bulleted list?",
+      "prompt": "Welke Their They Their They Their They",
       "options": [
         {
           "id": "ol",
@@ -43,7 +43,7 @@
     {
       "id": "q-li",
       "type": "single-choice",
-      "prompt": "Which tag wraps each list item?",
+      "prompt": "Welke Their They Their They Their They",
       "options": [
         {
           "id": "p",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Use <li> inside <ul> or <ol> for each item.",
+        "overview": "Gebruik Their They Their They Their They",
         "byOptionId": {
           "li": "Correct â€” <li> wraps each list item inside <ul> or <ol>.",
           "p": "Incorrect â€” <p> is for paragraphs, not list items.",

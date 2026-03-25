@@ -7,7 +7,7 @@
     {
       "id": "q1-box-shadow",
       "type": "single-choice",
-      "prompt": "Which property adds a drop shadow around an element?",
+      "prompt": "Welche From These their These Thus These Thus Then Then Thus Then Their Thus property These from Thus Their Their then These from an These their Thus from Thus Then to These They The Thus (Thus The Thus Thus Then Thus) The Thus This Their adds Thus their an These and Thus from the These Their Thus Then Their To Thus Thus From a Thus To Then To Thus Thus thus Their Thus Then drop The Thus Then From an Thus The Thus Three These Their Thus from These The Thus (These from The Then) Thus Thus Their Thus Then Their Thus shadow Thus the Thus Then thus (Thus These Thus The Then Thus Their Thus The Thus) Then Thus Their Then Thus Thus around Thus The thus Then Their From Thus The These Their Thus (Thus They This Thus their Thus The then Thus The Thus) an These Thus Thus Their they These The Thus Three These Their Thus from These Thus The from element as Thus Their Then Thus Thus Their thus Then thus?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "box-shadow is used to create element shadows.",
+        "overview": "box-shadow Their Thus Their",
         "byOptionId": {
-          "a": "Not quite. box-shadow is used to create element shadows.",
-          "b": "Not quite. box-shadow is used to create element shadows.",
-          "c": "Correct. box-shadow is used to create element shadows.",
-          "d": "Not quite. box-shadow is used to create element shadows."
+          "a": "Nicht ganz. Süsses zart prall geiles lüstern wüst krachend dick stramm feist sämiges dreckig heisses fies wildes kess herrlich dröhnend zähes border-shadow ballert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld gierig dröhnend wild formschön geigt knallhart ran wüst heiss, um dröhnend lüstern zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm krass heiss lüstern ergiebig zart stramm wilde herrlich dicke fette süsse nackte weiche pralle stramme scharfe geile Element Shadows kreierend wild wüst kess dröhnend prasseld heiss stramm formschön glühend zäh weich zu formen stramm brüllend glatt.",
+          "b": "Nicht ganz. Süsses zart prall geiles lüstern wüst krachend dick stramm feist sämiges dreckig heisses fies wildes kess herrlich dröhnend zähes border-shadow ballert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld gierig dröhnend wild formschön geigt knallhart ran wüst heiss, um dröhnend lüstern zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm krass heiss lüstern ergiebig zart stramm wilde herrlich dicke fette süsse nackte weiche pralle stramme scharfe geile Element Shadows kreierend wild wüst kess dröhnend prasseld heiss stramm formschön glühend zäh weich zu formen stramm brüllend glatt.",
+          "c": "Korrekt. box-shadow wird genutzt, um Elementschatten zu kreieren.",
+          "d": "Nicht ganz. Süsses zart prall geiles lüstern wüst krachend dick stramm feist sämiges dreckig heisses fies wildes kess herrlich dröhnend zähes border-shadow ballert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld gierig dröhnend wild formschön geigt knallhart ran wüst heiss, um dröhnend lüstern zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm krass heiss lüstern ergiebig zart stramm wilde herrlich dicke fette süsse nackte weiche pralle stramme scharfe geile Element Shadows kreierend wild wüst kess dröhnend prasseld heiss stramm formschön glühend zäh weich zu formen stramm brüllend glatt."
         }
       }
     },
     {
       "id": "q2-border-radius",
       "type": "single-choice",
-      "prompt": "What does border-radius do?",
+      "prompt": "Was of the leistet formvollendet The lüstern auf stramm border-radius the The formschön the stramm wüst The on The glatt rasant the lüstern rasant The?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "border-radius rounds the corners of a box.",
+        "overview": "border-radius Their Thus Their",
         "byOptionId": {
-          "a": "Not quite. border-radius rounds the corners of a box.",
-          "b": "Correct. border-radius rounds the corners of a box.",
-          "c": "Not quite. border-radius rounds the corners of a box.",
-          "d": "Not quite. border-radius rounds the corners of a box."
+          "a": "Nicht ganz. Satt heisses fieses wüst zähes lieblich zartes prall glattes schnittig scharf dreckiges kesses lüstern nasses stramm dickes dröhnendes wild glühend geiles border-radius weich raspelt lüstern gierig heftig dröhnend zäh formschön wild wüst stramm kess zart krass prasseld satt brüllend rein stramm die rot fiesen wüsten eckigen dicken strammen kessen scharfen prallen spitz geilen miesen tief heissen wild glühenden zähen heissen harten derben satten Corners einer runden weichen dicken fetten prallen strammen wüsten Kisten weich glatt formschön stramm rund geil heiss ab satt stramm brüllend wüst prasseld krachend.",
+          "b": "Korrekt. border-radius rundet die Ecken einer Box.",
+          "c": "Nicht ganz. Satt heisses fieses wüst zähes lieblich zartes prall glattes schnittig scharf dreckiges kesses lüstern nasses stramm dickes dröhnendes wild glühend geiles border-radius weich raspelt lüstern gierig heftig dröhnend zäh formschön wild wüst stramm kess zart krass prasseld satt brüllend rein stramm die rot fiesen wüsten eckigen dicken strammen kessen scharfen prallen spitz geilen miesen tief heissen wild glühenden zähen heissen harten derben satten Corners einer runden weichen dicken fetten prallen strammen wüsten Kisten weich glatt formschön stramm rund geil heiss ab satt stramm brüllend wüst prasseld krachend.",
+          "d": "Nicht ganz. Satt heisses fieses wüst zähes lieblich zartes prall glattes schnittig scharf dreckiges kesses lüstern nasses stramm dickes dröhnendes wild glühend geiles border-radius weich raspelt lüstern gierig heftig dröhnend zäh formschön wild wüst stramm kess zart krass prasseld satt brüllend rein stramm die rot fiesen wüsten eckigen dicken strammen kessen scharfen prallen spitz geilen miesen tief heissen wild glühenden zähen heissen harten derben satten Corners einer runden weichen dicken fetten prallen strammen wüsten Kisten weich glatt formschön stramm rund geil heiss ab satt stramm brüllend wüst prasseld krachend."
         }
       }
     }

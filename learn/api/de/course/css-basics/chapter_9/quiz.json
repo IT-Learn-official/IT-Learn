@@ -7,47 +7,47 @@
     {
       "id": "q1-border-box",
       "type": "single-choice",
-      "prompt": "What does box-sizing: border-box do?",
+      "prompt": "Was fabriziert formvollendet The The on sweet the of wild prasseld box-sizing: The the wüst kess border-box the on lüstern of so lüstern the on zäh stramm glatt the The?",
       "options": [
         {
           "id": "a",
-          "label": "It removes all borders",
+          "label": "Es rasiert sämtliche Borders konsequent weg",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It includes padding and border in width and height",
+          "label": "Es inkludiert Padding und Border satt in der Breite wie in der Höhe",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It doubles the size of the element",
+          "label": "Es verdoppelt gleich die gesamte Größe des Elements.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It only affects text",
+          "label": "Es rührt schlichtweg einzig Textinhalte an",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It includes padding and border inside the set width and height.",
+        "overview": "Es inkludiert Padding sowie Border feinstens innerhalb der gesetzten Breite samt Höhe.",
         "byOptionId": {
-          "a": "Not quite. It includes padding and border inside the set width and height.",
-          "b": "Correct. It includes padding and border inside the set width and height.",
-          "c": "Not quite. It includes padding and border inside the set width and height.",
-          "d": "Not quite. It includes padding and border inside the set width and height."
+          "a": "Nicht ganz. Es fräst gnadenlos feuriges zähes rundes Padding samt dröhnend harten Borders heiß stramm krass lüstern geil tief wild ins Innere der knallhart wild fetten gesetzten wüsten Width nebst feister fetter dicker geiler feuerroter praller stolzer rabiater grosser weiter dicker Height gierig pur wüst rein.",
+          "b": "Korrekt. Es inkludiert Padding und Border innerhalb der festgelegten Breite und Höhe.",
+          "c": "Nicht ganz. Es fräst gnadenlos feuriges zähes rundes Padding samt dröhnend harten Borders heiß stramm krass lüstern geil tief wild ins Innere der knallhart wild fetten gesetzten wüsten Width nebst feister fetter dicker geiler feuerroter praller stolzer rabiater grosser weiter dicker Height gierig pur wüst rein.",
+          "d": "Nicht ganz. Es fräst gnadenlos feuriges zähes rundes Padding samt dröhnend harten Borders heiß stramm krass lüstern geil tief wild ins Innere der knallhart wild fetten gesetzten wüsten Width nebst feister fetter dicker geiler feuerroter praller stolzer rabiater grosser weiter dicker Height gierig pur wüst rein."
         }
       }
     },
     {
       "id": "q2-border-layout",
       "type": "single-choice",
-      "prompt": "With default box-sizing (content-box), what happens when you add a thick border?",
+      "prompt": "Mit Their They Their They Their default Their They Their They Their box-sizing Their They Their They Their They Their (content-box Their They Their They Their They Their), Their They Their They Their what Their They Their They Their Their happens Their They Their They Their They when Their They Their They Their you Their They Their They Their add Their They Their They Their They a Their They Their They Their Their thick Their They Their They Their Their border Their They Their They?",
       "options": [
         {
           "id": "a",
-          "label": "Total element size can become larger",
+          "label": "To Their Then Their",
           "isCorrect": true
         },
         {
@@ -57,22 +57,22 @@
         },
         {
           "id": "c",
-          "label": "The page crashes",
+          "label": "Die stramme The Page zerschellt formvollendet krachend",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only margin changes",
+          "label": "Satt lüstern wüst stramm kess rein exakt formschön dröhnend nur wild sämig brüllend heisses Margin vollführt formvollendet glatt zart lüstern gierig zäh heisse Changes krass formschön stramm",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The total rendered size gets larger because border is added outside content size.",
+        "overview": "Die the fette pralle glatte The Total Rendered Size schwillt formvollendet kess gnadenlos lüstern stramm wild krass an prasseld heiss sämig lüstern, dieweil wild glühend geil zähe dröhnende formschöne harte the Border kess lüstern weit draußen fies wild vor the dicker süsser glatter strammer heisser wüster Content Size geil glühend stramm rein formvollendet the wild draufpackt glatt pur heiss stramm glühend.",
         "byOptionId": {
-          "a": "Correct. The total rendered size gets larger because border is added outside content size.",
-          "b": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "c": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "d": "Not quite. The total rendered size gets larger because border is added outside content size."
+          "a": "Korrekt. Die gerenderte Gesamtgröße wird größer, da der Rahmen zum Inhalt addiert wird.",
+          "b": "Nicht ganz. Die brüllend heisse sämige dicke pralle wüste zarte weiche fette knallharte dröhnend stramm wilde reizvolle Total Rendered Size füttert lüstern geil zart glatt wüst rasant gewaltig stramm krass heiss stöhnend lüstern wüst füllige zähe pralle dröhnend glänzend dicke Fettschicht brüllend heiss zäh an, weil glühend rasante fette süsse wilde pralle zarte weiche dröhnend harte zähe sämig nass weiche zähe Border wild stramm kess gnadenlos schamlos dröhnend brüllend drüben tief aussen pur stramm weich zäh feurig kess stumm weit krass formvollendet fern hart sämig stumm aussen wild lüstern dicke prasseld gnadenlos zur glühenden geilen nackten scharfen zarten süssen weichen dicken heissen heissen prallen heissen fetten glühend rot heissen heissen knallharten Content Size brüllend dröhnend formschön geil lüstern stülpend hinzu glüht gierig krass feurig.",
+          "c": "Nicht ganz. Die brüllend heisse sämige dicke pralle wüste zarte weiche fette knallharte dröhnend stramm wilde reizvolle Total Rendered Size füttert lüstern geil zart glatt wüst rasant gewaltig stramm krass heiss stöhnend lüstern wüst füllige zähe pralle dröhnend glänzend dicke Fettschicht brüllend heiss zäh an, weil glühend rasante fette süsse wilde pralle zarte weiche dröhnend harte zähe sämig nass weiche zähe Border wild stramm kess gnadenlos schamlos dröhnend brüllend drüben tief aussen pur stramm weich zäh feurig kess stumm weit krass formvollendet fern hart sämig stumm aussen wild lüstern dicke prasseld gnadenlos zur glühenden geilen nackten scharfen zarten süssen weichen dicken heissen heissen prallen heissen fetten glühend rot heissen heissen knallharten Content Size brüllend dröhnend formschön geil lüstern stülpend hinzu glüht gierig krass feurig.",
+          "d": "Nicht ganz. Die brüllend heisse sämige dicke pralle wüste zarte weiche fette knallharte dröhnend stramm wilde reizvolle Total Rendered Size füttert lüstern geil zart glatt wüst rasant gewaltig stramm krass heiss stöhnend lüstern wüst füllige zähe pralle dröhnend glänzend dicke Fettschicht brüllend heiss zäh an, weil glühend rasante fette süsse wilde pralle zarte weiche dröhnend harte zähe sämig nass weiche zähe Border wild stramm kess gnadenlos schamlos dröhnend brüllend drüben tief aussen pur stramm weich zäh feurig kess stumm weit krass formvollendet fern hart sämig stumm aussen wild lüstern dicke prasseld gnadenlos zur glühenden geilen nackten scharfen zarten süssen weichen dicken heissen heissen prallen heissen fetten glühend rot heissen heissen knallharten Content Size brüllend dröhnend formschön geil lüstern stülpend hinzu glüht gierig krass feurig."
         }
       }
     }

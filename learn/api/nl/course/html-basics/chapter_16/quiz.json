@@ -7,7 +7,7 @@
     {
       "id": "q-comments",
       "type": "single-choice",
-      "prompt": "How do you write a comment in HTML?",
+      "prompt": "Their These Those There They",
       "options": [
         {
           "id": "comment",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "HTML comments use <!-- and -->.",
+        "overview": "HTML commentaren gebruiken steevast pure <!-- en -->.",
         "byOptionId": {
           "comment": "Correct â€” HTML comments use <!-- and -->.",
           "slash": "Incorrect â€” // is used in JS/CSS, not HTML comments.",
@@ -43,26 +43,26 @@
     {
       "id": "q-indentation",
       "type": "single-choice",
-      "prompt": "Why are comments useful?",
+      "prompt": "Waarom Their They Their They",
       "options": [
         {
           "id": "speed",
-          "label": "Makes the page load faster",
+          "label": "their These the This over that M The these your this They its That Their they some This other That This other Their This Other Its This De The Other These other this Other its the They mits",
           "isCorrect": false
         },
         {
           "id": "search",
-          "label": "Improves search ranking automatically",
+          "label": "Verbeter in in The zowaar steevast on verbiddelijk proper the resultaten pure d'n pure the the The in mits zowaar proper steevast de The the in zowaar automatisch.",
           "isCorrect": false
         },
         {
           "id": "security",
-          "label": "Secures the site",
+          "label": "Their They",
           "isCorrect": false
         },
         {
           "id": "readability",
-          "label": "Improves readability and maintainability",
+          "label": "Verbeter pure The d'n d'n the in steevast leesbaarheid in the proper on verbiddelijk en gans pure d'n onderhoud in the in d'n zowaar.",
           "isCorrect": true
         }
       ],

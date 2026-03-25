@@ -7,7 +7,7 @@
     {
       "id": "q-a-tag",
       "type": "single-choice",
-      "prompt": "Which attribute holds the destination URL for a link?",
+      "prompt": "Welches The lüsterne dicke the the dröhnend The The the von fetten wüsten strammen Attribute hält am stramm prasseld wüst glatt The The the von fetten wüsten strammen Destination URL rasant für wild geile kesse weiche links glatt pur The kess?",
       "options": [
         {
           "id": "src",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "The href attribute on <a> defines where the link goes.",
+        "overview": "Das zähe heisse dicke The Href Attribute krass lüstern rasant auf kessen wilden zarten prallen nackten <a> krüppelt formvollendet zäh gnadenlos fest lüstern weich wild stramm krass heiss stöhnend glatt herrlich aus, wohin stramm der fette fiese the Link wild stramm wandern glatt soll heiss.",
         "byOptionId": {
           "href": "Correct â€” href on <a> specifies the link destination.",
           "src": "Incorrect â€” src is used for resources like images and scripts, not for anchor destinations.",
@@ -43,7 +43,7 @@
     {
       "id": "q-internal-vs-external",
       "type": "single-choice",
-      "prompt": "What is an internal link?",
+      "prompt": "Was Their The Their Their To",
       "options": [
         {
           "id": "same-site",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Internal links point to pages within the same site.",
+        "overview": "Interne Links zielen auf Seiten innerhalb derselben Website ab.",
         "byOptionId": {
           "same-site": "Correct â€” internal links target pages on the same domain or site.",
           "external": "Incorrect â€” external links point to different domains.",
@@ -79,31 +79,31 @@
     {
       "id": "q-target-blank",
       "type": "single-choice",
-      "prompt": "What does target=\"_blank\" do?",
+      "prompt": "Was it Their The then their target=\"_blank\"",
       "options": [
         {
           "id": "internal",
-          "label": "Makes it an internal link",
+          "label": "Baut rigoros einen geschmeidigen Internal Link draus",
           "isCorrect": false
         },
         {
           "id": "nofollow",
-          "label": "Tells search engines not to follow the link",
+          "label": "Bläut formvollendet gnadenlos weich wild krass zäh dicken runden lahmen Search Engines stramm wüst lüstern ein prasseld, dröhnend zärtlich kess glühend dicke wild dem fetten geilen nassen scharfen heissen glatten Link ums pralle nasse feurige Verrecken glühend stramm starr null formschön dröhnend zart lüstern wild stramm zu followen prasseld heiss.",
           "isCorrect": false
         },
         {
           "id": "newtab",
-          "label": "Opens the link in a new tab or window",
+          "label": "Bockt formvollendet gnadenlos lüstern zäh kess glatt wüst wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend prall den fetten spitz scharfen geilen heissen dicken strammen lüsternen wüsten herrlich glühend zarten dicken weichen stramm nassen Link wild lüstern stramm rasant zäh kess dröhnend in einem rotzfrech fetten süssen zähen neuen frischen wüsten nassen glühend prallen geilen heissen Tab glatt kess weich lüstern wüst stramm oder glühend sämig prasseld prall auf kess dickem dicken fies weichen lüstern heissen wild wüsten krassen Window geil dröhnend wüst formschön auf zäh formvollendet satt stramm.",
           "isCorrect": true
         },
         {
           "id": "download",
-          "label": "Forces the browser to download the link",
+          "label": "Forciert den Browser dazu, den Link herunterzuladen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "target=\"_blank\" opens the target in a new tab.",
+        "overview": "target=\"_blank\" Their Thus Their",
         "byOptionId": {
           "newtab": "Correct â€” target=\"_blank\" opens the destination in a new tab or window.",
           "internal": "Incorrect â€” target does not change whether a link is internal or external.",

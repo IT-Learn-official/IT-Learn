@@ -7,7 +7,7 @@
     {
       "id": "q-list-create",
       "type": "single-choice",
-      "prompt": "Which line correctly creates a list of hacker names?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -31,28 +31,28 @@
         }
       ],
       "explanations": {
-        "overview": "Lists use square brackets [].",
+        "overview": "Their They Their They Their",
         "byOptionId": {
-          "a": "This creates a tuple without brackets in some contexts, but it's not a list.",
-          "b": "Correct, this is a list of three strings.",
-          "c": "Curly braces without key:value pairs create a set, not a list.",
-          "d": "Parentheses create a tuple, not a list."
+          "a": "Dit Their They Their They Their They",
+          "b": "Correct, the the d'n steevast zowaar in proper weergaves mits d'n the The in The weergaves steevast uiterst the The dit ontegensprekelijk the the betreft the steevast zowaar proper steevast zuiver The respectievelijk mits the the d'n d'n the en een pure trefzekere pure weergaves list d'n The the of pure steevast lijst pure zowaar steevast ongetwijfeld mits and in zowaar and mits in pure weergaves The d'n van The in zowaar The de exact pure the steevast d'n in d'n the The the zuivere in pure drie respectievelijk strings the The pure weergaves.",
+          "c": "They They Their They Their They Their They Their They They",
+          "d": "Their They Their They Their They"
         }
       }
     },
     {
       "id": "q-list-append",
       "type": "single-choice",
-      "prompt": "You have `tools = [\"laptop\", \"phone\"]`. What does `tools.append(\"usb\")` do?",
+      "prompt": "Je Their They Their They Their Their have Their They Their They Their Their `tools Ihr Their = Their They Their [ Their They \" Their They laptop Их \" Their Their, Their They Their They \" Their They phone Their \" Their Their ] Их Their` Their They Their They. Their They Their They What Their They Their They Their Their does Their They Their They Their Their `tools.append(\"usb\")` Their They Their They Their Their do Их Their?",
       "options": [
         {
           "id": "a",
-          "label": "Replaces 'phone' with 'usb'.",
+          "label": "Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Deletes 'laptop'.",
+          "label": "verwijder",
           "isCorrect": false
         },
         {
@@ -62,24 +62,24 @@
         },
         {
           "id": "d",
-          "label": "Does nothing.",
+          "label": "The there their your.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "append adds a new item to the end of the list.",
+        "overview": "append Leur Their Their",
         "byOptionId": {
-          "a": "append does not replace items; it adds a new one.",
-          "b": "append never deletes items.",
-          "c": "Correct, tools becomes ['laptop', 'phone', 'usb'].",
-          "d": "append always changes the list by adding something."
+          "a": "append Leur Leur Their Leur",
+          "b": "append Leur Leur Leur Leur Their",
+          "c": "Correct, the in then mits tools The The the steevast pure de weergave wordt louter The The ['laptop', 'phone', 'usb'] the mits d'n.",
+          "d": "append Their Their Their"
         }
       }
     },
     {
       "id": "q-dict-access",
       "type": "single-choice",
-      "prompt": "You have `player = {\"name\": \"Leo\", \"score\": 50}`. How do you get the score?",
+      "prompt": "Je Their They Their They Their Their have Their They Their They Their Their `player Их Their = Their They Their { Their They \" Their They name Their \" Their Their: Their They Their They Their Their \" Their They Leo Their \" Their Their, Their They Their They \" Their They score Their \" Their Their: Their They Their They Their Their 50 Their They Their } Their Their` Their They Their They. Their They Their They How Their They Their They Their Their do Their They Their They Their Their you Their They Their They Their Their Their get Их Their Their the Their They Their They Their Their Their score Their They Their They Их?",
       "options": [
         {
           "id": "a",
@@ -103,55 +103,55 @@
         }
       ],
       "explanations": {
-        "overview": "Dictionary values are accessed by key using square brackets and the key string.",
+        "overview": "Your on their your the your op the their its the others that de its their their your those.",
         "byOptionId": {
-          "a": "Dictionaries are not indexed by number by default.",
-          "b": "This tries to call player like a function.",
-          "c": "Correct, this looks up the value stored under the key 'score'.",
-          "d": "Dot-notation like this is not how dicts work in plain Python."
+          "a": "Dictionaries d'n The The over their an your its.",
+          "b": "Dit Their They Their They Their",
+          "c": "Correct, d'n in steevast weergaves and pure dit in weergaves the zoekt then on verbiddelijk and steevast in weergaves in in the in weergaves pure in de respectievelijke zowaar the and weergaves d'n the The The mits on getwijfeld in the the onverbiddelijk proper d'n waarde and in the op in steevast pure The weergaves pure in en d'n in the steevast in die M the The The The proper is zowaar mits weergave The pure in op geslagen under d'n steevast pure The The in the het d'n de en then The The in The The louter The and then then then M mits under respectievelijke in the weergave pure term and the steevast under mits d'n The sleutel in ontegensprekelijk The The 'score' zowaar M then steevast weergaves the proper the the in d'n The the and the trefzeker pure The The in The in en.",
+          "d": "your Their This Their"
         }
       }
     },
     {
       "id": "q-tuple-immutable",
       "type": "single-choice",
-      "prompt": "What is special about tuples compared to lists?",
+      "prompt": "Wat Their They Their They",
       "options": [
         {
           "id": "a",
-          "label": "Tuples can only store numbers.",
+          "label": "Hun Their They",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Tuples are always longer than lists.",
+          "label": "Hun Their They Their",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Tuples cannot be changed after creation.",
+          "label": "Hun Their They Their",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Tuples are always empty.",
+          "label": "Hun Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Tuples are immutable; lists are mutable.",
+        "overview": "Hun Their They Their",
         "byOptionId": {
-          "a": "Tuples can store any types, not just numbers.",
-          "b": "Length has nothing to do with the type.",
-          "c": "Correct, once you create a tuple, its elements cannot be changed.",
-          "d": "Tuples can have many elements."
+          "a": "Hun Their They Their",
+          "b": "Their They Their They Their They Their They Their They",
+          "c": "Correct, mits men The pure pure The een absolute in pure the uiterst in the steevast d'n the the the tupple in proper louter pure creëert eenmaal weergaves the The the The steevast d'n en zowaar the the the, uitsluitend the pure the steevast The en d'n The the kunnen pure in d'n zowaar zijnde and en the the d'n pure zowaar specificaties the elementen in ontegensprekelijk The nimmer The the d'n steevast niet meer. the ongetwijfeld the een onverbiddelijke the The wijziging the en in the in ondergaan pure The zowaar.",
+          "d": "Hun Their They"
         }
       }
     },
     {
       "id": "q-choose-type",
       "type": "single-choice",
-      "prompt": "You want to store a player's name and score together and look them up by name. Which structure is best?",
+      "prompt": "Je Leur Leur Их Leur Their Their Their Leur Leur Their Their Their Their Leur",
       "options": [
         {
           "id": "a",
@@ -175,11 +175,11 @@
         }
       ],
       "explanations": {
-        "overview": "Dictionaries connect named keys to values, which is perfect for labeled data.",
+        "overview": "Dictionaries the steevast other this their that over de Other there other your.",
         "byOptionId": {
-          "a": "You would lose the scores if you only store names.",
+          "a": "Je would Leur Их Leur Leur Leur Leur Leur Their Их Leur Leur Их Their Leur Leur Их Leur",
           "b": "A tuple stores the pair but does not label the parts.",
-          "c": "Correct, key 'name' and 'score' clearly label the values.",
+          "c": "Correct, The The de de in respectievelijke in the d'n pure absolute in sleutelthe en The 'name' d'n in plus the d'n The the onverbiddelijk steevast The en zowaar trefzeker 'score' specificeren klaarblijkelijk de labels the t.o.v. de steevast de waardes.",
           "d": "A single string is hard to work with in code."
         }
       }

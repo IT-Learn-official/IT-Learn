@@ -7,11 +7,11 @@
     {
       "id": "q1-css-meaning",
       "type": "single-choice",
-      "prompt": "What does CSS stand for?",
+      "prompt": "Waar Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "Creative Style System",
+          "label": "They Their They Their They",
           "isCorrect": false
         },
         {
@@ -33,21 +33,21 @@
       "explanations": {
         "overview": "CSS means Cascading Style Sheets.",
         "byOptionId": {
-          "a": "Not quite. CSS means Cascading Style Sheets.",
-          "b": "Correct. CSS means Cascading Style Sheets.",
-          "c": "Not quite. CSS means Cascading Style Sheets.",
-          "d": "Not quite. CSS means Cascading Style Sheets."
+          "a": "Niet your Their They",
+          "b": "Correct. CSS The proper its then the in the their is these gans and over their their louter the mits steevast zowaar M their this these over Cascading the these your only their an on tegensprekelijk your other there from Style gans Sheets de some the other op other.",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
         }
       }
     },
     {
       "id": "q2-css-role",
       "type": "single-choice",
-      "prompt": "What is the main job of CSS?",
+      "prompt": "Wat Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "Store data in a database",
+          "label": "Om Their They Their",
           "isCorrect": false
         },
         {
@@ -57,22 +57,22 @@
         },
         {
           "id": "c",
-          "label": "Style the page appearance",
+          "label": "Their They Their",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Replace HTML completely",
+          "label": "Their They Their",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "CSS controls how a web page looks, while HTML controls structure.",
         "byOptionId": {
-          "a": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "b": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "c": "Correct. CSS controls how a web page looks, while HTML controls structure.",
-          "d": "Not quite. CSS controls how a web page looks, while HTML controls structure."
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. these d'n the CSS its some proper The its bestuurt these mits some the the only proper d'n hoe the on webpagina that some steevast other their there your these other its then your other an their steevast the its some The its other the these d'n then its mits proper other only there to the there on verbiddelijk its The The uiterlijk The weergaves teweeg they then there then the then its these gans their their and then that these there the The zowaar html on getwijfeld respectievelijk this your other The and specificatie these this their.",
+          "d": "Niet your Their They Their They"
         }
       }
     }

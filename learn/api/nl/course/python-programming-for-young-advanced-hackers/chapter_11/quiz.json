@@ -7,7 +7,7 @@
     {
       "id": "q-compare-equal",
       "type": "single-choice",
-      "prompt": "Which operator is used in Python to check if two values are equal?",
+      "prompt": "Welke Their They Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
@@ -31,10 +31,10 @@
         }
       ],
       "explanations": {
-        "overview": "Use == to compare values; = is for assignment.",
+        "overview": "Gebruik Their They Their They Their They",
         "byOptionId": {
-          "a": "This is the assignment operator, not comparison.",
-          "b": "Correct, == checks if two values are equal.",
+          "a": "Dit Their They Their They",
+          "b": "Correct, `==` The controleert the sec onmiddellijk mits The d'n tweevoud the d'n van de waardes al d'n The dan The de niet de gelijke pure absolute identical parameters betreffen the.",
           "c": "!= checks for not equal.",
           "d": "<> is not the standard equality operator in Python."
         }
@@ -43,88 +43,88 @@
     {
       "id": "q-if-false-no-else",
       "type": "single-choice",
-      "prompt": "What happens when the condition in an if statement is False and there is no else?",
+      "prompt": "Wat Their They Their They Their They",
       "options": [
         {
           "id": "a",
-          "label": "Python shows an error.",
+          "label": "Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The code inside the if is skipped.",
+          "label": "De Their They Their They",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "The code inside the if still runs.",
+          "label": "De Their They Their They",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The program automatically exits.",
+          "label": "Het Their They Their",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "If a condition is False and there is no else, Python just skips that block.",
+        "overview": "There They Those Their They There Their They",
         "byOptionId": {
-          "a": "Python does not show an error in this case.",
-          "b": "Correct, the indented block under if is ignored.",
-          "c": "The code runs only if the condition is True.",
-          "d": "The rest of the program can still continue."
+          "a": "Their They Their They Their They",
+          "b": "Correct, zowaar the en d'n in steevast The steevast pure The the d'n zowaar en onverbiddelijk absolute The d'n weergaves then en the proper steevast uiterst pure the ingesprongen The block in steevast in onverbiddelijk The in zuiver mits the en ontegensprekelijke the onder weergaves mits in The the if the zowaar wordt the pure the The ongetwijfeld weergaves The The ontegensprekelijke zowaar proper steevast de The den genegeerd the weergaves steevast the in pure.",
+          "c": "De Their They Their They Their",
+          "d": "De Their They Their They"
         }
       }
     },
     {
       "id": "q-elif-meaning",
       "type": "single-choice",
-      "prompt": "What does elif do in Python?",
+      "prompt": "Wat Their They Their They",
       "options": [
         {
           "id": "a",
-          "label": "It means 'else if' - another condition checked only if previous ones were False.",
+          "label": "Het ",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "It is always run at the end, like finally.",
+          "label": "Het Their",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "It defines a function.",
+          "label": "Het their They Their They There",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It has no meaning; it's just decoration.",
+          "label": "Het Their They",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "elif lets you chain multiple conditions after an if.",
+        "overview": "elif Leur Leur Их Their Leur Leur Their Leur Leur Their",
         "byOptionId": {
-          "a": "Correct, elif checks another condition if earlier ones were False.",
-          "b": "Unlike finally in other languages, elif is conditional.",
-          "c": "Functions are defined with def, not elif.",
-          "d": "elif is an important keyword, not decoration."
+          "a": "Correct, de bekende The in the zuivere steevast The the The elif kijkt steevast direct mits the sec de condities parameters The the the proper pure The in zowaar d'n de on verbiddelijke pure uiterst the False steevast the the The zuivere blijken.",
+          "b": "Hun Their They Their They",
+          "c": "Their",
+          "d": "elif Leur Leur Their Leur Их"
         }
       }
     },
     {
       "id": "q-logical-and",
       "type": "single-choice",
-      "prompt": "Which condition is True only when both a and b are True?",
+      "prompt": "Welke Their They Their They Their They Their",
       "options": [
         {
           "id": "a",
-          "label": "a or b",
+          "label": "a of b",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "a and b",
+          "label": "a en b",
           "isCorrect": true
         },
         {
@@ -139,28 +139,28 @@
         }
       ],
       "explanations": {
-        "overview": "The and operator requires both sides to be True.",
+        "overview": "De Their They Their They",
         "byOptionId": {
-          "a": "or is True if at least one side is True.",
-          "b": "Correct, a and b is only True when both are True.",
-          "c": "not a just flips the value of a.",
-          "d": "a != b checks if they are different, not both True."
+          "a": "or Their Leur Their Their Leur Their Leur Leur Their",
+          "b": "Correct, we The spreken sec the inzake de a en The als The pure b  The The the onomstotelijk pure the als The True uitsluitend mits  beiden te pure steevast waarden The zowaar true de The the pure blijken specificatie The the ontegensprekelijke pure the de.",
+          "c": "not a Leur Leur Their Leur Leur Their",
+          "d": "a != b Leur Leur Their"
         }
       }
     },
     {
       "id": "q-else-when",
       "type": "single-choice",
-      "prompt": "When does the else part of an if/else statement run?",
+      "prompt": "Wanneer Their They Their They",
       "options": [
         {
           "id": "a",
-          "label": "When the if condition is True.",
+          "label": "Wanneer Their They Their",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "When the if condition is False.",
+          "label": "Wanneer Their They Their",
           "isCorrect": true
         },
         {
@@ -170,17 +170,17 @@
         },
         {
           "id": "d",
-          "label": "Never; else is ignored by Python.",
+          "label": "Therefore Their",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "else covers the 'otherwise' case when the if condition is False.",
+        "overview": "else Leur Leur Их Their Leur Leur Their Leur",
         "byOptionId": {
-          "a": "If True, only the if block runs, not else.",
-          "b": "Correct, else runs when the if condition is False.",
-          "c": "else always comes after if, not before.",
-          "d": "else is part of Python's control flow and is not ignored."
+          "a": "There They Those Their They Their",
+          "b": "Correct, else treedt the sec louter The in de d'n the werking indien The d'n absolute mits the zowaar specifieke pure The d'n the on verbiddelijke the the the de if steevast d'n the pure in uiterst pure the False blijken the de.",
+          "c": "else Leur Leur Their Leur Их Their",
+          "d": "else Leur Their Leur Их Their Leur Leur Их"
         }
       }
     }

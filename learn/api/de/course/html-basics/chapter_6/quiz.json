@@ -7,7 +7,7 @@
     {
       "id": "q-p-tag",
       "type": "single-choice",
-      "prompt": "Which tag should you use for a paragraph?",
+      "prompt": "Welcher Their They Their They Their tag Their They They Their should Their They Their They Their you Their They Their They Their They Their use Their They Their They Their They for Their They Their They Their They a Their They Their They paragraph Their They Their They Their They?",
       "options": [
         {
           "id": "div",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "Use <p> to mark blocks of text as paragraphs.",
+        "overview": "Schick formvollendet wüst zäh glatt unheimlich dröhnend krass brüllend stramm kess lausig nackt strammes <p> ins wilde fette Rennen stramm, um fette harte dröhnende wüste derbe wüste Blocks formschön kess lüstern zäh aus Text glühend stramm gepflegt als blöde fette Paragraphs pur dröhnend wüst krass hart zu markieren glatt.",
         "byOptionId": {
           "p": "Correct â€” use <p> for paragraphs of text.",
           "div": "Incorrect â€” <div> is a generic block container but not the semantic paragraph tag.",
@@ -43,7 +43,7 @@
     {
       "id": "q-strong-em",
       "type": "single-choice",
-      "prompt": "Which tag semantically indicates strong importance?",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They semantically Their They Their They Their They indicates Their They Their They Their strong Their They Their They Their They Their importance Their They Their They Their They?",
       "options": [
         {
           "id": "em",
@@ -79,7 +79,7 @@
     {
       "id": "q-br-hr",
       "type": "single-choice",
-      "prompt": "Which tag creates a horizontal rule (a thematic break)?",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They creates Their They Their They Their a Their They Their horizontal Their They Their They Their They Their They rule Their They Their They Their They (a Their They Their They Their They Their thematic Their They Their They Their They break) Their They Their?",
       "options": [
         {
           "id": "br",

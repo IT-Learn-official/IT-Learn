@@ -7,26 +7,26 @@
     {
       "id": "q-title",
       "type": "single-choice",
-      "prompt": "Where does the <title> tag belong?",
+      "prompt": "Waar Their They Their They Their They",
       "options": [
         {
           "id": "head",
-          "label": "Inside <head>",
+          "label": "Binnen in <head> the proper",
           "isCorrect": true
         },
         {
           "id": "body",
-          "label": "Inside <body>",
+          "label": "Your their There steevast",
           "isCorrect": false
         },
         {
           "id": "html",
-          "label": "Outside <html>",
+          "label": "Buiten The the proper in d'n steevast these its other de",
           "isCorrect": false
         },
         {
           "id": "meta",
-          "label": "Inside <meta>",
+          "label": "Binnen in <meta> pure d'n",
           "isCorrect": false
         }
       ],
@@ -43,11 +43,11 @@
     {
       "id": "q-charset",
       "type": "single-choice",
-      "prompt": "What does <meta charset=\"utf-8\"> do?",
+      "prompt": "Wat Their They Their They",
       "options": [
         {
           "id": "language",
-          "label": "Sets the page language",
+          "label": "Their They Their",
           "isCorrect": false
         },
         {
@@ -57,17 +57,17 @@
         },
         {
           "id": "linkcss",
-          "label": "Links a CSS file",
+          "label": "Their They Their They Their They Their They",
           "isCorrect": false
         },
         {
           "id": "encoding",
-          "label": "Sets character encoding so text displays correctly",
+          "label": "Their They Their",
           "isCorrect": true
         },
         {
           "id": "runjs",
-          "label": "Runs JavaScript",
+          "label": "Their They",
           "isCorrect": false
         }
       ],
@@ -85,31 +85,31 @@
     {
       "id": "q-viewport",
       "type": "single-choice",
-      "prompt": "Why add the viewport meta tag on mobile pages?",
+      "prompt": "Waarom Their They Their They Their They Their They",
       "options": [
         {
           "id": "speed",
-          "label": "To make the page load faster",
+          "label": "Om Their They Their They",
           "isCorrect": false
         },
         {
           "id": "security",
-          "label": "To secure the page",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "title",
-          "label": "To set the page title",
+          "label": "Om Their They",
           "isCorrect": false
         },
         {
           "id": "responsive",
-          "label": "To make the page scale correctly on small screens",
+          "label": "Om Their They Their They Their",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Viewport controls layout on mobile devices so designs are responsive.",
+        "overview": "Viewport Their They Their They Their",
         "byOptionId": {
           "responsive": "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
           "speed": "Incorrect â€” viewport affects layout, not network speed.",
