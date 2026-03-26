@@ -1,6 +1,6 @@
 //author: https://github.com/nhermab
 //licence: MIT
-//edited by: https://github.com/broodje565
+//edited by: https://github.com/broodje565 and https://github.com/superman2775
 import { navigateTo } from '../state/router.js';
 import { getState, getCourseLanguage, setCourseLanguage } from '../state/appState.js';
 import { isChapterRead } from '../state/courseProgress.js';
@@ -123,10 +123,10 @@ function buildActiveUnitCard(course, courses, trialMode) {
 
   function languageEmoji(code) {
     const cleaned = String(code || '').trim().toLowerCase();
-    if (cleaned === 'en') return '🇬🇧';
-    if (cleaned === 'nl') return '🇳🇱';
-    if (cleaned === 'fr') return '🇫🇷';
-    if (cleaned === 'de') return '🇩🇪';
+    if (cleaned === 'en') return '☕';
+    if (cleaned === 'nl') return '🌷';
+    if (cleaned === 'de') return '🥨';
+    if (cleaned === 'fr') return '🥐';
     return '🌐';
   }
 

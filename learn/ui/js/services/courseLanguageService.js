@@ -3,8 +3,8 @@ export const COURSE_LANGUAGE_STORAGE_KEY = 'it-learn:course-language';
 const COURSE_LANGUAGES = [
   { code: 'en', label: 'English', available: true },
   { code: 'nl', label: 'Dutch', available: true },
-  { code: 'fr', label: 'French', available: false },
   { code: 'de', label: 'German', available: true },
+  { code: 'fr', label: 'French', available: false },
 ];
 
 export function getCourseLanguageOptions() {
