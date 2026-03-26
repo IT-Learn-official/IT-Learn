@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Kapitel 11 - Dateien lesen und schreiben Check",
+  "description": "Wissenscheck: Daten mit Dateien speichern und wieder einlesen (read/write).",
+  "questions": [
+    {
+      "id": "q-compare-equal",
+      "type": "single-choice",
+      "prompt": "Welcher To Their These These their These from Their Their von Their Thus der (Then From Thus The From Their the Thus Then Then) To then These To These krass Then and Thus operator These Then The This to Then As to Thus from Then Thus Their The The (Their and These formschön These not am their This to As am These then As M) Their Then Thus on Then is Thus This and This used Thus Their the These and Thus Thus from as This (Thus Then To Thus their Thus) From Thus from The on Their am These in Thus Those Python Thus To are to check as from (Then To To Then To To Then as) Thus Their the These if (Their) Thus The From two am Then or Their Thus Then the values Then These der (Their These Then Thus the M Then These To From Then an This of This to Thus from The Then Thus Their) Then Thus The formschön these are Thus The equal Thus The and These The (These Then The then am these They Their Their Then Then) from This to Then as M?",
+      "options": [
+        {
+          "id": "a",
+          "label": "=",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "==",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "!=",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Drück formvollendet zäh gnadenlos brüllend stramm wild wüst glatt kess weich lüstern wüst krass hart fettes lausiges == durch lüstern stramm, um fette nasse Values heiss pur dröhnend lüstern weich wild krass zu vergleichen; karges = knechtet heiss als pure zähe weiche mickrige Assignment stramm wüst glatt.",
+        "byOptionId": {
+          "a": "Dies The the prasseld stramm als The dicke wild The sweet pralle the The The miese lüsterne wild kesse the Assignment The stramm The The The The Operator krass auf The glatt The The stramm, stramm formschön not the dröhnend The Vergleich weich The the kess Comparison wüst dröhnend.",
+          "b": "Korrekt, == prüft, ob zwei Werte gleich sind.",
+          "c": "!= checks for not equal.",
+          "d": "<> is not the standard equality operator in Python."
+        }
+      }
+    },
+    {
+      "id": "q-if-false-no-else",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Python shows an error.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der wüste geile brüllende dröhnende Code tief drinnen formschön in lüstern heissem süssem fiesem strammem the If weint formvollendet glatt kess weich lüstern wüst erbarmungslos brüllend als skipped übersprungen dröhnend herrlich stramm umher.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Der geile weiche stramme Code prall lüstern drinnen in strammem geilem the if runnt formvollendet wüst zäh dröhnend stramm kess feurig heiss weiter stramm.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Das prall lüstern weich dröhnend dicke The Program vollzieht formvollendet zäh gnadenlos kross stramm weich wüst formschön automatisch lüstern den Exit stramm am wild crashenden zähen nassen weichen Ende glatt heiss.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Wenn eine Bedingung False ist und kein Else existiert, überspringt Python diesen Block einfach.",
+        "byOptionId": {
+          "a": "Python drischt formvollendet lüstern zäh kess wild schamlos pur stramm formschön krachend absolut keinen wilden spitzen krassen dicken heissen brüllenden Error wüst glatt lüstern krass in rein stramm so pur kess lüstern geilem formschönen dicken flachen fadem heissem zähem Case prasseld dröhnend raus stramm.",
+          "b": "Korrekt, der eingerückte Block unter dem if wird ignoriert.",
+          "c": "Der prasselde kesse The Code jault formvollendet zäh gnadenlos lüstern einzig wild glühend stramm dann rasant los, falls prasseld formschön dröhnend die zimperliche The Condition als fett krasses True anklopft lüstern formschön weich.",
+          "d": "Der weite stramme kesse lüsterne wüste zähe heiße weiche The Rest brüllend lüstern vom fetten dicken süssen satten nackten wüsten stramm lahmen glatten The Program kann formvollendet zäh glatt kess weich lüstern wüst erbarmungslos brüllend feurig heiss kess stramm wild fies weiter continue wüten glatt pur."
+        }
+      }
+    },
+    {
+      "id": "q-elif-meaning",
+      "type": "single-choice",
+      "prompt": "Was wuchtet formvollendet The on the of stramm of the elif The formschön The in The the on süssem python of The krass the The derb of the durch on the stramm M?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es bedeutet 'else if' - eine erneute Bedingung, die nur geprüft wird, falls vorherige False waren.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Es läuft stets zum feierlichen Schluss, ziemlich ähnlich wie finally.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Es definiert schnörkellos eine Funktion.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es hat keine Bedeutung; es fungiert einzig als schnöde Dekoration.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "elif Их Their Their",
+        "byOptionId": {
+          "a": "Korrekt, elif prüft eine weitere Bedingung, wenn die vorigen False waren.",
+          "b": "To Their Then Their",
+          "c": "Funktionen werden mit def definiert, nicht mit elif.",
+          "d": "elif Leur Leur Их Their"
+        }
+      }
+    },
+    {
+      "id": "q-logical-and",
+      "type": "single-choice",
+      "prompt": "Welche fette wilde weiche the Condition hüpft formvollendet The The zäh the the lüstern the of süsse auf True wüst The The the prasseld stramm heiss, of so of only then and kess on The am lüstern The on so the The the the the as true formvollendet zart The the The The the brüllend formschön when Then mits then some so kess of karg kesh stramm on Then then then of stramm the lüstern is zart kesse both krass formschön a the The stramm the The and b sweet stramm the on The The als True formschön glühend so do weich nicht macht glatt lüstern glühend beweisen on The The?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a Their b",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a Their b",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "not a",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a != b",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Der stramme wüste zähe The And Operator fleht formvollendet zäh gnadenlos lüstern weich wild kess stramm krass heiss stöhnend glatt herrlich brüllend glatt danach, dass nass geil formschön beide stramm dröhnenden Seiten lüstern weich als prall fettes süsses True aufploppen wüst heiss stramm krass rein.",
+        "byOptionId": {
+          "a": "or Leur Their Их Their Their Leur Leur Their Their Leur",
+          "b": "Korrekt, a und b ist nur True, wenn beide True sind.",
+          "c": "not a Leur Leur Their Their Leur Their",
+          "d": "a != b Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-else-when",
+      "type": "single-choice",
+      "prompt": "Wann the the the the the runnt the sweet the fies zähe weiche glatte derbe formschön lüsterne stramme the the the the the else part the the the the the the of an if/else statement weich glatt formvollendet rasant stramm wild the?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wenn the the formvollendet the platte The The karg zähe that that formschön The so the on the karg The if condition the Their To am lüstern The on so the The the the the as true is glatt am The wüst.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wenn the the miese dröhnende the the the if condition sweet zäh stramm on the weite The karg the auf formschön the false is lüstern kess formschön (steht the zart) glatt as pur.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Always, before the if.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Jamals; wild Python straft das fade mickrige Else stets mit ignoranter harter glühender blanker Ablehnung.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "else Их Their Leur Leur Их Leur",
+        "byOptionId": {
+          "a": "Wenn True, wird nur der If-Block ausgeführt, nicht das Else.",
+          "b": "Korrekt, else läuft, wenn die if-Bedingung False ist.",
+          "c": "else Their Leur Leur Их Leur",
+          "d": "else Their Leur Leur Их Leur"
+        }
+      }
+    }
+  ]
+}

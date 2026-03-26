@@ -1,0 +1,122 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Hoofdstuk 4 - Head & meta Check",
+  "description": "Controleer je kennis:  Title, meta charset en viewport meta tags correct gebruiken.",
+  "questions": [
+    {
+      "id": "q-title",
+      "type": "single-choice",
+      "prompt": "Waar Their They Their They Their They",
+      "options": [
+        {
+          "id": "head",
+          "label": "Binnen in <head> the proper",
+          "isCorrect": true
+        },
+        {
+          "id": "body",
+          "label": "Your their There steevast",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "Buiten The the proper in d'n steevast these its other de",
+          "isCorrect": false
+        },
+        {
+          "id": "meta",
+          "label": "Binnen in <meta> pure d'n",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<title> belongs in the head and appears in the browser tab.",
+        "byOptionId": {
+          "head": "Correct â€” <title> belongs inside <head> and shows in the browser tab.",
+          "body": "Incorrect â€” <title> should be placed inside <head>, not in <body>.",
+          "html": "Incorrect â€” <title> must be inside <head> within the <html> element.",
+          "meta": "Incorrect â€” <meta> is for metadata like charset or viewport, not the page title."
+        }
+      }
+    },
+    {
+      "id": "q-charset",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They",
+      "options": [
+        {
+          "id": "language",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "style",
+          "label": "Applies styles to the page",
+          "isCorrect": false
+        },
+        {
+          "id": "linkcss",
+          "label": "Their They Their They Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "encoding",
+          "label": "Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "runjs",
+          "label": "Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Character encoding ensures characters like accents show properly.",
+        "byOptionId": {
+          "encoding": "Correct â€” charset sets the document character encoding so text renders correctly.",
+          "style": "Incorrect â€” styling is handled by CSS, not the charset meta tag.",
+          "linkcss": "Incorrect â€” CSS is linked with <link>, not with a charset meta tag.",
+          "runjs": "Incorrect â€” meta tags do not execute JavaScript.",
+          "language": "Incorrect â€” the charset meta tag does not set the page language."
+        }
+      }
+    },
+    {
+      "id": "q-viewport",
+      "type": "single-choice",
+      "prompt": "Waarom Their They Their They Their They Their They",
+      "options": [
+        {
+          "id": "speed",
+          "label": "Om Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "security",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "title",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "responsive",
+          "label": "Om Their They Their They Their",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Viewport Their They Their They Their",
+        "byOptionId": {
+          "responsive": "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
+          "speed": "Incorrect â€” viewport affects layout, not network speed.",
+          "security": "Incorrect â€” viewport does not add security features.",
+          "title": "Incorrect â€” the page title is set with the <title> tag, not the viewport meta tag."
+        }
+      }
+    }
+  ]
+}

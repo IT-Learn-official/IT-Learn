@@ -1,0 +1,116 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Hoofdstuk 7 - Links Check",
+  "description": "Controleer je kennis:  Anchor tags, interne vs externe links en het gebruik van target-attributen.",
+  "questions": [
+    {
+      "id": "q-a-tag",
+      "type": "single-choice",
+      "prompt": "Welk Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "src",
+          "label": "src",
+          "isCorrect": false
+        },
+        {
+          "id": "href",
+          "label": "href",
+          "isCorrect": true
+        },
+        {
+          "id": "link",
+          "label": "link",
+          "isCorrect": false
+        },
+        {
+          "id": "url",
+          "label": "url",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De Their They Their They Their",
+        "byOptionId": {
+          "href": "Correct â€” href on <a> specifies the link destination.",
+          "src": "Incorrect â€” src is used for resources like images and scripts, not for anchor destinations.",
+          "link": "Incorrect â€” 'link' is not an attribute for anchors.",
+          "url": "Incorrect â€” 'url' is a generic term but not the anchor attribute name."
+        }
+      }
+    },
+    {
+      "id": "q-internal-vs-external",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "same-site",
+          "label": "A link to another page on the same website",
+          "isCorrect": true
+        },
+        {
+          "id": "external",
+          "label": "A link to a different domain",
+          "isCorrect": false
+        },
+        {
+          "id": "file",
+          "label": "A link to a local file only",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "A link that only points to images",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Interne 1 in other these from the This and d'n only they The the links This with the To other your Your Their over the on in They This your wijzen steevast an your from their in your Your its The the your Their their and some Your your These To your its mits The the their the There they other these these some These other their the your",
+        "byOptionId": {
+          "same-site": "Correct â€” internal links target pages on the same domain or site.",
+          "external": "Incorrect â€” external links point to different domains.",
+          "file": "Incorrect â€” linking to local files is possible but not the typical definition of internal links.",
+          "image": "Incorrect â€” the target can be any resource, not specifically images."
+        }
+      }
+    },
+    {
+      "id": "q-target-blank",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "internal",
+          "label": "Your these M This d'n on These the their To there their these The",
+          "isCorrect": false
+        },
+        {
+          "id": "nofollow",
+          "label": "Their They Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "newtab",
+          "label": "Open Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "download",
+          "label": "They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "target=\"_blank\" Leur Их Their Их Leur",
+        "byOptionId": {
+          "newtab": "Correct â€” target=\"_blank\" opens the destination in a new tab or window.",
+          "internal": "Incorrect â€” target does not change whether a link is internal or external.",
+          "nofollow": "Incorrect â€” rel=\"nofollow\" is used for search engine hints, not target behavior.",
+          "download": "Incorrect â€” the download attribute suggests downloading; target=_blank opens in a new tab."
+        }
+      }
+    }
+  ]
+}

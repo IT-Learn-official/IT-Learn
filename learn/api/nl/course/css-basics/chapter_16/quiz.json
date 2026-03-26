@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_16",
+  "kind": "assessment",
+  "title": "Hoofdstuk 16 - Wat is responsive design? Check",
+  "description": "Controleer je kennis:  Je pagina er goed laten uitzien op gsm, tablet en desktop.",
+  "questions": [
+    {
+      "id": "q1-responsive-goal",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Gebruik Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Maak others some that This an on that its steevast these other these Those The",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Louter their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their",
+        "byOptionId": {
+          "a": "Niet your Their They",
+          "b": "Correct. Those These This The The some those This They your Those Your These They Your Those There Those Your There Your There Their Those There Those.",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-fluid-image",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "min-width: 2000px;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "max-width: 100%;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "width: 9999px;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "image-fit: screen;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "max-width: 100% Leur Leur Their",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Correct. They Their Your Their They They Their Your They Your They Their Your",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

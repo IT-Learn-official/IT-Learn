@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_17",
+  "kind": "assessment",
+  "title": "Hoofdstuk 17 - Toegankelijkheid: basis Check",
+  "description": "Controleer je kennis:  Alt-tekst, formlabels en semantische markup voor toegankelijkheid.",
+  "questions": [
+    {
+      "id": "q-alt-required",
+      "type": "single-choice",
+      "prompt": "Waarom Their They Their They Their They",
+      "options": [
+        {
+          "id": "style",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "access",
+          "label": "Om Their They Their They Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "seoonly",
+          "label": "Louter their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "optional",
+          "label": "Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Alt text ensures non-visual users understand image content.",
+        "byOptionId": {
+          "access": "Correct â€” alt text aids disabled users and provides fallback descriptions.",
+          "style": "Incorrect â€” styling is done with CSS, not alt attributes.",
+          "seoonly": "Incorrect â€” while alt can help SEO, its primary purpose is accessibility.",
+          "optional": "Incorrect â€” alt is important for accessibility and should usually be provided."
+        }
+      }
+    },
+    {
+      "id": "q-labels",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "divs",
+          "label": "Het Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "spans",
+          "label": "Het Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "label": "Niet your their They",
+          "isCorrect": false
+        },
+        {
+          "id": "label",
+          "label": "Het Their They Their",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They",
+        "byOptionId": {
+          "label": "Correct â€” <label> elements improve accessibility and clickable area for controls.",
+          "divs": "Incorrect â€” wrapping in <div> alone does not provide the same semantics as <label>.",
+          "spans": "Incorrect â€” <span> is not a replacement for a properly associated label.",
+          "none": "Incorrect â€” proper labeling and semantics significantly improve accessibility."
+        }
+      }
+    }
+  ]
+}

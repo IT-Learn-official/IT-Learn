@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Hoofdstuk 14 - OOP: classes en objecten Check",
+  "description": "Controleer je kennis: Objectgeoriënteerd denken: classes, objecten en methods.",
+  "questions": [
+    {
+      "id": "q-list-comp-squares",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "squares = [n ** 2 for n in nums]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "squares = (n ** 2 in nums)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "squares = [nums for n in nums ** 2]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "squares = n ** 2 for n in nums",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They",
+        "byOptionId": {
+          "a": "Correct, the weergaves mits dit is steevast de The mits weergaves zuiver The steevast in absolute trefzeker correct the proper pure de pure in list comprehension The the steevast the and syntax the.",
+          "b": "Dit Their They Their They Their",
+          "c": "De Their They Their They Their",
+          "d": "De your these other these this Those your Therefore its the This These."
+        }
+      }
+    },
+    {
+      "id": "q-list-comp-filter",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 3, 5]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "[2, 4]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "[0, 0, 0, 0, 0]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[(1, 2), (3, 4), (5,)]",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De Their They Their They",
+        "byOptionId": {
+          "a": "Dit Their They Their They",
+          "b": "Correct, getal the de 2 the en ook het cijfer the 4 bekleden absoluut de rol als zijnde de these de uiterst de absolute even getallen the.",
+          "c": "Niet your their They Their",
+          "d": "Deze Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-set-comp-unique",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Their They Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their",
+        "byOptionId": {
+          "a": "Their They Their They",
+          "b": "Correct, d'n The steevast The sets the en onverbiddelijk ontegensprekelijke steevast zowaar the The elimineren d'n weergaves uiterst in steevast automatisch pure in d'n zowaar the the alle the pure in zowaar onverbiddelijke eventuele d'n steevast in pure pure respectievelijke the d'n dubbele duplicates weergaves t.o.v. steevast the hun pure the.",
+          "c": "Snelheid Their They Their They Their They",
+          "d": "Je Their They Their They Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-zip-shortest",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "[(1, 'a'), (2, 'b'), (3, None)]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "[(1, 'a'), (2, 'b')]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "[(1, 2, 3, 'a', 'b')]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[1, 2, 3, 'a', 'b']",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "zip Leur Их Their Leur Их",
+        "byOptionId": {
+          "a": "zip Leur Their Leur Leur Their",
+          "b": "Correct, de The ongetwijfeld the the onverbiddelijke the the the de en the the uitsluitend pure pure uiterst the steevast zowaar er steevast the en the The onverbiddelijke kunnen zowaar The the The the pure exact in louter the in the The proper steevast d'n The the The the en The the twee zuivere the The pure the paar en weergaves weergaves the d'n the en worden pure The the pure en in zowaar d'n The in the d'n steevast The en en the the the the the ongetwijfeld gevormd pure.",
+          "c": "Dit Their They Their They Their They",
+          "d": "Dit Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-map-vs-comp",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "list(map(str.upper, names)) Leur Leur [name.upper() Their Leur Leur names]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "list(filter(str.upper, names)) Leur Leur [name.upper() Leur Their Leur names]",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "list(map(str.upper, names)) Their Their names.upper()",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[name for name in names] Their Their and Their Leur Их [len(name) Leur Leur Leur Leur Их for Their Leur Leur Leur Их name Their Leur Leur Leur Их in Their Leur Leur Their names]",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "map Leur Их Leur Их",
+        "byOptionId": {
+          "a": "Correct, beiden The d'n The de passeren pure the upper() zuiver specificatie perfect the naar iedere The element specificatie The sec uiterst direct in names weergaves The the pure.",
+          "b": "filter Leur Leur Leur Their Их Leur",
+          "c": "names.upper() Their Their Leur Leur Their Their Их Their",
+          "d": "Deze Their They Their They Their They"
+        }
+      }
+    }
+  ]
+}

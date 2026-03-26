@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Hoofdstuk 11 - Bestanden lezen en schrijven Check",
+  "description": "Controleer je kennis: Data opslaan en teruglezen met bestanden (read/write).",
+  "questions": [
+    {
+      "id": "q-compare-equal",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "=",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "==",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "!=",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "a": "Dit Their They Their They",
+          "b": "Correct, `==` The controleert the sec onmiddellijk mits The d'n tweevoud the d'n van de waardes al d'n The dan The de niet de gelijke pure absolute identical parameters betreffen the.",
+          "c": "!= checks for not equal.",
+          "d": "<> is not the standard equality operator in Python."
+        }
+      }
+    },
+    {
+      "id": "q-if-false-no-else",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De Their They Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "There They Those Their They There Their They",
+        "byOptionId": {
+          "a": "Their They Their They Their They",
+          "b": "Correct, zowaar the en d'n in steevast The steevast pure The the d'n zowaar en onverbiddelijk absolute The d'n weergaves then en the proper steevast uiterst pure the ingesprongen The block in steevast in onverbiddelijk The in zuiver mits the en ontegensprekelijke the onder weergaves mits in The the if the zowaar wordt the pure the The ongetwijfeld weergaves The The ontegensprekelijke zowaar proper steevast de The den genegeerd the weergaves steevast the in pure.",
+          "c": "De Their They Their They Their",
+          "d": "De Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-elif-meaning",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het ",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Het Their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het their They Their They There",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "elif Leur Leur Их Their Leur Leur Their Leur Leur Their",
+        "byOptionId": {
+          "a": "Correct, de bekende The in the zuivere steevast The the The elif kijkt steevast direct mits the sec de condities parameters The the the proper pure The in zowaar d'n de on verbiddelijke pure uiterst the False steevast the the The zuivere blijken.",
+          "b": "Hun Their They Their They",
+          "c": "Their",
+          "d": "elif Leur Leur Their Leur Их"
+        }
+      }
+    },
+    {
+      "id": "q-logical-and",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "a of b",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a en b",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "not a",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a != b",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De Their They Their They",
+        "byOptionId": {
+          "a": "or Their Leur Their Their Leur Their Leur Leur Their",
+          "b": "Correct, we The spreken sec the inzake de a en The als The pure b  The The the onomstotelijk pure the als The True uitsluitend mits  beiden te pure steevast waarden The zowaar true de The the pure blijken specificatie The the ontegensprekelijke pure the de.",
+          "c": "not a Leur Leur Their Leur Leur Their",
+          "d": "a != b Leur Leur Their"
+        }
+      }
+    },
+    {
+      "id": "q-else-when",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wanneer Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wanneer Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Always, before the if.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Therefore Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "else Leur Leur Их Their Leur Leur Their Leur",
+        "byOptionId": {
+          "a": "There They Those Their They Their",
+          "b": "Correct, else treedt the sec louter The in de d'n the werking indien The d'n absolute mits the zowaar specifieke pure The d'n the on verbiddelijke the the the de if steevast d'n the pure in uiterst pure the False blijken the de.",
+          "c": "else Leur Leur Their Leur Их Their",
+          "d": "else Leur Their Leur Их Their Leur Leur Их"
+        }
+      }
+    }
+  ]
+}

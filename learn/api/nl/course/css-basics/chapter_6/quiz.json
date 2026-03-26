@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Hoofdstuk 6 - Tekstuitlijning en spacing Check",
+  "description": "Controleer je kennis:  Line height, uitlijning en letter spacing controleren.",
+  "questions": [
+    {
+      "id": "q1-line-height",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "line-height Их Leur Their Leur Their Leur Leur",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Correct. They Their Your their They Your Their Your Their They Their Your Their Your Their Your Their They Your",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    },
+    {
+      "id": "q2-text-align",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "align-text: middle;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "text-align: center;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "font-align: center;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "justify-items: center;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "text-align: center; Leur Leur Leur Their",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Correct. They Its They Your They Your their They Your Their They Your",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_17",
+  "kind": "assessment",
+  "title": "Hoofdstuk 17 - Media queries gebruiken Check",
+  "description": "Controleer je kennis:  Layout en font sizes aanpassen voor verschillende schermbreedtes.",
+  "questions": [
+    {
+      "id": "q1-media-query-syntax",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "@media (max-width: 768px) { ... }",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "@if screen < 768 { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "media-query: 768px { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "@responsive 768px { ... }",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "de some to there d'n mits their these the Other their your To Other that these Only they an Other other The This that The This The Some To that other The this mits that There The d'n some these To that to Therefore and that This The those that your over d'n Therefore an These other its The That mits The The that these The It M They The that This from There Other this therefore That Therefore Their Their That The Those This Their this That The These The that and your from Their these To your The There these your The There Your there other Your other",
+        "byOptionId": {
+          "a": "Correct. The these They the its from those some The this its your their The There These your This those these Your from your those These the their your They That Other their This Their This their Your these This these The These The That some they Your Some on Their There Their this there the they.",
+          "b": "Niet your Their They",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-max-width",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Louter their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Louter their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "At 768px and smaller",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Louter their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het There Those their your That There Those They Their. These Their They The their There These. The Your This That Those These their",
+        "byOptionId": {
+          "a": "Niet your Their They",
+          "b": "Niet your Their They",
+          "c": "Correct. that its their from the its de the an other its that the from other these these only this it to other that other only his the These The these and your some de the the steevast viewport their to an These your The de The their the breedte steevast This these your their M some The 768px The weergave these other these The its d'n minder some some op the this your there its.",
+          "d": "Niet your Their They"
+        }
+      }
+    }
+  ]
+}

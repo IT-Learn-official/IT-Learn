@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_19",
+  "kind": "assessment",
+  "title": "Hoofdstuk 19 - Styles hergebruiken met CSS-variabelen Check",
+  "description": "Controleer je kennis:  Color themes en herbruikbare parameters maken.",
+  "questions": [
+    {
+      "id": "q1-variable-define",
+      "type": "single-choice",
+      "prompt": "These Those There They Then Those",
+      "options": [
+        {
+          "id": "a",
+          "label": "--main-color: #333;",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "$main-color: #333;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "var main-color = #333;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "color-variable: #333;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Variabelen Their They Their They Their",
+        "byOptionId": {
+          "a": "Correct. Their Your Their They Your They They Your Your",
+          "b": "Niet your their They Their",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    },
+    {
+      "id": "q2-variable-use",
+      "type": "single-choice",
+      "prompt": "Their They Those These There Then They",
+      "options": [
+        {
+          "id": "a",
+          "label": "use(--main-color)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "read(--main-color)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "var(--main-color)",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "${--main-color}",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. Their Your Their Those Those Your. Your Their Those Their Your Your These They Their Their Those Your their Your Those Their Your Your Their Those Their Your.",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

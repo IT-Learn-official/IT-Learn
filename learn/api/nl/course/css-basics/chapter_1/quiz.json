@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Hoofdstuk 1 - Wat is CSS en waarom gebruik je het? Check",
+  "description": "Controleer je kennis:  Hoe CSS HTML-pagina's verbetert en het verschil tussen styling en structuur.",
+  "questions": [
+    {
+      "id": "q1-css-meaning",
+      "type": "single-choice",
+      "prompt": "Waar Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "They Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Cascading Style Sheets",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Computer Style Script",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Color Sheet Setup",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS means Cascading Style Sheets.",
+        "byOptionId": {
+          "a": "Niet your Their They",
+          "b": "Correct. CSS The proper its then the in the their is these gans and over their their louter the mits steevast zowaar M their this these over Cascading the these your only their an on tegensprekelijk your other there from Style gans Sheets de some the other op other.",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-css-role",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Build server APIs",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS controls how a web page looks, while HTML controls structure.",
+        "byOptionId": {
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. these d'n the CSS its some proper The its bestuurt these mits some the the only proper d'n hoe the on webpagina that some steevast other their there your these other its then your other an their steevast the its some The its other the these d'n then its mits proper other only there to the there on verbiddelijk its The The uiterlijk The weergaves teweeg they then there then the then its these gans their their and then that these there the The zowaar html on getwijfeld respectievelijk this your other The and specificatie these this their.",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    }
+  ]
+}

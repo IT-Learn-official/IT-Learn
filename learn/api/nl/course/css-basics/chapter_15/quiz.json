@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Hoofdstuk 15 - Transitions en eenvoudige animaties Check",
+  "description": "Controleer je kennis:  Hover- en kleureffecten tot leven brengen.",
+  "questions": [
+    {
+      "id": "q1-transition-purpose",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het Their They There These",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het hun their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Het Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het hun their their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "transition Leur Leur Their Leur Их Leur",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Correct. They Its They Your They Their They Your Their They",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    },
+    {
+      "id": "q2-keyframes",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "@animate",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "@frames",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "@keyframes",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "@transition",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. Those Your They Some your Those Their Their Those Their Those Their Those Their Your Your Those Their Your Your Your Those Your Your Your These.",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

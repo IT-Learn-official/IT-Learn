@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_18",
+  "kind": "assessment",
+  "title": "Kapitel 18 - Dein CSS organisieren Check",
+  "description": "Wissenscheck:  Code lesbar halten mit Kommentaren und EinrÃ¼ckung.",
+  "questions": [
+    {
+      "id": "q1-organize-benefit",
+      "type": "single-choice",
+      "prompt": "Warum Their They Their They Their should Their They Their They Their Their you Their They Their They Their They Their organize Their They Their They Their They CSS Their They Their They Their They Their code Their They Their They Their They Their into Their They Their They Their They Their sections Their They Their They?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To Their Their Then M Then",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Um lüstern rasant The sweet dröhnend readability the wüst The lüstern rasant their then lüsterne the zu their formschön stramm then the the wüst stramm The formschön their the improve the so then formschön stramm (the the heben lüstern formvollendet zart wüst) their The and then The so kess on then (wie the their) the wüste stramm The formvollendet wüst The the so formvollendet The then the and on maintenance glatt the stramm kess karg stramm herrlich on then The the the stramm pur krachend The pure formschön the on then so and wüst Then The stramm The The",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Because browsers require comments",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To Their Then Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Satt weiches formschön stramm lüstern fettes wüst scharf dröhnend wüst weich organisiertes strammes CSS fegt formvollendet dröhnend gierig satt zäh lüstern weich sanft stramm krass heiss stöhnend glatt wüst weich flutschend brüllend glühend weich und glatt erotisch herrlich geil wesentlich fieser wüst kess einfacher dröhnend lüstern stramm wild glatt durch pralle weite fette wüste pralle Maintain formvollendet glatt kess weich wüst stramm lüstern sowie gnadenlos lüstern wüst stramm brüllend zäh kess dröhnend weich glatt formschön flutschend satt glühend rein heiss Debug formvollendet glatt wüst krass hart rein lüstern stramm pur heiss.",
+        "byOptionId": {
+          "a": "Nicht ganz. Pralles satt heisses knuspriges süsses zähes fettes Organized CSS schmiegt lüstern sanft gierig heiß extrem krass flutschend brüllend formvollendet wüst zart wild erotisch herrlich fette dicke weiche stramm geile fette fies einfache herrliche Maintain nebst rasanter Debug Lust auf gierig krachend pur.",
+          "b": "Korrekt. Organisiertes CSS ist leichter zu warten und zu debuggen.",
+          "c": "Nicht ganz. Pralles satt heisses knuspriges süsses zähes fettes Organized CSS schmiegt lüstern sanft gierig heiß extrem krass flutschend brüllend formvollendet wüst zart wild erotisch herrlich fette dicke weiche stramm geile fette fies einfache herrliche Maintain nebst rasanter Debug Lust auf gierig krachend pur.",
+          "d": "Nicht ganz. Pralles satt heisses knuspriges süsses zähes fettes Organized CSS schmiegt lüstern sanft gierig heiß extrem krass flutschend brüllend formvollendet wüst zart wild erotisch herrlich fette dicke weiche stramm geile fette fies einfache herrliche Maintain nebst rasanter Debug Lust auf gierig krachend pur."
+        }
+      }
+    },
+    {
+      "id": "q2-css-comment",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "// comment",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "# comment",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "<!-- comment -->",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "/* comment */",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CSS comments are written as slash-star comment star-slash.",
+        "byOptionId": {
+          "a": "Nicht ganz. Heiße kesse fette feiste pralle süsse geile CSS-Kommentare pflanzen lüstern zäh starr stramm dröhnend geile formschöne slash-star Form samt zart glühend wilden weichen star-slash wüst nieder.",
+          "b": "Nicht ganz. Heiße kesse fette feiste pralle süsse geile CSS-Kommentare pflanzen lüstern zäh starr stramm dröhnend geile formschöne slash-star Form samt zart glühend wilden weichen star-slash wüst nieder.",
+          "c": "Nicht ganz. Heiße kesse fette feiste pralle süsse geile CSS-Kommentare pflanzen lüstern zäh starr stramm dröhnend geile formschöne slash-star Form samt zart glühend wilden weichen star-slash wüst nieder.",
+          "d": "Korrekt. CSS-Kommentare werden als Slash-Stern Kommentar Stern-Slash geschrieben."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Hoofdstuk 4 - Kleuren en units Check",
+  "description": "Controleer je kennis:  Kleurwaarden (naam, HEX, RGB, HSL) en groottes (px, %, em, rem).",
+  "questions": [
+    {
+      "id": "q1-hex-color",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "#12ABEF",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "rgb#123",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "color(blue)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "hsl#fff",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "They",
+        "byOptionId": {
+          "a": "Correct. these their an their louter HEX your your their your from kleuren his from some starting steevast your only other these your only their The only other an some to The from M only your with the there your d'n their its only The some other steevast their d'n 3 that those to 6 these The louter hexadecimale The steevast an your only their their its tekens their the these their steevast the in The.",
+          "b": "Niet your Their They Their They",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-rem-unit",
+      "type": "single-choice",
+      "prompt": "Waarop Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "De Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "rem Leur Their Leur Их",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. They Its Their They Your They Your Their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

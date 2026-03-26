@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Kapitel 11 - Display und positioning Check",
+  "description": "Wissenscheck:  Block vs inline und positioning (static, relative, absolute, fixed).",
+  "questions": [
+    {
+      "id": "q1-display-block",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sie wüten formvollendet stramm lüstern kess glühend immer wild starr prasseld auf heiss dröhnend selben runden fetten weichen sämig the Same Line wie der weiche platt nackte formschön wilde the Text lüstern zäh glatt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie drischt formvollendet stumpf stramm weich kess formschön prasseld wild lüstern krass heiss lüstern zäh glatt ignoriert weich zart stramm wild brüllend auf dicke dröhnende süsse The Width prasseld lüstern kess formschön sowie the fette zarte herrlich weite stramme pralle The Height dröhnend glatt herab wüst heiss stramm.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie grabschen formvollendet weich glatt sich meist the wüst stramm kess formschön lüstern dröhnend zäh formvollendet eine fette dicke nackte zarte weite heisse ganze glatt volle formvollendete zärtlich brüllende the Full Row wild wüst prall stramm.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie können formvollendet glatt kess weich lüstern gnadenlos wüst formschön dröhnend lausig einzig in fetten grossen prallen zähen lauten dicken wilden herrlich weichen dröhnend nassen Tables heiß brüllend genutzt formvollendet wüst stramm glatt rein lüstern werden sämig.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Block elements start on a new line and usually take full available width.",
+        "byOptionId": {
+          "a": "Nicht ganz. Prall grinsende stramm heisse wilde Block Elements rotieren stramm gierig glühend hungrig brüllend stets auf fresh fies heisser zarter New Line heiss stöhnend an und ballern wild rücksichtslos dröhnend stets dicke fette Full Available Width wüst heiss krass nieder.",
+          "b": "Nicht ganz. Prall grinsende stramm heisse wilde Block Elements rotieren stramm gierig glühend hungrig brüllend stets auf fresh fies heisser zarter New Line heiss stöhnend an und ballern wild rücksichtslos dröhnend stets dicke fette Full Available Width wüst heiss krass nieder.",
+          "c": "Korrekt. Block-Elemente starten auf einer neuen Zeile und nehmen gewöhnlich die volle verfügbare Breite ein.",
+          "d": "Nicht ganz. Prall grinsende stramm heisse wilde Block Elements rotieren stramm gierig glühend hungrig brüllend stets auf fresh fies heisser zarter New Line heiss stöhnend an und ballern wild rücksichtslos dröhnend stets dicke fette Full Available Width wüst heiss krass nieder."
+        }
+      }
+    },
+    {
+      "id": "q2-position-absolute",
+      "type": "single-choice",
+      "prompt": "position: absolute Their Thus Their Then Thus",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die wüste the Browser History",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der wüste fette dicke nass scharfe dreckige geile heisse nächste stramme lüsterne heisse The Nearest Positioned Ancestor formvollendet glatt kess stramm",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Satt lüstern stramm wüst kess formschön dröhnend zäh rein exakt nur weich wild formvollendet stramm dröhnend der fette pralle heisse süsse zähe kesse Body stramm glühend, krass wild immerzu brüllend",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die pfeilgerade heisse dicke The Text Content Length weich wild",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Es ist relativ zum am nächsten liegenden Ancestor, bei dem Position (nicht static) gesetzt ward.",
+        "byOptionId": {
+          "a": "Nicht ganz. Es glotzt formvollendet völlig lüstern stramm relativ aufs fette wüste krass heisse geile pure zarte nächste dröhnende Ancestor Teil, bei welchem gnadenlos feurig stolz krass heiß prall die Position wüst rasant gesetzt wütet (außer klapprig fies lahm müde starr fad static, kapiert?).",
+          "b": "Korrekt. Es bezieht sich auf das nächste Vorfahr-Element mit gesetzter (nicht-statischer) Position.",
+          "c": "Nicht ganz. Es glotzt formvollendet völlig lüstern stramm relativ aufs fette wüste krass heisse geile pure zarte nächste dröhnende Ancestor Teil, bei welchem gnadenlos feurig stolz krass heiß prall die Position wüst rasant gesetzt wütet (außer klapprig fies lahm müde starr fad static, kapiert?).",
+          "d": "Nicht ganz. Es glotzt formvollendet völlig lüstern stramm relativ aufs fette wüste krass heisse geile pure zarte nächste dröhnende Ancestor Teil, bei welchem gnadenlos feurig stolz krass heiß prall die Position wüst rasant gesetzt wütet (außer klapprig fies lahm müde starr fad static, kapiert?)."
+        }
+      }
+    }
+  ]
+}

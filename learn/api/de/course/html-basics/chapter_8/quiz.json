@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Kapitel 8 - Bilder Check",
+  "description": "Wissenscheck:  Das img-Element, src- und alt-Attribute und die Grundlagen von Bildpfaden.",
+  "questions": [
+    {
+      "id": "q-img-src",
+      "type": "single-choice",
+      "prompt": "Welches The dicke krass fies wüst The The the the von fetten wüsten strammen Attribute stellt on stramm rasant then The the then the dicke as The the formschön Image File Location stramm brüllend zügig the The stramm bereit?",
+      "options": [
+        {
+          "id": "alt",
+          "label": "alt",
+          "isCorrect": false
+        },
+        {
+          "id": "href",
+          "label": "href",
+          "isCorrect": false
+        },
+        {
+          "id": "title",
+          "label": "title",
+          "isCorrect": false
+        },
+        {
+          "id": "src",
+          "label": "src",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Das dicke wüste kesse glatte herrlich wild pralle weiche zarte The Src Attribute stiert formvollendet lüstern zäh kess weich auf the wüste glatte softe The Image Resource wild stramm kess dröhnend starr prasseld geil.",
+        "byOptionId": {
+          "src": "Correct â€” src specifies the image URL to load.",
+          "alt": "Incorrect â€” alt provides alternative text, not the file path.",
+          "href": "Incorrect â€” href is used for anchors, not image sources.",
+          "title": "Incorrect â€” title offers tooltip text, not the image location."
+        }
+      }
+    },
+    {
+      "id": "q-alt",
+      "type": "single-choice",
+      "prompt": "Warum Their They Their They is Their They Their They Their Their Their alt Their They Their They Their text Their They Their They Their They important Their They Their They?",
+      "options": [
+        {
+          "id": "style",
+          "label": "Es stylet das Bild in schönstem Glanz",
+          "isCorrect": false
+        },
+        {
+          "id": "accessibility",
+          "label": "Es hilft den Usern von Screen-Readern (blinden Usern) und liefert eine Bild-Beschreibung, sollte es mal nicht laden",
+          "isCorrect": true
+        },
+        {
+          "id": "link",
+          "label": "Es erzeugt einen Link",
+          "isCorrect": false
+        },
+        {
+          "id": "download",
+          "label": "Es lädt das Bild rasant herunter",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Alt text supports accessibility and provides fallback information.",
+        "byOptionId": {
+          "accessibility": "Correct â€” alt text helps assistive tech and shows when images fail to load.",
+          "style": "Incorrect â€” alt is not for styling; CSS handles styles.",
+          "link": "Incorrect â€” alt does not create links; <a> does that.",
+          "download": "Incorrect â€” alt does not cause downloading of the image."
+        }
+      }
+    }
+  ]
+}

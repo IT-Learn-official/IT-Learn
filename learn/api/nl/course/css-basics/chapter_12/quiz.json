@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Hoofdstuk 12 - Flexbox voor beginners Check",
+  "description": "Controleer je kennis:  Elementen makkelijk uitlijnen en spacing geven met flexbox.",
+  "questions": [
+    {
+      "id": "q1-flex-enable",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "position: flex;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "display: flex;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "flex: display;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "layout: flex;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "a": "Niet your their They",
+          "b": "Correct. Your Those Their Their Your These These Your Those Their Your Your Their Those Your.",
+          "c": "Niet your their They",
+          "d": "Niet your their They"
+        }
+      }
+    },
+    {
+      "id": "q2-justify-content",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verticale Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Border thickness",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "justify-content Leur Their Their Leur Their",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Correct. Their Your Their They Their Your Their Your Their They Your Their They Their Your Their",
+          "c": "Niet your their They Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    }
+  ]
+}

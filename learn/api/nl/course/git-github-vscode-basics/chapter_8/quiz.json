@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Hoofdstuk 8 - Goede gewoontes: nette geschiedenis en duidelijke berichten",
+  "description": "Test je begrip van goede Git-gewoontes en tips voor je workflow in VS Code.",
+  "questions": [
+    {
+      "id": "q1-commit-messages",
+      "type": "single-choice",
+      "prompt": "Welke commitboodschap is het best?",
+      "options": [
+        {
+          "id": "a",
+          "label": "ik deed wat dingen op school k was het vergeten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Fix navbar spacing on mobile",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "boterham",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "ik hou van whoppers",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Goede commitboodschappen zijn kort maar specifiek: ze zeggen wat er veranderde.",
+        "byOptionId": {
+          "a": "Niet helemaal. Dit is vaag en niet professioneel.",
+          "b": "Correct. Dit beschrijft een specifieke wijziging duidelijk.",
+          "c": "Niet helemaal. 'Boterham' helpt je geschiedenis niet vooruit.",
+          "d": "Niet helemaal. Persoonlijke voorkeuren zijn niet nuttig in je geschiedenis."
+        }
+      }
+    },
+    {
+      "id": "q2-atomic-commits",
+      "type": "single-choice",
+      "prompt": "Waarom zijn kleine, gefocuste commits handig?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Je toetsenbord typt er sneller door",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze voorkomen mergeconflicten voor altijd",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze zijn makkelijker te reviewen en makkelijker ongedaan te maken",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ze maken automatisch pull requests",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gefocuste commits houden je geschiedenis leesbaar en maken problemen oplossen makkelijker.",
+        "byOptionId": {
+          "a": "Fout. Commits hebben geen invloed op typesnelheid.",
+          "b": "Fout. Conflicten kunnen nog gebeuren, maar goede commits maken ze vaak makkelijker op te lossen.",
+          "c": "Correct. Kleine commits helpen bij review, debugging en undo.",
+          "d": "Fout. Pull requests maak je op GitHub."
+        }
+      }
+    },
+    {
+      "id": "q3-readme",
+      "type": "single-choice",
+      "prompt": "Waarvoor wordt een README.md meestal gebruikt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Uitleggen wat het project is en hoe je het gebruikt",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Privé API-keys opslaan",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alle codebestanden vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Gemergde branches automatisch verwijderen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "READMEs documenteren een project voor gebruikers en toekomstige bijdragers.",
+        "byOptionId": {
+          "a": "Correct. Een README legt uit wat de repo is en hoe je ermee werkt.",
+          "b": "Fout. Secrets commit je niet; gebruik omgevingsvariabelen.",
+          "c": "Fout. Een README is documentatie, niet de code zelf.",
+          "d": "Fout. Branch-opkuis is een Git/GitHub-workflow, niet de taak van een README."
+        }
+      }
+    },
+    {
+      "id": "q4-tags",
+      "type": "single-choice",
+      "prompt": "Hoe beschrijf je een Git tag het best?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een bestand dat wijzigingen verstopt",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een branch die altijd conflicten heeft",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een tool om bestanden te stagen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een benoemde bladwijzer die naar een specifieke commit wijst",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Tags markeren belangrijke punten in de geschiedenis, zoals een releaseversie.",
+        "byOptionId": {
+          "a": "Fout. Wijzigingen verbergen lijkt meer op stash of ignore.",
+          "b": "Fout. Tags zijn geen branches.",
+          "c": "Fout. Tags zijn geen staging-tools.",
+          "d": "Correct. Tags wijzen naar commits als benoemde markeringen."
+        }
+      }
+    }
+  ]
+}

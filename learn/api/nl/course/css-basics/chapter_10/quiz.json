@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - Achtergronden toevoegen Check",
+  "description": "Controleer je kennis:  Kleuren, gradients en afbeeldingen als achtergrond.",
+  "questions": [
+    {
+      "id": "q1-gradient",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "color-mix()",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "paint-gradient()",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "linear-gradient()",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "bg-gradient()",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "linear-gradient() Их Leur Их Leur Leur Их Их Leur",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. Its They They Your They Their they They Your They Your Their They Your They Their Your",
+          "d": "Niet your their They Their"
+        }
+      }
+    },
+    {
+      "id": "q2-bg-cover",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "there These The Then There those.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het Their",
+        "byOptionId": {
+          "a": "Niet your Their They Their",
+          "b": "Niet your Their They Their",
+          "c": "Correct. het Some their there The these its some The this other these that some These these To this other these The these That de there their They Its the Their Some their other This from The their This these These Your",
+          "d": "Niet your Their They Their"
+        }
+      }
+    }
+  ]
+}

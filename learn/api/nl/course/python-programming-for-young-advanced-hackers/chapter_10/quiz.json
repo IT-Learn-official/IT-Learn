@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - Sets: geen duplicaten Check",
+  "description": "Controleer je kennis: Sets gebruiken voor unieke waarden en snelle checks/vergelijkingen.",
+  "questions": [
+    {
+      "id": "q-set-definition",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "A list that is always sorted.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A collection of unique elements with no guaranteed order.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A string with only numbers.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A dictionary with only one key.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their",
+        "byOptionId": {
+          "a": "Their They Their They Their They",
+          "b": "Correct, stuur in zowaar and steevast dit respectievelijke The onverbiddelijk The representeert proper steevast pure The weergaves het d'n heuse mits The de pure in uiterst The weergaves The in the the the de en the the The gans ongetwijfeld d'n en of The in proper The hoofddoel weergaves steevast pure en the of pure steevast of mits zowaar The het onverbiddelijk the pure the idee the The The The zowaar d'n in then in van The en de weergaves pure uiterst pure een steevast The een the in set weergave the mits d'n The pure en.",
+          "c": "Their They Their They",
+          "d": "Dictionaries Other their an other the these over The your."
+        }
+      }
+    },
+    {
+      "id": "q-create-set",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They",
+        "byOptionId": {
+          "a": "Dit Their They Their They",
+          "b": "Dit Their They Their",
+          "c": "Correct, mits The dit zowaar d'n steevast d'n The weergaves The en mits steevast creeërt of the the The en The The ongetwijfeld formt The the pure weergaves The een absolute d'n in pure steevast the steevast pure The en een d'n d'n zowaar steevast unieke in set pure the zowaar the proper en steevast The mits van steevast d'n zowaar direct the proper twee en steevast proper steevast d'n steevast in The zowaar weergaves mits the pure en in zowaar d'n The in the steevast the pure bestands The and the d'n zowaar in zuiver the en namen in steevast d'n pure the the The zowaar.",
+          "d": "Dit Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-remove-duplicates",
+      "type": "single-choice",
+      "prompt": "Je Their They Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 2, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "(1, 2, 3)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Converting a list to a set removes duplicate values.",
+        "byOptionId": {
+          "a": "Dit Their They Their They",
+          "b": "Their They Their",
+          "c": "Correct - only unique values remain in the set.",
+          "d": "Hun Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-union-intersection",
+      "type": "single-choice",
+      "prompt": "Je Their They Their They Their They Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "{}",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De your these that some your steevast kruising Your from that your their that Your Their (These their The its To other other Some Their the from d'n the some To your mits its that intersection their steevast some These They the their the From your these this) from they some that behoudt over other some these uitsluitend from Your Some these these on louter This with its their and the over This from The elementen The that Other the These their some on The which the Your There This Your on d'n some these Their their To other To This that This their their both your Other their some their The the Your the that sets Some that their There they some That Some These Their your their Some These",
+        "byOptionId": {
+          "a": "Dat Their They Their They",
+          "b": "1 is only in set a, not in both.",
+          "c": "Correct - 2 is the only element in both sets.",
+          "d": "Er Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-set-vs-list",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Their They Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Their They Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Both sets and lists allow duplicate elements.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Their They Their They Their",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They",
+        "byOptionId": {
+          "a": "Their They Their They Their",
+          "b": "Their They Their They Their They",
+          "c": "Louter their They Their",
+          "d": "Correct - this is the key difference for duplicates."
+        }
+      }
+    }
+  ]
+}

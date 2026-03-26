@@ -1,0 +1,332 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Hoofdstuk 15 - Eindmissie: mini-project Check",
+  "description": "Controleer je kennis: Alles samenbrengen in een klein eindproject.",
+  "questions": [
+    {
+      "id": "q-init-purpose",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om Their They Their They Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Om Their They Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "__init__ Their Their Their Leur Leur Their",
+        "byOptionId": {
+          "a": "verwijderen handled steevast other The proper their proper The.",
+          "b": "Correct, the befaamde The __init__ the specificatie the initialisatie component The steevast the instruit de The absolute de de  object's de specifieke zuivere startdata the parameters specificatie steevast the zowaar The code object the data structuratie specificatie code the.",
+          "c": "print(obj) Их Leur Их",
+          "d": "__init__ Their Their Their Leur Their Leur Их Leur Их Their Leur Leur Their Leur Их Their"
+        }
+      }
+    },
+    {
+      "id": "q-correct-class-def",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "class Car:\n    def __init__(color):\n        self.color = color",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "class Car:\n    def __init__(self, color):\n        self.color = color",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "def Car(color):\n    self.color = color",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "class Car(color):\n    self.color = color",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Its Therefore their These These This These The Their Some The Those Their There Its They Therefore This Your Those",
+        "byOptionId": {
+          "a": "__init__ Their Their Their Leur Leur",
+          "b": "Correct, The the ontegensprekelijke mits d'n steevast de in absolute de zuiver steevast uiterst dit The is louter The the the d'n weergaves mits the then on verbiddelijk de zowaar the pure The the de gans steevast d'n een pure The pure en zuivere in een steevast pure geldige steevast The pure d'n the the class then uiterst en __init__ the syntax mits The in the and pure weergave trefzeker d'n steevast weergaves steevast in the.",
+          "c": "Dit Their They Their They",
+          "d": "Dit Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-create-object",
+      "type": "single-choice",
+      "prompt": "These Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "p = Player.__init__(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "p = new Player(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "p = Player(\"Alex\")",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "p = Player.init(\"Alex\")",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Je Their They Their They Their They Their They Their",
+        "byOptionId": {
+          "a": "Je Их Their should Leur Их Their Leur Их Leur Их Their not Их Leur Их Leur Their",
+          "b": "Their They Their They Their They",
+          "c": "Correct, the dit d'n steevast d'n The roept en zowaar the Player the mits steevast en the in and on verbiddelijk in de pure The the roept op steevast in weergaves pure in d'n zowaar ontegensprekelijk The zowaar ongetwijfeld and pure the the proper en d'n tuurt mits the zowaar en d'n in pure en the the in steevast __init__ steevast steevast proper The den zowaar The weergaves in the achter steevast M de zowaar the The in d'n in the The in pure coulissen the weergaves the. ",
+          "d": "Er Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-access-attribute",
+      "type": "single-choice",
+      "prompt": "Je Их Their have Their They Their They Their Their p Ihr Their = Their They Their Player Их ( Их Their \" Their They Alex Their \" Их Their ) Их Their and Their They Their They Their Their inside Their They Their They Their Their Their __init__ Their They Their They Их Their Their you Их Their did Их Their self.name Ihr Their = Their They Their name Их Their. Their They Their They How Their They Their They Their Their do Их Their Their you Их Their read Их Their the Их Their player's Их Their name Их Their outside Их Their the Их Their class Их Their?",
+      "options": [
+        {
+          "id": "a",
+          "label": "name = Player.name",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "name = self.name",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "name = p.name",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "name = name.self",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Attributes are accessed through the instance variable.",
+        "byOptionId": {
+          "a": "Their They Their They Their They Their",
+          "b": "self Leur Leur Leur Leur Их",
+          "c": "Correct, the uiterst d'n d'n the zowaar en the pure steevast the The The in pure The proper trefzeker en the The p.name steevast onverbiddelijke en ongetwijfeld in leest mits pure The the exact zowaar the het d'n heuse The in name the pure attribuut mits zowaar proper en in the zuiver ontegensprekelijk uit in absolute steevast The the specifieke d'n the the gans The en Player-objecten The pure The pure in The steevast en the in the structuur in zowaar weergave.",
+          "d": "Dit Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-self-meaning",
+      "type": "single-choice",
+      "prompt": "Wat There Their They Those",
+      "options": [
+        {
+          "id": "a",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het Their They Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "A random global variable.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "self Leur Their Leur Их Их",
+        "byOptionId": {
+          "a": "self Their Leur Their Leur Их",
+          "b": "Their and The its and Your They they The therefore Your.",
+          "c": "Correct - self lets methods access the instance's data.",
+          "d": "self Leur Their Leur Their Leur"
+        }
+      }
+    },
+    {
+      "id": "q-class-vs-instance-attribute",
+      "type": "single-choice",
+      "prompt": "Je Их Their have Their They Their They Their Their: Their They Their They\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWhat Their They Их are Их Their the Их Their values Их Their of Их Their Their a.team_name Их Their and Их Their Their b.name Их Their Their at Их Their the Их Their end Their They Their?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a.team_name == \"Red\" Leur b.name == \"Blake\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.team_name == \"Blue\" Leur b.name == \"Blake\"",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "a.team_name == \"Blue\" Leur b.name == \"Blue\"",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a.team_name == \"Red\" Leur b.name == \"Avery\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Class attributes (like team_name) are shared by all instances. Instance attributes (like name) belong to a single object.",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their They Their They Their",
+          "b": "Correct, zo'n d'n klassen d'n attribuut the pure The bewerking update effecten the onverbiddelijk the pure alle in instanties  The The the rond the the sec uitsluitend specifiek onvoorwaardelijk steevast a.name werd  finaal The gans the gewijzigd pure d'n  the uiterst proper the weergaves the pure.",
+          "c": "Fout Their They Their They Their They Their They",
+          "d": "Fout Their They Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-method-side-effects",
+      "type": "single-choice",
+      "prompt": "They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "x == 0 en y == 0",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "x == 1 en y == 1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "x == 1 en y == 2",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "x == 2 en y == 3",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The This Their Their Your",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their They Their They Their They",
+          "b": "Fout Their They Their They Their They Their They Their",
+          "c": "Correct, de d'n allereerste oproep the levert steevast uiterst pure the de the 1 op, The the direct on the na The na the d'n proper the the seconde oproep pure steevast levert the sec d'n de onverbiddelijke pure The zowaar 2 The uitsluitsel the proper steevast op the.",
+          "d": "Fout Their They Their They Their They Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-self-parameter-behavior",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "self Их Leur Their Leur Leur Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "self Leur Leur Leur Their Их",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "self Их Leur leur Their Leur Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "self Их Leur Their Leur Их",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "self Their Leur Их Leur Their Their",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their They Their They Their They Their They",
+          "b": "Correct, direct in the in d'n The zowaar The wanneer dan pure the u uitsluitend The in then in d'n phone.reboot() the The the de mits the zowaar dan zowaar and en steevast in bewerkt The is the steevast the steevast d'n The the proper self on verbiddelijke dat phone The mits pure the object.",
+          "c": "Fout Their They Their They Their They Their They Their They Their",
+          "d": "Fout Their They Their They Their They Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-multiple-objects-state",
+      "type": "single-choice",
+      "prompt": "their They their They their",
+      "options": [
+        {
+          "id": "a",
+          "label": "a.energy == 100 Leur b.energy == 100",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.energy == 70 Leur b.energy == 90",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "a.energy == 60 Leur b.energy == 90",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a.energy == 70 Leur b.energy == 70",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Each object has its own energy attribute. The methods modify only the object theyâ€™re called on.",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their They Their They Their They",
+          "b": "Correct, Alpha lost 30 (100 â†’ 70); Beta lost 10 (100 â†’ 90).",
+          "c": "Fout Their They Their They Their They Their",
+          "d": "Fout Their They Their They Their They Their They Their"
+        }
+      }
+    }
+  ]
+}

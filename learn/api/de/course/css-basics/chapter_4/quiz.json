@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Kapitel 4 - Farben und Units Check",
+  "description": "Wissenscheck:  Farbwerte (Name, HEX, RGB, HSL) und GrÃ¶ÃŸen (px, %, em, rem).",
+  "questions": [
+    {
+      "id": "q1-hex-color",
+      "type": "single-choice",
+      "prompt": "Welches These their Their This Their These Their Thus krass dann from Thus The From Their the Their Then Thus krass dicke then These on Thus on so Thus to (Thus ) Those These is Those (Thus These Their from is As Then formschön Thus on The The Their Then ) a The am valid Thus Then The Thus From (Thus Thus mits Thus Then Their To as Their the) HEX Then The and These The These The Then Then and color Then The and These Then and These The These on To value The From am Then or Their Then their Then This and Their on These To From?",
+      "options": [
+        {
+          "id": "a",
+          "label": "#12ABEF",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "rgb#123",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "color(blue)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "hsl#fff",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HEX-Farben starten mit einer # kombiniert mit 3 bis 6 hexadezimalen Werten.",
+        "byOptionId": {
+          "a": "Korrekt. HEX-Farben starten mit einem # gefolgt von 3 oder 6 hexadezimalen Zeichen.",
+          "b": "Nicht ganz. Hitzige lüsterne geile dicke fette kräftige HEX Colors brennen stramm gierig wild heiss wüst prall mit geilem # dröhnend los, stramm formschön gefolgt lüstern von prallen 3 gar fetten krassen süssen 6 dicken Hexadecimal Characters formvollendet pur krachend.",
+          "c": "Nicht ganz. Hitzige lüsterne geile dicke fette kräftige HEX Colors brennen stramm gierig wild heiss wüst prall mit geilem # dröhnend los, stramm formschön gefolgt lüstern von prallen 3 gar fetten krassen süssen 6 dicken Hexadecimal Characters formvollendet pur krachend.",
+          "d": "Nicht ganz. Hitzige lüsterne geile dicke fette kräftige HEX Colors brennen stramm gierig wild heiss wüst prall mit geilem # dröhnend los, stramm formschön gefolgt lüstern von prallen 3 gar fetten krassen süssen 6 dicken Hexadecimal Characters formvollendet pur krachend."
+        }
+      }
+    },
+    {
+      "id": "q2-rem-unit",
+      "type": "single-choice",
+      "prompt": "Worauf Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die The Parent Element Font Size weich dröhnend",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die dicke The Browser Tab Width",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die wüste fette The Root Html Font Size lüstern",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Die sämig pralle dicke The Current Element Width",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "rem Their Thus Their",
+        "byOptionId": {
+          "a": "Nicht ganz. Hart heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes rem rast formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich gnadenlos brüllend kess satt verankert pure stramm wild stumm zähe formschön geigt lüstern satt auf dröhnend geilen wüsten fetten knallharten runden dicken nassen süssen wüsten grossen reinen fetten Root HTML Font Size wüst zäh heiss stramm glühend brüllend sämig formvollendet krass prasseld weich satt ein stramm formschön.",
+          "b": "Nicht ganz. Hart heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes rem rast formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich gnadenlos brüllend kess satt verankert pure stramm wild stumm zähe formschön geigt lüstern satt auf dröhnend geilen wüsten fetten knallharten runden dicken nassen süssen wüsten grossen reinen fetten Root HTML Font Size wüst zäh heiss stramm glühend brüllend sämig formvollendet krass prasseld weich satt ein stramm formschön.",
+          "c": "Korrekt. rem basiert auf der Root-Schriftgröße im HTML.",
+          "d": "Nicht ganz. Hart heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes rem rast formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich gnadenlos brüllend kess satt verankert pure stramm wild stumm zähe formschön geigt lüstern satt auf dröhnend geilen wüsten fetten knallharten runden dicken nassen süssen wüsten grossen reinen fetten Root HTML Font Size wüst zäh heiss stramm glühend brüllend sämig formvollendet krass prasseld weich satt ein stramm formschön."
+        }
+      }
+    }
+  ]
+}

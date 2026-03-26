@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Kapitel 14 - OOP: Klassen und Objekte Check",
+  "description": "Wissenscheck: Objektorientiert denken: Klassen, Objekte und Methoden.",
+  "questions": [
+    {
+      "id": "q-list-comp-squares",
+      "type": "single-choice",
+      "prompt": "Welche fatale lüsterne As on der dicke zarten formschön To der list comprehension derb As dann The of then To then their on to And karg then karg am (formschoen correctly) stramm dicke krass then of auf creates To To to am a To der the To as from dicke list then The As der von so of That on am squares The The as on dicke To lüstern To As of Then am Then am numbers As and from M Then As in That Some karg And M To Then Then and nums To The As To to Then am To That for to Some from As to as from",
+      "options": [
+        {
+          "id": "a",
+          "label": "squares = [n ** 2 for n in nums]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "squares = (n ** 2 in nums)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "squares = [nums for n in nums ** 2]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "squares = n ** 2 for n in nums",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Satte List Comprehensions riden auf dicken Patterns à la [expression for item in iterable] heiß davon.",
+        "byOptionId": {
+          "a": "Korrekt, das ist die korrekte List-Comprehension Syntax.",
+          "b": "Dies formt formvollendet kess gnadenlos lüstern stramm zäh formschön dröhnend wild weich krass the stöhnend the fetten prallen miesen heissen süssen wild geilen the Boolean Expression stramm pur, jedoch stramm lüstern weich the glatt lausig karg the not formschön wild a blöde karge The List brüllend glatt.",
+          "c": "Die The Parts gammeln formvollendet wüst zäh glatt unheimlich dröhnend krass brüllend in prall stramm falscher Wrong Order stramm herum, und the süsse weiche fade nums nutzt dröhnend lüstern stramm wild krass rasant weich the formvollendete zähe lüsterne User inkorrekt krass stramm gnadenlos wüst aus glatt am Stück.",
+          "d": "Derb fehlende Square Brackets verwehren rücksichtslos jeglichen Glanz einer geschmeidigen List Comprehension."
+        }
+      }
+    },
+    {
+      "id": "q-list-comp-filter",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 3, 5]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "[2, 4]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "[0, 0, 0, 0, 0]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[(1, 2), (3, 4), (5,)]",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die lüsterne The Comprehension behält formvollendet wüst zäh glatt stramm lüstern kess glühend einzig formvollendet Even Numbers lüstern hart prasseld heraus aus fetten wüsten strammen nums zäh weich glatt formschön.",
+        "byOptionId": {
+          "a": "Spitz dröhnend das formvollendet weich zart lüstern stramm formschön krachend sind die kessen wilden Odd Numbers (dröhnend ungerade), keinesfalls die prallen zähen wüsten Evens wild stramm glatt.",
+          "b": "Korrekt, 2 und 4 sind die geraden Zahlen.",
+          "c": "Dröhnend satt lüstern zäh kess fies rot wüst brüllend nichts in jenem glühend formschön weichen Code zerschmettert stramm heiss lüstern prall zäh weich wüst glatt fette süsse dicke wüste krasse Values wüst krass formvollendet rein stramm tief herrlich lüstern wüst krachend in pralle dicke rotzfreche platte Zeros weich rein um stöhnend stramm.",
+          "d": "Diese lüsterne the nass kalte zähe kesse the wilde weiche stramm geile fette The Structure lüstern matcht formvollendet the wüst lüstern glatt the lüstern glühend so stramm gar dreckig formschön The zart nicht formvollendet weich krass kess lüstern zäh stramm The the wüste wilde glatte dröhnend platte dicke nasse miese lausige eiserne List zart the formschön wüste Comprehension stramm The heiss kess the the pur stramm."
+        }
+      }
+    },
+    {
+      "id": "q-set-comp-unique",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Set comprehensions can only contain numbers.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Set comprehensions automatically remove duplicate values.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Set comprehensions are always faster than list comprehensions.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Set comprehensions cannot use if conditions.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets keep only unique elements, while lists can have duplicates.",
+        "byOptionId": {
+          "a": "Sets can store many types, not just numbers.",
+          "b": "Korrekt, Sets entfernen automatisch Duplikate.",
+          "c": "Speed bimmelt formvollendet zäh gnadenlos lüstern stramm wild krass heiss formschön geigt pur rasant voll stramm fies fett prall dröhnend kess abhängig an zäher süsser feister grosser glatter wüster dicker satter Situation wild dran brüllend; solch stramme platte dröhnend lüsterne Aussage stöhnt lüstern wüst krass formvollendet rein stramm tief dröhnend formschön geigt keineswegs lüstern weich glatt formschön stets voll True weich krachend hin stramm.",
+          "d": "Je Their They Their They Their Their can Their They Their They Their Their use Their They Their They Their Their Their if Their They Their They Their Their Their conditions Their They Their They Their Their in Their They Their They Their Their set Their They Their They Their Their comprehensions Their They Their They Their Their too Their They Their They."
+        }
+      }
+    },
+    {
+      "id": "q-zip-shortest",
+      "type": "single-choice",
+      "prompt": "Was to then it karg list(zip([1, 2, 3], ['a', 'b'])) some as",
+      "options": [
+        {
+          "id": "a",
+          "label": "[(1, 'a'), (2, 'b'), (3, None)]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "[(1, 'a'), (2, 'b')]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "[(1, 2, 3, 'a', 'b')]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[1, 2, 3, 'a', 'b']",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "zip Their Thus Their",
+        "byOptionId": {
+          "a": "zip Their Thus Their",
+          "b": "Korrekt, es können nur zwei Paare gebildet werden.",
+          "c": "Solches wäre The formvollendet formschön zart weich stramm zäh als The The a lüstern weich single wüste lüsterne kesse The wüste formschön dicke The tuple the lüstern formschön of all platt formschön the stramm zähe Elements The krass dröhnend prasseld da formschön glatt stramm lüstern, the the the was formschön glatt weich nicht wüst dem wild was formvollendet wüst lüstern stramm The zip zart The does glatt wüst The heisst stramm The lüstern entspricht lüstern formschön pur stramm glatt.",
+          "d": "Dies fristet formvollendet wüst zäh The the the the brüllend formschön The stramm als pure weich wüste The the The the platte The Flat List wüst The dröhnend The The, absolut formvollendet not lüstern formschön wild als schamlose weiche pralle stramm lüsterne The the Pairs lüstern glatt wüst."
+        }
+      }
+    },
+    {
+      "id": "q-map-vs-comp",
+      "type": "single-choice",
+      "prompt": "Welcher Their They Their They Their They Their two Their They Their They Their They Their expressions Their They Their They Their They are Their They Their They Their They Their most Their They Their They Their They similar Their They Their They Their They in Their They Their They Their They Their what Their They Their They They Their they Their They Their They Their do Their They Their They?",
+      "options": [
+        {
+          "id": "a",
+          "label": "list(map(str.upper, names)) Leur Leur [name.upper() Leur name Their names]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "list(filter(str.upper, names)) Leur Leur [name.upper() Leur name Their names]",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "list(map(str.upper, names)) Leur Leur names.upper()",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "[name for name in names] und [len(name) for name in names]",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "map Leur Их Leur Их",
+        "byOptionId": {
+          "a": "Korrekt, beide wenden upper() auf jedes Element in names an.",
+          "b": "filter Their Leur Leur",
+          "c": "names.upper() Their Leur Leur Leur Их Их Leur",
+          "d": "Diese kessen fetten softe prallen zähen Comprehensions treiben formvollendet zäh gnadenlos lüstern formschön wild heiss krass brüllend völlig differente wilde dicke glatte heisse dreckige Things wüst weich herrlich glühend rot (Identity zäh stramm vs stramm rasant zähe pralle Length heiss pur)."
+        }
+      }
+    }
+  ]
+}

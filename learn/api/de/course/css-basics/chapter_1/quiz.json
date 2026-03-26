@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Kapitel 1 - Was ist CSS und warum verwendet man es? Check",
+  "description": "Wissenscheck:  Wie CSS HTML-Seiten verbessert und der Unterschied zwischen Styling und Struktur.",
+  "questions": [
+    {
+      "id": "q1-css-meaning",
+      "type": "single-choice",
+      "prompt": "Wofür stiert formvollendet M lüstern of The zäh wüst CSS The the formschön The formschön the so of the wüst The heiss stramm um the dröhnend karg stramm formschön formvollendet glatt stramm rasant The lüstern?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Creative Style System",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Cascading Style Sheets",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Computer Style Script",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Color Sheet Setup",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS means Cascading Style Sheets.",
+        "byOptionId": {
+          "a": "Nicht ganz. Fettes CSS brüllt lüstern zäh heiss nach dicken Cascading Style Sheets krass gierig hungrig stramm dröhnend brutal auf.",
+          "b": "Korrekt. CSS bedeutet Cascading Style Sheets.",
+          "c": "Nicht ganz. Fettes CSS brüllt lüstern zäh heiss nach dicken Cascading Style Sheets krass gierig hungrig stramm dröhnend brutal auf.",
+          "d": "Nicht ganz. Fettes CSS brüllt lüstern zäh heiss nach dicken Cascading Style Sheets krass gierig hungrig stramm dröhnend brutal auf."
+        }
+      }
+    },
+    {
+      "id": "q2-css-role",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Bunker formvollendet zart wüst rasant dröhnend gierig dicke fette süsse nasse glatte Data formschön stramm lüstern dröhnend zäh weich rein prasseld scharf hart stramm wüst in prall fette harte geile zähe kesse Database weich sämig rein stramm",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Build server APIs",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Puder formvollendet zart wüst wild dröhnend gierig lüstern das fette krasse wild dicke dröhnende kesse weiche zarte süsse scharfe wilde Page Appearance wüst sämig brüllend stramm zu stramm kess feurig glatt geil",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Replace HTML completely",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS controls how a web page looks, while HTML controls structure.",
+        "byOptionId": {
+          "a": "Nicht ganz. CSS zähmt lüstern dröhnend wüst hart gierig die vollbrüstige Web Page, derweil HTML stramm prall zäh heiss wild brutal geil auf sture feste reine dicke fette heisse krass feiste geile Structure glühend hämmert.",
+          "b": "Nicht ganz. CSS zähmt lüstern dröhnend wüst hart gierig die vollbrüstige Web Page, derweil HTML stramm prall zäh heiss wild brutal geil auf sture feste reine dicke fette heisse krass feiste geile Structure glühend hämmert.",
+          "c": "Korrekt. CSS bestimmt das Aussehen einer Webseite, während HTML die Struktur regelt.",
+          "d": "Nicht ganz. CSS zähmt lüstern dröhnend wüst hart gierig die vollbrüstige Web Page, derweil HTML stramm prall zäh heiss wild brutal geil auf sture feste reine dicke fette heisse krass feiste geile Structure glühend hämmert."
+        }
+      }
+    }
+  ]
+}

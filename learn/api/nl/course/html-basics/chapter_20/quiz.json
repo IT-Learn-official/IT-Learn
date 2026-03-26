@@ -1,0 +1,44 @@
+{
+  "chapterId": "chapter_20",
+  "kind": "assessment",
+  "title": "Hoofdstuk 20 - Waarom JavaScript en CSS belangrijk zijn Check",
+  "description": "Controleer je kennis:  Hoe je JS en CSS koppelt, en een recap van frontend vs backend.",
+  "questions": [
+    {
+      "id": "q-frontend-backend",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They",
+      "options": [
+        {
+          "id": "api",
+          "label": "An API (System for communication between website and server)",
+          "isCorrect": false
+        },
+        {
+          "id": "server",
+          "label": "A server (computer that hosts a website)",
+          "isCorrect": false
+        },
+        {
+          "id": "css",
+          "label": "CSS (Language for styling web pages)",
+          "isCorrect": true
+        },
+        {
+          "id": "edge-functions",
+          "label": "Your Their Your Their Your Their Your Their Your Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their",
+        "byOptionId": {
+          "css": "Correct â€” CSS is a frontend technology used for styling web pages.",
+          "edge-functions": "Incorrect â€” Edge functions are a backend technology that runs close to users for fast responses.",
+          "api": "Incorrect â€” An API is a backend technology that allows communication between the frontend and backend.",
+          "server": "Incorrect â€” A server is a backend technology that hosts websites and handles requests."
+        }
+      }
+    }
+  ]
+}

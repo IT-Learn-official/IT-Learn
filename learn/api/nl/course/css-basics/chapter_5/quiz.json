@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - Basis tekstopmaak Check",
+  "description": "Controleer je kennis:  Font families, groottes, weights en kleuren.",
+  "questions": [
+    {
+      "id": "q1-font-weight",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "font-weight: 100;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "font-style: bold;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "font-weight: 700;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "text-size: bold;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "font-weight: 700 Their Leur Leur Leur Leur Their",
+        "byOptionId": {
+          "a": "Niet your their They Their",
+          "b": "Niet your their They Their",
+          "c": "Correct. Their Your Your Their Your Their Your Their Your Their",
+          "d": "Niet your their They Their"
+        }
+      }
+    },
+    {
+      "id": "q2-font-family",
+      "type": "single-choice",
+      "prompt": "Waarom Their They Their They Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Because CSS requires exactly three fonts",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "their your Their The",
+        "byOptionId": {
+          "a": "Niet your Their They",
+          "b": "Correct. steevast its those its from their Some these The their these those That Your your The Some its The Other these your This There This your Your There they there This The there That Some the Your from there Your That.",
+          "c": "Niet your Their They",
+          "d": "Niet your Their They"
+        }
+      }
+    }
+  ]
+}

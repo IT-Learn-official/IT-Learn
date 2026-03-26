@@ -1,0 +1,84 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Chapter 14 - Form Inputs Overview",
+  "description": "Questions about common form input types and when to use them.",
+  "metadata": {
+    "difficulty": "beginner",
+    "estimatedMinutes": 4
+  },
+  "questions": [
+    {
+      "id": "q-input-type-email",
+      "type": "single-choice",
+      "prompt": "Which input type is best for collecting an email address?",
+      "options": [
+        {
+          "id": "text",
+          "label": "<input type=\"text\">",
+          "isCorrect": false
+        },
+        {
+          "id": "email",
+          "label": "<input type=\"email\">",
+          "isCorrect": true
+        },
+        {
+          "id": "password",
+          "label": "<input type=\"password\">",
+          "isCorrect": false
+        },
+        {
+          "id": "tel",
+          "label": "<input type=\"tel\">",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Use type=\"email\" to get built-in email validation behavior in browsers.",
+        "byOptionId": {
+          "email": "Correct - type=\"email\" is intended for email addresses.",
+          "text": "Incorrect - text works but does not provide email-specific validation.",
+          "password": "Incorrect - password is for hidden secret input.",
+          "tel": "Incorrect - tel is for phone numbers, not email addresses."
+        }
+      }
+    },
+    {
+      "id": "q-select-vs-radio",
+      "type": "single-choice",
+      "prompt": "When should you use radio buttons?",
+      "options": [
+        {
+          "id": "multi",
+          "label": "When users can choose many options",
+          "isCorrect": false
+        },
+        {
+          "id": "single",
+          "label": "When users must choose exactly one option from a set",
+          "isCorrect": true
+        },
+        {
+          "id": "longtext",
+          "label": "When users need to type long text",
+          "isCorrect": false
+        },
+        {
+          "id": "file",
+          "label": "When users upload files",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Radio buttons represent a single-select choice among related options.",
+        "byOptionId": {
+          "single": "Correct - radios are used for one choice in a group.",
+          "multi": "Incorrect - checkboxes are used for selecting multiple options.",
+          "longtext": "Incorrect - long text is typically entered with a textarea.",
+          "file": "Incorrect - file uploads use input type=\"file\"."
+        }
+      }
+    }
+  ]
+}

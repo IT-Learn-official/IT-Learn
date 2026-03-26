@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Hoofdstuk 6 - Samenwerken: pull requests, reviews en issues",
+  "description": "Test je begrip van GitHub-functies voor samenwerking.",
+  "questions": [
+    {
+      "id": "q1-what-is-pr",
+      "type": "single-choice",
+      "prompt": "Waarvoor gebruik je een pull request (PR)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Vragen om wijzigingen van één branch in een andere te mergen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Vragen om iemands repository te verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Vragen om Git te hernoemen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een bestand waarin wachtwoorden staan",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "PR's helpen teams wijzigingen te reviewen vóór ze mergen naar belangrijke branches zoals main.",
+        "byOptionId": {
+          "a": "Correct. Een PR stelt voor om wijzigingen te mergen.",
+          "b": "Fout. PR's zijn geen verwijderverzoeken.",
+          "c": "Fout. PR's hernoemen geen tools.",
+          "d": "Fout. Wachtwoorden horen niet in repositories."
+        }
+      }
+    },
+    {
+      "id": "q2-why-reviews",
+      "type": "single-choice",
+      "prompt": "Waarom zijn code reviews nuttig?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ze laten Git sneller draaien",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze blokkeren mergen voor altijd",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze kunnen fouten vinden en de leesbaarheid verbeteren",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ze vervangen de nood aan testen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reviews geven een extra paar ogen en helpen de codekwaliteit hoog houden.",
+        "byOptionId": {
+          "a": "Fout. Reviews beïnvloeden de snelheid van Git niet.",
+          "b": "Fout. Reviews blokkeren mergen niet permanent.",
+          "c": "Correct. Reviews vinden bugs en verbeteren codekwaliteit.",
+          "d": "Fout. Reviews helpen, maar testen blijft belangrijk."
+        }
+      }
+    },
+    {
+      "id": "q3-what-are-issues",
+      "type": "single-choice",
+      "prompt": "Waarvoor gebruik je Issues meestal op GitHub?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Gecompileerde programma's opslaan",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Bugs, taken en feature-ideeën opvolgen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Je repository versleutelen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Privé-repo's automatisch publiek maken",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Issues zijn een tool om werkitems te plannen en te bespreken.",
+        "byOptionId": {
+          "a": "Fout. Gecompileerde output hoort meestal niet in issues.",
+          "b": "Correct. Issues volgen werk en discussies op.",
+          "c": "Fout. Issues zijn geen versleutelingsfeature.",
+          "d": "Fout. Repo-privacy is een instelling."
+        }
+      }
+    },
+    {
+      "id": "q4-what-is-fork",
+      "type": "single-choice",
+      "prompt": "Wat is een fork op GitHub?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Je eigen kopie van iemands repository op GitHub",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een manier om alle branches te verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een soort commitboodschap",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een Git-commando om bestanden te stagen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Met forks kan je aan een repo werken wanneer je geen directe schrijfrechten hebt op het origineel.",
+        "byOptionId": {
+          "a": "Correct. Een fork is jouw kopie op GitHub.",
+          "b": "Fout. Forken verwijdert geen branches.",
+          "c": "Fout. Het is geen type commitboodschap.",
+          "d": "Fout. Stagen doe je met `git add`."
+        }
+      }
+    }
+  ]
+}

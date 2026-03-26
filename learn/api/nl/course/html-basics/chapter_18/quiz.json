@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_18",
+  "kind": "assessment",
+  "title": "Hoofdstuk 18 - SEO: basis Check",
+  "description": "Controleer je kennis:  Headings, meta description en een goede structuur voor zoekmachines.",
+  "questions": [
+    {
+      "id": "q-meta-desc",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "style",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "indexonly",
+          "label": "Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "summary",
+          "label": "A short summary shown in search results",
+          "isCorrect": true
+        },
+        {
+          "id": "security",
+          "label": "Verbeter pure In the d'n pure in veiligheid in",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Meta these To This To the your some their your the M these its their its on These Their These This These this This these their This and your the an these Some your that which therefore These that They The The your To this The These they Its and This That other They Therefore Their The They They They Its Its This",
+        "byOptionId": {
+          "summary": "Correct â€” meta descriptions are short summaries that can appear in search results.",
+          "style": "Incorrect â€” meta descriptions do not style content.",
+          "indexonly": "Incorrect â€” meta description does not prevent indexing; robots meta tags control indexing.",
+          "security": "Incorrect â€” meta descriptions do not affect site security."
+        }
+      }
+    },
+    {
+      "id": "q-heading-seo",
+      "type": "single-choice",
+      "prompt": "these The Their There Those Those",
+      "options": [
+        {
+          "id": "structure",
+          "label": "Ze Their They Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "speed",
+          "label": "Ze Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "encrypt",
+          "label": "Ze Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "ads",
+          "label": "Ze Their They Their They Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They Their",
+        "byOptionId": {
+          "structure": "Correct â€” headings convey structure and help crawlers and users understand content.",
+          "speed": "Incorrect â€” headings do not directly affect load speed.",
+          "encrypt": "Incorrect â€” headings do not encrypt content.",
+          "ads": "Incorrect â€” headings are unrelated to ad insertion."
+        }
+      }
+    }
+  ]
+}
