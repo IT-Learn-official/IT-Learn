@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Hoofdstuk 9 - Lijsten Check",
+  "description": "Controleer je kennis:  Unordered en ordered lists met list items.",
+  "questions": [
+    {
+      "id": "q-ul-ol",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They",
+      "options": [
+        {
+          "id": "ol",
+          "label": "<ol>",
+          "isCorrect": false
+        },
+        {
+          "id": "ul",
+          "label": "<ul>",
+          "isCorrect": true
+        },
+        {
+          "id": "li",
+          "label": "<li>",
+          "isCorrect": false
+        },
+        {
+          "id": "list",
+          "label": "<list>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<ul> is for unordered, bulleted lists.",
+        "byOptionId": {
+          "ul": "Correct â€” <ul> creates an unordered (bulleted) list.",
+          "ol": "Incorrect â€” <ol> creates a numbered list.",
+          "li": "Incorrect â€” <li> is a list item tag used inside <ul> or <ol>.",
+          "list": "Incorrect â€” <list> is not a valid HTML element."
+        }
+      }
+    },
+    {
+      "id": "q-li",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They",
+      "options": [
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        },
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        },
+        {
+          "id": "li",
+          "label": "<li>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "li": "Correct â€” <li> wraps each list item inside <ul> or <ol>.",
+          "p": "Incorrect â€” <p> is for paragraphs, not list items.",
+          "div": "Incorrect â€” <div> may contain list elements but <li> is the semantic list item.",
+          "span": "Incorrect â€” <span> is inline and not a list item wrapper."
+        }
+      }
+    }
+  ]
+}

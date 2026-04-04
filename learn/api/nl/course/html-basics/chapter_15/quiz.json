@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Hoofdstuk 15 - Attributen Check",
+  "description": "Controleer je kennis:  id, class, title, placeholder, required, disabled en hoe je ze gebruikt.",
+  "questions": [
+    {
+      "id": "q-id-class",
+      "type": "single-choice",
+      "prompt": "Waar Their They Their",
+      "options": [
+        {
+          "id": "content",
+          "label": "their There Your Those their They The",
+          "isCorrect": false
+        },
+        {
+          "id": "identify",
+          "label": "These Those Their They There They",
+          "isCorrect": true
+        },
+        {
+          "id": "styleonly",
+          "label": "Adding inline styles only",
+          "isCorrect": false
+        },
+        {
+          "id": "deprecated",
+          "label": "De these their your their.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id Их Their Leur Leur Their Leur Their",
+        "byOptionId": {
+          "identify": "Correct â€” id and class let you select elements from CSS and JS.",
+          "content": "Incorrect â€” attributes don't hold primary text content, elements do.",
+          "styleonly": "Incorrect â€” attributes can be used by scripts and selectors, not just inline styles.",
+          "deprecated": "Incorrect â€” id/class are standard attributes, not deprecated."
+        }
+      }
+    },
+    {
+      "id": "q-location",
+      "type": "single-choice",
+      "prompt": "Waar Their They Their They Their They",
+      "options": [
+        {
+          "id": "end",
+          "label": "Binnenin they hun de the closing the the their tag The d'n the van The hun in steevast ongetwijfeld the The in The een d'n in HTML The the your element",
+          "isCorrect": false
+        },
+        {
+          "id": "between",
+          "label": "Between the opening and closing tags of an HTML element",
+          "isCorrect": false
+        },
+        {
+          "id": "start",
+          "label": "Binnenin weergave other de other in the The other The opening This the your the tag some The their the some van hun The een in html steevast d'n element these The",
+          "isCorrect": true
+        },
+        {
+          "id": "before",
+          "label": "Before the opening tag of an HTML element",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id Их Their Leur Leur Their",
+        "byOptionId": {
+          "start": "Correct â€” id and class attributes go inside the opening tag.",
+          "end": "Incorrect â€” id and class attributes do not go in the closing tag.",
+          "between": "Incorrect â€” id and class attributes do not go between opening and closing tags.",
+          "before": "Incorrect â€” id and class attributes do not go before the opening tag."
+        }
+      }
+    }
+  ]
+}

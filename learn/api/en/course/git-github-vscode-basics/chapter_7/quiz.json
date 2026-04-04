@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Chapter 7 - Undoing Mistakes (Without Panic)",
+  "description": "Check your understanding of undo tools like restore, revert, reset, and stash.",
+  "questions": [
+    {
+      "id": "q1-restore",
+      "type": "single-choice",
+      "prompt": "What is `git restore` commonly used for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Upload commits to GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Throw away uncommitted changes in a file",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Create a new repository",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Add a remote named origin",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`git restore` helps you undo changes in your working directory before committing.",
+        "byOptionId": {
+          "a": "Incorrect. Uploading is done with `git push`.",
+          "b": "Correct. It discards local changes to a file.",
+          "c": "Incorrect. Repos are created with `git init` (or on GitHub).",
+          "d": "Incorrect. Remotes are managed with `git remote`."
+        }
+      }
+    },
+    {
+      "id": "q2-revert",
+      "type": "single-choice",
+      "prompt": "Why is `git revert` often the safest way to undo a pushed commit?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It deletes the repository from GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "It makes your branch private",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It removes all merge conflicts automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It creates a new commit that undoes the change, without rewriting history",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Revert keeps shared history stable by adding an undo commit instead of rewriting commits.",
+        "byOptionId": {
+          "a": "Incorrect. Revert does not delete repositories.",
+          "b": "Incorrect. Revert does not make branches private.",
+          "c": "Incorrect. Revert does not automatically resolve merge conflicts.",
+          "d": "Correct. Revert creates a new commit to undo changes without rewriting history."
+        }
+      }
+    },
+    {
+      "id": "q3-reset-risk",
+      "type": "single-choice",
+      "prompt": "Why can `git reset` be risky on a branch other people use?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It can rewrite history and confuse collaborators",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "It changes your monitor resolution",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It makes GitHub stop working",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It prevents commits forever",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reset can move a branch pointer backward, which rewrites the shared story of commits.",
+        "byOptionId": {
+          "a": "Correct. Rewriting shared history can cause problems for others.",
+          "b": "Not quite. Reset does not change your screen.",
+          "c": "Not quite. GitHub still works; the issue is mismatched history.",
+          "d": "Incorrect. You can still commit after reset."
+        }
+      }
+    },
+    {
+      "id": "q4-stash",
+      "type": "single-choice",
+      "prompt": "What does `git stash` do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Creates a new branch on GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Deletes your last five commits",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Temporarily saves uncommitted changes so you can switch tasks",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Stages all files automatically",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Stash stores your local work-in-progress changes so your working directory becomes clean.",
+        "byOptionId": {
+          "a": "Incorrect. Stash does not create branches.",
+          "b": "Incorrect. Stash does not delete commits.",
+          "c": "Correct. Stash saves changes temporarily.",
+          "d": "Incorrect. Staging is done with `git add`."
+        }
+      }
+    }
+  ]
+}

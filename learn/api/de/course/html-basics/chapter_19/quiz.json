@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_19",
+  "kind": "assessment",
+  "title": "Kapitel 19 - HTML + CSS Check",
+  "description": "Wissenscheck:  Stylesheets verlinken und wofÃ¼r CSS verwendet wird.",
+  "questions": [
+    {
+      "id": "q-link-css",
+      "type": "single-choice",
+      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They links Their They Their They Their an Their They Their They Their external Their They Their They CSS Their They Their They Their They Their stylesheet Their They Their They Their They Their?",
+      "options": [
+        {
+          "id": "style",
+          "label": "<style>...</style>",
+          "isCorrect": false
+        },
+        {
+          "id": "script",
+          "label": "<script src=\"style.js\">",
+          "isCorrect": false
+        },
+        {
+          "id": "css",
+          "label": "<css>",
+          "isCorrect": false
+        },
+        {
+          "id": "link",
+          "label": "<link rel=\"stylesheet\" href=\"style.css\">",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Rotz formvollendet krass heiss lüstern weich zäh kess formschön flutschend wild wüst prasseld glühend <link rel=\"stylesheet\"> tief prasseld in den Kopfbereich lüstern (The Head wild stramm kess), um dröhnend stramm kess feurig glatt geil rasant zart weich gnadenlos wüst CSS dran zu heften weich wüst.",
+        "byOptionId": {
+          "link": "Correct â€” <link rel=\"stylesheet\"> in <head> loads external CSS.",
+          "style": "Incorrect â€” <style> contains inline CSS, not an external link.",
+          "script": "Incorrect â€” <script> loads JS, not CSS.",
+          "css": "Incorrect â€” <css> is not a valid HTML tag."
+        }
+      }
+    },
+    {
+      "id": "q-css-purpose",
+      "type": "single-choice",
+      "prompt": "Wofür Their The Their Their To",
+      "options": [
+        {
+          "id": "data",
+          "label": "Zementiert formvollendet zäh gnadenlos lüstern prall dicke nasse herrlich wüste User Data stramm weg fett",
+          "isCorrect": false
+        },
+        {
+          "id": "presentation",
+          "label": "Controls look and layout (colors, fonts, spacing)",
+          "isCorrect": true
+        },
+        {
+          "id": "server",
+          "label": "Runs server code",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "Replaces HTML structure",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS handles presentation while HTML handles structure.",
+        "byOptionId": {
+          "presentation": "Correct â€” CSS controls presentation like colors, layout, and fonts.",
+          "data": "Incorrect â€” CSS is not for storing user data.",
+          "server": "Incorrect â€” CSS runs in the browser, not on the server.",
+          "html": "Incorrect â€” CSS complements HTML but does not replace structure."
+        }
+      }
+    }
+  ]
+}

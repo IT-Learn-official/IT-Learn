@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - Tabellen Check",
+  "description": "Controleer je kennis:  Basisstructuur van tabellen met table-, tr-, td- en th-elementen.",
+  "questions": [
+    {
+      "id": "q-table",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their",
+      "options": [
+        {
+          "id": "table",
+          "label": "<table>",
+          "isCorrect": true
+        },
+        {
+          "id": "tr",
+          "label": "<tr>",
+          "isCorrect": false
+        },
+        {
+          "id": "td",
+          "label": "<td>",
+          "isCorrect": false
+        },
+        {
+          "id": "th",
+          "label": "<th>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<table> wraps the whole table structure.",
+        "byOptionId": {
+          "table": "Correct â€” <table> is the container for rows and cells.",
+          "tr": "Incorrect â€” <tr> defines a table row within <table>.",
+          "td": "Incorrect â€” <td> is a table cell, not the table root.",
+          "th": "Incorrect â€” <th> is for header cells inside rows."
+        }
+      }
+    },
+    {
+      "id": "q-th-td",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They",
+      "options": [
+        {
+          "id": "td",
+          "label": "<td>",
+          "isCorrect": false
+        },
+        {
+          "id": "th",
+          "label": "<th>",
+          "isCorrect": true
+        },
+        {
+          "id": "tr",
+          "label": "<tr>",
+          "isCorrect": false
+        },
+        {
+          "id": "thead",
+          "label": "<thead>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<th> defines a header cell, often bold and centered by default.",
+        "byOptionId": {
+          "th": "Correct â€” <th> indicates header cells within a table row.",
+          "td": "Incorrect â€” <td> is for regular cells, not headers.",
+          "tr": "Incorrect â€” <tr> is a row wrapper, not a cell.",
+          "thead": "Incorrect â€” <thead> groups header rows, but <th> is the header cell element."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Kapitel 8 - Gute Gewohnheiten: saubere Historie und klare Messages",
+  "description": "Prüfe dein Verständnis von guten Git-Gewohnheiten und VS Code-Workflow-Tipps.",
+  "questions": [
+    {
+      "id": "q1-commit-messages",
+      "type": "single-choice",
+      "prompt": "Welche Commit-Message ist am besten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "ich hab in der Schule irgendwas gemacht, hab's vergessen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Fix navbar spacing on mobile",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Semmel",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "ich liebe Whoppers",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gute Commit-Messages sind kurz, aber konkret: Sie beschreiben, was sich geändert hat.",
+        "byOptionId": {
+          "a": "Nicht ganz. Die Message ist vage und unprofessionell.",
+          "b": "Richtig. Sie beschreibt eine konkrete Änderung klar.",
+          "c": "Nicht ganz. 'Semmel' ist keine hilfreiche Commit-Message.",
+          "d": "Nicht ganz. Persönliche Vorlieben helfen in der Historie nicht weiter."
+        }
+      }
+    },
+    {
+      "id": "q2-atomic-commits",
+      "type": "single-choice",
+      "prompt": "Warum sind kleine, fokussierte Commits hilfreich?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Damit tippt deine Tastatur schneller",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie verhindern Merge-Konflikte für immer",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie sind leichter zu reviewen und leichter rückgängig zu machen",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie erstellen automatisch Pull Requests",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Fokussierte Commits halten die Historie lesbar und machen Troubleshooting einfacher.",
+        "byOptionId": {
+          "a": "Falsch. Commits beeinflussen die Tippgeschwindigkeit nicht.",
+          "b": "Falsch. Konflikte können passieren, aber gute Commits machen sie oft leichter lösbar.",
+          "c": "Richtig. Kleine Commits helfen beim Review, Debugging und beim Undo.",
+          "d": "Falsch. Pull Requests werden auf GitHub erstellt."
+        }
+      }
+    },
+    {
+      "id": "q3-readme",
+      "type": "single-choice",
+      "prompt": "Wofür wird eine README.md typischerweise verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Erklären, was das Projekt ist und wie man es nutzt",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Private API-Keys speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alle Code-Dateien ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Gemergte Branches automatisch löschen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "READMEs dokumentieren ein Projekt für Nutzer:innen und zukünftige Contributor.",
+        "byOptionId": {
+          "a": "Richtig. Eine README erklärt, was das Repo ist und wie man damit arbeitet.",
+          "b": "Falsch. Secrets sollte man nicht committen; nutze Umgebungsvariablen.",
+          "c": "Falsch. Eine README ist Doku, nicht der Code selbst.",
+          "d": "Falsch. Branch-Cleanup ist ein Git/GitHub-Workflow, nicht die Aufgabe der README."
+        }
+      }
+    },
+    {
+      "id": "q4-tags",
+      "type": "single-choice",
+      "prompt": "Wie beschreibt man einen Git-Tag am besten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Datei, die Änderungen versteckt",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Branch, der immer Konflikte hat",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein Tool zum Stagen von Dateien",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein benanntes Lesezeichen, das auf einen bestimmten Commit zeigt",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Tags markieren wichtige Punkte in der Historie, z. B. eine Release-Version.",
+        "byOptionId": {
+          "a": "Falsch. Änderungen verstecken ist eher stashing oder ignorieren.",
+          "b": "Falsch. Tags sind keine Branches.",
+          "c": "Falsch. Tags sind keine Staging-Tools.",
+          "d": "Richtig. Tags zeigen als benannte Marker auf Commits."
+        }
+      }
+    }
+  ]
+}

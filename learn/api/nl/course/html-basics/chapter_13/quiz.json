@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Hoofdstuk 13 - Formulieren: basis Check",
+  "description": "Controleer je kennis:  Het form-element en eenvoudige inputs met labels.",
+  "questions": [
+    {
+      "id": "q-form",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "form",
+          "label": "<form>",
+          "isCorrect": true
+        },
+        {
+          "id": "fieldset",
+          "label": "<fieldset>",
+          "isCorrect": false
+        },
+        {
+          "id": "input",
+          "label": "<input>",
+          "isCorrect": false
+        },
+        {
+          "id": "label",
+          "label": "<label>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<form> wraps controls and can be submitted to a server.",
+        "byOptionId": {
+          "form": "Correct â€” <form> groups inputs and submission behavior.",
+          "fieldset": "Incorrect â€” <fieldset> groups related controls but doesn't enable submission on its own.",
+          "input": "Incorrect â€” <input> is a control inside a form, not the form container.",
+          "label": "Incorrect â€” <label> labels a control but isn't the form container."
+        }
+      }
+    },
+    {
+      "id": "q-label",
+      "type": "single-choice",
+      "prompt": "Waarom Their They Their They Their They",
+      "options": [
+        {
+          "id": "style",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "access",
+          "label": "Om Their They Their They Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "submit",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "label": "Their They Their They Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They Their",
+        "byOptionId": {
+          "access": "Correct â€” <label> improves accessibility and focus behavior.",
+          "style": "Incorrect â€” styling is done via CSS, not the label element itself.",
+          "submit": "Incorrect â€” <label> does not submit forms automatically.",
+          "none": "Incorrect â€” labels provide accessibility benefits and should be used."
+        }
+      }
+    }
+  ]
+}

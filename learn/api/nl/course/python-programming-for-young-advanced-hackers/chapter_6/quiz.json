@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Hoofdstuk 6 - Operatoren en vergelijkingen Check",
+  "description": "Snelle check voor hoofdstuk 6. Test je begrip van rekenoperatoren, vergelijkingsoperatoren, toekenningsoperatoren en logische operatoren.",
+  "questions": [
+    {
+      "id": "q-arithmetic-operator",
+      "type": "single-choice",
+      "prompt": "Wat doet de operator `**` in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Telt twee getallen op.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Deelt een getal door een ander.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Verheft een getal tot de macht van een ander.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Berekent de rest na een deling.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De operator `**` gebruik je voor machtsverheffen (exponentiation) in Python.",
+        "byOptionId": {
+          "a": "Optellen doe je met de `+`-operator.",
+          "b": "Delen doe je met `/` of `//`.",
+          "c": "Juist! `**` betekent machtsverheffen.",
+          "d": "De rest vind je met `%`."
+        }
+      }
+    },
+    {
+      "id": "q-comparison-operator",
+      "type": "single-choice",
+      "prompt": "Welke operator checkt of twee waarden NIET gelijk zijn?",
+      "options": [
+        {
+          "id": "a",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "!=",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": ">",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<=",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De operator `!=` checkt ongelijkheid.",
+        "byOptionId": {
+          "a": "`==` checkt gelijkheid, niet ongelijkheid.",
+          "b": "Juist! `!=` betekent niet gelijk.",
+          "c": "`>` checkt of de ene waarde groter is dan de andere.",
+          "d": "`<=` checkt kleiner dan of gelijk aan."
+        }
+      }
+    },
+    {
+      "id": "q-assignment-operator",
+      "type": "single-choice",
+      "prompt": "Wat doet de operator `+=`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Hij telt een waarde bij een variabele op en update de variabele.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Hij checkt of twee waarden gelijk zijn.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Hij vermenigvuldigt twee waarden.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Hij trekt een waarde af van een variabele.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`+=` is een toekenningsoperator die optelt en de variabele bijwerkt.",
+        "byOptionId": {
+          "a": "Juist! `x += 2` is hetzelfde als `x = x + 2`.",
+          "b": "Gelijkheid checken doe je met `==`.",
+          "c": "Vermenigvuldigen doe je met `*`.",
+          "d": "Aftrekken en updaten doe je met `-=`."
+        }
+      }
+    },
+    {
+      "id": "q-logical-operator",
+      "type": "single-choice",
+      "prompt": "Welke hiervan is een logische operator in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "en",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "++",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "==",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "**",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Logische operatoren zijn `and`, `or` en `not`.",
+        "byOptionId": {
+          "a": "Juist! `and` is een logische operator.",
+          "b": "`++` is geen Python-operator.",
+          "c": "`==` is een vergelijkingsoperator.",
+          "d": "`**` is een rekenoperator."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Kapitel 12 - Flexbox fÃ¼r AnfÃ¤nger:innen Check",
+  "description": "Wissenscheck:  Elemente einfach ausrichten und AbstÃ¤nde setzen mit flexbox.",
+  "questions": [
+    {
+      "id": "q1-flex-enable",
+      "type": "single-choice",
+      "prompt": "Welche sämige pralle the The The the the Declaration verzaubert The the formvollendet The the sweet stramm the einen the zarten the the the Container in that gierig weiche the on The as einen flex the the karg container weich that as The krachend the The The the on?",
+      "options": [
+        {
+          "id": "a",
+          "label": "position: flex;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "display: flex;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "flex: display;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "layout: flex;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Baller formvollendet kess gnadenlos lüstern weich wild stramm krass heiss stöhnend kess dröhnend gierig weich formschön fettes wildes geiles strammes dröhnendes wüstes display: flex pur heiss brüllend auf stramm den dicken zarten lahmen kargen kühlen Parent Container stramm glatt drauf.",
+        "byOptionId": {
+          "a": "Nicht ganz. Prügel lüstern stramm wüst prall heiß dröhnend krass gierig brüllend sämig rotzfrech zart display: flex weich zäh kess geigt glatt feurig prasseld satt rein dicke glühend kess heiss pur hart sämig wild formvollendet wüst krass hart voll stramm fies fett prall feurig rein gnadenlos herrlich lüstern wüst satt glühend dröhnend formschön geigt pur rasant krass lüstern sämig zäh heiss auf die strammen dicken prallen harten festen wüsten glatten süssen nassen runden Parent Container krass brüllend glatt weich zäh feurig kess drüber wüst stramm geigt.",
+          "b": "Korrekt. Nutze display: flex beim übergeordneten Eltern-Container.",
+          "c": "Nicht ganz. Prügel lüstern stramm wüst prall heiß dröhnend krass gierig brüllend sämig rotzfrech zart display: flex weich zäh kess geigt glatt feurig prasseld satt rein dicke glühend kess heiss pur hart sämig wild formvollendet wüst krass hart voll stramm fies fett prall feurig rein gnadenlos herrlich lüstern wüst satt glühend dröhnend formschön geigt pur rasant krass lüstern sämig zäh heiss auf die strammen dicken prallen harten festen wüsten glatten süssen nassen runden Parent Container krass brüllend glatt weich zäh feurig kess drüber wüst stramm geigt.",
+          "d": "Nicht ganz. Prügel lüstern stramm wüst prall heiß dröhnend krass gierig brüllend sämig rotzfrech zart display: flex weich zäh kess geigt glatt feurig prasseld satt rein dicke glühend kess heiss pur hart sämig wild formvollendet wüst krass hart voll stramm fies fett prall feurig rein gnadenlos herrlich lüstern wüst satt glühend dröhnend formschön geigt pur rasant krass lüstern sämig zäh heiss auf die strammen dicken prallen harten festen wüsten glatten süssen nassen runden Parent Container krass brüllend glatt weich zäh feurig kess drüber wüst stramm geigt."
+        }
+      }
+    },
+    {
+      "id": "q2-justify-content",
+      "type": "single-choice",
+      "prompt": "Was of the rasant zart The stramm the The bändigt formvollendet glatt kess the justify-content formschön then on dröhnend The the formschön on then their so their of To dicke on To a formschön To then then The stramm stramm herrlichen stramm krass on then their so To their of stramm karg Then The formvollendet then dicke mits the then dicke on then The wüste then The of stramm To the to some stramm mits der on formschön to On Then To karg der so To then formschön On To their To then then their to (formvollendet and wüst their To The So and on Some their To The M On The of stramm the The row karg then some The on then so Then formvollendet then on their then so The on Then the stramm Then and stramm flex Then Their on Their to then to Then dröhnend formschön then then kess karg stramm container the Then then it of) am on Their karg then on so karg then karg to The of M to then on it to stramm On so it karg then the So and Their their dicke Then mits then as to Their to M",
+      "options": [
+        {
+          "id": "a",
+          "label": "Vertical Text The of of wüster The of bunter The fies stramm kess feuriger the of The pur stramm formschön The zarter the dicker the The weiche The glatt Color The of of of The stramm wüst The The",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Scharfes zackiges heisses Main-Axis Alignment",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Border thickness",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Schrift-Ladereihenfolge",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "justify-content Leur Leur Their Leur",
+        "byOptionId": {
+          "a": "Nicht ganz. Süss heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes justify-content kontrolliert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig prall glühend zäh kess geil wild gierig lüstern heiss das fette weiche zähe pralle stramme wüste dicke zarte glatte nackte Spacing mitsamt glühend geiler dicker weicher runder praller sämiger heisser crasser zäher wild pfeifend strammer derber glatter prasselder Alignment prall kess wüst herrlich wild satt glühend hart weich stramm genau eng an dröhnend grosser praller fetter heisser strammer fies dreckiger stumm derber wüster heisser glatter wild rotzeinfach formvollendeter Main Axis schnittig heiss stramm dran entlang wüst prall stramm brüllend zäh.",
+          "b": "Korrekt. justify-content kontrolliert die Abstände und Ausrichtung entlang der Hauptachse.",
+          "c": "Nicht ganz. Süss heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes justify-content kontrolliert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig prall glühend zäh kess geil wild gierig lüstern heiss das fette weiche zähe pralle stramme wüste dicke zarte glatte nackte Spacing mitsamt glühend geiler dicker weicher runder praller sämiger heisser crasser zäher wild pfeifend strammer derber glatter prasselder Alignment prall kess wüst herrlich wild satt glühend hart weich stramm genau eng an dröhnend grosser praller fetter heisser strammer fies dreckiger stumm derber wüster heisser glatter wild rotzeinfach formvollendeter Main Axis schnittig heiss stramm dran entlang wüst prall stramm brüllend zäh.",
+          "d": "Nicht ganz. Süss heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes justify-content kontrolliert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig prall glühend zäh kess geil wild gierig lüstern heiss das fette weiche zähe pralle stramme wüste dicke zarte glatte nackte Spacing mitsamt glühend geiler dicker weicher runder praller sämiger heisser crasser zäher wild pfeifend strammer derber glatter prasselder Alignment prall kess wüst herrlich wild satt glühend hart weich stramm genau eng an dröhnend grosser praller fetter heisser strammer fies dreckiger stumm derber wüster heisser glatter wild rotzeinfach formvollendeter Main Axis schnittig heiss stramm dran entlang wüst prall stramm brüllend zäh."
+        }
+      }
+    }
+  ]
+}

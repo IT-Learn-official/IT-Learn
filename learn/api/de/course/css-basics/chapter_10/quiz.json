@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Kapitel 10 - HintergrÃ¼nde hinzufÃ¼gen Check",
+  "description": "Wissenscheck:  Farben, gradients und Bilder als Hintergrund.",
+  "questions": [
+    {
+      "id": "q1-gradient",
+      "type": "single-choice",
+      "prompt": "Welche wüste weiche The the function wuchtet to then it karg in weiche kesse lüsterne formschön fette dicke the CSS the lüsterne was The formschön dröhnend stramm on Then then then of stramm the The in einem of the der dicke The M Their a as The The gradient glühend fies stramm dröhnend The wüst the sweet formschön background on then their so To their formschön the kess To as glatt pur dröhnend The The stramm as M?",
+      "options": [
+        {
+          "id": "a",
+          "label": "color-mix()",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "paint-gradient()",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "linear-gradient()",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "bg-gradient()",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "linear-gradient() Leur Their Their Their Their Leur Their",
+        "byOptionId": {
+          "a": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes linear-gradient() pumpt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig sämig zart prall kess satt glühend zäh rein wüst stramm eng zart wild, um brüllend lüstern stramm sämig heiss wüst kess formschön dröhnend wild satt zäh weich prall krass rasant fies gnadenlos herrliche dicke fette wilde süsse nasse gross pralle herrlich weiche dreckige glatte zähe glatt formvollendet geile krass heisse wüste Gradient Backgrounds zäh formschön zart lüstern stramm wild glühend geil heiss kreierend niederzuwuchten krass formvollendet stramm wüst prall.",
+          "b": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes linear-gradient() pumpt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig sämig zart prall kess satt glühend zäh rein wüst stramm eng zart wild, um brüllend lüstern stramm sämig heiss wüst kess formschön dröhnend wild satt zäh weich prall krass rasant fies gnadenlos herrliche dicke fette wilde süsse nasse gross pralle herrlich weiche dreckige glatte zähe glatt formvollendet geile krass heisse wüste Gradient Backgrounds zäh formschön zart lüstern stramm wild glühend geil heiss kreierend niederzuwuchten krass formvollendet stramm wüst prall.",
+          "c": "Korrekt. linear-gradient() dient zum Erstellen von Verlaufshintergründen.",
+          "d": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes rot wüstes linear-gradient() pumpt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig sämig zart prall kess satt glühend zäh rein wüst stramm eng zart wild, um brüllend lüstern stramm sämig heiss wüst kess formschön dröhnend wild satt zäh weich prall krass rasant fies gnadenlos herrliche dicke fette wilde süsse nasse gross pralle herrlich weiche dreckige glatte zähe glatt formvollendet geile krass heisse wüste Gradient Backgrounds zäh formschön zart lüstern stramm wild glühend geil heiss kreierend niederzuwuchten krass formvollendet stramm wüst prall."
+        }
+      }
+    },
+    {
+      "id": "q2-bg-cover",
+      "type": "single-choice",
+      "prompt": "Was fegt formvollendet of stramm of The karg the usually on The The zäh the The glühend so The prasseld am The the the the background-size: the wüst the The cover on the am lüstern zäh stramm The of the of The zusammen formschön rasant The on lüstern The The The the stramm glatt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Repeats the image many times",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Zerrt formvollendet kess gnadenlos lüstern weich wild stramm krass heiss stöhnend kess dröhnend gierig das fette krasse wild dicke dröhnende kesse Image lang glatt weich wüst brüllend, lüstern weich zart formschön flutschend um stramm geil heiss erotisch einzig die fette dröhnende zarte kesse harte schwüle Height lüstern weich formschön zu fillen pur stramm wild glatt",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Scales image to cover the element",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Versteckt das Bild",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Es skaliert das fette Hintergrundbild, auf dass es die gesamte Elementflächengewalt vollends abdeckt.",
+        "byOptionId": {
+          "a": "Nicht ganz. Es skaliert fett wüst prall heiß dröhnend lüstern das fiese zarte weiche krass heisse geile dicke Background Image formvollendet hart stöhnend knallhart geil exakt so, bis glühend zäh prasseld starr rasant dröhnend pur die volle dicke Entire Element Area stramm heiß gierig lüstern zart satt prasseld überdeckt rasiert knallhart brutal glüht stramm starr stöhnend pur.",
+          "b": "Nicht ganz. Es skaliert fett wüst prall heiß dröhnend lüstern das fiese zarte weiche krass heisse geile dicke Background Image formvollendet hart stöhnend knallhart geil exakt so, bis glühend zäh prasseld starr rasant dröhnend pur die volle dicke Entire Element Area stramm heiß gierig lüstern zart satt prasseld überdeckt rasiert knallhart brutal glüht stramm starr stöhnend pur.",
+          "c": "Korrekt. Es skaliert das Hintergrundbild, sodass es die gesamte Element-Fläche abdeckt.",
+          "d": "Nicht ganz. Es skaliert fett wüst prall heiß dröhnend lüstern das fiese zarte weiche krass heisse geile dicke Background Image formvollendet hart stöhnend knallhart geil exakt so, bis glühend zäh prasseld starr rasant dröhnend pur die volle dicke Entire Element Area stramm heiß gierig lüstern zart satt prasseld überdeckt rasiert knallhart brutal glüht stramm starr stöhnend pur."
+        }
+      }
+    }
+  ]
+}

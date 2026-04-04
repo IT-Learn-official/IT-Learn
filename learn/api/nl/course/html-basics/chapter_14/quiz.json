@@ -1,0 +1,84 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Hoofdstuk 14 - Formulierinputs: overzicht Check",
+  "description": "Controleer je kennis:  Alle input types: text, email, password, checkbox, radio, textarea en select.",
+  "metadata": {
+    "difficulty": "beginner",
+    "estimatedMinutes": 4
+  },
+  "questions": [
+    {
+      "id": "q-input-type-email",
+      "type": "single-choice",
+      "prompt": "Welk Their They Their They Their They Their They",
+      "options": [
+        {
+          "id": "text",
+          "label": "<input type=\"text\">",
+          "isCorrect": false
+        },
+        {
+          "id": "email",
+          "label": "<input type=\"email\">",
+          "isCorrect": true
+        },
+        {
+          "id": "password",
+          "label": "<input type=\"password\">",
+          "isCorrect": false
+        },
+        {
+          "id": "tel",
+          "label": "<input type=\"tel\">",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "email": "Correct - type=\"email\" is intended for email addresses.",
+          "text": "Foutief Their They Their",
+          "password": "Foutief Their They Their",
+          "tel": "Foutief Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-select-vs-radio",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their",
+      "options": [
+        {
+          "id": "multi",
+          "label": "Wanneer Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "single",
+          "label": "Wanneer Their They Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "longtext",
+          "label": "Wanneer Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "file",
+          "label": "Wanneer Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They Their",
+        "byOptionId": {
+          "single": "Correct - radios are used for one choice in a group.",
+          "multi": "Foutief Their They There",
+          "longtext": "Foutief Their They There",
+          "file": "Foutief Their They There"
+        }
+      }
+    }
+  ]
+}

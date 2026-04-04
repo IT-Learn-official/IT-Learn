@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Hoofdstuk 11 - Divs & spans Check",
+  "description": "Controleer je kennis:  Verschil tussen block- en inline-elementen met div en span.",
+  "questions": [
+    {
+      "id": "q-div-block",
+      "type": "single-choice",
+      "prompt": "Welk Their They Their They Their",
+      "options": [
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        },
+        {
+          "id": "img",
+          "label": "<img>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "<a>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<div> is a block-level container; <span> is inline.",
+        "byOptionId": {
+          "div": "Correct â€” <div> is block-level and takes full width by default.",
+          "span": "Incorrect â€” <span> is inline and flows within lines of text.",
+          "img": "Incorrect â€” <img> is inline (or replaced) by default, not a block container.",
+          "a": "Incorrect â€” <a> is inline; it creates links not block-level layout."
+        }
+      }
+    },
+    {
+      "id": "q-span-use",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their",
+      "options": [
+        {
+          "id": "large",
+          "label": "Om Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "table",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "inline",
+          "label": "Om Their They Their They Their",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They",
+        "byOptionId": {
+          "inline": "Correct â€” <span> is for inline grouping and small styling hooks.",
+          "large": "Incorrect â€” use block containers like <div> or semantic sections for large sections.",
+          "table": "Incorrect â€” table rows use <tr>, not <span>.",
+          "image": "Incorrect â€” <img> embeds images; <span> does not replace it."
+        }
+      }
+    }
+  ]
+}

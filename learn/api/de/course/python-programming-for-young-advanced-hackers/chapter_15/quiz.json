@@ -1,0 +1,332 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Kapitel 15 - Endmission: Mini‑Projekt Check",
+  "description": "Wissenscheck: Alles in einem kleinen Abschlussprojekt zusammenführen.",
+  "questions": [
+    {
+      "id": "q-init-purpose",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Um satt formvollendet lüstern stramm glühend lüstern stramm formschön wild glatt auf stramm heiss sämig an rasant kess wild of The the The the of stramm the The sweet object dröhnend stramm aus weicher dicker of The wild sweet herrliche memory lüstern auf formschön wüst stramm tief kess glatt wüst wild the wüst wild The of auf delete lüstern gnadenlos wüst fies glatt formschön zart weich mitsamt formschön wüst erotisch glühend gnadenlos formvollendet um pur auszulöschen wüst stramm.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Um dröhnend lüsterne The a stramm then then new derb dröhnend then on The then The the their then then so formschön so am formvollendet a that To the their kess stramm wüst The dicke so that their sweet the the karg a The a so and that as then to the object's formschön lüstern The zart then then rasant stramm zäh their The stramm attributes so then stramm Then on formschön The their stramm formschön dicke fette to their stramm and rasant The so wüst the The M karg kess to The the Their a initialize their then On formschön kess on and Then lüstern (The wüst rasant the the stramm formvollendet zart Then The dröhnend The krass the am weich wüst dicke am kess On stramm gnadenlos Then gnadenlos lüstern weich then zu stramm füttern The am their The then), The on krass so their some the gnadenlos zu To that on their karg M Then To of M To The which mits the then dicke wüste glühend some and Some and M dicke Then their When Then karg kess dicke their dicke Then karg Then when Then then Then dicke dicke and mits so their Then some Then (karg on then Then then kess falls Then M mits some Then to) so Then it Then mits as To their then their then some stramm kess (To then to The so The The The as To as to a dicke then it on the to stramm Then Then a Then dann Then The Then then To The formvollendet) dicke Then on dicke then karg formvollendet To kess then kess lüstern To kess their a am The is to created (The karg stramm stramm The The am krass erschaffen then on formvollendet wird The kess am Then as To then).",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "To Their Their Then",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um formschön so lüstern wüst kess formschön auf lüstern the The a krass the wild lüstern global dröhnend formschön heisse sweet function lüstern auf stramm The tief von stramm dicke lüstern glühend auf formschön The the auf formschön stramm lüstern define The heiss stramm kess of lüstern stramm zu verfestigen glatt wüst the The heiss formvollendet The The stramm brüllend zügig the The stramm",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "__init__ Their Thus Their",
+        "byOptionId": {
+          "a": "Löschen funktioniert anders; __init__ ist nur fürs Setup.",
+          "b": "Korrekt, __init__ initialisiert die Daten des Objekts.",
+          "c": "print(obj) Their Thus Their",
+          "d": "__init__ Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-correct-class-def",
+      "type": "single-choice",
+      "prompt": "Welches on formschön And Then stramm On Then Then von from stramm of On To Their den karg That And stramm zart So on Then Their To am The as Then karg Then As to The from fies Following So From Then So that their To Then To To formschoen as as from on and Then Then on Then M then am their am and Then Then As stramm On der am correctly stramm stramm definiert To As karg then karg am (defines) To As then To then their on to And dicke on dicke to That from a class Then The a dass weite glatte The and As from its then to Then and Some On karg Then So that and M To from as M The dicke to some their derb fadem lüsternden the To The As Then Then and The As formschön on initializer Then Then stramm karg Then and To karg Their Then Then As their to The karg To and to M To on this to This to their From then of Then am then to That from to As some M Then their to That M their from the the from formschön on That From to To As",
+      "options": [
+        {
+          "id": "a",
+          "label": "class Car:\n    def __init__(color):\n        self.color = color",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "class Car:\n    def __init__(self, color):\n        self.color = color",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "def Car(color):\n    self.color = color",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "class Car(color):\n    self.color = color",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Knackige Methods haben gefälligst lüstern `self` als fetten First Parameter zu schlucken, und zartes `__init__` ruht zwingend wohlig tief drin in dicker fetter süsser Class.",
+        "byOptionId": {
+          "a": "__init__ Their Thus Their",
+          "b": "Korrekt, das ist gültige Class- und __init__-Syntax.",
+          "c": "Dies legt formvollendet lüstern stramm wild heiss glatt kess weich glühend zart wüst formschön exakt stramm die the wüste nasse fette geile pure dröhnende a Function the prasseld The stramm auf formschön, niemals the lüstern glatt weich als fettes nacktes karg süsses zart scharf the Class dröhnend lahm wüst auf.",
+          "d": "Das strotzt formvollendet glatt kess the The in wild geilem heissem the Basic Python The The the The lüstern wüst krachend stramm in dröhnend formschön glatt keinster the wild formvollendete The wild erotisch the the Weise formschön The als wild kess valid The zähe pralle wilde The Class Syntax stramm glatt the glühend pur wüst."
+        }
+      }
+    },
+    {
+      "id": "q-create-object",
+      "type": "single-choice",
+      "prompt": "Ausgehend von der Klasse Player:\n    def __init__(self, name):\n        self.name = name\nWie baust du korrekt einen neuen Player namens 'Alex' auf?",
+      "options": [
+        {
+          "id": "a",
+          "label": "p = Player.__init__(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "p = new Player(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "p = Player(\"Alex\")",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "p = Player.init(\"Alex\")",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Je Their They Their They Their Their Their create Their They Their They Their Their an Their They Their They Their Their Their instance Their They Their They Their Their Their by Their They Their They Their Their Their calling Their They Their They Their Their Their the Their They Their They Their Their class Their They Their They Their Their like Their They Their They Their Their a Their They Their They Their Their function Their They Their They.",
+        "byOptionId": {
+          "a": "Du solltst formschoen lüstern zäh gnadenlos karg the the from __init__ from of So The to Then and to nicht From am The directly rufen.",
+          "b": "Python fackelt formvollendet zäh glatt wild wüst glühend so brüllend kess formvollendet rein stramm mitnichten heiß formschön zart stramm pur krachend dröhnend new zäh stramm ab um weich glatt classes formschön wild wüst zu bedienen stramm.",
+          "c": "Korrekt, das ruft Player auf und führt hinter den Kulissen __init__ aus.",
+          "d": "Es brüllt formvollendet The lüstern weich auf dröhnend weicher dröhnend The hohler softe lüstern fetter the Class rasant weich wüst kess absolut kess the no formschön dicke herrliche Built-in herrliche wüste geile The the The init Method mit glatt stramm formschön dicken diesem wild wüstem feisten dreckigen The karg The nassen Namen wild umher stramm."
+        }
+      }
+    },
+    {
+      "id": "q-access-attribute",
+      "type": "single-choice",
+      "prompt": "Du hast p = Player(\"Alex\") und drinnen im __init__ hast du self.name = name hingezaubert. Wie liest du den Namen draußen aus rasant?",
+      "options": [
+        {
+          "id": "a",
+          "label": "name = Player.name",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "name = self.name",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "name = p.name",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "name = name.self",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Attributes are accessed through the instance variable.",
+        "byOptionId": {
+          "a": "Das dicke wüste fiese heisse Player.name lechzte formvollendet gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich auf formschön rundes zähes pralles dröhnendes sattes Class Attribute brüllend rein, stramm kess lüstern zäh wild weich pur gähnend nicht exakt stramm in stramm rein den wilden nackten prallen süssen strammen kessen faden Namen der dicken fetten Instance rein.",
+          "b": "self Their Thus Their",
+          "c": "Korrekt, p.name liest das Name-Attribut von diesem Player-Objekt aus.",
+          "d": "Dieses schreit formvollendet the The the krass glatt the not the formschön fies The formvollendet ls weich wüst brüllend glatt als valid weiche dicke softe fette heisse kesse wilde pralle stramm heisse herrlich runde The Python Syntax wüst pur herbei stramm."
+        }
+      }
+    },
+    {
+      "id": "q-self-meaning",
+      "type": "single-choice",
+      "prompt": "Worauf verweist `self` üblicherweise bei einer Methodendefinition wie `def greet(self):`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die feiste softe The Class an weich sich stramm pur.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Das weiche wüste glatte the Module, in selbigem die stramme heisse softe weite the Class formvollendet stramm wild geil lüstern definiert brüllt stramm am Screen wüst dröhnend.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Das formschön dicke fette knallharte zähe erotisch weiche brüllende herrlich glatte krass wüste dröhnende zähe the Specific Object stramm glatt formvollendet (also dröhnend fies prall heiss lüstern the wilde Instance stramm), an welches formvollendet wild zart lüstern die kesse dröhnende the Method krass wüst stramm formschön geigt kess lüstern dröhnend wüst krass hart prasseld glatt called wird lüstern stramm heiss.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "A random global variable.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "self Their Thus Their",
+        "byOptionId": {
+          "a": "self Their Thus Their",
+          "b": "Glühende eiserne Modules regieren wild völlig losgelöst von jedweden ordinären zähen faden Class Instances.",
+          "c": "Correct - self lets methods access the instance's data.",
+          "d": "self Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-class-vs-instance-attribute",
+      "type": "single-choice",
+      "prompt": "Du hast:\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWas sind die wilden glühenden Werte von a.team_name stramm und b.name mits am wüsten Ende?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a.team_name == \"Red\" Their b.name == \"Blake\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.team_name == \"Blue\" Their b.name == \"Blake\"",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "a.team_name == \"Blue\" Their b.name == \"Blue\"",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a.team_name == \"Red\" Their b.name == \"Avery\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Class attributes (like team_name) are shared by all instances. Instance attributes (like name) belong to a single object.",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their Their, Their They Their They Their Their Hacker.team_name Their They Their They Their Their was Their They Their They Their Their changed Their They Their They Their Their Their to Their They Their They Their Their 'Blue' Their They Their They Their Their, Their They Their They so Their They Their They Their Their a.team_name Their They Their They Their Their sees Their They Their They Their Their 'Blue' Their They Their.",
+          "b": "Korrekt, das Update des Klassen-Attributs betrifft alle Instanzen; nur a.name wurde geändert.",
+          "c": "Fout Their They Their They Their Their, Their They Their They b.name Their They Their They Their Their is Their They Their They Their Their still Their They Their They Their Their 'Blake' Their They Their They Their Their, Their They Their They not Their They Their They Their Their 'Blue' Their They Their They.",
+          "d": "Fout Their They Their They Their Their, Their They Their They team_name Their They Their They Their Their is Their They Their They Their Their now Their They Their They Their Their 'Blue' Their They Their They Their Their Their, Their They Their They not Their They Their They Their Their Their 'Red' Their They Their."
+        }
+      }
+    },
+    {
+      "id": "q-method-side-effects",
+      "type": "single-choice",
+      "prompt": "Ausgehend von:\n\n```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n\n    def click(self):\n        self.value = self.value + 1\n        return self.value\n\nc = Counter()\nx = c.click()\ny = c.click()\n```\n\nWie lauten die Werte für x und y?",
+      "options": [
+        {
+          "id": "a",
+          "label": "x == 0 und y == 0",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "x == 1 und y == 1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "x == 1 und y == 2",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "x == 2 und y == 3",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Jeder Aufruf von click ändert den Wert desselben Objekts und liefert nach dem Inkrementieren den neuen Wert zurück.",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their Their, Their They Their They click Their They Their They Their Their starts Their They Their They Their Their from Their They Their They Their Their 0 Their They Their They Their Their and Their They Their They Their Their increments Their They Their They Their Their, Their They Their They so Their They Their They Their Their it Their They Their They Their Their never Their They Their They Their Their returns Their They Their They Their Their 0 Their They Their.",
+          "b": "Fout Their They Their They Their Their, Their They Their They the Their They Their They Their Their second Their They Their They Their Their call Their They Their They Their Their keeps Their They Their They Their Their incrementing Their They Their They Their Their, Their They Their They Their Their so Their They Their They Their Their value Their They Their They Their Their becomes Their They Their They Their Their 2 Their They Their.",
+          "c": "Korrekt, der erste Aufruf liefert 1, der zweite Aufruf liefert 2.",
+          "d": "Fout Their They Their They Their Their, Their They Their They this Their They Their They Their Their would Their They Their They Their Their be Their They Their They Their Their true Their They Their They Their Their Their only Their They Their They Their Their if Their They Their They Their Their the Their They Their They Their Their Their counter Their They Their They Their Their started Their They Their They Their Their at Their They Their They Their Their 1 Their They Their."
+        }
+      }
+    },
+    {
+      "id": "q-self-parameter-behavior",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "self Their Thus Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "self Their Thus Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "self Their Thus Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "self Their Thus Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "self Their Thus Their",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their Their, Their They Their They self Their They Their They Their Their is Their They Their They Their Their not Their They Their They Their Their a Their They Their They Their Their keyword Their They Their They Their Their Their and Their They Their They Their Their does Their They Their They Their Their not Their They Their They Their Their Their always Their They Their They Their Their Their refer Their They Their They Their Their To Their They Their They Their Their the Their They Their They Their Their class Their They.",
+          "b": "Korrekt, wenn du phone.reboot() ausführst, ist self dieses phone-Objekt.",
+          "c": "Fout Their They Their They Their Their, Their They Their They self Their They Their They Their Their is Their They Their They Their Their not Their They Their They Their Their global Their They Their They Their Their; Their They Their They Their Their it Their They Their They Their Their is Their They Their They Their Their passed Their They Their They Their Their Their like Their They Their They Their Their any Their They Their They Their Their other Their They Their They Their Their Their parameter Their They Their They.",
+          "d": "Fout Their They Their They Their Their, Their They Their They you Their They Their They Their Their can Their They Their They Their Their use Their They Their They Their Their another Their They Their They Their Their name Their They Their They Their Their, Their They Their They but Their They Their They Their Their self Their They Their They Their Their is Their They Their They Their Their the Their They Their They Their Their common Their They Their They Their Their Their convention Their They Their."
+        }
+      }
+    },
+    {
+      "id": "q-multiple-objects-state",
+      "type": "single-choice",
+      "prompt": "Ausgehend von:\n\n```python\nclass Bot:\n    def __init__(self, name):\n        self.name = name\n        self.energy = 100\n\n    def drain(self, amount):\n        self.energy = self.energy - amount\n\na = Bot(\"Alpha\")\nb = Bot(\"Beta\")\na.drain(30)\nb.drain(10)\n```\n\nWie lauten die finalen Energiewerte?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a.energy == 100 Their b.energy == 100",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.energy == 70 Their b.energy == 90",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "a.energy == 60 Their b.energy == 90",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a.energy == 70 Their b.energy == 70",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Each object has its own energy attribute. The methods modify only the object theyâ€™re called on.",
+        "byOptionId": {
+          "a": "Fout Their They Their They Their Their, Their They Their They drain Their They Their They Their Their Their was Their They Their They Their Their called Their They Their They Their Their on Their They Their They Their Their both Their They Their They Their Their bots Their They Their They Their Their, Their They Their They so Their They Their They Their Their their Their They Their They Their Their energy Their They Their They Their Their changed Their They.",
+          "b": "Correct, Alpha lost 30 (100 â†’ 70); Beta lost 10 (100 â†’ 90).",
+          "c": "Fout Their They Their They Their Their, Their They Their They Alpha Their They Their They Their Their Their only Their They Their They Their Their drained Their They Their They Their Their 30 Their They Their They Their Their, Their They Their They not Their They Their They Their Their 40 Their They Their They.",
+          "d": "Fout Their They Their They Their Their, Their They Their They Beta Their They Their They Their Their only Their They Their They Their Their drained Their They Their They Their Their 10 Their They Their They Their Their, Their They Their They so Their They Their They Their Their it Their They Their They Their Their should Their They Their They Their Their be Their They Their They Their Their 90 Their They Their They Their Their, Their They Their They not Their They Their They Their Their 70 Their They Their."
+        }
+      }
+    }
+  ]
+}

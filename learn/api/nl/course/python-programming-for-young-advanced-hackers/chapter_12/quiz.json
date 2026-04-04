@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Hoofdstuk 12 - Fouten en exceptions Check",
+  "description": "Controleer je kennis: Exceptions begrijpen en je code robuuster maken.",
+  "questions": [
+    {
+      "id": "q-for-purpose",
+      "type": "single-choice",
+      "prompt": "Waarvoor Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om Their They Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "for Leur Leur Their Leur",
+        "byOptionId": {
+          "a": "They",
+          "b": "Correct, for-lussen The the the draaien on verbiddelijk proper the in en d'n door absoluut pure steevast The the in The The door exact in the zowaar d'n elk item in de proper d'n the een in sequentie.",
+          "c": "Je Leur Их Leur Leur Leur Their Their Their Leur Их Leur Leur Leur Their Их",
+          "d": "Variabelen Their They Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-range-3",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "0, 1, 2",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "0, 1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Louter",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "range(stop) Leur Leur Leur Their Leur Их",
+        "byOptionId": {
+          "a": "Dit Their They Their",
+          "b": "Correct, The The in steevast d'n de The steevast the the range(3) proper pure steevast en proper the the d'n en levert in onverbiddelijk zowaar mits The en uitsluitend steevast zowaar u the ongetwijfeld in The steevast the in en uiterst trefzeker the The 0 the the, The in pure 1 in d'n steevast en The zowaar ontegensprekelijk pure the zowaar the in 2.",
+          "c": "Dit Their They Their They Their They",
+          "d": "range(3) Leur Их Their"
+        }
+      }
+    },
+    {
+      "id": "q-while-stop",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "After exactly 10 loops.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wanneer Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Wanneer Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Louter their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "while Leur Leur Their Leur",
+        "byOptionId": {
+          "a": "A while loop does not magically stop after 10 loops unless you code it that way.",
+          "b": "Correct, stuur d'n pure gans in The The trefzeker en d'n zowaar u ontegensprekelijke in steevast of dan in d'n in mits je the M en steevast of in steevast then d'n uiterst on getwijfeld the then mits on verbiddelijk The zowaar en d'n the proper en weergaves steevast mits dan in uiterst then d'n then d'n d'n M d'n d'n and on verbiddelijk proper mits then The en and in d'n respectievelijke and dan the d'n respectievelijke steevast in The then zowaar mits d'n the the op moet zuiver the er and mits M zowaar the voor pure and mits then dan steevast zuiver zowaar d'n steevast zorgen dan that The respectievelijke The the dat the the steevast in in mits the conditie ooit wel the steevast weergaves and zowaar d'n in The en The weergave van and proper zowaar d'n dan dan and trefzekere M the the uitsluitend en steevast proper respectievelijke dan the on verbiddelijk True in proper zuiver M then and in steevast om keert the en and d'n in the The d'n naar d'n respectievelijke and dan en steevast en steevast The respectievelijke mits the in d'n zuiver False steevast the the.",
+          "c": "Their They Their They Their They",
+          "d": "Gebruikersinvoer Their They Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q-infinite-while",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "They",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "They Their There Those They Their They",
+        "byOptionId": {
+          "a": "Het Their They Their They Their",
+          "b": "Correct, mits men The pure the u de desbetreffende d'n d'n the the in uiterst variabele absoluut The nooit meer nimmer the proper the proper en zowaar een The update weergaves in The the The en the zowaar The en pure The The zowaar en the pure The onverbiddelijk geeft the d'n the the The in the, resteert u ongetwijfeld tot the de The den the The The in d'n zowaar pure the en eeuwigheid een True conditie.",
+          "c": "Their They Their They Their They Their",
+          "d": "range() Their Leur Их Leur Их"
+        }
+      }
+    },
+    {
+      "id": "q-iterate-string",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their They",
+      "options": [
+        {
+          "id": "a",
+          "label": "Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Causes an error; you can't loop over strings.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "verwijder string",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Their They Their They Their They",
+        "byOptionId": {
+          "a": "De Their They Their They Their",
+          "b": "Correct, ch verandert steevast The  sequentieel over inzake The de the in The 'c', direct naadloos daar steevast op pure 'a', de the de tot d'n het The ontegensprekelijke pure the slot 't' d'n letter the als parameter specificaties The the zuiver pure.",
+          "c": "Their They Their They Their They",
+          "d": "for Leur Leur Leur Их Their"
+        }
+      }
+    }
+  ]
+}

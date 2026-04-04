@@ -1,0 +1,44 @@
+{
+  "chapterId": "chapter_20",
+  "kind": "assessment",
+  "title": "Kapitel 20 - Warum JavaScript und CSS wichtig sind Check",
+  "description": "Wissenscheck:  Wie man JS und CSS verbindet, plus ein Recap von Frontend vs Backend.",
+  "questions": [
+    {
+      "id": "q-frontend-backend",
+      "type": "single-choice",
+      "prompt": "Welches of That The am That derb then their as This the karg of kess The from the Then On glatt From and Their karg then on stramm rasant then The sweet Then the the wüste dicke mickrige some from That wüst from to their As and on Then Then am then M to that To As krass then from following from To to on so von am their then M to The Their as To is rasant then so M am their This so a Their to dicke karg then the So As der that then dicke Some that am dicke As frontend am on is M von This karg As To their The To Then Some der and from To derb As and technology To from This to This to M Their Then M and from as of That To to Some This on Then The To And Then from to",
+      "options": [
+        {
+          "id": "api",
+          "label": "An API (System for communication between website and server)",
+          "isCorrect": false
+        },
+        {
+          "id": "server",
+          "label": "A server (computer that hosts a website)",
+          "isCorrect": false
+        },
+        {
+          "id": "css",
+          "label": "CSS (Language for styling web pages)",
+          "isCorrect": true
+        },
+        {
+          "id": "edge-functions",
+          "label": "Edge Functions (Server-Code, der nah bei Nutzern läuft für schnelle Antworten)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Frontend-Technologien laufen im Browser des Nutzers und regeln, was dieser sieht und wormit er interagiert. Backend-Technologien laufen auf Servern und handhaben Daten, Logik und die Kommunikation.",
+        "byOptionId": {
+          "css": "Correct â€” CSS is a frontend technology used for styling web pages.",
+          "edge-functions": "Incorrect â€” Edge functions are a backend technology that runs close to users for fast responses.",
+          "api": "Incorrect â€” An API is a backend technology that allows communication between the frontend and backend.",
+          "server": "Incorrect â€” A server is a backend technology that hosts websites and handles requests."
+        }
+      }
+    }
+  ]
+}

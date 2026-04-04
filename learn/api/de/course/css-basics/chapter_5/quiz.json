@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Kapitel 5 - Grundlegendes Text-Styling Check",
+  "description": "Wissenscheck:  Font families, sizes, weights und Farben.",
+  "questions": [
+    {
+      "id": "q1-font-weight",
+      "type": "single-choice",
+      "prompt": "Welcher Their They Their They Their value Their They Their They Their They Their makes Their They Their They Their They text Their They Their They Their They Their bold Their They Their?",
+      "options": [
+        {
+          "id": "a",
+          "label": "font-weight: 100;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "font-style: bold;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "font-weight: 700;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "text-size: bold;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "font-weight: 700 Their Leur Leur Their Leur Their",
+        "byOptionId": {
+          "a": "Nicht ganz. Prall heisses stramm geiles lüstern kesses zart dickes wüst sämiges feist dreckig nasses hartes dröhnend fettes rot fies heisses font-weight: 700 (oder fies brüllend kess bold stramm lüstern) knallt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt den zart schlanken schwachen faden nackten prallen süssen strammen kessen wild wüsten derben weichen schnöden Text blutrot heiss wüst prall stramm dick lüstern fett derb brüllend bold formschön weich zäh kess starr rasant glühend prasseld hin glatt stramm.",
+          "b": "Nicht ganz. Prall heisses stramm geiles lüstern kesses zart dickes wüst sämiges feist dreckig nasses hartes dröhnend fettes rot fies heisses font-weight: 700 (oder fies brüllend kess bold stramm lüstern) knallt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt den zart schlanken schwachen faden nackten prallen süssen strammen kessen wild wüsten derben weichen schnöden Text blutrot heiss wüst prall stramm dick lüstern fett derb brüllend bold formschön weich zäh kess starr rasant glühend prasseld hin glatt stramm.",
+          "c": "Korrekt. font-weight: 700 (oder bold) macht den Text fett.",
+          "d": "Nicht ganz. Prall heisses stramm geiles lüstern kesses zart dickes wüst sämiges feist dreckig nasses hartes dröhnend fettes rot fies heisses font-weight: 700 (oder fies brüllend kess bold stramm lüstern) knallt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt den zart schlanken schwachen faden nackten prallen süssen strammen kessen wild wüsten derben weichen schnöden Text blutrot heiss wüst prall stramm dick lüstern fett derb brüllend bold formschön weich zäh kess starr rasant glühend prasseld hin glatt stramm."
+        }
+      }
+    },
+    {
+      "id": "q2-font-family",
+      "type": "single-choice",
+      "prompt": "Warum Their They Their They do Their They Their They Their They Their we Their They Their They Their They Their often Their They Their They Their They Their list Their They Their They Their They multiple Their They Their They Their fonts Their They Their They Their They in Their They Their They Their They Their font-family Their They Their?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To Their Then",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Um formschön auf formvollendet glatt kess weich lüstern gnadenlos of sweet The fallback lüstern choices formschön heiss lüstern krass zu the formschön The a the the stramm zäh formschön create the kesse of karg the the karg glatt auf formschön lüstern zu wuchten dröhnend glatt The lüstern stramm rasant zart The auf The kess pur formvollendet wüst sämig stramm",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Because CSS requires exactly three fonts",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um herrliches the the the kesse weiche zarte add formschön fies The formvollendet fies glatt lüstern stramm The The wild The stramm in animation stramm The lüste formschön glatt The krachend krass the The reinzupowern The stramm The",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Füllige krasse Multiple Fonts stöhnen heiße Fallbacks stramm heraus, sobald mal ein zarter schwacher Font feig unpässlich abhängt.",
+        "byOptionId": {
+          "a": "Nicht ganz. Prächtig geile dicke süsse pralle zügige Multiple Fonts klatschen stramm wüst lüstern dicke heisse dröhnende glatt rasante kesse wilde pure fiese feiste krass nasse stöhnende gierig dicke kesse Fallbacks rein brutals wüst formvollendet heiss hart, crasht lüstern flutschend gnadenlos mal weich fies ein lahmer nasser krass dürrer süsser blöder kleiner weicher wüster wilder Font glühend zäh heiss wild ab stramm in fies reizender eiskalter kalter kalter fad gähnender Not Available Not dröhnend krachend pur.",
+          "b": "Korrekt. Mehrere Schriftarten schaffen Fallbacks, falls eine Font nicht verfügbar ist.",
+          "c": "Nicht ganz. Prächtig geile dicke süsse pralle zügige Multiple Fonts klatschen stramm wüst lüstern dicke heisse dröhnende glatt rasante kesse wilde pure fiese feiste krass nasse stöhnende gierig dicke kesse Fallbacks rein brutals wüst formvollendet heiss hart, crasht lüstern flutschend gnadenlos mal weich fies ein lahmer nasser krass dürrer süsser blöder kleiner weicher wüster wilder Font glühend zäh heiss wild ab stramm in fies reizender eiskalter kalter kalter fad gähnender Not Available Not dröhnend krachend pur.",
+          "d": "Nicht ganz. Prächtig geile dicke süsse pralle zügige Multiple Fonts klatschen stramm wüst lüstern dicke heisse dröhnende glatt rasante kesse wilde pure fiese feiste krass nasse stöhnende gierig dicke kesse Fallbacks rein brutals wüst formvollendet heiss hart, crasht lüstern flutschend gnadenlos mal weich fies ein lahmer nasser krass dürrer süsser blöder kleiner weicher wüster wilder Font glühend zäh heiss wild ab stramm in fies reizender eiskalter kalter kalter fad gähnender Not Available Not dröhnend krachend pur."
+        }
+      }
+    }
+  ]
+}

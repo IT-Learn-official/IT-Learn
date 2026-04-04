@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_19",
+  "kind": "assessment",
+  "title": "Hoofdstuk 19 - HTML + CSS Check",
+  "description": "Controleer je kennis:  Stylesheets linken en waar CSS voor dient.",
+  "questions": [
+    {
+      "id": "q-link-css",
+      "type": "single-choice",
+      "prompt": "Welke Their They Their They Their They Their",
+      "options": [
+        {
+          "id": "style",
+          "label": "<style>...</style>",
+          "isCorrect": false
+        },
+        {
+          "id": "script",
+          "label": "<script src=\"style.js\">",
+          "isCorrect": false
+        },
+        {
+          "id": "css",
+          "label": "<css>",
+          "isCorrect": false
+        },
+        {
+          "id": "link",
+          "label": "<link rel=\"stylesheet\" href=\"style.css\">",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik Their They Their They Their They",
+        "byOptionId": {
+          "link": "Correct â€” <link rel=\"stylesheet\"> in <head> loads external CSS.",
+          "style": "Incorrect â€” <style> contains inline CSS, not an external link.",
+          "script": "Incorrect â€” <script> loads JS, not CSS.",
+          "css": "Incorrect â€” <css> is not a valid HTML tag."
+        }
+      }
+    },
+    {
+      "id": "q-css-purpose",
+      "type": "single-choice",
+      "prompt": "Waarvoor Their They Their",
+      "options": [
+        {
+          "id": "data",
+          "label": "Voor Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "presentation",
+          "label": "Controls look and layout (colors, fonts, spacing)",
+          "isCorrect": true
+        },
+        {
+          "id": "server",
+          "label": "Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS handles presentation while HTML handles structure.",
+        "byOptionId": {
+          "presentation": "Correct â€” CSS controls presentation like colors, layout, and fonts.",
+          "data": "Incorrect â€” CSS is not for storing user data.",
+          "server": "Incorrect â€” CSS runs in the browser, not on the server.",
+          "html": "Incorrect â€” CSS complements HTML but does not replace structure."
+        }
+      }
+    }
+  ]
+}

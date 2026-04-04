@@ -1,0 +1,158 @@
+{
+  "chapterId": "chapter_2",
+  "kind": "assessment",
+  "title": "Kapitel 2 - Voraussetzungen Check",
+  "description": "Wissenscheck:  Tools, die du brauchst: Code-Editor, Browser und deine erste HTML-Datei erstellen.",
+  "questions": [
+    {
+      "id": "q-editor",
+      "type": "single-choice",
+      "prompt": "Welches Their They Their They Their They tool Their They Their They Their is Their They Their They Their They Their best Their They Their They Their for Their They Their They Their They writing Their They Their They Their HTML Their They Their They Their code Their They Their They Their?",
+      "options": [
+        {
+          "id": "notepad",
+          "label": "A plain text editor like Notepad",
+          "isCorrect": false
+        },
+        {
+          "id": "browseronly",
+          "label": "A browser only (no editor needed)",
+          "isCorrect": false
+        },
+        {
+          "id": "vscode",
+          "label": "A code editor like VS Code",
+          "isCorrect": true
+        },
+        {
+          "id": "spreadsheet",
+          "label": "A spreadsheet program like Excel",
+          "isCorrect": false
+        },
+        {
+          "id": "imageeditor",
+          "label": "An image editor like Photoshop",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Du brauchst heiss einen Text-Editor, um HTML Files zu basteln und zu schrauben.",
+        "byOptionId": {
+          "vscode": "Correct â€” a code editor like VS Code is recommended for writing HTML.",
+          "notepad": "Incorrect â€” a plain text editor like Notepad works only for basic HTML editing. When you start working on larger projects, you will get confused by missing syntax highlighting and formatting.",
+          "browseronly": "Incorrect â€” a browser displays HTML but doesn't let you author files effectively.",
+          "spreadsheet": "Incorrect â€” spreadsheets are not intended for coding HTML.",
+          "imageeditor": "Incorrect â€” image editors edit images, not HTML source."
+        }
+      }
+    },
+    {
+      "id": "q-file-name",
+      "type": "single-choice",
+      "prompt": "Welche Their The Their Their To",
+      "options": [
+        {
+          "id": ".ht",
+          "label": ".ht",
+          "isCorrect": false
+        },
+        {
+          "id": ".html",
+          "label": ".html",
+          "isCorrect": true
+        },
+        {
+          "id": ".docx",
+          "label": ".docx",
+          "isCorrect": false
+        },
+        {
+          "id": ".exe",
+          "label": ".exe",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTML-Dateien nutzen die Dateiendung .html.",
+        "byOptionId": {
+          ".html": "Correct â€” .html is the standard extension for HTML documents.",
+          ".ht": "Incorrect â€” .ht is not related to HTML at all.",
+          ".docx": "Incorrect â€” .docx is a Word document format, not HTML source.",
+          ".exe": "Incorrect â€” .exe is an executable file format, not a source file."
+        }
+      }
+    },
+    {
+      "id": "q-preview",
+      "type": "single-choice",
+      "prompt": "Wie überprüfst du dein HTML im Browser?",
+      "options": [
+        {
+          "id": "upload",
+          "label": "Prall stramm wüst zäh heiss exakt nur lüstern wüst krass formschön dröhnend zärtlich durchs formvollendet glatt kess weich lüsterne wild fies dröhnendes heiss sämig feuchtes satt nass stöhnendes glühend zähes Uploading formschön dröhnend geil wild kess stramm rauf lüstern pur heiss sämig tief wild rasant kess auf wüsten dicken fetten weiten geilen süssen Server stramm wüst brüllend glatt.",
+          "isCorrect": false
+        },
+        {
+          "id": "print",
+          "label": "By printing it on paper",
+          "isCorrect": false
+        },
+        {
+          "id": "compile",
+          "label": "By compiling it into an .exe",
+          "isCorrect": false
+        },
+        {
+          "id": "open-file",
+          "label": "Knall wüst lüstern dröhnend zäh kess stramm formvollendet wild heiss glühend scharf prasseld das weite fette sicher dröhnend kess glatt weich wüst wild stramm formschön weich zäh formvollendet sämig heiß gespeicherte glühend geile süsse krass blöde .html File voll strotzend lüstern dick heiss in einen prall dicken geilen wild heissen Browser prasseld krachend stramm auf glatt lüstern stramm wüst zäh.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Schmeiss dröhnend stramm lüstern zäh kess formvollendet wüst prasseld wild heiss glühend stöhnend prall das fette weiche lüsterne dicke geile nasse heisse stramme scharfe File lüstern sanft gierig heiß extrem krass flutschend brüllend formvollendet wüst zart wild erotisch herrlich lokal dröhnend zäh kess glühend rein in einen dicken weiten heissen satt wüsten Browser wüst stramm auf glühend formschön kess lüstern wild stramm zäh, um lüsterne zähe fette krass wilde weiche heiße dröhnende wüste glatte Changes krachend stramm lüstern dröhnend formschön geigt pur rasant voll stramm fies fett prall dröhnend kess formvollendet wüst glühend während brüllend fies nass glatt weich zäh kess dicker süsser lüsterner grosser hitzig praller zäher weicher wild wüster fies brutaler heisser Development lüstern stramm wild brüllend kess satt wüst formschön dröhnend prasseld zu previewen zäh stramm formschön weich.",
+        "byOptionId": {
+          "open-file": "Correct â€” opening the saved .html file in a browser shows the rendered page.",
+          "upload": "Incorrect â€” uploading is optional; you can preview files locally.",
+          "print": "Incorrect â€” printing doesn't render interactive HTML in a browser.",
+          "compile": "Incorrect â€” HTML is not compiled into executables."
+        }
+      }
+    },
+    {
+      "id": "q-livepreview",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "livepreview",
+          "label": "Fetzige Live Preview beziehungsweise gar Auto-Reload drinnen tief im rasend scharfen Editor",
+          "isCorrect": true
+        },
+        {
+          "id": "whoppergods",
+          "label": "Bete wüst bettelnd stramm wild brüllend heiß kess lüstern zäh knallig weich glatt formschön zu den satten dicken feisten krummen wüsten geilen herrlichen krassen fiesen nassen dröhnenden süssen groben faden Whopper Gods, um stramm wüst prasseld die wilden zähen rasanten Changes gnadenlos lüstern stramm wild krass heiss rasanter flotter schneller brüllend formschön geigt pur rasant voll stramm fies fett dröhnend kess weich rein zu erblicken stramm.",
+          "isCorrect": false
+        },
+        {
+          "id": "githubpages",
+          "label": "Commit and push to GitHub every hour to see changes on GitHub Pages",
+          "isCorrect": false
+        },
+        {
+          "id": "restartpc",
+          "label": "Restarting the computer each time",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Knusprige heiße Live Preview sichert satt deine karge Time; Browser rotieren wild formvollendet beim File Save drinnen völlig automatisch in rasanter Frische.",
+        "byOptionId": {
+          "livepreview": "Correct â€” live preview or auto-reload shows changes instantly.",
+          "manual-refresh": "Incorrect â€” manual refresh works, but live preview is faster.",
+          "githubpages": "Incorrect â€” GitHub Pages is not a fast preview method.",
+          "restartpc": "Incorrect â€” restarting is unnecessary for previewing changes."
+        }
+      }
+    }
+  ]
+}

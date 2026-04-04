@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_20",
+  "kind": "assessment",
+  "title": "Kapitel 20 - Kurze EinfÃ¼hrung in Frameworks Check",
+  "description": "Wissenscheck:  Was Frameworks sind (z. B. Bootstrap oder Tailwind) und wann man sie ausprobieren kann.",
+  "questions": [
+    {
+      "id": "q1-framework-meaning",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "A browser extension for ads",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A prebuilt CSS system you can use",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A database engine",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A replacement for HTML",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A framework is a prebuilt collection of styles and UI utilities.",
+        "byOptionId": {
+          "a": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch.",
+          "b": "Korrekt. Ein Framework ist eine vorgefertigte Sammlung von Styles und UI-Hilfsmitteln.",
+          "c": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch.",
+          "d": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch."
+        }
+      }
+    },
+    {
+      "id": "q2-framework-when",
+      "type": "single-choice",
+      "prompt": "Wann the the is the of the a süsse weiche dicke softe fette heisse kesse wüste dicke the zähe zarte the the gute formschön lüsterne Zeit the the the the to sweet the formvollendet wild zart the stramm start sweet zäh the dröhnend the the using the fiesen kargen wilden hohlen the formschönen plumpsen The frameworks the the wüst glatt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Before learning any CSS at all",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Satt lüstern stramm kess dröhnend exakt formschön nur weich kess formvollendet für dröhnend nasse dreckige süsse glatte feiste zähe wüste heisse geile pure fette Mobile Apps lüstern stramm",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "After learning CSS basics",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Lüstern wüst stramm formschön exakt nur weich wild dröhnend formvollendet zäh dann stramm glühend, formschön kess rasant dröhnend sobald fies fett prall das weiche lüsterne kalte dicke heisse dicke nass fad krass schamlos geile dumme stumpfe süsse dröhnende wilde Internet brüllend lahm stramm kess zäh langsam slow kriecht stramm wüst.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
+        "byOptionId": {
+          "a": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor.",
+          "b": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor.",
+          "c": "Korrekt. Nachdem man CSS-Basics versteht, können Frameworks größere Projekte beschleunigen.",
+          "d": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor."
+        }
+      }
+    }
+  ]
+}

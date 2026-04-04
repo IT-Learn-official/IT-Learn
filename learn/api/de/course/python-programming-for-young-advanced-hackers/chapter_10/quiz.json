@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Kapitel 10 - Sets: keine Duplikate Check",
+  "description": "Wissenscheck: Sets für einzigartige Werte und schnelle Checks/Vergleiche.",
+  "questions": [
+    {
+      "id": "q-set-definition",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "A list that is always sorted.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A collection of unique elements with no guaranteed order.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A string with only numbers.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A dictionary with only one key.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets store unique elements and do not keep a fixed order.",
+        "byOptionId": {
+          "a": "Lists mögen Sortierungen sehr, aber derlei Kram ficht wilde harte Sets keinesfalls im geringsten an.",
+          "b": "Korrekt, das ist der Hauptzweck eines Sets.",
+          "c": "Fette pralle nasse kesse Strings protzen formvollendet glatt kess weich lüstern wüst brüllend glühend starr als Text pur heiss glatt dröhnend, keine strammen harten wüsten Sets brüllend wild krass.",
+          "d": "Dictionaries speichern Schlüssel-Wert-Paare, das ist der Unterschied zu Sets."
+        }
+      }
+    },
+    {
+      "id": "q-create-set",
+      "type": "single-choice",
+      "prompt": "Welche stramme mickrige sture formschön weiche the from dicke line der As The erzeugt M Then mits then some on some To some (formschoen correctly) stramm formschön eine As dicke from The (The a To to some set To of to To then to To then their then the am the dicke on file the zart that names) then on Then am then to To As To?",
+      "options": [
+        {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets use curly braces {} with comma-separated elements.",
+        "byOptionId": {
+          "a": "Solches drischt formvollendet kess lüstern weich zäh krass wüst stramm glatt absolut karg wild als fette dicke nackte Liste rein dröhnend, the formvollendet nicht lüstern wüst krass hart als hohles the Set glatt pur stramm.",
+          "b": "Sowas weint formschön eiskalt The als lüstern glatt wüst weiches pralles the Tuple prasseld stramm heiss, the the not lüstern weich a formschön sattes glattes Set stramm wüst.",
+          "c": "Korrekt, das erstellt ein Set aus zwei Dateinamen.",
+          "d": "Dies formvollendet weich The The mutiert zart stramm The dröhnend formschön in the the a stramm gross lüstern glatt a fett wild The wüst mickrig lüstern One The Long The derb String stramm wüst The heiss The The, nicht heiss The the The The the a lüstern sweet dröhnend sattes The fettschwanger Set stramm."
+        }
+      }
+    },
+    {
+      "id": "q-remove-duplicates",
+      "type": "single-choice",
+      "prompt": "Je Their They Their They Their Their have Their They Their They Their Their `nums Ihr Their = Their They Their [ Their They 1 Their, Their They 2 Their, Their They 2 Their, Their They 3 Their ] Their Their` Their They Their They. Their They Their They What Their They Their They Their Their does Their They Their They Their Their `set Their They (Their They nums Their They ) Their Their` Their They Their Their produce Их Their They?",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 2, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "(1, 2, 3)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Converting a list to a set removes duplicate values.",
+        "byOptionId": {
+          "a": "Dieses The jammert The dröhnend The lüstern The stramm wüst The wild heiss pur als weiche pralle zähe mickrige schmale stramme original The the sweet list rum glatt The The, The fern The the formschön kess nicht lüstern wüst The stramm am wild The plump süssen The fies the The the The set dröhnend glatt The stramm.",
+          "b": "Sets do not keep duplicates.",
+          "c": "Correct - only unique values remain in the set.",
+          "d": "To Their Then Their They Their"
+        }
+      }
+    },
+    {
+      "id": "q-union-intersection",
+      "type": "single-choice",
+      "prompt": "Je Their They Their They Their Their have Their They Their They Their Their `a Их Their = Their They Their { Their They 1 Their, Their They 2 Their } Their Their` Their They Their They and Their They Their They Their Their `b Их Their = Their They Their { Their They 2 Their, Their They 3 Their } Their Their` Their They Their They. Their They Their They What Their They Their They Their Their is Their They Their They Their Their Their `a Their & Their b` Their They Their They (the Their They Their They Their Their intersection Their They Their They Their Their Their)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "{}",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die Schnittmenge (Intersection) behält nur jene Elemente bei, die in beiden Sets auftauchen.",
+        "byOptionId": {
+          "a": "Das fette Spektakel wütete formvollendet zäh als brüllend heisses dicke pralles the Union stramm (sprich all die fetten rasanten süssen wüsten heissen Elements von beiden glühend aus both) wüst brüllend wild heiss.",
+          "b": "1 is only in set a, not in both.",
+          "c": "Correct - 2 is the only element in both sets.",
+          "d": "Dort weilt formvollendet minniglich stramm glatt the lüstern the wild The brüllend at least the eine dreckig lüsterne wüste dicke sweet common Element, was formvollendet es lüstern zäh kess The rasant glühend heiss stramm The glatt pur not weiche rasant the krass fies wüste pralle lausige mickrig blöde pure leere The Empty Set stramm wüst brüllend werden formschön zäh lässt glatt kess."
+        }
+      }
+    },
+    {
+      "id": "q-set-vs-list",
+      "type": "single-choice",
+      "prompt": "Welches Thus Their Thus Their statement Thus Their Thus Thus about Thus They Their Thus thus Then sets Thus They Their Thus and Thus Their Thus lists Thus They Their Thus is Thus Their Then true Thus They?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Lists verdrängen Duplikate wild zügig automatisch am Stück, schnöde Sets tun derlei absolut nicht.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sets keep the order of elements, lists do not.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Both sets and lists allow duplicate elements.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sets keep only unique elements, lists can have duplicates.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Lists samt Sets horten dicke Collections satt, verarzten nervige Duplikate jedoch höchst derb unterschiedlich voneinander.",
+        "byOptionId": {
+          "a": "Lists saugen gierig fette Duplikate ein; harte Sets fegen sie knallhart beiseite.",
+          "b": "Lists hegen eiserne Order-Reihenfolge; zackige Sets meiden Order-Garantien in kompletter Gänze vehement.",
+          "c": "Gnadenlos lüstern wüst stramm rein exakt nur formschön Lists erlauben weich kess formvollendet prasseld heiss dröhnend zäh gierig fette wilde süsse dicke heisse pralle dröhnend wüste Duplicates heiss glühend formschön stramm; fette wüste heisse dicke lüsterne Sets scheren sich kess stramm dröhnend lüstern weich formvollendet rotzfrech glühend satt krass lüstern sämig rein stramm wüst gar formschön nicht zäh drum wild.",
+          "d": "Correct - this is the key difference for duplicates."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Hoofdstuk 8 - Afbeeldingen Check",
+  "description": "Controleer je kennis:  Het img-element, src- en alt-attributen en de basis van paden naar afbeeldingen.",
+  "questions": [
+    {
+      "id": "q-img-src",
+      "type": "single-choice",
+      "prompt": "Welk Their They Their They Their They",
+      "options": [
+        {
+          "id": "alt",
+          "label": "alt",
+          "isCorrect": false
+        },
+        {
+          "id": "href",
+          "label": "href",
+          "isCorrect": false
+        },
+        {
+          "id": "title",
+          "label": "title",
+          "isCorrect": false
+        },
+        {
+          "id": "src",
+          "label": "src",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Het Their They Their They",
+        "byOptionId": {
+          "src": "Correct â€” src specifies the image URL to load.",
+          "alt": "Incorrect â€” alt provides alternative text, not the file path.",
+          "href": "Incorrect â€” href is used for anchors, not image sources.",
+          "title": "Incorrect â€” title offers tooltip text, not the image location."
+        }
+      }
+    },
+    {
+      "id": "q-alt",
+      "type": "single-choice",
+      "prompt": "Waarom Their They Their They Their",
+      "options": [
+        {
+          "id": "style",
+          "label": "Het The hun",
+          "isCorrect": false
+        },
+        {
+          "id": "accessibility",
+          "label": "Het Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "link",
+          "label": "Het Their There Those Their",
+          "isCorrect": false
+        },
+        {
+          "id": "download",
+          "label": "Het Their They Their",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Alt text supports accessibility and provides fallback information.",
+        "byOptionId": {
+          "accessibility": "Correct â€” alt text helps assistive tech and shows when images fail to load.",
+          "style": "Incorrect â€” alt is not for styling; CSS handles styles.",
+          "link": "Incorrect â€” alt does not create links; <a> does that.",
+          "download": "Incorrect â€” alt does not cause downloading of the image."
+        }
+      }
+    }
+  ]
+}

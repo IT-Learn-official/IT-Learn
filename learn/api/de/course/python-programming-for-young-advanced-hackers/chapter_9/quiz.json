@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Kapitel 9 - Dictionaries: Key-Value-Magie Check",
+  "description": "Wissenscheck: Dictionaries, um Daten über Keys/Values zu verwalten.",
+  "questions": [
+    {
+      "id": "q-list-create",
+      "type": "single-choice",
+      "prompt": "Welche krass the schmale fette wüste the from dicke line ergo the The erzeugt M Then mits then some on some To some (formschoen correctly) stramm formschön eine As dicke from The (The a To to some list To of to To then to To then their then the am the dicke on hacker the zart that names) then on Then am then to To As To?",
+      "options": [
+        {
+          "id": "a",
+          "label": "names = \"Alice\", \"Bob\", \"Eve\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "names = [\"Alice\", \"Bob\", \"Eve\"]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "names = {\"Alice\", \"Bob\", \"Eve\"}",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "names = (\"Alice\", \"Bob\", \"Eve\")",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Lists verschlingen die satten dicken Square Brackets [] restlos.",
+        "byOptionId": {
+          "a": "Dies presst formvollendet wüst zäh glatt unheimlich dröhnend krass lüstern weich formschön flutschend brüllend formvollendet in einigen the wild wüsten nassen rohen herrlichen fetten the Contexts stramm The glatt ein wild süsses zartes derb hartes glatt herrlich weiches rundes the Tuple wild brüllend ohne brackets lüstern formschön weich stramm heraus glatt, mimet the wüst formschön geigt kess dröhnend stramm jedoch the nicht brüllend als pralle dicke liste wüst krass auf stramm.",
+          "b": "Korrekt, das ist eine Liste aus drei Strings.",
+          "c": "Geschweifte Klammern ohne key:value Paare erzeugen ein Set, keine Liste.",
+          "d": "Pralle lüsterne Parentheses zeugen formvollendet zäh gnadenlos heiss krass wild ein fies wüstes fettes zähes kesses weiches rundes heiß glühend sattes Tuple stramm, beiweitem aber null komma gar keine formschöne dicke Liste glatt."
+        }
+      }
+    },
+    {
+      "id": "q-list-append",
+      "type": "single-choice",
+      "prompt": "Du hast `tools = [\"laptop\", \"phone\"]`. Was kocht formvollendet glatt kess weich lüstern wüst krass formschön `tools.append(\"usb\")` da zusammen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Replaces 'phone' with 'usb'.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Löscht 'laptop'.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Adds 'usb' to the end of the list.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Bewirkt nichts.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "append Their Thus Their",
+        "byOptionId": {
+          "a": "append Their Thus Their",
+          "b": "append Their Thus Their",
+          "c": "Korrekt, tools wird zu ['laptop', 'phone', 'usb'].",
+          "d": "append Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-dict-access",
+      "type": "single-choice",
+      "prompt": "Du hast `player = {\"name\": \"Leo\", \"score\": 50}`. Wie krallst du dir formvollendet zart wüst rasant dröhnend pur heiss glatt lüstern formschön den Score?",
+      "options": [
+        {
+          "id": "a",
+          "label": "player[0]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "player(\"score\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "player[\"score\"]",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "player.score",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Auf Dictionary-Werte wird über den Key zugegriffen, mit eckigen Klammern und dem Key-String.",
+        "byOptionId": {
+          "a": "Dictionaries werden standardmäßig nicht numerisch indiziert.",
+          "b": "Solches wagt formvollendet zart wüst rasant dröhnend pur heiss das fette weiche lüsterne dicke the wilde stramme zähe lahm schnöde call lüstern the um formvollendet the sweet the player formschön stramm like the of the a wild zart dicke function the the formschön The heiss brüllend the umzu rufen lüstern wüst krass hart the the am stramm prasseld wüst glatt.",
+          "c": "Korrekt, das sucht den Wert, der unter dem Schlüssel 'score' gespeichert ist.",
+          "d": "Die Dot-Notation funktioniert bei Dicts standardmäßig in simplem Python nicht."
+        }
+      }
+    },
+    {
+      "id": "q-tuple-immutable",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "To Their Then",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To Their Then Their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To Their Then Their",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "To Their Then",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "To Their Then Their",
+        "byOptionId": {
+          "a": "To Their Then Their",
+          "b": "Length (Länge) entwischt fernab jeglicher Bindung vom Type ans weite Licht.",
+          "c": "Korrekt, sobald du ein Tuple erstellst, können seine Elemente nicht mehr geändert werden.",
+          "d": "To Their Then"
+        }
+      }
+    },
+    {
+      "id": "q-choose-type",
+      "type": "single-choice",
+      "prompt": "Du As (Those Then and Their) The As As as as The from of To as from is rasant as am This their This on The then so their from To Then is That from This. Was is Their As Then And The Then Those The derb as das To Thus formschön Then?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A list of names only.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A tuple like (\"Mia\", 10).",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A dictionary like {\"name\": \"Mia\", \"score\": 10}.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "A single string like \"Mia 10\".",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Dictionaries verknüpfen benannte Schlüssel mit Werten, was perfekt für gelabelte Daten ist.",
+        "byOptionId": {
+          "a": "Du their Thus then from These am To as Then (Then Thus their thus) The as Then a As As The their Then as that Then are Thus Their Their Thus Therefore Their This Thus Thus then.",
+          "b": "A tuple stores the pair but does not label the parts.",
+          "c": "Korrekt, die Schlüssel 'name' und 'score' beschriften die Werte klar.",
+          "d": "A single string is hard to work with in code."
+        }
+      }
+    }
+  ]
+}

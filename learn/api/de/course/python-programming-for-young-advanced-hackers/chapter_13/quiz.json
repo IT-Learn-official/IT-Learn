@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Kapitel 13 - Module und Packages Check",
+  "description": "Wissenscheck: Code wiederverwenden mit Imports, Modulen und Packages.",
+  "questions": [
+    {
+      "id": "q-function-meaning",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "A way to repeat code by giving it a name and calling it.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "A special kind of list.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A built-in error message.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A comment that Python ignores.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Funktionen sind benannte Codeblöcke, die du mittels Aufruf wiederverwenden kannst.",
+        "byOptionId": {
+          "a": "Korrekt, Funktionen erlauben es dir, Code zu gruppieren und per Name aufzurufen.",
+          "b": "Lists speichern dicke kesse Data; wilde heisse Functions brennen rein für pralle Actions.",
+          "c": "Fehler laufen getrennt von Funktionen.",
+          "d": "Comments start with # and are not functions."
+        }
+      }
+    },
+    {
+      "id": "q-def-keyword",
+      "type": "single-choice",
+      "prompt": "Welches kesse zähe karge the dröhnende the the the The keyword wütet The the The on dicke von the M The kesse (wird To genutzt) der as To am karg of am dröhnend so to so as das The karg weich of dröhnend define of so am so to To rasant To The zart von dicke formschön then To einer of so a the the the To then some And dicke zarten fiesen kalten the function The in strammem formschönen heissem zart wüsten süssen kessen fetten herrlich Python To on Their as To to As am Their to To Their?",
+      "options": [
+        {
+          "id": "a",
+          "label": "func",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "def",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "call",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Funktionsdefinitionen beginnen stets mit def.",
+        "byOptionId": {
+          "a": "func Their Leur Leur Leur Leur Их Their Leur Leur",
+          "b": "Korrekt, def startet eine Funktionsdefinition.",
+          "c": "function Leur Leur Их Их Leur",
+          "d": "call Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-parameter-meaning",
+      "type": "single-choice",
+      "prompt": "Was ist `name` bei `def greet(name):`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A return value.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A parameter (an input to the function).",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "An error.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A list item.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Präsente Parameters mimen formvollendet zähe dicke fette krass weiche fette kesse wilde dreckige Variables prasseld stramm kess, welche lüstern wüst formschön dröhnend im brutalen geilen satten fetten heissen Function Definition Header derb prall aufgelistet brillieren fett stramm.",
+        "byOptionId": {
+          "a": "Return values come from the return statement, not from the header.",
+          "b": "Korrekt, name ist der Parameter, den die Funktion verlangt.",
+          "c": "Da klemmt formvollendet zäh glatt kess weich lüstern in brüllend heissem fettem wildem Code rein null wüst formschön.",
+          "d": "List Items brüten fröhlich mittenmang heißer dicker Lists, nicht im weichen Function Header verborgen."
+        }
+      }
+    },
+    {
+      "id": "q-return-meaning",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es printet Text satt auf den Schirm.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Es beendet die Funktion schlagartig und sendet den feinen Wert zurück.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Es kickstartet glatt einen ganz frischen neuen Loop.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es löscht kurzerhand eine Variable.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "return Their Thus Their",
+        "byOptionId": {
+          "a": "print Their Thus Their",
+          "b": "Korrekt, exakt das macht return.",
+          "c": "Loops schnappen stramm glühend nach fettem for oder heissem wildem while; kaltes müdes zähes Return weist satter feister Loop gierig hitzig ab hinfort.",
+          "d": "return Their Thus Their"
+        }
+      }
+    },
+    {
+      "id": "q-default-parameter",
+      "type": "single-choice",
+      "prompt": "Was geschieht, wenn du bei `def greet(name, greeting='Hi')` die Funktion `greet('Alex')` aufrufst?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Fehler, da die Begrüßung fehlt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "greeting Leur Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "greeting Leur Their Their Their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Python bläst formvollendet lüstern zäh glatt wüst weich formschön dröhnend wild ignorant rücksichtslos glühend auf wild lüstern dröhnend zäh weich prall krass den fetten zarten glatten spitzen heissen sweet zweiten dicken wüsten Parameter stramm brüllend lüstern ab glatt wüst sämig pur.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Standard-Parameterwerte werden genutzt, wenn du das Argument nicht übergibst.",
+        "byOptionId": {
+          "a": "Der formschön stramme fette wüste heisse geile lüsterne weiche pralle the Default meidet formvollendet zart wüst rasant dröhnend glatt wüst weich gnadenlos kess flutschend brüllend lüstern zäh stramm hart krass heiss the grossen wilden Error um wild glatt.",
+          "b": "Correct - 'Hi' is used as the default greeting.",
+          "c": "None zieht hier den Kürzeren; wir servieren stramm formschön lüstern knallhart voll prall einen fetten Real Default String in Reinkultur dicke auf.",
+          "d": "Python watscht formvollendet lüstern wild stramm kess gnadenlos dröhnend heiss Parameters wild wüst glühend gar lüstern nicht brüllend als stumm rasant brüllend ignored stramm kess feurig ab lüstern wüst; es prall weich lüstern wüst krass hart füllt formvollendet sämig zäh rein sie fett auf süss wild formschön geigt lüstern stramm glatt weich wüst brüllend kess verziert dicke heisse rabiate pralle formschön süsse Defaults rein prall, insofern formvollendet glatt kess wüst lüstern dröhnend zäh dies not formschön wild heiss gebraucht weint stramm satt lüstern zäh stramm glatt."
+        }
+      }
+    }
+  ]
+}

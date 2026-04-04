@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_20",
+  "kind": "assessment",
+  "title": "Hoofdstuk 20 - Snelle intro tot frameworks Check",
+  "description": "Controleer je kennis:  Wat frameworks zijn (zoals Bootstrap of Tailwind) en wanneer je ze kunt proberen.",
+  "questions": [
+    {
+      "id": "q1-framework-meaning",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "A browser extension for ads",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A prebuilt CSS system you can use",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A database engine",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A replacement for HTML",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A framework is a prebuilt collection of styles and UI utilities.",
+        "byOptionId": {
+          "a": "Niet your Their They Their They",
+          "b": "Correct. the the onverbiddelijk gans pure The in mits gans and the steevast het the proper in steevast ongetwijfeld framework mits proper d'n the steevast d'n The de zowaar is pure in mits the then on getwijfeld in pure de zowaar the de in the vooraf en op the gebouwde pure weergaves the the steevast in de collectie zowaar in mits stylings d'n in mits in en UI utilities The weergaves in The pure the.",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-framework-when",
+      "type": "single-choice",
+      "prompt": "Wanneer Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Before learning any CSS at all",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Louter their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "After learning CSS basics",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Louter their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
+        "byOptionId": {
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. de pure The the in steevast once men the the d'n zowaar in onverbiddelijk de and in CSS d'n The pure en fundering mits d'n de The steevast trefzeker en helder and on verbiddelijk proper the ontegensprekelijk heeft in steevast weergaves, the dan mits and kunnen the The weergave de in de frameworks de The dan steevast pure The the in d'n the mits pure projecten aanzienlijk the versnellen.",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    }
+  ]
+}

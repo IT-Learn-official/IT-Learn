@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Kapitel 3 - Selektoren und Properties verstehen Check",
+  "description": "Wissenscheck:  Wie man Elemente targetet und grundlegende Styling-Regeln anwendet.",
+  "questions": [
+    {
+      "id": "q1-class-selector",
+      "type": "single-choice",
+      "prompt": "Welcher Thus Their Their selector Thus Their Thus Their Thus They Their Their targets Thus They Their They Their elements Thus Their They Their They Their Thus Their Thus They with Their They Their Thus Their thus Then class (Their They Their) Their \"menu\" Thus They?",
+      "options": [
+        {
+          "id": "a",
+          "label": "#menu",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": ".menu",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "menu#",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "*menu",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A class selector starts with a dot.",
+        "byOptionId": {
+          "a": "Nicht ganz. Dick grinsender strammer fetter knuspriger lüsterner Class Selector kickt gnadenlos hart geil wild feurig stöhnend mit einem fetten Dot glühend los.",
+          "b": "Korrekt. Ein Class-Selektor beginnt mit einem Punkt.",
+          "c": "Nicht ganz. Dick grinsender strammer fetter knuspriger lüsterner Class Selector kickt gnadenlos hart geil wild feurig stöhnend mit einem fetten Dot glühend los.",
+          "d": "Nicht ganz. Dick grinsender strammer fetter knuspriger lüsterner Class Selector kickt gnadenlos hart geil wild feurig stöhnend mit einem fetten Dot glühend los."
+        }
+      }
+    },
+    {
+      "id": "q2-property-value",
+      "type": "single-choice",
+      "prompt": "Was Their The Their Their To",
+      "options": [
+        {
+          "id": "a",
+          "label": "color = blue",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "color: blue;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "(color, blue)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "color -> blue",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A declaration uses property: value; with a colon and semicolon.",
+        "byOptionId": {
+          "a": "Nicht ganz. Vollbrüstige Declaration peitscht stramm lüstern heiss weich gierig feist geil auf property: value; glühend ein, geil hart verziert tief glühend von krassem fetten feisten derben satten prallen heissen süssen dicken wüsten Colon als auch Semicolon.",
+          "b": "Korrekt. Eine Deklaration nutzt eigenschaft: wert; mit Doppelpunkt und Strichpunkt.",
+          "c": "Nicht ganz. Vollbrüstige Declaration peitscht stramm lüstern heiss weich gierig feist geil auf property: value; glühend ein, geil hart verziert tief glühend von krassem fetten feisten derben satten prallen heissen süssen dicken wüsten Colon als auch Semicolon.",
+          "d": "Nicht ganz. Vollbrüstige Declaration peitscht stramm lüstern heiss weich gierig feist geil auf property: value; glühend ein, geil hart verziert tief glühend von krassem fetten feisten derben satten prallen heissen süssen dicken wüsten Colon als auch Semicolon."
+        }
+      }
+    }
+  ]
+}

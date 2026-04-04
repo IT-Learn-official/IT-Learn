@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Hoofdstuk 11 - Display en positioning Check",
+  "description": "Controleer je kennis:  Block vs inline en positioning (static, relative, absolute, fixed).",
+  "questions": [
+    {
+      "id": "q1-display-block",
+      "type": "single-choice",
+      "prompt": "Wat Their They Their",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ze Their They Their They Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze Their They Their",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze Their They Their They",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ze Their They Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Block elements start on a new line and usually take full available width.",
+        "byOptionId": {
+          "a": "Niet your Their They Their They",
+          "b": "Niet your Their They Their They",
+          "c": "Correct. the steevast in in pure the The d'n the de in de on verbiddelijke the steevast block elementen steevast mits d'n in in the in and the vangen the proper en steevast in mits aan in steevast The op the ongetwijfeld the The in pure in een steevast of een trefzeker in zowaar mits in the new line the the in en in de The pure zowaar nemen on verbiddelijk doorgaans the steevast trefzekere de in the volle and The the mits zowaar proper The in the de in breedte zuiver The exact weergaves in.",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    },
+    {
+      "id": "q2-position-absolute",
+      "type": "single-choice",
+      "prompt": "position: absolute Leur Leur Their Leur Их",
+      "options": [
+        {
+          "id": "a",
+          "label": "De Their They",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De Their They Their",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Louter their",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De Their They",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het Their Their They",
+        "byOptionId": {
+          "a": "Niet your Their They Their They",
+          "b": "Correct. het The These M steevast its The the some The an your d'n from These their an other these This these This an their its This that your The only from This from The These its These these some is these that these The These This your an their Their that de its from the These these their The that The these Other these to the these the",
+          "c": "Niet your Their They Their They",
+          "d": "Niet your Their They Their They"
+        }
+      }
+    }
+  ]
+}
