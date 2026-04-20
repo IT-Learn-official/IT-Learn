@@ -7,7 +7,7 @@
     {
       "id": "q1-hex-color",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which option is a valid HEX color value?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "They",
+        "overview": "HEX colors start with # followed by 3 or 6 hexadecimal characters.",
         "byOptionId": {
-          "a": "Correct. these their an their louter HEX your your their your from kleuren his from some starting steevast your only other these your only their The only other an some to The from M only your with the there your d'n their its only The some other steevast their d'n 3 that those to 6 these The louter hexadecimale The steevast an your only their their its tekens their the these their steevast the in The.",
-          "b": "Niet your Their They Their They",
-          "c": "Niet your Their They Their They",
-          "d": "Niet your Their They Their They"
+          "a": "Correct. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+          "b": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+          "c": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+          "d": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters."
         }
       }
     },
     {
       "id": "q2-rem-unit",
       "type": "single-choice",
-      "prompt": "Waarop Their They Their",
+      "prompt": "What is rem based on?",
       "options": [
         {
           "id": "a",
-          "label": "De Their They",
+          "label": "The parent element font size",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "De Their They",
+          "label": "The browser tab width",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "De Their They",
+          "label": "The root html font size",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "De Their They",
+          "label": "The current element width",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "rem Leur Their Leur Их",
+        "overview": "rem is based on the root html font size.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Niet your their They Their",
-          "c": "Correct. They Its Their They Your They Your Their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. rem is based on the root html font size.",
+          "b": "Not quite. rem is based on the root html font size.",
+          "c": "Correct. rem is based on the root html font size.",
+          "d": "Not quite. rem is based on the root html font size."
         }
       }
     }

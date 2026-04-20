@@ -7,43 +7,43 @@
     {
       "id": "q-init-purpose",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They Their",
+      "prompt": "What is the main purpose of the __init__ method in a Python class?",
       "options": [
         {
           "id": "a",
-          "label": "Om Their They Their They",
+          "label": "To delete an object from memory.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Om Their They Their They Their They",
+          "label": "To initialize a new object's attributes when it is created.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Om Their They Their They Their",
+          "label": "To print the object when you call print(obj).",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Om Their They Their",
+          "label": "To define a global function.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "__init__ Their Their Their Leur Leur Their",
+        "overview": "__init__ runs when a new instance is created and usually sets up its attributes.",
         "byOptionId": {
-          "a": "verwijderen handled steevast other The proper their proper The.",
-          "b": "Correct, the befaamde The __init__ the specificatie the initialisatie component The steevast the instruit de The absolute de de  object's de specifieke zuivere startdata the parameters specificatie steevast the zowaar The code object the data structuratie specificatie code the.",
-          "c": "print(obj) Их Leur Их",
-          "d": "__init__ Their Their Their Leur Their Leur Их Leur Их Their Leur Leur Their Leur Их Their"
+          "a": "Deleting is handled differently; __init__ is for setup.",
+          "b": "Correct, __init__ initializes the object's data.",
+          "c": "print(obj) uses __str__ or __repr__, not __init__.",
+          "d": "__init__ belongs to a class, not to the global scope."
         }
       }
     },
     {
       "id": "q-correct-class-def",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their They",
+      "prompt": "Which of the following correctly defines a class and its initializer?",
       "options": [
         {
           "id": "a",
@@ -67,19 +67,19 @@
         }
       ],
       "explanations": {
-        "overview": "Its Therefore their These These This These The Their Some The Those Their There Its They Therefore This Your Those",
+        "overview": "Methods must include self as the first parameter, and __init__ must be inside a class.",
         "byOptionId": {
-          "a": "__init__ Their Their Their Leur Leur",
-          "b": "Correct, The the ontegensprekelijke mits d'n steevast de in absolute de zuiver steevast uiterst dit The is louter The the the d'n weergaves mits the then on verbiddelijk de zowaar the pure The the de gans steevast d'n een pure The pure en zuivere in een steevast pure geldige steevast The pure d'n the the class then uiterst en __init__ the syntax mits The in the and pure weergave trefzeker d'n steevast weergaves steevast in the.",
-          "c": "Dit Their They Their They",
-          "d": "Dit Their They Their They Their"
+          "a": "__init__ is missing self as the first parameter.",
+          "b": "Correct, this is valid class and __init__ syntax.",
+          "c": "This defines a function, not a class.",
+          "d": "This is not valid class syntax in basic Python."
         }
       }
     },
     {
       "id": "q-create-object",
       "type": "single-choice",
-      "prompt": "These Their",
+      "prompt": "Given class Player:\n    def __init__(self, name):\n        self.name = name\nHow do you correctly create a new Player named 'Alex'?",
       "options": [
         {
           "id": "a",
@@ -103,19 +103,19 @@
         }
       ],
       "explanations": {
-        "overview": "Je Their They Their They Their They Their They Their",
+        "overview": "You create an instance by calling the class like a function.",
         "byOptionId": {
-          "a": "Je Их Their should Leur Их Their Leur Их Leur Их Their not Их Leur Их Leur Their",
-          "b": "Their They Their They Their They",
-          "c": "Correct, the dit d'n steevast d'n The roept en zowaar the Player the mits steevast en the in and on verbiddelijk in de pure The the roept op steevast in weergaves pure in d'n zowaar ontegensprekelijk The zowaar ongetwijfeld and pure the the proper en d'n tuurt mits the zowaar en d'n in pure en the the in steevast __init__ steevast steevast proper The den zowaar The weergaves in the achter steevast M de zowaar the The in d'n in the The in pure coulissen the weergaves the. ",
-          "d": "Er Their They Their They Their"
+          "a": "You should not call __init__ directly.",
+          "b": "Python does not use new like this for classes.",
+          "c": "Correct, this calls Player and runs __init__ behind the scenes.",
+          "d": "There is no built-in init method named this on the class."
         }
       }
     },
     {
       "id": "q-access-attribute",
       "type": "single-choice",
-      "prompt": "Je Их Their have Their They Their They Their Their p Ihr Their = Their They Their Player Их ( Их Their \" Their They Alex Their \" Их Their ) Их Their and Their They Their They Their Their inside Their They Their They Their Their Their __init__ Their They Their They Их Their Their you Их Their did Их Their self.name Ihr Their = Their They Their name Их Their. Their They Their They How Their They Their They Their Their do Их Their Their you Их Their read Их Their the Их Their player's Их Their name Их Their outside Их Their the Их Their class Их Their?",
+      "prompt": "You have p = Player(\"Alex\") and inside __init__ you did self.name = name. How do you read the player's name outside the class?",
       "options": [
         {
           "id": "a",
@@ -141,31 +141,31 @@
       "explanations": {
         "overview": "Attributes are accessed through the instance variable.",
         "byOptionId": {
-          "a": "Their They Their They Their They Their",
-          "b": "self Leur Leur Leur Leur Их",
-          "c": "Correct, the uiterst d'n d'n the zowaar en the pure steevast the The The in pure The proper trefzeker en the The p.name steevast onverbiddelijke en ongetwijfeld in leest mits pure The the exact zowaar the het d'n heuse The in name the pure attribuut mits zowaar proper en in the zuiver ontegensprekelijk uit in absolute steevast The the specifieke d'n the the gans The en Player-objecten The pure The pure in The steevast en the in the structuur in zowaar weergave.",
-          "d": "Dit Their They Their They"
+          "a": "Player.name would refer to a class attribute, not the instance's name.",
+          "b": "self is only used inside class methods.",
+          "c": "Correct, p.name reads the name attribute from this Player object.",
+          "d": "This is not valid Python syntax."
         }
       }
     },
     {
       "id": "q-self-meaning",
       "type": "single-choice",
-      "prompt": "Wat There Their They Those",
+      "prompt": "In a method defined as def greet(self):, what does self usually refer to?",
       "options": [
         {
           "id": "a",
-          "label": "De Their They",
+          "label": "The class itself.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "De Their They Their They",
+          "label": "The module where the class is defined.",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Het Their They Their They Their",
+          "label": "The specific object (instance) that the method is called on.",
           "isCorrect": true
         },
         {
@@ -175,156 +175,156 @@
         }
       ],
       "explanations": {
-        "overview": "self Leur Their Leur Их Их",
+        "overview": "self is the instance that the method is acting on.",
         "byOptionId": {
-          "a": "self Their Leur Their Leur Их",
-          "b": "Their and The its and Your They they The therefore Your.",
+          "a": "self is not the class itself, but an instance of it.",
+          "b": "Modules are separate from class instances.",
           "c": "Correct - self lets methods access the instance's data.",
-          "d": "self Leur Their Leur Their Leur"
+          "d": "self is a normal parameter name, not a global variable."
         }
       }
     },
     {
       "id": "q-class-vs-instance-attribute",
       "type": "single-choice",
-      "prompt": "Je Их Their have Their They Their They Their Their: Their They Their They\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWhat Their They Их are Их Their the Их Their values Их Their of Их Their Their a.team_name Их Their and Их Their Their b.name Их Their Their at Их Their the Их Their end Their They Their?",
+      "prompt": "You have:\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWhat are the values of a.team_name and b.name at the end?",
       "options": [
         {
           "id": "a",
-          "label": "a.team_name == \"Red\" Leur b.name == \"Blake\"",
+          "label": "a.team_name == \"Red\" and b.name == \"Blake\"",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "a.team_name == \"Blue\" Leur b.name == \"Blake\"",
+          "label": "a.team_name == \"Blue\" and b.name == \"Blake\"",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "a.team_name == \"Blue\" Leur b.name == \"Blue\"",
+          "label": "a.team_name == \"Blue\" and b.name == \"Blue\"",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "a.team_name == \"Red\" Leur b.name == \"Avery\"",
+          "label": "a.team_name == \"Red\" and b.name == \"Avery\"",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "Class attributes (like team_name) are shared by all instances. Instance attributes (like name) belong to a single object.",
         "byOptionId": {
-          "a": "Fout Their They Their They Their They Their They Their",
-          "b": "Correct, zo'n d'n klassen d'n attribuut the pure The bewerking update effecten the onverbiddelijk the pure alle in instanties  The The the rond the the sec uitsluitend specifiek onvoorwaardelijk steevast a.name werd  finaal The gans the gewijzigd pure d'n  the uiterst proper the weergaves the pure.",
-          "c": "Fout Their They Their They Their They Their They",
-          "d": "Fout Their They Their They Their They Their"
+          "a": "Wrong, Hacker.team_name was changed to 'Blue', so a.team_name sees 'Blue'.",
+          "b": "Correct, class attribute update affects all instances; only a.name was changed.",
+          "c": "Wrong, b.name is still 'Blake', not 'Blue'.",
+          "d": "Wrong, team_name is now 'Blue', not 'Red'."
         }
       }
     },
     {
       "id": "q-method-side-effects",
       "type": "single-choice",
-      "prompt": "They Their They Their",
+      "prompt": "Given:\n\n```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n\n    def click(self):\n        self.value = self.value + 1\n        return self.value\n\nc = Counter()\nx = c.click()\ny = c.click()\n```\n\nWhat are the values of x and y?",
       "options": [
         {
           "id": "a",
-          "label": "x == 0 en y == 0",
+          "label": "x == 0 and y == 0",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "x == 1 en y == 1",
+          "label": "x == 1 and y == 1",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "x == 1 en y == 2",
+          "label": "x == 1 and y == 2",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "x == 2 en y == 3",
+          "label": "x == 2 and y == 3",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The This Their Their Your",
+        "overview": "Each call to click changes the same object's value and returns the new value after incrementing.",
         "byOptionId": {
-          "a": "Fout Their They Their They Their They Their They Their They",
-          "b": "Fout Their They Their They Their They Their They Their",
-          "c": "Correct, de d'n allereerste oproep the levert steevast uiterst pure the de the 1 op, The the direct on the na The na the d'n proper the the seconde oproep pure steevast levert the sec d'n de onverbiddelijke pure The zowaar 2 The uitsluitsel the proper steevast op the.",
-          "d": "Fout Their They Their They Their They Their They Their They Their"
+          "a": "Wrong, click starts from 0 and increments, so it never returns 0.",
+          "b": "Wrong, the second call keeps incrementing, so value becomes 2.",
+          "c": "Correct, first call returns 1, second call returns 2.",
+          "d": "Wrong, this would be true only if the counter started at 1."
         }
       }
     },
     {
       "id": "q-self-parameter-behavior",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They Their They",
+      "prompt": "What is the best description of self in this method?\n\n```python\nclass Device:\n    def reboot(self):\n        print(\"Rebooting\", self.name)\n```",
       "options": [
         {
           "id": "a",
-          "label": "self Их Leur Their Leur Leur Their",
+          "label": "self is a keyword that always refers to the class Device.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "self Leur Leur Leur Their Их",
+          "label": "self is the first argument and refers to the specific Device object that called reboot.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "self Их Leur leur Their Leur Their",
+          "label": "self is a global variable automatically created by Python.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "self Их Leur Their Leur Их",
+          "label": "self must always be named self or Python will crash.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "self Their Leur Их Leur Their Their",
+        "overview": "self is just a normal parameter name; by convention it refers to the instance that called the method.",
         "byOptionId": {
-          "a": "Fout Their They Their They Their They Their They Their They Their They",
-          "b": "Correct, direct in the in d'n The zowaar The wanneer dan pure the u uitsluitend The in then in d'n phone.reboot() the The the de mits the zowaar dan zowaar and en steevast in bewerkt The is the steevast the steevast d'n The the proper self on verbiddelijke dat phone The mits pure the object.",
-          "c": "Fout Their They Their They Their They Their They Their They Their",
-          "d": "Fout Their They Their They Their They Their They Their They Their"
+          "a": "Wrong, self is not a keyword and does not always refer to the class.",
+          "b": "Correct, when you do phone.reboot(), self is that phone object.",
+          "c": "Wrong, self is not global; it is passed like any other parameter.",
+          "d": "Wrong, you can use another name, but self is the common convention."
         }
       }
     },
     {
       "id": "q-multiple-objects-state",
       "type": "single-choice",
-      "prompt": "their They their They their",
+      "prompt": "Given:\n\n```python\nclass Bot:\n    def __init__(self, name):\n        self.name = name\n        self.energy = 100\n\n    def drain(self, amount):\n        self.energy = self.energy - amount\n\na = Bot(\"Alpha\")\nb = Bot(\"Beta\")\na.drain(30)\nb.drain(10)\n```\n\nWhat are the final energy values?",
       "options": [
         {
           "id": "a",
-          "label": "a.energy == 100 Leur b.energy == 100",
+          "label": "a.energy == 100 and b.energy == 100",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "a.energy == 70 Leur b.energy == 90",
+          "label": "a.energy == 70 and b.energy == 90",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "a.energy == 60 Leur b.energy == 90",
+          "label": "a.energy == 60 and b.energy == 90",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "a.energy == 70 Leur b.energy == 70",
+          "label": "a.energy == 70 and b.energy == 70",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "Each object has its own energy attribute. The methods modify only the object theyâ€™re called on.",
         "byOptionId": {
-          "a": "Fout Their They Their They Their They Their They Their They",
+          "a": "Wrong, drain was called on both bots, so their energy changed.",
           "b": "Correct, Alpha lost 30 (100 â†’ 70); Beta lost 10 (100 â†’ 90).",
-          "c": "Fout Their They Their They Their They Their",
-          "d": "Fout Their They Their They Their They Their They Their"
+          "c": "Wrong, Alpha only drained 30, not 40.",
+          "d": "Wrong, Beta only drained 10, so it should be 90, not 70."
         }
       }
     }

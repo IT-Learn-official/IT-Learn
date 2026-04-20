@@ -7,7 +7,7 @@
     {
       "id": "q-link-css",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which tag links an external CSS stylesheet?",
       "options": [
         {
           "id": "style",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use <link rel=\"stylesheet\"> in the head to attach CSS.",
         "byOptionId": {
           "link": "Correct â€” <link rel=\"stylesheet\"> in <head> loads external CSS.",
           "style": "Incorrect â€” <style> contains inline CSS, not an external link.",
@@ -43,11 +43,11 @@
     {
       "id": "q-css-purpose",
       "type": "single-choice",
-      "prompt": "Waarvoor Their They Their",
+      "prompt": "What is CSS used for?",
       "options": [
         {
           "id": "data",
-          "label": "Voor Their They Their",
+          "label": "Stores user data",
           "isCorrect": false
         },
         {
@@ -57,12 +57,12 @@
         },
         {
           "id": "server",
-          "label": "Their They",
+          "label": "Runs server code",
           "isCorrect": false
         },
         {
           "id": "html",
-          "label": "Their They Their",
+          "label": "Replaces HTML structure",
           "isCorrect": false
         }
       ],

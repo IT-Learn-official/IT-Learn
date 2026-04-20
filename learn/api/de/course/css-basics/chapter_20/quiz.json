@@ -7,7 +7,7 @@
     {
       "id": "q1-framework-meaning",
       "type": "single-choice",
-      "prompt": "Was Their The Their Their To",
+      "prompt": "What is a CSS framework?",
       "options": [
         {
           "id": "a",
@@ -33,17 +33,17 @@
       "explanations": {
         "overview": "A framework is a prebuilt collection of styles and UI utilities.",
         "byOptionId": {
-          "a": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch.",
-          "b": "Korrekt. Ein Framework ist eine vorgefertigte Sammlung von Styles und UI-Hilfsmitteln.",
-          "c": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch.",
-          "d": "Nicht ganz. Ein fettes pralles herrliches dröhnendes wüstes Framework protzt gierig heiss glühend als sattes lüsternes geiles rund krasses Prebuilt Collection wüster Styles zart lüstern gepaart stramm heiss mit wüsten brutalen krassen UI Utilities prasseld durch."
+          "a": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
+          "b": "Correct. A framework is a prebuilt collection of styles and UI utilities.",
+          "c": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
+          "d": "Not quite. A framework is a prebuilt collection of styles and UI utilities."
         }
       }
     },
     {
       "id": "q2-framework-when",
       "type": "single-choice",
-      "prompt": "Wann the the is the of the a süsse weiche dicke softe fette heisse kesse wüste dicke the zähe zarte the the gute formschön lüsterne Zeit the the the the to sweet the formvollendet wild zart the stramm start sweet zäh the dröhnend the the using the fiesen kargen wilden hohlen the formschönen plumpsen The frameworks the the wüst glatt?",
+      "prompt": "When is a good time to start using frameworks?",
       "options": [
         {
           "id": "a",
@@ -52,7 +52,7 @@
         },
         {
           "id": "b",
-          "label": "Satt lüstern stramm kess dröhnend exakt formschön nur weich kess formvollendet für dröhnend nasse dreckige süsse glatte feiste zähe wüste heisse geile pure fette Mobile Apps lüstern stramm",
+          "label": "Only for mobile apps",
           "isCorrect": false
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "id": "d",
-          "label": "Lüstern wüst stramm formschön exakt nur weich wild dröhnend formvollendet zäh dann stramm glühend, formschön kess rasant dröhnend sobald fies fett prall das weiche lüsterne kalte dicke heisse dicke nass fad krass schamlos geile dumme stumpfe süsse dröhnende wilde Internet brüllend lahm stramm kess zäh langsam slow kriecht stramm wüst.",
+          "label": "Only when internet is slow",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
         "byOptionId": {
-          "a": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor.",
-          "b": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor.",
-          "c": "Korrekt. Nachdem man CSS-Basics versteht, können Frameworks größere Projekte beschleunigen.",
-          "d": "Nicht ganz. Hat man satt lüstern wilde zähe heisse dicke geile Basic CSS gefressen, peitschen mächtige brachiale fette brutale wüste dröhnende Frameworks rasiermesserscharf rasant dicke Bigger Projects knallhart auf wilden Speed empor."
+          "a": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
+          "b": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
+          "c": "Correct. After understanding basic CSS, frameworks can speed up bigger projects.",
+          "d": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects."
         }
       }
     }

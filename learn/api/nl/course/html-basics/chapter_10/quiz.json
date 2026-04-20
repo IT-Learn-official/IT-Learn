@@ -7,7 +7,7 @@
     {
       "id": "q-table",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their",
+      "prompt": "Which tag starts a table?",
       "options": [
         {
           "id": "table",
@@ -43,7 +43,7 @@
     {
       "id": "q-th-td",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They",
+      "prompt": "Which tag is used for header cells?",
       "options": [
         {
           "id": "td",

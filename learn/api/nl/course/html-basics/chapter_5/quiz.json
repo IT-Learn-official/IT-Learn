@@ -7,7 +7,7 @@
     {
       "id": "q-h1",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which heading should usually be used only once per page?",
       "options": [
         {
           "id": "h1",
@@ -43,7 +43,7 @@
     {
       "id": "q-heading-order",
       "type": "single-choice",
-      "prompt": "There Those They Their They There They",
+      "prompt": "If you have a main title and two subsections, a good order of tags is:",
       "options": [
         {
           "id": "a",
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "Their They Their They Their They Their They",
+        "overview": "Keep headings in logical descending order for clarity and accessibility.",
         "byOptionId": {
           "a": "Correct â€” a main <h1> followed by <h2> subsections is logical.",
           "b": "Incorrect â€” keep the main title at <h1>.",

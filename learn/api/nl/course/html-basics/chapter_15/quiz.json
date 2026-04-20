@@ -7,16 +7,16 @@
     {
       "id": "q-id-class",
       "type": "single-choice",
-      "prompt": "Waar Their They Their",
+      "prompt": "What are id and class attributes used for?",
       "options": [
         {
           "id": "content",
-          "label": "their There Your Those their They The",
+          "label": "Holding text content",
           "isCorrect": false
         },
         {
           "id": "identify",
-          "label": "These Those Their They There They",
+          "label": "Identifying elements for styling and scripting",
           "isCorrect": true
         },
         {
@@ -26,12 +26,12 @@
         },
         {
           "id": "deprecated",
-          "label": "De these their your their.",
+          "label": "Deprecated attributes",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "id Их Their Leur Leur Their Leur Their",
+        "overview": "id and class are used to target elements from CSS and JavaScript.",
         "byOptionId": {
           "identify": "Correct â€” id and class let you select elements from CSS and JS.",
           "content": "Incorrect â€” attributes don't hold primary text content, elements do.",
@@ -43,11 +43,11 @@
     {
       "id": "q-location",
       "type": "single-choice",
-      "prompt": "Waar Their They Their They Their They",
+      "prompt": "Where do id and class attributes go?",
       "options": [
         {
           "id": "end",
-          "label": "Binnenin they hun de the closing the the their tag The d'n the van The hun in steevast ongetwijfeld the The in The een d'n in HTML The the your element",
+          "label": "Inside the closing tag of an HTML element",
           "isCorrect": false
         },
         {
@@ -57,7 +57,7 @@
         },
         {
           "id": "start",
-          "label": "Binnenin weergave other de other in the The other The opening This the your the tag some The their the some van hun The een in html steevast d'n element these The",
+          "label": "Inside the opening tag of an HTML element",
           "isCorrect": true
         },
         {
@@ -67,7 +67,7 @@
         }
       ],
       "explanations": {
-        "overview": "id Их Their Leur Leur Their",
+        "overview": "id and class attributes go inside the opening tag of an HTML element.",
         "byOptionId": {
           "start": "Correct â€” id and class attributes go inside the opening tag.",
           "end": "Incorrect â€” id and class attributes do not go in the closing tag.",

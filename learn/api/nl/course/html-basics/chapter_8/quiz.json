@@ -7,7 +7,7 @@
     {
       "id": "q-img-src",
       "type": "single-choice",
-      "prompt": "Welk Their They Their They Their They",
+      "prompt": "Which attribute provides the image file location?",
       "options": [
         {
           "id": "alt",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "Het Their They Their They",
+        "overview": "The src attribute points to the image resource.",
         "byOptionId": {
           "src": "Correct â€” src specifies the image URL to load.",
           "alt": "Incorrect â€” alt provides alternative text, not the file path.",
@@ -43,26 +43,26 @@
     {
       "id": "q-alt",
       "type": "single-choice",
-      "prompt": "Waarom Their They Their They Their",
+      "prompt": "Why is alt text important?",
       "options": [
         {
           "id": "style",
-          "label": "Het The hun",
+          "label": "It styles the image",
           "isCorrect": false
         },
         {
           "id": "accessibility",
-          "label": "Het Their They",
+          "label": "It helps users with screen readers (blind users) and describes the image if it fails to load",
           "isCorrect": true
         },
         {
           "id": "link",
-          "label": "Het Their There Those Their",
+          "label": "It creates a link",
           "isCorrect": false
         },
         {
           "id": "download",
-          "label": "Het Their They Their",
+          "label": "It downloads the image",
           "isCorrect": false
         }
       ],

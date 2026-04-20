@@ -7,7 +7,7 @@
     {
       "id": "q-list-comp-squares",
       "type": "single-choice",
-      "prompt": "Welche fatale lüsterne As on der dicke zarten formschön To der list comprehension derb As dann The of then To then their on to And karg then karg am (formschoen correctly) stramm dicke krass then of auf creates To To to am a To der the To as from dicke list then The As der von so of That on am squares The The as on dicke To lüstern To As of Then am Then am numbers As and from M Then As in That Some karg And M To Then Then and nums To The As To to Then am To That for to Some from As to as from",
+      "prompt": "Which list comprehension correctly creates a list of squares of numbers in nums?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Satte List Comprehensions riden auf dicken Patterns à la [expression for item in iterable] heiß davon.",
+        "overview": "List comprehensions use the pattern [expression for item in iterable].",
         "byOptionId": {
-          "a": "Korrekt, das ist die korrekte List-Comprehension Syntax.",
-          "b": "Dies formt formvollendet kess gnadenlos lüstern stramm zäh formschön dröhnend wild weich krass the stöhnend the fetten prallen miesen heissen süssen wild geilen the Boolean Expression stramm pur, jedoch stramm lüstern weich the glatt lausig karg the not formschön wild a blöde karge The List brüllend glatt.",
-          "c": "Die The Parts gammeln formvollendet wüst zäh glatt unheimlich dröhnend krass brüllend in prall stramm falscher Wrong Order stramm herum, und the süsse weiche fade nums nutzt dröhnend lüstern stramm wild krass rasant weich the formvollendete zähe lüsterne User inkorrekt krass stramm gnadenlos wüst aus glatt am Stück.",
-          "d": "Derb fehlende Square Brackets verwehren rücksichtslos jeglichen Glanz einer geschmeidigen List Comprehension."
+          "a": "Correct, this is the proper list comprehension syntax.",
+          "b": "This creates a boolean expression, not a list.",
+          "c": "The parts are in the wrong order and nums is used incorrectly.",
+          "d": "Missing square brackets, so it is not a list comprehension."
         }
       }
     },
     {
       "id": "q-list-comp-filter",
       "type": "single-choice",
-      "prompt": "Was Their The Their Their To",
+      "prompt": "What is the result of this code? nums = [1, 2, 3, 4, 5]; result = [n for n in nums if n % 2 == 0]",
       "options": [
         {
           "id": "a",
@@ -67,19 +67,19 @@
         }
       ],
       "explanations": {
-        "overview": "Die lüsterne The Comprehension behält formvollendet wüst zäh glatt stramm lüstern kess glühend einzig formvollendet Even Numbers lüstern hart prasseld heraus aus fetten wüsten strammen nums zäh weich glatt formschön.",
+        "overview": "The comprehension keeps only even numbers from nums.",
         "byOptionId": {
-          "a": "Spitz dröhnend das formvollendet weich zart lüstern stramm formschön krachend sind die kessen wilden Odd Numbers (dröhnend ungerade), keinesfalls die prallen zähen wüsten Evens wild stramm glatt.",
-          "b": "Korrekt, 2 und 4 sind die geraden Zahlen.",
-          "c": "Dröhnend satt lüstern zäh kess fies rot wüst brüllend nichts in jenem glühend formschön weichen Code zerschmettert stramm heiss lüstern prall zäh weich wüst glatt fette süsse dicke wüste krasse Values wüst krass formvollendet rein stramm tief herrlich lüstern wüst krachend in pralle dicke rotzfreche platte Zeros weich rein um stöhnend stramm.",
-          "d": "Diese lüsterne the nass kalte zähe kesse the wilde weiche stramm geile fette The Structure lüstern matcht formvollendet the wüst lüstern glatt the lüstern glühend so stramm gar dreckig formschön The zart nicht formvollendet weich krass kess lüstern zäh stramm The the wüste wilde glatte dröhnend platte dicke nasse miese lausige eiserne List zart the formschön wüste Comprehension stramm The heiss kess the the pur stramm."
+          "a": "These are the odd numbers, not the evens.",
+          "b": "Correct, 2 and 4 are the even numbers.",
+          "c": "Nothing in the code turns values into zeros.",
+          "d": "This structure does not match the list comprehension at all."
         }
       }
     },
     {
       "id": "q-set-comp-unique",
       "type": "single-choice",
-      "prompt": "Was Their The Their Their To",
+      "prompt": "What is the main difference between a list comprehension and a set comprehension?",
       "options": [
         {
           "id": "a",
@@ -106,16 +106,16 @@
         "overview": "Sets keep only unique elements, while lists can have duplicates.",
         "byOptionId": {
           "a": "Sets can store many types, not just numbers.",
-          "b": "Korrekt, Sets entfernen automatisch Duplikate.",
-          "c": "Speed bimmelt formvollendet zäh gnadenlos lüstern stramm wild krass heiss formschön geigt pur rasant voll stramm fies fett prall dröhnend kess abhängig an zäher süsser feister grosser glatter wüster dicker satter Situation wild dran brüllend; solch stramme platte dröhnend lüsterne Aussage stöhnt lüstern wüst krass formvollendet rein stramm tief dröhnend formschön geigt keineswegs lüstern weich glatt formschön stets voll True weich krachend hin stramm.",
-          "d": "Je Their They Their They Their Their can Their They Their They Their Their use Their They Their They Their Their Their if Their They Their They Their Their Their conditions Their They Their They Their Their in Their They Their They Their Their set Their They Their They Their Their comprehensions Their They Their They Their Their too Their They Their They."
+          "b": "Correct, sets automatically drop duplicates.",
+          "c": "Speed depends on the situation; this is not always true.",
+          "d": "You can use if conditions in set comprehensions too."
         }
       }
     },
     {
       "id": "q-zip-shortest",
       "type": "single-choice",
-      "prompt": "Was to then it karg list(zip([1, 2, 3], ['a', 'b'])) some as",
+      "prompt": "What does list(zip([1, 2, 3], ['a', 'b'])) produce?",
       "options": [
         {
           "id": "a",
@@ -139,48 +139,48 @@
         }
       ],
       "explanations": {
-        "overview": "zip Their Thus Their",
+        "overview": "zip stops when the shortest input is exhausted.",
         "byOptionId": {
-          "a": "zip Their Thus Their",
-          "b": "Korrekt, es können nur zwei Paare gebildet werden.",
-          "c": "Solches wäre The formvollendet formschön zart weich stramm zäh als The The a lüstern weich single wüste lüsterne kesse The wüste formschön dicke The tuple the lüstern formschön of all platt formschön the stramm zähe Elements The krass dröhnend prasseld da formschön glatt stramm lüstern, the the the was formschön glatt weich nicht wüst dem wild was formvollendet wüst lüstern stramm The zip zart The does glatt wüst The heisst stramm The lüstern entspricht lüstern formschön pur stramm glatt.",
-          "d": "Dies fristet formvollendet wüst zäh The the the the brüllend formschön The stramm als pure weich wüste The the The the platte The Flat List wüst The dröhnend The The, absolut formvollendet not lüstern formschön wild als schamlose weiche pralle stramm lüsterne The the Pairs lüstern glatt wüst."
+          "a": "zip does not automatically fill with None.",
+          "b": "Correct, only two pairs can be formed.",
+          "c": "This would be a single tuple of all elements, which is not what zip does.",
+          "d": "This is just a flat list, not pairs."
         }
       }
     },
     {
       "id": "q-map-vs-comp",
       "type": "single-choice",
-      "prompt": "Welcher Their They Their They Their They Their two Their They Their They Their They Their expressions Their They Their They Their They are Their They Their They Their They Their most Their They Their They Their They similar Their They Their They Their They in Their They Their They Their They Their what Their They Their They They Their they Their They Their They Their do Their They Their They?",
+      "prompt": "Which two expressions are most similar in what they do?",
       "options": [
         {
           "id": "a",
-          "label": "list(map(str.upper, names)) Leur Leur [name.upper() Leur name Their names]",
+          "label": "list(map(str.upper, names)) and [name.upper() for name in names]",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "list(filter(str.upper, names)) Leur Leur [name.upper() Leur name Their names]",
+          "label": "list(filter(str.upper, names)) and [name.upper() for name in names]",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "list(map(str.upper, names)) Leur Leur names.upper()",
+          "label": "list(map(str.upper, names)) and names.upper()",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "[name for name in names] und [len(name) for name in names]",
+          "label": "[name for name in names] and [len(name) for name in names]",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "map Leur Их Leur Их",
+        "overview": "map applies a function to each element, just like a simple transformation comprehension.",
         "byOptionId": {
-          "a": "Korrekt, beide wenden upper() auf jedes Element in names an.",
-          "b": "filter Their Leur Leur",
-          "c": "names.upper() Their Leur Leur Leur Их Их Leur",
-          "d": "Diese kessen fetten softe prallen zähen Comprehensions treiben formvollendet zäh gnadenlos lüstern formschön wild heiss krass brüllend völlig differente wilde dicke glatte heisse dreckige Things wüst weich herrlich glühend rot (Identity zäh stramm vs stramm rasant zähe pralle Length heiss pur)."
+          "a": "Correct, both apply upper() to each element in names.",
+          "b": "filter is for keeping some items, not transforming all of them.",
+          "c": "names.upper() would not work on a list; upper() is a string method.",
+          "d": "These comprehensions do different things (identity vs length)."
         }
       }
     }

@@ -7,7 +7,7 @@
     {
       "id": "q1-variable-define",
       "type": "single-choice",
-      "prompt": "These Those There They Then Those",
+      "prompt": "How do you define a CSS variable?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Variabelen Their They Their They Their",
+        "overview": "Variables are declared with names that start with two dashes.",
         "byOptionId": {
-          "a": "Correct. Their Your Their They Your They They Your Your",
-          "b": "Niet your their They Their",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Correct. Variables are declared with names that start with two dashes.",
+          "b": "Not quite. Variables are declared with names that start with two dashes.",
+          "c": "Not quite. Variables are declared with names that start with two dashes.",
+          "d": "Not quite. Variables are declared with names that start with two dashes."
         }
       }
     },
     {
       "id": "q2-variable-use",
       "type": "single-choice",
-      "prompt": "Their They Those These There Then They",
+      "prompt": "How do you use a CSS variable in a property value?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use the var() function to read a variable value.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Niet your their They Their",
-          "c": "Correct. Their Your Their Those Those Your. Your Their Those Their Your Your These They Their Their Those Your their Your Those Their Your Your Their Those Their Your.",
-          "d": "Niet your their They Their"
+          "a": "Not quite. Use the var() function to read a variable value.",
+          "b": "Not quite. Use the var() function to read a variable value.",
+          "c": "Correct. Use the var() function to read a variable value.",
+          "d": "Not quite. Use the var() function to read a variable value."
         }
       }
     }

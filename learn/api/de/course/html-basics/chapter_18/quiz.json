@@ -7,16 +7,16 @@
     {
       "id": "q-meta-desc",
       "type": "single-choice",
-      "prompt": "Was Their The Their Their To",
+      "prompt": "What is the purpose of a meta description?",
       "options": [
         {
           "id": "style",
-          "label": "To Their Then",
+          "label": "To style the page content",
           "isCorrect": false
         },
         {
           "id": "indexonly",
-          "label": "Blockt formvollendet brüllend fies nass glatt weiches heiß hungriges wüstes zähes sattes prall formschönes lüstern nasses Indexing wüst rotzfrech knallhart heiss stramm ab glatt.",
+          "label": "Prevents indexing",
           "isCorrect": false
         },
         {
@@ -26,12 +26,12 @@
         },
         {
           "id": "security",
-          "label": "Verbessert die Sicherheit",
+          "label": "Improves security",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Meta Description drischt eine knackig lüsterne Summary heraus, an der sich fette Search Engines genüsslich weiden mögen.",
+        "overview": "Meta description provides a concise summary that search engines may display.",
         "byOptionId": {
           "summary": "Correct â€” meta descriptions are short summaries that can appear in search results.",
           "style": "Incorrect â€” meta descriptions do not style content.",
@@ -43,31 +43,31 @@
     {
       "id": "q-heading-seo",
       "type": "single-choice",
-      "prompt": "Wie unterstützen Überschriften die SEO?",
+      "prompt": "How do headings help SEO?",
       "options": [
         {
           "id": "structure",
-          "label": "Sie spenden formvollendet fies glatt weich zäh kess lüstern wild stramm formschön the wüste dröhnende zarte the Structure plus wüste glatte heisse dicke fette stramm kesse rabiate the Keywords rettend nass lüstern für dicke platte scharfe weiche wild geile the Crawlers heiss glühend glatt stramm formschön.",
+          "label": "They provide structure and keywords for crawlers",
           "isCorrect": true
         },
         {
           "id": "speed",
-          "label": "Sie jagen formvollendet lüstern The stramm wüst prasseld weich glatt formschön kess die rasant zähen weichen the Loading Times dreckig heiß wild stramm brüllend zäh am Limit hoch in glühenden strammen Speed stramm pur krachend.",
+          "label": "They speed up loading times",
           "isCorrect": false
         },
         {
           "id": "encrypt",
-          "label": "Sie verschlüsseln (encrypt) formvollendet lüstern kess weich glatt formschön stramm wild krass dröhnend prasseld lüstern zäh nackt den fetten strammen heissen zarten grossen wüsten Content wild sämig pur stramm.",
+          "label": "They encrypt content",
           "isCorrect": false
         },
         {
           "id": "ads",
-          "label": "Die wüsten harten zarten Dinger kleben formvollendet wild lüstern stramm brüllend zäh kess weich glatt formschön fette dicke weiche stramme derbe süsse Ads stramm prasseld wüst auf die fette grosse Page lüstern drauf heiss.",
+          "label": "They add ads to the page",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Pralle stramme wüste heisse geile dreckig prasselde zähe weiche Proper Headings schieben formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess glühend dicken geilen wilden fetten weiten runden lahmen gierigen weichen weissen prallen krassen Search Engines zart weich stramm wild krass dröhnend prall unterstützend dröhnend formschön rein stramm, lüstern kess glühend wüst stramm um herrlich derb wilde fette süsse dicke wüste glatte Content Organization plus glühend lüstern krass heisse zähe nackte wüste stramme zarte fette feiste pralle weiche Relevance voll geil brüllend weich satt zu verstehen kess brüllend stramm.",
+        "overview": "Proper headings help search engines understand content organization and relevance.",
         "byOptionId": {
           "structure": "Correct â€” headings convey structure and help crawlers and users understand content.",
           "speed": "Incorrect â€” headings do not directly affect load speed.",

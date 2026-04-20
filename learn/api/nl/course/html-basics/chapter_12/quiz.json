@@ -7,7 +7,7 @@
     {
       "id": "q-header",
       "type": "single-choice",
-      "prompt": "Welk Their They Their They Their They Their",
+      "prompt": "Which element is intended for the top of a page or section?",
       "options": [
         {
           "id": "footer",
@@ -43,7 +43,7 @@
     {
       "id": "q-main",
       "type": "single-choice",
-      "prompt": "Welk Their They Their They Their They Their They Their",
+      "prompt": "Which element should appear only once and contain the central content?",
       "options": [
         {
           "id": "article",

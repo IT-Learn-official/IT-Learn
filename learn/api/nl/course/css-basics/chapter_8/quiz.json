@@ -7,7 +7,7 @@
     {
       "id": "q1-box-order",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which order is correct from inside to outside?",
       "options": [
         {
           "id": "a",
@@ -16,7 +16,7 @@
         },
         {
           "id": "b",
-          "label": "Margin -> The -> The -> These",
+          "label": "Margin -> border -> padding -> content",
           "isCorrect": false
         },
         {
@@ -26,24 +26,24 @@
         },
         {
           "id": "d",
-          "label": "Padding -> Margin -> Content -> Border",
+          "label": "Padding -> margin -> content -> border",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "De Their They Their They",
+        "overview": "The order is content, padding, border, margin.",
         "byOptionId": {
-          "a": "Correct. de those There. There Your There Those They Their your There Those Their Those Their Those Those Their Your There These. Those Those Their Your There Their Those. Those Their Those The Those These Their This There.",
-          "b": "Niet your Their They",
-          "c": "Niet your Their They",
-          "d": "Niet your Their They"
+          "a": "Correct. The order is content, padding, border, margin.",
+          "b": "Not quite. The order is content, padding, border, margin.",
+          "c": "Not quite. The order is content, padding, border, margin.",
+          "d": "Not quite. The order is content, padding, border, margin."
         }
       }
     },
     {
       "id": "q2-margin-vs-padding",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They",
+      "prompt": "What is the main difference between margin and padding?",
       "options": [
         {
           "id": "a",
@@ -52,27 +52,27 @@
         },
         {
           "id": "b",
-          "label": "Padding Is These The Therefore Therefore",
+          "label": "Padding is outside and margin is inside",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Padding your this Your Their This There",
+          "label": "Padding is inside, margin is outside",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Your These This Your This They Their There",
+          "label": "Margin changes text color",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Padding the that some These To From",
+        "overview": "Padding is inside the border. Margin is outside the border.",
         "byOptionId": {
-          "a": "Niet your Their They",
-          "b": "Niet your Their They",
-          "c": "Correct. Its This they those There Their Those The These your That your Those Their Some your Your their Your your Those These Your The These those This These Your This This Your Those These Your These.",
-          "d": "Niet your Their They"
+          "a": "Not quite. Padding is inside the border. Margin is outside the border.",
+          "b": "Not quite. Padding is inside the border. Margin is outside the border.",
+          "c": "Correct. Padding is inside the border. Margin is outside the border.",
+          "d": "Not quite. Padding is inside the border. Margin is outside the border."
         }
       }
     }

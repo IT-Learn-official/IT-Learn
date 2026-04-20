@@ -7,26 +7,26 @@
     {
       "id": "q-title",
       "type": "single-choice",
-      "prompt": "Waar Their They Their They Their They",
+      "prompt": "Where does the <title> tag belong?",
       "options": [
         {
           "id": "head",
-          "label": "Binnen in <head> the proper",
+          "label": "Inside <head>",
           "isCorrect": true
         },
         {
           "id": "body",
-          "label": "Your their There steevast",
+          "label": "Inside <body>",
           "isCorrect": false
         },
         {
           "id": "html",
-          "label": "Buiten The the proper in d'n steevast these its other de",
+          "label": "Outside <html>",
           "isCorrect": false
         },
         {
           "id": "meta",
-          "label": "Binnen in <meta> pure d'n",
+          "label": "Inside <meta>",
           "isCorrect": false
         }
       ],
@@ -43,11 +43,11 @@
     {
       "id": "q-charset",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They",
+      "prompt": "What does <meta charset=\"utf-8\"> do?",
       "options": [
         {
           "id": "language",
-          "label": "Their They Their",
+          "label": "Sets the page language",
           "isCorrect": false
         },
         {
@@ -57,17 +57,17 @@
         },
         {
           "id": "linkcss",
-          "label": "Their They Their They Their They Their They",
+          "label": "Links a CSS file",
           "isCorrect": false
         },
         {
           "id": "encoding",
-          "label": "Their They Their",
+          "label": "Sets character encoding so text displays correctly",
           "isCorrect": true
         },
         {
           "id": "runjs",
-          "label": "Their They",
+          "label": "Runs JavaScript",
           "isCorrect": false
         }
       ],
@@ -85,31 +85,31 @@
     {
       "id": "q-viewport",
       "type": "single-choice",
-      "prompt": "Waarom Their They Their They Their They Their They",
+      "prompt": "Why add the viewport meta tag on mobile pages?",
       "options": [
         {
           "id": "speed",
-          "label": "Om Their They Their They",
+          "label": "To make the page load faster",
           "isCorrect": false
         },
         {
           "id": "security",
-          "label": "Om Their They",
+          "label": "To secure the page",
           "isCorrect": false
         },
         {
           "id": "title",
-          "label": "Om Their They",
+          "label": "To set the page title",
           "isCorrect": false
         },
         {
           "id": "responsive",
-          "label": "Om Their They Their They Their",
+          "label": "To make the page scale correctly on small screens",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Viewport Their They Their They Their",
+        "overview": "Viewport controls layout on mobile devices so designs are responsive.",
         "byOptionId": {
           "responsive": "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
           "speed": "Incorrect â€” viewport affects layout, not network speed.",

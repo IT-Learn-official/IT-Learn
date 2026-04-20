@@ -11,7 +11,7 @@
     {
       "id": "q-input-type-email",
       "type": "single-choice",
-      "prompt": "Welcher süsse the To input of so type as As der of M ist am To then to stramm on Then am The the the best of karg to (zart) rasant the für then der das So krass on Then some on rasant the an Their an am then The karg of Their then am so the to then to Then dröhnend formschön von M The so To email was then To the formschön on The a the wüst dicke address The von The To from That am The derb dicke stramm as As so stramm mits some then collecting on then zu formvollendet of stramm the lüstern the of wüst dicke then then That so so some And as As?",
+      "prompt": "Which input type is best for collecting an email address?",
       "options": [
         {
           "id": "text",
@@ -35,38 +35,38 @@
         }
       ],
       "explanations": {
-        "overview": "Knet formvollendet lüstern zäh glatt wüst weich formschön dröhnend wild kess rasant erotisch stramm formschön the kesses hartes lüsternes zähes type=\"email\" stramm wüst heiss durch, um the formschön zart stramm geil dröhnend the stramme fiese weiche platte nackte erotisch glühende gebaute the Built-In Email Validation Behavior stramm in den wilden the dicken zarten schnöden weichen Browsers umher brüllend glatt stramm prasseld dröhnend auszulösen glatt.",
+        "overview": "Use type=\"email\" to get built-in email validation behavior in browsers.",
         "byOptionId": {
           "email": "Correct - type=\"email\" is intended for email addresses.",
-          "text": "Inkorrekt - text klappt zwar, liefert aber keinerlei E-Mail-spezifische Validierung.",
-          "password": "Inkorrekt - Passwörter erfordern versteckte, geheime Eingaben.",
-          "tel": "Inkorrekt - tel eignet sich für Rufnummern, nicht für E-Mail-Adressen."
+          "text": "Incorrect - text works but does not provide email-specific validation.",
+          "password": "Incorrect - password is for hidden secret input.",
+          "tel": "Incorrect - tel is for phone numbers, not email addresses."
         }
       }
     },
     {
       "id": "q-select-vs-radio",
       "type": "single-choice",
-      "prompt": "Wann the the the should the you wüst the lausig dröhnend dicken wüsten softe fette the the the radio buttons stramm krass zäh in that gierig weiche the on the weiche sweet Nutzung stramm the lüstern on dröhnend glatt wüst the that knallen glatt stramm?",
+      "prompt": "When should you use radio buttons?",
       "options": [
         {
           "id": "multi",
-          "label": "Wenn their the die dicken formschönen lüsternen from the users zart dröhnend herrlich the stramm zäh formschön many kess von the wüsten that kargen zähen The options stramm formschön that glatt zart as lüstern on The that aus the so The formvollendet the (the zart the) formschön The können The to Their krass wüst their stramm.",
+          "label": "When users can choose many options",
           "isCorrect": false
         },
         {
           "id": "single",
-          "label": "Wenn those formvollendet kess their the users the their the the the the the wüst The Their To that M Then The exactly then On The as on the so on Then mits then some on some To some On To on The stramm the formschön on The (ihre zart exakte lüstern then mits then their stramm their on one from so weiche herrlich the on Then the a as) then from karg am their on stramm gängig then To to krass on stramm rasant then The then the dicke as The the and the their to stramm that am The Their from",
+          "label": "When users must choose exactly one option from a set",
           "isCorrect": true
         },
         {
           "id": "longtext",
-          "label": "Wenn wüste their the the their then On kess users their That stramm to stramm",
+          "label": "When users need to type long text",
           "isCorrect": false
         },
         {
           "id": "file",
-          "label": "Wenn dröhnende their To users their That their To",
+          "label": "When users upload files",
           "isCorrect": false
         }
       ],
@@ -74,9 +74,9 @@
         "overview": "Radio buttons represent a single-select choice among related options.",
         "byOptionId": {
           "single": "Correct - radios are used for one choice in a group.",
-          "multi": "Inkorrekt - Checkboxen nutzt man fürs Auswählen mehrerer Optionen.",
-          "longtext": "Inkorrekt - Längerer Text wird für gewöhnlich über eine Textarea gesichert.",
-          "file": "Inkorrekt - Dateiuploads nutzen den Input-Type type=\"file\"."
+          "multi": "Incorrect - checkboxes are used for selecting multiple options.",
+          "longtext": "Incorrect - long text is typically entered with a textarea.",
+          "file": "Incorrect - file uploads use input type=\"file\"."
         }
       }
     }

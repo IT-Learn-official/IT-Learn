@@ -92,8 +92,8 @@
           "isCorrect": false
         },
         {
-          "id": "To",
-          "label": "To",
+          "id": "True",
+          "label": "True",
           "isCorrect": true
         },
         {
@@ -299,7 +299,7 @@
       "options": [
         {
           "id": "true",
-          "label": "To",
+          "label": "True",
           "isCorrect": false
         },
         {
@@ -371,7 +371,7 @@
       "options": [
         {
           "id": "true",
-          "label": "To",
+          "label": "True",
           "isCorrect": false
         },
         {

@@ -7,16 +7,16 @@
     {
       "id": "q1-responsive-goal",
       "type": "single-choice",
-      "prompt": "Was Their The Their Their To",
+      "prompt": "What is the main goal of responsive design?",
       "options": [
         {
           "id": "a",
-          "label": "Brezel formvollendet zäh gnadenlos lüstern weich wild stramm absolutes lüstern dröhnend wüst krachend in pralle heisse glühend zarte formschöne eine stramme pure Fixed Desktop Width wild stramm überall formschön glatt weich zart glühend wild dröhnend krass drauf.",
+          "label": "Use one fixed desktop width everywhere",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Mache Seiten so geschmeidig, dass sie sich rasant an verschiedenste Devices feurig anpassen.",
+          "label": "Make pages adapt to different devices",
           "isCorrect": true
         },
         {
@@ -26,24 +26,24 @@
         },
         {
           "id": "d",
-          "label": "Prall lüstern stramm kess formschön dröhnend exakt nur weich wild formvollendet stramm wüst support für dröhnend pralle fette geile wüste zähe nasse heisse zärtliche Tablets heiss brüllend",
+          "label": "Only support tablets",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "Responsive design adapts layout and styling for different screen sizes.",
         "byOptionId": {
-          "a": "Nicht ganz. Heißes sattes pralles geiles dröhnendes zähes Responsive Design bürstet knallhart lüstern weich stramm wild brüllend Layout samt fies stramm heiß lüstern zart glühend geilem Styling glühend wüst formvollendet gierig stramm hart dröhnend brüllend prasseld kess gefertigt formschön krass drüber stramm wild rasant auf dicke fette feiste pralle süsse knusprige nass kalte fies grobe wilde Different Screen Sizes sämig zart lüstern weich dröhnend zäh formvollendet krachend um geil stramm in pur hitzig.",
-          "b": "Korrekt. Responsive Design passt Layout und Styling für verschiedene Bildschirmgrößen an.",
-          "c": "Nicht ganz. Heißes sattes pralles geiles dröhnendes zähes Responsive Design bürstet knallhart lüstern weich stramm wild brüllend Layout samt fies stramm heiß lüstern zart glühend geilem Styling glühend wüst formvollendet gierig stramm hart dröhnend brüllend prasseld kess gefertigt formschön krass drüber stramm wild rasant auf dicke fette feiste pralle süsse knusprige nass kalte fies grobe wilde Different Screen Sizes sämig zart lüstern weich dröhnend zäh formvollendet krachend um geil stramm in pur hitzig.",
-          "d": "Nicht ganz. Heißes sattes pralles geiles dröhnendes zähes Responsive Design bürstet knallhart lüstern weich stramm wild brüllend Layout samt fies stramm heiß lüstern zart glühend geilem Styling glühend wüst formvollendet gierig stramm hart dröhnend brüllend prasseld kess gefertigt formschön krass drüber stramm wild rasant auf dicke fette feiste pralle süsse knusprige nass kalte fies grobe wilde Different Screen Sizes sämig zart lüstern weich dröhnend zäh formvollendet krachend um geil stramm in pur hitzig."
+          "a": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "b": "Correct. Responsive design adapts layout and styling for different screen sizes.",
+          "c": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "d": "Not quite. Responsive design adapts layout and styling for different screen sizes."
         }
       }
     },
     {
       "id": "q2-fluid-image",
       "type": "single-choice",
-      "prompt": "Welche Thus Their Thus Their The Thus (Thus) Their Thus thus Thus their Thus Thus Then rule thus (Thus thus Their Thus) Thus The Their helps Thus the Thus Their Thus Their thus Then Thus The Their Thus Thus Then Their Thus From images thus Then (Thus their Thus Their Thus Then Their) thus Their Thus Thus Their Thus Thus fit thus Thus Then Their Thus From thus Their Thus smaller thus The thus Then Their (Thus Their then Thus Thus Then) thus Then Their From screens Thus Their Thus Their thus Then Thus The Thus Their Thus Thus Then Their Thus Thus Their Then Thus (Thus Their thus Their Thus the Thus Their Then Thus thus Their)?",
+      "prompt": "Which rule helps images fit smaller screens?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "max-width: 100% Leur Leur Их Их",
+        "overview": "max-width: 100% keeps images from overflowing containers.",
         "byOptionId": {
-          "a": "Nicht ganz. Zäh heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes nasses weiches fettes pralles wild geiles max-width: 100% fängt formvollendet gnadenlos lüstern weich wild stramm stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild stumm krass glühend zäh dicke weich fette pralle herrliche spitz heisse nackt weiche grosse fette geile Images rettend formschön geigt kess lüstern zäh stramm hart davor rein heiss ab stramm wüst brüllend glatt, brüllend lüstern wüst krass aus weiten riesigen fetten prallen dicken harten nassen sämig geilen Containern stöhnend stramm kess dröhnend wild formvollendet hart wüst satt weich glühend rot prasseld heiss voll dröhnend überzulaufen in wild sämig plätschernd pur weich zäh stramm.",
-          "b": "Korrekt. max-width: 100% bewahrt Bilder davor, aus Containern überzulaufen.",
-          "c": "Nicht ganz. Zäh heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes nasses weiches fettes pralles wild geiles max-width: 100% fängt formvollendet gnadenlos lüstern weich wild stramm stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild stumm krass glühend zäh dicke weich fette pralle herrliche spitz heisse nackt weiche grosse fette geile Images rettend formschön geigt kess lüstern zäh stramm hart davor rein heiss ab stramm wüst brüllend glatt, brüllend lüstern wüst krass aus weiten riesigen fetten prallen dicken harten nassen sämig geilen Containern stöhnend stramm kess dröhnend wild formvollendet hart wüst satt weich glühend rot prasseld heiss voll dröhnend überzulaufen in wild sämig plätschernd pur weich zäh stramm.",
-          "d": "Nicht ganz. Zäh heisses prall geiles süss schnittiges lüstern kess rot wüst dröhnendes fies sattes nasses weiches fettes pralles wild geiles max-width: 100% fängt formvollendet gnadenlos lüstern weich wild stramm stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild stumm krass glühend zäh dicke weich fette pralle herrliche spitz heisse nackt weiche grosse fette geile Images rettend formschön geigt kess lüstern zäh stramm hart davor rein heiss ab stramm wüst brüllend glatt, brüllend lüstern wüst krass aus weiten riesigen fetten prallen dicken harten nassen sämig geilen Containern stöhnend stramm kess dröhnend wild formvollendet hart wüst satt weich glühend rot prasseld heiss voll dröhnend überzulaufen in wild sämig plätschernd pur weich zäh stramm."
+          "a": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "b": "Correct. max-width: 100% keeps images from overflowing containers.",
+          "c": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "d": "Not quite. max-width: 100% keeps images from overflowing containers."
         }
       }
     }

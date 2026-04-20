@@ -7,7 +7,7 @@
     {
       "id": "q1-grid-enable",
       "type": "single-choice",
-      "prompt": "Welche wilde dröhnende The The Declaration schießt am stramm the on The The the zähe formschöne The CSS Grid so The The so dicke krass then of auf Then To their The a The stramm krass the Then To on To then To on to Their over To to M Then To to am Their sweet Container an on The The?",
+      "prompt": "Which declaration enables CSS Grid on a container?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "display: grid Leur Their Leur Leur",
+        "overview": "display: grid makes the container use Grid layout.",
         "byOptionId": {
-          "a": "Nicht ganz. Fett satt prall weich lüstern zäh wüst stramm heiss dröhnend scharf geils fies kess rot dreckiges display: grid brüllt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend prasseld wüst herrlich den voll prallen süssen runden dicken nass scharfen kessen prallen geilen lüsternen weichen weiten grossen Container kess stramm hart wüst sämig an geigt zart glatt, wild heiss stramm stöhnend lüstern formschön dröhnend krass rasant weich wüst glühend zäh heiss pure sämig prasseld das zähe fette krass geile stramme dicke dicke wüste harte wüste sämig nass weiche fiese Grid Layout lüstern glühend kess zäh weich wild krass dröhnend formvollendet stramm hart satt pur heiss zu zücken brüllend stramm.",
-          "b": "Korrekt. display: grid weist den Container an, das Grid-Layout zu nutzen.",
-          "c": "Nicht ganz. Fett satt prall weich lüstern zäh wüst stramm heiss dröhnend scharf geils fies kess rot dreckiges display: grid brüllt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend prasseld wüst herrlich den voll prallen süssen runden dicken nass scharfen kessen prallen geilen lüsternen weichen weiten grossen Container kess stramm hart wüst sämig an geigt zart glatt, wild heiss stramm stöhnend lüstern formschön dröhnend krass rasant weich wüst glühend zäh heiss pure sämig prasseld das zähe fette krass geile stramme dicke dicke wüste harte wüste sämig nass weiche fiese Grid Layout lüstern glühend kess zäh weich wild krass dröhnend formvollendet stramm hart satt pur heiss zu zücken brüllend stramm.",
-          "d": "Nicht ganz. Fett satt prall weich lüstern zäh wüst stramm heiss dröhnend scharf geils fies kess rot dreckiges display: grid brüllt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend prasseld wüst herrlich den voll prallen süssen runden dicken nass scharfen kessen prallen geilen lüsternen weichen weiten grossen Container kess stramm hart wüst sämig an geigt zart glatt, wild heiss stramm stöhnend lüstern formschön dröhnend krass rasant weich wüst glühend zäh heiss pure sämig prasseld das zähe fette krass geile stramme dicke dicke wüste harte wüste sämig nass weiche fiese Grid Layout lüstern glühend kess zäh weich wild krass dröhnend formvollendet stramm hart satt pur heiss zu zücken brüllend stramm."
+          "a": "Not quite. display: grid makes the container use Grid layout.",
+          "b": "Correct. display: grid makes the container use Grid layout.",
+          "c": "Not quite. display: grid makes the container use Grid layout.",
+          "d": "Not quite. display: grid makes the container use Grid layout."
         }
       }
     },
     {
       "id": "q2-fr-unit",
       "type": "single-choice",
-      "prompt": "Was bedeutet im Grid 1fr?",
+      "prompt": "In Grid, what does 1fr mean?",
       "options": [
         {
           "id": "a",
-          "label": "Exakt schnöde nur verdammt lahm ein brüllend fies fixer wüster Pixel",
+          "label": "One fixed pixel",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Einzig weich glatt formschön zart satt rot nur wüst lüstern krass kess glühend dicke eine formvollendet wüste dicke volle heisse nasse pralle dröhnend glatte Row stramm",
+          "label": "One full row",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Exakt formvollendet weich zart lüstern nur wüst stramm eine formschöne krass wüste dröhnende fette süsse Fraction an herrlichem dicken heissen fies dreckig nassem freiem dröhnendem Space prall",
+          "label": "One fraction of free space",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Haargenau formschön krass nur lüstern weich rot wüst eine brüllend kesse Font Size Unit satt",
+          "label": "One font size unit",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "1fr is one fraction of available space in the grid container.",
         "byOptionId": {
-          "a": "Nicht ganz. 1fr mimt formvollendet dröhnend gierig One Fraction weich lüstern feucht vom fetten brüllenden glühenden derb satten Available Space wild krass prasseld im dicken heissen Grid Container.",
-          "b": "Nicht ganz. 1fr mimt formvollendet dröhnend gierig One Fraction weich lüstern feucht vom fetten brüllenden glühenden derb satten Available Space wild krass prasseld im dicken heissen Grid Container.",
-          "c": "Korrekt. 1fr ist ein Bruchteil (fraction) des verfügbaren Platzes im Grid-Container.",
-          "d": "Nicht ganz. 1fr mimt formvollendet dröhnend gierig One Fraction weich lüstern feucht vom fetten brüllenden glühenden derb satten Available Space wild krass prasseld im dicken heissen Grid Container."
+          "a": "Not quite. 1fr is one fraction of available space in the grid container.",
+          "b": "Not quite. 1fr is one fraction of available space in the grid container.",
+          "c": "Correct. 1fr is one fraction of available space in the grid container.",
+          "d": "Not quite. 1fr is one fraction of available space in the grid container."
         }
       }
     }

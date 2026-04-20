@@ -7,7 +7,7 @@
     {
       "id": "q1-flex-enable",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which declaration turns a container into a flex container?",
       "options": [
         {
           "id": "a",
@@ -31,28 +31,28 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use display: flex on the parent container.",
         "byOptionId": {
-          "a": "Niet your their They",
-          "b": "Correct. Your Those Their Their Your These These Your Those Their Your Your Their Those Your.",
-          "c": "Niet your their They",
-          "d": "Niet your their They"
+          "a": "Not quite. Use display: flex on the parent container.",
+          "b": "Correct. Use display: flex on the parent container.",
+          "c": "Not quite. Use display: flex on the parent container.",
+          "d": "Not quite. Use display: flex on the parent container."
         }
       }
     },
     {
       "id": "q2-justify-content",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They",
+      "prompt": "What does justify-content control in a row flex container?",
       "options": [
         {
           "id": "a",
-          "label": "Verticale Their They",
+          "label": "Vertical text color",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Their They",
+          "label": "Main-axis alignment",
           "isCorrect": true
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "id": "d",
-          "label": "Their They",
+          "label": "Font loading order",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "justify-content Leur Their Their Leur Their",
+        "overview": "justify-content controls spacing and alignment along the main axis.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. Their Your Their They Their Your Their Your Their They Your Their They Their Your Their",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. justify-content controls spacing and alignment along the main axis.",
+          "b": "Correct. justify-content controls spacing and alignment along the main axis.",
+          "c": "Not quite. justify-content controls spacing and alignment along the main axis.",
+          "d": "Not quite. justify-content controls spacing and alignment along the main axis."
         }
       }
     }

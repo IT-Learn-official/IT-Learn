@@ -7,7 +7,7 @@
     {
       "id": "q-div-block",
       "type": "single-choice",
-      "prompt": "Welches zähe erotisch weiche brüllende The Element wütet von rasant stramm then dicke am the the so The zähem the the The from the the default as The the kalten of Raum on The M karg The als of M To Their The block-level The To krass wüst stramm The The zart weich stramm auf stramm glühend?",
+      "prompt": "Which element is block-level by default?",
       "options": [
         {
           "id": "span",
@@ -43,31 +43,31 @@
     {
       "id": "q-span-use",
       "type": "single-choice",
-      "prompt": "Wann the the formvollendet the the should the you zäh kess fies wüst the the lüstern wüst sweet the the the the the <span> in the wild lüsterne weiche platte nackte Nutzung prasseld the formschön wüst krass stramm the schicken stramm glatt?",
+      "prompt": "When should you use <span>?",
       "options": [
         {
           "id": "large",
-          "label": "Um pure krasse The on lüstern stramm grosse so The dicke the heisse zähe the stramme zarte weiche the large formschön wild wüst stramm page stramm auf The stramm sections lüstern the rasant heiss formschön rasant zart wild formschön auf lüstern The lüstern the create formvollendet formschön the the stramm lüstern brüllend stramm hoch auf wüst zart wild stramm kess heiss glatt stramm lüstern wuchten formschön auf stramm glühend The lüstern pur The wüst",
+          "label": "To create large page sections",
           "isCorrect": false
         },
         {
           "id": "table",
-          "label": "To Their Their Then",
+          "label": "To make table rows",
           "isCorrect": false
         },
         {
           "id": "image",
-          "label": "Um the formschön zart dicke lüsterne formschön stramm images then their stramm dicke herrliche on formvollendet rasant formschön the The gnadenlos of sweet to the on then of stramm stöhnend The of The formschön include stramm then The their The The so dicke formschön weich The of fiese zähe The kesse the rasant that to (on lüstern mitsamt their The einzubinden formvollendet zäh so the) on stramm so as The the their the of formschön then kess lüstern then on formschön rasant Then",
+          "label": "To include images",
           "isCorrect": false
         },
         {
           "id": "inline",
-          "label": "To Their Then Their",
+          "label": "To wrap small inline parts of text for styling or scripts",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Hau formvollendet lüstern zart wüst rasant dröhnend formschön geigt kess dröhnend süsses fieses glattes weiches karges <span> einzig und lüstern rein stramm für glatt fettes spitzes wüstes nasses nacktes lautes karges Inline Grouping wild glatt stramm formschön raus pur dröhnend.",
+        "overview": "Use <span> for inline grouping only.",
         "byOptionId": {
           "inline": "Correct â€” <span> is for inline grouping and small styling hooks.",
           "large": "Incorrect â€” use block containers like <div> or semantic sections for large sections.",

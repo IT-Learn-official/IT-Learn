@@ -7,7 +7,7 @@
     {
       "id": "q1-class-selector",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which selector targets elements with class \"menu\"?",
       "options": [
         {
           "id": "a",
@@ -33,17 +33,17 @@
       "explanations": {
         "overview": "A class selector starts with a dot.",
         "byOptionId": {
-          "a": "Niet your Their They",
-          "b": "Correct. the class selector the start immer met een punt.",
-          "c": "Niet your Their They",
-          "d": "Niet your Their They"
+          "a": "Not quite. A class selector starts with a dot.",
+          "b": "Correct. A class selector starts with a dot.",
+          "c": "Not quite. A class selector starts with a dot.",
+          "d": "Not quite. A class selector starts with a dot."
         }
       }
     },
     {
       "id": "q2-property-value",
       "type": "single-choice",
-      "prompt": "Wat Their They Their",
+      "prompt": "What is the correct CSS declaration format?",
       "options": [
         {
           "id": "a",
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "A declaration uses property: value; with a colon and semicolon.",
         "byOptionId": {
-          "a": "Niet your Their They Their",
-          "b": "Correct. the declaratie hanteert steevast: een the eigenschap parameter: de the d'n steevast the waarde; onverbiddelijk the proper met steevast mits The de dubbele proper the punt then de en in d'n steevast puntkomma The mits pure the.",
-          "c": "Niet your Their They Their",
-          "d": "Niet your Their They Their"
+          "a": "Not quite. A declaration uses property: value; with a colon and semicolon.",
+          "b": "Correct. A declaration uses property: value; with a colon and semicolon.",
+          "c": "Not quite. A declaration uses property: value; with a colon and semicolon.",
+          "d": "Not quite. A declaration uses property: value; with a colon and semicolon."
         }
       }
     }

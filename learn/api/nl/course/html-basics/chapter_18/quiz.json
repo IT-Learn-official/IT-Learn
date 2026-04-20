@@ -7,16 +7,16 @@
     {
       "id": "q-meta-desc",
       "type": "single-choice",
-      "prompt": "Wat Their They Their",
+      "prompt": "What is the purpose of a meta description?",
       "options": [
         {
           "id": "style",
-          "label": "Om Their They Their",
+          "label": "To style the page content",
           "isCorrect": false
         },
         {
           "id": "indexonly",
-          "label": "Their They",
+          "label": "Prevents indexing",
           "isCorrect": false
         },
         {
@@ -26,12 +26,12 @@
         },
         {
           "id": "security",
-          "label": "Verbeter pure In the d'n pure in veiligheid in",
+          "label": "Improves security",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Meta these To This To the your some their your the M these its their its on These Their These This These this This these their This and your the an these Some your that which therefore These that They The The your To this The These they Its and This That other They Therefore Their The They They They Its Its This",
+        "overview": "Meta description provides a concise summary that search engines may display.",
         "byOptionId": {
           "summary": "Correct â€” meta descriptions are short summaries that can appear in search results.",
           "style": "Incorrect â€” meta descriptions do not style content.",
@@ -43,31 +43,31 @@
     {
       "id": "q-heading-seo",
       "type": "single-choice",
-      "prompt": "these The Their There Those Those",
+      "prompt": "How do headings help SEO?",
       "options": [
         {
           "id": "structure",
-          "label": "Ze Their They Their They Their",
+          "label": "They provide structure and keywords for crawlers",
           "isCorrect": true
         },
         {
           "id": "speed",
-          "label": "Ze Their They Their",
+          "label": "They speed up loading times",
           "isCorrect": false
         },
         {
           "id": "encrypt",
-          "label": "Ze Their They",
+          "label": "They encrypt content",
           "isCorrect": false
         },
         {
           "id": "ads",
-          "label": "Ze Their They Their They Their They",
+          "label": "They add ads to the page",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Their They Their They Their They Their",
+        "overview": "Proper headings help search engines understand content organization and relevance.",
         "byOptionId": {
           "structure": "Correct â€” headings convey structure and help crawlers and users understand content.",
           "speed": "Incorrect â€” headings do not directly affect load speed.",

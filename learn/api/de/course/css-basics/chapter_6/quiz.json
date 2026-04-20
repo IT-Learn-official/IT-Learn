@@ -7,43 +7,43 @@
     {
       "id": "q1-line-height",
       "type": "single-choice",
-      "prompt": "Was the so the fesselt formvollendet The and some M To their mits line-height To then it karg To some their to",
+      "prompt": "What does line-height control?",
       "options": [
         {
           "id": "a",
-          "label": "Die The Text Color kess rot",
+          "label": "The text color",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Die wild sämige lüsterne formschön krass wüste The Distance lausig nackt tief zwischen glatten weichen Lines",
+          "label": "The distance between lines",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Die pralle The Border Thickness",
+          "label": "The border thickness",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Die edle stramme geile The Font Family",
+          "label": "The font family",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "line-height Their Leur Their Leur Leur",
+        "overview": "line-height controls vertical space between lines of text.",
         "byOptionId": {
-          "a": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes line-height drängt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild prall hart wüst zart den satten fetten weiten runden prallen grossen nassen heissen dicken Vertical Space glühend formschön kess lüstern wild stramm dröhnend zart zwischen wild fiesen heiss reibend fetten zähen prallen strammen eng an dicken süssen nackten geil brüllend wüst glühend satten wüsten dröhnend herrlich kessen glatt heissen Lines vom stramm formvollendet krass rotzfrech weichen Text präzise stramm glatt formvollendet in Form hart wüst satt krachend weich zäh kess geigt.",
-          "b": "Korrekt. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
-          "c": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes line-height drängt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild prall hart wüst zart den satten fetten weiten runden prallen grossen nassen heissen dicken Vertical Space glühend formschön kess lüstern wild stramm dröhnend zart zwischen wild fiesen heiss reibend fetten zähen prallen strammen eng an dicken süssen nackten geil brüllend wüst glühend satten wüsten dröhnend herrlich kessen glatt heissen Lines vom stramm formvollendet krass rotzfrech weichen Text präzise stramm glatt formvollendet in Form hart wüst satt krachend weich zäh kess geigt.",
-          "d": "Nicht ganz. Breit heisses prall geiles wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes sattes line-height drängt formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich dröhnend gierig satt sämig wild prall hart wüst zart den satten fetten weiten runden prallen grossen nassen heissen dicken Vertical Space glühend formschön kess lüstern wild stramm dröhnend zart zwischen wild fiesen heiss reibend fetten zähen prallen strammen eng an dicken süssen nackten geil brüllend wüst glühend satten wüsten dröhnend herrlich kessen glatt heissen Lines vom stramm formvollendet krass rotzfrech weichen Text präzise stramm glatt formvollendet in Form hart wüst satt krachend weich zäh kess geigt."
+          "a": "Not quite. line-height controls vertical space between lines of text.",
+          "b": "Correct. line-height controls vertical space between lines of text.",
+          "c": "Not quite. line-height controls vertical space between lines of text.",
+          "d": "Not quite. line-height controls vertical space between lines of text."
         }
       }
     },
     {
       "id": "q2-text-align",
       "type": "single-choice",
-      "prompt": "Welche property Thus These Their Thus thus the Thus Their Then Thus Their Thus their Thus Thus Thus thus Their Thus Then thus Then Their From centers Thus The then Thus Thus Then Thus The Thus Their Thus Then Thus Thus text Thus thus Then their Thus Thus Thus thus Their Thus Then Thus horizontally Thus These Their thus (Thus The Thus Thus Then thus) thus Then Their in Thus The These Their Thus (Their) thus Their Thus thus its (Thus Their Then) These Their Thus The container Thus Their Thus Thus?",
+      "prompt": "Which property centers text horizontally in its container?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "text-align: center; Their Thus Their",
+        "overview": "text-align: center; centers inline text content.",
         "byOptionId": {
-          "a": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes text-align: center; verankert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich mittig dröhnend zärtlich kess glühend zäh dicke wirren schnellen flachen stummen dicken nassen fetten Inline Text Content formschön wild brüllend satt lüstern zäh glatt heiss wüst stramm satt rein.",
-          "b": "Korrekt. text-align: center; zentriert inline-Textinhalte.",
-          "c": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes text-align: center; verankert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich mittig dröhnend zärtlich kess glühend zäh dicke wirren schnellen flachen stummen dicken nassen fetten Inline Text Content formschön wild brüllend satt lüstern zäh glatt heiss wüst stramm satt rein.",
-          "d": "Nicht ganz. Prall geiles süss heisses wüst lüstern kesses zart dickes sämig brüllend dreckig nasses hartes dröhnend fettes fies heisses zähes text-align: center; verankert formvollendet zäh gnadenlos lüstern weich wild stramm krass heiss stöhnend kess prasseld wüst herrlich mittig dröhnend zärtlich kess glühend zäh dicke wirren schnellen flachen stummen dicken nassen fetten Inline Text Content formschön wild brüllend satt lüstern zäh glatt heiss wüst stramm satt rein."
+          "a": "Not quite. text-align: center; centers inline text content.",
+          "b": "Correct. text-align: center; centers inline text content.",
+          "c": "Not quite. text-align: center; centers inline text content.",
+          "d": "Not quite. text-align: center; centers inline text content."
         }
       }
     }

@@ -7,11 +7,11 @@
     {
       "id": "q1-inline-style",
       "type": "single-choice",
-      "prompt": "Welk Their They Their They Their They",
+      "prompt": "Which HTML attribute is used for inline CSS?",
       "options": [
         {
           "id": "a",
-          "label": "class Их Leur Их Их",
+          "label": "class",
           "isCorrect": false
         },
         {
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Your To And you with op the their.",
+        "overview": "Inline CSS is written with the style attribute.",
         "byOptionId": {
-          "a": "Niet your Their They",
-          "b": "Niet your Their They",
-          "c": "Correct. its the that these only these then an the steevast these its proper from some The this an M that that your the from this his from there d'n an only steevast other The an the these their the other its the steevast other only the on style steevast d'n these the from their to these attribuut their other The.",
-          "d": "Niet your Their They"
+          "a": "Not quite. Inline CSS is written with the style attribute.",
+          "b": "Not quite. Inline CSS is written with the style attribute.",
+          "c": "Correct. Inline CSS is written with the style attribute.",
+          "d": "Not quite. Inline CSS is written with the style attribute."
         }
       }
     },
     {
       "id": "q2-external-css",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which tag links an external CSS file?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use the link tag in the head to load an external stylesheet.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. Their Those Those Their Your Their Your Their Your. your Your They Their They Your Those These Their Those Their These. Their Some Your Their Your Your Your Their Your. Their Those Those There Those Their Their Those Your Your.",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. Use the link tag in the head to load an external stylesheet.",
+          "b": "Correct. Use the link tag in the head to load an external stylesheet.",
+          "c": "Not quite. Use the link tag in the head to load an external stylesheet.",
+          "d": "Not quite. Use the link tag in the head to load an external stylesheet."
         }
       }
     }

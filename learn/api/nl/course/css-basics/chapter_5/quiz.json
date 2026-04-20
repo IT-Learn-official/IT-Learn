@@ -7,7 +7,7 @@
     {
       "id": "q1-font-weight",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their",
+      "prompt": "Which value makes text bold?",
       "options": [
         {
           "id": "a",
@@ -31,28 +31,28 @@
         }
       ],
       "explanations": {
-        "overview": "font-weight: 700 Their Leur Leur Leur Leur Their",
+        "overview": "font-weight: 700 (or bold) makes text bold.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Niet your their They Their",
-          "c": "Correct. Their Your Your Their Your Their Your Their Your Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. font-weight: 700 (or bold) makes text bold.",
+          "b": "Not quite. font-weight: 700 (or bold) makes text bold.",
+          "c": "Correct. font-weight: 700 (or bold) makes text bold.",
+          "d": "Not quite. font-weight: 700 (or bold) makes text bold."
         }
       }
     },
     {
       "id": "q2-font-family",
       "type": "single-choice",
-      "prompt": "Waarom Their They Their They Their They Their They",
+      "prompt": "Why do we often list multiple fonts in font-family?",
       "options": [
         {
           "id": "a",
-          "label": "Om Their They Their",
+          "label": "To slow down the page",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Om Their They Their",
+          "label": "To create fallback choices",
           "isCorrect": true
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "id": "d",
-          "label": "Om Their They Their",
+          "label": "To add animation",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "their your Their The",
+        "overview": "Multiple fonts create fallbacks if one font is not available.",
         "byOptionId": {
-          "a": "Niet your Their They",
-          "b": "Correct. steevast its those its from their Some these The their these those That Your your The Some its The Other these your This There This your Your There they there This The there That Some the Your from there Your That.",
-          "c": "Niet your Their They",
-          "d": "Niet your Their They"
+          "a": "Not quite. Multiple fonts create fallbacks if one font is not available.",
+          "b": "Correct. Multiple fonts create fallbacks if one font is not available.",
+          "c": "Not quite. Multiple fonts create fallbacks if one font is not available.",
+          "d": "Not quite. Multiple fonts create fallbacks if one font is not available."
         }
       }
     }

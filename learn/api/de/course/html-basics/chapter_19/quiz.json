@@ -7,7 +7,7 @@
     {
       "id": "q-link-css",
       "type": "single-choice",
-      "prompt": "Welcher Their They Their They Their tag Their They Their They Their They links Their They Their They Their an Their They Their They Their external Their They Their They CSS Their They Their They Their They Their stylesheet Their They Their They Their They Their?",
+      "prompt": "Which tag links an external CSS stylesheet?",
       "options": [
         {
           "id": "style",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "Rotz formvollendet krass heiss lüstern weich zäh kess formschön flutschend wild wüst prasseld glühend <link rel=\"stylesheet\"> tief prasseld in den Kopfbereich lüstern (The Head wild stramm kess), um dröhnend stramm kess feurig glatt geil rasant zart weich gnadenlos wüst CSS dran zu heften weich wüst.",
+        "overview": "Use <link rel=\"stylesheet\"> in the head to attach CSS.",
         "byOptionId": {
           "link": "Correct â€” <link rel=\"stylesheet\"> in <head> loads external CSS.",
           "style": "Incorrect â€” <style> contains inline CSS, not an external link.",
@@ -43,11 +43,11 @@
     {
       "id": "q-css-purpose",
       "type": "single-choice",
-      "prompt": "Wofür Their The Their Their To",
+      "prompt": "What is CSS used for?",
       "options": [
         {
           "id": "data",
-          "label": "Zementiert formvollendet zäh gnadenlos lüstern prall dicke nasse herrlich wüste User Data stramm weg fett",
+          "label": "Stores user data",
           "isCorrect": false
         },
         {

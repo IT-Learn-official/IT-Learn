@@ -7,43 +7,43 @@
     {
       "id": "q1-responsive-goal",
       "type": "single-choice",
-      "prompt": "Wat Their They Their",
+      "prompt": "What is the main goal of responsive design?",
       "options": [
         {
           "id": "a",
-          "label": "Gebruik Their They Their They",
+          "label": "Use one fixed desktop width everywhere",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Maak others some that This an on that its steevast these other these Those The",
+          "label": "Make pages adapt to different devices",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Their They Their",
+          "label": "Remove all images",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Louter their",
+          "label": "Only support tablets",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Their They Their They Their",
+        "overview": "Responsive design adapts layout and styling for different screen sizes.",
         "byOptionId": {
-          "a": "Niet your Their They",
-          "b": "Correct. Those These This The The some those This They your Those Your These They Your Those There Those Your There Your There Their Those There Those.",
-          "c": "Niet your Their They",
-          "d": "Niet your Their They"
+          "a": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "b": "Correct. Responsive design adapts layout and styling for different screen sizes.",
+          "c": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "d": "Not quite. Responsive design adapts layout and styling for different screen sizes."
         }
       }
     },
     {
       "id": "q2-fluid-image",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They",
+      "prompt": "Which rule helps images fit smaller screens?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "max-width: 100% Leur Leur Their",
+        "overview": "max-width: 100% keeps images from overflowing containers.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. They Their Your Their They They Their Your They Your They Their Your",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "b": "Correct. max-width: 100% keeps images from overflowing containers.",
+          "c": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "d": "Not quite. max-width: 100% keeps images from overflowing containers."
         }
       }
     }

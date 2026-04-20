@@ -7,7 +7,7 @@
     {
       "id": "q1-gradient",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which function creates a gradient background in CSS?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "linear-gradient() Их Leur Их Leur Leur Их Их Leur",
+        "overview": "linear-gradient() is used to create gradient backgrounds.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Niet your their They Their",
-          "c": "Correct. Its They They Your They Their they They Your They Your Their They Your They Their Your",
-          "d": "Niet your their They Their"
+          "a": "Not quite. linear-gradient() is used to create gradient backgrounds.",
+          "b": "Not quite. linear-gradient() is used to create gradient backgrounds.",
+          "c": "Correct. linear-gradient() is used to create gradient backgrounds.",
+          "d": "Not quite. linear-gradient() is used to create gradient backgrounds."
         }
       }
     },
     {
       "id": "q2-bg-cover",
       "type": "single-choice",
-      "prompt": "Wat Their They Their",
+      "prompt": "What does background-size: cover usually do?",
       "options": [
         {
           "id": "a",
-          "label": "Their They Their",
+          "label": "Repeats the image many times",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Het Their They Their",
+          "label": "Stretches image to fill height only",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Their They Their",
+          "label": "Scales image to cover the element",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "there These The Then There those.",
+          "label": "Hides the image",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Het Their",
+        "overview": "It scales the background image to cover the entire element area.",
         "byOptionId": {
-          "a": "Niet your Their They Their",
-          "b": "Niet your Their They Their",
-          "c": "Correct. het Some their there The these its some The this other these that some These these To this other these The these That de there their They Its the Their Some their other This from The their This these These Your",
-          "d": "Niet your Their They Their"
+          "a": "Not quite. It scales the background image to cover the entire element area.",
+          "b": "Not quite. It scales the background image to cover the entire element area.",
+          "c": "Correct. It scales the background image to cover the entire element area.",
+          "d": "Not quite. It scales the background image to cover the entire element area."
         }
       }
     }

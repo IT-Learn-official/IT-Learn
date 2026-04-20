@@ -7,26 +7,26 @@
     {
       "id": "q-alt-required",
       "type": "single-choice",
-      "prompt": "Waarom Their They Their They Their They",
+      "prompt": "Why should images have alt text?",
       "options": [
         {
           "id": "style",
-          "label": "Om Their They",
+          "label": "To style the image",
           "isCorrect": false
         },
         {
           "id": "access",
-          "label": "Om Their They Their They Their They",
+          "label": "To help people using screen readers and when images fail to load",
           "isCorrect": true
         },
         {
           "id": "seoonly",
-          "label": "Louter their They Their",
+          "label": "Only for SEO, not accessibility",
           "isCorrect": false
         },
         {
           "id": "optional",
-          "label": "Their They",
+          "label": "Never necessary",
           "isCorrect": false
         }
       ],
@@ -43,31 +43,31 @@
     {
       "id": "q-labels",
       "type": "single-choice",
-      "prompt": "Wat Their They Their They Their They Their",
+      "prompt": "Which helps users with screen readers interact with forms?",
       "options": [
         {
           "id": "divs",
-          "label": "Het Their They Their They",
+          "label": "Wrapping inputs in divs only",
           "isCorrect": false
         },
         {
           "id": "spans",
-          "label": "Het Their They Their",
+          "label": "Using <span> instead of labels",
           "isCorrect": false
         },
         {
           "id": "none",
-          "label": "Niet your their They",
+          "label": "Nothing helps",
           "isCorrect": false
         },
         {
           "id": "label",
-          "label": "Het Their They Their",
+          "label": "Using <label> elements connected to inputs",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Their They Their They Their They",
+        "overview": "Labels improve form accessibility by describing inputs.",
         "byOptionId": {
           "label": "Correct â€” <label> elements improve accessibility and clickable area for controls.",
           "divs": "Incorrect â€” wrapping in <div> alone does not provide the same semantics as <label>.",

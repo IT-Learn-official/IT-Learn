@@ -7,7 +7,7 @@
     {
       "id": "q1-grid-enable",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They",
+      "prompt": "Which declaration enables CSS Grid on a container?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "display: grid Leur Leur Their Их Their Leur",
+        "overview": "display: grid makes the container use Grid layout.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. Those Your Your Their They They Your Their Your Their Your Their Your. Their Your Your They Your Their Your Their Your",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. display: grid makes the container use Grid layout.",
+          "b": "Correct. display: grid makes the container use Grid layout.",
+          "c": "Not quite. display: grid makes the container use Grid layout.",
+          "d": "Not quite. display: grid makes the container use Grid layout."
         }
       }
     },
     {
       "id": "q2-fr-unit",
       "type": "single-choice",
-      "prompt": "Wat on verbiddelijk betekent 1fr the in d'n louter the in zowaar The steevast Grid proper?",
+      "prompt": "In Grid, what does 1fr mean?",
       "options": [
         {
           "id": "a",
-          "label": "Een Their They Their",
+          "label": "One fixed pixel",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Een Their",
+          "label": "One full row",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Een Their They Their",
+          "label": "One fraction of free space",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Een Their",
+          "label": "One font size unit",
           "isCorrect": false
         }
       ],
       "explanations": {
         "overview": "1fr is one fraction of available space in the grid container.",
         "byOptionId": {
-          "a": "Niet your Their They Their They",
-          "b": "Niet your Their They Their They",
-          "c": "Correct. 1fr the zowaar The dan steevast en and M en ontegensprekelijk and the in M d'n is steevast en d'n the in respectievelijke in zowaar dan dan and trefzeker then the één such respectievelijke M the zuiver steevast trefzeker fractie from en and d'n d'n proper dan the on verbiddelijk dan de the proper the the pure the van available d'n en in dan The steevast steevast d'n de on verbiddelijke trefzeker their and then d'n en dan pure zowaar M then proper en steevast the beschikbare steevast the hun en the trefzeker the d'n respectievelijke pure in M d'n the the de ruimte space the in M trefzeker within then d'n en steevast trefzeker binnen then en The and the in M d'n d'n d'n hun steevast the the The M The the grid container the steevast.",
-          "d": "Niet your Their They Their They"
+          "a": "Not quite. 1fr is one fraction of available space in the grid container.",
+          "b": "Not quite. 1fr is one fraction of available space in the grid container.",
+          "c": "Correct. 1fr is one fraction of available space in the grid container.",
+          "d": "Not quite. 1fr is one fraction of available space in the grid container."
         }
       }
     }

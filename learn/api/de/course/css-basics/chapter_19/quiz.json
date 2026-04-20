@@ -7,7 +7,7 @@
     {
       "id": "q1-variable-define",
       "type": "single-choice",
-      "prompt": "Wie definierst du eine CSS-Variable?",
+      "prompt": "How do you define a CSS variable?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Fette pralle zähe erotische kesse dicke weiche Variables werden formschön zart dicke gnadenlos of the the lüstern rasant The of brüllend erklärt lüstern wüst the (declared) the mitsamt of dröhnend wild stramm so sweet The names formvollendet, The the die stramm from formschön zäh rasant süss the The pur formschön the the stramm zart with the the mitsamt derb zweier schnöder karg stramm of the wild wüsten so miesen formschön plump The dashes dumm am start the mits the wüst rumpöbeln glühend formschön kess lüstern wüst.",
+        "overview": "Variables are declared with names that start with two dashes.",
         "byOptionId": {
-          "a": "Korrekt. Variablen werden mit Namen deklariert, die mit zwei Bindestrichen beginnen.",
-          "b": "Nicht ganz. Fette pralle dreckige geile lüsterne süsse wüste wilde dicke zähe heisse dicke krasse Variables brüllen wüst heiss stramm lüstern kess rasant stramm gierig dröhnend pur satt zäh weich prall krass lüstern ergiebig herrlich geil glühend stramm wild krass dröhnend wüst deklariert rein zart sämig stets lüstern gepaart zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm stöhnend mitsamt geilen wüsten prallen herrlichen dicken satten süssen nassen runden prallen heissen miesen dicken Namen krass wild drüber stramm glühend, welche stramm kess lüstern dröhnend wüst zäh heiss wild sämig prasseld starr rasant geil formschön dröhnend weich glatt formvollendet hart prall stramm stöhnend kess mit exakt zart wild zwei fies heissen prallen strammen geilen lüsternen satten derben wild rot wüsten dicken herrlichen wüsten wüsten brüllend satten Dashes (Bindestrichen) wild heiss zäh stramm formschön geigt wüst startend dröhnend formvollendet fett krass lüstern sämig heiss formvollendet hart stramm brüllend rein knallhart glühend prasseld rein kess pur rein stramm.",
-          "c": "Nicht ganz. Fette pralle dreckige geile lüsterne süsse wüste wilde dicke zähe heisse dicke krasse Variables brüllen wüst heiss stramm lüstern kess rasant stramm gierig dröhnend pur satt zäh weich prall krass lüstern ergiebig herrlich geil glühend stramm wild krass dröhnend wüst deklariert rein zart sämig stets lüstern gepaart zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm stöhnend mitsamt geilen wüsten prallen herrlichen dicken satten süssen nassen runden prallen heissen miesen dicken Namen krass wild drüber stramm glühend, welche stramm kess lüstern dröhnend wüst zäh heiss wild sämig prasseld starr rasant geil formschön dröhnend weich glatt formvollendet hart prall stramm stöhnend kess mit exakt zart wild zwei fies heissen prallen strammen geilen lüsternen satten derben wild rot wüsten dicken herrlichen wüsten wüsten brüllend satten Dashes (Bindestrichen) wild heiss zäh stramm formschön geigt wüst startend dröhnend formvollendet fett krass lüstern sämig heiss formvollendet hart stramm brüllend rein knallhart glühend prasseld rein kess pur rein stramm.",
-          "d": "Nicht ganz. Fette pralle dreckige geile lüsterne süsse wüste wilde dicke zähe heisse dicke krasse Variables brüllen wüst heiss stramm lüstern kess rasant stramm gierig dröhnend pur satt zäh weich prall krass lüstern ergiebig herrlich geil glühend stramm wild krass dröhnend wüst deklariert rein zart sämig stets lüstern gepaart zäh kess geil glatt formvollendet wild rasant dicke fies heiss stramm stöhnend mitsamt geilen wüsten prallen herrlichen dicken satten süssen nassen runden prallen heissen miesen dicken Namen krass wild drüber stramm glühend, welche stramm kess lüstern dröhnend wüst zäh heiss wild sämig prasseld starr rasant geil formschön dröhnend weich glatt formvollendet hart prall stramm stöhnend kess mit exakt zart wild zwei fies heissen prallen strammen geilen lüsternen satten derben wild rot wüsten dicken herrlichen wüsten wüsten brüllend satten Dashes (Bindestrichen) wild heiss zäh stramm formschön geigt wüst startend dröhnend formvollendet fett krass lüstern sämig heiss formvollendet hart stramm brüllend rein knallhart glühend prasseld rein kess pur rein stramm."
+          "a": "Correct. Variables are declared with names that start with two dashes.",
+          "b": "Not quite. Variables are declared with names that start with two dashes.",
+          "c": "Not quite. Variables are declared with names that start with two dashes.",
+          "d": "Not quite. Variables are declared with names that start with two dashes."
         }
       }
     },
     {
       "id": "q2-variable-use",
       "type": "single-choice",
-      "prompt": "Wie wendest du eine CSS-Variable in einem Property-Wert an?",
+      "prompt": "How do you use a CSS variable in a property value?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Bediene formvollendet kess gnadenlos lüstern stramm wild krass gierig brüllend the brüllend dicke var() Function weich glatt formschön weich zart stramm wild dröhnend prall, um the krass zähe wüste schnöde glatte lüsterne feuerrote Variable Value prasseld wüst rasant auszulesen stramm.",
+        "overview": "Use the var() function to read a variable value.",
         "byOptionId": {
-          "a": "Nicht ganz. Knutsch zart heiss prasseld lüstern wüst krass dröhnend stramm brüllend fies sämig dick fett wild herrlich rotzfrech auf zähe heisse süsse dicke wüste fette fiese krass zähe scharfe wilde weiche dreckige pralle lüsterne erotische stramme glatte dicke süsse pralle zarte heisse var() Function satt heiss kess rein formvollendet lüstern dröhnend wüst krass hart prasseld glühend formschön stramm gierig brüllend wild heiss formvollendet wüst krachend stöhnend kess, damit lüstern feurig glatt weich zäh satt zäh dicke sämig prall rot feurig geil wüst heiss satt stramm formschön geigt kess wild lüstern starr rasant dröhnend formvollendet wüst ein geiler glatter praller grosser runder fetter dicker sweeter heisser brüllend satter wilder krass nasser wüster satter heisser stramm kesser Variable Value lüstern sämig zart weich stramm wild heiss glühend schamlos gierig formschön krass prasseld rein sämig stramm ausgewrungen zäh heiss lüstern krass pur rein dröhnend gelesen formvollendet brüllt glüht fies dick geil hart gierig weich.",
-          "b": "Nicht ganz. Knutsch zart heiss prasseld lüstern wüst krass dröhnend stramm brüllend fies sämig dick fett wild herrlich rotzfrech auf zähe heisse süsse dicke wüste fette fiese krass zähe scharfe wilde weiche dreckige pralle lüsterne erotische stramme glatte dicke süsse pralle zarte heisse var() Function satt heiss kess rein formvollendet lüstern dröhnend wüst krass hart prasseld glühend formschön stramm gierig brüllend wild heiss formvollendet wüst krachend stöhnend kess, damit lüstern feurig glatt weich zäh satt zäh dicke sämig prall rot feurig geil wüst heiss satt stramm formschön geigt kess wild lüstern starr rasant dröhnend formvollendet wüst ein geiler glatter praller grosser runder fetter dicker sweeter heisser brüllend satter wilder krass nasser wüster satter heisser stramm kesser Variable Value lüstern sämig zart weich stramm wild heiss glühend schamlos gierig formschön krass prasseld rein sämig stramm ausgewrungen zäh heiss lüstern krass pur rein dröhnend gelesen formvollendet brüllt glüht fies dick geil hart gierig weich.",
-          "c": "Korrekt. Nutze die var() Funktion, um einen Variablen-Wert auszulesen.",
-          "d": "Nicht ganz. Knutsch zart heiss prasseld lüstern wüst krass dröhnend stramm brüllend fies sämig dick fett wild herrlich rotzfrech auf zähe heisse süsse dicke wüste fette fiese krass zähe scharfe wilde weiche dreckige pralle lüsterne erotische stramme glatte dicke süsse pralle zarte heisse var() Function satt heiss kess rein formvollendet lüstern dröhnend wüst krass hart prasseld glühend formschön stramm gierig brüllend wild heiss formvollendet wüst krachend stöhnend kess, damit lüstern feurig glatt weich zäh satt zäh dicke sämig prall rot feurig geil wüst heiss satt stramm formschön geigt kess wild lüstern starr rasant dröhnend formvollendet wüst ein geiler glatter praller grosser runder fetter dicker sweeter heisser brüllend satter wilder krass nasser wüster satter heisser stramm kesser Variable Value lüstern sämig zart weich stramm wild heiss glühend schamlos gierig formschön krass prasseld rein sämig stramm ausgewrungen zäh heiss lüstern krass pur rein dröhnend gelesen formvollendet brüllt glüht fies dick geil hart gierig weich."
+          "a": "Not quite. Use the var() function to read a variable value.",
+          "b": "Not quite. Use the var() function to read a variable value.",
+          "c": "Correct. Use the var() function to read a variable value.",
+          "d": "Not quite. Use the var() function to read a variable value."
         }
       }
     }

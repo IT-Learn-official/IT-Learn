@@ -7,7 +7,7 @@
     {
       "id": "q-frontend-backend",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They",
+      "prompt": "Which of the following is a frontend technology?",
       "options": [
         {
           "id": "api",
@@ -26,12 +26,12 @@
         },
         {
           "id": "edge-functions",
-          "label": "Your Their Your Their Your Their Your Their Your Their",
+          "label": "Edge functions (Server code that runs close to users for fast responses)",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Their They Their",
+        "overview": "Frontend technologies run in the user's browser and control what they see and interact with. Backend technologies run on servers and handle data, logic, and communication.",
         "byOptionId": {
           "css": "Correct â€” CSS is a frontend technology used for styling web pages.",
           "edge-functions": "Incorrect â€” Edge functions are a backend technology that runs close to users for fast responses.",

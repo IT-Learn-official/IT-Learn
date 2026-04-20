@@ -11,7 +11,7 @@
     {
       "id": "q-input-type-email",
       "type": "single-choice",
-      "prompt": "Welk Their They Their They Their They Their They",
+      "prompt": "Which input type is best for collecting an email address?",
       "options": [
         {
           "id": "text",
@@ -35,48 +35,48 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use type=\"email\" to get built-in email validation behavior in browsers.",
         "byOptionId": {
           "email": "Correct - type=\"email\" is intended for email addresses.",
-          "text": "Foutief Their They Their",
-          "password": "Foutief Their They Their",
-          "tel": "Foutief Their They Their"
+          "text": "Incorrect - text works but does not provide email-specific validation.",
+          "password": "Incorrect - password is for hidden secret input.",
+          "tel": "Incorrect - tel is for phone numbers, not email addresses."
         }
       }
     },
     {
       "id": "q-select-vs-radio",
       "type": "single-choice",
-      "prompt": "Wanneer Their They Their",
+      "prompt": "When should you use radio buttons?",
       "options": [
         {
           "id": "multi",
-          "label": "Wanneer Their They Their They",
+          "label": "When users can choose many options",
           "isCorrect": false
         },
         {
           "id": "single",
-          "label": "Wanneer Their They Their They Their",
+          "label": "When users must choose exactly one option from a set",
           "isCorrect": true
         },
         {
           "id": "longtext",
-          "label": "Wanneer Their They Their",
+          "label": "When users need to type long text",
           "isCorrect": false
         },
         {
           "id": "file",
-          "label": "Wanneer Their They Their",
+          "label": "When users upload files",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Their They Their They Their They Their",
+        "overview": "Radio buttons represent a single-select choice among related options.",
         "byOptionId": {
           "single": "Correct - radios are used for one choice in a group.",
-          "multi": "Foutief Their They There",
-          "longtext": "Foutief Their They There",
-          "file": "Foutief Their They There"
+          "multi": "Incorrect - checkboxes are used for selecting multiple options.",
+          "longtext": "Incorrect - long text is typically entered with a textarea.",
+          "file": "Incorrect - file uploads use input type=\"file\"."
         }
       }
     }

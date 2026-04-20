@@ -7,43 +7,43 @@
     {
       "id": "q1-line-height",
       "type": "single-choice",
-      "prompt": "Wat Their They Their",
+      "prompt": "What does line-height control?",
       "options": [
         {
           "id": "a",
-          "label": "De Their They",
+          "label": "The text color",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "De Their They",
+          "label": "The distance between lines",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "De Their They",
+          "label": "The border thickness",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "De Their They",
+          "label": "The font family",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "line-height Их Leur Their Leur Their Leur Leur",
+        "overview": "line-height controls vertical space between lines of text.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. They Their Your their They Your Their Your Their They Their Your Their Your Their Your Their They Your",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. line-height controls vertical space between lines of text.",
+          "b": "Correct. line-height controls vertical space between lines of text.",
+          "c": "Not quite. line-height controls vertical space between lines of text.",
+          "d": "Not quite. line-height controls vertical space between lines of text."
         }
       }
     },
     {
       "id": "q2-text-align",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which property centers text horizontally in its container?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "text-align: center; Leur Leur Leur Their",
+        "overview": "text-align: center; centers inline text content.",
         "byOptionId": {
-          "a": "Niet your their They Their",
-          "b": "Correct. They Its They Your They Your their They Your Their They Your",
-          "c": "Niet your their They Their",
-          "d": "Niet your their They Their"
+          "a": "Not quite. text-align: center; centers inline text content.",
+          "b": "Correct. text-align: center; centers inline text content.",
+          "c": "Not quite. text-align: center; centers inline text content.",
+          "d": "Not quite. text-align: center; centers inline text content."
         }
       }
     }

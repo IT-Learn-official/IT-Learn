@@ -7,7 +7,7 @@
     {
       "id": "q-p-tag",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their",
+      "prompt": "Which tag should you use for a paragraph?",
       "options": [
         {
           "id": "div",
@@ -31,7 +31,7 @@
         }
       ],
       "explanations": {
-        "overview": "Gebruik Their They Their They Their They",
+        "overview": "Use <p> to mark blocks of text as paragraphs.",
         "byOptionId": {
           "p": "Correct â€” use <p> for paragraphs of text.",
           "div": "Incorrect â€” <div> is a generic block container but not the semantic paragraph tag.",
@@ -43,7 +43,7 @@
     {
       "id": "q-strong-em",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They",
+      "prompt": "Which tag semantically indicates strong importance?",
       "options": [
         {
           "id": "em",
@@ -79,7 +79,7 @@
     {
       "id": "q-br-hr",
       "type": "single-choice",
-      "prompt": "Welke Their They Their They Their They Their They",
+      "prompt": "Which tag creates a horizontal rule (a thematic break)?",
       "options": [
         {
           "id": "br",

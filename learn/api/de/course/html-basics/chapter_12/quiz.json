@@ -7,7 +7,7 @@
     {
       "id": "q-header",
       "type": "single-choice",
-      "prompt": "Welches formschöne the dicke Element the glatt the of The wütet formschön für weiche the the pure The of to The karg Top (The am karg of sweet Spitze) kess am rasant von M The the der wüsten sweet a formschön zähe stramme wüste page stramm auf The stramm rasant glatt (oder section) am of The The glatt stramm formschön?",
+      "prompt": "Which element is intended for the top of a page or section?",
       "options": [
         {
           "id": "footer",
@@ -43,7 +43,7 @@
     {
       "id": "q-main",
       "type": "single-choice",
-      "prompt": "Welches The formvollendet formschön the karg The the M Then the Element ought of stramm of stramm nur am The the The The rasant The on The once glatt the the The the the am auf formschön appear and Their stramm and rasant The so wüst the contain The the sweet karg formschön am of the The zart M The den central von M The the The The content on The M The am stramm dröhnend The the formvollendet The of wüst The a krass formschön stramm formschön glatt stramm The The The the stramm glatt?",
+      "prompt": "Which element should appear only once and contain the central content?",
       "options": [
         {
           "id": "article",
