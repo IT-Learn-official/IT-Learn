@@ -5,7 +5,7 @@ import { checkSession, loadProgress, saveProgress } from '../services/authServic
 
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
-const LOCAL_GAMIFICATION_KEY = 'itlearn.gamification.v1';
+const LOCAL_GAMIFICATION_KEY_BASE = 'itlearn.gamification.v1';
 const REWARD_MIN_FACTOR = 0.8;
 const REWARD_MAX_FACTOR = 1.2;
 const XP_PER_RANK = 12;
@@ -138,10 +138,26 @@ function defaultState() {
   };
 }
 
+function currentGamificationStorageKey() {
+  const rawUserId = typeof window !== 'undefined' ? window.currentUserId : null;
+  const userId = String(rawUserId || '').trim();
+  if (userId) {
+    return `${LOCAL_GAMIFICATION_KEY_BASE}:${userId}`;
+  }
+  return `${LOCAL_GAMIFICATION_KEY_BASE}:anon`;
+}
+
+function hasAuthenticatedUserContext() {
+  const rawUserId = typeof window !== 'undefined' ? window.currentUserId : null;
+  return Boolean(String(rawUserId || '').trim());
+}
+
 function readLocalGamificationSnapshot() {
+  // For authenticated users, Supabase is the source of truth.
+  if (hasAuthenticatedUserContext()) return null;
   if (typeof localStorage === 'undefined') return null;
   try {
-    const raw = localStorage.getItem(LOCAL_GAMIFICATION_KEY);
+    const raw = localStorage.getItem(currentGamificationStorageKey());
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     return parsed && typeof parsed === 'object' ? parsed : null;
@@ -151,9 +167,11 @@ function readLocalGamificationSnapshot() {
 }
 
 function saveLocalGamificationSnapshot(snapshot) {
+  // Avoid persisting authenticated progress locally to prevent account bleed.
+  if (hasAuthenticatedUserContext()) return;
   if (typeof localStorage === 'undefined') return;
   try {
-    localStorage.setItem(LOCAL_GAMIFICATION_KEY, JSON.stringify(snapshot));
+    localStorage.setItem(currentGamificationStorageKey(), JSON.stringify(snapshot));
   } catch {
     // Ignore storage quota/privacy errors; remote sync still attempts to persist state.
   }
@@ -326,8 +344,7 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
     const remoteGamification = remote?.progress?.gamification;
     const localSnapshotTs = _localSnapshotTimestampMs;
     const remoteSnapshotTs = snapshotTimestampMs(remoteGamification);
-    const shouldUseRemoteGamification = Boolean(remoteGamification && typeof remoteGamification === 'object')
-      && (localSnapshotTs === 0 || remoteSnapshotTs >= localSnapshotTs);
+    const shouldUseRemoteGamification = Boolean(remoteGamification && typeof remoteGamification === 'object');
 
     // TODO: Replace timestamp-based conflict checks with a server-issued monotonic sequence number.
     const syncSource = shouldUseRemoteGamification ? 'remote' : 'local';

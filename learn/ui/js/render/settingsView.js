@@ -1,9 +1,32 @@
 import { changePassword, deleteAccount, getMyProfile, getNotifications, markNotificationsRead, updateProfile } from '../services/authService.js';
 import { navigateTo } from '../state/router.js';
+import { clearTrialSession } from '../services/trialMode.js';
+import { resetCourseProgressState } from '../state/courseProgress.js';
 
 const MAX_AVATAR_FILE_BYTES = 5 * 1024 * 1024;
 const AVATAR_MAX_DIMENSION = 320;
 const AVATAR_MAX_DATA_URL_LENGTH = 450_000;
+
+function clearItLearnLocalStorage() {
+  if (typeof localStorage === 'undefined') return;
+
+  try {
+    const keysToDelete = [];
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const key = localStorage.key(i);
+      if (!key) continue;
+      if (key.startsWith('itlearn') || key.startsWith('ITLearn') || key.startsWith('itlearn.')) {
+        keysToDelete.push(key);
+      }
+    }
+
+    keysToDelete.forEach((key) => {
+      localStorage.removeItem(key);
+    });
+  } catch {
+    // Ignore storage errors during cleanup.
+  }
+}
 
 function createAvatarPreview(avatarUrl, fallbackText = 'U') {
   if (avatarUrl) {
@@ -982,6 +1005,15 @@ export function renderSettingsView(screenRootEl, options = {}) {
     setButtonLoading(confirmDeleteButton, false, 'Delete account forever', 'Deleting...');
 
     if (result.success) {
+      clearTrialSession();
+      resetCourseProgressState();
+      clearItLearnLocalStorage();
+      if (typeof document !== 'undefined') {
+        document.cookie = 'itskill_read_chapters=; path=/; max-age=0';
+      }
+      if (typeof window !== 'undefined') {
+        window.currentUserId = null;
+      }
       showDeleteStatus('Account deleted successfully. Redirecting...', 'success');
       setTimeout(() => {
         window.location.href = '/login.html';
