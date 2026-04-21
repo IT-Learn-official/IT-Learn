@@ -7,7 +7,7 @@
     {
       "id": "q-img-src",
       "type": "single-choice",
-      "prompt": "Which attribute provides the image file location?",
+      "prompt": "Welk attribuut geeft de locatie van het afbeeldingsbestand aan?",
       "options": [
         {
           "id": "alt",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "The src attribute points to the image resource.",
+        "overview": "Het src-attribuut verwijst naar de afbeelding.",
         "byOptionId": {
-          "src": "Correct â€” src specifies the image URL to load.",
-          "alt": "Incorrect â€” alt provides alternative text, not the file path.",
-          "href": "Incorrect â€” href is used for anchors, not image sources.",
-          "title": "Incorrect â€” title offers tooltip text, not the image location."
+          "src": "Juist – src geeft de URL/locatie van de afbeelding aan.",
+          "alt": "Fout – alt is alternatieve tekst, geen bestandspad.",
+          "href": "Fout – href gebruik je voor links (<a>), niet voor afbeeldingen.",
+          "title": "Fout – title is tooltiptekst, niet de locatie van de afbeelding."
         }
       }
     },
     {
       "id": "q-alt",
       "type": "single-choice",
-      "prompt": "Why is alt text important?",
+      "prompt": "Waarom is alt-tekst belangrijk?",
       "options": [
         {
           "id": "style",
-          "label": "It styles the image",
+          "label": "Het stylet de afbeelding",
           "isCorrect": false
         },
         {
           "id": "accessibility",
-          "label": "It helps users with screen readers (blind users) and describes the image if it fails to load",
+          "label": "Het helpt gebruikers met screenreaders en beschrijft de afbeelding als ze niet laadt",
           "isCorrect": true
         },
         {
           "id": "link",
-          "label": "It creates a link",
+          "label": "Het maakt een link",
           "isCorrect": false
         },
         {
           "id": "download",
-          "label": "It downloads the image",
+          "label": "Het downloadt de afbeelding",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Alt text supports accessibility and provides fallback information.",
+        "overview": "Alt-tekst helpt voor toegankelijkheid en geeft fallbackinformatie.",
         "byOptionId": {
-          "accessibility": "Correct â€” alt text helps assistive tech and shows when images fail to load.",
-          "style": "Incorrect â€” alt is not for styling; CSS handles styles.",
-          "link": "Incorrect â€” alt does not create links; <a> does that.",
-          "download": "Incorrect â€” alt does not cause downloading of the image."
+          "accessibility": "Juist – alt-tekst helpt assistieve technologie en verschijnt als de afbeelding niet laadt.",
+          "style": "Fout – alt is niet voor styling; dat doe je met CSS.",
+          "link": "Fout – alt maakt geen links; <a> doet dat.",
+          "download": "Fout – alt zorgt niet voor downloaden."
         }
       }
     }

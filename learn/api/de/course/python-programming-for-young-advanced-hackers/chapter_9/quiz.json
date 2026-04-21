@@ -7,7 +7,7 @@
     {
       "id": "q-list-create",
       "type": "single-choice",
-      "prompt": "Which line correctly creates a list of hacker names?",
+      "prompt": "Welche Zeile erstellt korrekt eine Liste mit Hacker-Namen?",
       "options": [
         {
           "id": "a",
@@ -31,55 +31,55 @@
         }
       ],
       "explanations": {
-        "overview": "Lists use square brackets [].",
+        "overview": "Listen benutzen eckige Klammern [].",
         "byOptionId": {
-          "a": "This creates a tuple without brackets in some contexts, but it's not a list.",
-          "b": "Correct, this is a list of three strings.",
-          "c": "Curly braces without key:value pairs create a set, not a list.",
-          "d": "Parentheses create a tuple, not a list."
+          "a": "Das erzeugt in manchen Kontexten ein Tuple ohne Klammern, aber keine Liste.",
+          "b": "Richtig, das ist eine Liste mit drei Strings.",
+          "c": "Geschweifte Klammern ohne key:value-Paare erzeugen ein Set, keine Liste.",
+          "d": "Runde Klammern erzeugen ein Tuple, keine Liste."
         }
       }
     },
     {
       "id": "q-list-append",
       "type": "single-choice",
-      "prompt": "You have `tools = [\"laptop\", \"phone\"]`. What does `tools.append(\"usb\")` do?",
+      "prompt": "Du hast `tools = [\"laptop\", \"phone\"]`. Was macht `tools.append(\"usb\")`?",
       "options": [
         {
           "id": "a",
-          "label": "Replaces 'phone' with 'usb'.",
+          "label": "Ersetzt 'phone' durch 'usb'.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Deletes 'laptop'.",
+          "label": "Löscht 'laptop'.",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Adds 'usb' to the end of the list.",
+          "label": "Fügt 'usb' ans Ende der Liste an.",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Does nothing.",
+          "label": "Macht nichts.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "append adds a new item to the end of the list.",
+        "overview": "`append` fügt ein neues Element ans Ende der Liste an.",
         "byOptionId": {
-          "a": "append does not replace items; it adds a new one.",
-          "b": "append never deletes items.",
-          "c": "Correct, tools becomes ['laptop', 'phone', 'usb'].",
-          "d": "append always changes the list by adding something."
+          "a": "`append` ersetzt keine Elemente; es fügt ein neues hinzu.",
+          "b": "`append` löscht nie Elemente.",
+          "c": "Richtig, tools wird zu ['laptop', 'phone', 'usb'].",
+          "d": "`append` verändert die Liste immer, indem es etwas hinzufügt."
         }
       }
     },
     {
       "id": "q-dict-access",
       "type": "single-choice",
-      "prompt": "You have `player = {\"name\": \"Leo\", \"score\": 50}`. How do you get the score?",
+      "prompt": "Du hast `player = {\"name\": \"Leo\", \"score\": 50}`. Wie bekommst du den score?",
       "options": [
         {
           "id": "a",
@@ -103,84 +103,84 @@
         }
       ],
       "explanations": {
-        "overview": "Dictionary values are accessed by key using square brackets and the key string.",
+        "overview": "Werte aus einem Dictionary holst du per Key mit eckigen Klammern und dem Key-String.",
         "byOptionId": {
-          "a": "Dictionaries are not indexed by number by default.",
-          "b": "This tries to call player like a function.",
-          "c": "Correct, this looks up the value stored under the key 'score'.",
-          "d": "Dot-notation like this is not how dicts work in plain Python."
+          "a": "Dictionaries werden standardmäßig nicht per Zahl indexiert.",
+          "b": "Das versucht, player wie eine Funktion aufzurufen.",
+          "c": "Richtig, das liest den Wert unter dem Key 'score' aus.",
+          "d": "So eine Punkt-Notation ist nicht die normale Art, mit dicts zu arbeiten."
         }
       }
     },
     {
       "id": "q-tuple-immutable",
       "type": "single-choice",
-      "prompt": "What is special about tuples compared to lists?",
+      "prompt": "Was ist bei Tuples im Vergleich zu Listen besonders?",
       "options": [
         {
           "id": "a",
-          "label": "Tuples can only store numbers.",
+          "label": "Tuples können nur Zahlen speichern.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Tuples are always longer than lists.",
+          "label": "Tuples sind immer länger als Listen.",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Tuples cannot be changed after creation.",
+          "label": "Tuples lassen sich nach dem Erstellen nicht mehr verändern.",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Tuples are always empty.",
+          "label": "Tuples sind immer leer.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Tuples are immutable; lists are mutable.",
+        "overview": "Tuples sind unveränderlich (immutable); Listen sind veränderlich (mutable).",
         "byOptionId": {
-          "a": "Tuples can store any types, not just numbers.",
-          "b": "Length has nothing to do with the type.",
-          "c": "Correct, once you create a tuple, its elements cannot be changed.",
-          "d": "Tuples can have many elements."
+          "a": "Tuples können viele Typen speichern, nicht nur Zahlen.",
+          "b": "Die Länge hat nichts mit dem Typ zu tun.",
+          "c": "Richtig, sobald du ein Tuple erstellst, kannst du seine Elemente nicht mehr ändern.",
+          "d": "Tuples können viele Elemente haben."
         }
       }
     },
     {
       "id": "q-choose-type",
       "type": "single-choice",
-      "prompt": "You want to store a player's name and score together and look them up by name. Which structure is best?",
+      "prompt": "Du willst Name und Score eines Spielers zusammen speichern und sie über den Namen nachschlagen. Welche Struktur ist am besten?",
       "options": [
         {
           "id": "a",
-          "label": "A list of names only.",
+          "label": "Eine Liste nur mit Namen.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "A tuple like (\"Mia\", 10).",
+          "label": "Ein Tuple wie (\"Mia\", 10).",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "A dictionary like {\"name\": \"Mia\", \"score\": 10}.",
+          "label": "Ein Dictionary wie {\"name\": \"Mia\", \"score\": 10}.",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "A single string like \"Mia 10\".",
+          "label": "Ein einzelner String wie \"Mia 10\".",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Dictionaries connect named keys to values, which is perfect for labeled data.",
+        "overview": "Dictionaries verbinden benannte Keys mit Values – perfekt für gelabelte Daten.",
         "byOptionId": {
-          "a": "You would lose the scores if you only store names.",
-          "b": "A tuple stores the pair but does not label the parts.",
-          "c": "Correct, key 'name' and 'score' clearly label the values.",
-          "d": "A single string is hard to work with in code."
+          "a": "Wenn du nur Namen speicherst, verlierst du die Scores.",
+          "b": "Ein Tuple speichert das Paar, aber es labelt die Teile nicht.",
+          "c": "Richtig, die Keys 'name' und 'score' labeln die Values eindeutig.",
+          "d": "Ein einzelner String ist schwer in Code weiterzuverarbeiten."
         }
       }
     }

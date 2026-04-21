@@ -7,7 +7,7 @@
     {
       "id": "q-table",
       "type": "single-choice",
-      "prompt": "Which tag starts a table?",
+      "prompt": "Welcher Tag startet eine Tabelle?",
       "options": [
         {
           "id": "table",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<table> wraps the whole table structure.",
+        "overview": "<table> umschließt die gesamte Tabellenstruktur.",
         "byOptionId": {
-          "table": "Correct â€” <table> is the container for rows and cells.",
-          "tr": "Incorrect â€” <tr> defines a table row within <table>.",
-          "td": "Incorrect â€” <td> is a table cell, not the table root.",
-          "th": "Incorrect â€” <th> is for header cells inside rows."
+          "table": "Richtig – <table> ist der Container für Zeilen und Zellen.",
+          "tr": "Falsch – <tr> definiert eine Tabellenzeile innerhalb von <table>.",
+          "td": "Falsch – <td> ist eine Tabellenzelle, nicht die Tabelle selbst.",
+          "th": "Falsch – <th> ist für Headerzellen innerhalb von Zeilen."
         }
       }
     },
     {
       "id": "q-th-td",
       "type": "single-choice",
-      "prompt": "Which tag is used for header cells?",
+      "prompt": "Welcher Tag wird für Headerzellen verwendet?",
       "options": [
         {
           "id": "td",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "<th> defines a header cell, often bold and centered by default.",
+        "overview": "<th> definiert eine Headerzelle (oft standardmäßig fett und zentriert).",
         "byOptionId": {
-          "th": "Correct â€” <th> indicates header cells within a table row.",
-          "td": "Incorrect â€” <td> is for regular cells, not headers.",
-          "tr": "Incorrect â€” <tr> is a row wrapper, not a cell.",
-          "thead": "Incorrect â€” <thead> groups header rows, but <th> is the header cell element."
+          "th": "Richtig – <th> kennzeichnet Headerzellen innerhalb einer Tabellenzeile.",
+          "td": "Falsch – <td> ist für normale Zellen, nicht für Header.",
+          "tr": "Falsch – <tr> ist ein Zeilen-Wrapper, keine Zelle.",
+          "thead": "Falsch – <thead> gruppiert Headerzeilen, aber <th> ist das Headerzellen-Element."
         }
       }
     }

@@ -1,13 +1,13 @@
 {
   "chapterId": "chapter_13",
   "kind": "assessment",
-  "title": "Kapitel 13 - EinfÃ¼hrung in CSS Grid Check",
-  "description": "Wissenscheck:  Einfache Grids fÃ¼r moderne Layouts erstellen.",
+  "title": "Kapitel 13 - Einführung in CSS Grid Check",
+  "description": "Wissenscheck:  Einfache Grids für moderne Layouts erstellen.",
   "questions": [
     {
       "id": "q1-grid-enable",
       "type": "single-choice",
-      "prompt": "Which declaration enables CSS Grid on a container?",
+      "prompt": "Welche Deklaration aktiviert CSS Grid für einen Container?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "display: grid makes the container use Grid layout.",
+        "overview": "display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
         "byOptionId": {
-          "a": "Not quite. display: grid makes the container use Grid layout.",
-          "b": "Correct. display: grid makes the container use Grid layout.",
-          "c": "Not quite. display: grid makes the container use Grid layout.",
-          "d": "Not quite. display: grid makes the container use Grid layout."
+          "a": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "b": "Richtig. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "c": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "d": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet."
         }
       }
     },
     {
       "id": "q2-fr-unit",
       "type": "single-choice",
-      "prompt": "In Grid, what does 1fr mean?",
+      "prompt": "Was bedeutet 1fr in Grid?",
       "options": [
         {
           "id": "a",
-          "label": "One fixed pixel",
+          "label": "Ein fester Pixel",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "One full row",
+          "label": "Eine ganze Zeile",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "One fraction of free space",
+          "label": "Ein Anteil des freien Platzes",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "One font size unit",
+          "label": "Eine Schriftgrößen-Einheit",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "1fr is one fraction of available space in the grid container.",
+        "overview": "1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
         "byOptionId": {
-          "a": "Not quite. 1fr is one fraction of available space in the grid container.",
-          "b": "Not quite. 1fr is one fraction of available space in the grid container.",
-          "c": "Correct. 1fr is one fraction of available space in the grid container.",
-          "d": "Not quite. 1fr is one fraction of available space in the grid container."
+          "a": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "b": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "c": "Richtig. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "d": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container."
         }
       }
     }

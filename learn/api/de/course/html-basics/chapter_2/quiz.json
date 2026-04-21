@@ -7,49 +7,49 @@
     {
       "id": "q-editor",
       "type": "single-choice",
-      "prompt": "Which tool is best for writing HTML code?",
+      "prompt": "Welches Tool eignet sich am besten, um HTML-Code zu schreiben?",
       "options": [
         {
           "id": "notepad",
-          "label": "A plain text editor like Notepad",
+          "label": "Ein einfacher Texteditor wie Notepad",
           "isCorrect": false
         },
         {
           "id": "browseronly",
-          "label": "A browser only (no editor needed)",
+          "label": "Nur ein Browser (kein Editor nötig)",
           "isCorrect": false
         },
         {
           "id": "vscode",
-          "label": "A code editor like VS Code",
+          "label": "Ein Code-Editor wie VS Code",
           "isCorrect": true
         },
         {
           "id": "spreadsheet",
-          "label": "A spreadsheet program like Excel",
+          "label": "Ein Tabellenkalkulationsprogramm wie Excel",
           "isCorrect": false
         },
         {
           "id": "imageeditor",
-          "label": "An image editor like Photoshop",
+          "label": "Ein Bildeditor wie Photoshop",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "You need a text editor to create and edit HTML files.",
+        "overview": "Du brauchst einen Texteditor, um HTML-Dateien zu erstellen und zu bearbeiten.",
         "byOptionId": {
-          "vscode": "Correct â€” a code editor like VS Code is recommended for writing HTML.",
-          "notepad": "Incorrect â€” a plain text editor like Notepad works only for basic HTML editing. When you start working on larger projects, you will get confused by missing syntax highlighting and formatting.",
-          "browseronly": "Incorrect â€” a browser displays HTML but doesn't let you author files effectively.",
-          "spreadsheet": "Incorrect â€” spreadsheets are not intended for coding HTML.",
-          "imageeditor": "Incorrect â€” image editors edit images, not HTML source."
+          "vscode": "Richtig – ein Code-Editor wie VS Code ist fürs Schreiben von HTML am besten geeignet.",
+          "notepad": "Falsch – Notepad geht für ganz einfache Dinge, aber ohne Syntax-Highlighting und Formatierung wird es bei größeren Projekten schnell unübersichtlich.",
+          "browseronly": "Falsch – ein Browser zeigt HTML an, ist aber kein gutes Tool, um Dateien zu schreiben.",
+          "spreadsheet": "Falsch – Tabellenkalkulation ist nicht fürs HTML-Coden gedacht.",
+          "imageeditor": "Falsch – Bildeditoren bearbeiten Bilder, nicht HTML-Quelltext."
         }
       }
     },
     {
       "id": "q-file-name",
       "type": "single-choice",
-      "prompt": "What file extension should your HTML file have?",
+      "prompt": "Welche Dateiendung sollte deine HTML-Datei haben?",
       "options": [
         {
           "id": ".ht",
@@ -73,55 +73,55 @@
         }
       ],
       "explanations": {
-        "overview": "HTML files use the .html extension.",
+        "overview": "HTML-Dateien verwenden die Endung .html.",
         "byOptionId": {
-          ".html": "Correct â€” .html is the standard extension for HTML documents.",
-          ".ht": "Incorrect â€” .ht is not related to HTML at all.",
-          ".docx": "Incorrect â€” .docx is a Word document format, not HTML source.",
-          ".exe": "Incorrect â€” .exe is an executable file format, not a source file."
+          ".html": "Richtig – .html ist die Standard-Endung für HTML-Dokumente.",
+          ".ht": "Falsch – .ht ist keine Standard-Endung für HTML.",
+          ".docx": "Falsch – .docx ist ein Word-Format, kein HTML-Quelltext.",
+          ".exe": "Falsch – .exe ist ein ausführbares Dateiformat, kein Quelltext."
         }
       }
     },
     {
       "id": "q-preview",
       "type": "single-choice",
-      "prompt": "How do you check your HTML in a browser?",
+      "prompt": "Wie prüfst du dein HTML in einem Browser?",
       "options": [
         {
           "id": "upload",
-          "label": "Only by uploading to a server",
+          "label": "Nur durch Hochladen auf einen Server",
           "isCorrect": false
         },
         {
           "id": "print",
-          "label": "By printing it on paper",
+          "label": "Indem du es auf Papier ausdruckst",
           "isCorrect": false
         },
         {
           "id": "compile",
-          "label": "By compiling it into an .exe",
+          "label": "Indem du es zu einer .exe kompilierst",
           "isCorrect": false
         },
         {
           "id": "open-file",
-          "label": "Open the saved .html file in a browser",
+          "label": "Die gespeicherte .html-Datei im Browser öffnen",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Open the file locally in a browser to preview changes during development.",
+        "overview": "Öffne die Datei lokal im Browser, um Änderungen während der Entwicklung zu testen.",
         "byOptionId": {
-          "open-file": "Correct â€” opening the saved .html file in a browser shows the rendered page.",
-          "upload": "Incorrect â€” uploading is optional; you can preview files locally.",
-          "print": "Incorrect â€” printing doesn't render interactive HTML in a browser.",
-          "compile": "Incorrect â€” HTML is not compiled into executables."
+          "open-file": "Richtig – wenn du die gespeicherte .html-Datei öffnest, siehst du die gerenderte Seite.",
+          "upload": "Falsch – Hochladen ist optional; du kannst lokal previewen.",
+          "print": "Falsch – Drucken rendert kein HTML im Browser.",
+          "compile": "Falsch – HTML wird nicht zu executables kompiliert."
         }
       }
     },
     {
       "id": "q-livepreview",
       "type": "single-choice",
-      "prompt": "What is the fastest way to see changes in your HTML file?",
+      "prompt": "Was ist der schnellste Weg, um Änderungen in deiner HTML-Datei zu sehen?",
       "options": [
         {
           "id": "livepreview",
@@ -145,12 +145,13 @@
         }
       ],
       "explanations": {
-        "overview": "Live preview saves time by automatically refreshing the browser when you save the file.",
+        "overview": "Live Preview spart Zeit, weil der Browser automatisch neu lädt, wenn du speicherst.",
         "byOptionId": {
-          "livepreview": "Correct â€” live preview or auto-reload shows changes instantly.",
-          "manual-refresh": "Incorrect â€” manual refresh works, but live preview is faster.",
-          "githubpages": "Incorrect â€” GitHub Pages is not a fast preview method.",
-          "restartpc": "Incorrect â€” restarting is unnecessary for previewing changes."
+          "livepreview": "Richtig – Live Preview oder Auto-Reload zeigt Änderungen fast sofort.",
+          "whoppergods": "Falsch – so lustig es klingt: Beten hilft nicht. Live Preview ist schneller.",
+          "manual-refresh": "Falsch – manuelles Aktualisieren funktioniert, aber Live Preview ist schneller.",
+          "githubpages": "Falsch – GitHub Pages ist keine schnelle Preview-Methode.",
+          "restartpc": "Falsch – Neustarten ist zum Previewen komplett unnötig."
         }
       }
     }

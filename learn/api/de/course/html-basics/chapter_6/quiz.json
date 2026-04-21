@@ -1,13 +1,13 @@
 {
   "chapterId": "chapter_6",
   "kind": "assessment",
-  "title": "Kapitel 6 - AbsÃ¤tze & Text Check",
-  "description": "Wissenscheck:  AbsÃ¤tze, ZeilenumbrÃ¼che, horizontale Linien und Tags zur Textbetonung.",
+  "title": "Kapitel 6 - Absätze & Text Check",
+  "description": "Wissenscheck:  Absätze, Zeilenumbrüche, horizontale Linien und Tags zur Textbetonung.",
   "questions": [
     {
       "id": "q-p-tag",
       "type": "single-choice",
-      "prompt": "Which tag should you use for a paragraph?",
+      "prompt": "Welchen Tag verwendest du für einen Absatz?",
       "options": [
         {
           "id": "div",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Use <p> to mark blocks of text as paragraphs.",
+        "overview": "Verwende <p>, um Textblöcke als Absätze zu markieren.",
         "byOptionId": {
-          "p": "Correct â€” use <p> for paragraphs of text.",
-          "div": "Incorrect â€” <div> is a generic block container but not the semantic paragraph tag.",
-          "br": "Incorrect â€” <br> inserts a line break, not a paragraph block.",
-          "span": "Incorrect â€” <span> is inline and not for paragraph blocks."
+          "p": "Richtig – verwende <p> für Textabsätze.",
+          "div": "Falsch – <div> ist ein generischer Block-Container, aber nicht der semantische Absatz-Tag.",
+          "br": "Falsch – <br> ist ein Zeilenumbruch, kein Absatz.",
+          "span": "Falsch – <span> ist inline und nicht für Absätze gedacht."
         }
       }
     },
     {
       "id": "q-strong-em",
       "type": "single-choice",
-      "prompt": "Which tag semantically indicates strong importance?",
+      "prompt": "Welcher Tag drückt semantisch starke Wichtigkeit aus?",
       "options": [
         {
           "id": "em",
@@ -67,19 +67,19 @@
         }
       ],
       "explanations": {
-        "overview": "<strong> signals strong importance and is semantically meaningful.",
+        "overview": "<strong> signalisiert starke Wichtigkeit und hat semantische Bedeutung.",
         "byOptionId": {
-          "strong": "Correct â€” <strong> conveys strong importance semantically.",
-          "em": "Incorrect â€” <em> indicates emphasis but not the same semantic weight as <strong>.",
-          "b": "Incorrect â€” <b> is purely presentational; <strong> adds semantic meaning.",
-          "i": "Incorrect â€” <i> is presentational and does not imply importance."
+          "strong": "Richtig – <strong> vermittelt semantisch starke Wichtigkeit.",
+          "em": "Falsch – <em> bedeutet Betonung, aber nicht dasselbe semantische Gewicht wie <strong>.",
+          "b": "Falsch – <b> ist rein optisch; <strong> hat semantische Bedeutung.",
+          "i": "Falsch – <i> ist optisch und impliziert keine Wichtigkeit."
         }
       }
     },
     {
       "id": "q-br-hr",
       "type": "single-choice",
-      "prompt": "Which tag creates a horizontal rule (a thematic break)?",
+      "prompt": "Welcher Tag erstellt eine horizontale Linie (thematische Trennung)?",
       "options": [
         {
           "id": "br",
@@ -103,12 +103,12 @@
         }
       ],
       "explanations": {
-        "overview": "<hr> creates a thematic break line across the content.",
+        "overview": "<hr> erzeugt eine thematische Trennlinie im Inhalt.",
         "byOptionId": {
-          "hr": "Correct â€” <hr> represents a thematic break in content.",
-          "br": "Incorrect â€” <br> is a line break, not a thematic rule.",
-          "p": "Incorrect â€” <p> is for paragraphs, not horizontal rules.",
-          "hr2": "Incorrect â€” <hr2> is not a valid HTML element."
+          "hr": "Richtig – <hr> steht für eine thematische Trennung im Inhalt.",
+          "br": "Falsch – <br> ist ein Zeilenumbruch, keine Trennlinie.",
+          "p": "Falsch – <p> ist für Absätze, nicht für horizontale Linien.",
+          "hr2": "Falsch – <hr2> ist kein gültiges HTML-Element."
         }
       }
     }

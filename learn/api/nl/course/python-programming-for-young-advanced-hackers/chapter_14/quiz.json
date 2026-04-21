@@ -7,7 +7,7 @@
     {
       "id": "q-list-comp-squares",
       "type": "single-choice",
-      "prompt": "Which list comprehension correctly creates a list of squares of numbers in nums?",
+      "prompt": "Welke list comprehension maakt op de juiste manier een lijst met kwadraten van de getallen in nums?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "List comprehensions use the pattern [expression for item in iterable].",
+        "overview": "List comprehensions volgen het patroon [expressie for item in iterable].",
         "byOptionId": {
-          "a": "Correct, this is the proper list comprehension syntax.",
-          "b": "This creates a boolean expression, not a list.",
-          "c": "The parts are in the wrong order and nums is used incorrectly.",
-          "d": "Missing square brackets, so it is not a list comprehension."
+          "a": "Juist, dit is de juiste list comprehension-syntax.",
+          "b": "Dit maakt een booleaanse expressie, geen lijst.",
+          "c": "De onderdelen staan in de verkeerde volgorde en nums wordt fout gebruikt.",
+          "d": "De vierkante haakjes ontbreken, dus het is geen list comprehension."
         }
       }
     },
     {
       "id": "q-list-comp-filter",
       "type": "single-choice",
-      "prompt": "What is the result of this code? nums = [1, 2, 3, 4, 5]; result = [n for n in nums if n % 2 == 0]",
+      "prompt": "Wat is het resultaat van deze code? nums = [1, 2, 3, 4, 5]; result = [n for n in nums if n % 2 == 0]",
       "options": [
         {
           "id": "a",
@@ -67,55 +67,55 @@
         }
       ],
       "explanations": {
-        "overview": "The comprehension keeps only even numbers from nums.",
+        "overview": "De comprehension houdt alleen de even getallen uit nums over.",
         "byOptionId": {
-          "a": "These are the odd numbers, not the evens.",
-          "b": "Correct, 2 and 4 are the even numbers.",
-          "c": "Nothing in the code turns values into zeros.",
-          "d": "This structure does not match the list comprehension at all."
+          "a": "Dat zijn de oneven getallen, niet de even.",
+          "b": "Juist, 2 en 4 zijn de even getallen.",
+          "c": "Niets in de code maakt van waarden nullen.",
+          "d": "Deze structuur past totaal niet bij de list comprehension."
         }
       }
     },
     {
       "id": "q-set-comp-unique",
       "type": "single-choice",
-      "prompt": "What is the main difference between a list comprehension and a set comprehension?",
+      "prompt": "Wat is het belangrijkste verschil tussen een list comprehension en een set comprehension?",
       "options": [
         {
           "id": "a",
-          "label": "Set comprehensions can only contain numbers.",
+          "label": "Set comprehensions kunnen alleen getallen bevatten.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Set comprehensions automatically remove duplicate values.",
+          "label": "Set comprehensions verwijderen automatisch dubbele waarden.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Set comprehensions are always faster than list comprehensions.",
+          "label": "Set comprehensions zijn altijd sneller dan list comprehensions.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Set comprehensions cannot use if conditions.",
+          "label": "Set comprehensions kunnen geen if-conditions gebruiken.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Sets keep only unique elements, while lists can have duplicates.",
+        "overview": "Sets bewaren alleen unieke elementen, terwijl lijsten duplicaten kunnen hebben.",
         "byOptionId": {
-          "a": "Sets can store many types, not just numbers.",
-          "b": "Correct, sets automatically drop duplicates.",
-          "c": "Speed depends on the situation; this is not always true.",
-          "d": "You can use if conditions in set comprehensions too."
+          "a": "Sets kunnen veel types opslaan, niet alleen getallen.",
+          "b": "Juist, sets gooien duplicaten automatisch weg.",
+          "c": "Snelheid hangt af van de situatie; dit is niet altijd waar.",
+          "d": "Je kan ook if-conditions gebruiken in set comprehensions."
         }
       }
     },
     {
       "id": "q-zip-shortest",
       "type": "single-choice",
-      "prompt": "What does list(zip([1, 2, 3], ['a', 'b'])) produce?",
+      "prompt": "Wat geeft list(zip([1, 2, 3], ['a', 'b'])) terug?",
       "options": [
         {
           "id": "a",
@@ -139,19 +139,19 @@
         }
       ],
       "explanations": {
-        "overview": "zip stops when the shortest input is exhausted.",
+        "overview": "zip stopt zodra de kortste input op is.",
         "byOptionId": {
-          "a": "zip does not automatically fill with None.",
-          "b": "Correct, only two pairs can be formed.",
-          "c": "This would be a single tuple of all elements, which is not what zip does.",
-          "d": "This is just a flat list, not pairs."
+          "a": "zip vult niet automatisch aan met None.",
+          "b": "Juist, er kunnen maar twee paren gevormd worden.",
+          "c": "Dat zou één tuple met alle elementen zijn, maar dat is niet wat zip doet.",
+          "d": "Dat is gewoon een platte lijst, geen paren."
         }
       }
     },
     {
       "id": "q-map-vs-comp",
       "type": "single-choice",
-      "prompt": "Which two expressions are most similar in what they do?",
+      "prompt": "Welke twee expressies lijken het meest op elkaar in wat ze doen?",
       "options": [
         {
           "id": "a",
@@ -175,12 +175,12 @@
         }
       ],
       "explanations": {
-        "overview": "map applies a function to each element, just like a simple transformation comprehension.",
+        "overview": "map past een functie toe op elk element, net zoals een eenvoudige transformation comprehension.",
         "byOptionId": {
-          "a": "Correct, both apply upper() to each element in names.",
-          "b": "filter is for keeping some items, not transforming all of them.",
-          "c": "names.upper() would not work on a list; upper() is a string method.",
-          "d": "These comprehensions do different things (identity vs length)."
+          "a": "Juist, allebei passen upper() toe op elk element in names.",
+          "b": "filter is om sommige items te behouden, niet om ze allemaal te transformeren.",
+          "c": "names.upper() werkt niet op een lijst; upper() is een stringmethode.",
+          "d": "Deze comprehensions doen iets anders (identiteit vs lengte)."
         }
       }
     }

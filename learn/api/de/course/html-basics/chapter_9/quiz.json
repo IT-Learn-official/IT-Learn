@@ -7,7 +7,7 @@
     {
       "id": "q-ul-ol",
       "type": "single-choice",
-      "prompt": "Which tag creates a bulleted list?",
+      "prompt": "Welcher Tag erstellt eine Liste mit Aufzählungspunkten?",
       "options": [
         {
           "id": "ol",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<ul> is for unordered, bulleted lists.",
+        "overview": "<ul> ist für ungeordnete Listen (mit Aufzählungspunkten).",
         "byOptionId": {
-          "ul": "Correct â€” <ul> creates an unordered (bulleted) list.",
-          "ol": "Incorrect â€” <ol> creates a numbered list.",
-          "li": "Incorrect â€” <li> is a list item tag used inside <ul> or <ol>.",
-          "list": "Incorrect â€” <list> is not a valid HTML element."
+          "ul": "Richtig – <ul> erstellt eine ungeordnete Liste (mit Aufzählungspunkten).",
+          "ol": "Falsch – <ol> erstellt eine nummerierte Liste.",
+          "li": "Falsch – <li> ist ein Listeneintrag und wird innerhalb von <ul> oder <ol> verwendet.",
+          "list": "Falsch – <list> ist kein gültiges HTML-Element."
         }
       }
     },
     {
       "id": "q-li",
       "type": "single-choice",
-      "prompt": "Which tag wraps each list item?",
+      "prompt": "Welcher Tag umschließt jeden Listeneintrag?",
       "options": [
         {
           "id": "p",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Use <li> inside <ul> or <ol> for each item.",
+        "overview": "Verwende <li> innerhalb von <ul> oder <ol> für jeden Eintrag.",
         "byOptionId": {
-          "li": "Correct â€” <li> wraps each list item inside <ul> or <ol>.",
-          "p": "Incorrect â€” <p> is for paragraphs, not list items.",
-          "div": "Incorrect â€” <div> may contain list elements but <li> is the semantic list item.",
-          "span": "Incorrect â€” <span> is inline and not a list item wrapper."
+          "li": "Richtig – <li> umschließt jeden Listeneintrag in <ul> oder <ol>.",
+          "p": "Falsch – <p> ist für Absätze, nicht für Listeneinträge.",
+          "div": "Falsch – <div> kann Listen enthalten, aber <li> ist das semantische Listenelement.",
+          "span": "Falsch – <span> ist inline und kein Wrapper für Listeneinträge."
         }
       }
     }

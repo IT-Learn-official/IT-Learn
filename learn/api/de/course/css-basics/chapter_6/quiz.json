@@ -7,43 +7,43 @@
     {
       "id": "q1-line-height",
       "type": "single-choice",
-      "prompt": "What does line-height control?",
+      "prompt": "Was steuert line-height?",
       "options": [
         {
           "id": "a",
-          "label": "The text color",
+          "label": "Die Textfarbe",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The distance between lines",
+          "label": "Den Abstand zwischen Zeilen",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "The border thickness",
+          "label": "Die Dicke des Rahmens (border)",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The font family",
+          "label": "Die Schriftfamilie (font-family)",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "line-height controls vertical space between lines of text.",
+        "overview": "line-height steuert den vertikalen Abstand zwischen Textzeilen.",
         "byOptionId": {
-          "a": "Not quite. line-height controls vertical space between lines of text.",
-          "b": "Correct. line-height controls vertical space between lines of text.",
-          "c": "Not quite. line-height controls vertical space between lines of text.",
-          "d": "Not quite. line-height controls vertical space between lines of text."
+          "a": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "b": "Richtig. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "c": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "d": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen."
         }
       }
     },
     {
       "id": "q2-text-align",
       "type": "single-choice",
-      "prompt": "Which property centers text horizontally in its container?",
+      "prompt": "Welche Property zentriert Text horizontal in seinem Container?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "text-align: center; centers inline text content.",
+        "overview": "text-align: center; zentriert Inline-Text horizontal.",
         "byOptionId": {
-          "a": "Not quite. text-align: center; centers inline text content.",
-          "b": "Correct. text-align: center; centers inline text content.",
-          "c": "Not quite. text-align: center; centers inline text content.",
-          "d": "Not quite. text-align: center; centers inline text content."
+          "a": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal.",
+          "b": "Richtig. text-align: center; zentriert Inline-Text horizontal.",
+          "c": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal.",
+          "d": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal."
         }
       }
     }

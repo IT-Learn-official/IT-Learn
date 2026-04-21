@@ -7,7 +7,7 @@
     {
       "id": "q-header",
       "type": "single-choice",
-      "prompt": "Which element is intended for the top of a page or section?",
+      "prompt": "Welches Element ist für den oberen Bereich einer Seite oder Sektion gedacht?",
       "options": [
         {
           "id": "footer",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<header> is used for introductory content or navigational aids at the top.",
+        "overview": "<header> ist für einleitende Inhalte oder Navigationselemente im oberen Bereich gedacht.",
         "byOptionId": {
-          "header": "Correct â€” <header> is intended for the top area of a page or section.",
-          "footer": "Incorrect â€” <footer> belongs at the end of a page or section.",
-          "nav": "Incorrect â€” <nav> is for navigation links, often inside a header, but not the header itself.",
-          "div": "Incorrect â€” <div> is generic; semantic elements like <header> are preferred when appropriate."
+          "header": "Richtig – <header> ist für den oberen Bereich einer Seite oder Sektion gedacht.",
+          "footer": "Falsch – <footer> gehört ans Ende einer Seite oder Sektion.",
+          "nav": "Falsch – <nav> ist für Navigationslinks (oft im Header), aber nicht der Header selbst.",
+          "div": "Falsch – <div> ist generisch; semantische Elemente wie <header> sind besser, wenn es passt."
         }
       }
     },
     {
       "id": "q-main",
       "type": "single-choice",
-      "prompt": "Which element should appear only once and contain the central content?",
+      "prompt": "Welches Element sollte nur einmal vorkommen und den Hauptinhalt enthalten?",
       "options": [
         {
           "id": "article",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "<main> contains the main content of the document and should be unique per page.",
+        "overview": "<main> enthält den Hauptinhalt des Dokuments und sollte pro Seite einzigartig sein.",
         "byOptionId": {
-          "main": "Correct â€” <main> designates the central content unique to the page.",
-          "article": "Incorrect â€” <article> represents a self-contained composition, not necessarily the whole main content.",
-          "section": "Incorrect â€” <section> is a thematic grouping and can appear multiple times.",
-          "nav": "Incorrect â€” <nav> is for navigation links, not the main content."
+          "main": "Richtig – <main> kennzeichnet den zentralen Inhalt, der einzigartig für die Seite ist.",
+          "article": "Falsch – <article> ist ein in sich geschlossener Inhalt, nicht zwingend der gesamte Hauptinhalt.",
+          "section": "Falsch – <section> ist eine thematische Gruppierung und kann mehrfach vorkommen.",
+          "nav": "Falsch – <nav> ist für Navigation, nicht für den Hauptinhalt."
         }
       }
     }

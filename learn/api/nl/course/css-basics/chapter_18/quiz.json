@@ -7,43 +7,43 @@
     {
       "id": "q1-organize-benefit",
       "type": "single-choice",
-      "prompt": "Why should you organize CSS code into sections?",
+      "prompt": "Waarom zou je CSS-code in secties organiseren?",
       "options": [
         {
           "id": "a",
-          "label": "To make files harder for teammates",
+          "label": "Om het moeilijker te maken voor je teammates",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To improve readability and maintenance",
+          "label": "Om leesbaarheid en onderhoud te verbeteren",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Because browsers require comments",
+          "label": "Omdat browsers comments verplichten",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "To reduce internet speed",
+          "label": "Om het internet trager te maken",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Organized CSS is easier to maintain and debug.",
+        "overview": "Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
         "byOptionId": {
-          "a": "Not quite. Organized CSS is easier to maintain and debug.",
-          "b": "Correct. Organized CSS is easier to maintain and debug.",
-          "c": "Not quite. Organized CSS is easier to maintain and debug.",
-          "d": "Not quite. Organized CSS is easier to maintain and debug."
+          "a": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "b": "Juist. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "c": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "d": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen."
         }
       }
     },
     {
       "id": "q2-css-comment",
       "type": "single-choice",
-      "prompt": "What is the correct comment syntax in CSS?",
+      "prompt": "Wat is de juiste comment syntax in CSS?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "CSS comments are written as slash-star comment star-slash.",
+        "overview": "CSS comments schrijf je als slash-ster comment ster-slash.",
         "byOptionId": {
-          "a": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "b": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "c": "Not quite. CSS comments are written as slash-star comment star-slash.",
-          "d": "Correct. CSS comments are written as slash-star comment star-slash."
+          "a": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "b": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "c": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "d": "Juist. CSS comments schrijf je als slash-ster comment ster-slash."
         }
       }
     }

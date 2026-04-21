@@ -7,43 +7,43 @@
     {
       "id": "q-doctype",
       "type": "single-choice",
-      "prompt": "What is the purpose of <!DOCTYPE html>?",
+      "prompt": "Wozu dient <!DOCTYPE html>?",
       "options": [
         {
           "id": "tellwhatversion",
-          "label": "It tells the browser to use modern HTML standards",
+          "label": "Es sagt dem Browser, dass er moderne HTML-Standards verwenden soll",
           "isCorrect": true
         },
         {
           "id": "displaytitle",
-          "label": "It displays a title on the page",
+          "label": "Es zeigt einen Titel auf der Seite an",
           "isCorrect": false
         },
         {
           "id": "csslink",
-          "label": "It links a CSS file",
+          "label": "Es verlinkt eine CSS-Datei",
           "isCorrect": false
         },
         {
           "id": "definebody",
-          "label": "It defines the page body",
+          "label": "Es definiert den Body der Seite",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The DOCTYPE ensures the browser parses the page with the correct rules.",
+        "overview": "Der DOCTYPE sorgt dafür, dass der Browser die Seite mit den richtigen Regeln parst.",
         "byOptionId": {
-          "tellwhatversion": "Correct â€” DOCTYPE tells the browser to use the standard HTML parsing mode.",
-          "displaytitle": "Incorrect â€” DOCTYPE does not display titles.",
-          "csslink": "Incorrect â€” CSS is linked with <link>, not DOCTYPE.",
-          "definebody": "Incorrect â€” DOCTYPE does not define the body element."
+          "tellwhatversion": "Richtig – DOCTYPE setzt den Browser in den Standard-HTML-Parsing-Modus.",
+          "displaytitle": "Falsch – DOCTYPE zeigt keine Titel an.",
+          "csslink": "Falsch – CSS wird mit <link> verlinkt, nicht mit DOCTYPE.",
+          "definebody": "Falsch – DOCTYPE definiert das body-Element nicht."
         }
       }
     },
     {
       "id": "q-head-function",
       "type": "single-choice",
-      "prompt": "Which tag contains the visible content of the page?",
+      "prompt": "Welcher Tag enthält den sichtbaren Inhalt der Seite?",
       "options": [
         {
           "id": "head",
@@ -67,55 +67,55 @@
         }
       ],
       "explanations": {
-        "overview": "The <body> contains content the user sees in the browser window.",
+        "overview": "<body> enthält den Inhalt, den der Nutzer im Browserfenster sieht.",
         "byOptionId": {
-          "body": "Correct â€” visible content goes inside <body>.",
-          "head": "Incorrect â€” <head> holds metadata and resources, not the main visible content.",
-          "html": "Incorrect â€” <html> is the root wrapper, not the visible content container.",
-          "meta": "Incorrect â€” <meta> provides metadata such as charset or viewport info."
+          "body": "Richtig – sichtbarer Inhalt gehört in <body>.",
+          "head": "Falsch – <head> enthält Metadaten und Ressourcen, nicht den sichtbaren Hauptinhalt.",
+          "html": "Falsch – <html> ist der Root-Wrapper, nicht der Inhalts-Container.",
+          "meta": "Falsch – <meta> liefert Metadaten wie charset oder viewport."
         }
       }
     },
     {
       "id": "q-title-location",
       "type": "single-choice",
-      "prompt": "Where does the <title> tag go?",
+      "prompt": "Wo gehört der <title>-Tag hin?",
       "options": [
         {
           "id": "body",
-          "label": "Inside <body>",
+          "label": "In <body>",
           "isCorrect": false
         },
         {
           "id": "footer",
-          "label": "Inside <footer>",
+          "label": "In <footer>",
           "isCorrect": false
         },
         {
           "id": "head",
-          "label": "Inside <head>",
+          "label": "In <head>",
           "isCorrect": true
         },
         {
           "id": "outside",
-          "label": "Outside of <html>",
+          "label": "Außerhalb von <html>",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "<title> belongs in the head and appears in the browser tab.",
+        "overview": "<title> gehört in den Head und erscheint im Browser-Tab.",
         "byOptionId": {
-          "head": "Correct â€” <title> is placed in <head> and is shown in the browser tab.",
-          "body": "Incorrect â€” <title> should not be inside <body>.",
-          "footer": "Incorrect â€” <footer> is part of the page body, not where <title> belongs.",
-          "outside": "Incorrect â€” <title> must be inside <head> within <html>."
+          "head": "Richtig – <title> steht in <head> und wird im Browser-Tab angezeigt.",
+          "body": "Falsch – <title> gehört nicht in <body>.",
+          "footer": "Falsch – <footer> ist Teil des Bodys, nicht der Platz für <title>.",
+          "outside": "Falsch – <title> muss im <head> stehen, also innerhalb von <html>."
         }
       }
     },
     {
       "id": "q-html-root",
       "type": "single-choice",
-      "prompt": "What is the root element of an HTML document?",
+      "prompt": "Was ist das Root-Element eines HTML-Dokuments?",
       "options": [
         {
           "id": "head",
@@ -139,12 +139,12 @@
         }
       ],
       "explanations": {
-        "overview": "<html> is the outer element that wraps the whole document.",
+        "overview": "<html> ist das äußere Element, das das ganze Dokument umschließt.",
         "byOptionId": {
-          "html": "Correct â€” <html> is the document root.",
-          "head": "Incorrect â€” <head> is a child of <html>.",
-          "body": "Incorrect â€” <body> is also a child of <html>, not the root.",
-          "doctype": "Incorrect â€” DOCTYPE is a declaration, not the root element."
+          "html": "Richtig – <html> ist das Document Root.",
+          "head": "Falsch – <head> ist ein Kind von <html>.",
+          "body": "Falsch – <body> ist ebenfalls ein Kind von <html>, nicht das Root.",
+          "doctype": "Falsch – DOCTYPE ist eine Deklaration, kein Root-Element."
         }
       }
     }

@@ -7,43 +7,43 @@
     {
       "id": "q1-transition-purpose",
       "type": "single-choice",
-      "prompt": "What does CSS transition do?",
+      "prompt": "Was macht eine CSS transition?",
       "options": [
         {
           "id": "a",
-          "label": "It creates database tables",
+          "label": "Sie erstellt Datenbanktabellen",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It smooths style changes",
+          "label": "Sie macht Style-Änderungen flüssig",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It only works on text",
+          "label": "Sie funktioniert nur bei Text",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It replaces hover states",
+          "label": "Sie ersetzt Hover-States",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "transition smooths style changes over time.",
+        "overview": "transition macht Style-Änderungen über Zeit flüssig.",
         "byOptionId": {
-          "a": "Not quite. transition smooths style changes over time.",
-          "b": "Correct. transition smooths style changes over time.",
-          "c": "Not quite. transition smooths style changes over time.",
-          "d": "Not quite. transition smooths style changes over time."
+          "a": "Nicht ganz. transition macht Style-Änderungen über Zeit flüssig.",
+          "b": "Richtig. transition macht Style-Änderungen über Zeit flüssig.",
+          "c": "Nicht ganz. transition macht Style-Änderungen über Zeit flüssig.",
+          "d": "Nicht ganz. transition macht Style-Änderungen über Zeit flüssig."
         }
       }
     },
     {
       "id": "q2-keyframes",
       "type": "single-choice",
-      "prompt": "Which rule is used to define animation steps?",
+      "prompt": "Welche Rule wird verwendet, um Animationsschritte zu definieren?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Use @keyframes to define animation states.",
+        "overview": "Verwende @keyframes, um Animationszustände zu definieren.",
         "byOptionId": {
-          "a": "Not quite. Use @keyframes to define animation states.",
-          "b": "Not quite. Use @keyframes to define animation states.",
-          "c": "Correct. Use @keyframes to define animation states.",
-          "d": "Not quite. Use @keyframes to define animation states."
+          "a": "Nicht ganz. Verwende @keyframes, um Animationszustände zu definieren.",
+          "b": "Nicht ganz. Verwende @keyframes, um Animationszustände zu definieren.",
+          "c": "Richtig. Verwende @keyframes, um Animationszustände zu definieren.",
+          "d": "Nicht ganz. Verwende @keyframes, um Animationszustände zu definieren."
         }
       }
     }

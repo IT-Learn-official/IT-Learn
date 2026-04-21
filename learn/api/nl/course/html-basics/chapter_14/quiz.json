@@ -11,7 +11,7 @@
     {
       "id": "q-input-type-email",
       "type": "single-choice",
-      "prompt": "Which input type is best for collecting an email address?",
+      "prompt": "Welk input type is het beste om een e-mailadres te vragen?",
       "options": [
         {
           "id": "text",
@@ -35,48 +35,48 @@
         }
       ],
       "explanations": {
-        "overview": "Use type=\"email\" to get built-in email validation behavior in browsers.",
+        "overview": "Gebruik type=\"email\" voor ingebouwde e-mailvalidatie in browsers.",
         "byOptionId": {
-          "email": "Correct - type=\"email\" is intended for email addresses.",
-          "text": "Incorrect - text works but does not provide email-specific validation.",
-          "password": "Incorrect - password is for hidden secret input.",
-          "tel": "Incorrect - tel is for phone numbers, not email addresses."
+          "email": "Juist – type=\"email\" is bedoeld voor e-mailadressen.",
+          "text": "Fout – text werkt, maar geeft geen e-mail-specifieke validatie.",
+          "password": "Fout – password is voor verborgen/geheime input.",
+          "tel": "Fout – tel is voor telefoonnummers, niet voor e-mailadressen."
         }
       }
     },
     {
       "id": "q-select-vs-radio",
       "type": "single-choice",
-      "prompt": "When should you use radio buttons?",
+      "prompt": "Wanneer gebruik je radio buttons?",
       "options": [
         {
           "id": "multi",
-          "label": "When users can choose many options",
+          "label": "Wanneer gebruikers meerdere opties mogen kiezen",
           "isCorrect": false
         },
         {
           "id": "single",
-          "label": "When users must choose exactly one option from a set",
+          "label": "Wanneer gebruikers precies één optie moeten kiezen uit een set",
           "isCorrect": true
         },
         {
           "id": "longtext",
-          "label": "When users need to type long text",
+          "label": "Wanneer gebruikers lange tekst moeten typen",
           "isCorrect": false
         },
         {
           "id": "file",
-          "label": "When users upload files",
+          "label": "Wanneer gebruikers bestanden uploaden",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Radio buttons represent a single-select choice among related options.",
+        "overview": "Radio buttons zijn voor single-select: één keuze binnen een groep opties.",
         "byOptionId": {
-          "single": "Correct - radios are used for one choice in a group.",
-          "multi": "Incorrect - checkboxes are used for selecting multiple options.",
-          "longtext": "Incorrect - long text is typically entered with a textarea.",
-          "file": "Incorrect - file uploads use input type=\"file\"."
+          "single": "Juist – radios gebruik je voor één keuze binnen een groep.",
+          "multi": "Fout – checkboxes gebruik je om meerdere opties te kiezen.",
+          "longtext": "Fout – lange tekst voer je meestal in met een textarea.",
+          "file": "Fout – bestanden upload je met input type=\"file\"."
         }
       }
     }

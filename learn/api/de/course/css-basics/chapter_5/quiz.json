@@ -7,7 +7,7 @@
     {
       "id": "q1-font-weight",
       "type": "single-choice",
-      "prompt": "Which value makes text bold?",
+      "prompt": "Welcher Wert macht Text fett?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "font-weight: 700 (or bold) makes text bold.",
+        "overview": "font-weight: 700 (oder bold) macht Text fett.",
         "byOptionId": {
-          "a": "Not quite. font-weight: 700 (or bold) makes text bold.",
-          "b": "Not quite. font-weight: 700 (or bold) makes text bold.",
-          "c": "Correct. font-weight: 700 (or bold) makes text bold.",
-          "d": "Not quite. font-weight: 700 (or bold) makes text bold."
+          "a": "Nicht ganz. font-weight: 700 (oder bold) macht Text fett.",
+          "b": "Nicht ganz. font-weight: 700 (oder bold) macht Text fett.",
+          "c": "Richtig. font-weight: 700 (oder bold) macht Text fett.",
+          "d": "Nicht ganz. font-weight: 700 (oder bold) macht Text fett."
         }
       }
     },
     {
       "id": "q2-font-family",
       "type": "single-choice",
-      "prompt": "Why do we often list multiple fonts in font-family?",
+      "prompt": "Warum listet man in font-family oft mehrere Schriftarten auf?",
       "options": [
         {
           "id": "a",
-          "label": "To slow down the page",
+          "label": "Um die Seite zu verlangsamen",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To create fallback choices",
+          "label": "Um Fallbacks zu haben",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Because CSS requires exactly three fonts",
+          "label": "Weil CSS genau drei Schriftarten verlangt",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "To add animation",
+          "label": "Um Animationen hinzuzufügen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Multiple fonts create fallbacks if one font is not available.",
+        "overview": "Mehrere Schriftarten bieten Fallbacks, falls eine Schriftart nicht verfügbar ist.",
         "byOptionId": {
-          "a": "Not quite. Multiple fonts create fallbacks if one font is not available.",
-          "b": "Correct. Multiple fonts create fallbacks if one font is not available.",
-          "c": "Not quite. Multiple fonts create fallbacks if one font is not available.",
-          "d": "Not quite. Multiple fonts create fallbacks if one font is not available."
+          "a": "Nicht ganz. Mehrere Schriftarten bieten Fallbacks, falls eine Schriftart nicht verfügbar ist.",
+          "b": "Richtig. Mehrere Schriftarten bieten Fallbacks, falls eine Schriftart nicht verfügbar ist.",
+          "c": "Nicht ganz. Mehrere Schriftarten bieten Fallbacks, falls eine Schriftart nicht verfügbar ist.",
+          "d": "Nicht ganz. Mehrere Schriftarten bieten Fallbacks, falls eine Schriftart nicht verfügbar ist."
         }
       }
     }

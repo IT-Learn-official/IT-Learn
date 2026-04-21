@@ -7,43 +7,43 @@
     {
       "id": "q1-responsive-goal",
       "type": "single-choice",
-      "prompt": "What is the main goal of responsive design?",
+      "prompt": "Wat is het belangrijkste doel van responsive design?",
       "options": [
         {
           "id": "a",
-          "label": "Use one fixed desktop width everywhere",
+          "label": "Overal één vaste desktopbreedte gebruiken",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Make pages adapt to different devices",
+          "label": "Pagina's laten aanpassen aan verschillende toestellen",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Remove all images",
+          "label": "Alle afbeeldingen verwijderen",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only support tablets",
+          "label": "Alleen tablets ondersteunen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Responsive design adapts layout and styling for different screen sizes.",
+        "overview": "Responsive design past layout en styling aan voor verschillende schermgroottes.",
         "byOptionId": {
-          "a": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
-          "b": "Correct. Responsive design adapts layout and styling for different screen sizes.",
-          "c": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
-          "d": "Not quite. Responsive design adapts layout and styling for different screen sizes."
+          "a": "Niet helemaal. Responsive design past layout en styling aan voor verschillende schermgroottes.",
+          "b": "Juist. Responsive design past layout en styling aan voor verschillende schermgroottes.",
+          "c": "Niet helemaal. Responsive design past layout en styling aan voor verschillende schermgroottes.",
+          "d": "Niet helemaal. Responsive design past layout en styling aan voor verschillende schermgroottes."
         }
       }
     },
     {
       "id": "q2-fluid-image",
       "type": "single-choice",
-      "prompt": "Which rule helps images fit smaller screens?",
+      "prompt": "Welke rule helpt afbeeldingen passen op kleinere schermen?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "max-width: 100% keeps images from overflowing containers.",
+        "overview": "max-width: 100% voorkomt dat afbeeldingen buiten hun container lopen.",
         "byOptionId": {
-          "a": "Not quite. max-width: 100% keeps images from overflowing containers.",
-          "b": "Correct. max-width: 100% keeps images from overflowing containers.",
-          "c": "Not quite. max-width: 100% keeps images from overflowing containers.",
-          "d": "Not quite. max-width: 100% keeps images from overflowing containers."
+          "a": "Niet helemaal. max-width: 100% voorkomt dat afbeeldingen buiten hun container lopen.",
+          "b": "Juist. max-width: 100% voorkomt dat afbeeldingen buiten hun container lopen.",
+          "c": "Niet helemaal. max-width: 100% voorkomt dat afbeeldingen buiten hun container lopen.",
+          "d": "Niet helemaal. max-width: 100% voorkomt dat afbeeldingen buiten hun container lopen."
         }
       }
     }

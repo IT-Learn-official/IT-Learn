@@ -7,7 +7,7 @@
     {
       "id": "q-table",
       "type": "single-choice",
-      "prompt": "Which tag starts a table?",
+      "prompt": "Welke tag start een tabel?",
       "options": [
         {
           "id": "table",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<table> wraps the whole table structure.",
+        "overview": "<table> omwikkelt de volledige tabelstructuur.",
         "byOptionId": {
-          "table": "Correct â€” <table> is the container for rows and cells.",
-          "tr": "Incorrect â€” <tr> defines a table row within <table>.",
-          "td": "Incorrect â€” <td> is a table cell, not the table root.",
-          "th": "Incorrect â€” <th> is for header cells inside rows."
+          "table": "Juist – <table> is de container voor rijen en cellen.",
+          "tr": "Fout – <tr> definieert een tabelrij binnen <table>.",
+          "td": "Fout – <td> is een tabelcel, niet de tabel zelf.",
+          "th": "Fout – <th> is voor headercellen binnen rijen."
         }
       }
     },
     {
       "id": "q-th-td",
       "type": "single-choice",
-      "prompt": "Which tag is used for header cells?",
+      "prompt": "Welke tag gebruik je voor headercellen?",
       "options": [
         {
           "id": "td",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "<th> defines a header cell, often bold and centered by default.",
+        "overview": "<th> definieert een headercel (vaak standaard vet en gecentreerd).",
         "byOptionId": {
-          "th": "Correct â€” <th> indicates header cells within a table row.",
-          "td": "Incorrect â€” <td> is for regular cells, not headers.",
-          "tr": "Incorrect â€” <tr> is a row wrapper, not a cell.",
-          "thead": "Incorrect â€” <thead> groups header rows, but <th> is the header cell element."
+          "th": "Juist – <th> geeft headercellen aan binnen een tabelrij.",
+          "td": "Fout – <td> is voor gewone cellen, niet voor headers.",
+          "tr": "Fout – <tr> is een rij-wrapper, geen cel.",
+          "thead": "Fout – <thead> groepeert headerrijen, maar <th> is het headercel-element."
         }
       }
     }

@@ -2,77 +2,77 @@
   "chapterId": "chapter_9",
   "kind": "assessment",
   "title": "Hoofdstuk 9 - Box sizing en borders Check",
-  "description": "Controleer je kennis:  Hoe borders en box-sizing je layout beÃ¯nvloeden.",
+  "description": "Controleer je kennis:  Hoe borders en box-sizing je layout beïnvloeden.",
   "questions": [
     {
       "id": "q1-border-box",
       "type": "single-choice",
-      "prompt": "What does box-sizing: border-box do?",
+      "prompt": "Wat doet box-sizing: border-box?",
       "options": [
         {
           "id": "a",
-          "label": "It removes all borders",
+          "label": "Het verwijdert alle borders",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It includes padding and border in width and height",
+          "label": "Het neemt padding en border mee in breedte en hoogte",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It doubles the size of the element",
+          "label": "Het verdubbelt de grootte van het element",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It only affects text",
+          "label": "Het beïnvloedt alleen tekst",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It includes padding and border inside the set width and height.",
+        "overview": "Het neemt padding en border mee binnen de ingestelde breedte en hoogte.",
         "byOptionId": {
-          "a": "Not quite. It includes padding and border inside the set width and height.",
-          "b": "Correct. It includes padding and border inside the set width and height.",
-          "c": "Not quite. It includes padding and border inside the set width and height.",
-          "d": "Not quite. It includes padding and border inside the set width and height."
+          "a": "Niet helemaal. Het neemt padding en border mee binnen de ingestelde breedte en hoogte.",
+          "b": "Juist. Het neemt padding en border mee binnen de ingestelde breedte en hoogte.",
+          "c": "Niet helemaal. Het neemt padding en border mee binnen de ingestelde breedte en hoogte.",
+          "d": "Niet helemaal. Het neemt padding en border mee binnen de ingestelde breedte en hoogte."
         }
       }
     },
     {
       "id": "q2-border-layout",
       "type": "single-choice",
-      "prompt": "With default box-sizing (content-box), what happens when you add a thick border?",
+      "prompt": "Met de standaard box-sizing (content-box), wat gebeurt er als je een dikke border toevoegt?",
       "options": [
         {
           "id": "a",
-          "label": "Total element size can become larger",
+          "label": "De totale grootte van het element kan groter worden",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "Border does not affect size at all",
+          "label": "De border beïnvloedt de grootte helemaal niet",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "The page crashes",
+          "label": "De pagina crasht",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only margin changes",
+          "label": "Alleen de margin verandert",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The total rendered size gets larger because border is added outside content size.",
+        "overview": "De totale gerenderde grootte wordt groter omdat de border buiten de contentgrootte wordt toegevoegd.",
         "byOptionId": {
-          "a": "Correct. The total rendered size gets larger because border is added outside content size.",
-          "b": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "c": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "d": "Not quite. The total rendered size gets larger because border is added outside content size."
+          "a": "Juist. De totale gerenderde grootte wordt groter omdat de border buiten de contentgrootte wordt toegevoegd.",
+          "b": "Niet helemaal. De totale gerenderde grootte wordt groter omdat de border buiten de contentgrootte wordt toegevoegd.",
+          "c": "Niet helemaal. De totale gerenderde grootte wordt groter omdat de border buiten de contentgrootte wordt toegevoegd.",
+          "d": "Niet helemaal. De totale gerenderde grootte wordt groter omdat de border buiten de contentgrootte wordt toegevoegd."
         }
       }
     }

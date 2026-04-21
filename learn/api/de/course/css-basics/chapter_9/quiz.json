@@ -7,72 +7,72 @@
     {
       "id": "q1-border-box",
       "type": "single-choice",
-      "prompt": "What does box-sizing: border-box do?",
+      "prompt": "Was macht box-sizing: border-box?",
       "options": [
         {
           "id": "a",
-          "label": "It removes all borders",
+          "label": "Es entfernt alle Borders",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It includes padding and border in width and height",
+          "label": "Es rechnet Padding und Border in Breite und Höhe ein",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It doubles the size of the element",
+          "label": "Es verdoppelt die Größe des Elements",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It only affects text",
+          "label": "Es betrifft nur Text",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It includes padding and border inside the set width and height.",
+        "overview": "Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
         "byOptionId": {
-          "a": "Not quite. It includes padding and border inside the set width and height.",
-          "b": "Correct. It includes padding and border inside the set width and height.",
-          "c": "Not quite. It includes padding and border inside the set width and height.",
-          "d": "Not quite. It includes padding and border inside the set width and height."
+          "a": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "b": "Richtig. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "c": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "d": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet."
         }
       }
     },
     {
       "id": "q2-border-layout",
       "type": "single-choice",
-      "prompt": "With default box-sizing (content-box), what happens when you add a thick border?",
+      "prompt": "Bei der Standard-box-sizing (content-box): Was passiert, wenn du einen dicken Border hinzufügst?",
       "options": [
         {
           "id": "a",
-          "label": "Total element size can become larger",
+          "label": "Die Gesamtgröße des Elements kann größer werden",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "Border does not affect size at all",
+          "label": "Der Border beeinflusst die Größe gar nicht",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "The page crashes",
+          "label": "Die Seite crasht",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only margin changes",
+          "label": "Nur die Margin ändert sich",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "The total rendered size gets larger because border is added outside content size.",
+        "overview": "Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
         "byOptionId": {
-          "a": "Correct. The total rendered size gets larger because border is added outside content size.",
-          "b": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "c": "Not quite. The total rendered size gets larger because border is added outside content size.",
-          "d": "Not quite. The total rendered size gets larger because border is added outside content size."
+          "a": "Richtig. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "b": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "c": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "d": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird."
         }
       }
     }

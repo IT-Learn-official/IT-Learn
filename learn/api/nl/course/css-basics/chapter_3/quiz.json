@@ -7,7 +7,7 @@
     {
       "id": "q1-class-selector",
       "type": "single-choice",
-      "prompt": "Which selector targets elements with class \"menu\"?",
+      "prompt": "Welke selector selecteert elementen met de class \"menu\"?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "A class selector starts with a dot.",
+        "overview": "Een class-selector begint met een punt.",
         "byOptionId": {
-          "a": "Not quite. A class selector starts with a dot.",
-          "b": "Correct. A class selector starts with a dot.",
-          "c": "Not quite. A class selector starts with a dot.",
-          "d": "Not quite. A class selector starts with a dot."
+          "a": "Niet helemaal. Een class-selector begint met een punt.",
+          "b": "Juist. Een class-selector begint met een punt.",
+          "c": "Niet helemaal. Een class-selector begint met een punt.",
+          "d": "Niet helemaal. Een class-selector begint met een punt."
         }
       }
     },
     {
       "id": "q2-property-value",
       "type": "single-choice",
-      "prompt": "What is the correct CSS declaration format?",
+      "prompt": "Wat is het juiste formaat van een CSS-declaratie?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "A declaration uses property: value; with a colon and semicolon.",
+        "overview": "Een declaratie gebruikt property: value; met een dubbele punt en een puntkomma.",
         "byOptionId": {
-          "a": "Not quite. A declaration uses property: value; with a colon and semicolon.",
-          "b": "Correct. A declaration uses property: value; with a colon and semicolon.",
-          "c": "Not quite. A declaration uses property: value; with a colon and semicolon.",
-          "d": "Not quite. A declaration uses property: value; with a colon and semicolon."
+          "a": "Niet helemaal. Een declaratie gebruikt property: value; met een dubbele punt en een puntkomma.",
+          "b": "Juist. Een declaratie gebruikt property: value; met een dubbele punt en een puntkomma.",
+          "c": "Niet helemaal. Een declaratie gebruikt property: value; met een dubbele punt en een puntkomma.",
+          "d": "Niet helemaal. Een declaratie gebruikt property: value; met een dubbele punt en een puntkomma."
         }
       }
     }

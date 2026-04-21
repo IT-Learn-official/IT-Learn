@@ -2,7 +2,7 @@
   "chapterId": "chapter_16",
   "kind": "assessment",
   "title": "Kapitel 16 - HTML Best Practices Check",
-  "description": "Wissenscheck:  EinrÃ¼ckung, gut lesbarer Code und HTML-Kommentare.",
+  "description": "Wissenscheck:  Einrückung, gut lesbarer Code und HTML-Kommentare.",
   "questions": [
     {
       "id": "q-comments",
@@ -33,10 +33,10 @@
       "explanations": {
         "overview": "HTML comments use <!-- and -->.",
         "byOptionId": {
-          "comment": "Correct â€” HTML comments use <!-- and -->.",
-          "slash": "Incorrect â€” // is used in JS/CSS, not HTML comments.",
-          "star": "Incorrect â€” /* */ is used in CSS/JS, not HTML.",
-          "weirdhtmlcomment": "Incorrect â€” <! comment !> is not valid HTML comment syntax."
+          "comment": "Correct — HTML comments use <!-- and -->.",
+          "slash": "Incorrect — // is used in JS/CSS, not HTML comments.",
+          "star": "Incorrect — /* */ is used in CSS/JS, not HTML.",
+          "weirdhtmlcomment": "Incorrect — <! comment !> is not valid HTML comment syntax."
         }
       }
     },
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "Comments help humans read and maintain code.",
         "byOptionId": {
-          "readability": "Correct â€” comments improve readability and maintainability.",
-          "speed": "Incorrect â€” comments do not affect runtime load speed.",
-          "search": "Incorrect â€” comments alone don't improve search ranking.",
-          "security": "Incorrect â€” comments do not provide security benefits."
+          "readability": "Correct — comments improve readability and maintainability.",
+          "speed": "Incorrect — comments do not affect runtime load speed.",
+          "search": "Incorrect — comments alone don't improve search ranking.",
+          "security": "Incorrect — comments do not provide security benefits."
         }
       }
     }

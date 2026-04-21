@@ -2,7 +2,7 @@
   "chapterId": "chapter_17",
   "kind": "assessment",
   "title": "Kapitel 17 - Media Queries verwenden Check",
-  "description": "Wissenscheck:  Layout und font sizes fÃ¼r unterschiedliche Bildschirmbreiten anpassen.",
+  "description": "Wissenscheck:  Layout und font sizes für unterschiedliche Bildschirmbreiten anpassen.",
   "questions": [
     {
       "id": "q1-media-query-syntax",

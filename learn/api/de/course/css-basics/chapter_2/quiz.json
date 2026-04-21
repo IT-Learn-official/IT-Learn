@@ -1,13 +1,13 @@
 {
   "chapterId": "chapter_2",
   "kind": "assessment",
-  "title": "Kapitel 2 - CSS zu deinem HTML hinzufÃ¼gen Check",
+  "title": "Kapitel 2 - CSS zu deinem HTML hinzufügen Check",
   "description": "Wissenscheck:  Inline styles, internal styles und externe Stylesheets.",
   "questions": [
     {
       "id": "q1-inline-style",
       "type": "single-choice",
-      "prompt": "Which HTML attribute is used for inline CSS?",
+      "prompt": "Welches HTML-Attribut wird für Inline-CSS verwendet?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "Inline CSS is written with the style attribute.",
+        "overview": "Inline-CSS wird mit dem style-Attribut geschrieben.",
         "byOptionId": {
-          "a": "Not quite. Inline CSS is written with the style attribute.",
-          "b": "Not quite. Inline CSS is written with the style attribute.",
-          "c": "Correct. Inline CSS is written with the style attribute.",
-          "d": "Not quite. Inline CSS is written with the style attribute."
+          "a": "Nicht ganz. Inline-CSS wird mit dem style-Attribut geschrieben.",
+          "b": "Nicht ganz. Inline-CSS wird mit dem style-Attribut geschrieben.",
+          "c": "Richtig. Inline-CSS wird mit dem style-Attribut geschrieben.",
+          "d": "Nicht ganz. Inline-CSS wird mit dem style-Attribut geschrieben."
         }
       }
     },
     {
       "id": "q2-external-css",
       "type": "single-choice",
-      "prompt": "Which tag links an external CSS file?",
+      "prompt": "Welcher Tag verlinkt eine externe CSS-Datei?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Use the link tag in the head to load an external stylesheet.",
+        "overview": "Verwende den <link>-Tag im <head>, um ein externes Stylesheet zu laden.",
         "byOptionId": {
-          "a": "Not quite. Use the link tag in the head to load an external stylesheet.",
-          "b": "Correct. Use the link tag in the head to load an external stylesheet.",
-          "c": "Not quite. Use the link tag in the head to load an external stylesheet.",
-          "d": "Not quite. Use the link tag in the head to load an external stylesheet."
+          "a": "Nicht ganz. Verwende den <link>-Tag im <head>, um ein externes Stylesheet zu laden.",
+          "b": "Richtig. Verwende den <link>-Tag im <head>, um ein externes Stylesheet zu laden.",
+          "c": "Nicht ganz. Verwende den <link>-Tag im <head>, um ein externes Stylesheet zu laden.",
+          "d": "Nicht ganz. Verwende den <link>-Tag im <head>, um ein externes Stylesheet zu laden."
         }
       }
     }

@@ -7,7 +7,7 @@
     {
       "id": "q-ul-ol",
       "type": "single-choice",
-      "prompt": "Which tag creates a bulleted list?",
+      "prompt": "Welke tag maakt een lijst met bolletjes?",
       "options": [
         {
           "id": "ol",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<ul> is for unordered, bulleted lists.",
+        "overview": "<ul> is voor ongeordende lijsten met bolletjes.",
         "byOptionId": {
-          "ul": "Correct â€” <ul> creates an unordered (bulleted) list.",
-          "ol": "Incorrect â€” <ol> creates a numbered list.",
-          "li": "Incorrect â€” <li> is a list item tag used inside <ul> or <ol>.",
-          "list": "Incorrect â€” <list> is not a valid HTML element."
+          "ul": "Juist – <ul> maakt een ongeordende lijst (met bolletjes).",
+          "ol": "Fout – <ol> maakt een genummerde lijst.",
+          "li": "Fout – <li> is een list item dat je binnen <ul> of <ol> gebruikt.",
+          "list": "Fout – <list> is geen geldig HTML-element."
         }
       }
     },
     {
       "id": "q-li",
       "type": "single-choice",
-      "prompt": "Which tag wraps each list item?",
+      "prompt": "Welke tag omwikkelt elk lijstitem?",
       "options": [
         {
           "id": "p",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Use <li> inside <ul> or <ol> for each item.",
+        "overview": "Gebruik <li> binnen <ul> of <ol> voor elk item.",
         "byOptionId": {
-          "li": "Correct â€” <li> wraps each list item inside <ul> or <ol>.",
-          "p": "Incorrect â€” <p> is for paragraphs, not list items.",
-          "div": "Incorrect â€” <div> may contain list elements but <li> is the semantic list item.",
-          "span": "Incorrect â€” <span> is inline and not a list item wrapper."
+          "li": "Juist – <li> omwikkelt elk lijstitem binnen <ul> of <ol>.",
+          "p": "Fout – <p> is voor paragrafen, niet voor lijstitems.",
+          "div": "Fout – <div> kan list elements bevatten, maar <li> is het semantische list item.",
+          "span": "Fout – <span> is inline en geen wrapper voor lijstitems."
         }
       }
     }

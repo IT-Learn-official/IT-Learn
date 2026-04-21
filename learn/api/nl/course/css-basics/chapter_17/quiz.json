@@ -7,7 +7,7 @@
     {
       "id": "q1-media-query-syntax",
       "type": "single-choice",
-      "prompt": "Which is valid media query syntax?",
+      "prompt": "Welke media query syntax is geldig?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "Media queries use the @media rule with a condition.",
+        "overview": "Media queries gebruiken de @media rule met een conditie.",
         "byOptionId": {
-          "a": "Correct. Media queries use the @media rule with a condition.",
-          "b": "Not quite. Media queries use the @media rule with a condition.",
-          "c": "Not quite. Media queries use the @media rule with a condition.",
-          "d": "Not quite. Media queries use the @media rule with a condition."
+          "a": "Juist. Media queries gebruiken de @media rule met een conditie.",
+          "b": "Niet helemaal. Media queries gebruiken de @media rule met een conditie.",
+          "c": "Niet helemaal. Media queries gebruiken de @media rule met een conditie.",
+          "d": "Niet helemaal. Media queries gebruiken de @media rule met een conditie."
         }
       }
     },
     {
       "id": "q2-max-width",
       "type": "single-choice",
-      "prompt": "When does @media (max-width: 768px) apply?",
+      "prompt": "Wanneer geldt @media (max-width: 768px)?",
       "options": [
         {
           "id": "a",
-          "label": "Only above 768px",
+          "label": "Alleen boven 768px",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Only exactly at 768px",
+          "label": "Alleen precies op 768px",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "At 768px and smaller",
+          "label": "Op 768px en kleiner",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Only on 4K screens",
+          "label": "Alleen op 4K-schermen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It applies when viewport width is 768px or less.",
+        "overview": "Het geldt wanneer de viewportbreedte 768px of minder is.",
         "byOptionId": {
-          "a": "Not quite. It applies when viewport width is 768px or less.",
-          "b": "Not quite. It applies when viewport width is 768px or less.",
-          "c": "Correct. It applies when viewport width is 768px or less.",
-          "d": "Not quite. It applies when viewport width is 768px or less."
+          "a": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "b": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "c": "Juist. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "d": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is."
         }
       }
     }

@@ -7,72 +7,72 @@
     {
       "id": "q-id-class",
       "type": "single-choice",
-      "prompt": "What are id and class attributes used for?",
+      "prompt": "Wofür werden die Attribute id und class verwendet?",
       "options": [
         {
           "id": "content",
-          "label": "Holding text content",
+          "label": "Textinhalt speichern",
           "isCorrect": false
         },
         {
           "id": "identify",
-          "label": "Identifying elements for styling and scripting",
+          "label": "Elemente für Styling und Skripte identifizieren",
           "isCorrect": true
         },
         {
           "id": "styleonly",
-          "label": "Adding inline styles only",
+          "label": "Nur Inline-Styles hinzufügen",
           "isCorrect": false
         },
         {
           "id": "deprecated",
-          "label": "Deprecated attributes",
+          "label": "Veraltete Attribute",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "id and class are used to target elements from CSS and JavaScript.",
+        "overview": "id und class nutzt man, um Elemente in CSS und JavaScript gezielt anzusprechen.",
         "byOptionId": {
-          "identify": "Correct â€” id and class let you select elements from CSS and JS.",
-          "content": "Incorrect â€” attributes don't hold primary text content, elements do.",
-          "styleonly": "Incorrect â€” attributes can be used by scripts and selectors, not just inline styles.",
-          "deprecated": "Incorrect â€” id/class are standard attributes, not deprecated."
+          "identify": "Richtig – id und class erlauben dir, Elemente in CSS und JS auszuwählen.",
+          "content": "Falsch – Attribute speichern nicht den eigentlichen Textinhalt; das tun Elemente.",
+          "styleonly": "Falsch – Attribute nutzt man auch in Skripten und Selektoren, nicht nur für Inline-Styles.",
+          "deprecated": "Falsch – id/class sind Standard-Attribute, nicht veraltet."
         }
       }
     },
     {
       "id": "q-location",
       "type": "single-choice",
-      "prompt": "Where do id and class attributes go?",
+      "prompt": "Wo stehen id- und class-Attribute?",
       "options": [
         {
           "id": "end",
-          "label": "Inside the closing tag of an HTML element",
+          "label": "Im schließenden Tag eines HTML-Elements",
           "isCorrect": false
         },
         {
           "id": "between",
-          "label": "Between the opening and closing tags of an HTML element",
+          "label": "Zwischen dem öffnenden und schließenden Tag eines HTML-Elements",
           "isCorrect": false
         },
         {
           "id": "start",
-          "label": "Inside the opening tag of an HTML element",
+          "label": "Im öffnenden Tag eines HTML-Elements",
           "isCorrect": true
         },
         {
           "id": "before",
-          "label": "Before the opening tag of an HTML element",
+          "label": "Vor dem öffnenden Tag eines HTML-Elements",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "id and class attributes go inside the opening tag of an HTML element.",
+        "overview": "id- und class-Attribute stehen im öffnenden Tag eines HTML-Elements.",
         "byOptionId": {
-          "start": "Correct â€” id and class attributes go inside the opening tag.",
-          "end": "Incorrect â€” id and class attributes do not go in the closing tag.",
-          "between": "Incorrect â€” id and class attributes do not go between opening and closing tags.",
-          "before": "Incorrect â€” id and class attributes do not go before the opening tag."
+          "start": "Richtig – id- und class-Attribute stehen im öffnenden Tag.",
+          "end": "Falsch – id- und class-Attribute stehen nicht im schließenden Tag.",
+          "between": "Falsch – id- und class-Attribute stehen nicht zwischen öffnendem und schließendem Tag.",
+          "before": "Falsch – id- und class-Attribute stehen nicht vor dem öffnenden Tag."
         }
       }
     }

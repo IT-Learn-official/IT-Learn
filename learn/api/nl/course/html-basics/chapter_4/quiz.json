@@ -7,114 +7,114 @@
     {
       "id": "q-title",
       "type": "single-choice",
-      "prompt": "Where does the <title> tag belong?",
+      "prompt": "Waar hoort de <title>-tag te staan?",
       "options": [
         {
           "id": "head",
-          "label": "Inside <head>",
+          "label": "In <head>",
           "isCorrect": true
         },
         {
           "id": "body",
-          "label": "Inside <body>",
+          "label": "In <body>",
           "isCorrect": false
         },
         {
           "id": "html",
-          "label": "Outside <html>",
+          "label": "Buiten <html>",
           "isCorrect": false
         },
         {
           "id": "meta",
-          "label": "Inside <meta>",
+          "label": "In <meta>",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "<title> belongs in the head and appears in the browser tab.",
+        "overview": "<title> hoort in de head en verschijnt in de browsertab.",
         "byOptionId": {
-          "head": "Correct â€” <title> belongs inside <head> and shows in the browser tab.",
-          "body": "Incorrect â€” <title> should be placed inside <head>, not in <body>.",
-          "html": "Incorrect â€” <title> must be inside <head> within the <html> element.",
-          "meta": "Incorrect â€” <meta> is for metadata like charset or viewport, not the page title."
+          "head": "Juist – <title> hoort in <head> en verschijnt in de browsertab.",
+          "body": "Fout – <title> hoort in <head>, niet in <body>.",
+          "html": "Fout – <title> moet in <head> staan, binnen het <html>-element.",
+          "meta": "Fout – <meta> is voor metadata zoals charset of viewport, niet voor de paginatitel."
         }
       }
     },
     {
       "id": "q-charset",
       "type": "single-choice",
-      "prompt": "What does <meta charset=\"utf-8\"> do?",
+      "prompt": "Wat doet <meta charset=\"utf-8\">?",
       "options": [
         {
           "id": "language",
-          "label": "Sets the page language",
+          "label": "Stelt de paginataal in",
           "isCorrect": false
         },
         {
           "id": "style",
-          "label": "Applies styles to the page",
+          "label": "Past stijlen toe op de pagina",
           "isCorrect": false
         },
         {
           "id": "linkcss",
-          "label": "Links a CSS file",
+          "label": "Linkt een CSS-bestand",
           "isCorrect": false
         },
         {
           "id": "encoding",
-          "label": "Sets character encoding so text displays correctly",
+          "label": "Stelt de tekencodering in zodat tekst correct wordt weergegeven",
           "isCorrect": true
         },
         {
           "id": "runjs",
-          "label": "Runs JavaScript",
+          "label": "Voert JavaScript uit",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Character encoding ensures characters like accents show properly.",
+        "overview": "Tekencodering zorgt dat tekens zoals accenten correct worden weergegeven.",
         "byOptionId": {
-          "encoding": "Correct â€” charset sets the document character encoding so text renders correctly.",
-          "style": "Incorrect â€” styling is handled by CSS, not the charset meta tag.",
-          "linkcss": "Incorrect â€” CSS is linked with <link>, not with a charset meta tag.",
-          "runjs": "Incorrect â€” meta tags do not execute JavaScript.",
-          "language": "Incorrect â€” the charset meta tag does not set the page language."
+          "encoding": "Juist – charset stelt de tekencodering in zodat tekst correct wordt weergegeven.",
+          "style": "Fout – styling doe je met CSS, niet met de charset-meta-tag.",
+          "linkcss": "Fout – CSS link je met <link>, niet met een charset-meta-tag.",
+          "runjs": "Fout – meta-tags voeren geen JavaScript uit.",
+          "language": "Fout – de charset-meta-tag stelt de paginataal niet in."
         }
       }
     },
     {
       "id": "q-viewport",
       "type": "single-choice",
-      "prompt": "Why add the viewport meta tag on mobile pages?",
+      "prompt": "Waarom voeg je de viewport-meta-tag toe op mobiele pagina's?",
       "options": [
         {
           "id": "speed",
-          "label": "To make the page load faster",
+          "label": "Om de pagina sneller te laten laden",
           "isCorrect": false
         },
         {
           "id": "security",
-          "label": "To secure the page",
+          "label": "Om de pagina te beveiligen",
           "isCorrect": false
         },
         {
           "id": "title",
-          "label": "To set the page title",
+          "label": "Om de paginatitel in te stellen",
           "isCorrect": false
         },
         {
           "id": "responsive",
-          "label": "To make the page scale correctly on small screens",
+          "label": "Om de pagina correct te schalen op kleine schermen",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Viewport controls layout on mobile devices so designs are responsive.",
+        "overview": "Viewport bepaalt de layout op mobiele toestellen zodat je design responsive is.",
         "byOptionId": {
-          "responsive": "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
-          "speed": "Incorrect â€” viewport affects layout, not network speed.",
-          "security": "Incorrect â€” viewport does not add security features.",
-          "title": "Incorrect â€” the page title is set with the <title> tag, not the viewport meta tag."
+          "responsive": "Juist – de viewport-tag helpt pagina's correct schalen op smartphones en tablets.",
+          "speed": "Fout – viewport beïnvloedt layout, niet netwerksnelheid.",
+          "security": "Fout – viewport voegt geen beveiliging toe.",
+          "title": "Fout – de paginatitel stel je in met de <title>-tag, niet met de viewport-meta-tag."
         }
       }
     }

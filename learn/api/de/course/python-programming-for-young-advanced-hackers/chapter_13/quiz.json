@@ -7,43 +7,43 @@
     {
       "id": "q-function-meaning",
       "type": "single-choice",
-      "prompt": "What is a function in Python?",
+      "prompt": "Was ist eine Funktion in Python?",
       "options": [
         {
           "id": "a",
-          "label": "A way to repeat code by giving it a name and calling it.",
+          "label": "Eine Möglichkeit, Code zu wiederholen, indem du ihm einen Namen gibst und ihn aufrufst.",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "A special kind of list.",
+          "label": "Eine besondere Art von Liste.",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "A built-in error message.",
+          "label": "Eine eingebaute Fehlermeldung.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "A comment that Python ignores.",
+          "label": "Ein Kommentar, den Python ignoriert.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Functions are named blocks of code you can reuse by calling them.",
+        "overview": "Funktionen sind benannte Codeblöcke, die du wiederverwenden kannst, indem du sie aufrufst.",
         "byOptionId": {
-          "a": "Correct, functions let you group code and call it by name.",
-          "b": "Lists store data; functions are actions.",
-          "c": "Errors are separate from functions.",
-          "d": "Comments start with # and are not functions."
+          "a": "Richtig, mit Funktionen kannst du Code bündeln und per Namen aufrufen.",
+          "b": "Listen speichern Daten; Funktionen sind Aktionen.",
+          "c": "Fehler haben mit Funktionen nichts direkt zu tun.",
+          "d": "Kommentare beginnen mit # und sind keine Funktionen."
         }
       }
     },
     {
       "id": "q-def-keyword",
       "type": "single-choice",
-      "prompt": "Which keyword is used to define a function in Python?",
+      "prompt": "Welches Schlüsselwort benutzt du, um in Python eine Funktion zu definieren?",
       "options": [
         {
           "id": "a",
@@ -67,120 +67,120 @@
         }
       ],
       "explanations": {
-        "overview": "Function definitions always start with def.",
+        "overview": "Funktionsdefinitionen beginnen immer mit def.",
         "byOptionId": {
-          "a": "func is not a Python keyword.",
-          "b": "Correct, def starts a function definition.",
-          "c": "function is not a keyword in Python.",
-          "d": "call is not a keyword either."
+          "a": "func ist kein Python-Schlüsselwort.",
+          "b": "Richtig, def startet eine Funktionsdefinition.",
+          "c": "function ist kein Schlüsselwort in Python.",
+          "d": "call ist ebenfalls kein Schlüsselwort."
         }
       }
     },
     {
       "id": "q-parameter-meaning",
       "type": "single-choice",
-      "prompt": "In `def greet(name):`, what is `name`?",
+      "prompt": "In `def greet(name):`, was ist `name`?",
       "options": [
         {
           "id": "a",
-          "label": "A return value.",
+          "label": "Ein Rückgabewert.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "A parameter (an input to the function).",
+          "label": "Ein Parameter (eine Eingabe für die Funktion).",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "An error.",
+          "label": "Ein Fehler.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "A list item.",
+          "label": "Ein Listeneintrag.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Parameters are variables listed in the function definition header.",
+        "overview": "Parameter sind Variablen, die im Funktionskopf stehen.",
         "byOptionId": {
-          "a": "Return values come from the return statement, not from the header.",
-          "b": "Correct, name is the parameter the function expects.",
-          "c": "There is nothing wrong with this code.",
-          "d": "List items live inside lists, not in function headers."
+          "a": "Rückgabewerte kommen aus der return-Anweisung, nicht aus dem Funktionskopf.",
+          "b": "Richtig, name ist der Parameter, den die Funktion erwartet.",
+          "c": "An diesem Code ist nichts falsch.",
+          "d": "Listeneinträge stehen in Listen, nicht im Funktionskopf."
         }
       }
     },
     {
       "id": "q-return-meaning",
       "type": "single-choice",
-      "prompt": "What does the return statement do in a function?",
+      "prompt": "Was macht die return-Anweisung in einer Funktion?",
       "options": [
         {
           "id": "a",
-          "label": "It prints text to the screen.",
+          "label": "Sie gibt Text auf dem Bildschirm aus.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "It stops the function and sends a value back.",
+          "label": "Sie beendet die Funktion und gibt einen Wert zurück.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "It starts a new loop.",
+          "label": "Sie startet eine neue Schleife.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It deletes a variable.",
+          "label": "Sie löscht eine Variable.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "return exits the function and hands a value back to the caller.",
+        "overview": "`return` verlässt die Funktion und gibt einen Wert an den Aufrufer zurück.",
         "byOptionId": {
-          "a": "print shows a value, but does not return it.",
-          "b": "Correct, this is exactly what return does.",
-          "c": "Loops use for or while, not return.",
-          "d": "return does not delete variables."
+          "a": "`print` zeigt einen Wert an, gibt ihn aber nicht zurück.",
+          "b": "Richtig, genau das macht return.",
+          "c": "Schleifen benutzen `for` oder `while`, nicht `return`.",
+          "d": "`return` löscht keine Variablen."
         }
       }
     },
     {
       "id": "q-default-parameter",
       "type": "single-choice",
-      "prompt": "In `def greet(name, greeting='Hi')`, what happens if you call `greet('Alex')`?",
+      "prompt": "In `def greet(name, greeting='Hi')`, was passiert, wenn du `greet('Alex')` aufrufst?",
       "options": [
         {
           "id": "a",
-          "label": "Error, because greeting is missing.",
+          "label": "Fehler, weil greeting fehlt.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "greeting will automatically be 'Hi'.",
+          "label": "greeting ist automatisch 'Hi'.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "greeting will be None.",
+          "label": "greeting ist None.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Python ignores the second parameter.",
+          "label": "Python ignoriert den zweiten Parameter.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Default parameter values are used when you don't pass that argument.",
+        "overview": "Standardwerte für Parameter werden verwendet, wenn du dieses Argument nicht übergibst.",
         "byOptionId": {
-          "a": "The default avoids this error.",
-          "b": "Correct - 'Hi' is used as the default greeting.",
-          "c": "None is not used here; we gave a real default string.",
-          "d": "Python does not ignore parameters; it fills them with defaults if needed."
+          "a": "Der Standardwert verhindert diesen Fehler.",
+          "b": "Richtig – 'Hi' wird als Standardbegrüßung verwendet.",
+          "c": "None wird hier nicht benutzt; wir haben einen echten Standard-String gesetzt.",
+          "d": "Python ignoriert Parameter nicht; es füllt sie bei Bedarf mit Standardwerten."
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "chapterId": "chapter_14",
   "kind": "assessment",
-  "title": "Kapitel 14 - Formular-Inputs im Ãœberblick Check",
+  "title": "Kapitel 14 - Formular-Inputs im Überblick Check",
   "description": "Wissenscheck:  Alle Input-Typen: text, email, password, checkbox, radio, textarea, select.",
   "metadata": {
     "difficulty": "beginner",
@@ -11,7 +11,7 @@
     {
       "id": "q-input-type-email",
       "type": "single-choice",
-      "prompt": "Which input type is best for collecting an email address?",
+      "prompt": "Welcher Input-Typ ist am besten, um eine E-Mail-Adresse zu erfassen?",
       "options": [
         {
           "id": "text",
@@ -35,48 +35,48 @@
         }
       ],
       "explanations": {
-        "overview": "Use type=\"email\" to get built-in email validation behavior in browsers.",
+        "overview": "Verwende type=\"email\", um eingebaute E-Mail-Validierung im Browser zu bekommen.",
         "byOptionId": {
-          "email": "Correct - type=\"email\" is intended for email addresses.",
-          "text": "Incorrect - text works but does not provide email-specific validation.",
-          "password": "Incorrect - password is for hidden secret input.",
-          "tel": "Incorrect - tel is for phone numbers, not email addresses."
+          "email": "Richtig – type=\"email\" ist für E-Mail-Adressen gedacht.",
+          "text": "Falsch – text funktioniert, bietet aber keine E-Mail-spezifische Validierung.",
+          "password": "Falsch – password ist für versteckte/geheime Eingaben.",
+          "tel": "Falsch – tel ist für Telefonnummern, nicht für E-Mail-Adressen."
         }
       }
     },
     {
       "id": "q-select-vs-radio",
       "type": "single-choice",
-      "prompt": "When should you use radio buttons?",
+      "prompt": "Wann solltest du Radio Buttons verwenden?",
       "options": [
         {
           "id": "multi",
-          "label": "When users can choose many options",
+          "label": "Wenn Nutzer mehrere Optionen auswählen können",
           "isCorrect": false
         },
         {
           "id": "single",
-          "label": "When users must choose exactly one option from a set",
+          "label": "Wenn Nutzer genau eine Option aus einer Gruppe auswählen müssen",
           "isCorrect": true
         },
         {
           "id": "longtext",
-          "label": "When users need to type long text",
+          "label": "Wenn Nutzer lange Texte eingeben müssen",
           "isCorrect": false
         },
         {
           "id": "file",
-          "label": "When users upload files",
+          "label": "Wenn Nutzer Dateien hochladen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Radio buttons represent a single-select choice among related options.",
+        "overview": "Radio Buttons stehen für eine Single-Select-Auswahl innerhalb zusammengehöriger Optionen.",
         "byOptionId": {
-          "single": "Correct - radios are used for one choice in a group.",
-          "multi": "Incorrect - checkboxes are used for selecting multiple options.",
-          "longtext": "Incorrect - long text is typically entered with a textarea.",
-          "file": "Incorrect - file uploads use input type=\"file\"."
+          "single": "Richtig – Radios nutzt man für eine Auswahl in einer Gruppe.",
+          "multi": "Falsch – Checkboxes nutzt man, um mehrere Optionen auszuwählen.",
+          "longtext": "Falsch – lange Texte werden typischerweise in einer textarea eingegeben.",
+          "file": "Falsch – Datei-Uploads nutzen input type=\"file\"."
         }
       }
     }

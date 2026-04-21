@@ -33,10 +33,10 @@
       "explanations": {
         "overview": "De DOCTYPE zorgt dat de browser de pagina met de juiste regels parseert.",
         "byOptionId": {
-          "tellwhatversion": "Juist â€“ DOCTYPE zet de browser in de standaard HTML parsing mode.",
-          "displaytitle": "Fout â€“ DOCTYPE toont geen titels.",
-          "csslink": "Fout â€“ CSS link je met `<link>`, niet met DOCTYPE.",
-          "definebody": "Fout â€“ DOCTYPE definieert het body-element niet."
+          "tellwhatversion": "Juist – DOCTYPE zet de browser in de standaard HTML parsing mode.",
+          "displaytitle": "Fout – DOCTYPE toont geen titels.",
+          "csslink": "Fout – CSS link je met `<link>`, niet met DOCTYPE.",
+          "definebody": "Fout – DOCTYPE definieert het body-element niet."
         }
       }
     },
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "De `<body>` bevat de content die de gebruiker ziet in het browservenster.",
         "byOptionId": {
-          "body": "Juist â€“ zichtbare content staat in `<body>`.",
-          "head": "Fout â€“ `<head>` bevat metadata en resources, niet de hoofdcontent.",
-          "html": "Fout â€“ `<html>` is de root wrapper, niet de contentcontainer.",
-          "meta": "Fout â€“ `<meta>` geeft metadata zoals charset of viewport."
+          "body": "Juist – zichtbare content staat in `<body>`.",
+          "head": "Fout – `<head>` bevat metadata en resources, niet de hoofdcontent.",
+          "html": "Fout – `<html>` is de root wrapper, niet de contentcontainer.",
+          "meta": "Fout – `<meta>` geeft metadata zoals charset of viewport."
         }
       }
     },
@@ -105,10 +105,10 @@
       "explanations": {
         "overview": "<title> hoort in de head en verschijnt in de browsertab.",
         "byOptionId": {
-          "head": "Juist â€“ <title> staat in <head> en wordt getoond in de tab.",
-          "body": "Fout â€“ <title> hoort niet in <body>.",
-          "footer": "Fout â€“ <footer> is deel van de body, niet waar <title> hoort.",
-          "outside": "Fout â€“ <title> moet binnen <head> staan, en dus binnen <html>."
+          "head": "Juist – <title> staat in <head> en wordt getoond in de tab.",
+          "body": "Fout – <title> hoort niet in <body>.",
+          "footer": "Fout – <footer> is deel van de body, niet waar <title> hoort.",
+          "outside": "Fout – <title> moet binnen <head> staan, en dus binnen <html>."
         }
       }
     },
@@ -141,10 +141,10 @@
       "explanations": {
         "overview": "<html> is het buitenste element dat het hele document omwikkelt.",
         "byOptionId": {
-          "html": "Juist â€“ <html> is de document root.",
-          "head": "Fout â€“ <head> is een kind van <html>.",
-          "body": "Fout â€“ <body> is ook een kind van <html>, niet de root.",
-          "doctype": "Fout â€“ DOCTYPE is een declaratie, geen root element."
+          "html": "Juist – <html> is de document root.",
+          "head": "Fout – <head> is een kind van <html>.",
+          "body": "Fout – <body> is ook een kind van <html>, niet de root.",
+          "doctype": "Fout – DOCTYPE is een declaratie, geen root element."
         }
       }
     }

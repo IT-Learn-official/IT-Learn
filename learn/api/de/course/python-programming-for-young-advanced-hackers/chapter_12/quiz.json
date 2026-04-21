@@ -7,43 +7,43 @@
     {
       "id": "q-for-purpose",
       "type": "single-choice",
-      "prompt": "What is a for loop mainly used for in Python?",
+      "prompt": "Wofür benutzt man in Python hauptsächlich eine for-Schleife?",
       "options": [
         {
           "id": "a",
-          "label": "To define a function.",
+          "label": "Um eine Funktion zu definieren.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To repeat code for each item in a sequence.",
+          "label": "Um Code für jedes Element in einer Sequenz zu wiederholen.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "To stop a program immediately.",
+          "label": "Um ein Programm sofort zu stoppen.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "To create a new variable.",
+          "label": "Um eine neue Variable zu erstellen.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "for loops are used to repeat code for each item in a range or collection.",
+        "overview": "for-Schleifen benutzt man, um Code für jedes Element in einer range oder Sammlung zu wiederholen.",
         "byOptionId": {
-          "a": "Functions are defined with def, not with for.",
-          "b": "Correct, for loops go through each item in a sequence.",
-          "c": "You would use exit() or similar to stop a program, not for.",
-          "d": "Variables can be created anywhere, not just in for loops."
+          "a": "Funktionen werden mit def definiert, nicht mit for.",
+          "b": "Richtig, for-Schleifen gehen jedes Element einer Sequenz durch.",
+          "c": "Um ein Programm zu stoppen, würdest du exit() oder Ähnliches verwenden, nicht for.",
+          "d": "Variablen kann man überall erstellen, nicht nur in for-Schleifen."
         }
       }
     },
     {
       "id": "q-range-3",
       "type": "single-choice",
-      "prompt": "What numbers does range(3) generate?",
+      "prompt": "Welche Zahlen erzeugt range(3)?",
       "options": [
         {
           "id": "a",
@@ -67,120 +67,120 @@
         }
       ],
       "explanations": {
-        "overview": "range(stop) starts at 0 and goes up to stop-1.",
+        "overview": "range(stop) startet bei 0 und geht bis stop-1.",
         "byOptionId": {
-          "a": "This would be range(1, 4).",
-          "b": "Correct, range(3) gives 0, 1, 2.",
-          "c": "This includes the stop value, which range() does not do.",
-          "d": "range(3) makes a sequence, not a single number."
+          "a": "Das wäre range(1, 4).",
+          "b": "Richtig, range(3) ergibt 0, 1, 2.",
+          "c": "Das enthält den stop-Wert, und das tut range() nicht.",
+          "d": "range(3) erzeugt eine Sequenz, keine einzelne Zahl."
         }
       }
     },
     {
       "id": "q-while-stop",
       "type": "single-choice",
-      "prompt": "When does a while loop stop running?",
+      "prompt": "Wann hört eine while-Schleife auf zu laufen?",
       "options": [
         {
           "id": "a",
-          "label": "After exactly 10 loops.",
+          "label": "Nach genau 10 Durchläufen.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "When its condition becomes False.",
+          "label": "Wenn ihre Bedingung False wird.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "When Python decides it is enough.",
+          "label": "Wenn Python entscheidet, dass es reicht.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Only when the user presses a key.",
+          "label": "Nur wenn der Benutzer eine Taste drückt.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "while keeps looping as long as its condition is True.",
+        "overview": "while läuft weiter, solange seine Bedingung True ist.",
         "byOptionId": {
-          "a": "A while loop does not magically stop after 10 loops unless you code it that way.",
-          "b": "Correct, you must make sure the condition can eventually become False.",
-          "c": "Python does not auto-stop your loops for you.",
-          "d": "User input can affect the condition, but it is not required."
+          "a": "Eine while-Schleife stoppt nicht magisch nach 10 Durchläufen – außer du programmierst es so.",
+          "b": "Richtig, du musst sicherstellen, dass die Bedingung irgendwann False werden kann.",
+          "c": "Python stoppt deine Schleifen nicht automatisch für dich.",
+          "d": "User-Input kann die Bedingung beeinflussen, ist aber nicht nötig."
         }
       }
     },
     {
       "id": "q-infinite-while",
       "type": "single-choice",
-      "prompt": "Which mistake can easily create an infinite while loop?",
+      "prompt": "Welcher Fehler kann leicht eine endlose while-Schleife erzeugen?",
       "options": [
         {
           "id": "a",
-          "label": "Using a for loop instead.",
+          "label": "Stattdessen eine for-Schleife benutzen.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Forgetting to change the variable used in the condition.",
+          "label": "Vergessen, die Variable zu ändern, die in der Bedingung benutzt wird.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Printing too many times.",
+          "label": "Zu oft printen.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Using range() with 0.",
+          "label": "range() mit 0 benutzen.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "If the condition never becomes False, a while loop never stops.",
+        "overview": "Wenn die Bedingung nie False wird, stoppt eine while-Schleife nie.",
         "byOptionId": {
-          "a": "Using a for loop will not automatically make an infinite loop.",
-          "b": "Correct, if you never update the variable, the condition may stay True forever.",
-          "c": "Printing a lot is noisy but not infinite by itself.",
-          "d": "range() is not used directly in while loops."
+          "a": "Eine for-Schleife zu benutzen macht nicht automatisch eine Endlosschleife.",
+          "b": "Richtig, wenn du die Variable nie updatest, kann die Bedingung für immer True bleiben.",
+          "c": "Viel zu printen ist nervig, aber nicht automatisch unendlich.",
+          "d": "range() wird nicht direkt in while-Schleifen benutzt."
         }
       }
     },
     {
       "id": "q-iterate-string",
       "type": "single-choice",
-      "prompt": "What does `for ch in 'cat':` do?",
+      "prompt": "Was macht `for ch in 'cat':`?",
       "options": [
         {
           "id": "a",
-          "label": "Loops over the numbers 1 to 3.",
+          "label": "Es läuft über die Zahlen 1 bis 3.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Loops over the letters 'c', 'a', 't'.",
+          "label": "Es läuft über die Buchstaben 'c', 'a', 't'.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Causes an error; you can't loop over strings.",
+          "label": "Es gibt einen Fehler; man kann nicht über Strings iterieren.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Deletes the string.",
+          "label": "Es löscht den String.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Strings are sequences of characters, so for can loop over each character.",
+        "overview": "Strings sind Sequenzen aus Zeichen, daher kann for über jedes Zeichen iterieren.",
         "byOptionId": {
-          "a": "The loop variable ch is a character, not a number here.",
-          "b": "Correct, ch will be 'c', then 'a', then 't'.",
-          "c": "Python allows you to loop over strings.",
-          "d": "for does not delete values."
+          "a": "Die Loop-Variable ch ist hier ein Zeichen, keine Zahl.",
+          "b": "Richtig, ch ist erst 'c', dann 'a', dann 't'.",
+          "c": "Python erlaubt es, über Strings zu iterieren.",
+          "d": "for löscht keine Werte."
         }
       }
     }

@@ -7,7 +7,7 @@
     {
       "id": "q-div-block",
       "type": "single-choice",
-      "prompt": "Which element is block-level by default?",
+      "prompt": "Welches Element ist standardmäßig block-level?",
       "options": [
         {
           "id": "span",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "<div> is a block-level container; <span> is inline.",
+        "overview": "<div> ist ein Block-Container; <span> ist inline.",
         "byOptionId": {
-          "div": "Correct â€” <div> is block-level and takes full width by default.",
-          "span": "Incorrect â€” <span> is inline and flows within lines of text.",
-          "img": "Incorrect â€” <img> is inline (or replaced) by default, not a block container.",
-          "a": "Incorrect â€” <a> is inline; it creates links not block-level layout."
+          "div": "Richtig – <div> ist block-level und nimmt standardmäßig die volle Breite ein.",
+          "span": "Falsch – <span> ist inline und fließt innerhalb von Textzeilen.",
+          "img": "Falsch – <img> ist standardmäßig inline (replaced), kein Block-Container.",
+          "a": "Falsch – <a> ist inline; es erstellt Links, nicht Block-Layout."
         }
       }
     },
     {
       "id": "q-span-use",
       "type": "single-choice",
-      "prompt": "When should you use <span>?",
+      "prompt": "Wann solltest du <span> verwenden?",
       "options": [
         {
           "id": "large",
-          "label": "To create large page sections",
+          "label": "Um große Seitenbereiche zu erstellen",
           "isCorrect": false
         },
         {
           "id": "table",
-          "label": "To make table rows",
+          "label": "Um Tabellenzeilen zu erstellen",
           "isCorrect": false
         },
         {
           "id": "image",
-          "label": "To include images",
+          "label": "Um Bilder einzubinden",
           "isCorrect": false
         },
         {
           "id": "inline",
-          "label": "To wrap small inline parts of text for styling or scripts",
+          "label": "Um kleine Inline-Textteile für Styling oder Skripte zu umschließen",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Use <span> for inline grouping only.",
+        "overview": "Verwende <span> nur für Inline-Gruppierung.",
         "byOptionId": {
-          "inline": "Correct â€” <span> is for inline grouping and small styling hooks.",
-          "large": "Incorrect â€” use block containers like <div> or semantic sections for large sections.",
-          "table": "Incorrect â€” table rows use <tr>, not <span>.",
-          "image": "Incorrect â€” <img> embeds images; <span> does not replace it."
+          "inline": "Richtig – <span> ist für Inline-Gruppierung und kleine Styling-Hooks.",
+          "large": "Falsch – nutze Block-Container wie <div> (oder semantische Sections) für große Bereiche.",
+          "table": "Falsch – Tabellenzeilen heißen <tr>, nicht <span>.",
+          "image": "Falsch – Bilder bindest du mit <img> ein; <span> ersetzt das nicht."
         }
       }
     }

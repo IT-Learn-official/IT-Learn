@@ -2,7 +2,7 @@
   "chapterId": "chapter_17",
   "kind": "assessment",
   "title": "Kapitel 17 - Accessibility-Grundlagen Check",
-  "description": "Wissenscheck:  Alt-Text, Form-Labels und semantisches Markup fÃ¼r Accessibility.",
+  "description": "Wissenscheck:  Alt-Text, Form-Labels und semantisches Markup für Accessibility.",
   "questions": [
     {
       "id": "q-alt-required",
@@ -33,10 +33,10 @@
       "explanations": {
         "overview": "Alt text ensures non-visual users understand image content.",
         "byOptionId": {
-          "access": "Correct â€” alt text aids disabled users and provides fallback descriptions.",
-          "style": "Incorrect â€” styling is done with CSS, not alt attributes.",
-          "seoonly": "Incorrect â€” while alt can help SEO, its primary purpose is accessibility.",
-          "optional": "Incorrect â€” alt is important for accessibility and should usually be provided."
+          "access": "Correct — alt text aids disabled users and provides fallback descriptions.",
+          "style": "Incorrect — styling is done with CSS, not alt attributes.",
+          "seoonly": "Incorrect — while alt can help SEO, its primary purpose is accessibility.",
+          "optional": "Incorrect — alt is important for accessibility and should usually be provided."
         }
       }
     },
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "Labels improve form accessibility by describing inputs.",
         "byOptionId": {
-          "label": "Correct â€” <label> elements improve accessibility and clickable area for controls.",
-          "divs": "Incorrect â€” wrapping in <div> alone does not provide the same semantics as <label>.",
-          "spans": "Incorrect â€” <span> is not a replacement for a properly associated label.",
-          "none": "Incorrect â€” proper labeling and semantics significantly improve accessibility."
+          "label": "Correct — <label> elements improve accessibility and clickable area for controls.",
+          "divs": "Incorrect — wrapping in <div> alone does not provide the same semantics as <label>.",
+          "spans": "Incorrect — <span> is not a replacement for a properly associated label.",
+          "none": "Incorrect — proper labeling and semantics significantly improve accessibility."
         }
       }
     }

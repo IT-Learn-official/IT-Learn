@@ -1,13 +1,13 @@
 {
   "chapterId": "chapter_10",
   "kind": "assessment",
-  "title": "Kapitel 10 - HintergrÃ¼nde hinzufÃ¼gen Check",
+  "title": "Kapitel 10 - Hintergründe hinzufügen Check",
   "description": "Wissenscheck:  Farben, gradients und Bilder als Hintergrund.",
   "questions": [
     {
       "id": "q1-gradient",
       "type": "single-choice",
-      "prompt": "Which function creates a gradient background in CSS?",
+      "prompt": "Welche Funktion erstellt einen Farbverlauf (Gradient) als Hintergrund in CSS?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "linear-gradient() is used to create gradient backgrounds.",
+        "overview": "linear-gradient() wird verwendet, um Gradient-Hintergründe zu erstellen.",
         "byOptionId": {
-          "a": "Not quite. linear-gradient() is used to create gradient backgrounds.",
-          "b": "Not quite. linear-gradient() is used to create gradient backgrounds.",
-          "c": "Correct. linear-gradient() is used to create gradient backgrounds.",
-          "d": "Not quite. linear-gradient() is used to create gradient backgrounds."
+          "a": "Nicht ganz. linear-gradient() wird verwendet, um Gradient-Hintergründe zu erstellen.",
+          "b": "Nicht ganz. linear-gradient() wird verwendet, um Gradient-Hintergründe zu erstellen.",
+          "c": "Richtig. linear-gradient() wird verwendet, um Gradient-Hintergründe zu erstellen.",
+          "d": "Nicht ganz. linear-gradient() wird verwendet, um Gradient-Hintergründe zu erstellen."
         }
       }
     },
     {
       "id": "q2-bg-cover",
       "type": "single-choice",
-      "prompt": "What does background-size: cover usually do?",
+      "prompt": "Was macht background-size: cover normalerweise?",
       "options": [
         {
           "id": "a",
-          "label": "Repeats the image many times",
+          "label": "Wiederholt das Bild sehr oft",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Stretches image to fill height only",
+          "label": "Streckt das Bild nur auf die Höhe",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Scales image to cover the element",
+          "label": "Skaliert das Bild so, dass es das Element abdeckt",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Hides the image",
+          "label": "Versteckt das Bild",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It scales the background image to cover the entire element area.",
+        "overview": "Es skaliert das Hintergrundbild so, dass es die gesamte Fläche des Elements abdeckt.",
         "byOptionId": {
-          "a": "Not quite. It scales the background image to cover the entire element area.",
-          "b": "Not quite. It scales the background image to cover the entire element area.",
-          "c": "Correct. It scales the background image to cover the entire element area.",
-          "d": "Not quite. It scales the background image to cover the entire element area."
+          "a": "Nicht ganz. Es skaliert das Hintergrundbild so, dass es die gesamte Fläche des Elements abdeckt.",
+          "b": "Nicht ganz. Es skaliert das Hintergrundbild so, dass es die gesamte Fläche des Elements abdeckt.",
+          "c": "Richtig. Es skaliert das Hintergrundbild so, dass es die gesamte Fläche des Elements abdeckt.",
+          "d": "Nicht ganz. Es skaliert das Hintergrundbild so, dass es die gesamte Fläche des Elements abdeckt."
         }
       }
     }

@@ -7,7 +7,7 @@
     {
       "id": "q-a-tag",
       "type": "single-choice",
-      "prompt": "Which attribute holds the destination URL for a link?",
+      "prompt": "Welk attribuut bevat de bestemming-URL van een link?",
       "options": [
         {
           "id": "src",
@@ -31,84 +31,84 @@
         }
       ],
       "explanations": {
-        "overview": "The href attribute on <a> defines where the link goes.",
+        "overview": "Het href-attribuut op <a> bepaalt waar de link naartoe gaat.",
         "byOptionId": {
-          "href": "Correct â€” href on <a> specifies the link destination.",
-          "src": "Incorrect â€” src is used for resources like images and scripts, not for anchor destinations.",
-          "link": "Incorrect â€” 'link' is not an attribute for anchors.",
-          "url": "Incorrect â€” 'url' is a generic term but not the anchor attribute name."
+          "href": "Juist – href op <a> geeft de linkbestemming aan.",
+          "src": "Fout – src is voor resources zoals afbeeldingen en scripts, niet voor linkbestemmingen.",
+          "link": "Fout – 'link' is geen attribuut voor anchors.",
+          "url": "Fout – 'url' is een algemene term, maar niet de naam van het attribuut."
         }
       }
     },
     {
       "id": "q-internal-vs-external",
       "type": "single-choice",
-      "prompt": "What is an internal link?",
+      "prompt": "Wat is een interne link?",
       "options": [
         {
           "id": "same-site",
-          "label": "A link to another page on the same website",
+          "label": "Een link naar een andere pagina op dezelfde website",
           "isCorrect": true
         },
         {
           "id": "external",
-          "label": "A link to a different domain",
+          "label": "Een link naar een ander domein",
           "isCorrect": false
         },
         {
           "id": "file",
-          "label": "A link to a local file only",
+          "label": "Een link enkel naar een lokaal bestand",
           "isCorrect": false
         },
         {
           "id": "image",
-          "label": "A link that only points to images",
+          "label": "Een link die alleen naar afbeeldingen verwijst",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Internal links point to pages within the same site.",
+        "overview": "Interne links verwijzen naar pagina's binnen dezelfde site.",
         "byOptionId": {
-          "same-site": "Correct â€” internal links target pages on the same domain or site.",
-          "external": "Incorrect â€” external links point to different domains.",
-          "file": "Incorrect â€” linking to local files is possible but not the typical definition of internal links.",
-          "image": "Incorrect â€” the target can be any resource, not specifically images."
+          "same-site": "Juist – interne links verwijzen naar pagina's binnen dezelfde site/domein.",
+          "external": "Fout – externe links verwijzen naar een ander domein.",
+          "file": "Fout – linken naar lokale bestanden kan, maar dat is niet de typische definitie van interne links.",
+          "image": "Fout – het doel kan eender welke resource zijn, niet specifiek afbeeldingen."
         }
       }
     },
     {
       "id": "q-target-blank",
       "type": "single-choice",
-      "prompt": "What does target=\"_blank\" do?",
+      "prompt": "Wat doet target=\"_blank\"?",
       "options": [
         {
           "id": "internal",
-          "label": "Makes it an internal link",
+          "label": "Maakt er een interne link van",
           "isCorrect": false
         },
         {
           "id": "nofollow",
-          "label": "Tells search engines not to follow the link",
+          "label": "Zegt tegen zoekmachines dat ze de link niet mogen volgen",
           "isCorrect": false
         },
         {
           "id": "newtab",
-          "label": "Opens the link in a new tab or window",
+          "label": "Opent de link in een nieuw tabblad of venster",
           "isCorrect": true
         },
         {
           "id": "download",
-          "label": "Forces the browser to download the link",
+          "label": "Dwingt de browser om de link te downloaden",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "target=\"_blank\" opens the target in a new tab.",
+        "overview": "target=\"_blank\" opent de bestemming in een nieuw tabblad.",
         "byOptionId": {
-          "newtab": "Correct â€” target=\"_blank\" opens the destination in a new tab or window.",
-          "internal": "Incorrect â€” target does not change whether a link is internal or external.",
-          "nofollow": "Incorrect â€” rel=\"nofollow\" is used for search engine hints, not target behavior.",
-          "download": "Incorrect â€” the download attribute suggests downloading; target=_blank opens in a new tab."
+          "newtab": "Juist – target=\"_blank\" opent de bestemming in een nieuw tabblad of venster.",
+          "internal": "Fout – target verandert niet of een link intern of extern is.",
+          "nofollow": "Fout – rel=\"nofollow\" is voor zoekmachine-hints, niet voor target-gedrag.",
+          "download": "Fout – het download-attribuut suggereert downloaden; target=_blank opent in een nieuw tabblad."
         }
       }
     }

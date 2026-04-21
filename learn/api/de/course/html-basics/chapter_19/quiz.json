@@ -2,7 +2,7 @@
   "chapterId": "chapter_19",
   "kind": "assessment",
   "title": "Kapitel 19 - HTML + CSS Check",
-  "description": "Wissenscheck:  Stylesheets verlinken und wofÃ¼r CSS verwendet wird.",
+  "description": "Wissenscheck:  Stylesheets verlinken und wofür CSS verwendet wird.",
   "questions": [
     {
       "id": "q-link-css",
@@ -33,10 +33,10 @@
       "explanations": {
         "overview": "Use <link rel=\"stylesheet\"> in the head to attach CSS.",
         "byOptionId": {
-          "link": "Correct â€” <link rel=\"stylesheet\"> in <head> loads external CSS.",
-          "style": "Incorrect â€” <style> contains inline CSS, not an external link.",
-          "script": "Incorrect â€” <script> loads JS, not CSS.",
-          "css": "Incorrect â€” <css> is not a valid HTML tag."
+          "link": "Correct — <link rel=\"stylesheet\"> in <head> loads external CSS.",
+          "style": "Incorrect — <style> contains inline CSS, not an external link.",
+          "script": "Incorrect — <script> loads JS, not CSS.",
+          "css": "Incorrect — <css> is not a valid HTML tag."
         }
       }
     },
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "CSS handles presentation while HTML handles structure.",
         "byOptionId": {
-          "presentation": "Correct â€” CSS controls presentation like colors, layout, and fonts.",
-          "data": "Incorrect â€” CSS is not for storing user data.",
-          "server": "Incorrect â€” CSS runs in the browser, not on the server.",
-          "html": "Incorrect â€” CSS complements HTML but does not replace structure."
+          "presentation": "Correct — CSS controls presentation like colors, layout, and fonts.",
+          "data": "Incorrect — CSS is not for storing user data.",
+          "server": "Incorrect — CSS runs in the browser, not on the server.",
+          "html": "Incorrect — CSS complements HTML but does not replace structure."
         }
       }
     }

@@ -7,72 +7,72 @@
     {
       "id": "q1-display-block",
       "type": "single-choice",
-      "prompt": "What is true about display: block elements?",
+      "prompt": "Wat is waar over display: block-elementen?",
       "options": [
         {
           "id": "a",
-          "label": "They always stay on the same line as text",
+          "label": "Ze blijven altijd op dezelfde lijn als tekst",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "They ignore width and height",
+          "label": "Ze negeren width en height",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "They usually take a full row",
+          "label": "Ze nemen meestal een volledige rij in",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "They can only be used in tables",
+          "label": "Je kan ze alleen in tabellen gebruiken",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Block elements start on a new line and usually take full available width.",
+        "overview": "Block-elementen starten op een nieuwe regel en nemen meestal de volledige beschikbare breedte in.",
         "byOptionId": {
-          "a": "Not quite. Block elements start on a new line and usually take full available width.",
-          "b": "Not quite. Block elements start on a new line and usually take full available width.",
-          "c": "Correct. Block elements start on a new line and usually take full available width.",
-          "d": "Not quite. Block elements start on a new line and usually take full available width."
+          "a": "Niet helemaal. Block-elementen starten op een nieuwe regel en nemen meestal de volledige beschikbare breedte in.",
+          "b": "Niet helemaal. Block-elementen starten op een nieuwe regel en nemen meestal de volledige beschikbare breedte in.",
+          "c": "Juist. Block-elementen starten op een nieuwe regel en nemen meestal de volledige beschikbare breedte in.",
+          "d": "Niet helemaal. Block-elementen starten op een nieuwe regel en nemen meestal de volledige beschikbare breedte in."
         }
       }
     },
     {
       "id": "q2-position-absolute",
       "type": "single-choice",
-      "prompt": "position: absolute is positioned relative to what?",
+      "prompt": "position: absolute wordt relatief gepositioneerd ten opzichte van wat?",
       "options": [
         {
           "id": "a",
-          "label": "The browser history",
+          "label": "De browsergeschiedenis",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The nearest positioned ancestor",
+          "label": "De dichtstbijzijnde gepositioneerde ancestor",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Only the body, always",
+          "label": "Altijd alleen de body",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The text content length",
+          "label": "De lengte van de tekstcontent",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It is relative to the nearest ancestor with position set (not static).",
+        "overview": "Het is relatief ten opzichte van de dichtstbijzijnde ancestor met een position (niet static).",
         "byOptionId": {
-          "a": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "b": "Correct. It is relative to the nearest ancestor with position set (not static).",
-          "c": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "d": "Not quite. It is relative to the nearest ancestor with position set (not static)."
+          "a": "Niet helemaal. Het is relatief ten opzichte van de dichtstbijzijnde ancestor met een position (niet static).",
+          "b": "Juist. Het is relatief ten opzichte van de dichtstbijzijnde ancestor met een position (niet static).",
+          "c": "Niet helemaal. Het is relatief ten opzichte van de dichtstbijzijnde ancestor met een position (niet static).",
+          "d": "Niet helemaal. Het is relatief ten opzichte van de dichtstbijzijnde ancestor met een position (niet static)."
         }
       }
     }

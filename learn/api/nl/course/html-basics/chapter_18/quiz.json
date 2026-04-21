@@ -7,72 +7,72 @@
     {
       "id": "q-meta-desc",
       "type": "single-choice",
-      "prompt": "What is the purpose of a meta description?",
+      "prompt": "Wat is het doel van een meta description?",
       "options": [
         {
           "id": "style",
-          "label": "To style the page content",
+          "label": "Om de pagina te stylen",
           "isCorrect": false
         },
         {
           "id": "indexonly",
-          "label": "Prevents indexing",
+          "label": "Voorkomt indexeren",
           "isCorrect": false
         },
         {
           "id": "summary",
-          "label": "A short summary shown in search results",
+          "label": "Een korte samenvatting die in zoekresultaten kan verschijnen",
           "isCorrect": true
         },
         {
           "id": "security",
-          "label": "Improves security",
+          "label": "Verbetert beveiliging",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Meta description provides a concise summary that search engines may display.",
+        "overview": "Een meta description is een korte samenvatting die zoekmachines kunnen tonen.",
         "byOptionId": {
-          "summary": "Correct â€” meta descriptions are short summaries that can appear in search results.",
-          "style": "Incorrect â€” meta descriptions do not style content.",
-          "indexonly": "Incorrect â€” meta description does not prevent indexing; robots meta tags control indexing.",
-          "security": "Incorrect â€” meta descriptions do not affect site security."
+          "summary": "Juist – meta descriptions zijn korte samenvattingen die in zoekresultaten kunnen verschijnen.",
+          "style": "Fout – meta descriptions stylen je content niet.",
+          "indexonly": "Fout – meta description verhindert indexeren niet; daarvoor gebruik je (robots) meta tags.",
+          "security": "Fout – meta descriptions hebben niets met beveiliging te maken."
         }
       }
     },
     {
       "id": "q-heading-seo",
       "type": "single-choice",
-      "prompt": "How do headings help SEO?",
+      "prompt": "Hoe helpen headings voor SEO?",
       "options": [
         {
           "id": "structure",
-          "label": "They provide structure and keywords for crawlers",
+          "label": "Ze geven structuur en keywords aan crawlers",
           "isCorrect": true
         },
         {
           "id": "speed",
-          "label": "They speed up loading times",
+          "label": "Ze maken je site sneller",
           "isCorrect": false
         },
         {
           "id": "encrypt",
-          "label": "They encrypt content",
+          "label": "Ze encrypteren content",
           "isCorrect": false
         },
         {
           "id": "ads",
-          "label": "They add ads to the page",
+          "label": "Ze voegen advertenties toe",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Proper headings help search engines understand content organization and relevance.",
+        "overview": "Goede headings helpen zoekmachines om de structuur en relevantie van je content te begrijpen.",
         "byOptionId": {
-          "structure": "Correct â€” headings convey structure and help crawlers and users understand content.",
-          "speed": "Incorrect â€” headings do not directly affect load speed.",
-          "encrypt": "Incorrect â€” headings do not encrypt content.",
-          "ads": "Incorrect â€” headings are unrelated to ad insertion."
+          "structure": "Juist – headings geven structuur en helpen crawlers en gebruikers de content begrijpen.",
+          "speed": "Fout – headings beïnvloeden de laadsnelheid niet rechtstreeks.",
+          "encrypt": "Fout – headings encrypteren geen content.",
+          "ads": "Fout – headings hebben niets te maken met advertenties."
         }
       }
     }

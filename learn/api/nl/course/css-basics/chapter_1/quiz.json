@@ -7,11 +7,11 @@
     {
       "id": "q1-css-meaning",
       "type": "single-choice",
-      "prompt": "What does CSS stand for?",
+      "prompt": "Waar staat CSS voor?",
       "options": [
         {
           "id": "a",
-          "label": "Creative Style System",
+          "label": "Creatief stijlsysteem",
           "isCorrect": false
         },
         {
@@ -26,53 +26,53 @@
         },
         {
           "id": "d",
-          "label": "Color Sheet Setup",
+          "label": "Kleurblad-setup",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "CSS means Cascading Style Sheets.",
+        "overview": "CSS betekent Cascading Style Sheets.",
         "byOptionId": {
-          "a": "Not quite. CSS means Cascading Style Sheets.",
-          "b": "Correct. CSS means Cascading Style Sheets.",
-          "c": "Not quite. CSS means Cascading Style Sheets.",
-          "d": "Not quite. CSS means Cascading Style Sheets."
+          "a": "Niet helemaal. CSS betekent Cascading Style Sheets.",
+          "b": "Juist. CSS betekent Cascading Style Sheets.",
+          "c": "Niet helemaal. CSS betekent Cascading Style Sheets.",
+          "d": "Niet helemaal. CSS betekent Cascading Style Sheets."
         }
       }
     },
     {
       "id": "q2-css-role",
       "type": "single-choice",
-      "prompt": "What is the main job of CSS?",
+      "prompt": "Wat is de belangrijkste taak van CSS?",
       "options": [
         {
           "id": "a",
-          "label": "Store data in a database",
+          "label": "Gegevens opslaan in een database",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Build server APIs",
+          "label": "Server-API's bouwen",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Style the page appearance",
+          "label": "Het uiterlijk van de pagina stylen",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Replace HTML completely",
+          "label": "HTML volledig vervangen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "CSS controls how a web page looks, while HTML controls structure.",
+        "overview": "CSS bepaalt hoe een webpagina eruitziet, terwijl HTML de structuur bepaalt.",
         "byOptionId": {
-          "a": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "b": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "c": "Correct. CSS controls how a web page looks, while HTML controls structure.",
-          "d": "Not quite. CSS controls how a web page looks, while HTML controls structure."
+          "a": "Niet helemaal. CSS bepaalt hoe een webpagina eruitziet, terwijl HTML de structuur bepaalt.",
+          "b": "Niet helemaal. CSS bepaalt hoe een webpagina eruitziet, terwijl HTML de structuur bepaalt.",
+          "c": "Juist. CSS bepaalt hoe een webpagina eruitziet, terwijl HTML de structuur bepaalt.",
+          "d": "Niet helemaal. CSS bepaalt hoe een webpagina eruitziet, terwijl HTML de structuur bepaalt."
         }
       }
     }

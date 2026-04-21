@@ -7,21 +7,21 @@
     {
       "id": "q-html-definition",
       "type": "single-choice",
-      "prompt": "WofÃ¼r steht HTML?",
+      "prompt": "Wofür steht HTML?",
       "options": [
         {
           "id": "lemonade",
-          "label": "How To Make Lemonade",
+          "label": "Wie macht man Limonade",
           "isCorrect": false
         },
         {
           "id": "missile",
-          "label": "Hawaiian Test Missile Launcher",
+          "label": "Hawaiianischer Test-Raketenwerfer",
           "isCorrect": false
         },
         {
           "id": "hopelayout",
-          "label": "Hope This Makes Layouts",
+          "label": "Hoffe, das macht Layouts",
           "isCorrect": false
         },
         {
@@ -31,23 +31,23 @@
         }
       ],
       "explanations": {
-        "overview": "HTML steht fÃ¼r HyperText Markup Language.",
+        "overview": "HTML steht für HyperText Markup Language.",
         "byOptionId": {
-          "lemonade": "Falsch â€“ das ist nur ein witziger Spruch, nicht die Bedeutung von HTML.",
-          "missile": "Falsch â€“ das hat nichts mit Web Markup zu tun.",
-          "hopelayout": "Falsch â€“ das ist eine Scherzantwort; HTML ist eine Markup Language.",
-          "hypertextmarkuplanguage": "Richtig. HTML steht fÃ¼r HyperText Markup Language."
+          "lemonade": "Falsch – das ist nur ein witziger Spruch, nicht die Bedeutung von HTML.",
+          "missile": "Falsch – das hat nichts mit Web Markup zu tun.",
+          "hopelayout": "Falsch – das ist eine Scherzantwort; HTML ist eine Markup Language.",
+          "hypertextmarkuplanguage": "Richtig. HTML steht für HyperText Markup Language."
         }
       }
     },
     {
       "id": "q-meaning-html",
       "type": "single-choice",
-      "prompt": "Was beschreibt HTML auf einer Webseite hauptsÃ¤chlich?",
+      "prompt": "Was beschreibt HTML auf einer Webseite hauptsächlich?",
       "options": [
         {
           "id": "structure",
-          "label": "Die Struktur und Bedeutung von Inhalten (Ãœberschriften, AbsÃ¤tze, Listen)",
+          "label": "Die Struktur und Bedeutung von Inhalten (Überschriften, Absätze, Listen)",
           "isCorrect": true
         },
         {
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "HTML markiert Inhalt und Struktur; CSS macht Styling und JS macht Verhalten/Interaktion.",
         "byOptionId": {
-          "structure": "Richtig â€“ HTML strukturiert Inhalte z. B. mit Ãœberschriften und AbsÃ¤tzen.",
-          "styles": "Falsch â€“ Farben und Fonts sind Aufgabe von CSS, nicht HTML.",
-          "server": "Falsch â€“ Server-Speicherung hat mit HTML-Markup nichts zu tun.",
-          "database": "Falsch â€“ Datenbank-Schemas beschreibt man nicht mit HTML."
+          "structure": "Richtig – HTML strukturiert Inhalte z. B. mit Überschriften und Absätzen.",
+          "styles": "Falsch – Farben und Fonts sind Aufgabe von CSS, nicht HTML.",
+          "server": "Falsch – Server-Speicherung hat mit HTML-Markup nichts zu tun.",
+          "database": "Falsch – Datenbank-Schemas beschreibt man nicht mit HTML."
         }
       }
     },
@@ -83,12 +83,12 @@
       "options": [
         {
           "id": "a1",
-          "label": "HTML = GerÃ¼st, CSS = Farbe, JavaScript = elektrische Verkabelung",
+          "label": "HTML = Gerüst, CSS = Farbe, JavaScript = elektrische Verkabelung",
           "isCorrect": true
         },
         {
           "id": "a2",
-          "label": "HTML = Farbe, CSS = GerÃ¼st, JavaScript = Tapete",
+          "label": "HTML = Farbe, CSS = Gerüst, JavaScript = Tapete",
           "isCorrect": false
         },
         {
@@ -105,17 +105,17 @@
       "explanations": {
         "overview": "Merke: HTML ist Struktur, CSS ist Styling, JS ist Verhalten.",
         "byOptionId": {
-          "a1": "Richtig â€“ HTML liefert Struktur, CSS stylt und JS ergÃ¤nzt Verhalten.",
-          "a2": "Falsch â€“ hier werden GerÃ¼st und Farbe vertauscht.",
-          "a3": "Falsch â€“ das vermischt Markup mit Server- und Speicherbegriffen.",
-          "a4": "Falsch â€“ die drei Technologien haben unterschiedliche Aufgaben."
+          "a1": "Richtig – HTML liefert Struktur, CSS stylt und JS ergänzt Verhalten.",
+          "a2": "Falsch – hier werden Gerüst und Farbe vertauscht.",
+          "a3": "Falsch – das vermischt Markup mit Server- und Speicherbegriffen.",
+          "a4": "Falsch – die drei Technologien haben unterschiedliche Aufgaben."
         }
       }
     },
     {
       "id": "q-html-does-not",
       "type": "single-choice",
-      "prompt": "Welche Aufgabe gehÃ¶rt NICHT zu HTML?",
+      "prompt": "Welche Aufgabe gehört NICHT zu HTML?",
       "options": [
         {
           "id": "layout",
@@ -124,7 +124,7 @@
         },
         {
           "id": "style-tricks",
-          "label": "Animationen und komplexe Interaktionslogik ausfÃ¼hren",
+          "label": "Animationen und komplexe Interaktionslogik ausführen",
           "isCorrect": true
         },
         {
@@ -141,10 +141,10 @@
       "explanations": {
         "overview": "Animationen und Laufzeit-Logik sind Aufgabe von JavaScript, nicht von HTML.",
         "byOptionId": {
-          "layout": "Nicht richtig â€“ Strukturieren ist eine Kernaufgabe von HTML.",
-          "style-tricks": "Richtig â€“ Animationen und interaktive Logik gehÃ¶ren zu JavaScript.",
-          "images": "Nicht richtig â€“ HTML referenziert Bilder Ã¼ber `<img>`.",
-          "links": "Nicht richtig â€“ HTML erstellt Links mit `<a>`."
+          "layout": "Nicht richtig – Strukturieren ist eine Kernaufgabe von HTML.",
+          "style-tricks": "Richtig – Animationen und interaktive Logik gehören zu JavaScript.",
+          "images": "Nicht richtig – HTML referenziert Bilder über `<img>`.",
+          "links": "Nicht richtig – HTML erstellt Links mit `<a>`."
         }
       }
     }

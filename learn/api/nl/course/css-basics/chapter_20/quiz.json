@@ -7,72 +7,72 @@
     {
       "id": "q1-framework-meaning",
       "type": "single-choice",
-      "prompt": "What is a CSS framework?",
+      "prompt": "Wat is een CSS framework?",
       "options": [
         {
           "id": "a",
-          "label": "A browser extension for ads",
+          "label": "Een browserextensie voor advertenties",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "A prebuilt CSS system you can use",
+          "label": "Een vooraf gebouwd CSS-systeem dat je kan gebruiken",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "A database engine",
+          "label": "Een database-engine",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "A replacement for HTML",
+          "label": "Een vervanging voor HTML",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "A framework is a prebuilt collection of styles and UI utilities.",
+        "overview": "Een framework is een vooraf gebouwde verzameling styles en UI-utilities.",
         "byOptionId": {
-          "a": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-          "b": "Correct. A framework is a prebuilt collection of styles and UI utilities.",
-          "c": "Not quite. A framework is a prebuilt collection of styles and UI utilities.",
-          "d": "Not quite. A framework is a prebuilt collection of styles and UI utilities."
+          "a": "Niet helemaal. Een framework is een vooraf gebouwde verzameling styles en UI-utilities.",
+          "b": "Juist. Een framework is een vooraf gebouwde verzameling styles en UI-utilities.",
+          "c": "Niet helemaal. Een framework is een vooraf gebouwde verzameling styles en UI-utilities.",
+          "d": "Niet helemaal. Een framework is een vooraf gebouwde verzameling styles en UI-utilities."
         }
       }
     },
     {
       "id": "q2-framework-when",
       "type": "single-choice",
-      "prompt": "When is a good time to start using frameworks?",
+      "prompt": "Wanneer is het een goed moment om frameworks te gebruiken?",
       "options": [
         {
           "id": "a",
-          "label": "Before learning any CSS at all",
+          "label": "Voor je ook maar iets van CSS kent",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Only for mobile apps",
+          "label": "Alleen voor mobiele apps",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "After learning CSS basics",
+          "label": "Nadat je de basis van CSS kent",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Only when internet is slow",
+          "label": "Alleen als het internet traag is",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "After understanding basic CSS, frameworks can speed up bigger projects.",
+        "overview": "Als je de basis van CSS begrijpt, kunnen frameworks grotere projecten sneller maken.",
         "byOptionId": {
-          "a": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "b": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "c": "Correct. After understanding basic CSS, frameworks can speed up bigger projects.",
-          "d": "Not quite. After understanding basic CSS, frameworks can speed up bigger projects."
+          "a": "Niet helemaal. Als je de basis van CSS begrijpt, kunnen frameworks grotere projecten sneller maken.",
+          "b": "Niet helemaal. Als je de basis van CSS begrijpt, kunnen frameworks grotere projecten sneller maken.",
+          "c": "Juist. Als je de basis van CSS begrijpt, kunnen frameworks grotere projecten sneller maken.",
+          "d": "Niet helemaal. Als je de basis van CSS begrijpt, kunnen frameworks grotere projecten sneller maken."
         }
       }
     }

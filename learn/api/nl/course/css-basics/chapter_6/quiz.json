@@ -7,43 +7,43 @@
     {
       "id": "q1-line-height",
       "type": "single-choice",
-      "prompt": "What does line-height control?",
+      "prompt": "Wat bepaalt line-height?",
       "options": [
         {
           "id": "a",
-          "label": "The text color",
+          "label": "De tekstkleur",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The distance between lines",
+          "label": "De afstand tussen regels",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "The border thickness",
+          "label": "De dikte van de border",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The font family",
+          "label": "De lettertypefamilie (font-family)",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "line-height controls vertical space between lines of text.",
+        "overview": "line-height bepaalt de verticale ruimte tussen regels tekst.",
         "byOptionId": {
-          "a": "Not quite. line-height controls vertical space between lines of text.",
-          "b": "Correct. line-height controls vertical space between lines of text.",
-          "c": "Not quite. line-height controls vertical space between lines of text.",
-          "d": "Not quite. line-height controls vertical space between lines of text."
+          "a": "Niet helemaal. line-height bepaalt de verticale ruimte tussen regels tekst.",
+          "b": "Juist. line-height bepaalt de verticale ruimte tussen regels tekst.",
+          "c": "Niet helemaal. line-height bepaalt de verticale ruimte tussen regels tekst.",
+          "d": "Niet helemaal. line-height bepaalt de verticale ruimte tussen regels tekst."
         }
       }
     },
     {
       "id": "q2-text-align",
       "type": "single-choice",
-      "prompt": "Which property centers text horizontally in its container?",
+      "prompt": "Welke property centreert tekst horizontaal in z'n container?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "text-align: center; centers inline text content.",
+        "overview": "text-align: center; centreert inline tekst horizontaal.",
         "byOptionId": {
-          "a": "Not quite. text-align: center; centers inline text content.",
-          "b": "Correct. text-align: center; centers inline text content.",
-          "c": "Not quite. text-align: center; centers inline text content.",
-          "d": "Not quite. text-align: center; centers inline text content."
+          "a": "Niet helemaal. text-align: center; centreert inline tekst horizontaal.",
+          "b": "Juist. text-align: center; centreert inline tekst horizontaal.",
+          "c": "Niet helemaal. text-align: center; centreert inline tekst horizontaal.",
+          "d": "Niet helemaal. text-align: center; centreert inline tekst horizontaal."
         }
       }
     }

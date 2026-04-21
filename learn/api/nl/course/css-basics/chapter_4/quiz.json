@@ -7,7 +7,7 @@
     {
       "id": "q1-hex-color",
       "type": "single-choice",
-      "prompt": "Which option is a valid HEX color value?",
+      "prompt": "Welke optie is een geldige HEX-kleurwaarde?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "HEX colors start with # followed by 3 or 6 hexadecimal characters.",
+        "overview": "HEX-kleuren beginnen met # gevolgd door 3 of 6 hexadecimale tekens.",
         "byOptionId": {
-          "a": "Correct. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
-          "b": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
-          "c": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters.",
-          "d": "Not quite. HEX colors start with # followed by 3 or 6 hexadecimal characters."
+          "a": "Juist. HEX-kleuren beginnen met # gevolgd door 3 of 6 hexadecimale tekens.",
+          "b": "Niet helemaal. HEX-kleuren beginnen met # gevolgd door 3 of 6 hexadecimale tekens.",
+          "c": "Niet helemaal. HEX-kleuren beginnen met # gevolgd door 3 of 6 hexadecimale tekens.",
+          "d": "Niet helemaal. HEX-kleuren beginnen met # gevolgd door 3 of 6 hexadecimale tekens."
         }
       }
     },
     {
       "id": "q2-rem-unit",
       "type": "single-choice",
-      "prompt": "What is rem based on?",
+      "prompt": "Waar is rem op gebaseerd?",
       "options": [
         {
           "id": "a",
-          "label": "The parent element font size",
+          "label": "De fontgrootte van het bovenliggende element",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The browser tab width",
+          "label": "De breedte van het browsertabblad",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "The root html font size",
+          "label": "De fontgrootte van het root html-element",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "The current element width",
+          "label": "De breedte van het huidige element",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "rem is based on the root html font size.",
+        "overview": "rem is gebaseerd op de fontgrootte van het root html-element.",
         "byOptionId": {
-          "a": "Not quite. rem is based on the root html font size.",
-          "b": "Not quite. rem is based on the root html font size.",
-          "c": "Correct. rem is based on the root html font size.",
-          "d": "Not quite. rem is based on the root html font size."
+          "a": "Niet helemaal. rem is gebaseerd op de fontgrootte van het root html-element.",
+          "b": "Niet helemaal. rem is gebaseerd op de fontgrootte van het root html-element.",
+          "c": "Juist. rem is gebaseerd op de fontgrootte van het root html-element.",
+          "d": "Niet helemaal. rem is gebaseerd op de fontgrootte van het root html-element."
         }
       }
     }

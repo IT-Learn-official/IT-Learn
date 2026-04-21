@@ -7,7 +7,7 @@
     {
       "id": "q1-box-order",
       "type": "single-choice",
-      "prompt": "Which order is correct from inside to outside?",
+      "prompt": "Welke volgorde is correct van binnen naar buiten?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "The order is content, padding, border, margin.",
+        "overview": "De volgorde is: content, padding, border, margin.",
         "byOptionId": {
-          "a": "Correct. The order is content, padding, border, margin.",
-          "b": "Not quite. The order is content, padding, border, margin.",
-          "c": "Not quite. The order is content, padding, border, margin.",
-          "d": "Not quite. The order is content, padding, border, margin."
+          "a": "Juist. De volgorde is: content, padding, border, margin.",
+          "b": "Niet helemaal. De volgorde is: content, padding, border, margin.",
+          "c": "Niet helemaal. De volgorde is: content, padding, border, margin.",
+          "d": "Niet helemaal. De volgorde is: content, padding, border, margin."
         }
       }
     },
     {
       "id": "q2-margin-vs-padding",
       "type": "single-choice",
-      "prompt": "What is the main difference between margin and padding?",
+      "prompt": "Wat is het belangrijkste verschil tussen margin en padding?",
       "options": [
         {
           "id": "a",
-          "label": "Both are exactly the same",
+          "label": "Ze zijn exact hetzelfde",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Padding is outside and margin is inside",
+          "label": "Padding is buiten en margin is binnen",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Padding is inside, margin is outside",
+          "label": "Padding is binnen, margin is buiten",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Margin changes text color",
+          "label": "Margin verandert de tekstkleur",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Padding is inside the border. Margin is outside the border.",
+        "overview": "Padding zit binnen de border. Margin zit buiten de border.",
         "byOptionId": {
-          "a": "Not quite. Padding is inside the border. Margin is outside the border.",
-          "b": "Not quite. Padding is inside the border. Margin is outside the border.",
-          "c": "Correct. Padding is inside the border. Margin is outside the border.",
-          "d": "Not quite. Padding is inside the border. Margin is outside the border."
+          "a": "Niet helemaal. Padding zit binnen de border. Margin zit buiten de border.",
+          "b": "Niet helemaal. Padding zit binnen de border. Margin zit buiten de border.",
+          "c": "Juist. Padding zit binnen de border. Margin zit buiten de border.",
+          "d": "Niet helemaal. Padding zit binnen de border. Margin zit buiten de border."
         }
       }
     }

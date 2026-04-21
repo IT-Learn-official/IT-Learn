@@ -7,114 +7,114 @@
     {
       "id": "q-title",
       "type": "single-choice",
-      "prompt": "Where does the <title> tag belong?",
+      "prompt": "Wo gehört der <title>-Tag hin?",
       "options": [
         {
           "id": "head",
-          "label": "Inside <head>",
+          "label": "In <head>",
           "isCorrect": true
         },
         {
           "id": "body",
-          "label": "Inside <body>",
+          "label": "In <body>",
           "isCorrect": false
         },
         {
           "id": "html",
-          "label": "Outside <html>",
+          "label": "Außerhalb von <html>",
           "isCorrect": false
         },
         {
           "id": "meta",
-          "label": "Inside <meta>",
+          "label": "In <meta>",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "<title> belongs in the head and appears in the browser tab.",
+        "overview": "<title> gehört in den Head und erscheint im Browser-Tab.",
         "byOptionId": {
-          "head": "Correct â€” <title> belongs inside <head> and shows in the browser tab.",
-          "body": "Incorrect â€” <title> should be placed inside <head>, not in <body>.",
-          "html": "Incorrect â€” <title> must be inside <head> within the <html> element.",
-          "meta": "Incorrect â€” <meta> is for metadata like charset or viewport, not the page title."
+          "head": "Richtig – <title> gehört in <head> und erscheint im Browser-Tab.",
+          "body": "Falsch – <title> gehört in <head>, nicht in <body>.",
+          "html": "Falsch – <title> muss im <head> stehen, innerhalb des <html>-Elements.",
+          "meta": "Falsch – <meta> ist für Metadaten wie charset oder viewport, nicht für den Seitentitel."
         }
       }
     },
     {
       "id": "q-charset",
       "type": "single-choice",
-      "prompt": "What does <meta charset=\"utf-8\"> do?",
+      "prompt": "Was macht <meta charset=\"utf-8\">?",
       "options": [
         {
           "id": "language",
-          "label": "Sets the page language",
+          "label": "Setzt die Seitensprache",
           "isCorrect": false
         },
         {
           "id": "style",
-          "label": "Applies styles to the page",
+          "label": "Wendet Styles auf die Seite an",
           "isCorrect": false
         },
         {
           "id": "linkcss",
-          "label": "Links a CSS file",
+          "label": "Verlinkt eine CSS-Datei",
           "isCorrect": false
         },
         {
           "id": "encoding",
-          "label": "Sets character encoding so text displays correctly",
+          "label": "Setzt die Zeichenkodierung, damit Text korrekt angezeigt wird",
           "isCorrect": true
         },
         {
           "id": "runjs",
-          "label": "Runs JavaScript",
+          "label": "Führt JavaScript aus",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Character encoding ensures characters like accents show properly.",
+        "overview": "Die Zeichenkodierung sorgt dafür, dass Zeichen wie Akzente korrekt angezeigt werden.",
         "byOptionId": {
-          "encoding": "Correct â€” charset sets the document character encoding so text renders correctly.",
-          "style": "Incorrect â€” styling is handled by CSS, not the charset meta tag.",
-          "linkcss": "Incorrect â€” CSS is linked with <link>, not with a charset meta tag.",
-          "runjs": "Incorrect â€” meta tags do not execute JavaScript.",
-          "language": "Incorrect â€” the charset meta tag does not set the page language."
+          "encoding": "Richtig – charset setzt die Zeichenkodierung, damit Text korrekt gerendert wird.",
+          "style": "Falsch – Styling macht CSS, nicht der charset-Meta-Tag.",
+          "linkcss": "Falsch – CSS wird mit <link> eingebunden, nicht mit einem charset-Meta-Tag.",
+          "runjs": "Falsch – Meta-Tags führen kein JavaScript aus.",
+          "language": "Falsch – der charset-Meta-Tag setzt nicht die Seitensprache."
         }
       }
     },
     {
       "id": "q-viewport",
       "type": "single-choice",
-      "prompt": "Why add the viewport meta tag on mobile pages?",
+      "prompt": "Warum fügt man auf mobilen Seiten den Viewport-Meta-Tag hinzu?",
       "options": [
         {
           "id": "speed",
-          "label": "To make the page load faster",
+          "label": "Damit die Seite schneller lädt",
           "isCorrect": false
         },
         {
           "id": "security",
-          "label": "To secure the page",
+          "label": "Um die Seite zu sichern",
           "isCorrect": false
         },
         {
           "id": "title",
-          "label": "To set the page title",
+          "label": "Um den Seitentitel zu setzen",
           "isCorrect": false
         },
         {
           "id": "responsive",
-          "label": "To make the page scale correctly on small screens",
+          "label": "Damit die Seite auf kleinen Bildschirmen korrekt skaliert",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Viewport controls layout on mobile devices so designs are responsive.",
+        "overview": "Viewport steuert das Layout auf mobilen Geräten, damit Designs responsive sind.",
         "byOptionId": {
-          "responsive": "Correct â€” the viewport tag helps pages scale properly on phones and tablets.",
-          "speed": "Incorrect â€” viewport affects layout, not network speed.",
-          "security": "Incorrect â€” viewport does not add security features.",
-          "title": "Incorrect â€” the page title is set with the <title> tag, not the viewport meta tag."
+          "responsive": "Richtig – der Viewport-Tag hilft beim korrekten Skalieren auf Smartphones und Tablets.",
+          "speed": "Falsch – Viewport beeinflusst das Layout, nicht die Netzwerkgeschwindigkeit.",
+          "security": "Falsch – Viewport fügt keine Sicherheitsfunktionen hinzu.",
+          "title": "Falsch – den Titel setzt man mit dem <title>-Tag, nicht mit dem Viewport-Meta-Tag."
         }
       }
     }

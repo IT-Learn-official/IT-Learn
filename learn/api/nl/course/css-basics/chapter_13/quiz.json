@@ -7,7 +7,7 @@
     {
       "id": "q1-grid-enable",
       "type": "single-choice",
-      "prompt": "Which declaration enables CSS Grid on a container?",
+      "prompt": "Welke declaratie zet CSS Grid aan op een container?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "display: grid makes the container use Grid layout.",
+        "overview": "display: grid zorgt dat de container Grid-layout gebruikt.",
         "byOptionId": {
-          "a": "Not quite. display: grid makes the container use Grid layout.",
-          "b": "Correct. display: grid makes the container use Grid layout.",
-          "c": "Not quite. display: grid makes the container use Grid layout.",
-          "d": "Not quite. display: grid makes the container use Grid layout."
+          "a": "Niet helemaal. display: grid zorgt dat de container Grid-layout gebruikt.",
+          "b": "Juist. display: grid zorgt dat de container Grid-layout gebruikt.",
+          "c": "Niet helemaal. display: grid zorgt dat de container Grid-layout gebruikt.",
+          "d": "Niet helemaal. display: grid zorgt dat de container Grid-layout gebruikt."
         }
       }
     },
     {
       "id": "q2-fr-unit",
       "type": "single-choice",
-      "prompt": "In Grid, what does 1fr mean?",
+      "prompt": "In Grid, wat betekent 1fr?",
       "options": [
         {
           "id": "a",
-          "label": "One fixed pixel",
+          "label": "Één vaste pixel",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "One full row",
+          "label": "Eén volledige rij",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "One fraction of free space",
+          "label": "Een fractie van de vrije ruimte",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "One font size unit",
+          "label": "Eén font size unit",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "1fr is one fraction of available space in the grid container.",
+        "overview": "1fr is één fractie van de beschikbare ruimte in de grid container.",
         "byOptionId": {
-          "a": "Not quite. 1fr is one fraction of available space in the grid container.",
-          "b": "Not quite. 1fr is one fraction of available space in the grid container.",
-          "c": "Correct. 1fr is one fraction of available space in the grid container.",
-          "d": "Not quite. 1fr is one fraction of available space in the grid container."
+          "a": "Niet helemaal. 1fr is één fractie van de beschikbare ruimte in de grid container.",
+          "b": "Niet helemaal. 1fr is één fractie van de beschikbare ruimte in de grid container.",
+          "c": "Juist. 1fr is één fractie van de beschikbare ruimte in de grid container.",
+          "d": "Niet helemaal. 1fr is één fractie van de beschikbare ruimte in de grid container."
         }
       }
     }

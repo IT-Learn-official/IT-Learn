@@ -7,7 +7,7 @@
     {
       "id": "q-div-block",
       "type": "single-choice",
-      "prompt": "Which element is block-level by default?",
+      "prompt": "Welk element is standaard block-level?",
       "options": [
         {
           "id": "span",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "<div> is a block-level container; <span> is inline.",
+        "overview": "<div> is een block-level container; <span> is inline.",
         "byOptionId": {
-          "div": "Correct â€” <div> is block-level and takes full width by default.",
-          "span": "Incorrect â€” <span> is inline and flows within lines of text.",
-          "img": "Incorrect â€” <img> is inline (or replaced) by default, not a block container.",
-          "a": "Incorrect â€” <a> is inline; it creates links not block-level layout."
+          "div": "Juist – <div> is block-level en neemt standaard de volledige breedte in.",
+          "span": "Fout – <span> is inline en loopt mee binnen een tekstregel.",
+          "img": "Fout – <img> is standaard inline (replaced), geen block-container.",
+          "a": "Fout – <a> is inline; het maakt links, geen block-layout."
         }
       }
     },
     {
       "id": "q-span-use",
       "type": "single-choice",
-      "prompt": "When should you use <span>?",
+      "prompt": "Wanneer gebruik je <span>?",
       "options": [
         {
           "id": "large",
-          "label": "To create large page sections",
+          "label": "Om grote pagina-secties te maken",
           "isCorrect": false
         },
         {
           "id": "table",
-          "label": "To make table rows",
+          "label": "Om tabelrijen te maken",
           "isCorrect": false
         },
         {
           "id": "image",
-          "label": "To include images",
+          "label": "Om afbeeldingen toe te voegen",
           "isCorrect": false
         },
         {
           "id": "inline",
-          "label": "To wrap small inline parts of text for styling or scripts",
+          "label": "Om kleine inline stukjes tekst te omwikkelen voor styling of scripts",
           "isCorrect": true
         }
       ],
       "explanations": {
-        "overview": "Use <span> for inline grouping only.",
+        "overview": "Gebruik <span> alleen voor inline groepering.",
         "byOptionId": {
-          "inline": "Correct â€” <span> is for inline grouping and small styling hooks.",
-          "large": "Incorrect â€” use block containers like <div> or semantic sections for large sections.",
-          "table": "Incorrect â€” table rows use <tr>, not <span>.",
-          "image": "Incorrect â€” <img> embeds images; <span> does not replace it."
+          "inline": "Juist – <span> is voor inline groepering en kleine styling-hooks.",
+          "large": "Fout – gebruik block-containers zoals <div> (of semantische sections) voor grote secties.",
+          "table": "Fout – tabelrijen maak je met <tr>, niet met <span>.",
+          "image": "Fout – <img> embedt afbeeldingen; <span> vervangt dat niet."
         }
       }
     }

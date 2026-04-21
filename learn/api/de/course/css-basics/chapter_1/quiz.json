@@ -7,11 +7,11 @@
     {
       "id": "q1-css-meaning",
       "type": "single-choice",
-      "prompt": "What does CSS stand for?",
+      "prompt": "Wofür steht CSS?",
       "options": [
         {
           "id": "a",
-          "label": "Creative Style System",
+          "label": "Kreatives Stylesystem",
           "isCorrect": false
         },
         {
@@ -21,58 +21,58 @@
         },
         {
           "id": "c",
-          "label": "Computer Style Script",
+          "label": "Computer-Style-Script",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Color Sheet Setup",
+          "label": "Farbblatt-Setup",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "CSS means Cascading Style Sheets.",
+        "overview": "CSS bedeutet Cascading Style Sheets.",
         "byOptionId": {
-          "a": "Not quite. CSS means Cascading Style Sheets.",
-          "b": "Correct. CSS means Cascading Style Sheets.",
-          "c": "Not quite. CSS means Cascading Style Sheets.",
-          "d": "Not quite. CSS means Cascading Style Sheets."
+          "a": "Nicht ganz. CSS bedeutet Cascading Style Sheets.",
+          "b": "Richtig. CSS bedeutet Cascading Style Sheets.",
+          "c": "Nicht ganz. CSS bedeutet Cascading Style Sheets.",
+          "d": "Nicht ganz. CSS bedeutet Cascading Style Sheets."
         }
       }
     },
     {
       "id": "q2-css-role",
       "type": "single-choice",
-      "prompt": "What is the main job of CSS?",
+      "prompt": "Was ist die Hauptaufgabe von CSS?",
       "options": [
         {
           "id": "a",
-          "label": "Store data in a database",
+          "label": "Daten in einer Datenbank speichern",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Build server APIs",
+          "label": "Server-APIs bauen",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "Style the page appearance",
+          "label": "Das Aussehen der Seite gestalten",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "Replace HTML completely",
+          "label": "HTML komplett ersetzen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "CSS controls how a web page looks, while HTML controls structure.",
+        "overview": "CSS steuert, wie eine Webseite aussieht, während HTML die Struktur vorgibt.",
         "byOptionId": {
-          "a": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "b": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
-          "c": "Correct. CSS controls how a web page looks, while HTML controls structure.",
-          "d": "Not quite. CSS controls how a web page looks, while HTML controls structure."
+          "a": "Nicht ganz. CSS steuert, wie eine Webseite aussieht, während HTML die Struktur vorgibt.",
+          "b": "Nicht ganz. CSS steuert, wie eine Webseite aussieht, während HTML die Struktur vorgibt.",
+          "c": "Richtig. CSS steuert, wie eine Webseite aussieht, während HTML die Struktur vorgibt.",
+          "d": "Nicht ganz. CSS steuert, wie eine Webseite aussieht, während HTML die Struktur vorgibt."
         }
       }
     }

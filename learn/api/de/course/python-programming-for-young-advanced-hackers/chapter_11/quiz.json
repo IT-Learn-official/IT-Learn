@@ -7,7 +7,7 @@
     {
       "id": "q-compare-equal",
       "type": "single-choice",
-      "prompt": "Which operator is used in Python to check if two values are equal?",
+      "prompt": "Welcher Operator wird in Python benutzt, um zu prüfen, ob zwei Werte gleich sind?",
       "options": [
         {
           "id": "a",
@@ -31,91 +31,91 @@
         }
       ],
       "explanations": {
-        "overview": "Use == to compare values; = is for assignment.",
+        "overview": "Benutze == zum Vergleichen; = ist für Zuweisung.",
         "byOptionId": {
-          "a": "This is the assignment operator, not comparison.",
-          "b": "Correct, == checks if two values are equal.",
-          "c": "!= checks for not equal.",
-          "d": "<> is not the standard equality operator in Python."
+          "a": "Das ist der Zuweisungsoperator, kein Vergleich.",
+          "b": "Richtig, == prüft, ob zwei Werte gleich sind.",
+          "c": "!= prüft auf ungleich.",
+          "d": "<> ist nicht der Standard-Gleichheitsoperator in Python."
         }
       }
     },
     {
       "id": "q-if-false-no-else",
       "type": "single-choice",
-      "prompt": "What happens when the condition in an if statement is False and there is no else?",
+      "prompt": "Was passiert, wenn die Bedingung in einem if-Statement False ist und es kein else gibt?",
       "options": [
         {
           "id": "a",
-          "label": "Python shows an error.",
+          "label": "Python zeigt einen Fehler.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The code inside the if is skipped.",
+          "label": "Der Code im if wird übersprungen.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "The code inside the if still runs.",
+          "label": "Der Code im if läuft trotzdem.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The program automatically exits.",
+          "label": "Das Programm beendet sich automatisch.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "If a condition is False and there is no else, Python just skips that block.",
+        "overview": "Wenn eine Bedingung False ist und es kein else gibt, überspringt Python diesen Block einfach.",
         "byOptionId": {
-          "a": "Python does not show an error in this case.",
-          "b": "Correct, the indented block under if is ignored.",
-          "c": "The code runs only if the condition is True.",
-          "d": "The rest of the program can still continue."
+          "a": "Python zeigt in diesem Fall keinen Fehler.",
+          "b": "Richtig, der eingerückte Block unter if wird ignoriert.",
+          "c": "Der Code läuft nur, wenn die Bedingung True ist.",
+          "d": "Der Rest des Programms kann trotzdem weiterlaufen."
         }
       }
     },
     {
       "id": "q-elif-meaning",
       "type": "single-choice",
-      "prompt": "What does elif do in Python?",
+      "prompt": "Was macht elif in Python?",
       "options": [
         {
           "id": "a",
-          "label": "It means 'else if' - another condition checked only if previous ones were False.",
+          "label": "Es bedeutet 'else if' – eine weitere Bedingung, die nur geprüft wird, wenn die vorherigen False waren.",
           "isCorrect": true
         },
         {
           "id": "b",
-          "label": "It is always run at the end, like finally.",
+          "label": "Es läuft immer am Ende, wie finally.",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "It defines a function.",
+          "label": "Es definiert eine Funktion.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "It has no meaning; it's just decoration.",
+          "label": "Es hat keine Bedeutung; es ist nur Deko.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "elif lets you chain multiple conditions after an if.",
+        "overview": "Mit elif kannst du mehrere Bedingungen nach einem if aneinanderreihen.",
         "byOptionId": {
-          "a": "Correct, elif checks another condition if earlier ones were False.",
-          "b": "Unlike finally in other languages, elif is conditional.",
-          "c": "Functions are defined with def, not elif.",
-          "d": "elif is an important keyword, not decoration."
+          "a": "Richtig, elif prüft eine weitere Bedingung, wenn vorherige False waren.",
+          "b": "Anders als finally in anderen Sprachen ist elif eine Bedingung.",
+          "c": "Funktionen werden mit def definiert, nicht mit elif.",
+          "d": "elif ist ein wichtiges Schlüsselwort, keine Deko."
         }
       }
     },
     {
       "id": "q-logical-and",
       "type": "single-choice",
-      "prompt": "Which condition is True only when both a and b are True?",
+      "prompt": "Welche Bedingung ist nur True, wenn sowohl a als auch b True sind?",
       "options": [
         {
           "id": "a",
@@ -139,48 +139,48 @@
         }
       ],
       "explanations": {
-        "overview": "The and operator requires both sides to be True.",
+        "overview": "Der Operator and verlangt, dass beide Seiten True sind.",
         "byOptionId": {
-          "a": "or is True if at least one side is True.",
-          "b": "Correct, a and b is only True when both are True.",
-          "c": "not a just flips the value of a.",
-          "d": "a != b checks if they are different, not both True."
+          "a": "or ist True, wenn mindestens eine Seite True ist.",
+          "b": "Richtig, a and b ist nur True, wenn beide True sind.",
+          "c": "not a dreht den Wert von a einfach um.",
+          "d": "a != b prüft, ob sie verschieden sind, nicht ob beide True sind."
         }
       }
     },
     {
       "id": "q-else-when",
       "type": "single-choice",
-      "prompt": "When does the else part of an if/else statement run?",
+      "prompt": "Wann wird der else-Teil eines if/else-Statements ausgeführt?",
       "options": [
         {
           "id": "a",
-          "label": "When the if condition is True.",
+          "label": "Wenn die if-Bedingung True ist.",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "When the if condition is False.",
+          "label": "Wenn die if-Bedingung False ist.",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Always, before the if.",
+          "label": "Immer, vor dem if.",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Never; else is ignored by Python.",
+          "label": "Nie; Python ignoriert else.",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "else covers the 'otherwise' case when the if condition is False.",
+        "overview": "else deckt den 'ansonsten'-Fall ab, wenn die if-Bedingung False ist.",
         "byOptionId": {
-          "a": "If True, only the if block runs, not else.",
-          "b": "Correct, else runs when the if condition is False.",
-          "c": "else always comes after if, not before.",
-          "d": "else is part of Python's control flow and is not ignored."
+          "a": "Wenn True, läuft nur der if-Block, nicht else.",
+          "b": "Richtig, else läuft, wenn die if-Bedingung False ist.",
+          "c": "else kommt immer nach if, nicht davor.",
+          "d": "else ist Teil des Control-Flows in Python und wird nicht ignoriert."
         }
       }
     }

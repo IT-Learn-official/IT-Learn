@@ -7,7 +7,7 @@
     {
       "id": "q1-box-shadow",
       "type": "single-choice",
-      "prompt": "Which property adds a drop shadow around an element?",
+      "prompt": "Welke property voegt een schaduw toe rond een element?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "box-shadow is used to create element shadows.",
+        "overview": "box-shadow gebruik je om schaduwen rond elementen te maken.",
         "byOptionId": {
-          "a": "Not quite. box-shadow is used to create element shadows.",
-          "b": "Not quite. box-shadow is used to create element shadows.",
-          "c": "Correct. box-shadow is used to create element shadows.",
-          "d": "Not quite. box-shadow is used to create element shadows."
+          "a": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "b": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "c": "Juist. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "d": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken."
         }
       }
     },
     {
       "id": "q2-border-radius",
       "type": "single-choice",
-      "prompt": "What does border-radius do?",
+      "prompt": "Wat doet border-radius?",
       "options": [
         {
           "id": "a",
-          "label": "Changes font weight",
+          "label": "Verandert de font weight",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Rounds element corners",
+          "label": "Maakt hoeken van elementen rond",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Adds an inner border",
+          "label": "Voegt een inner border toe",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Centers text",
+          "label": "Centreert tekst",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "border-radius rounds the corners of a box.",
+        "overview": "border-radius maakt de hoeken van een box rond.",
         "byOptionId": {
-          "a": "Not quite. border-radius rounds the corners of a box.",
-          "b": "Correct. border-radius rounds the corners of a box.",
-          "c": "Not quite. border-radius rounds the corners of a box.",
-          "d": "Not quite. border-radius rounds the corners of a box."
+          "a": "Niet helemaal. border-radius maakt de hoeken van een box rond.",
+          "b": "Juist. border-radius maakt de hoeken van een box rond.",
+          "c": "Niet helemaal. border-radius maakt de hoeken van een box rond.",
+          "d": "Niet helemaal. border-radius maakt de hoeken van een box rond."
         }
       }
     }

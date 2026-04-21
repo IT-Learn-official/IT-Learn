@@ -7,7 +7,7 @@
     {
       "id": "q1-class-selector",
       "type": "single-choice",
-      "prompt": "Which selector targets elements with class \"menu\"?",
+      "prompt": "Welcher Selektor wählt Elemente mit der Klasse \"menu\" aus?",
       "options": [
         {
           "id": "a",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "A class selector starts with a dot.",
+        "overview": "Ein Klassen-Selektor beginnt mit einem Punkt.",
         "byOptionId": {
-          "a": "Not quite. A class selector starts with a dot.",
-          "b": "Correct. A class selector starts with a dot.",
-          "c": "Not quite. A class selector starts with a dot.",
-          "d": "Not quite. A class selector starts with a dot."
+          "a": "Nicht ganz. Ein Klassen-Selektor beginnt mit einem Punkt.",
+          "b": "Richtig. Ein Klassen-Selektor beginnt mit einem Punkt.",
+          "c": "Nicht ganz. Ein Klassen-Selektor beginnt mit einem Punkt.",
+          "d": "Nicht ganz. Ein Klassen-Selektor beginnt mit einem Punkt."
         }
       }
     },
     {
       "id": "q2-property-value",
       "type": "single-choice",
-      "prompt": "What is the correct CSS declaration format?",
+      "prompt": "Was ist das korrekte Format einer CSS-Deklaration?",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "A declaration uses property: value; with a colon and semicolon.",
+        "overview": "Eine Deklaration hat das Format property: value; mit Doppelpunkt und Semikolon.",
         "byOptionId": {
-          "a": "Not quite. A declaration uses property: value; with a colon and semicolon.",
-          "b": "Correct. A declaration uses property: value; with a colon and semicolon.",
-          "c": "Not quite. A declaration uses property: value; with a colon and semicolon.",
-          "d": "Not quite. A declaration uses property: value; with a colon and semicolon."
+          "a": "Nicht ganz. Eine Deklaration hat das Format property: value; mit Doppelpunkt und Semikolon.",
+          "b": "Richtig. Eine Deklaration hat das Format property: value; mit Doppelpunkt und Semikolon.",
+          "c": "Nicht ganz. Eine Deklaration hat das Format property: value; mit Doppelpunkt und Semikolon.",
+          "d": "Nicht ganz. Eine Deklaration hat das Format property: value; mit Doppelpunkt und Semikolon."
         }
       }
     }

@@ -7,7 +7,7 @@
     {
       "id": "q-form",
       "type": "single-choice",
-      "prompt": "Which tag groups form controls for submission?",
+      "prompt": "Welcher Tag gruppiert Form-Controls zum Absenden (Submit)?",
       "options": [
         {
           "id": "form",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "<form> wraps controls and can be submitted to a server.",
+        "overview": "<form> umschließt Controls und kann an einen Server gesendet werden.",
         "byOptionId": {
-          "form": "Correct â€” <form> groups inputs and submission behavior.",
-          "fieldset": "Incorrect â€” <fieldset> groups related controls but doesn't enable submission on its own.",
-          "input": "Incorrect â€” <input> is a control inside a form, not the form container.",
-          "label": "Incorrect â€” <label> labels a control but isn't the form container."
+          "form": "Richtig – <form> gruppiert Inputs und enthält das Submit-Verhalten.",
+          "fieldset": "Falsch – <fieldset> gruppiert zusammengehörige Controls, ermöglicht aber allein kein Submit.",
+          "input": "Falsch – <input> ist ein Control innerhalb eines Forms, nicht der Form-Container.",
+          "label": "Falsch – <label> beschriftet ein Control, ist aber nicht der Form-Container."
         }
       }
     },
     {
       "id": "q-label",
       "type": "single-choice",
-      "prompt": "Why use <label> with form controls?",
+      "prompt": "Warum sollte man <label> mit Form-Controls verwenden?",
       "options": [
         {
           "id": "style",
-          "label": "To style the control",
+          "label": "Um das Control zu stylen",
           "isCorrect": false
         },
         {
           "id": "access",
-          "label": "To improve accessibility and connect text to controls",
+          "label": "Um Barrierefreiheit zu verbessern und Text mit Controls zu verbinden",
           "isCorrect": true
         },
         {
           "id": "submit",
-          "label": "To submit the form automatically",
+          "label": "Um das Formular automatisch abzusenden",
           "isCorrect": false
         },
         {
           "id": "none",
-          "label": "It's optional and has no benefit",
+          "label": "Es ist optional und bringt nichts",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Labels help screen readers and allow clicking the text to focus the control.",
+        "overview": "Labels helfen Screenreadern und erlauben Klick auf den Text, um das Control zu fokussieren.",
         "byOptionId": {
-          "access": "Correct â€” <label> improves accessibility and focus behavior.",
-          "style": "Incorrect â€” styling is done via CSS, not the label element itself.",
-          "submit": "Incorrect â€” <label> does not submit forms automatically.",
-          "none": "Incorrect â€” labels provide accessibility benefits and should be used."
+          "access": "Richtig – <label> verbessert Barrierefreiheit und Fokusverhalten.",
+          "style": "Falsch – Styling macht CSS, nicht das label-Element selbst.",
+          "submit": "Falsch – <label> sendet Formulare nicht automatisch ab.",
+          "none": "Falsch – Labels bringen Barrierefreiheitsvorteile und sollten verwendet werden."
         }
       }
     }

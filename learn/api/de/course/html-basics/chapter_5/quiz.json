@@ -1,13 +1,13 @@
 {
   "chapterId": "chapter_5",
   "kind": "assessment",
-  "title": "Kapitel 5 - Ãœberschriften Check",
-  "description": "Wissenscheck:  Ãœberschriften-Elemente h1 bis h6 und ihr Einsatz fÃ¼r Struktur und SEO.",
+  "title": "Kapitel 5 - Überschriften Check",
+  "description": "Wissenscheck:  Überschriften-Elemente h1 bis h6 und ihr Einsatz für Struktur und SEO.",
   "questions": [
     {
       "id": "q-h1",
       "type": "single-choice",
-      "prompt": "Which heading should usually be used only once per page?",
+      "prompt": "Welche Überschrift sollte man meist nur einmal pro Seite verwenden?",
       "options": [
         {
           "id": "h1",
@@ -31,19 +31,19 @@
         }
       ],
       "explanations": {
-        "overview": "<h1> is typically the main title of the page.",
+        "overview": "<h1> ist typischerweise der Haupttitel einer Seite.",
         "byOptionId": {
-          "h1": "Correct â€” <h1> is usually the single main title of a page.",
-          "h2": "Incorrect â€” <h2> is for subsection titles, not usually the main page title.",
-          "h3": "Incorrect â€” <h3> is for lower-level headings.",
-          "h6": "Incorrect â€” <h6> is a very low-level heading."
+          "h1": "Richtig – <h1> ist meist der eine Haupttitel einer Seite.",
+          "h2": "Falsch – <h2> ist für Unterüberschriften/Abschnitte, nicht für den Haupttitel.",
+          "h3": "Falsch – <h3> ist für Überschriften auf niedrigerer Ebene.",
+          "h6": "Falsch – <h6> ist eine Überschrift auf sehr niedriger Ebene."
         }
       }
     },
     {
       "id": "q-heading-order",
       "type": "single-choice",
-      "prompt": "If you have a main title and two subsections, a good order of tags is:",
+      "prompt": "Wenn du einen Haupttitel und zwei Unterabschnitte hast, ist eine gute Reihenfolge:",
       "options": [
         {
           "id": "a",
@@ -67,12 +67,12 @@
         }
       ],
       "explanations": {
-        "overview": "Keep headings in logical descending order for clarity and accessibility.",
+        "overview": "Halte Überschriften in einer logischen Hierarchie (von groß nach klein) für Klarheit und Barrierefreiheit.",
         "byOptionId": {
-          "a": "Correct â€” a main <h1> followed by <h2> subsections is logical.",
-          "b": "Incorrect â€” keep the main title at <h1>.",
-          "c": "Incorrect â€” you need 2 equal-level headings (<h2> and <h2>).",
-          "d": "Incorrect â€” this reverses the proper hierarchy. <h1> is big, and <h3> is small."
+          "a": "Richtig – ein <h1> als Haupttitel, gefolgt von zwei <h2>-Abschnitten ist logisch.",
+          "b": "Falsch – der Haupttitel sollte <h1> sein.",
+          "c": "Falsch – du brauchst zwei Überschriften auf derselben Ebene (<h2> und <h2>).",
+          "d": "Falsch – das dreht die Hierarchie um: <h1> ist größer als <h3>."
         }
       }
     }

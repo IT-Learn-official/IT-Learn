@@ -7,7 +7,7 @@
     {
       "id": "q1-font-weight",
       "type": "single-choice",
-      "prompt": "Which value makes text bold?",
+      "prompt": "Welke waarde maakt tekst vet?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "font-weight: 700 (or bold) makes text bold.",
+        "overview": "font-weight: 700 (of bold) maakt tekst vet.",
         "byOptionId": {
-          "a": "Not quite. font-weight: 700 (or bold) makes text bold.",
-          "b": "Not quite. font-weight: 700 (or bold) makes text bold.",
-          "c": "Correct. font-weight: 700 (or bold) makes text bold.",
-          "d": "Not quite. font-weight: 700 (or bold) makes text bold."
+          "a": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet.",
+          "b": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet.",
+          "c": "Juist. font-weight: 700 (of bold) maakt tekst vet.",
+          "d": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet."
         }
       }
     },
     {
       "id": "q2-font-family",
       "type": "single-choice",
-      "prompt": "Why do we often list multiple fonts in font-family?",
+      "prompt": "Waarom zetten we vaak meerdere lettertypes in font-family?",
       "options": [
         {
           "id": "a",
-          "label": "To slow down the page",
+          "label": "Om de pagina trager te maken",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "To create fallback choices",
+          "label": "Om fallbacks te hebben",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Because CSS requires exactly three fonts",
+          "label": "Omdat CSS precies drie lettertypes vereist",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "To add animation",
+          "label": "Om animatie toe te voegen",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Multiple fonts create fallbacks if one font is not available.",
+        "overview": "Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
         "byOptionId": {
-          "a": "Not quite. Multiple fonts create fallbacks if one font is not available.",
-          "b": "Correct. Multiple fonts create fallbacks if one font is not available.",
-          "c": "Not quite. Multiple fonts create fallbacks if one font is not available.",
-          "d": "Not quite. Multiple fonts create fallbacks if one font is not available."
+          "a": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "b": "Juist. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "c": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "d": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is."
         }
       }
     }

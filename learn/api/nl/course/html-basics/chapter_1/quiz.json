@@ -16,7 +16,7 @@
         },
         {
           "id": "missile",
-          "label": "HawaÃ¯aanse test-raketlanceerder",
+          "label": "Hawaïaanse test-raketlanceerder",
           "isCorrect": false
         },
         {
@@ -33,9 +33,9 @@
       "explanations": {
         "overview": "HTML staat voor HyperText Markup Language.",
         "byOptionId": {
-          "lemonade": "Fout â€“ dat is een grappige zin, niet de betekenis van HTML.",
-          "missile": "Fout â€“ dat heeft niets te maken met web markup.",
-          "hopelayout": "Fout â€“ dat is een grapoptie; HTML is een markup language.",
+          "lemonade": "Fout – dat is een grappige zin, niet de betekenis van HTML.",
+          "missile": "Fout – dat heeft niets te maken met web markup.",
+          "hopelayout": "Fout – dat is een grapoptie; HTML is een markup language.",
           "hypertextmarkuplanguage": "Juist. HTML staat voor HyperText Markup Language."
         }
       }
@@ -52,7 +52,7 @@
         },
         {
           "id": "styles",
-          "label": "De exacte kleuren en fonts op de pagina",
+          "label": "De exacte kleuren en lettertypes op de pagina",
           "isCorrect": false
         },
         {
@@ -69,10 +69,10 @@
       "explanations": {
         "overview": "HTML markeert content en structuur; CSS doet styling en JS doet gedrag/interactie.",
         "byOptionId": {
-          "structure": "Juist â€“ HTML structureert content met o.a. kopteksten en paragrafen.",
-          "styles": "Fout â€“ kleuren en fonts zijn voor CSS, niet voor HTML.",
-          "server": "Fout â€“ serveropslag staat los van HTML markup.",
-          "database": "Fout â€“ databaseschema's beschrijf je niet met HTML."
+          "structure": "Juist – HTML structureert content met o.a. kopteksten en paragrafen.",
+          "styles": "Fout – kleuren en lettertypes zijn voor CSS, niet voor HTML.",
+          "server": "Fout – serveropslag staat los van HTML markup.",
+          "database": "Fout – databaseschema's beschrijf je niet met HTML."
         }
       }
     },
@@ -105,10 +105,10 @@
       "explanations": {
         "overview": "Denk: HTML is structuur, CSS is styling en JS is gedrag/interactie.",
         "byOptionId": {
-          "a1": "Juist â€“ HTML geeft structuur, CSS stylet, en JS voegt gedrag toe.",
-          "a2": "Fout â€“ hier worden de rollen van skelet en verf omgewisseld.",
-          "a3": "Fout â€“ dit verwart markup met server- en opslagconcepten.",
-          "a4": "Fout â€“ de drie technologieÃ«n hebben elk een ander doel."
+          "a1": "Juist – HTML geeft structuur, CSS stylet, en JS voegt gedrag toe.",
+          "a2": "Fout – hier worden de rollen van skelet en verf omgewisseld.",
+          "a3": "Fout – dit verwart markup met server- en opslagconcepten.",
+          "a4": "Fout – de drie technologieën hebben elk een ander doel."
         }
       }
     },
@@ -141,10 +141,10 @@
       "explanations": {
         "overview": "Animaties en runtime-logica zijn het werk van JavaScript, niet van HTML.",
         "byOptionId": {
-          "layout": "Niet juist â€“ het structureren van een pagina is net een HTML-taak.",
-          "style-tricks": "Juist â€“ animaties en interactieve logica horen bij JavaScript.",
-          "images": "Niet juist â€“ HTML verwijst naar afbeeldingen via `<img>`.",
-          "links": "Niet juist â€“ HTML maakt links met `<a>`."
+          "layout": "Niet juist – het structureren van een pagina is net een HTML-taak.",
+          "style-tricks": "Juist – animaties en interactieve logica horen bij JavaScript.",
+          "images": "Niet juist – HTML verwijst naar afbeeldingen via `<img>`.",
+          "links": "Niet juist – HTML maakt links met `<a>`."
         }
       }
     }

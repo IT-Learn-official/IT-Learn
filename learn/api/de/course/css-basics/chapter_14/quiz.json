@@ -2,12 +2,12 @@
   "chapterId": "chapter_14",
   "kind": "assessment",
   "title": "Kapitel 14 - Schatten und Rahmen Check",
-  "description": "Wissenscheck:  Drop shadows fÃ¼r Tiefe und abgerundete Ecken fÃ¼r ein ruhiges Design.",
+  "description": "Wissenscheck:  Drop shadows für Tiefe und abgerundete Ecken für ein ruhiges Design.",
   "questions": [
     {
       "id": "q1-box-shadow",
       "type": "single-choice",
-      "prompt": "Which property adds a drop shadow around an element?",
+      "prompt": "Welche Property fügt einem Element einen Schatten hinzu?",
       "options": [
         {
           "id": "a",
@@ -31,48 +31,48 @@
         }
       ],
       "explanations": {
-        "overview": "box-shadow is used to create element shadows.",
+        "overview": "box-shadow wird verwendet, um Schatten an Elementen zu erzeugen.",
         "byOptionId": {
-          "a": "Not quite. box-shadow is used to create element shadows.",
-          "b": "Not quite. box-shadow is used to create element shadows.",
-          "c": "Correct. box-shadow is used to create element shadows.",
-          "d": "Not quite. box-shadow is used to create element shadows."
+          "a": "Nicht ganz. box-shadow wird verwendet, um Schatten an Elementen zu erzeugen.",
+          "b": "Nicht ganz. box-shadow wird verwendet, um Schatten an Elementen zu erzeugen.",
+          "c": "Richtig. box-shadow wird verwendet, um Schatten an Elementen zu erzeugen.",
+          "d": "Nicht ganz. box-shadow wird verwendet, um Schatten an Elementen zu erzeugen."
         }
       }
     },
     {
       "id": "q2-border-radius",
       "type": "single-choice",
-      "prompt": "What does border-radius do?",
+      "prompt": "Was macht border-radius?",
       "options": [
         {
           "id": "a",
-          "label": "Changes font weight",
+          "label": "Ändert die Schriftstärke (font-weight)",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "Rounds element corners",
+          "label": "Rundet die Ecken eines Elements ab",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Adds an inner border",
+          "label": "Fügt einen inneren Border hinzu",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "Centers text",
+          "label": "Zentriert Text",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "border-radius rounds the corners of a box.",
+        "overview": "border-radius rundet die Ecken einer Box ab.",
         "byOptionId": {
-          "a": "Not quite. border-radius rounds the corners of a box.",
-          "b": "Correct. border-radius rounds the corners of a box.",
-          "c": "Not quite. border-radius rounds the corners of a box.",
-          "d": "Not quite. border-radius rounds the corners of a box."
+          "a": "Nicht ganz. border-radius rundet die Ecken einer Box ab.",
+          "b": "Richtig. border-radius rundet die Ecken einer Box ab.",
+          "c": "Nicht ganz. border-radius rundet die Ecken einer Box ab.",
+          "d": "Nicht ganz. border-radius rundet die Ecken einer Box ab."
         }
       }
     }

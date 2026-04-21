@@ -7,72 +7,72 @@
     {
       "id": "q1-display-block",
       "type": "single-choice",
-      "prompt": "What is true about display: block elements?",
+      "prompt": "Was stimmt über display: block-Elemente?",
       "options": [
         {
           "id": "a",
-          "label": "They always stay on the same line as text",
+          "label": "Sie bleiben immer in derselben Zeile wie Text",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "They ignore width and height",
+          "label": "Sie ignorieren width und height",
           "isCorrect": false
         },
         {
           "id": "c",
-          "label": "They usually take a full row",
+          "label": "Sie nehmen meistens eine ganze Zeile ein",
           "isCorrect": true
         },
         {
           "id": "d",
-          "label": "They can only be used in tables",
+          "label": "Man kann sie nur in Tabellen verwenden",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "Block elements start on a new line and usually take full available width.",
+        "overview": "Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
         "byOptionId": {
-          "a": "Not quite. Block elements start on a new line and usually take full available width.",
-          "b": "Not quite. Block elements start on a new line and usually take full available width.",
-          "c": "Correct. Block elements start on a new line and usually take full available width.",
-          "d": "Not quite. Block elements start on a new line and usually take full available width."
+          "a": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "b": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "c": "Richtig. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "d": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein."
         }
       }
     },
     {
       "id": "q2-position-absolute",
       "type": "single-choice",
-      "prompt": "position: absolute is positioned relative to what?",
+      "prompt": "Worauf bezieht sich position: absolute?",
       "options": [
         {
           "id": "a",
-          "label": "The browser history",
+          "label": "Die Browser-History",
           "isCorrect": false
         },
         {
           "id": "b",
-          "label": "The nearest positioned ancestor",
+          "label": "Das nächste positionierte Elternelement",
           "isCorrect": true
         },
         {
           "id": "c",
-          "label": "Only the body, always",
+          "label": "Immer nur auf body",
           "isCorrect": false
         },
         {
           "id": "d",
-          "label": "The text content length",
+          "label": "Die Länge des Textinhalts",
           "isCorrect": false
         }
       ],
       "explanations": {
-        "overview": "It is relative to the nearest ancestor with position set (not static).",
+        "overview": "Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
         "byOptionId": {
-          "a": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "b": "Correct. It is relative to the nearest ancestor with position set (not static).",
-          "c": "Not quite. It is relative to the nearest ancestor with position set (not static).",
-          "d": "Not quite. It is relative to the nearest ancestor with position set (not static)."
+          "a": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "b": "Richtig. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "c": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "d": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static)."
         }
       }
     }
