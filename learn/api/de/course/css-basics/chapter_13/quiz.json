@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Kapitel 13 - Einführung in CSS Grid Check",
+  "description": "Wissenscheck:  Einfache Grids für moderne Layouts erstellen.",
+  "questions": [
+    {
+      "id": "q1-grid-enable",
+      "type": "single-choice",
+      "prompt": "Welche Deklaration aktiviert CSS Grid für einen Container?",
+      "options": [
+        {
+          "id": "a",
+          "label": "layout: grid;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "display: grid;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "grid: on;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "position: grid;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+        "byOptionId": {
+          "a": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "b": "Richtig. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "c": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet.",
+          "d": "Nicht ganz. display: grid sorgt dafür, dass der Container Grid-Layout verwendet."
+        }
+      }
+    },
+    {
+      "id": "q2-fr-unit",
+      "type": "single-choice",
+      "prompt": "Was bedeutet 1fr in Grid?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ein fester Pixel",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Eine ganze Zeile",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein Anteil des freien Platzes",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Eine Schriftgrößen-Einheit",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+        "byOptionId": {
+          "a": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "b": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "c": "Richtig. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container.",
+          "d": "Nicht ganz. 1fr ist ein Bruchteil des verfügbaren Platzes im Grid-Container."
+        }
+      }
+    }
+  ]
+}

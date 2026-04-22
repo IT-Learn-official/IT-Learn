@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Kapitel 12 - Semantisches HTML Check",
+  "description": "Wissenscheck:  Semantische Elemente wie header, nav, main, section, article und footer verwenden.",
+  "questions": [
+    {
+      "id": "q-header",
+      "type": "single-choice",
+      "prompt": "Welches Element ist für den oberen Bereich einer Seite oder Sektion gedacht?",
+      "options": [
+        {
+          "id": "footer",
+          "label": "<footer>",
+          "isCorrect": false
+        },
+        {
+          "id": "header",
+          "label": "<header>",
+          "isCorrect": true
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<header> ist für einleitende Inhalte oder Navigationselemente im oberen Bereich gedacht.",
+        "byOptionId": {
+          "header": "Richtig – <header> ist für den oberen Bereich einer Seite oder Sektion gedacht.",
+          "footer": "Falsch – <footer> gehört ans Ende einer Seite oder Sektion.",
+          "nav": "Falsch – <nav> ist für Navigationslinks (oft im Header), aber nicht der Header selbst.",
+          "div": "Falsch – <div> ist generisch; semantische Elemente wie <header> sind besser, wenn es passt."
+        }
+      }
+    },
+    {
+      "id": "q-main",
+      "type": "single-choice",
+      "prompt": "Welches Element sollte nur einmal vorkommen und den Hauptinhalt enthalten?",
+      "options": [
+        {
+          "id": "article",
+          "label": "<article>",
+          "isCorrect": false
+        },
+        {
+          "id": "main",
+          "label": "<main>",
+          "isCorrect": true
+        },
+        {
+          "id": "section",
+          "label": "<section>",
+          "isCorrect": false
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<main> enthält den Hauptinhalt des Dokuments und sollte pro Seite einzigartig sein.",
+        "byOptionId": {
+          "main": "Richtig – <main> kennzeichnet den zentralen Inhalt, der einzigartig für die Seite ist.",
+          "article": "Falsch – <article> ist ein in sich geschlossener Inhalt, nicht zwingend der gesamte Hauptinhalt.",
+          "section": "Falsch – <section> ist eine thematische Gruppierung und kann mehrfach vorkommen.",
+          "nav": "Falsch – <nav> ist für Navigation, nicht für den Hauptinhalt."
+        }
+      }
+    }
+  ]
+}

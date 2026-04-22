@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Kapitel 12 - Flexbox für Anfänger:innen Check",
+  "description": "Wissenscheck:  Elemente einfach ausrichten und Abstände setzen mit flexbox.",
+  "questions": [
+    {
+      "id": "q1-flex-enable",
+      "type": "single-choice",
+      "prompt": "Welche Deklaration macht einen Container zum Flex-Container?",
+      "options": [
+        {
+          "id": "a",
+          "label": "position: flex;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "display: flex;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "flex: display;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "layout: flex;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Verwende display: flex am Parent-Container.",
+        "byOptionId": {
+          "a": "Nicht ganz. Verwende display: flex am Parent-Container.",
+          "b": "Richtig. Verwende display: flex am Parent-Container.",
+          "c": "Nicht ganz. Verwende display: flex am Parent-Container.",
+          "d": "Nicht ganz. Verwende display: flex am Parent-Container."
+        }
+      }
+    },
+    {
+      "id": "q2-justify-content",
+      "type": "single-choice",
+      "prompt": "Was steuert justify-content in einem Flex-Container mit row?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Vertikale Textfarbe",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ausrichtung auf der Hauptachse (main axis)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Border-Dicke",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Reihenfolge beim Laden von Fonts",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "justify-content steuert Abstand (spacing) und Ausrichtung entlang der main axis.",
+        "byOptionId": {
+          "a": "Nicht ganz. justify-content steuert Abstand (spacing) und Ausrichtung entlang der main axis.",
+          "b": "Richtig. justify-content steuert Abstand (spacing) und Ausrichtung entlang der main axis.",
+          "c": "Nicht ganz. justify-content steuert Abstand (spacing) und Ausrichtung entlang der main axis.",
+          "d": "Nicht ganz. justify-content steuert Abstand (spacing) und Ausrichtung entlang der main axis."
+        }
+      }
+    }
+  ]
+}

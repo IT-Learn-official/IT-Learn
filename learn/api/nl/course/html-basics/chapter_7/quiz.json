@@ -1,0 +1,116 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Hoofdstuk 7 - Links Check",
+  "description": "Controleer je kennis:  Anchor tags, interne vs externe links en het gebruik van target-attributen.",
+  "questions": [
+    {
+      "id": "q-a-tag",
+      "type": "single-choice",
+      "prompt": "Welk attribuut bevat de bestemming-URL van een link?",
+      "options": [
+        {
+          "id": "src",
+          "label": "src",
+          "isCorrect": false
+        },
+        {
+          "id": "href",
+          "label": "href",
+          "isCorrect": true
+        },
+        {
+          "id": "link",
+          "label": "link",
+          "isCorrect": false
+        },
+        {
+          "id": "url",
+          "label": "url",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het href-attribuut op <a> bepaalt waar de link naartoe gaat.",
+        "byOptionId": {
+          "href": "Juist – href op <a> geeft de linkbestemming aan.",
+          "src": "Fout – src is voor resources zoals afbeeldingen en scripts, niet voor linkbestemmingen.",
+          "link": "Fout – 'link' is geen attribuut voor anchors.",
+          "url": "Fout – 'url' is een algemene term, maar niet de naam van het attribuut."
+        }
+      }
+    },
+    {
+      "id": "q-internal-vs-external",
+      "type": "single-choice",
+      "prompt": "Wat is een interne link?",
+      "options": [
+        {
+          "id": "same-site",
+          "label": "Een link naar een andere pagina op dezelfde website",
+          "isCorrect": true
+        },
+        {
+          "id": "external",
+          "label": "Een link naar een ander domein",
+          "isCorrect": false
+        },
+        {
+          "id": "file",
+          "label": "Een link enkel naar een lokaal bestand",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "Een link die alleen naar afbeeldingen verwijst",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Interne links verwijzen naar pagina's binnen dezelfde site.",
+        "byOptionId": {
+          "same-site": "Juist – interne links verwijzen naar pagina's binnen dezelfde site/domein.",
+          "external": "Fout – externe links verwijzen naar een ander domein.",
+          "file": "Fout – linken naar lokale bestanden kan, maar dat is niet de typische definitie van interne links.",
+          "image": "Fout – het doel kan eender welke resource zijn, niet specifiek afbeeldingen."
+        }
+      }
+    },
+    {
+      "id": "q-target-blank",
+      "type": "single-choice",
+      "prompt": "Wat doet target=\"_blank\"?",
+      "options": [
+        {
+          "id": "internal",
+          "label": "Maakt er een interne link van",
+          "isCorrect": false
+        },
+        {
+          "id": "nofollow",
+          "label": "Zegt tegen zoekmachines dat ze de link niet mogen volgen",
+          "isCorrect": false
+        },
+        {
+          "id": "newtab",
+          "label": "Opent de link in een nieuw tabblad of venster",
+          "isCorrect": true
+        },
+        {
+          "id": "download",
+          "label": "Dwingt de browser om de link te downloaden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "target=\"_blank\" opent de bestemming in een nieuw tabblad.",
+        "byOptionId": {
+          "newtab": "Juist – target=\"_blank\" opent de bestemming in een nieuw tabblad of venster.",
+          "internal": "Fout – target verandert niet of een link intern of extern is.",
+          "nofollow": "Fout – rel=\"nofollow\" is voor zoekmachine-hints, niet voor target-gedrag.",
+          "download": "Fout – het download-attribuut suggereert downloaden; target=_blank opent in een nieuw tabblad."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_17",
+  "kind": "assessment",
+  "title": "Kapitel 17 - Media Queries verwenden Check",
+  "description": "Wissenscheck:  Layout und font sizes für unterschiedliche Bildschirmbreiten anpassen.",
+  "questions": [
+    {
+      "id": "q1-media-query-syntax",
+      "type": "single-choice",
+      "prompt": "Which is valid media query syntax?",
+      "options": [
+        {
+          "id": "a",
+          "label": "@media (max-width: 768px) { ... }",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "@if screen < 768 { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "media-query: 768px { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "@responsive 768px { ... }",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Media queries use the @media rule with a condition.",
+        "byOptionId": {
+          "a": "Correct. Media queries use the @media rule with a condition.",
+          "b": "Not quite. Media queries use the @media rule with a condition.",
+          "c": "Not quite. Media queries use the @media rule with a condition.",
+          "d": "Not quite. Media queries use the @media rule with a condition."
+        }
+      }
+    },
+    {
+      "id": "q2-max-width",
+      "type": "single-choice",
+      "prompt": "When does @media (max-width: 768px) apply?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Only above 768px",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Only exactly at 768px",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "At 768px and smaller",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Only on 4K screens",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "It applies when viewport width is 768px or less.",
+        "byOptionId": {
+          "a": "Not quite. It applies when viewport width is 768px or less.",
+          "b": "Not quite. It applies when viewport width is 768px or less.",
+          "c": "Correct. It applies when viewport width is 768px or less.",
+          "d": "Not quite. It applies when viewport width is 768px or less."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - Sets: geen duplicaten Check",
+  "description": "Controleer je kennis: Sets gebruiken voor unieke waarden en snelle checks/vergelijkingen.",
+  "questions": [
+    {
+      "id": "q-set-definition",
+      "type": "single-choice",
+      "prompt": "Wat is een set in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een lijst die altijd gesorteerd is.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een verzameling met unieke elementen zonder gegarandeerde volgorde.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Een string met alleen getallen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een dictionary met maar één key.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets bewaren unieke elementen en hebben geen vaste volgorde.",
+        "byOptionId": {
+          "a": "Lijsten kan je sorteren, maar dat is niet wat sets zijn.",
+          "b": "Juist, dat is het basisidee van een set.",
+          "c": "Strings zijn tekst, geen sets.",
+          "d": "Dictionaries bewaren key-value-paren; dat is iets anders dan sets."
+        }
+      }
+    },
+    {
+      "id": "q-create-set",
+      "type": "single-choice",
+      "prompt": "Welke regel maakt op de juiste manier een set met bestandsnamen aan?",
+      "options": [
+        {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets gebruiken accolades {} met komma-gescheiden elementen.",
+        "byOptionId": {
+          "a": "Dit is een lijst, geen set.",
+          "b": "Dit is een tuple, geen set.",
+          "c": "Juist, dit maakt een set met twee bestandsnamen.",
+          "d": "Dit is één lange string, geen set."
+        }
+      }
+    },
+    {
+      "id": "q-remove-duplicates",
+      "type": "single-choice",
+      "prompt": "Je hebt `nums = [1, 2, 2, 3]`. Wat geeft `set(nums)` terug?",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 2, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "(1, 2, 3)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Een lijst omzetten naar een set verwijdert dubbele waarden.",
+        "byOptionId": {
+          "a": "Dit is de originele lijst, geen set.",
+          "b": "Sets bewaren geen duplicaten.",
+          "c": "Juist – alleen unieke waarden blijven over in de set.",
+          "d": "Tuples zijn een ander type en verwijderen duplicaten niet automatisch."
+        }
+      }
+    },
+    {
+      "id": "q-union-intersection",
+      "type": "single-choice",
+      "prompt": "Je hebt `a = {1, 2}` en `b = {2, 3}`. Wat is `a & b` (de doorsnede)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "{}",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De doorsnede houdt alleen elementen over die in beide sets zitten.",
+        "byOptionId": {
+          "a": "Dat zou de unie zijn (alle elementen van beide sets).",
+          "b": "1 zit alleen in set a, niet in allebei.",
+          "c": "Juist – 2 is het enige element dat in beide sets zit.",
+          "d": "Er is minstens één element gemeenschappelijk, dus het is geen lege set."
+        }
+      }
+    },
+    {
+      "id": "q-set-vs-list",
+      "type": "single-choice",
+      "prompt": "Welke uitspraak over sets en lijsten is waar?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Lijsten verwijderen duplicaten automatisch, sets niet.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sets bewaren de volgorde van elementen, lijsten niet.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Zowel sets als lijsten laten duplicaten toe.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sets bewaren alleen unieke elementen; lijsten kunnen duplicaten bevatten.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Lijsten en sets bewaren allebei collecties, maar gaan anders om met duplicaten.",
+        "byOptionId": {
+          "a": "Lijsten laten duplicaten toe; sets verwijderen ze.",
+          "b": "Lijsten bewaren volgorde; sets garanderen geen volgorde.",
+          "c": "Alleen lijsten laten duplicaten toe; sets niet.",
+          "d": "Juist – dit is het belangrijkste verschil rond duplicaten."
+        }
+      }
+    }
+  ]
+}

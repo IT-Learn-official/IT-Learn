@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_18",
+  "kind": "assessment",
+  "title": "Kapitel 18 - SEO-Grundlagen Check",
+  "description": "Wissenscheck:  Überschriften, meta description und gute Struktur für Suchmaschinen.",
+  "questions": [
+    {
+      "id": "q-meta-desc",
+      "type": "single-choice",
+      "prompt": "What is the purpose of a meta description?",
+      "options": [
+        {
+          "id": "style",
+          "label": "To style the page content",
+          "isCorrect": false
+        },
+        {
+          "id": "indexonly",
+          "label": "Prevents indexing",
+          "isCorrect": false
+        },
+        {
+          "id": "summary",
+          "label": "A short summary shown in search results",
+          "isCorrect": true
+        },
+        {
+          "id": "security",
+          "label": "Improves security",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Meta description provides a concise summary that search engines may display.",
+        "byOptionId": {
+          "summary": "Correct — meta descriptions are short summaries that can appear in search results.",
+          "style": "Incorrect — meta descriptions do not style content.",
+          "indexonly": "Incorrect — meta description does not prevent indexing; robots meta tags control indexing.",
+          "security": "Incorrect — meta descriptions do not affect site security."
+        }
+      }
+    },
+    {
+      "id": "q-heading-seo",
+      "type": "single-choice",
+      "prompt": "How do headings help SEO?",
+      "options": [
+        {
+          "id": "structure",
+          "label": "They provide structure and keywords for crawlers",
+          "isCorrect": true
+        },
+        {
+          "id": "speed",
+          "label": "They speed up loading times",
+          "isCorrect": false
+        },
+        {
+          "id": "encrypt",
+          "label": "They encrypt content",
+          "isCorrect": false
+        },
+        {
+          "id": "ads",
+          "label": "They add ads to the page",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Proper headings help search engines understand content organization and relevance.",
+        "byOptionId": {
+          "structure": "Correct — headings convey structure and help crawlers and users understand content.",
+          "speed": "Incorrect — headings do not directly affect load speed.",
+          "encrypt": "Incorrect — headings do not encrypt content.",
+          "ads": "Incorrect — headings are unrelated to ad insertion."
+        }
+      }
+    }
+  ]
+}

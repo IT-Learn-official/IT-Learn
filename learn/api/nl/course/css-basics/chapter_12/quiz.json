@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Hoofdstuk 12 - Flexbox voor beginners Check",
+  "description": "Controleer je kennis:  Elementen makkelijk uitlijnen en spacing geven met flexbox.",
+  "questions": [
+    {
+      "id": "q1-flex-enable",
+      "type": "single-choice",
+      "prompt": "Welke declaratie maakt van een container een flex container?",
+      "options": [
+        {
+          "id": "a",
+          "label": "position: flex;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "display: flex;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "flex: display;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "layout: flex;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik display: flex op de parent container.",
+        "byOptionId": {
+          "a": "Niet helemaal. Gebruik display: flex op de parent container.",
+          "b": "Juist. Gebruik display: flex op de parent container.",
+          "c": "Niet helemaal. Gebruik display: flex op de parent container.",
+          "d": "Niet helemaal. Gebruik display: flex op de parent container."
+        }
+      }
+    },
+    {
+      "id": "q2-justify-content",
+      "type": "single-choice",
+      "prompt": "Wat bepaalt justify-content in een flex container met row?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verticale tekstkleur",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Uitlijning op de hoofd-as (main axis)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De dikte van de border",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De volgorde waarin fonts laden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "justify-content bepaalt de spacing en uitlijning op de main axis.",
+        "byOptionId": {
+          "a": "Niet helemaal. justify-content bepaalt de spacing en uitlijning op de main axis.",
+          "b": "Juist. justify-content bepaalt de spacing en uitlijning op de main axis.",
+          "c": "Niet helemaal. justify-content bepaalt de spacing en uitlijning op de main axis.",
+          "d": "Niet helemaal. justify-content bepaalt de spacing en uitlijning op de main axis."
+        }
+      }
+    }
+  ]
+}

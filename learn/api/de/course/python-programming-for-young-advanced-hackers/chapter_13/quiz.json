@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Kapitel 13 - Module und Packages Check",
+  "description": "Wissenscheck: Code wiederverwenden mit Imports, Modulen und Packages.",
+  "questions": [
+    {
+      "id": "q-function-meaning",
+      "type": "single-choice",
+      "prompt": "Was ist eine Funktion in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Möglichkeit, Code zu wiederholen, indem du ihm einen Namen gibst und ihn aufrufst.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Eine besondere Art von Liste.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Eine eingebaute Fehlermeldung.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Kommentar, den Python ignoriert.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Funktionen sind benannte Codeblöcke, die du wiederverwenden kannst, indem du sie aufrufst.",
+        "byOptionId": {
+          "a": "Richtig, mit Funktionen kannst du Code bündeln und per Namen aufrufen.",
+          "b": "Listen speichern Daten; Funktionen sind Aktionen.",
+          "c": "Fehler haben mit Funktionen nichts direkt zu tun.",
+          "d": "Kommentare beginnen mit # und sind keine Funktionen."
+        }
+      }
+    },
+    {
+      "id": "q-def-keyword",
+      "type": "single-choice",
+      "prompt": "Welches Schlüsselwort benutzt du, um in Python eine Funktion zu definieren?",
+      "options": [
+        {
+          "id": "a",
+          "label": "func",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "def",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "call",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Funktionsdefinitionen beginnen immer mit def.",
+        "byOptionId": {
+          "a": "func ist kein Python-Schlüsselwort.",
+          "b": "Richtig, def startet eine Funktionsdefinition.",
+          "c": "function ist kein Schlüsselwort in Python.",
+          "d": "call ist ebenfalls kein Schlüsselwort."
+        }
+      }
+    },
+    {
+      "id": "q-parameter-meaning",
+      "type": "single-choice",
+      "prompt": "In `def greet(name):`, was ist `name`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ein Rückgabewert.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Parameter (eine Eingabe für die Funktion).",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ein Fehler.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Listeneintrag.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Parameter sind Variablen, die im Funktionskopf stehen.",
+        "byOptionId": {
+          "a": "Rückgabewerte kommen aus der return-Anweisung, nicht aus dem Funktionskopf.",
+          "b": "Richtig, name ist der Parameter, den die Funktion erwartet.",
+          "c": "An diesem Code ist nichts falsch.",
+          "d": "Listeneinträge stehen in Listen, nicht im Funktionskopf."
+        }
+      }
+    },
+    {
+      "id": "q-return-meaning",
+      "type": "single-choice",
+      "prompt": "Was macht die return-Anweisung in einer Funktion?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sie gibt Text auf dem Bildschirm aus.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie beendet die Funktion und gibt einen Wert zurück.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Sie startet eine neue Schleife.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sie löscht eine Variable.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`return` verlässt die Funktion und gibt einen Wert an den Aufrufer zurück.",
+        "byOptionId": {
+          "a": "`print` zeigt einen Wert an, gibt ihn aber nicht zurück.",
+          "b": "Richtig, genau das macht return.",
+          "c": "Schleifen benutzen `for` oder `while`, nicht `return`.",
+          "d": "`return` löscht keine Variablen."
+        }
+      }
+    },
+    {
+      "id": "q-default-parameter",
+      "type": "single-choice",
+      "prompt": "In `def greet(name, greeting='Hi')`, was passiert, wenn du `greet('Alex')` aufrufst?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Fehler, weil greeting fehlt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "greeting ist automatisch 'Hi'.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "greeting ist None.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Python ignoriert den zweiten Parameter.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Standardwerte für Parameter werden verwendet, wenn du dieses Argument nicht übergibst.",
+        "byOptionId": {
+          "a": "Der Standardwert verhindert diesen Fehler.",
+          "b": "Richtig – 'Hi' wird als Standardbegrüßung verwendet.",
+          "c": "None wird hier nicht benutzt; wir haben einen echten Standard-String gesetzt.",
+          "d": "Python ignoriert Parameter nicht; es füllt sie bei Bedarf mit Standardwerten."
+        }
+      }
+    }
+  ]
+}

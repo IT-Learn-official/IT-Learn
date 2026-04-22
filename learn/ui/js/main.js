@@ -1,14 +1,15 @@
 // Entry point for the SPA.
 
-import { fetchCourses } from './services/apiClient.js';
-import { setCoursesDoc, setTrialMode, setOnboardingRequired } from './state/appState.js';
-import { initRouter, navigateTo } from './state/router.js';
+import { setTrialMode, setOnboardingRequired, setCourseLanguage } from './state/appState.js';
+import { initRouter, navigateTo, parseLocation } from './state/router.js';
 import { initLayout, handleRouteChange, setGlobalStatus } from './render/layout.js';
 import { debugTeacherBotEnv, debugWebLLMConfig } from './services/teacherBotService.js';
 import { showWelcomeMessage } from './mascot.js';
 import { checkSession, getMyProfile, getNotifications } from './services/authService.js';
 import { isTrialModeActive, isTrialCompleted, initializeTrialSession } from './services/trialMode.js';
 import { syncGamificationWithProfileProgress, updateSidebarStats } from './state/gamificationState.js';
+import { getStoredCourseLanguage } from './services/courseLanguageService.js';
+import { loadCoursesDoc } from './services/coursesService.js';
 import { hydrateCourseProgressFromRemote } from './state/courseProgress.js';
 
 const NOTIFICATIONS_BADGE_CACHE_TTL_MS = 15000;
@@ -88,16 +89,18 @@ async function bootstrap() {
   // Populate sidebar gamification stats from synced state
   updateSidebarStats();
 
+  // Initialize course language (defaults to English if not set yet)
+  const storedLanguage = getStoredCourseLanguage();
+  setCourseLanguage(storedLanguage || 'en');
   // Ensure course/chapter completion state is loaded from backend for this user.
   await hydrateCourseProgressFromRemote();
 
   setGlobalStatus('Loading courses...');
 
+  setGlobalStatus('Loading courses...');
   try {
-    const coursesDoc = await fetchCourses();
-    setCoursesDoc(coursesDoc);
+    await loadCoursesDoc();
     setGlobalStatus('');
-    
     showWelcomeMessage();
   } catch (error) {
     console.error('Failed to load courses', error);
@@ -110,6 +113,13 @@ async function bootstrap() {
     if (route.route === 'settings' || route.route === 'profile' || route.route === 'courses' || route.route === 'chapter') {
       void refreshNotificationsBadgeCached();
     }
+  });
+
+  // Allow internal refreshes after changing language without touching the URL.
+  window.addEventListener('app:rerender', async () => {
+    const route = parseLocation(window.location.hash || '#/courses');
+    await handleRouteChange(route);
+    updateSidebarActive(route);
   });
 
   attachSidebarLinks();

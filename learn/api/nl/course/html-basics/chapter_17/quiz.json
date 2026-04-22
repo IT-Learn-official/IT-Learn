@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_17",
+  "kind": "assessment",
+  "title": "Hoofdstuk 17 - Toegankelijkheid: basis Check",
+  "description": "Controleer je kennis:  Alt-tekst, formlabels en semantische markup voor toegankelijkheid.",
+  "questions": [
+    {
+      "id": "q-alt-required",
+      "type": "single-choice",
+      "prompt": "Waarom zouden afbeeldingen alt-tekst moeten hebben?",
+      "options": [
+        {
+          "id": "style",
+          "label": "Om de afbeelding te stylen",
+          "isCorrect": false
+        },
+        {
+          "id": "access",
+          "label": "Om mensen met screenreaders te helpen en als afbeeldingen niet laden",
+          "isCorrect": true
+        },
+        {
+          "id": "seoonly",
+          "label": "Alleen voor SEO, niet voor toegankelijkheid",
+          "isCorrect": false
+        },
+        {
+          "id": "optional",
+          "label": "Nooit nodig",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Alt-tekst zorgt dat gebruikers die niet (goed) kunnen zien toch begrijpen wat er op de afbeelding staat.",
+        "byOptionId": {
+          "access": "Juist – alt-tekst helpt gebruikers met een beperking en geeft een fallbackbeschrijving.",
+          "style": "Fout – styling doe je met CSS, niet met alt-attributen.",
+          "seoonly": "Fout – alt kan SEO helpen, maar het hoofddoel is toegankelijkheid.",
+          "optional": "Fout – alt is belangrijk voor toegankelijkheid en voorzie je meestal best wél."
+        }
+      }
+    },
+    {
+      "id": "q-labels",
+      "type": "single-choice",
+      "prompt": "Wat helpt gebruikers met screenreaders om met formulieren te werken?",
+      "options": [
+        {
+          "id": "divs",
+          "label": "Inputs enkel in divs wrappen",
+          "isCorrect": false
+        },
+        {
+          "id": "spans",
+          "label": "<span> gebruiken in plaats van labels",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "label": "Niets helpt",
+          "isCorrect": false
+        },
+        {
+          "id": "label",
+          "label": "<label>-elementen gebruiken die gekoppeld zijn aan inputs",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Labels verbeteren form-toegankelijkheid door inputs te beschrijven.",
+        "byOptionId": {
+          "label": "Juist – <label>-elementen verbeteren toegankelijkheid en maken de klikzone groter.",
+          "divs": "Fout – wrappen in <div> alleen geeft niet dezelfde semantiek als <label>.",
+          "spans": "Fout – <span> is geen vervanging voor een correct gekoppeld label.",
+          "none": "Fout – goede labels en semantiek verbeteren toegankelijkheid enorm."
+        }
+      }
+    }
+  ]
+}

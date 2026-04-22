@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Hoofdstuk 3 - HTML-documentstructuur Check",
+  "description": "Controleer je kennis:  DOCTYPE, html, head en body en hun rol.",
+  "questions": [
+    {
+      "id": "q-doctype",
+      "type": "single-choice",
+      "prompt": "Wat is het doel van <!DOCTYPE html>?",
+      "options": [
+        {
+          "id": "tellwhatversion",
+          "label": "Het zegt de browser dat hij moderne HTML-standaarden moet gebruiken",
+          "isCorrect": true
+        },
+        {
+          "id": "displaytitle",
+          "label": "Het toont een titel op de pagina",
+          "isCorrect": false
+        },
+        {
+          "id": "csslink",
+          "label": "Het linkt een CSS-bestand",
+          "isCorrect": false
+        },
+        {
+          "id": "definebody",
+          "label": "Het definieert de body van de pagina",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De DOCTYPE zorgt dat de browser de pagina met de juiste regels parseert.",
+        "byOptionId": {
+          "tellwhatversion": "Juist – DOCTYPE zet de browser in de standaard HTML parsing mode.",
+          "displaytitle": "Fout – DOCTYPE toont geen titels.",
+          "csslink": "Fout – CSS link je met `<link>`, niet met DOCTYPE.",
+          "definebody": "Fout – DOCTYPE definieert het body-element niet."
+        }
+      }
+    },
+    {
+      "id": "q-head-function",
+      "type": "single-choice",
+      "prompt": "Welke tag bevat de zichtbare content van de pagina?",
+      "options": [
+        {
+          "id": "head",
+          "label": "<head>",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "<html>",
+          "isCorrect": false
+        },
+        {
+          "id": "body",
+          "label": "<body>",
+          "isCorrect": true
+        },
+        {
+          "id": "meta",
+          "label": "<meta>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De `<body>` bevat de content die de gebruiker ziet in het browservenster.",
+        "byOptionId": {
+          "body": "Juist – zichtbare content staat in `<body>`.",
+          "head": "Fout – `<head>` bevat metadata en resources, niet de hoofdcontent.",
+          "html": "Fout – `<html>` is de root wrapper, niet de contentcontainer.",
+          "meta": "Fout – `<meta>` geeft metadata zoals charset of viewport."
+        }
+      }
+    },
+    {
+      "id": "q-title-location",
+      "type": "single-choice",
+      "prompt": "Waar hoort de <title> tag te staan?",
+      "options": [
+        {
+          "id": "body",
+          "label": "In <body>",
+          "isCorrect": false
+        },
+        {
+          "id": "footer",
+          "label": "In <footer>",
+          "isCorrect": false
+        },
+        {
+          "id": "head",
+          "label": "In <head>",
+          "isCorrect": true
+        },
+        {
+          "id": "outside",
+          "label": "Buiten <html>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<title> hoort in de head en verschijnt in de browsertab.",
+        "byOptionId": {
+          "head": "Juist – <title> staat in <head> en wordt getoond in de tab.",
+          "body": "Fout – <title> hoort niet in <body>.",
+          "footer": "Fout – <footer> is deel van de body, niet waar <title> hoort.",
+          "outside": "Fout – <title> moet binnen <head> staan, en dus binnen <html>."
+        }
+      }
+    },
+    {
+      "id": "q-html-root",
+      "type": "single-choice",
+      "prompt": "Wat is het root element van een HTML-document?",
+      "options": [
+        {
+          "id": "head",
+          "label": "<head>",
+          "isCorrect": false
+        },
+        {
+          "id": "body",
+          "label": "<body>",
+          "isCorrect": false
+        },
+        {
+          "id": "doctype",
+          "label": "<!DOCTYPE>",
+          "isCorrect": false
+        },
+        {
+          "id": "html",
+          "label": "<html>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "<html> is het buitenste element dat het hele document omwikkelt.",
+        "byOptionId": {
+          "html": "Juist – <html> is de document root.",
+          "head": "Fout – <head> is een kind van <html>.",
+          "body": "Fout – <body> is ook een kind van <html>, niet de root.",
+          "doctype": "Fout – DOCTYPE is een declaratie, geen root element."
+        }
+      }
+    }
+  ]
+}
