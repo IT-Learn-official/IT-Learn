@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_16",
+  "kind": "assessment",
+  "title": "Kapitel 16 - Was ist Responsive Design? Check",
+  "description": "Wissenscheck:  Deine Seite auf Handy, Tablet und Desktop gut aussehen lassen.",
+  "questions": [
+    {
+      "id": "q1-responsive-goal",
+      "type": "single-choice",
+      "prompt": "What is the main goal of responsive design?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Use one fixed desktop width everywhere",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Make pages adapt to different devices",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Remove all images",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Only support tablets",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Responsive design adapts layout and styling for different screen sizes.",
+        "byOptionId": {
+          "a": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "b": "Correct. Responsive design adapts layout and styling for different screen sizes.",
+          "c": "Not quite. Responsive design adapts layout and styling for different screen sizes.",
+          "d": "Not quite. Responsive design adapts layout and styling for different screen sizes."
+        }
+      }
+    },
+    {
+      "id": "q2-fluid-image",
+      "type": "single-choice",
+      "prompt": "Which rule helps images fit smaller screens?",
+      "options": [
+        {
+          "id": "a",
+          "label": "min-width: 2000px;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "max-width: 100%;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "width: 9999px;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "image-fit: screen;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "max-width: 100% keeps images from overflowing containers.",
+        "byOptionId": {
+          "a": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "b": "Correct. max-width: 100% keeps images from overflowing containers.",
+          "c": "Not quite. max-width: 100% keeps images from overflowing containers.",
+          "d": "Not quite. max-width: 100% keeps images from overflowing containers."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - Uitvoeringsvolgorde en debuggen Check",
+  "description": "Snelle check voor hoofdstuk 5. Test je begrip van uitvoeringsvolgorde, tracen en debuggen.",
+  "questions": [
+    {
+      "id": "q-execution-flow",
+      "type": "single-choice",
+      "prompt": "Wat betekent 'uitvoeringsvolgorde' (execution flow) in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De volgorde waarin Python je code uitvoert, regel per regel.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "De snelheid waarmee je computer draait.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De manier waarop Python tekst print.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een type variabele in Python.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Uitvoeringsvolgorde is de volgorde waarin Python je code uitvoert, meestal van boven naar beneden.",
+        "byOptionId": {
+          "a": "Juist! Python voert je code in volgorde uit, regel per regel.",
+          "b": "Nee, dat gaat over snelheid van je computer, niet over de flow van je code.",
+          "c": "Printen is maar één onderdeel van uitvoeren, niet de flow zelf.",
+          "d": "Er bestaat geen variabeletype dat 'execution flow' heet."
+        }
+      }
+    },
+    {
+      "id": "q-tracing-variables",
+      "type": "single-choice",
+      "prompt": "Wat betekent het om een variabele te 'tracen' in je code?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Volgen hoe de waarde verandert terwijl het programma draait.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Ze een nieuwe naam geven.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze verwijderen uit je programma.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ze altijd in hoofdletters laten printen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Tracen betekent volgen hoe de waarde van een variabele verandert terwijl je code uitgevoerd wordt.",
+        "byOptionId": {
+          "a": "Juist! Tracen gaat over kijken hoe de waarde verandert.",
+          "b": "Hernoemen is geen tracen.",
+          "c": "Verwijderen is geen tracen.",
+          "d": "In hoofdletters printen is geen tracen."
+        }
+      }
+    },
+    {
+      "id": "q-print-debugging",
+      "type": "single-choice",
+      "prompt": "Waarom gebruiken programmeurs print-statements tijdens het debuggen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om te zien wat er binnenin het programma gebeurt terwijl het draait.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Om het programma sneller te maken.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om variabelen te verwijderen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om de kleur van de tekst te veranderen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Print-debugging helpt je de waarden van variabelen en de flow van je programma te zien.",
+        "byOptionId": {
+          "a": "Juist! Print-statements tonen je wat er in je code gebeurt.",
+          "b": "Printen maakt je programma niet sneller.",
+          "c": "Printen verwijdert niets.",
+          "d": "Printen verandert geen tekstkleur in Python's console."
+        }
+      }
+    },
+    {
+      "id": "q-fix-the-error",
+      "type": "single-choice",
+      "prompt": "Je ziet deze error: `NameError: name 'scroe' is not defined`. Wat moet je doen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Check op typfouten in je variabelenamen.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Verwijder al je code en begin opnieuw.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Negeer de error en blijf de code runnen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Verander de taalinstellingen van je computer.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Een NameError betekent meestal dat je een variabelenaam verkeerd gespeld hebt.",
+        "byOptionId": {
+          "a": "Juist! Check op typfouten zoals 'scroe' in plaats van 'score'.",
+          "b": "Je moet niets verwijderen. Fix gewoon de typfout.",
+          "c": "Errors negeren lost je code niet op.",
+          "d": "Taalinstellingen hebben hier niets mee te maken."
+        }
+      }
+    }
+  ]
+}

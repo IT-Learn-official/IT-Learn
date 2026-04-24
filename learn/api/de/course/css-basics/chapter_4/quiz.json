@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Kapitel 4 - Farben und Units Check",
+  "description": "Wissenscheck:  Farbwerte (Name, HEX, RGB, HSL) und Größen (px, %, em, rem).",
+  "questions": [
+    {
+      "id": "q1-hex-color",
+      "type": "single-choice",
+      "prompt": "Welche Option ist ein gültiger HEX-Farbwert?",
+      "options": [
+        {
+          "id": "a",
+          "label": "#12ABEF",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "rgb#123",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "color(blue)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "hsl#fff",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HEX-Farben beginnen mit # gefolgt von 3 oder 6 hexadezimalen Zeichen.",
+        "byOptionId": {
+          "a": "Richtig. HEX-Farben beginnen mit # gefolgt von 3 oder 6 hexadezimalen Zeichen.",
+          "b": "Nicht ganz. HEX-Farben beginnen mit # gefolgt von 3 oder 6 hexadezimalen Zeichen.",
+          "c": "Nicht ganz. HEX-Farben beginnen mit # gefolgt von 3 oder 6 hexadezimalen Zeichen.",
+          "d": "Nicht ganz. HEX-Farben beginnen mit # gefolgt von 3 oder 6 hexadezimalen Zeichen."
+        }
+      }
+    },
+    {
+      "id": "q2-rem-unit",
+      "type": "single-choice",
+      "prompt": "Worauf basiert rem?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Schriftgröße des Elternelements",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die Breite des Browser-Tabs",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Schriftgröße des Root-<html>-Elements",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Die Breite des aktuellen Elements",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "rem basiert auf der Schriftgröße des Root-<html>-Elements.",
+        "byOptionId": {
+          "a": "Nicht ganz. rem basiert auf der Schriftgröße des Root-<html>-Elements.",
+          "b": "Nicht ganz. rem basiert auf der Schriftgröße des Root-<html>-Elements.",
+          "c": "Richtig. rem basiert auf der Schriftgröße des Root-<html>-Elements.",
+          "d": "Nicht ganz. rem basiert auf der Schriftgröße des Root-<html>-Elements."
+        }
+      }
+    }
+  ]
+}

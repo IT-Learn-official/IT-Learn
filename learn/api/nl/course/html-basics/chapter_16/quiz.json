@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_16",
+  "kind": "assessment",
+  "title": "Hoofdstuk 16 - HTML best practices Check",
+  "description": "Controleer je kennis:  Indentatie, leesbare code en HTML comments.",
+  "questions": [
+    {
+      "id": "q-comments",
+      "type": "single-choice",
+      "prompt": "Hoe schrijf je een comment in HTML?",
+      "options": [
+        {
+          "id": "comment",
+          "label": "<!-- This is a comment -->",
+          "isCorrect": true
+        },
+        {
+          "id": "slash",
+          "label": "// This is a comment",
+          "isCorrect": false
+        },
+        {
+          "id": "star",
+          "label": "/* This is a comment */",
+          "isCorrect": false
+        },
+        {
+          "id": "weirdhtmlcomment",
+          "label": "<! comment !>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTML comments gebruiken <!-- en -->.",
+        "byOptionId": {
+          "comment": "Juist – HTML comments gebruiken <!-- en -->.",
+          "slash": "Fout – // gebruik je in JS/CSS, niet in HTML comments.",
+          "star": "Fout – /* */ gebruik je in CSS/JS, niet in HTML.",
+          "weirdhtmlcomment": "Fout – <! comment !> is geen geldige HTML comment syntax."
+        }
+      }
+    },
+    {
+      "id": "q-indentation",
+      "type": "single-choice",
+      "prompt": "Waarom zijn comments nuttig?",
+      "options": [
+        {
+          "id": "speed",
+          "label": "Maakt de pagina sneller",
+          "isCorrect": false
+        },
+        {
+          "id": "search",
+          "label": "Verbetert automatisch je ranking in Google",
+          "isCorrect": false
+        },
+        {
+          "id": "security",
+          "label": "Beveiligt de site",
+          "isCorrect": false
+        },
+        {
+          "id": "readability",
+          "label": "Verbetert leesbaarheid en onderhoudbaarheid",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Comments helpen mensen om code te lezen en te onderhouden.",
+        "byOptionId": {
+          "readability": "Juist – comments verbeteren leesbaarheid en onderhoudbaarheid.",
+          "speed": "Fout – comments veranderen de laadsnelheid niet op runtime.",
+          "search": "Fout – comments op zich verbeteren je ranking niet.",
+          "security": "Fout – comments geven geen beveiligingsvoordelen."
+        }
+      }
+    }
+  ]
+}

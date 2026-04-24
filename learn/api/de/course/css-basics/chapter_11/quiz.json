@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Kapitel 11 - Display und positioning Check",
+  "description": "Wissenscheck:  Block vs inline und positioning (static, relative, absolute, fixed).",
+  "questions": [
+    {
+      "id": "q1-display-block",
+      "type": "single-choice",
+      "prompt": "Was stimmt über display: block-Elemente?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sie bleiben immer in derselben Zeile wie Text",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie ignorieren width und height",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie nehmen meistens eine ganze Zeile ein",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Man kann sie nur in Tabellen verwenden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+        "byOptionId": {
+          "a": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "b": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "c": "Richtig. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein.",
+          "d": "Nicht ganz. Block-Elemente beginnen in einer neuen Zeile und nehmen meist die volle verfügbare Breite ein."
+        }
+      }
+    },
+    {
+      "id": "q2-position-absolute",
+      "type": "single-choice",
+      "prompt": "Worauf bezieht sich position: absolute?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Browser-History",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Das nächste positionierte Elternelement",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Immer nur auf body",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die Länge des Textinhalts",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+        "byOptionId": {
+          "a": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "b": "Richtig. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "c": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static).",
+          "d": "Nicht ganz. Es ist relativ zum nächsten Vorfahren, der position gesetzt hat (nicht static)."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Hoofdstuk 11 - Divs & spans Check",
+  "description": "Controleer je kennis:  Verschil tussen block- en inline-elementen met div en span.",
+  "questions": [
+    {
+      "id": "q-div-block",
+      "type": "single-choice",
+      "prompt": "Welk element is standaard block-level?",
+      "options": [
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        },
+        {
+          "id": "img",
+          "label": "<img>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "<a>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<div> is een block-level container; <span> is inline.",
+        "byOptionId": {
+          "div": "Juist – <div> is block-level en neemt standaard de volledige breedte in.",
+          "span": "Fout – <span> is inline en loopt mee binnen een tekstregel.",
+          "img": "Fout – <img> is standaard inline (replaced), geen block-container.",
+          "a": "Fout – <a> is inline; het maakt links, geen block-layout."
+        }
+      }
+    },
+    {
+      "id": "q-span-use",
+      "type": "single-choice",
+      "prompt": "Wanneer gebruik je <span>?",
+      "options": [
+        {
+          "id": "large",
+          "label": "Om grote pagina-secties te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "table",
+          "label": "Om tabelrijen te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "image",
+          "label": "Om afbeeldingen toe te voegen",
+          "isCorrect": false
+        },
+        {
+          "id": "inline",
+          "label": "Om kleine inline stukjes tekst te omwikkelen voor styling of scripts",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik <span> alleen voor inline groepering.",
+        "byOptionId": {
+          "inline": "Juist – <span> is voor inline groepering en kleine styling-hooks.",
+          "large": "Fout – gebruik block-containers zoals <div> (of semantische sections) voor grote secties.",
+          "table": "Fout – tabelrijen maak je met <tr>, niet met <span>.",
+          "image": "Fout – <img> embedt afbeeldingen; <span> vervangt dat niet."
+        }
+      }
+    }
+  ]
+}

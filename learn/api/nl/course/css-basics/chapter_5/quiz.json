@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - Basis tekstopmaak Check",
+  "description": "Controleer je kennis:  Font families, groottes, weights en kleuren.",
+  "questions": [
+    {
+      "id": "q1-font-weight",
+      "type": "single-choice",
+      "prompt": "Welke waarde maakt tekst vet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "font-weight: 100;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "font-style: bold;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "font-weight: 700;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "text-size: bold;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "font-weight: 700 (of bold) maakt tekst vet.",
+        "byOptionId": {
+          "a": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet.",
+          "b": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet.",
+          "c": "Juist. font-weight: 700 (of bold) maakt tekst vet.",
+          "d": "Niet helemaal. font-weight: 700 (of bold) maakt tekst vet."
+        }
+      }
+    },
+    {
+      "id": "q2-font-family",
+      "type": "single-choice",
+      "prompt": "Waarom zetten we vaak meerdere lettertypes in font-family?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om de pagina trager te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om fallbacks te hebben",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Omdat CSS precies drie lettertypes vereist",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om animatie toe te voegen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+        "byOptionId": {
+          "a": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "b": "Juist. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "c": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is.",
+          "d": "Niet helemaal. Meerdere lettertypes zorgen voor fallbacks als één lettertype niet beschikbaar is."
+        }
+      }
+    }
+  ]
+}

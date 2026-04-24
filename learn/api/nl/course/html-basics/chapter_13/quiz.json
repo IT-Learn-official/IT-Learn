@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Hoofdstuk 13 - Formulieren: basis Check",
+  "description": "Controleer je kennis:  Het form-element en eenvoudige inputs met labels.",
+  "questions": [
+    {
+      "id": "q-form",
+      "type": "single-choice",
+      "prompt": "Welke tag groepeert form controls om te kunnen submitten?",
+      "options": [
+        {
+          "id": "form",
+          "label": "<form>",
+          "isCorrect": true
+        },
+        {
+          "id": "fieldset",
+          "label": "<fieldset>",
+          "isCorrect": false
+        },
+        {
+          "id": "input",
+          "label": "<input>",
+          "isCorrect": false
+        },
+        {
+          "id": "label",
+          "label": "<label>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<form> omwikkelt controls en kan je naar een server versturen (submitten).",
+        "byOptionId": {
+          "form": "Juist – <form> groepeert inputs en bevat het submit-gedrag.",
+          "fieldset": "Fout – <fieldset> groepeert gerelateerde controls, maar kan op zichzelf niet submitten.",
+          "input": "Fout – <input> is een control binnen een form, niet de form-container.",
+          "label": "Fout – <label> is een label voor een control, niet de form-container."
+        }
+      }
+    },
+    {
+      "id": "q-label",
+      "type": "single-choice",
+      "prompt": "Waarom gebruik je <label> bij form controls?",
+      "options": [
+        {
+          "id": "style",
+          "label": "Om de control te stylen",
+          "isCorrect": false
+        },
+        {
+          "id": "access",
+          "label": "Om toegankelijkheid te verbeteren en tekst aan controls te koppelen",
+          "isCorrect": true
+        },
+        {
+          "id": "submit",
+          "label": "Om de form automatisch te submitten",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "label": "Het is optioneel en heeft geen voordeel",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Labels helpen screenreaders en zorgen dat je op de tekst kunt klikken om de control te focussen.",
+        "byOptionId": {
+          "access": "Juist – <label> verbetert toegankelijkheid en focusgedrag.",
+          "style": "Fout – styling doe je met CSS, niet met <label> op zichzelf.",
+          "submit": "Fout – <label> submit niet automatisch.",
+          "none": "Fout – labels geven toegankelijkheidsvoordelen en gebruik je best wel."
+        }
+      }
+    }
+  ]
+}

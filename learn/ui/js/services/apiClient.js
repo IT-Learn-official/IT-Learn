@@ -1,6 +1,19 @@
 //author: https://github.com/nhermab
 //licence: MIT
-const COURSES_URL = 'api/courses.json';
+import { getCourseLanguage } from '../state/appState.js';
+
+const DEFAULT_LANGUAGE = 'en';
+
+function getApiLanguage() {
+  const lang = getCourseLanguage();
+  return lang ? String(lang) : DEFAULT_LANGUAGE;
+}
+
+function apiPath(path) {
+  const lang = encodeURIComponent(getApiLanguage());
+  const cleaned = String(path || '').replace(/^\//, '');
+  return `api/${lang}/${cleaned}`;
+}
 
 async function fetchJson(url) {
   const response = await fetch(url);
@@ -19,24 +32,24 @@ async function fetchText(url) {
 }
 
 export async function fetchCourses() {
-  return fetchJson(COURSES_URL);
+  return fetchJson(apiPath('courses.json'));
 }
 
 export async function fetchChapterTheory(courseId, chapter) {
   const chapterId = chapter.id || chapter.chapterId || 'chapter_1';
-  const path = `api/course/${courseId}/${chapterId}/${chapter.theoryResourceUid}`;
+  const path = apiPath(`course/${courseId}/${chapterId}/${chapter.theoryResourceUid}`);
   return fetchText(path);
 }
 
 export async function fetchChapterQuiz(courseId, chapter) {
   const chapterId = chapter.id || chapter.chapterId || 'chapter_1';
-  const path = `api/course/${courseId}/${chapterId}/${chapter.quizResourceUid}`;
+  const path = apiPath(`course/${courseId}/${chapterId}/${chapter.quizResourceUid}`);
   return fetchJson(path);
 }
 
 export async function fetchChapterPractice(courseId, chapter) {
   const chapterId = chapter.id || chapter.chapterId || 'chapter_1';
-  const path = `api/course/${courseId}/${chapterId}/${chapter.practiceResourceUid}`;
+  const path = apiPath(`course/${courseId}/${chapterId}/${chapter.practiceResourceUid}`);
   return fetchJson(path);
 }
 
@@ -47,12 +60,12 @@ export async function fetchPracticeAssignmentMarkdown(courseId, chapter, assignm
   // If it's just a bare markdown filename, prepend 'assignments/'.
   const isBareMarkdownFile = !baseName.includes('/') && baseName.endsWith('.md');
   const finalSegment = isBareMarkdownFile ? `assignments/${baseName}` : baseName;
-  const path = `api/course/${courseId}/${chapterId}/${finalSegment}`;
+  const path = apiPath(`course/${courseId}/${chapterId}/${finalSegment}`);
   return fetchText(path);
 }
 
 export async function fetchPracticeAttachmentFile(courseId, chapter, template) {
   const chapterId = chapter.id || chapter.chapterId || 'chapter_1';
-  const path = `api/course/${courseId}/${chapterId}/${template.path}`;
+  const path = apiPath(`course/${courseId}/${chapterId}/${template.path}`);
   return fetchText(path);
 }

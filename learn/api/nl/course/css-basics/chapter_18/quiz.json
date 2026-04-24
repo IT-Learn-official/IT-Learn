@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_18",
+  "kind": "assessment",
+  "title": "Hoofdstuk 18 - Je CSS organiseren Check",
+  "description": "Controleer je kennis:  Code leesbaar houden met comments en indentatie.",
+  "questions": [
+    {
+      "id": "q1-organize-benefit",
+      "type": "single-choice",
+      "prompt": "Waarom zou je CSS-code in secties organiseren?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om het moeilijker te maken voor je teammates",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om leesbaarheid en onderhoud te verbeteren",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Omdat browsers comments verplichten",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om het internet trager te maken",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+        "byOptionId": {
+          "a": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "b": "Juist. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "c": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen.",
+          "d": "Niet helemaal. Georganiseerde CSS is makkelijker te onderhouden en te debuggen."
+        }
+      }
+    },
+    {
+      "id": "q2-css-comment",
+      "type": "single-choice",
+      "prompt": "Wat is de juiste comment syntax in CSS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "// comment",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "# comment",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "<!-- comment -->",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "/* comment */",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CSS comments schrijf je als slash-ster comment ster-slash.",
+        "byOptionId": {
+          "a": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "b": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "c": "Niet helemaal. CSS comments schrijf je als slash-ster comment ster-slash.",
+          "d": "Juist. CSS comments schrijf je als slash-ster comment ster-slash."
+        }
+      }
+    }
+  ]
+}

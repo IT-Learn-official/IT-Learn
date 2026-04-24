@@ -1,0 +1,116 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Hoofdstuk 6 - Paragrafen & tekst Check",
+  "description": "Controleer je kennis:  Paragrafen, line breaks, horizontale lijnen en tags voor tekstaccent.",
+  "questions": [
+    {
+      "id": "q-p-tag",
+      "type": "single-choice",
+      "prompt": "Welke tag gebruik je voor een paragraaf?",
+      "options": [
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        },
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": true
+        },
+        {
+          "id": "br",
+          "label": "<br>",
+          "isCorrect": false
+        },
+        {
+          "id": "span",
+          "label": "<span>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik <p> om tekstblokken als paragrafen te markeren.",
+        "byOptionId": {
+          "p": "Juist – gebruik <p> voor tekstparagrafen.",
+          "div": "Fout – <div> is een algemene block-container, maar niet de semantische paragraaf-tag.",
+          "br": "Fout – <br> voegt een line break toe, geen paragraafblok.",
+          "span": "Fout – <span> is inline en niet bedoeld voor paragrafen."
+        }
+      }
+    },
+    {
+      "id": "q-strong-em",
+      "type": "single-choice",
+      "prompt": "Welke tag duidt semantisch sterke belangrijkheid aan?",
+      "options": [
+        {
+          "id": "em",
+          "label": "<em>",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "<b>",
+          "isCorrect": false
+        },
+        {
+          "id": "strong",
+          "label": "<strong>",
+          "isCorrect": true
+        },
+        {
+          "id": "i",
+          "label": "<i>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<strong> duidt sterke belangrijkheid aan en is semantisch betekenisvol.",
+        "byOptionId": {
+          "strong": "Juist – <strong> geeft semantisch sterke belangrijkheid mee.",
+          "em": "Fout – <em> geeft nadruk, maar niet hetzelfde semantische gewicht als <strong>.",
+          "b": "Fout – <b> is puur presentatief; <strong> voegt semantische betekenis toe.",
+          "i": "Fout – <i> is presentatief en betekent niet “belangrijk”."
+        }
+      }
+    },
+    {
+      "id": "q-br-hr",
+      "type": "single-choice",
+      "prompt": "Welke tag maakt een horizontale lijn (een thematische scheiding)?",
+      "options": [
+        {
+          "id": "br",
+          "label": "<br>",
+          "isCorrect": false
+        },
+        {
+          "id": "p",
+          "label": "<p>",
+          "isCorrect": false
+        },
+        {
+          "id": "hr2",
+          "label": "<hr2>",
+          "isCorrect": false
+        },
+        {
+          "id": "hr",
+          "label": "<hr>",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "<hr> maakt een thematische scheiding in de content.",
+        "byOptionId": {
+          "hr": "Juist – <hr> staat voor een thematische scheiding in content.",
+          "br": "Fout – <br> is een line break, geen horizontale scheiding.",
+          "p": "Fout – <p> is voor paragrafen, niet voor horizontale lijnen.",
+          "hr2": "Fout – <hr2> is geen geldig HTML-element."
+        }
+      }
+    }
+  ]
+}

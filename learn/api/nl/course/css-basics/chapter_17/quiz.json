@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_17",
+  "kind": "assessment",
+  "title": "Hoofdstuk 17 - Media queries gebruiken Check",
+  "description": "Controleer je kennis:  Layout en font sizes aanpassen voor verschillende schermbreedtes.",
+  "questions": [
+    {
+      "id": "q1-media-query-syntax",
+      "type": "single-choice",
+      "prompt": "Welke media query syntax is geldig?",
+      "options": [
+        {
+          "id": "a",
+          "label": "@media (max-width: 768px) { ... }",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "@if screen < 768 { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "media-query: 768px { ... }",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "@responsive 768px { ... }",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Media queries gebruiken de @media rule met een conditie.",
+        "byOptionId": {
+          "a": "Juist. Media queries gebruiken de @media rule met een conditie.",
+          "b": "Niet helemaal. Media queries gebruiken de @media rule met een conditie.",
+          "c": "Niet helemaal. Media queries gebruiken de @media rule met een conditie.",
+          "d": "Niet helemaal. Media queries gebruiken de @media rule met een conditie."
+        }
+      }
+    },
+    {
+      "id": "q2-max-width",
+      "type": "single-choice",
+      "prompt": "Wanneer geldt @media (max-width: 768px)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Alleen boven 768px",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Alleen precies op 768px",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Op 768px en kleiner",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Alleen op 4K-schermen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het geldt wanneer de viewportbreedte 768px of minder is.",
+        "byOptionId": {
+          "a": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "b": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "c": "Juist. Het geldt wanneer de viewportbreedte 768px of minder is.",
+          "d": "Niet helemaal. Het geldt wanneer de viewportbreedte 768px of minder is."
+        }
+      }
+    }
+  ]
+}
