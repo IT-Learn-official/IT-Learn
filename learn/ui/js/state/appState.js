@@ -3,7 +3,6 @@
 //edited by: https://github.com/broodje565
 const state = {
   coursesDoc: null, // full courses.json document
-  courseLanguage: null, // language code used to load courses and course content (e.g. "en")
   selectedCourseId: null,
   selectedChapterId: null,
   selectedTab: 'theory',
@@ -24,25 +23,6 @@ export function getState() {
 
 export function setCoursesDoc(coursesDoc) {
   state.coursesDoc = coursesDoc;
-}
-
-export function getCourseLanguage() {
-  return state.courseLanguage;
-}
-
-export function setCourseLanguage(languageCode) {
-  const next = languageCode ? String(languageCode).trim().toLowerCase() : null;
-  if (state.courseLanguage === next) return;
-  state.courseLanguage = next;
-
-  // Clear language-dependent state (content is loaded from language-specific API paths).
-  state.coursesDoc = null;
-  state.selectedCourseId = null;
-  state.selectedChapterId = null;
-  state.selectedTab = 'theory';
-  state.chapterContentCache.clear();
-  state.selectedPracticeAssignmentId = null;
-  state.selectedPracticeTemplatePath = null;
 }
 
 export function setSelection({ courseId, chapterId, tab }) {

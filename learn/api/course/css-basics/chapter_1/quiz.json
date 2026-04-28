@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Chapter 1 - What Is CSS and Why Use It?",
+  "description": "Quick concept check on what CSS is and why we use it.",
+  "questions": [
+    {
+      "id": "q1-css-meaning",
+      "type": "single-choice",
+      "prompt": "What does CSS stand for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Creative Style System",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Cascading Style Sheets",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Computer Style Script",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Color Sheet Setup",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS means Cascading Style Sheets.",
+        "byOptionId": {
+          "a": "Not quite. CSS means Cascading Style Sheets.",
+          "b": "Correct. CSS means Cascading Style Sheets.",
+          "c": "Not quite. CSS means Cascading Style Sheets.",
+          "d": "Not quite. CSS means Cascading Style Sheets."
+        }
+      }
+    },
+    {
+      "id": "q2-css-role",
+      "type": "single-choice",
+      "prompt": "What is the main job of CSS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Store data in a database",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Build server APIs",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Style the page appearance",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Replace HTML completely",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CSS controls how a web page looks, while HTML controls structure.",
+        "byOptionId": {
+          "a": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
+          "b": "Not quite. CSS controls how a web page looks, while HTML controls structure.",
+          "c": "Correct. CSS controls how a web page looks, while HTML controls structure.",
+          "d": "Not quite. CSS controls how a web page looks, while HTML controls structure."
+        }
+      }
+    }
+  ]
+}

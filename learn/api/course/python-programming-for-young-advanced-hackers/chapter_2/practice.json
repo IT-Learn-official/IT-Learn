@@ -1,0 +1,72 @@
+{
+  "chapterId": "chapter-2",
+  "kind": "practice",
+  "title": "Chapter 2 - Practice: Variables and Math Missions",
+  "description": "Hands-on missions for chapter 2 using variables, integers and floats, arithmetic operators, and simple debugging.",
+  "practices": [
+    {
+      "id": "p-variables-warmup",
+      "title": "Mission: Name Your Secret Numbers",
+      "assignmentResourceUid": "assignments/variables_warmup.md",
+      "templates": [
+        {
+          "path": "attachments/variables_warmup.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Learner should create at least three numeric variables (including both an int and a float) and print them with labels using either commas or str(...). Validator can check for at least three print statements and at least one use of a float literal."
+      }
+    },
+    {
+      "id": "p-division-remainder",
+      "title": "Mission: Share the Loot",
+      "assignmentResourceUid": "assignments/share_the_loot.md",
+      "templates": [
+        {
+          "path": "attachments/share_the_loot.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "total_coins = 17\nplayers = 4\ncoins_per_player = total_coins // players\nleftover_coins = total_coins % players\nprint('Each player gets', coins_per_player, 'coins.')\nprint('Leftover coins:', leftover_coins)\n",
+        "expectedStdout": "Each player gets 4 coins.\nLeftover coins: 1\n",
+        "notes": "Validator can check the computed values for coins_per_player and leftover_coins given the starter values, and that they are printed in human-readable sentences. Learners are allowed to change the numbers as long as the logic stays the same."
+      }
+    },
+    {
+      "id": "p-precedence-playground",
+      "title": "Mission: Parentheses Power-Up",
+      "assignmentResourceUid": "assignments/precedence_playground.md",
+      "templates": [
+        {
+          "path": "attachments/precedence_playground.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "print('2 + 3 * 4 =', 2 + 3 * 4)\nprint('(2 + 3) * 4 =', (2 + 3) * 4)\nprint('10 - 4 / 2 =', 10 - 4 / 2)\nprint('(10 - 4) / 2 =', (10 - 4) / 2)\n",
+        "notes": "Validator can check that the script includes at least one expression without parentheses and one with parentheses that changes the result. Learners are encouraged to add extra expressions beyond the examples."
+      }
+    },
+    {
+      "id": "p-debug-number-bugs",
+      "title": "Mission: Number Bug Hunter",
+      "assignmentResourceUid": "assignments/debug_number_bugs.md",
+      "templates": [
+        {
+          "path": "attachments/debug_number_bugs.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "notes": "Starter file contains several small buggy snippets involving variables and arithmetic. Learner's job is to fix them so the script runs without errors and produces the correct results. Validator can check for successful execution and expected numeric outputs (for example, correct total price, correct result of (10 - 2) * 3, and a fixed string-number print)."
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,101 @@
+{
+  "chapterId": "chapter-1",
+  "kind": "practice",
+  "title": "Chapter 1 - Practice: Hello, Python!",
+  "description": "Hands-on missions for chapter 1 using script mode and basic Python concepts.",
+  "practices": [
+    {
+      "id": "p-hello-world-script",
+      "title": "Mission: Boot Up Your First Script",
+      "assignmentResourceUid": "assignments/hello_world.md",
+      "templates": [
+        {
+          "path": "attachments/hello_world.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedStdout": "Hello, World!\n",
+        "notes": "Program must print exactly 'Hello, World!' with the same capitalization, comma, exclamation mark, and a newline. Optional extra experiments should come after you pass this check."
+      }
+    },
+    {
+      "id": "p-fix-the-greeting",
+      "title": "Mission: Debug the Broken Greeting",
+      "assignmentResourceUid": "assignments/fix_the_greeting.md",
+      "templates": [
+        {
+          "path": "attachments/fix_the_greeting.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "expectedStdout": "Hello, World!\n",
+        "notes": "After fixing and uncommenting, running the script should output exactly 'Hello, World!' followed by a newline. You can customize it later, but make sure this basic version works first."
+      }
+    },
+    {
+      "id": "p-script-mode-experiments",
+      "title": "Mission: Script Mode Mini Show",
+      "assignmentResourceUid": "assignments/script_mode_experiments.md",
+      "templates": [
+        {
+          "path": "attachments/script_mode_experiments.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "exampleImplementation": "print('This is my first script line!')\nprint('This is my second line.')\nprint('This is my third line.')\n",
+        "expectedStdout": "This is my first script line!\nThis is my second line.\nThis is my third line.\n",
+        "notes": "Validator can check that there are at least three print statements and at least three non-empty output lines. Feel free to change the messages as long as the structure stays the same."
+      }
+    },
+    {
+      "id": "p-repl-playground",
+      "title": "Mission: Simple Script: Print three lines",
+      "assignmentResourceUid": "assignments/repl_playground.md",
+      "templates": [
+        {
+          "path": "attachments/repl_playground.py",
+          "language": "python",
+          "role": "reference"
+        }
+      ],
+      "solution": {
+        "expectedStdout": "Hello, World!\n3\n50\n",
+        "notes": "Script-mode version: the validator should run the script and compare stdout exactly to the three lines shown in the assignment."
+      }
+    },
+    {
+      "id": "p-code-vs-programming-comments",
+      "title": "Mission: Code vs Programming Detective",
+      "assignmentResourceUid": "assignments/code_vs_programming_comments.md",
+      "templates": [
+        {
+          "path": "attachments/code_vs_programming_comments.py",
+          "language": "python",
+          "role": "starter"
+        }
+      ],
+      "solution": {
+        "classificationGuide": {
+          "programmingLinesShouldContain": [
+            "Step 1: Decide what the program should do.",
+            "Step 2: We want to greet the user with their name.",
+            "Plan: If the user does not type anything, we will still say hello.",
+            "Step 3: Later we could add more features, like asking for their age."
+          ],
+          "codeLinesShouldContain": [
+            "def getName(",
+            "name = getName(",
+            "print(\"Hello, \" + name + \"!\")"
+          ]
+        },
+        "notes": "Validation can check for markers like '# PROGRAMMING' on planning lines and '# CODE' on real code lines. The main goal is to understand the difference, not to trick you."
+      }
+    }
+  ]
+}
