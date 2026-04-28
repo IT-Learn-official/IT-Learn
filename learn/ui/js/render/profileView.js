@@ -76,7 +76,7 @@ function renderHeader(screen, titleText, subtitleText) {
 function renderProfileCard(profile, isOwnProfile, hasGlowEffect = false) {
   const section = document.createElement('section');
   section.className = 'profile-card';
-  if (isOwnProfile && hasGlowEffect) {
+  if (hasGlowEffect) {
     section.classList.add('profile-card--glow');
   }
 
@@ -301,7 +301,9 @@ export async function renderProfileView(screenRootEl, { username } = {}) {
   const profile = response.profile || {};
   const isOwnProfile = !isPublicProfile;
   const inventory = isOwnProfile ? getInventory() : null;
-  const hasGlowEffect = Boolean(inventory && Array.isArray(inventory.profileEffects) && inventory.profileEffects.includes('glow'));
+ const hasGlowEffect = isOwnProfile
+   ? Boolean(Array.isArray(inventory?.profileEffects) && inventory.profileEffects.includes('glow'))
+   : Boolean(profile.has_profile_glow);
   body.appendChild(renderProfileCard(profile, isOwnProfile, hasGlowEffect));
 
   const hasPersistedBio = typeof profile.bio === 'string' && profile.bio.trim().length > 0;
