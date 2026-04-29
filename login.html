@@ -36,6 +36,8 @@
     onload="if(window.feather){feather.replace();}"></script>
 
   <script src="/translations.js"></script>
+  <script src="/custom-dialogs.js" defer></script>
+  <script src="/maintenance-mode.js" defer></script>
 </head>
 
 <body>
@@ -270,7 +272,7 @@ function initOAuthButton(provider, buttonId) {
       window.location.href = data.url;
     } catch (err) {
       console.error(`[OAUTH][${provider}] Start failed:`, err);
-      alert(`Could not start ${providerLabel(provider)} sign-in. Please try again.`);
+      await showAlert(`Could not start ${providerLabel(provider)} sign-in. Please try again.`, { title: 'Sign-in error' });
       btn.disabled = false;
       if (labelEl) {
         labelEl.textContent = baseLabel;
@@ -316,7 +318,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
       const lastToken = sessionStorage.getItem('last_captcha_token');
       if (lastToken && lastToken === tokenPrefix) {
         console.error('[LOGIN] ⚠️ WARNING: REUSING SAME TOKEN! Tokens are single-use only!');
-        alert('Please wait for CAPTCHA to reset...');
+        await showAlert('Please wait for CAPTCHA to reset...', { title: 'CAPTCHA' });
         if (submitBtn) submitBtn.disabled = false;
         return;
       }
@@ -336,7 +338,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
       
       if (!captchaToken) {
         console.error('[LOGIN] No CAPTCHA token available after waiting');
-        alert("CAPTCHA verification not ready. Please wait a moment and try again.");
+        await showAlert('CAPTCHA verification not ready. Please wait a moment and try again.', { title: 'CAPTCHA' });
         if (submitBtn) submitBtn.disabled = false;
         return;
       }
@@ -379,11 +381,11 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         });
 
         if (res.status === 401) {
-          alert('Login failed: ' + (msg || 'Incorrect email or password. Please check your credentials.'));
+          await showAlert('Login failed: ' + (msg || 'Incorrect email or password. Please check your credentials.'), { title: 'Login failed' });
         } else if (res.status === 400) {
-          alert('Login failed: ' + (msg || 'Invalid request or CAPTCHA failed. Please try again.'));
+          await showAlert('Login failed: ' + (msg || 'Invalid request or CAPTCHA failed. Please try again.'), { title: 'Login failed' });
         } else {
-          alert('Login failed: ' + msg);
+          await showAlert('Login failed: ' + msg, { title: 'Login failed' });
         }
         
         console.log('[LOGIN] Resetting CAPTCHA after error');
@@ -397,11 +399,36 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
       }
 
       console.log('[LOGIN] Success! Redirecting...');
-      alert("Login successful!");
+      await showAlert('Login successful!', { title: 'Success' });
+      try {
+        const staffFlag = localStorage.getItem('staff_login');
+        if (staffFlag) {
+          // clear the flag immediately to avoid reuse
+          try { localStorage.removeItem('staff_login'); } catch (e) {}
+          // verify session and admin status
+          try {
+            const sessResp = await fetch('https://itlearn.pythonanywhere.com/api/session', {
+              method: 'GET',
+              credentials: 'include',
+              cache: 'no-store'
+            });
+            const sess = await sessResp.json();
+            if (sess && sess.logged_in && sess.is_bio_admin) {
+              window.location.href = '/admin-panel.html';
+              return;
+            }
+          } catch (e) {
+            console.warn('[LOGIN] Staff redirect session check failed:', e);
+          }
+        }
+      } catch (e) {
+        console.warn('[LOGIN] Staff redirect check failed:', e);
+      }
+
       window.location.href = "/learn/index.html";
     } catch (err) {
         console.error('[LOGIN] Exception:', err);
-        alert("An error occurred while logging in.");
+        await showAlert('An error occurred while logging in.', { title: 'Login error' });
         
         try { 
           turnstile.reset();
