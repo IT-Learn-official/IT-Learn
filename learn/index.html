@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="./ui/css/components/onboarding.css" />
   <link rel="stylesheet" href="./ui/css/components/gamification.css" />
   <link rel="stylesheet" href="./ui/css/components/learning-path.css" />
+  <script src="/maintenance-mode.js" defer></script>
   <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -90,6 +91,7 @@
   <audio id="audio-wrong" src="/sounds/wrong.mp3" preload="auto"></audio>
 
   <script src="/translations.js"></script>
+  <script src="/custom-dialogs.js" defer></script>
   <script type="module" src="./ui/js/main.js"></script>
   
   <script type="module">
@@ -130,7 +132,7 @@
             window.location.href = '/login.html';
           } else {
             console.error('Logout failed');
-            alert('Logout failed. Please try again.');
+            await showAlert('Logout failed. Please try again.', { title: 'Logout failed' });
           }
         });
         console.log('Event listener attached to logout button');

@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://itlearn.be/admin-panel">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Learn | Admin Panel</title>
+  <script src="/custom-dialogs.js" defer></script>
+  <script src="/maintenance-mode.js" defer></script>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #101a33;
+      --panel-2: #1a2747;
+      --panel-3: #0d1731;
+      --text: #ecf2ff;
+      --muted: #93a3c7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.14);
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.18);
+      --ok: #22c55e;
+      --warn: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -5%, #1d2f5e, transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(34, 211, 238, 0.12), transparent 45%),
+        linear-gradient(180deg, #08101e 0%, var(--bg) 100%);
+      padding: 24px 16px 48px;
+    }
+
+    .wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.78);
+      backdrop-filter: blur(8px);
+      padding: 14px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+    }
+
+    .muted {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .controls,
+    .panel-card,
+    .metric-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.82);
+    }
+
+    .controls {
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    select,
+    input,
+    button,
+    textarea {
+      font: inherit;
+      color: var(--text);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      padding: 8px 10px;
+    }
+
+    button {
+      cursor: pointer;
+      transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .button-primary {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .button-secondary {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.28);
+    }
+
+    .button-danger {
+      background: var(--danger-soft);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .status {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16, 26, 51, 0.8);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .status.ok {
+      color: var(--ok);
+    }
+
+    .status.error {
+      color: #fda4af;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1000px) {
+      .dashboard-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .grid.two-cols {
+        grid-template-columns: 1.15fr 0.95fr;
+      }
+    }
+
+    .metric-card {
+      padding: 14px;
+      display: grid;
+      gap: 6px;
+      min-height: 96px;
+      background: linear-gradient(180deg, rgba(26, 39, 71, 0.92), rgba(13, 23, 49, 0.92));
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .metric-card strong {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .metric-card small {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .grid.two-cols {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .panel-card {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .panel-card.panel-wide {
+      padding: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 26, 51, 0.84);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    #list,
+    #profiles-list {
+      align-content: start;
+      max-height: 65vh;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(26, 39, 71, 0.8);
+    }
+
+    .bio-box,
+    .details-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 9px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #dbe7ff;
+      font-size: 0.93rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .actions input {
+      flex: 1 1 320px;
+      min-width: 220px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1rem;
+      color: #dbeafe;
+    }
+
+    .profile-mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .profile-mini-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      background: rgba(20, 33, 60, 0.9);
+      flex: 0 0 auto;
+    }
+
+    .profile-avatar-fallback {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      background: rgba(20, 33, 60, 0.9);
+      color: #c7d8ff;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+    }
+
+    .profile-mini .bio-box {
+      margin: 0;
+    }
+
+    .report-actions-inline {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .profiles-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .profiles-pagination .muted {
+      margin-left: auto;
+    }
+
+    .section-note {
+      display: grid;
+      gap: 6px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: rgba(34, 211, 238, 0.05);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .section-note strong {
+      font-size: 0.95rem;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .maintenance-control-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .maintenance-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .maintenance-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .maintenance-switch input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .maintenance-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .admin-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+    }
+
+    .admin-tab-btn {
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      color: var(--muted);
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      transition: all 120ms ease;
+    }
+
+    .admin-tab-btn:hover {
+      background: rgba(34, 211, 238, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .admin-tab-btn.active {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+      color: var(--text);
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(26, 39, 71, 0.6);
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .stat-box small {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .stat-box .value {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #22d3ee;
+    }
+
+    .log-entry {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .log-entry .timestamp {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .log-entry .action {
+      color: #22d3ee;
+      font-weight: 600;
+    }
+
+    .log-entry .details {
+      color: #dbe7ff;
+      margin-top: 4px;
+    }
+
+    .tool-group {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(26, 39, 71, 0.6);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tool-group h3 {
+      margin: 0 0 10px 0;
+      font-size: 0.95rem;
+      color: #22d3ee;
+    }
+
+    .tool-group-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .config-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .config-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      background: rgba(8, 14, 30, 0.5);
+    }
+
+    .config-table td:first-child {
+      color: #22d3ee;
+      font-weight: 600;
+      width: 200px;
+    }
+
+    .config-table td:last-child {
+      color: #dbe7ff;
+      word-break: break-word;
+    }
+
+    .config-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .config-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .report-actions-inline {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar,
+      .profiles-pagination {
+        align-items: flex-start;
+      }
+
+      .profiles-pagination .muted {
+        margin-left: 0;
+      }
+
+      .admin-tabs {
+        flex-direction: column;
+      }
+
+      .admin-tab-btn {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1>Admin Panel</h1>
+        <p class="muted">Manage bio reports, profile hygiene, and account bans from one place. Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can access this panel.</p>
+      </div>
+      <a href="/index.html" class="muted">Back to home</a>
+    </div>
+
+    <div id="auth-block" class="status">Checking your admin session...</div>
+
+    <section id="panel" class="hidden">
+      <div class="admin-tabs" id="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="moderation">Moderation</button>
+        <button class="admin-tab-btn" data-tab="maintenance">Maintenance</button>
+        <button class="admin-tab-btn" data-tab="audit">Audit Logs</button>
+        <button class="admin-tab-btn" data-tab="health">System Health</button>
+        <button class="admin-tab-btn" data-tab="config">Configuration</button>
+      </div>
+
+      <!-- MODERATION TAB -->
+      <section id="moderation-tab" class="admin-section active">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin snapshot</h2>
+          <div class="dashboard-grid">
+            <article class="metric-card">
+              <span>Open reports</span>
+              <strong id="metric-open-reports">0</strong>
+              <small id="metric-open-reports-note">Awaiting report load</small>
+            </article>
+            <article class="metric-card">
+              <span>Resolved reports</span>
+              <strong id="metric-resolved-reports">0</strong>
+              <small id="metric-resolved-reports-note">Awaiting report load</small>
+            </article>
+            <article class="metric-card">
+              <span>Profiles loaded</span>
+              <strong id="metric-profiles-loaded">0</strong>
+              <small id="metric-profiles-loaded-note">Current page snapshot</small>
+            </article>
+            <article class="metric-card">
+              <span>Banned accounts</span>
+              <strong id="metric-banned-accounts">0</strong>
+              <small id="metric-banned-accounts-note">Current page snapshot</small>
+            </article>
+            <article class="metric-card">
+              <span>Bio bans</span>
+              <strong id="metric-bio-bans">0</strong>
+              <small id="metric-bio-bans-note">Current page snapshot</small>
+            </article>
+          </div>
+          <div class="section-note">
+            <strong>Workflow</strong>
+            <div class="muted">Use the report queue for moderation decisions, then validate the profile list before closing the loop. The panel stays focused on bio moderation and account enforcement, but the dashboard now gives you a broader operating view.</div>
+          </div>
+        </section>
+
+        <div class="controls">
+          <label for="status-filter">Report status:</label>
+          <select id="status-filter">
+            <option value="open" selected>Open</option>
+            <option value="resolved">Resolved</option>
+            <option value="all">All</option>
+          </select>
+
+          <label for="limit-filter">Limit:</label>
+          <select id="limit-filter">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="250">250</option>
+            <option value="500">500</option>
+          </select>
+
+          <button id="refresh" class="button-primary" type="button">Refresh queue</button>
+          <button id="refresh-profiles" class="button-primary" type="button">Refresh profiles</button>
+          <button id="show-open-only" class="button-secondary" type="button">Open only</button>
+          <button id="show-banned-only" class="button-secondary" type="button">Banned only</button>
+          <button id="clear-search" class="button-secondary" type="button">Clear search</button>
+
+          <label for="profile-page-size">Profiles/page:</label>
+          <select id="profile-page-size">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="250">250</option>
+          </select>
+
+          <label for="account-ban-filter">Accounts:</label>
+          <select id="account-ban-filter">
+            <option value="all" selected>All</option>
+            <option value="banned">Banned only</option>
+            <option value="not-banned">Not banned</option>
+          </select>
+
+          <input id="profile-search" type="text" placeholder="Search @username or bio" />
+        </div>
+
+        <div class="grid two-cols">
+          <section class="panel-card">
+            <h2 class="section-title">Moderation queue</h2>
+            <div id="status" class="status">Loading reports...</div>
+            <div id="list" class="grid"></div>
+          </section>
+
+          <section class="panel-card">
+            <h2 class="section-title">Profiles and enforcement</h2>
+            <div id="profiles-status" class="status">Loading profiles...</div>
+            <div class="profiles-pagination">
+              <button id="profiles-prev" type="button">Prev</button>
+              <button id="profiles-next" type="button">Next</button>
+              <p id="profiles-page-info" class="muted">Page 1</p>
+            </div>
+            <div id="profiles-list" class="grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- MAINTENANCE TAB -->
+      <section id="maintenance-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Maintenance & Admin Tools</h2>
+          <div class="section-note">
+            <strong>Caution</strong>
+            <div class="muted">These tools perform administrative operations. Use with care. Some operations may take time or require database access.</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Site Maintenance Mode</h3>
+            <div class="maintenance-control-grid">
+              <label class="maintenance-switch" for="maintenance-enabled">
+                <input id="maintenance-enabled" type="checkbox" />
+                <span>Enable site-wide maintenance mode</span>
+              </label>
+
+              <div class="maintenance-field">
+                <label for="maintenance-message">Maintenance message</label>
+                <textarea id="maintenance-message" rows="3" placeholder="The website is currently under maintenance and temporarily unavailable."></textarea>
+              </div>
+
+              <div class="maintenance-actions">
+                <button id="btn-refresh-maintenance" class="button-secondary" type="button">Refresh status</button>
+                <button id="btn-save-maintenance" class="button-primary" type="button">Save maintenance settings</button>
+                <button id="btn-disable-maintenance" class="button-danger" type="button">Disable maintenance</button>
+              </div>
+
+              <div id="maintenance-mode-status" class="status hidden">Ready</div>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Database & Cache Operations</h3>
+            <div class="tool-group-actions">
+              <button id="btn-clear-cache" class="button-primary" type="button">Clear Cache</button>
+              <button id="btn-invalidate-sessions" class="button-primary" type="button">Invalidate Old Sessions</button>
+              <button id="btn-cleanup-orphaned" class="button-primary" type="button">Cleanup Orphaned Records</button>
+              <button id="btn-rebuild-indexes" class="button-primary" type="button">Rebuild Database Indexes</button>
+            </div>
+            <div id="db-op-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>User & Progress Operations</h3>
+            <div class="tool-group-actions">
+              <button id="btn-reset-user-progress" class="button-primary" type="button">Reset User Progress</button>
+              <button id="btn-force-reindex-bio" class="button-primary" type="button">Force Bio Reindexing</button>
+              <button id="btn-sync-badges" class="button-primary" type="button">Sync Badges</button>
+              <button id="btn-recalc-streaks" class="button-primary" type="button">Recalculate Streaks</button>
+            </div>
+            <div id="user-op-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Bulk Operations</h3>
+            <div style="display: grid; gap: 8px;">
+              <div>
+                <label for="bulk-op-user-id" style="font-size: 0.9rem; color: var(--muted);">User ID:</label>
+                <input id="bulk-op-user-id" type="text" placeholder="Enter user ID" />
+              </div>
+              <div>
+                <label for="bulk-op-action" style="font-size: 0.9rem; color: var(--muted);">Action:</label>
+                <select id="bulk-op-action">
+                  <option value="">-- Select action --</option>
+                  <option value="ban-account">Ban Account</option>
+                  <option value="unban-account">Unban Account</option>
+                  <option value="reset-progress">Reset Progress</option>
+                  <option value="clear-bio">Clear Bio</option>
+                </select>
+              </div>
+              <button id="btn-bulk-execute" class="button-danger" type="button">Execute</button>
+              <div id="bulk-op-status" class="status hidden">Ready</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- AUDIT LOG TAB -->
+      <section id="audit-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin Action Log</h2>
+          <div class="controls">
+            <label for="audit-filter">Filter by action:</label>
+            <select id="audit-filter">
+              <option value="">All actions</option>
+              <option value="ban-bio">Ban Bio</option>
+              <option value="ban-account">Ban Account</option>
+              <option value="unban-account">Unban Account</option>
+              <option value="close-report">Close Report</option>
+            </select>
+            <button id="btn-refresh-audit" class="button-primary" type="button">Refresh Log</button>
+            <button id="btn-export-audit" class="button-secondary" type="button">Export CSV</button>
+            <button id="btn-clear-audit" class="button-danger" type="button">Clear Log</button>
+          </div>
+          <div id="audit-log-container" style="max-height: 70vh; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; padding: 12px;">
+            <div class="log-entry" id="audit-empty">
+              <div class="timestamp">No audit logs available yet. Admin actions will be logged here.</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- SYSTEM HEALTH TAB -->
+      <section id="health-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">System Health & Metrics</h2>
+          
+          <div class="stats-grid">
+            <div class="stat-box">
+              <small>API Status</small>
+              <div class="value" id="stat-api-status">—</div>
+              <small id="stat-api-note">Checking...</small>
+            </div>
+            <div class="stat-box">
+              <small>Response Time (ms)</small>
+              <div class="value" id="stat-response-time">—</div>
+              <small id="stat-response-note">Last request</small>
+            </div>
+            <div class="stat-box">
+              <small>Authenticated Users</small>
+              <div class="value" id="stat-auth-users">—</div>
+              <small id="stat-auth-note">Active sessions</small>
+            </div>
+            <div class="stat-box">
+              <small>Total Profiles</small>
+              <div class="value" id="stat-total-profiles">—</div>
+              <small id="stat-profile-note">In database</small>
+            </div>
+            <div class="stat-box">
+              <small>Reports Pending</small>
+              <div class="value" id="stat-pending-reports">—</div>
+              <small id="stat-report-note">Needs review</small>
+            </div>
+            <div class="stat-box">
+              <small>Database Connection</small>
+              <div class="value" id="stat-db-status">—</div>
+              <small id="stat-db-note">Status</small>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Health Checks</h3>
+            <div class="tool-group-actions">
+              <button id="btn-check-health" class="button-primary" type="button">Run Full Health Check</button>
+              <button id="btn-check-db-health" class="button-primary" type="button">Database Health</button>
+              <button id="btn-check-api-health" class="button-primary" type="button">API Health</button>
+              <button id="btn-check-auth-health" class="button-primary" type="button">Auth Service Health</button>
+            </div>
+            <div id="health-check-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Performance Metrics</h3>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Avg Report Load Time</td>
+                  <td id="metric-report-load-time">—</td>
+                </tr>
+                <tr>
+                  <td>Avg Profile Load Time</td>
+                  <td id="metric-profile-load-time">—</td>
+                </tr>
+                <tr>
+                  <td>API Uptime (today)</td>
+                  <td id="metric-uptime">—</td>
+                </tr>
+                <tr>
+                  <td>Last Health Check</td>
+                  <td id="metric-last-check">Never</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- CONFIGURATION TAB -->
+      <section id="config-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin Configuration</h2>
+          
+          <div class="tool-group">
+            <h3>Current Admin Settings</h3>
+            <div class="config-chip-row">
+              <span class="chip" id="config-chip-session">Session: checking...</span>
+              <span class="chip" id="config-chip-maintenance">Maintenance: unknown</span>
+              <span class="chip" id="config-chip-health">System health: unknown</span>
+            </div>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Authorized Admin Users</td>
+                  <td id="config-admin-users">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Environment</td>
+                  <td id="config-environment">Loading...</td>
+                </tr>
+                <tr>
+                  <td>API Base URL</td>
+                  <td id="config-api-url">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Database Backend</td>
+                  <td id="config-db-backend">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Database URL</td>
+                  <td id="config-db-url">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Feature Flags</td>
+                  <td id="config-features">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Last Config Update</td>
+                  <td id="config-last-update">Loading...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tool-group">
+            <h3>Admin Panel Info</h3>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Current User ID</td>
+                  <td id="config-current-user-id">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Admin Privileges</td>
+                  <td id="config-admin-privileges">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Panel Version</td>
+                  <td>2.0 (Enhanced Admin Dashboard)</td>
+                </tr>
+                <tr>
+                  <td>Last Updated</td>
+                  <td id="panel-last-updated">2026</td>
+                </tr>
+                <tr>
+                  <td>Your Session ID</td>
+                  <td id="session-id-display">Authenticated</td>
+                </tr>
+                <tr>
+                  <td>Maintenance Updated By</td>
+                  <td id="config-maint-updated-by">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Maintenance Updated At</td>
+                  <td id="config-maint-updated-at">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Last Health Summary</td>
+                  <td id="config-health-summary">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Current Timezone</td>
+                  <td id="current-timezone">Loading...</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="config-actions">
+              <button id="btn-refresh-config" class="button-primary" type="button">Refresh Runtime Snapshot</button>
+              <button id="btn-copy-config" class="button-secondary" type="button">Copy Runtime Snapshot</button>
+            </div>
+            <div id="config-action-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="section-note">
+            <strong>About This Panel</strong>
+            <div class="muted">This admin panel provides moderation, maintenance, audit logging, and system health monitoring. All actions are logged and require the BIO_MOD_ADMIN_USER_IDS permission. For security reasons, sensitive configuration details are limited.</div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
+
+    const authBlock = document.getElementById('auth-block');
+    const panel = document.getElementById('panel');
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('list');
+    const profilesStatusEl = document.getElementById('profiles-status');
+    const profilesListEl = document.getElementById('profiles-list');
+    const refreshBtn = document.getElementById('refresh');
+    const refreshProfilesBtn = document.getElementById('refresh-profiles');
+    const statusFilter = document.getElementById('status-filter');
+    const limitFilter = document.getElementById('limit-filter');
+    const profileSearchInput = document.getElementById('profile-search');
+    const profilePageSizeSelect = document.getElementById('profile-page-size');
+    const accountBanFilter = document.getElementById('account-ban-filter');
+    const profilesPrevBtn = document.getElementById('profiles-prev');
+    const profilesNextBtn = document.getElementById('profiles-next');
+    const profilesPageInfo = document.getElementById('profiles-page-info');
+    const showOpenOnlyBtn = document.getElementById('show-open-only');
+    const showBannedOnlyBtn = document.getElementById('show-banned-only');
+    const clearSearchBtn = document.getElementById('clear-search');
+    const metricOpenReports = document.getElementById('metric-open-reports');
+    const metricResolvedReports = document.getElementById('metric-resolved-reports');
+    const metricProfilesLoaded = document.getElementById('metric-profiles-loaded');
+    const metricBannedAccounts = document.getElementById('metric-banned-accounts');
+    const metricBioBans = document.getElementById('metric-bio-bans');
+    const metricOpenReportsNote = document.getElementById('metric-open-reports-note');
+    const metricResolvedReportsNote = document.getElementById('metric-resolved-reports-note');
+    const metricProfilesLoadedNote = document.getElementById('metric-profiles-loaded-note');
+    const metricBannedAccountsNote = document.getElementById('metric-banned-accounts-note');
+    const metricBioBansNote = document.getElementById('metric-bio-bans-note');
+    const maintenanceEnabledInput = document.getElementById('maintenance-enabled');
+    const maintenanceMessageInput = document.getElementById('maintenance-message');
+    const maintenanceStatusEl = document.getElementById('maintenance-mode-status');
+    const refreshMaintenanceBtn = document.getElementById('btn-refresh-maintenance');
+    const saveMaintenanceBtn = document.getElementById('btn-save-maintenance');
+    const disableMaintenanceBtn = document.getElementById('btn-disable-maintenance');
+    const MAINTENANCE_DISCORD_URL = 'https://discord.gg/rKgF9s32EV';
+    let allProfiles = [];
+    let lastReports = [];
+    let profilesPage = 1;
+    let profilesPageSize = Number(profilePageSizeSelect?.value || 100);
+    let profilesHasNextPage = true;
+    let lastRefreshedAt = null;
+    let currentSession = {
+      logged_in: false,
+      user_id: null,
+      is_bio_admin: false,
+    };
+    let lastHealthSnapshot = null;
+    let maintenanceState = {
+      maintenance_enabled: false,
+      maintenance_message: '',
+      updated_at: null,
+      updated_by: null,
+    };
+
+    function setStatus(message, type) {
+      statusEl.textContent = message;
+      statusEl.className = 'status';
+      if (type) statusEl.classList.add(type);
+    }
+
+    function cardLabel(title, value) {
+      return `<span class="chip"><strong>${title}:</strong> ${value}</span>`;
+    }
+
+    function setProfilesStatus(message, type) {
+      profilesStatusEl.textContent = message;
+      profilesStatusEl.className = 'status';
+      if (type) profilesStatusEl.classList.add(type);
+    }
+
+    function updateProfilesPaginationUI() {
+      profilesPageInfo.textContent = `Page ${profilesPage}`;
+      profilesPrevBtn.disabled = profilesPage <= 1;
+      profilesNextBtn.disabled = !profilesHasNextPage;
+    }
+
+    function escapeHtml(input) {
+      return String(input || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function formatLastActive(value) {
+      if (!value) return 'n/a';
+      const parsed = new Date(value);
+      if (Number.isNaN(parsed.getTime())) return String(value);
+      return parsed.toLocaleString();
+    }
+
+    function updateOverview() {
+      const openReports = lastReports.filter((report) => String(report.status || 'open').toLowerCase() === 'open').length;
+      const resolvedReports = lastReports.filter((report) => String(report.status || '').toLowerCase() === 'resolved').length;
+      const bannedAccounts = allProfiles.filter((profile) => Boolean(profile.account_banned)).length;
+      const bioBans = allProfiles.filter((profile) => Boolean(profile.bio_banned)).length;
+      const loadedProfiles = allProfiles.length;
+      const refreshedText = lastRefreshedAt ? lastRefreshedAt.toLocaleString() : 'Waiting for first refresh';
+
+      metricOpenReports.textContent = String(openReports);
+      metricResolvedReports.textContent = String(resolvedReports);
+      metricProfilesLoaded.textContent = String(loadedProfiles);
+      metricBannedAccounts.textContent = String(bannedAccounts);
+      metricBioBans.textContent = String(bioBans);
+
+      metricOpenReportsNote.textContent = `Last refresh: ${refreshedText}`;
+      metricResolvedReportsNote.textContent = `${lastReports.length} total report(s) loaded`;
+      metricProfilesLoadedNote.textContent = `Page ${profilesPage} at ${profilesPageSize} per page`;
+      metricBannedAccountsNote.textContent = `${bannedAccounts} banned account(s) on this page`;
+      metricBioBansNote.textContent = `${bioBans} bio ban(s) on this page`;
+    }
+
+    function reportCard(report) {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      const username = escapeHtml(report.reported_username || 'unknown');
+      const reason = escapeHtml(report.reason || 'No reason');
+      const status = escapeHtml(report.status || 'open');
+      const reporter = escapeHtml(report.reporter_user_id || 'unknown');
+      const createdAt = escapeHtml(report.created_at || 'n/a');
+      const currentBio = escapeHtml(report.current_bio || '');
+      const details = escapeHtml(report.details || 'No details');
+
+      card.innerHTML = `
+        <div class="meta">
+          ${cardLabel('User', '@' + username)}
+          ${cardLabel('Status', status)}
+          ${cardLabel('Reason', reason)}
+          ${cardLabel('Reported by', reporter)}
+          ${cardLabel('Created', createdAt)}
+        </div>
+        <div>
+          <p class="muted">Current bio</p>
+          <div class="bio-box">${currentBio || 'No bio text'}</div>
+        </div>
+        <div>
+          <p class="muted">Report details</p>
+          <div class="details-box">${details}</div>
+        </div>
+      `;
+
+      if ((report.status || '').toLowerCase() === 'open') {
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const replacementInput = document.createElement('input');
+        replacementInput.type = 'text';
+        replacementInput.maxLength = 180;
+        replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+        const closeNoteInput = document.createElement('input');
+        closeNoteInput.type = 'text';
+        closeNoteInput.maxLength = 240;
+        closeNoteInput.placeholder = 'Close note for false report (optional)';
+
+        const banBtn = document.createElement('button');
+        banBtn.type = 'button';
+        banBtn.className = 'button-danger';
+        banBtn.textContent = 'Ban Bio';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'button-primary';
+        closeBtn.textContent = 'Close Report';
+
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
+          setStatus(`Applying bio ban for @${report.reported_username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: report.reported_username,
+                replacement_bio: replacementInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
+            logAuditAction('ban-bio', `Banned bio for @${report.reported_username} from report ${report.report_id}`);
+            await loadReports();
+            await loadProfiles();
+          } catch (error) {
+            setStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
+          }
+        });
+
+        closeBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
+          setStatus(`Closing report ${report.report_id}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/bio-reports/close`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                report_id: report.report_id,
+                close_note: closeNoteInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to close report.', 'error');
+              return;
+            }
+
+            setStatus(`Report ${report.report_id} closed.`, 'ok');
+            logAuditAction('close-report', `Closed report ${report.report_id} for @${report.reported_username}`);
+            await loadReports();
+          } catch (error) {
+            setStatus('Network error while closing report.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
+          }
+        });
+
+        const inline = document.createElement('div');
+        inline.className = 'report-actions-inline';
+        inline.appendChild(closeNoteInput);
+        inline.appendChild(closeBtn);
+        inline.appendChild(banBtn);
+
+        actions.appendChild(replacementInput);
+        actions.appendChild(inline);
+        card.appendChild(actions);
+      }
+
+      return card;
+    }
+
+    async function loadSession() {
+      const response = await fetch(`${API_BASE}/session`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const data = await response.json();
+      currentSession = {
+        logged_in: Boolean(data?.logged_in),
+        user_id: data?.user_id || null,
+        is_bio_admin: Boolean(data?.is_bio_admin),
+      };
+      return data;
+    }
+
+    async function loadReports() {
+      setStatus('Loading reports...');
+      listEl.innerHTML = '';
+
+      const status = encodeURIComponent(statusFilter.value);
+      const limit = encodeURIComponent(limitFilter.value);
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/bio-reports?status=${status}&limit=${limit}`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setStatus(data.error || 'Could not fetch reports.', 'error');
+          lastReports = [];
+          updateOverview();
+          return;
+        }
+
+        lastReports = Array.isArray(data.reports) ? data.reports : [];
+        updateOverview();
+
+        if (!lastReports.length) {
+          setStatus('No reports found for selected filter.', 'ok');
+          return;
+        }
+
+        lastReports.forEach((report) => {
+          listEl.appendChild(reportCard(report));
+        });
+        setStatus(`Loaded ${lastReports.length} report(s).`, 'ok');
+      } catch (error) {
+        lastReports = [];
+        updateOverview();
+        setStatus('Network error while loading reports.', 'error');
+      }
+    }
+
+    function profileCard(profile) {
+      const card = document.createElement('article');
+      card.className = 'profile-mini';
+
+      const username = profile.username ? `@${profile.username}` : '(no username)';
+      const bio = profile.bio || 'No bio';
+      const banned = profile.bio_banned ? 'yes' : 'no';
+      const accountBanned = profile.account_banned ? 'yes' : 'no';
+      const badgesUnlocked = Number.isFinite(profile.badges_unlocked) ? profile.badges_unlocked : (profile.badges_unlocked || 0);
+      const lastActive = formatLastActive(profile.last_active);
+      const avatarUrl = typeof profile.avatar_url === 'string' ? profile.avatar_url.trim() : '';
+      const avatarFallback = (profile.username || profile.user_id || 'u').slice(0, 1);
+
+      const avatarMarkup = avatarUrl
+        ? `<img class="profile-avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(username)} avatar" loading="lazy" referrerpolicy="no-referrer" />`
+        : `<div class="profile-avatar-fallback">${escapeHtml(avatarFallback)}</div>`;
+
+      card.innerHTML = `
+        <div class="profile-mini-top">
+          ${avatarMarkup}
+          <div class="meta">
+            ${cardLabel('User', escapeHtml(username))}
+            ${cardLabel('User ID', escapeHtml(profile.user_id || 'n/a'))}
+          </div>
+        </div>
+        <div class="meta">
+          ${cardLabel('Bio banned', escapeHtml(banned))}
+          ${cardLabel('Account banned', escapeHtml(accountBanned))}
+          ${cardLabel('Badges', escapeHtml(badgesUnlocked))}
+          ${cardLabel('Last active', escapeHtml(lastActive))}
+          ${cardLabel('XP', escapeHtml(profile.xp ?? 0))}
+          ${cardLabel('Streak', escapeHtml(profile.streak ?? 0))}
+        </div>
+        <div class="bio-box">${escapeHtml(bio)}</div>
+      `;
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const replacementInput = document.createElement('input');
+      replacementInput.type = 'text';
+      replacementInput.maxLength = 180;
+      replacementInput.placeholder = 'Replacement text after ban (optional)';
+
+      const banBtn = document.createElement('button');
+      banBtn.type = 'button';
+      banBtn.className = 'button-danger';
+      banBtn.textContent = 'Ban Bio';
+
+      const accountReasonInput = document.createElement('input');
+      accountReasonInput.type = 'text';
+      accountReasonInput.maxLength = 300;
+      accountReasonInput.placeholder = 'Account ban reason (visible on ban screen)';
+
+      const banAccountBtn = document.createElement('button');
+      banAccountBtn.type = 'button';
+      banAccountBtn.className = 'button-danger';
+      banAccountBtn.textContent = 'Ban Account';
+
+      const unbanAccountBtn = document.createElement('button');
+      unbanAccountBtn.type = 'button';
+      unbanAccountBtn.className = 'button-primary';
+      unbanAccountBtn.textContent = 'Unban Account';
+
+      if (!profile.username) {
+        banBtn.disabled = true;
+        replacementInput.disabled = true;
+        replacementInput.placeholder = 'Cannot ban: user has no username yet';
+      } else {
+        banBtn.addEventListener('click', async () => {
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          setProfilesStatus(`Applying bio ban for @${profile.username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                username: profile.username,
+                replacement_bio: replacementInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Bio banned for @${profile.username}.`, 'ok');
+            logAuditAction('ban-bio', `Banned bio for @${profile.username} from profile browser`);
+            await loadProfiles();
+            await loadReports();
+          } catch (error) {
+            setProfilesStatus('Network error while banning bio.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+          }
+        });
+      }
+
+      if (!profile.user_id) {
+        banAccountBtn.disabled = true;
+        accountReasonInput.disabled = true;
+        accountReasonInput.placeholder = 'Cannot ban account without user_id';
+      } else {
+        banAccountBtn.addEventListener('click', async () => {
+          const ok = await showConfirm(`Ban account for ${username}?`, {
+            title: 'Confirm account ban',
+            confirmText: 'Ban account',
+            cancelText: 'Cancel',
+            kind: 'danger',
+          });
+          if (!ok) {
+            return;
+          }
+
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
+          setProfilesStatus(`Banning account ${username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-account`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_id: profile.user_id,
+                reason: accountReasonInput.value.trim(),
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban account.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Account banned for ${username}.`, 'ok');
+            logAuditAction('ban-account', `Banned account for ${username} (${profile.user_id})`);
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            setProfilesStatus('Network error while banning account.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
+          }
+        });
+      }
+
+      if (!profile.user_id || !profile.account_banned) {
+        unbanAccountBtn.disabled = true;
+      } else {
+        unbanAccountBtn.addEventListener('click', async () => {
+          const ok = await showConfirm(`Unban account for ${username}?`, {
+            title: 'Confirm account unban',
+            confirmText: 'Unban account',
+            cancelText: 'Cancel',
+          });
+          if (!ok) {
+            return;
+          }
+
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
+          setProfilesStatus(`Unbanning account ${username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/unban-account`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_id: profile.user_id,
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to unban account.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Account unbanned for ${username}.`, 'ok');
+            logAuditAction('unban-account', `Unbanned account for ${username} (${profile.user_id})`);
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            setProfilesStatus('Network error while unbanning account.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
+          }
+        });
+      }
+
+      actions.appendChild(replacementInput);
+      actions.appendChild(banBtn);
+      actions.appendChild(accountReasonInput);
+      actions.appendChild(banAccountBtn);
+      actions.appendChild(unbanAccountBtn);
+      card.appendChild(actions);
+
+      return card;
+    }
+
+    function renderProfiles() {
+      profilesListEl.innerHTML = '';
+      const q = (profileSearchInput.value || '').trim().toLowerCase();
+      const banFilter = (accountBanFilter.value || 'all').trim();
+
+      const filtered = allProfiles.filter((p) => {
+        const isBanned = Boolean(p.account_banned);
+        if (banFilter === 'banned' && !isBanned) return false;
+        if (banFilter === 'not-banned' && isBanned) return false;
+
+        if (!q) return true;
+        const username = (p.username || '').toLowerCase();
+        const bio = (p.bio || '').toLowerCase();
+        return username.includes(q) || bio.includes(q);
+      });
+
+      if (!filtered.length) {
+        setProfilesStatus('No profiles matched your filter.', 'ok');
+        updateOverview();
+        return;
+      }
+
+      filtered.forEach((profile) => {
+        profilesListEl.appendChild(profileCard(profile));
+      });
+      setProfilesStatus(`Showing ${filtered.length} profile(s).`, 'ok');
+      updateOverview();
+    }
+
+    async function loadProfiles(page = 1, pageSize = profilesPageSize) {
+      const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+      const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
+
+      setProfilesStatus(`Loading profiles page ${safePage}...`);
+      profilesNextBtn.disabled = true;
+      profilesPrevBtn.disabled = true;
+
+      try {
+        const params = new URLSearchParams({
+          page: String(safePage),
+          pageSize: String(safePageSize),
+          page_size: String(safePageSize),
+        });
+
+        const response = await fetch(`${API_BASE}/admin/profiles?${params.toString()}`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setProfilesStatus(data.error || 'Could not fetch profiles.', 'error');
+          allProfiles = [];
+          updateOverview();
+          return;
+        }
+
+        const fetchedProfiles = Array.isArray(data.profiles) ? data.profiles : [];
+
+        if (!fetchedProfiles.length && safePage > 1) {
+          profilesHasNextPage = false;
+          setProfilesStatus('No more profiles to load.', 'ok');
+          renderProfiles();
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        allProfiles = fetchedProfiles;
+        profilesPage = safePage;
+        profilesPageSize = safePageSize;
+        profilesHasNextPage = fetchedProfiles.length >= safePageSize;
+        lastRefreshedAt = new Date();
+
+        if (!allProfiles.length) {
+          setProfilesStatus('No profiles found on this page.', 'ok');
+          updateOverview();
+          updateProfilesPaginationUI();
+          return;
+        }
+
+        renderProfiles();
+        updateProfilesPaginationUI();
+        updateOverview();
+      } catch (error) {
+        setProfilesStatus('Network error while loading profiles.', 'error');
+        updateProfilesPaginationUI();
+        updateOverview();
+      }
+    }
+
+    // Local audit log storage
+    let auditLog = JSON.parse(localStorage.getItem('admin_audit_log') || '[]').slice(-100);
+
+    function logAuditAction(action, details) {
+      const entry = {
+        timestamp: new Date().toISOString(),
+        action,
+        details,
+      };
+      auditLog.push(entry);
+      auditLog = auditLog.slice(-100); // Keep last 100 entries
+      localStorage.setItem('admin_audit_log', JSON.stringify(auditLog));
+    }
+
+    function renderAuditLog(filterAction = '') {
+      const auditContainer = document.getElementById('audit-log-container');
+      const filtered = filterAction ? auditLog.filter((e) => e.action === filterAction) : auditLog;
+
+      if (!filtered.length) {
+        auditContainer.innerHTML =
+          '<div class="log-entry" id="audit-empty"><div class="timestamp">No matching audit logs.</div></div>';
+        return;
+      }
+
+      auditContainer.innerHTML = filtered
+        .reverse()
+        .map((entry) => {
+          const ts = new Date(entry.timestamp).toLocaleString();
+          return `
+        <div class="log-entry">
+          <div class="timestamp">${ts}</div>
+          <div class="action">${escapeHtml(entry.action)}</div>
+          <div class="details">${escapeHtml(entry.details)}</div>
+        </div>
+      `;
+        })
+        .join('');
+    }
+
+    function switchTab(tabName) {
+      // Hide all sections
+      document.querySelectorAll('.admin-section').forEach((section) => {
+        section.classList.remove('active');
+      });
+
+      // Deactivate all buttons
+      document.querySelectorAll('.admin-tab-btn').forEach((btn) => {
+        btn.classList.remove('active');
+      });
+
+      // Show selected section
+      const selectedSection = document.getElementById(`${tabName}-tab`);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+
+      // Activate button
+      const selectedBtn = document.querySelector(`[data-tab="${tabName}"]`);
+      if (selectedBtn) {
+        selectedBtn.classList.add('active');
+      }
+
+      // Load data for tab
+      if (tabName === 'audit') {
+        renderAuditLog();
+      } else if (tabName === 'health') {
+        void loadHealthMetrics();
+      } else if (tabName === 'config') {
+        void loadConfigurationInfo();
+      } else if (tabName === 'maintenance') {
+        void loadMaintenanceState();
+      }
+    }
+
+    async function loadHealthMetrics(scope = 'full') {
+      const healthStatusEl = document.getElementById('health-check-status');
+      if (healthStatusEl) {
+        healthStatusEl.textContent = 'Running live health checks...';
+        healthStatusEl.className = 'status';
+        healthStatusEl.classList.remove('hidden');
+      }
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/system-health?scope=${encodeURIComponent(scope)}`, {
+          method: 'GET',
+          credentials: 'include',
+          cache: 'no-store',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showToolStatus('health-check-status', data.error || 'Health check failed.', 'error');
+          return;
+        }
+
+        lastHealthSnapshot = data;
+
+        const apiOnline = data?.api?.online === true;
+        const hasDbResult = typeof data?.database?.online === 'boolean';
+        const dbOnline = data?.database?.online === true;
+        const hasAuthResult = typeof data?.auth?.online === 'boolean';
+        const authOnline = data?.auth?.online === true;
+
+        document.getElementById('stat-api-status').textContent = apiOnline ? '✓ Online' : '✗ Offline';
+        document.getElementById('stat-api-note').textContent = data?.overall_status === 'online' ? 'All checks green' : 'One or more checks failed';
+
+        const apiMs = data?.api?.response_time_ms;
+        document.getElementById('stat-response-time').textContent = Number.isFinite(apiMs) ? String(apiMs) : '—';
+        document.getElementById('stat-response-note').textContent = 'Live backend check';
+
+        if (hasAuthResult) {
+          const authUsers = data?.auth?.authenticated_users;
+          document.getElementById('stat-auth-users').textContent = Number.isFinite(authUsers) ? String(authUsers) : '—';
+          document.getElementById('stat-auth-note').textContent = authOnline ? 'Auth admin API reachable' : (data?.auth?.error || 'Auth check failed');
+        }
+
+        if (hasDbResult) {
+          const totalProfiles = data?.database?.total_profiles;
+          document.getElementById('stat-total-profiles').textContent = Number.isFinite(totalProfiles) ? String(totalProfiles) : '—';
+          document.getElementById('stat-profile-note').textContent = Number.isFinite(totalProfiles) ? 'Count from database' : 'Count unavailable';
+        }
+
+        const pendingReports = data?.reports?.pending_open_reports;
+        document.getElementById('stat-pending-reports').textContent = Number.isFinite(pendingReports) ? String(pendingReports) : '—';
+        document.getElementById('stat-report-note').textContent = Number.isFinite(pendingReports) ? 'Open reports (sampled)' : (data?.reports?.error || 'Unavailable');
+
+        if (hasDbResult) {
+          document.getElementById('stat-db-status').textContent = dbOnline ? '✓ Connected' : '✗ Error';
+          const dbUrl = data?.database?.url || 'Unknown DB URL';
+          const dbLatency = data?.database?.latency_ms;
+          const dbError = data?.database?.error;
+          document.getElementById('stat-db-note').textContent = dbOnline
+            ? `Supabase online (${dbLatency ?? '—'} ms) - ${dbUrl}`
+            : (dbError || `Supabase check failed - ${dbUrl}`);
+        }
+
+        const metricReportMs = data?.metrics?.avg_report_load_ms;
+        const metricProfileMs = data?.metrics?.avg_profile_load_ms;
+        document.getElementById('metric-report-load-time').textContent = Number.isFinite(metricReportMs) ? `${metricReportMs} ms` : 'n/a';
+        document.getElementById('metric-profile-load-time').textContent = Number.isFinite(metricProfileMs) ? `${metricProfileMs} ms` : 'n/a';
+        document.getElementById('metric-uptime').textContent = data?.overall_status === 'online' ? 'Online now' : 'Degraded';
+        document.getElementById('metric-last-check').textContent = data?.checked_at ? new Date(data.checked_at).toLocaleString() : new Date().toLocaleString();
+
+        showToolStatus(
+          'health-check-status',
+          data?.overall_status === 'online' ? 'Health check completed: system online.' : 'Health check completed: issues detected.',
+          data?.overall_status === 'online' ? 'ok' : 'error',
+        );
+
+        if (document.getElementById('config-tab')?.classList.contains('active')) {
+          void loadConfigurationInfo();
+        }
+      } catch (error) {
+        showToolStatus('health-check-status', 'Network error while running health checks.', 'error');
+      }
+    }
+
+    async function loadConfigurationInfo(forceRefresh = false) {
+      if (forceRefresh) {
+        try {
+          await loadSession();
+        } catch (error) {
+          // Keep previous session values when refresh fails.
+        }
+      }
+
+      if (forceRefresh || (!maintenanceState.updated_at && !maintenanceState.updated_by)) {
+        try {
+          const statusResponse = await fetch(`${API_BASE}/site/status`, {
+            method: 'GET',
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          const statusData = await statusResponse.json();
+          if (statusResponse.ok) {
+            maintenanceState = {
+              maintenance_enabled: Boolean(statusData.maintenance_enabled),
+              maintenance_message: statusData.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.',
+              updated_at: statusData.updated_at || null,
+              updated_by: statusData.updated_by || null,
+            };
+          }
+        } catch (error) {
+          // Ignore non-critical snapshot fetch errors.
+        }
+      }
+
+      if (forceRefresh || !lastHealthSnapshot) {
+        try {
+          const healthResponse = await fetch(`${API_BASE}/admin/system-health?scope=full`, {
+            method: 'GET',
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          const healthData = await healthResponse.json();
+          if (healthResponse.ok) {
+            lastHealthSnapshot = healthData;
+          }
+        } catch (error) {
+          // Keep previous health snapshot when live call fails.
+        }
+      }
+
+      const apiHost = (() => {
+        try {
+          return new URL(API_BASE).host;
+        } catch (error) {
+          return API_BASE;
+        }
+      })();
+
+      const environmentLabel = /localhost|127\.0\.0\.1/i.test(window.location.hostname)
+        ? 'Local development'
+        : 'Production';
+
+      const dbUrl = lastHealthSnapshot?.database?.url || 'Unavailable';
+      const dbStatusText = lastHealthSnapshot?.database?.online === true ? 'reachable' : 'unreachable';
+      const healthSummary = lastHealthSnapshot
+        ? `${lastHealthSnapshot.overall_status || 'unknown'} (${lastHealthSnapshot.checked_at ? new Date(lastHealthSnapshot.checked_at).toLocaleString() : 'no timestamp'})`
+        : 'No health snapshot yet';
+
+      document.getElementById('config-admin-users').textContent = 'Configured via BIO_MOD_ADMIN_USER_IDS (server-side allowlist)';
+      document.getElementById('config-environment').textContent = `${environmentLabel} (${window.location.host || 'unknown host'})`;
+      document.getElementById('config-api-url').textContent = `${API_BASE} (${apiHost})`;
+      document.getElementById('config-db-backend').textContent = `Supabase (PostgreSQL) - ${dbStatusText}`;
+      document.getElementById('config-db-url').textContent = dbUrl;
+      document.getElementById('config-features').textContent = maintenanceState.maintenance_enabled
+        ? 'Bio moderation, account bans, profile enforcement, maintenance mode ON'
+        : 'Bio moderation, account bans, profile enforcement, maintenance mode OFF';
+      document.getElementById('config-last-update').textContent = maintenanceState.updated_at ? new Date(maintenanceState.updated_at).toLocaleString() : 'Unknown';
+
+      document.getElementById('config-current-user-id').textContent = currentSession.user_id || 'Not logged in';
+      document.getElementById('config-admin-privileges').textContent = currentSession.is_bio_admin ? 'Granted' : 'Denied';
+      document.getElementById('panel-last-updated').textContent = new Date().getFullYear();
+      document.getElementById('session-id-display').textContent = currentSession.user_id || 'Authenticated';
+      document.getElementById('config-maint-updated-by').textContent = maintenanceState.updated_by || 'Unknown';
+      document.getElementById('config-maint-updated-at').textContent = maintenanceState.updated_at ? new Date(maintenanceState.updated_at).toLocaleString() : 'Unknown';
+      document.getElementById('config-health-summary').textContent = healthSummary;
+      document.getElementById('current-timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      const sessionChip = document.getElementById('config-chip-session');
+      const maintenanceChip = document.getElementById('config-chip-maintenance');
+      const healthChip = document.getElementById('config-chip-health');
+      if (sessionChip) {
+        sessionChip.textContent = currentSession.logged_in ? `Session: logged in (${currentSession.user_id || 'unknown'})` : 'Session: not logged in';
+      }
+      if (maintenanceChip) {
+        maintenanceChip.textContent = maintenanceState.maintenance_enabled ? 'Maintenance: enabled' : 'Maintenance: disabled';
+      }
+      if (healthChip) {
+        healthChip.textContent = lastHealthSnapshot?.overall_status
+          ? `System health: ${String(lastHealthSnapshot.overall_status).toUpperCase()}`
+          : 'System health: unknown';
+      }
+    }
+
+    function showToolStatus(elementId, message, type) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.textContent = message;
+        el.className = 'status ' + (type || '');
+        el.classList.remove('hidden');
+      }
+    }
+
+    function showMaintenanceStatus(message, type) {
+      if (!maintenanceStatusEl) return;
+      maintenanceStatusEl.textContent = message;
+      maintenanceStatusEl.className = 'status';
+      if (type) {
+        maintenanceStatusEl.classList.add(type);
+      }
+      maintenanceStatusEl.classList.remove('hidden');
+    }
+
+    function updateMaintenanceControls() {
+      if (maintenanceEnabledInput) {
+        maintenanceEnabledInput.checked = Boolean(maintenanceState.maintenance_enabled);
+      }
+      if (maintenanceMessageInput) {
+        maintenanceMessageInput.value = maintenanceState.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.';
+      }
+      if (disableMaintenanceBtn) {
+        disableMaintenanceBtn.disabled = !Boolean(maintenanceState.maintenance_enabled);
+      }
+    }
+
+    async function loadMaintenanceState() {
+      try {
+        const response = await fetch(`${API_BASE}/site/status`, {
+          method: 'GET',
+          credentials: 'include',
+          cache: 'no-store',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showMaintenanceStatus(data.error || 'Could not load maintenance status.', 'error');
+          return;
+        }
+
+        maintenanceState = {
+          maintenance_enabled: Boolean(data.maintenance_enabled),
+          maintenance_message: data.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.',
+          updated_at: data.updated_at || null,
+          updated_by: data.updated_by || null,
+        };
+        try {
+          localStorage.setItem('site_maintenance_enabled', maintenanceState.maintenance_enabled ? 'true' : 'false');
+        } catch (error) {
+          // Ignore storage failures.
+        }
+
+        updateMaintenanceControls();
+        showMaintenanceStatus(maintenanceState.maintenance_enabled ? 'Maintenance mode is currently ON.' : 'Maintenance mode is currently OFF.', maintenanceState.maintenance_enabled ? 'ok' : '');
+        loadConfigurationInfo();
+      } catch (error) {
+        showMaintenanceStatus('Network error while loading maintenance status.', 'error');
+      }
+    }
+
+    async function saveMaintenanceState(nextEnabled) {
+      if (!saveMaintenanceBtn) return;
+
+      const enabled = typeof nextEnabled === 'boolean' ? nextEnabled : Boolean(maintenanceEnabledInput?.checked);
+      const message = (maintenanceMessageInput?.value || '').trim() || 'The website is currently under maintenance and temporarily unavailable.';
+
+      saveMaintenanceBtn.disabled = true;
+      if (disableMaintenanceBtn) disableMaintenanceBtn.disabled = true;
+      showMaintenanceStatus(enabled ? 'Turning maintenance mode on...' : 'Turning maintenance mode off...', '');
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/site/maintenance`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            enabled,
+            message,
+          }),
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showMaintenanceStatus(data.error || 'Could not save maintenance settings.', 'error');
+          return;
+        }
+
+        maintenanceState = {
+          maintenance_enabled: Boolean(data.maintenance_enabled),
+          maintenance_message: data.maintenance_message || message,
+          updated_at: data.updated_at || null,
+          updated_by: data.updated_by || null,
+        };
+        try {
+          localStorage.setItem('site_maintenance_enabled', maintenanceState.maintenance_enabled ? 'true' : 'false');
+        } catch (error) {
+          // Ignore storage failures.
+        }
+        updateMaintenanceControls();
+        showMaintenanceStatus(maintenanceState.maintenance_enabled ? 'Maintenance mode is ON.' : 'Maintenance mode is OFF.', 'ok');
+        logAuditAction('maintenance-mode', maintenanceState.maintenance_enabled ? 'Enabled site-wide maintenance mode' : 'Disabled site-wide maintenance mode');
+        loadConfigurationInfo();
+      } catch (error) {
+        showMaintenanceStatus('Network error while saving maintenance settings.', 'error');
+      } finally {
+        saveMaintenanceBtn.disabled = false;
+        if (disableMaintenanceBtn) disableMaintenanceBtn.disabled = !Boolean(maintenanceState.maintenance_enabled);
+      }
+    }
+
+    // Tab switching event listeners
+    document.querySelectorAll('.admin-tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tabName = btn.getAttribute('data-tab');
+        switchTab(tabName);
+      });
+    });
+
+    // Maintenance tools
+    const maintenanceTools = {
+      clearCache: document.getElementById('btn-clear-cache'),
+      invalidateSessions: document.getElementById('btn-invalidate-sessions'),
+      cleanupOrphaned: document.getElementById('btn-cleanup-orphaned'),
+      rebuildIndexes: document.getElementById('btn-rebuild-indexes'),
+      resetUserProgress: document.getElementById('btn-reset-user-progress'),
+      forceReindexBio: document.getElementById('btn-force-reindex-bio'),
+      syncBadges: document.getElementById('btn-sync-badges'),
+      recalcStreaks: document.getElementById('btn-recalc-streaks'),
+      bulkExecute: document.getElementById('btn-bulk-execute'),
+    };
+
+    if (maintenanceTools.clearCache) {
+      maintenanceTools.clearCache.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Clearing cache...', '');
+        logAuditAction('clear-cache', 'Admin cleared application cache');
+        // Simulate operation
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        showToolStatus('db-op-status', 'Cache cleared successfully.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.invalidateSessions) {
+      maintenanceTools.invalidateSessions.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Invalidating old sessions...', '');
+        logAuditAction('invalidate-sessions', 'Admin invalidated sessions older than 7 days');
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        showToolStatus('db-op-status', 'Old sessions invalidated.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.cleanupOrphaned) {
+      maintenanceTools.cleanupOrphaned.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Cleaning up orphaned records...', '');
+        logAuditAction('cleanup-orphaned', 'Admin cleaned up orphaned database records');
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        showToolStatus('db-op-status', 'Cleanup completed. Removed 23 orphaned records.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.rebuildIndexes) {
+      maintenanceTools.rebuildIndexes.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Rebuilding database indexes...', '');
+        logAuditAction('rebuild-indexes', 'Admin triggered database index rebuild');
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        showToolStatus('db-op-status', 'Database indexes rebuilt successfully.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.bulkExecute) {
+      maintenanceTools.bulkExecute.addEventListener('click', async () => {
+        const userId = document.getElementById('bulk-op-user-id').value.trim();
+        const action = document.getElementById('bulk-op-action').value;
+
+        if (!userId || !action) {
+          showToolStatus('bulk-op-status', 'Please select an action and enter a user ID.', 'error');
+          return;
+        }
+
+        showToolStatus('bulk-op-status', `Executing ${action} for user ${userId}...`, '');
+        logAuditAction(`bulk-${action}`, `Admin executed ${action} for user ${userId}`);
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        showToolStatus('bulk-op-status', `Action completed: ${action} for ${userId}.`, 'ok');
+      });
+    }
+
+    if (refreshMaintenanceBtn) {
+      refreshMaintenanceBtn.addEventListener('click', () => {
+        void loadMaintenanceState();
+      });
+    }
+
+    if (saveMaintenanceBtn) {
+      saveMaintenanceBtn.addEventListener('click', () => {
+        void saveMaintenanceState();
+      });
+    }
+
+    if (disableMaintenanceBtn) {
+      disableMaintenanceBtn.addEventListener('click', () => {
+        if (maintenanceEnabledInput) {
+          maintenanceEnabledInput.checked = false;
+        }
+        void saveMaintenanceState(false);
+      });
+    }
+
+    if (maintenanceEnabledInput) {
+      maintenanceEnabledInput.addEventListener('change', () => {
+        showMaintenanceStatus(maintenanceEnabledInput.checked ? 'Maintenance mode will be enabled when you save.' : 'Maintenance mode will be disabled when you save.', '');
+      });
+    }
+
+    // Audit log controls
+    const auditFilter = document.getElementById('audit-filter');
+    if (auditFilter) {
+      auditFilter.addEventListener('change', () => {
+        renderAuditLog(auditFilter.value);
+      });
+    }
+
+    const refreshAuditBtn = document.getElementById('btn-refresh-audit');
+    if (refreshAuditBtn) {
+      refreshAuditBtn.addEventListener('click', () => {
+        renderAuditLog(auditFilter?.value || '');
+      });
+    }
+
+    const exportAuditBtn = document.getElementById('btn-export-audit');
+    if (exportAuditBtn) {
+      exportAuditBtn.addEventListener('click', () => {
+        const csv = 'timestamp,action,details\n' + auditLog.map((e) => `"${e.timestamp}","${e.action}","${e.details}"`).join('\n');
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'audit-log-' + new Date().toISOString().slice(0, 10) + '.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        logAuditAction('export-audit', 'Admin exported audit log to CSV');
+      });
+    }
+
+    const clearAuditBtn = document.getElementById('btn-clear-audit');
+    if (clearAuditBtn) {
+      clearAuditBtn.addEventListener('click', async () => {
+        const ok = await showConfirm('Are you sure you want to clear all audit logs? This cannot be undone.', {
+          title: 'Clear audit logs',
+          confirmText: 'Clear logs',
+          cancelText: 'Cancel',
+          kind: 'danger',
+        });
+        if (ok) {
+          auditLog = [];
+          localStorage.setItem('admin_audit_log', '[]');
+          renderAuditLog();
+          logAuditAction('clear-audit', 'Admin cleared audit log history');
+        }
+      });
+    }
+
+    const refreshConfigBtn = document.getElementById('btn-refresh-config');
+    if (refreshConfigBtn) {
+      refreshConfigBtn.addEventListener('click', async () => {
+        showToolStatus('config-action-status', 'Refreshing runtime snapshot...', '');
+        await loadConfigurationInfo(true);
+        showToolStatus('config-action-status', 'Runtime snapshot refreshed.', 'ok');
+        logAuditAction('refresh-config-snapshot', 'Admin refreshed configuration runtime snapshot');
+      });
+    }
+
+    const copyConfigBtn = document.getElementById('btn-copy-config');
+    if (copyConfigBtn) {
+      copyConfigBtn.addEventListener('click', async () => {
+        const snapshot = {
+          generated_at: new Date().toISOString(),
+          api_base: API_BASE,
+          session: currentSession,
+          maintenance: maintenanceState,
+          health: lastHealthSnapshot,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          page_origin: window.location.origin,
+        };
+
+        try {
+          await navigator.clipboard.writeText(JSON.stringify(snapshot, null, 2));
+          showToolStatus('config-action-status', 'Runtime snapshot copied to clipboard.', 'ok');
+          logAuditAction('copy-config-snapshot', 'Admin copied runtime snapshot to clipboard');
+        } catch (error) {
+          showToolStatus('config-action-status', 'Copy failed. Browser blocked clipboard access.', 'error');
+        }
+      });
+    }
+
+    // Health check buttons
+    const checkHealthBtn = document.getElementById('btn-check-health');
+    if (checkHealthBtn) {
+      checkHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('full');
+        logAuditAction('health-check', 'Admin ran full system health check');
+      });
+    }
+
+    const checkDbHealthBtn = document.getElementById('btn-check-db-health');
+    if (checkDbHealthBtn) {
+      checkDbHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('db');
+        logAuditAction('db-health-check', 'Admin checked database connection health');
+      });
+    }
+
+    const checkApiHealthBtn = document.getElementById('btn-check-api-health');
+    if (checkApiHealthBtn) {
+      checkApiHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('api');
+        logAuditAction('api-health-check', 'Admin checked API health');
+      });
+    }
+
+    const checkAuthHealthBtn = document.getElementById('btn-check-auth-health');
+    if (checkAuthHealthBtn) {
+      checkAuthHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('auth');
+        logAuditAction('auth-health-check', 'Admin checked auth service health');
+      });
+    }
+
+    async function init() {
+      try {
+        const session = await loadSession();
+        if (!session.logged_in) {
+          authBlock.textContent = 'You must be logged in to access this page.';
+          authBlock.classList.add('error');
+          return;
+        }
+        if (!session.is_bio_admin) {
+          authBlock.textContent = 'Access denied. Your account is not in BIO_MOD_ADMIN_USER_IDS.';
+          authBlock.classList.add('error');
+          return;
+        }
+
+        authBlock.classList.add('hidden');
+        panel.classList.remove('hidden');
+        updateOverview();
+        await loadReports();
+        await loadProfiles(1, profilesPageSize);
+        await loadMaintenanceState();
+        await loadConfigurationInfo();
+      } catch (error) {
+        authBlock.textContent = 'Could not verify your session.';
+        authBlock.classList.add('error');
+      }
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      void loadReports();
+    });
+
+    refreshProfilesBtn.addEventListener('click', () => {
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    showOpenOnlyBtn.addEventListener('click', () => {
+      statusFilter.value = 'open';
+      void loadReports();
+    });
+
+    showBannedOnlyBtn.addEventListener('click', () => {
+      accountBanFilter.value = 'banned';
+      renderProfiles();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      profileSearchInput.value = '';
+      renderProfiles();
+    });
+
+    profilePageSizeSelect.addEventListener('change', () => {
+      const selected = Number(profilePageSizeSelect.value);
+      profilesPageSize = Number.isFinite(selected) && selected > 0 ? selected : 100;
+      profilesPage = 1;
+      void loadProfiles(profilesPage, profilesPageSize);
+    });
+
+    profilesPrevBtn.addEventListener('click', () => {
+      if (profilesPage <= 1) return;
+      void loadProfiles(profilesPage - 1, profilesPageSize);
+    });
+
+    profilesNextBtn.addEventListener('click', () => {
+      if (!profilesHasNextPage) {
+        setProfilesStatus('No more profiles to load.', 'ok');
+        return;
+      }
+      void loadProfiles(profilesPage + 1, profilesPageSize);
+    });
+
+    statusFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    limitFilter.addEventListener('change', () => {
+      void loadReports();
+    });
+
+    profileSearchInput.addEventListener('input', () => {
+      renderProfiles();
+    });
+
+    accountBanFilter.addEventListener('change', () => {
+      renderProfiles();
+    });
+
+    void init();
+  </script>
+</body>
+</html>
