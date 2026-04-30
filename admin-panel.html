@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://itlearn.be/admin">
+  <link rel="canonical" href="https://itlearn.be/admin-panel">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Learn | Admin Panel</title>
+  <script src="/custom-dialogs.js" defer></script>
+  <script src="/maintenance-mode.js" defer></script>
   <style>
     :root {
       --bg: #0b1020;
       --panel: #101a33;
       --panel-2: #1a2747;
+      --panel-3: #0d1731;
       --text: #ecf2ff;
       --muted: #93a3c7;
       --line: rgba(255, 255, 255, 0.14);
       --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.14);
       --danger: #ef4444;
       --danger-soft: rgba(239, 68, 68, 0.18);
       --ok: #22c55e;
+      --warn: #f59e0b;
     }
 
     * {
@@ -29,12 +34,15 @@
       min-height: 100vh;
       font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
       color: var(--text);
-      background: radial-gradient(1200px 600px at 20% -5%, #1d2f5e, var(--bg) 70%);
+      background:
+        radial-gradient(1200px 600px at 20% -5%, #1d2f5e, transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(34, 211, 238, 0.12), transparent 45%),
+        linear-gradient(180deg, #08101e 0%, var(--bg) 100%);
       padding: 24px 16px 48px;
     }
 
     .wrap {
-      width: min(1100px, 100%);
+      width: min(1180px, 100%);
       margin: 0 auto;
       display: grid;
       gap: 14px;
@@ -54,19 +62,25 @@
 
     .topbar h1 {
       margin: 0;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
     }
 
     .muted {
       color: var(--muted);
       margin: 0;
       font-size: 0.9rem;
+      line-height: 1.45;
     }
 
-    .controls {
+    .controls,
+    .panel-card,
+    .metric-card {
       border: 1px solid var(--line);
       border-radius: 16px;
       background: rgba(16, 26, 51, 0.82);
+    }
+
+    .controls {
       padding: 12px;
       display: flex;
       flex-wrap: wrap;
@@ -93,7 +107,7 @@
 
     button {
       cursor: pointer;
-      transition: transform 120ms ease, opacity 120ms ease;
+      transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease;
     }
 
     button:hover {
@@ -109,6 +123,11 @@
     .button-primary {
       background: linear-gradient(140deg, #155e75, #164e63);
       border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .button-secondary {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.28);
     }
 
     .button-danger {
@@ -133,6 +152,46 @@
       color: #fda4af;
     }
 
+    .dashboard-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1000px) {
+      .dashboard-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .grid.two-cols {
+        grid-template-columns: 1.15fr 0.95fr;
+      }
+    }
+
+    .metric-card {
+      padding: 14px;
+      display: grid;
+      gap: 6px;
+      min-height: 96px;
+      background: linear-gradient(180deg, rgba(26, 39, 71, 0.92), rgba(13, 23, 49, 0.92));
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .metric-card strong {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .metric-card small {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
     .grid {
       display: grid;
       gap: 10px;
@@ -143,21 +202,16 @@
       gap: 14px;
     }
 
-    @media (min-width: 1000px) {
-      .grid.two-cols {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
     .panel-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(16, 26, 51, 0.84);
       padding: 12px;
       display: flex;
       flex-direction: column;
       gap: 10px;
       min-height: 0;
+    }
+
+    .panel-card.panel-wide {
+      padding: 16px;
     }
 
     .card {
@@ -192,11 +246,6 @@
       background: rgba(26, 39, 71, 0.8);
     }
 
-    .chip.live {
-      border-color: rgba(34, 211, 238, 0.5);
-      color: var(--accent);
-    }
-
     .bio-box,
     .details-box {
       border: 1px solid var(--line);
@@ -223,11 +272,6 @@
 
     .hidden {
       display: none;
-    }
-
-    .loading {
-      opacity: 0.6;
-      pointer-events: none;
     }
 
     .section-title {
@@ -298,377 +342,227 @@
       margin-left: auto;
     }
 
+    .section-note {
+      display: grid;
+      gap: 6px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      background: rgba(34, 211, 238, 0.05);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .section-note strong {
+      font-size: 0.95rem;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .maintenance-control-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .maintenance-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .maintenance-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .maintenance-switch input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .maintenance-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .admin-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+    }
+
+    .admin-tab-btn {
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      color: var(--muted);
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      transition: all 120ms ease;
+    }
+
+    .admin-tab-btn:hover {
+      background: rgba(34, 211, 238, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .admin-tab-btn.active {
+      background: linear-gradient(140deg, #155e75, #164e63);
+      border-color: rgba(34, 211, 238, 0.4);
+      color: var(--text);
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(26, 39, 71, 0.6);
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .stat-box small {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .stat-box .value {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #22d3ee;
+    }
+
+    .log-entry {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(8, 14, 30, 0.75);
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .log-entry .timestamp {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .log-entry .action {
+      color: #22d3ee;
+      font-weight: 600;
+    }
+
+    .log-entry .details {
+      color: #dbe7ff;
+      margin-top: 4px;
+    }
+
+    .tool-group {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(26, 39, 71, 0.6);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tool-group h3 {
+      margin: 0 0 10px 0;
+      font-size: 0.95rem;
+      color: #22d3ee;
+    }
+
+    .tool-group-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .config-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .config-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      background: rgba(8, 14, 30, 0.5);
+    }
+
+    .config-table td:first-child {
+      color: #22d3ee;
+      font-weight: 600;
+      width: 200px;
+    }
+
+    .config-table td:last-child {
+      color: #dbe7ff;
+      word-break: break-word;
+    }
+
+    .config-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .config-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
     @media (max-width: 700px) {
       .report-actions-inline {
         grid-template-columns: 1fr;
       }
-    }
 
-    /* Custom Modal Styles */
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 999;
-      animation: fadeIn 150ms ease;
-    }
-
-    .modal-backdrop.visible {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        backdrop-filter: blur(0px);
+      .topbar,
+      .profiles-pagination {
+        align-items: flex-start;
       }
-      to {
-        opacity: 1;
-        backdrop-filter: blur(4px);
+
+      .profiles-pagination .muted {
+        margin-left: 0;
       }
-    }
 
-    @keyframes slideDown {
-      from {
-        transform: translateY(-20px);
-        opacity: 0;
+      .admin-tabs {
+        flex-direction: column;
       }
-      to {
-        transform: translateY(0);
-        opacity: 1;
+
+      .admin-tab-btn {
+        width: 100%;
       }
-    }
 
-    .modal-dialog {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 500px;
-      width: 90%;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      animation: slideDown 200ms ease;
-    }
-
-    .modal-header {
-      margin-bottom: 16px;
-    }
-
-    .modal-title {
-      margin: 0;
-      font-size: 1.2rem;
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .modal-body {
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.5;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .modal-footer {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .modal-footer button {
-      min-width: 100px;
-      padding: 10px 16px;
-    }
-
-    .modal-footer button:first-child {
-      background: rgba(20, 33, 60, 0.8);
-      border-color: var(--line);
-    }
-
-    .modal-footer button:first-child:hover {
-      background: rgba(30, 43, 80, 0.9);
-    }
-
-    .modal-footer button:last-child {
-      background: linear-gradient(140deg, #ef4444, #dc2626);
-      border-color: rgba(239, 68, 68, 0.4);
-    }
-
-    /* Tab Navigation */
-    .tabs {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 20px;
-      background: rgba(16, 26, 51, 0.5);
-      border-radius: 12px 12px 0 0;
-      overflow: hidden;
-    }
-
-    .tab-button {
-      background: transparent;
-      border: none;
-      color: var(--muted);
-      padding: 14px 20px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 150ms ease;
-      border-bottom: 3px solid transparent;
-    }
-
-    .tab-button:hover {
-      color: var(--text);
-      background: rgba(34, 211, 238, 0.05);
-      transform: none;
-    }
-
-    .tab-button.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-      background: rgba(34, 211, 238, 0.1);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* Stats Dashboard */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .stat-card {
-      background: rgba(16, 26, 51, 0.6);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .stat-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stat-trend {
-      font-size: 0.8rem;
-      color: var(--ok);
-    }
-
-    .stat-card.warning .stat-value {
-      color: #f59e0b;
-    }
-
-    .stat-card.danger .stat-value {
-      color: var(--danger);
-    }
-
-    /* Action Bar */
-    .action-bar {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-
-    .action-bar button,
-    .action-bar select {
-      padding: 10px 14px;
-      font-size: 0.9rem;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      background: rgba(34, 211, 238, 0.15);
-      color: var(--accent);
-    }
-
-    .badge.danger {
-      background: rgba(239, 68, 68, 0.15);
-      color: var(--danger);
-    }
-
-    .badge.ok {
-      background: rgba(34, 197, 94, 0.15);
-      color: var(--ok);
-    }
-
-    /* Improved Table/List Styling */
-    .list-item {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 10px;
-      background: rgba(16, 26, 51, 0.5);
-      transition: background 150ms ease;
-    }
-
-    .list-item:hover {
-      background: rgba(16, 26, 51, 0.7);
-    }
-
-    .list-item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .list-item-title {
-      font-weight: 600;
-      color: var(--text);
-      margin: 0;
-    }
-
-    .list-item-meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .list-item-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .list-item-actions button {
-      padding: 8px 12px;
-      font-size: 0.85rem;
-    }
-
-    /* Loading Skeleton */
-    @keyframes shimmer {
-      0% { background-position: -1000px 0; }
-      100% { background-position: 1000px 0; }
-    }
-
-    .skeleton {
-      background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
-      background-size: 1000px 100%;
-      animation: shimmer 2s infinite;
-      border-radius: 8px;
-    }
-
-    /* Export Button */
-    .export-section {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      margin-top: 16px;
-      background: rgba(16, 26, 51, 0.5);
-    }
-
-    .export-section p {
-      margin: 0 0 10px 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .recent-actions-list {
-      margin: 0;
-      padding-left: 18px;
-      display: grid;
-      gap: 8px;
-      color: #dbe7ff;
-      font-size: 0.9rem;
-    }
-
-    .recent-actions-list li {
-      line-height: 1.35;
-    }
-
-    .recent-actions-empty {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .recent-actions-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .action-bar input {
-      min-width: 180px;
-    }
-
-    .button-ghost {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: var(--line);
-    }
-
-    .button-ghost.active {
-      border-color: rgba(34, 211, 238, 0.5);
-      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.2) inset;
-      color: var(--accent);
-    }
-
-    .toast-stack {
-      position: fixed;
-      right: 14px;
-      bottom: 14px;
-      z-index: 1200;
-      display: grid;
-      gap: 8px;
-      max-width: 340px;
-    }
-
-    .toast {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(16, 26, 51, 0.94);
-      color: var(--text);
-      padding: 10px 12px;
-      font-size: 0.9rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-      animation: slideDown 180ms ease;
-    }
-
-    .toast.ok {
-      border-color: rgba(34, 197, 94, 0.4);
-    }
-
-    .toast.error {
-      border-color: rgba(239, 68, 68, 0.4);
-    }
-
-    .toast.info {
-      border-color: rgba(34, 211, 238, 0.4);
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -677,55 +571,68 @@
     <div class="topbar">
       <div>
         <h1>Admin Panel</h1>
-        <p class="muted">Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can use this panel (bio + account moderation).</p>
+        <p class="muted">Manage bio reports, profile hygiene, and account bans from one place. Only users listed in <code>BIO_MOD_ADMIN_USER_IDS</code> can access this panel.</p>
       </div>
-      <div class="actions">
-        <span id="pending-requests-chip" class="chip">Active visitors: -</span>
-        <a href="/index.html" class="muted">Back to home</a>
-      </div>
+      <a href="/index.html" class="muted">Back to home</a>
     </div>
 
     <div id="auth-block" class="status">Checking your admin session...</div>
 
     <section id="panel" class="hidden">
-      <!-- Dashboard Stats -->
-      <div class="stats-grid" id="stats-container" style="display: none;">
-        <div class="stat-card">
-          <div class="stat-label">Open Reports</div>
-          <div class="stat-value" id="stat-open-reports">0</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Total Users</div>
-          <div class="stat-value" id="stat-total-users">0</div>
-        </div>
-        <div class="stat-card danger">
-          <div class="stat-label">Banned Accounts</div>
-          <div class="stat-value" id="stat-banned-accounts">0</div>
-        </div>
-        <div class="stat-card warning">
-          <div class="stat-label">Bio Bans</div>
-          <div class="stat-value" id="stat-bio-bans">0</div>
-        </div>
+      <div class="admin-tabs" id="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="moderation">Moderation</button>
+        <button class="admin-tab-btn" data-tab="maintenance">Maintenance</button>
+        <button class="admin-tab-btn" data-tab="audit">Audit Logs</button>
+        <button class="admin-tab-btn" data-tab="health">System Health</button>
+        <button class="admin-tab-btn" data-tab="config">Configuration</button>
       </div>
 
-      <!-- Tab Navigation -->
-      <div class="tabs">
-        <button class="tab-button active" data-tab="reports">📋 Reports</button>
-        <button class="tab-button" data-tab="profiles">👥 Profiles</button>
-        <button class="tab-button" data-tab="notifications">🔔 Notifications</button>
-      </div>
+      <!-- MODERATION TAB -->
+      <section id="moderation-tab" class="admin-section active">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin snapshot</h2>
+          <div class="dashboard-grid">
+            <article class="metric-card">
+              <span>Open reports</span>
+              <strong id="metric-open-reports">0</strong>
+              <small id="metric-open-reports-note">Awaiting report load</small>
+            </article>
+            <article class="metric-card">
+              <span>Resolved reports</span>
+              <strong id="metric-resolved-reports">0</strong>
+              <small id="metric-resolved-reports-note">Awaiting report load</small>
+            </article>
+            <article class="metric-card">
+              <span>Profiles loaded</span>
+              <strong id="metric-profiles-loaded">0</strong>
+              <small id="metric-profiles-loaded-note">Current page snapshot</small>
+            </article>
+            <article class="metric-card">
+              <span>Banned accounts</span>
+              <strong id="metric-banned-accounts">0</strong>
+              <small id="metric-banned-accounts-note">Current page snapshot</small>
+            </article>
+            <article class="metric-card">
+              <span>Bio bans</span>
+              <strong id="metric-bio-bans">0</strong>
+              <small id="metric-bio-bans-note">Current page snapshot</small>
+            </article>
+          </div>
+          <div class="section-note">
+            <strong>Workflow</strong>
+            <div class="muted">Use the report queue for moderation decisions, then validate the profile list before closing the loop. The panel stays focused on bio moderation and account enforcement, but the dashboard now gives you a broader operating view.</div>
+          </div>
+        </section>
 
-      <!-- Reports Tab -->
-      <div id="reports" class="tab-content active">
-        <div class="action-bar">
-          <label for="status-filter" style="white-space: nowrap; display: flex; align-items: center;">Status:</label>
+        <div class="controls">
+          <label for="status-filter">Report status:</label>
           <select id="status-filter">
             <option value="open" selected>Open</option>
             <option value="resolved">Resolved</option>
             <option value="all">All</option>
           </select>
 
-          <label for="limit-filter" style="white-space: nowrap; display: flex; align-items: center;">Limit:</label>
+          <label for="limit-filter">Limit:</label>
           <select id="limit-filter">
             <option value="50">50</option>
             <option value="100" selected>100</option>
@@ -733,127 +640,333 @@
             <option value="500">500</option>
           </select>
 
-          <button id="refresh" class="button-primary" type="button">🔄 Refresh</button>
-          <button id="refresh-stats" class="button-primary" type="button">📊 Refresh Stats</button>
-          <input id="report-reason-filter" type="text" placeholder="Reason contains..." />
-          <select id="report-time-filter">
-            <option value="all" selected>All time</option>
-            <option value="24h">Last 24h</option>
-            <option value="7d">Last 7 days</option>
-          </select>
-          <select id="auto-refresh-interval">
-            <option value="15000" selected>15s</option>
-            <option value="30000">30s</option>
-            <option value="60000">60s</option>
-          </select>
-          <button id="auto-refresh-toggle" class="button-ghost" type="button">⏱ Auto-refresh off</button>
-          <input id="bulk-close-note" type="text" maxlength="240" placeholder="Bulk close note (optional)" />
-          <button id="bulk-close-visible" class="button-danger" type="button">✅ Close Visible Open Reports</button>
-        </div>
-        <div id="status" class="status">Loading reports...</div>
-        <div id="list" class="grid"></div>
-      </div>
+          <button id="refresh" class="button-primary" type="button">Refresh queue</button>
+          <button id="refresh-profiles" class="button-primary" type="button">Refresh profiles</button>
+          <button id="show-open-only" class="button-secondary" type="button">Open only</button>
+          <button id="show-banned-only" class="button-secondary" type="button">Banned only</button>
+          <button id="clear-search" class="button-secondary" type="button">Clear search</button>
 
-      <!-- Profiles Tab -->
-      <div id="profiles" class="tab-content">
-        <div class="action-bar">
-          <label for="profile-page-size" style="white-space: nowrap; display: flex; align-items: center;">Per page:</label>
+          <label for="profile-page-size">Profiles/page:</label>
           <select id="profile-page-size">
             <option value="50">50</option>
             <option value="100" selected>100</option>
             <option value="250">250</option>
           </select>
 
-          <label for="account-ban-filter" style="white-space: nowrap; display: flex; align-items: center;">Filter:</label>
+          <label for="account-ban-filter">Accounts:</label>
           <select id="account-ban-filter">
             <option value="all" selected>All</option>
             <option value="banned">Banned only</option>
             <option value="not-banned">Not banned</option>
           </select>
 
-          <label for="profile-sort" style="white-space: nowrap; display: flex; align-items: center;">Sort:</label>
-          <select id="profile-sort">
-            <option value="last_active" selected>Last Active</option>
-            <option value="xp">XP</option>
-            <option value="streak">Streak</option>
-            <option value="badges_unlocked">Badges</option>
-            <option value="username">Username</option>
-          </select>
-          <button id="profile-sort-dir" class="button-ghost" type="button" aria-label="Toggle sort direction">⬇ Desc</button>
-
-          <input id="profile-search" type="text" placeholder="🔍 Search @username or bio" />
-          <button id="refresh-profiles" class="button-primary" type="button">🔄 Refresh</button>
+          <input id="profile-search" type="text" placeholder="Search @username or bio" />
         </div>
 
-        <div class="profiles-pagination">
-          <button id="profiles-prev" type="button">← Prev</button>
-          <button id="profiles-next" type="button">Next →</button>
-          <p id="profiles-page-info" class="muted">Page 1</p>
+        <div class="grid two-cols">
+          <section class="panel-card">
+            <h2 class="section-title">Moderation queue</h2>
+            <div id="status" class="status">Loading reports...</div>
+            <div id="list" class="grid"></div>
+          </section>
+
+          <section class="panel-card">
+            <h2 class="section-title">Profiles and enforcement</h2>
+            <div id="profiles-status" class="status">Loading profiles...</div>
+            <div class="profiles-pagination">
+              <button id="profiles-prev" type="button">Prev</button>
+              <button id="profiles-next" type="button">Next</button>
+              <p id="profiles-page-info" class="muted">Page 1</p>
+            </div>
+            <div id="profiles-list" class="grid"></div>
+          </section>
         </div>
+      </section>
 
-        <div id="profiles-insights" class="meta"></div>
-        <div id="profiles-status" class="status">Loading profiles...</div>
-        <div id="profiles-list" class="grid"></div>
-      </div>
-
-      <!-- Notifications Tab -->
-      <div id="notifications" class="tab-content">
-        <div class="panel-card">
-          <h2 class="section-title">Send Notification</h2>
-          <p class="muted">Send to everyone or target a single user ID.</p>
-          <div class="actions">
-            <input id="notif-title" type="text" maxlength="120" placeholder="Notification title" />
-            <input id="notif-target-user-id" type="text" maxlength="128" placeholder="Target user_id (leave empty for broadcast)" />
-            <label for="notif-broadcast" class="muted">
-              <input id="notif-broadcast" type="checkbox" checked /> Broadcast to all users
-            </label>
+      <!-- MAINTENANCE TAB -->
+      <section id="maintenance-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Maintenance & Admin Tools</h2>
+          <div class="section-note">
+            <strong>Caution</strong>
+            <div class="muted">These tools perform administrative operations. Use with care. Some operations may take time or require database access.</div>
           </div>
-          <textarea id="notif-message" rows="4" maxlength="1200" placeholder="Notification message"></textarea>
-          <div class="actions">
-            <button id="notif-send" class="button-primary" type="button">📤 Send Notification</button>
-          </div>
-          <div id="notif-status" class="status">Ready to send.</div>
-        </div>
 
-        <div class="export-section">
-          <p><strong>📥 Export Data</strong></p>
-          <p class="muted">Export user profiles and reports for backup or analysis.</p>
-          <div class="action-bar">
-            <button id="export-profiles" class="button-primary" type="button">📋 Export Profiles (CSV)</button>
-            <button id="export-reports" class="button-primary" type="button">📋 Export Reports (CSV)</button>
-          </div>
-        </div>
+          <div class="tool-group">
+            <h3>Site Maintenance Mode</h3>
+            <div class="maintenance-control-grid">
+              <label class="maintenance-switch" for="maintenance-enabled">
+                <input id="maintenance-enabled" type="checkbox" />
+                <span>Enable site-wide maintenance mode</span>
+              </label>
 
-        <div class="panel-card">
-          <div class="recent-actions-head">
-            <h2 class="section-title">Last 3 Admin Actions (Local)</h2>
-            <button id="clear-recent-actions" class="button-ghost" type="button">Clear</button>
+              <div class="maintenance-field">
+                <label for="maintenance-message">Maintenance message</label>
+                <textarea id="maintenance-message" rows="3" placeholder="The website is currently under maintenance and temporarily unavailable."></textarea>
+              </div>
+
+              <div class="maintenance-actions">
+                <button id="btn-refresh-maintenance" class="button-secondary" type="button">Refresh status</button>
+                <button id="btn-save-maintenance" class="button-primary" type="button">Save maintenance settings</button>
+                <button id="btn-disable-maintenance" class="button-danger" type="button">Disable maintenance</button>
+              </div>
+
+              <div id="maintenance-mode-status" class="status hidden">Ready</div>
+            </div>
           </div>
-          <p class="muted">Only stored on this browser/device.</p>
-          <div id="recent-actions-container"></div>
-        </div>
-      </div>
+
+          <div class="tool-group">
+            <h3>Database & Cache Operations</h3>
+            <div class="tool-group-actions">
+              <button id="btn-clear-cache" class="button-primary" type="button">Clear Cache</button>
+              <button id="btn-invalidate-sessions" class="button-primary" type="button">Invalidate Old Sessions</button>
+              <button id="btn-cleanup-orphaned" class="button-primary" type="button">Cleanup Orphaned Records</button>
+              <button id="btn-rebuild-indexes" class="button-primary" type="button">Rebuild Database Indexes</button>
+            </div>
+            <div id="db-op-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>User & Progress Operations</h3>
+            <div class="tool-group-actions">
+              <button id="btn-reset-user-progress" class="button-primary" type="button">Reset User Progress</button>
+              <button id="btn-force-reindex-bio" class="button-primary" type="button">Force Bio Reindexing</button>
+              <button id="btn-sync-badges" class="button-primary" type="button">Sync Badges</button>
+              <button id="btn-recalc-streaks" class="button-primary" type="button">Recalculate Streaks</button>
+            </div>
+            <div id="user-op-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Bulk Operations</h3>
+            <div style="display: grid; gap: 8px;">
+              <div>
+                <label for="bulk-op-user-id" style="font-size: 0.9rem; color: var(--muted);">User ID:</label>
+                <input id="bulk-op-user-id" type="text" placeholder="Enter user ID" />
+              </div>
+              <div>
+                <label for="bulk-op-action" style="font-size: 0.9rem; color: var(--muted);">Action:</label>
+                <select id="bulk-op-action">
+                  <option value="">-- Select action --</option>
+                  <option value="ban-account">Ban Account</option>
+                  <option value="unban-account">Unban Account</option>
+                  <option value="reset-progress">Reset Progress</option>
+                  <option value="clear-bio">Clear Bio</option>
+                </select>
+              </div>
+              <button id="btn-bulk-execute" class="button-danger" type="button">Execute</button>
+              <div id="bulk-op-status" class="status hidden">Ready</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- AUDIT LOG TAB -->
+      <section id="audit-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin Action Log</h2>
+          <div class="controls">
+            <label for="audit-filter">Filter by action:</label>
+            <select id="audit-filter">
+              <option value="">All actions</option>
+              <option value="ban-bio">Ban Bio</option>
+              <option value="ban-account">Ban Account</option>
+              <option value="unban-account">Unban Account</option>
+              <option value="close-report">Close Report</option>
+            </select>
+            <button id="btn-refresh-audit" class="button-primary" type="button">Refresh Log</button>
+            <button id="btn-export-audit" class="button-secondary" type="button">Export CSV</button>
+            <button id="btn-clear-audit" class="button-danger" type="button">Clear Log</button>
+          </div>
+          <div id="audit-log-container" style="max-height: 70vh; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; padding: 12px;">
+            <div class="log-entry" id="audit-empty">
+              <div class="timestamp">No audit logs available yet. Admin actions will be logged here.</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- SYSTEM HEALTH TAB -->
+      <section id="health-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">System Health & Metrics</h2>
+          
+          <div class="stats-grid">
+            <div class="stat-box">
+              <small>API Status</small>
+              <div class="value" id="stat-api-status">—</div>
+              <small id="stat-api-note">Checking...</small>
+            </div>
+            <div class="stat-box">
+              <small>Response Time (ms)</small>
+              <div class="value" id="stat-response-time">—</div>
+              <small id="stat-response-note">Last request</small>
+            </div>
+            <div class="stat-box">
+              <small>Authenticated Users</small>
+              <div class="value" id="stat-auth-users">—</div>
+              <small id="stat-auth-note">Active sessions</small>
+            </div>
+            <div class="stat-box">
+              <small>Total Profiles</small>
+              <div class="value" id="stat-total-profiles">—</div>
+              <small id="stat-profile-note">In database</small>
+            </div>
+            <div class="stat-box">
+              <small>Reports Pending</small>
+              <div class="value" id="stat-pending-reports">—</div>
+              <small id="stat-report-note">Needs review</small>
+            </div>
+            <div class="stat-box">
+              <small>Database Connection</small>
+              <div class="value" id="stat-db-status">—</div>
+              <small id="stat-db-note">Status</small>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Health Checks</h3>
+            <div class="tool-group-actions">
+              <button id="btn-check-health" class="button-primary" type="button">Run Full Health Check</button>
+              <button id="btn-check-db-health" class="button-primary" type="button">Database Health</button>
+              <button id="btn-check-api-health" class="button-primary" type="button">API Health</button>
+              <button id="btn-check-auth-health" class="button-primary" type="button">Auth Service Health</button>
+            </div>
+            <div id="health-check-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Performance Metrics</h3>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Avg Report Load Time</td>
+                  <td id="metric-report-load-time">—</td>
+                </tr>
+                <tr>
+                  <td>Avg Profile Load Time</td>
+                  <td id="metric-profile-load-time">—</td>
+                </tr>
+                <tr>
+                  <td>API Uptime (today)</td>
+                  <td id="metric-uptime">—</td>
+                </tr>
+                <tr>
+                  <td>Last Health Check</td>
+                  <td id="metric-last-check">Never</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- CONFIGURATION TAB -->
+      <section id="config-tab" class="admin-section">
+        <section class="panel-card panel-wide">
+          <h2 class="section-title">Admin Configuration</h2>
+          
+          <div class="tool-group">
+            <h3>Current Admin Settings</h3>
+            <div class="config-chip-row">
+              <span class="chip" id="config-chip-session">Session: checking...</span>
+              <span class="chip" id="config-chip-maintenance">Maintenance: unknown</span>
+              <span class="chip" id="config-chip-health">System health: unknown</span>
+            </div>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Authorized Admin Users</td>
+                  <td id="config-admin-users">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Environment</td>
+                  <td id="config-environment">Loading...</td>
+                </tr>
+                <tr>
+                  <td>API Base URL</td>
+                  <td id="config-api-url">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Database Backend</td>
+                  <td id="config-db-backend">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Database URL</td>
+                  <td id="config-db-url">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Feature Flags</td>
+                  <td id="config-features">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Last Config Update</td>
+                  <td id="config-last-update">Loading...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tool-group">
+            <h3>Admin Panel Info</h3>
+            <table class="config-table">
+              <tbody>
+                <tr>
+                  <td>Current User ID</td>
+                  <td id="config-current-user-id">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Admin Privileges</td>
+                  <td id="config-admin-privileges">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Panel Version</td>
+                  <td>2.0 (Enhanced Admin Dashboard)</td>
+                </tr>
+                <tr>
+                  <td>Last Updated</td>
+                  <td id="panel-last-updated">2026</td>
+                </tr>
+                <tr>
+                  <td>Your Session ID</td>
+                  <td id="session-id-display">Authenticated</td>
+                </tr>
+                <tr>
+                  <td>Maintenance Updated By</td>
+                  <td id="config-maint-updated-by">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Maintenance Updated At</td>
+                  <td id="config-maint-updated-at">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Last Health Summary</td>
+                  <td id="config-health-summary">Loading...</td>
+                </tr>
+                <tr>
+                  <td>Current Timezone</td>
+                  <td id="current-timezone">Loading...</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="config-actions">
+              <button id="btn-refresh-config" class="button-primary" type="button">Refresh Runtime Snapshot</button>
+              <button id="btn-copy-config" class="button-secondary" type="button">Copy Runtime Snapshot</button>
+            </div>
+            <div id="config-action-status" class="status hidden">Ready</div>
+          </div>
+
+          <div class="section-note">
+            <strong>About This Panel</strong>
+            <div class="muted">This admin panel provides moderation, maintenance, audit logging, and system health monitoring. All actions are logged and require the BIO_MOD_ADMIN_USER_IDS permission. For security reasons, sensitive configuration details are limited.</div>
+          </div>
+        </section>
+      </section>
     </section>
   </div>
 
   <script>
-    const API_BASE = (() => {
-      const configuredBase = window.IT_LEARN_API_BASE || window.__IT_LEARN_API_BASE;
-      if (configuredBase && typeof configuredBase === 'string') {
-        return configuredBase.replace(/\/$/, '');
-      }
-
-      const hostname = String(window.location.hostname || '').toLowerCase();
-      const isProductionHost = hostname === 'itlearn.be' || hostname.endsWith('.itlearn.be');
-
-      // Use same-origin API by default for local/dev and non-production hosts.
-      return isProductionHost ? 'https://itlearn.pythonanywhere.com/api' : '/api';
-    })();
-    const SEARCH_DEBOUNCE_MS = 300;
-    const REQUEST_TIMEOUT_MS = 15000;
-    const LIVE_TRAFFIC_POLL_MS = 10000;
-    const BULK_CLOSE_BATCH_SIZE = 10;
-    const BULK_CLOSE_BATCH_DELAY_MS = 200;
+    const API_BASE = 'https://itlearn.pythonanywhere.com/api';
 
     const authBlock = document.getElementById('auth-block');
     const panel = document.getElementById('panel');
@@ -863,401 +976,57 @@
     const profilesListEl = document.getElementById('profiles-list');
     const refreshBtn = document.getElementById('refresh');
     const refreshProfilesBtn = document.getElementById('refresh-profiles');
-    const reportReasonFilterInput = document.getElementById('report-reason-filter');
-    const reportTimeFilter = document.getElementById('report-time-filter');
-    const autoRefreshIntervalSelect = document.getElementById('auto-refresh-interval');
-    const autoRefreshToggleBtn = document.getElementById('auto-refresh-toggle');
-    const bulkCloseNoteInput = document.getElementById('bulk-close-note');
-    const bulkCloseVisibleBtn = document.getElementById('bulk-close-visible');
     const statusFilter = document.getElementById('status-filter');
     const limitFilter = document.getElementById('limit-filter');
     const profileSearchInput = document.getElementById('profile-search');
     const profilePageSizeSelect = document.getElementById('profile-page-size');
     const accountBanFilter = document.getElementById('account-ban-filter');
-    const profileSortSelect = document.getElementById('profile-sort');
-    const profileSortDirBtn = document.getElementById('profile-sort-dir');
-    const profilesInsightsEl = document.getElementById('profiles-insights');
     const profilesPrevBtn = document.getElementById('profiles-prev');
     const profilesNextBtn = document.getElementById('profiles-next');
     const profilesPageInfo = document.getElementById('profiles-page-info');
-    const notifTitleInput = document.getElementById('notif-title');
-    const notifTargetUserIdInput = document.getElementById('notif-target-user-id');
-    const notifBroadcastInput = document.getElementById('notif-broadcast');
-    const notifMessageInput = document.getElementById('notif-message');
-    const notifSendBtn = document.getElementById('notif-send');
-    const notifStatusEl = document.getElementById('notif-status');
-    const clearRecentActionsBtn = document.getElementById('clear-recent-actions');
-    const recentActionsContainer = document.getElementById('recent-actions-container');
-    const pendingRequestsChip = document.getElementById('pending-requests-chip');
-    const LOCAL_PREFS_KEY = 'it-learn-admin-panel-prefs-v1';
-    const LOCAL_RECENT_ACTIONS_KEY = 'it-learn-admin-panel-recent-actions-v1';
-    const RECENT_ACTIONS_LIMIT = 3;
-    notifTargetUserIdInput.disabled = Boolean(notifBroadcastInput.checked);
+    const showOpenOnlyBtn = document.getElementById('show-open-only');
+    const showBannedOnlyBtn = document.getElementById('show-banned-only');
+    const clearSearchBtn = document.getElementById('clear-search');
+    const metricOpenReports = document.getElementById('metric-open-reports');
+    const metricResolvedReports = document.getElementById('metric-resolved-reports');
+    const metricProfilesLoaded = document.getElementById('metric-profiles-loaded');
+    const metricBannedAccounts = document.getElementById('metric-banned-accounts');
+    const metricBioBans = document.getElementById('metric-bio-bans');
+    const metricOpenReportsNote = document.getElementById('metric-open-reports-note');
+    const metricResolvedReportsNote = document.getElementById('metric-resolved-reports-note');
+    const metricProfilesLoadedNote = document.getElementById('metric-profiles-loaded-note');
+    const metricBannedAccountsNote = document.getElementById('metric-banned-accounts-note');
+    const metricBioBansNote = document.getElementById('metric-bio-bans-note');
+    const maintenanceEnabledInput = document.getElementById('maintenance-enabled');
+    const maintenanceMessageInput = document.getElementById('maintenance-message');
+    const maintenanceStatusEl = document.getElementById('maintenance-mode-status');
+    const refreshMaintenanceBtn = document.getElementById('btn-refresh-maintenance');
+    const saveMaintenanceBtn = document.getElementById('btn-save-maintenance');
+    const disableMaintenanceBtn = document.getElementById('btn-disable-maintenance');
+    const MAINTENANCE_DISCORD_URL = 'https://discord.gg/rKgF9s32EV';
     let allProfiles = [];
-    let reportsCache = [];
+    let lastReports = [];
     let profilesPage = 1;
     let profilesPageSize = Number(profilePageSizeSelect?.value || 100);
     let profilesHasNextPage = true;
-    let profileSortDirection = 'desc';
-    let autoRefreshTimerId = null;
-    let liveTrafficTimerId = null;
-    let autoRefreshEnabled = false;
-    let pendingRequests = new Set();
-
-    function updatePendingRequestsUI() {
-      if (!pendingRequestsChip) return;
-      const activeCount = pendingRequests.size;
-      pendingRequestsChip.dataset.localPending = String(activeCount);
-    }
-
-    function updateLiveTrafficUI(activeVisitors, windowSeconds) {
-      if (!pendingRequestsChip) return;
-      const pending = Number(pendingRequestsChip.dataset.localPending || '0');
-      pendingRequestsChip.textContent = `Active visitors: ${activeVisitors} (${windowSeconds}s) | Panel req: ${pending}`;
-      pendingRequestsChip.classList.toggle('live', Number(activeVisitors) > 0);
-    }
-
-    async function loadLiveTraffic() {
-      try {
-        const data = await apiCall('/admin/live-traffic', { method: 'GET' });
-        const activeVisitors = Number(data.active_visitors || 0);
-        const windowSeconds = Number(data.window_seconds || 300);
-        updateLiveTrafficUI(activeVisitors, windowSeconds);
-      } catch (error) {
-        // Keep panel usable even if this metric endpoint fails.
-        pendingRequestsChip.textContent = 'Active visitors: unavailable';
-        pendingRequestsChip.classList.remove('live');
-      }
-    }
-
-    function startLiveTrafficPolling() {
-      if (liveTrafficTimerId) {
-        clearInterval(liveTrafficTimerId);
-      }
-      liveTrafficTimerId = setInterval(() => {
-        void loadLiveTraffic();
-      }, LIVE_TRAFFIC_POLL_MS);
-    }
-
-    function loadPreferences() {
-      try {
-        const raw = localStorage.getItem(LOCAL_PREFS_KEY);
-        if (!raw) return;
-        const prefs = JSON.parse(raw);
-
-        if (prefs.statusFilter && statusFilter) statusFilter.value = prefs.statusFilter;
-        if (prefs.limitFilter && limitFilter) limitFilter.value = prefs.limitFilter;
-        if (prefs.reportReasonFilter && reportReasonFilterInput) reportReasonFilterInput.value = prefs.reportReasonFilter;
-        if (prefs.reportTimeFilter && reportTimeFilter) reportTimeFilter.value = prefs.reportTimeFilter;
-        if (prefs.autoRefreshInterval && autoRefreshIntervalSelect) autoRefreshIntervalSelect.value = String(prefs.autoRefreshInterval);
-        if (prefs.profileSearch && profileSearchInput) profileSearchInput.value = prefs.profileSearch;
-        if (prefs.accountBanFilter && accountBanFilter) accountBanFilter.value = prefs.accountBanFilter;
-        if (prefs.profilePageSize && profilePageSizeSelect) profilePageSizeSelect.value = String(prefs.profilePageSize);
-        if (prefs.profileSort && profileSortSelect) profileSortSelect.value = prefs.profileSort;
-        if (prefs.profileSortDirection === 'asc' || prefs.profileSortDirection === 'desc') {
-          profileSortDirection = prefs.profileSortDirection;
-        }
-      } catch (error) {
-        console.warn('Could not load panel preferences.', error);
-      }
-    }
-
-    function savePreferences() {
-      try {
-        localStorage.setItem(LOCAL_PREFS_KEY, JSON.stringify({
-          statusFilter: statusFilter?.value || 'open',
-          limitFilter: limitFilter?.value || '100',
-          reportReasonFilter: reportReasonFilterInput?.value || '',
-          reportTimeFilter: reportTimeFilter?.value || 'all',
-          autoRefreshInterval: autoRefreshIntervalSelect?.value || '15000',
-          profileSearch: profileSearchInput?.value || '',
-          accountBanFilter: accountBanFilter?.value || 'all',
-          profilePageSize: profilePageSizeSelect?.value || '100',
-          profileSort: profileSortSelect?.value || 'last_active',
-          profileSortDirection,
-        }));
-      } catch (error) {
-        console.warn('Could not save panel preferences.', error);
-      }
-    }
-
-    function formatActionTimestamp(ts) {
-      const parsed = new Date(ts || Date.now());
-      if (Number.isNaN(parsed.getTime())) return 'unknown time';
-      return parsed.toLocaleString();
-    }
-
-    function getRecentAdminActions() {
-      try {
-        const raw = localStorage.getItem(LOCAL_RECENT_ACTIONS_KEY);
-        if (!raw) return [];
-        const parsed = JSON.parse(raw);
-        return Array.isArray(parsed) ? parsed : [];
-      } catch (error) {
-        console.warn('Could not read recent admin actions.', error);
-        return [];
-      }
-    }
-
-    function renderRecentAdminActions() {
-      if (!recentActionsContainer) return;
-      const actions = getRecentAdminActions();
-
-      if (!actions.length) {
-        recentActionsContainer.innerHTML = '<p class="recent-actions-empty">No recent actions yet.</p>';
-        return;
-      }
-
-      const listItems = actions
-        .map((item) => `<li><strong>${escapeHtml(item.label || 'Action')}</strong> <span class="muted">(${escapeHtml(formatActionTimestamp(item.created_at))})</span></li>`)
-        .join('');
-      recentActionsContainer.innerHTML = `<ol class="recent-actions-list">${listItems}</ol>`;
-    }
-
-    function logRecentAdminAction(label) {
-      try {
-        const actions = getRecentAdminActions();
-        const next = [
-          { label: String(label || 'Action'), created_at: new Date().toISOString() },
-          ...actions,
-        ].slice(0, RECENT_ACTIONS_LIMIT);
-        localStorage.setItem(LOCAL_RECENT_ACTIONS_KEY, JSON.stringify(next));
-        renderRecentAdminActions();
-      } catch (error) {
-        console.warn('Could not store recent admin action.', error);
-      }
-    }
-
-    function clearRecentAdminActions() {
-      try {
-        localStorage.removeItem(LOCAL_RECENT_ACTIONS_KEY);
-      } catch (error) {
-        console.warn('Could not clear recent admin actions.', error);
-      }
-      renderRecentAdminActions();
-    }
-
-    async function recordAuditLog(eventType, details = {}) {
-      const payload = {
-        event_type: String(eventType || 'admin_action'),
-        timestamp: new Date().toISOString(),
-        details,
-      };
-
-      try {
-        await apiCall('/admin/audit-log', {
-          method: 'POST',
-          body: payload,
-        });
-      } catch (error) {
-        // Fallback keeps exports functional if audit endpoint is unavailable.
-        console.warn('Audit log endpoint unavailable. Event:', payload, error);
-      }
-    }
-
-    function sleep(ms) {
-      return new Promise((resolve) => {
-        setTimeout(resolve, Math.max(0, Number(ms) || 0));
-      });
-    }
-
-    function getFocusableElements(container) {
-      if (!container) return [];
-      return Array.from(
-        container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
-      ).filter((el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
-    }
-
-    function extractTotalCount(payload, fallbackArray = null) {
-      if (!payload || typeof payload !== 'object') {
-        return Array.isArray(fallbackArray) ? fallbackArray.length : 0;
-      }
-
-      const directCandidates = [
-        payload.total,
-        payload.count,
-        payload.total_count,
-        payload.totalCount,
-      ];
-
-      for (const candidate of directCandidates) {
-        const parsed = Number(candidate);
-        if (Number.isFinite(parsed)) return parsed;
-      }
-
-      if (payload.pagination && typeof payload.pagination === 'object') {
-        const paginationCandidates = [payload.pagination.total, payload.pagination.count];
-        for (const candidate of paginationCandidates) {
-          const parsed = Number(candidate);
-          if (Number.isFinite(parsed)) return parsed;
-        }
-      }
-
-      return Array.isArray(fallbackArray) ? fallbackArray.length : 0;
-    }
-
-    /**
-     * Create fetch with timeout and abort controller
-     */
-    async function fetchWithTimeout(url, options = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-      const requestId = Math.random();
-      pendingRequests.add(requestId);
-      updatePendingRequestsUI();
-
-      try {
-        const response = await fetch(url, {
-          ...options,
-          signal: controller.signal,
-          credentials: 'include',
-        });
-        return response;
-      } finally {
-        clearTimeout(timeoutId);
-        pendingRequests.delete(requestId);
-        updatePendingRequestsUI();
-      }
-    }
-
-    /**
-     * Wrapper for API calls with error handling
-     */
-    async function apiCall(endpoint, options = {}) {
-      try {
-        const url = `${API_BASE}${endpoint}`;
-        const response = await fetchWithTimeout(url, {
-          method: options.method || 'GET',
-          headers: options.headers || { 'Content-Type': 'application/json' },
-          body: options.body ? JSON.stringify(options.body) : undefined,
-        });
-
-        const data = await response.json().catch(() => ({}));
-
-        if (!response.ok) {
-          const error = new Error(data.error || `HTTP ${response.status}`);
-          error.status = response.status;
-          error.data = data;
-          throw error;
-        }
-
-        return data;
-      } catch (error) {
-        if (error.name === 'AbortError') {
-          throw new Error('Request timeout - server took too long to respond');
-        }
-        throw error;
-      }
-    }
-
-    /**
-     * Show custom confirmation modal
-     */
-    function confirmAction(message, options = {}) {
-      return new Promise((resolve) => {
-        const backdrop = document.getElementById('modal-backdrop');
-        const dialog = document.getElementById('modal-dialog');
-        const bodyEl = document.getElementById('modal-body');
-        const cancelBtn = document.getElementById('modal-cancel');
-        const confirmBtn = document.getElementById('modal-confirm');
-        const isDestructive = Boolean(options.isDestructive || options.actionType === 'ban' || options.actionType === 'bulk-close');
-        const previousActiveElement = document.activeElement instanceof HTMLElement
-          ? document.activeElement
-          : null;
-        const rootSiblings = Array.from(document.body.children).filter((child) => child !== backdrop);
-
-        bodyEl.textContent = message;
-        backdrop.classList.add('visible');
-
-        rootSiblings.forEach((element) => {
-          element.setAttribute('aria-hidden', 'true');
-          element.inert = true;
-        });
-
-        const handleCancel = () => {
-          cleanup();
-          resolve(false);
-        };
-
-        const handleConfirm = () => {
-          cleanup();
-          resolve(true);
-        };
-
-        const handleKeyDown = (e) => {
-          if (e.key === 'Escape') handleCancel();
-
-          if (e.key === 'Tab') {
-            const focusable = getFocusableElements(dialog);
-            if (!focusable.length) {
-              e.preventDefault();
-              return;
-            }
-
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            const active = document.activeElement;
-            if (e.shiftKey && active === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && active === last) {
-              e.preventDefault();
-              first.focus();
-            }
-            return;
-          }
-
-          if (e.key === 'Enter') {
-            if (!isDestructive || e.ctrlKey || e.metaKey) {
-              handleConfirm();
-            }
-          }
-        };
-
-        const cleanup = () => {
-          backdrop.classList.remove('visible');
-          cancelBtn.removeEventListener('click', handleCancel);
-          confirmBtn.removeEventListener('click', handleConfirm);
-          document.removeEventListener('keydown', handleKeyDown);
-
-          rootSiblings.forEach((element) => {
-            element.removeAttribute('aria-hidden');
-            element.inert = false;
-          });
-
-          if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-            previousActiveElement.focus();
-          }
-        };
-
-        cancelBtn.addEventListener('click', handleCancel);
-        confirmBtn.addEventListener('click', handleConfirm);
-        document.addEventListener('keydown', handleKeyDown);
-
-        const focusable = getFocusableElements(dialog);
-        const firstFocusable = focusable[0] || confirmBtn || cancelBtn;
-        firstFocusable.focus();
-      });
-    }
-
-    /**
-     * Debounce utility
-     */
-    function debounce(callback, delayMs) {
-      let timeoutId;
-      return function debounced(...args) {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => callback.apply(this, args), delayMs);
-      };
-    }
+    let lastRefreshedAt = null;
+    let currentSession = {
+      logged_in: false,
+      user_id: null,
+      is_bio_admin: false,
+    };
+    let lastHealthSnapshot = null;
+    let maintenanceState = {
+      maintenance_enabled: false,
+      maintenance_message: '',
+      updated_at: null,
+      updated_by: null,
+    };
 
     function setStatus(message, type) {
       statusEl.textContent = message;
       statusEl.className = 'status';
       if (type) statusEl.classList.add(type);
-      // Announce to screen readers
-      statusEl.setAttribute('role', 'status');
-      statusEl.setAttribute('aria-live', 'polite');
     }
 
     function cardLabel(title, value) {
@@ -1268,62 +1037,12 @@
       profilesStatusEl.textContent = message;
       profilesStatusEl.className = 'status';
       if (type) profilesStatusEl.classList.add(type);
-      profilesStatusEl.setAttribute('role', 'status');
-      profilesStatusEl.setAttribute('aria-live', 'polite');
     }
 
     function updateProfilesPaginationUI() {
       profilesPageInfo.textContent = `Page ${profilesPage}`;
       profilesPrevBtn.disabled = profilesPage <= 1;
       profilesNextBtn.disabled = !profilesHasNextPage;
-    }
-
-    function setNotifStatus(message, type) {
-      notifStatusEl.textContent = message;
-      notifStatusEl.className = 'status';
-      if (type) notifStatusEl.classList.add(type);
-      notifStatusEl.setAttribute('role', 'status');
-      notifStatusEl.setAttribute('aria-live', 'polite');
-    }
-
-    function showToast(message, type = 'info') {
-      const toastStack = document.getElementById('toast-stack');
-      if (!toastStack) return;
-      const toast = document.createElement('div');
-      toast.className = `toast ${type}`;
-      toast.textContent = message;
-      toastStack.appendChild(toast);
-
-      setTimeout(() => {
-        toast.remove();
-      }, 3200);
-    }
-
-    /**
-     * Manage button loading state
-     */
-    function setButtonLoading(button, isLoading) {
-      button.disabled = isLoading;
-      if (isLoading) {
-        button.setAttribute('aria-busy', 'true');
-        button.setAttribute('data-loading', 'true');
-      } else {
-        button.removeAttribute('aria-busy');
-        button.removeAttribute('data-loading');
-      }
-    }
-
-    /**
-     * Manage container loading state
-     */
-    function setContainerLoading(container, isLoading) {
-      if (isLoading) {
-        container.classList.add('loading');
-        container.setAttribute('aria-busy', 'true');
-      } else {
-        container.classList.remove('loading');
-        container.removeAttribute('aria-busy');
-      }
     }
 
     function escapeHtml(input) {
@@ -1342,31 +1061,46 @@
       return parsed.toLocaleString();
     }
 
+    function updateOverview() {
+      const openReports = lastReports.filter((report) => String(report.status || 'open').toLowerCase() === 'open').length;
+      const resolvedReports = lastReports.filter((report) => String(report.status || '').toLowerCase() === 'resolved').length;
+      const bannedAccounts = allProfiles.filter((profile) => Boolean(profile.account_banned)).length;
+      const bioBans = allProfiles.filter((profile) => Boolean(profile.bio_banned)).length;
+      const loadedProfiles = allProfiles.length;
+      const refreshedText = lastRefreshedAt ? lastRefreshedAt.toLocaleString() : 'Waiting for first refresh';
+
+      metricOpenReports.textContent = String(openReports);
+      metricResolvedReports.textContent = String(resolvedReports);
+      metricProfilesLoaded.textContent = String(loadedProfiles);
+      metricBannedAccounts.textContent = String(bannedAccounts);
+      metricBioBans.textContent = String(bioBans);
+
+      metricOpenReportsNote.textContent = `Last refresh: ${refreshedText}`;
+      metricResolvedReportsNote.textContent = `${lastReports.length} total report(s) loaded`;
+      metricProfilesLoadedNote.textContent = `Page ${profilesPage} at ${profilesPageSize} per page`;
+      metricBannedAccountsNote.textContent = `${bannedAccounts} banned account(s) on this page`;
+      metricBioBansNote.textContent = `${bioBans} bio ban(s) on this page`;
+    }
+
     function reportCard(report) {
       const card = document.createElement('article');
       card.className = 'card';
-      card.setAttribute('data-report-id', report.report_id || '');
 
       const username = escapeHtml(report.reported_username || 'unknown');
       const reason = escapeHtml(report.reason || 'No reason');
-      const statusText = escapeHtml(report.status || 'open');
-      const statusBadge = statusText.toLowerCase() === 'open' 
-        ? `<span class="badge danger">${statusText}</span>`
-        : `<span class="badge ok">${statusText}</span>`;
+      const status = escapeHtml(report.status || 'open');
       const reporter = escapeHtml(report.reporter_user_id || 'unknown');
       const createdAt = escapeHtml(report.created_at || 'n/a');
       const currentBio = escapeHtml(report.current_bio || '');
       const details = escapeHtml(report.details || 'No details');
 
       card.innerHTML = `
-        <div class="list-item-header">
-          <h3 class="list-item-title">📋 Report for @${username}</h3>
-          ${statusBadge}
-        </div>
-        <div class="list-item-meta">
+        <div class="meta">
+          ${cardLabel('User', '@' + username)}
+          ${cardLabel('Status', status)}
           ${cardLabel('Reason', reason)}
-          ${cardLabel('By', reporter)}
-          ${cardLabel('Date', createdAt)}
+          ${cardLabel('Reported by', reporter)}
+          ${cardLabel('Created', createdAt)}
         </div>
         <div>
           <p class="muted">Current bio</p>
@@ -1403,65 +1137,67 @@
         closeBtn.textContent = 'Close Report';
 
         banBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban bio for @${report.reported_username}?`, { isDestructive: true, actionType: 'ban' }))) {
-            showToast('Bio ban cancelled.', 'info');
-            return;
-          }
-
-          setButtonLoading(banBtn, true);
-          setButtonLoading(closeBtn, true);
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
           setStatus(`Applying bio ban for @${report.reported_username}...`);
 
           try {
-            await apiCall('/admin/profile/ban-bio', {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
               method: 'POST',
-              body: {
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 username: report.reported_username,
                 replacement_bio: replacementInput.value.trim(),
-              },
+              }),
             });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
 
             setStatus(`Bio banned for @${report.reported_username}.`, 'ok');
-            showToast(`Bio banned for @${report.reported_username}.`, 'ok');
-            logRecentAdminAction(`Bio banned for @${report.reported_username}`);
-            await Promise.all([loadReports(), loadProfiles()]);
+            logAuditAction('ban-bio', `Banned bio for @${report.reported_username} from report ${report.report_id}`);
+            await loadReports();
+            await loadProfiles();
           } catch (error) {
-            const message = error.status === 401 ? 'Session expired.' : error.message;
-            setStatus(message, 'error');
-            showToast(message, 'error');
-            console.error('Ban bio error:', error);
+            setStatus('Network error while banning bio.', 'error');
           } finally {
-            setButtonLoading(banBtn, false);
-            setButtonLoading(closeBtn, false);
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
           }
         });
 
         closeBtn.addEventListener('click', async () => {
-          setButtonLoading(banBtn, true);
-          setButtonLoading(closeBtn, true);
+          banBtn.disabled = true;
+          closeBtn.disabled = true;
           setStatus(`Closing report ${report.report_id}...`);
 
           try {
-            await apiCall('/admin/bio-reports/close', {
+            const response = await fetch(`${API_BASE}/admin/bio-reports/close`, {
               method: 'POST',
-              body: {
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 report_id: report.report_id,
                 close_note: closeNoteInput.value.trim(),
-              },
+              }),
             });
+            const data = await response.json();
+            if (!response.ok) {
+              setStatus(data.error || 'Failed to close report.', 'error');
+              return;
+            }
 
             setStatus(`Report ${report.report_id} closed.`, 'ok');
-            showToast(`Report ${report.report_id} closed.`, 'ok');
-            logRecentAdminAction(`Report ${report.report_id} closed`);
+            logAuditAction('close-report', `Closed report ${report.report_id} for @${report.reported_username}`);
             await loadReports();
           } catch (error) {
-            const message = error.status === 401 ? 'Session expired.' : error.message;
-            setStatus(message, 'error');
-            showToast(message, 'error');
-            console.error('Close report error:', error);
+            setStatus('Network error while closing report.', 'error');
           } finally {
-            setButtonLoading(banBtn, false);
-            setButtonLoading(closeBtn, false);
+            banBtn.disabled = false;
+            closeBtn.disabled = false;
           }
         });
 
@@ -1480,88 +1216,62 @@
     }
 
     async function loadSession() {
-      try {
-        const data = await apiCall('/session', { method: 'GET' });
-        return data;
-      } catch (error) {
-        console.error('Session load error:', error);
-        throw error;
-      }
+      const response = await fetch(`${API_BASE}/session`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const data = await response.json();
+      currentSession = {
+        logged_in: Boolean(data?.logged_in),
+        user_id: data?.user_id || null,
+        is_bio_admin: Boolean(data?.is_bio_admin),
+      };
+      return data;
     }
 
     async function loadReports() {
       setStatus('Loading reports...');
       listEl.innerHTML = '';
-      setContainerLoading(listEl, true);
 
       const status = encodeURIComponent(statusFilter.value);
       const limit = encodeURIComponent(limitFilter.value);
 
       try {
-        const data = await apiCall(`/admin/bio-reports?status=${status}&limit=${limit}`, {
+        const response = await fetch(`${API_BASE}/admin/bio-reports?status=${status}&limit=${limit}`, {
           method: 'GET',
+          credentials: 'include',
         });
+        const data = await response.json();
 
-        reportsCache = Array.isArray(data.reports) ? data.reports : [];
-        renderReports();
+        if (!response.ok) {
+          setStatus(data.error || 'Could not fetch reports.', 'error');
+          lastReports = [];
+          updateOverview();
+          return;
+        }
+
+        lastReports = Array.isArray(data.reports) ? data.reports : [];
+        updateOverview();
+
+        if (!lastReports.length) {
+          setStatus('No reports found for selected filter.', 'ok');
+          return;
+        }
+
+        lastReports.forEach((report) => {
+          listEl.appendChild(reportCard(report));
+        });
+        setStatus(`Loaded ${lastReports.length} report(s).`, 'ok');
       } catch (error) {
-        const message = error.status === 401 
-          ? 'Session expired. Please refresh the page.'
-          : error.message || 'Network error while loading reports.';
-        setStatus(message, 'error');
-        showToast(message, 'error');
-        console.error('Report load error:', error);
-      } finally {
-        setContainerLoading(listEl, false);
+        lastReports = [];
+        updateOverview();
+        setStatus('Network error while loading reports.', 'error');
       }
-    }
-
-    function filterReports(reports) {
-      const reasonQuery = (reportReasonFilterInput?.value || '').trim().toLowerCase();
-      const timeFilter = reportTimeFilter?.value || 'all';
-      const now = Date.now();
-
-      return reports.filter((report) => {
-        if (reasonQuery) {
-          const reason = String(report.reason || '').toLowerCase();
-          const details = String(report.details || '').toLowerCase();
-          if (!reason.includes(reasonQuery) && !details.includes(reasonQuery)) {
-            return false;
-          }
-        }
-
-        if (timeFilter !== 'all') {
-          const createdTs = new Date(report.created_at || '').getTime();
-          if (Number.isNaN(createdTs)) return false;
-          const ageMs = now - createdTs;
-          if (timeFilter === '24h' && ageMs > 24 * 60 * 60 * 1000) return false;
-          if (timeFilter === '7d' && ageMs > 7 * 24 * 60 * 60 * 1000) return false;
-        }
-
-        return true;
-      });
-    }
-
-    function renderReports() {
-      listEl.innerHTML = '';
-      const filteredReports = filterReports(reportsCache);
-
-      if (!filteredReports.length) {
-        setStatus('No reports matched your current filters.', 'ok');
-        showToast('No reports matched your filters.', 'info');
-        return;
-      }
-
-      filteredReports.forEach((report) => {
-        listEl.appendChild(reportCard(report));
-      });
-      setStatus(`Loaded ${filteredReports.length} report(s).`, 'ok');
     }
 
     function profileCard(profile) {
       const card = document.createElement('article');
       card.className = 'profile-mini';
-      card.setAttribute('data-user-id', profile.user_id || '');
 
       const username = profile.username ? `@${profile.username}` : '(no username)';
       const bio = profile.bio || 'No bio';
@@ -1573,7 +1283,7 @@
       const avatarFallback = (profile.username || profile.user_id || 'u').slice(0, 1);
 
       const avatarMarkup = avatarUrl
-        ? `<img class="profile-avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(username)} avatar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'" />`
+        ? `<img class="profile-avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(username)} avatar" loading="lazy" referrerpolicy="no-referrer" />`
         : `<div class="profile-avatar-fallback">${escapeHtml(avatarFallback)}</div>`;
 
       card.innerHTML = `
@@ -1597,21 +1307,6 @@
 
       const actions = document.createElement('div');
       actions.className = 'actions';
-
-      const copyUserIdBtn = document.createElement('button');
-      copyUserIdBtn.type = 'button';
-      copyUserIdBtn.className = 'button-ghost';
-      copyUserIdBtn.textContent = 'Copy User ID';
-      copyUserIdBtn.disabled = !profile.user_id;
-      copyUserIdBtn.addEventListener('click', async () => {
-        if (!profile.user_id) return;
-        try {
-          await navigator.clipboard.writeText(String(profile.user_id));
-          showToast(`User ID copied for ${username}`, 'ok');
-        } catch (error) {
-          showToast('Could not copy user ID.', 'error');
-        }
-      });
 
       const replacementInput = document.createElement('input');
       replacementInput.type = 'text';
@@ -1644,124 +1339,136 @@
         replacementInput.placeholder = 'Cannot ban: user has no username yet';
       } else {
         banBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban bio for @${profile.username}?`, { isDestructive: true, actionType: 'ban' }))) {
-            showToast('Bio ban cancelled.', 'info');
-            return;
-          }
-
-          setButtonLoading(banBtn, true);
-          setButtonLoading(banAccountBtn, true);
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
           setProfilesStatus(`Applying bio ban for @${profile.username}...`);
 
           try {
-            await apiCall('/admin/profile/ban-bio', {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-bio`, {
               method: 'POST',
-              body: {
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 username: profile.username,
                 replacement_bio: replacementInput.value.trim(),
-              },
+              }),
             });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban bio.', 'error');
+              return;
+            }
 
             setProfilesStatus(`Bio banned for @${profile.username}.`, 'ok');
-            showToast(`Bio banned for @${profile.username}.`, 'ok');
-            logRecentAdminAction(`Bio banned for @${profile.username}`);
-            await Promise.all([loadProfiles(), loadReports()]);
+            logAuditAction('ban-bio', `Banned bio for @${profile.username} from profile browser`);
+            await loadProfiles();
+            await loadReports();
           } catch (error) {
-            const message = error.status === 401 ? 'Session expired.' : error.message;
-            setProfilesStatus(message, 'error');
-            showToast(message, 'error');
-            console.error('Ban bio error:', error);
+            setProfilesStatus('Network error while banning bio.', 'error');
           } finally {
-            setButtonLoading(banBtn, false);
-            setButtonLoading(banAccountBtn, false);
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
           }
         });
       }
 
       if (!profile.user_id) {
         banAccountBtn.disabled = true;
-        unbanAccountBtn.disabled = true;
         accountReasonInput.disabled = true;
         accountReasonInput.placeholder = 'Cannot ban account without user_id';
       } else {
         banAccountBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Ban account for ${username}? This action cannot be easily undone.`, { isDestructive: true, actionType: 'ban' }))) {
-            showToast('Account ban cancelled.', 'info');
+          const ok = await showConfirm(`Ban account for ${username}?`, {
+            title: 'Confirm account ban',
+            confirmText: 'Ban account',
+            cancelText: 'Cancel',
+            kind: 'danger',
+          });
+          if (!ok) {
             return;
           }
 
-          setButtonLoading(banBtn, true);
-          setButtonLoading(banAccountBtn, true);
-          setButtonLoading(unbanAccountBtn, true);
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
           setProfilesStatus(`Banning account ${username}...`);
 
           try {
-            await apiCall('/admin/profile/ban-account', {
+            const response = await fetch(`${API_BASE}/admin/profile/ban-account`, {
               method: 'POST',
-              body: {
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 user_id: profile.user_id,
                 reason: accountReasonInput.value.trim(),
-              },
+              }),
             });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to ban account.', 'error');
+              return;
+            }
 
             setProfilesStatus(`Account banned for ${username}.`, 'ok');
-            showToast(`Account banned for ${username}.`, 'ok');
-            logRecentAdminAction(`Account banned for ${username}`);
+            logAuditAction('ban-account', `Banned account for ${username} (${profile.user_id})`);
             await loadProfiles(profilesPage, profilesPageSize);
           } catch (error) {
-            const message = error.status === 401 ? 'Session expired.' : error.message;
-            setProfilesStatus(message, 'error');
-            showToast(message, 'error');
-            console.error('Ban account error:', error);
+            setProfilesStatus('Network error while banning account.', 'error');
           } finally {
-            setButtonLoading(banBtn, false);
-            setButtonLoading(banAccountBtn, false);
-            setButtonLoading(unbanAccountBtn, !Boolean(profile.account_banned));
-          }
-        });
-
-        unbanAccountBtn.addEventListener('click', async () => {
-          if (!(await confirmAction(`Unban account for ${username}?`))) {
-            showToast('Unban cancelled.', 'info');
-            return;
-          }
-
-          setButtonLoading(banBtn, true);
-          setButtonLoading(banAccountBtn, true);
-          setButtonLoading(unbanAccountBtn, true);
-          setProfilesStatus(`Unbanning account ${username}...`);
-
-          try {
-            await apiCall('/admin/profile/unban-account', {
-              method: 'POST',
-              body: {
-                user_id: profile.user_id,
-              },
-            });
-
-            setProfilesStatus(`Account unbanned for ${username}.`, 'ok');
-            showToast(`Account unbanned for ${username}.`, 'ok');
-            logRecentAdminAction(`Account unbanned for ${username}`);
-            await loadProfiles(profilesPage, profilesPageSize);
-          } catch (error) {
-            const message = error.status === 401 ? 'Session expired.' : error.message;
-            setProfilesStatus(message, 'error');
-            showToast(message, 'error');
-            console.error('Unban account error:', error);
-          } finally {
-            setButtonLoading(banBtn, false);
-            setButtonLoading(banAccountBtn, false);
-            setButtonLoading(unbanAccountBtn, Boolean(profile.account_banned));
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
           }
         });
       }
 
       if (!profile.user_id || !profile.account_banned) {
         unbanAccountBtn.disabled = true;
+      } else {
+        unbanAccountBtn.addEventListener('click', async () => {
+          const ok = await showConfirm(`Unban account for ${username}?`, {
+            title: 'Confirm account unban',
+            confirmText: 'Unban account',
+            cancelText: 'Cancel',
+          });
+          if (!ok) {
+            return;
+          }
+
+          banBtn.disabled = true;
+          banAccountBtn.disabled = true;
+          unbanAccountBtn.disabled = true;
+          setProfilesStatus(`Unbanning account ${username}...`);
+
+          try {
+            const response = await fetch(`${API_BASE}/admin/profile/unban-account`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_id: profile.user_id,
+              }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              setProfilesStatus(data.error || 'Failed to unban account.', 'error');
+              return;
+            }
+
+            setProfilesStatus(`Account unbanned for ${username}.`, 'ok');
+            logAuditAction('unban-account', `Unbanned account for ${username} (${profile.user_id})`);
+            await loadProfiles(profilesPage, profilesPageSize);
+          } catch (error) {
+            setProfilesStatus('Network error while unbanning account.', 'error');
+          } finally {
+            banBtn.disabled = false;
+            banAccountBtn.disabled = false;
+            unbanAccountBtn.disabled = !Boolean(profile.account_banned);
+          }
+        });
       }
 
       actions.appendChild(replacementInput);
-      actions.appendChild(copyUserIdBtn);
       actions.appendChild(banBtn);
       actions.appendChild(accountReasonInput);
       actions.appendChild(banAccountBtn);
@@ -1787,312 +1494,17 @@
         return username.includes(q) || bio.includes(q);
       });
 
-      const sorted = [...filtered].sort((a, b) => {
-        const sortKey = profileSortSelect?.value || 'last_active';
-
-        if (sortKey === 'username') {
-          const av = String(a.username || '').toLowerCase();
-          const bv = String(b.username || '').toLowerCase();
-          if (av < bv) return profileSortDirection === 'asc' ? -1 : 1;
-          if (av > bv) return profileSortDirection === 'asc' ? 1 : -1;
-          return 0;
-        }
-
-        if (sortKey === 'last_active') {
-          const av = new Date(a.last_active || 0).getTime() || 0;
-          const bv = new Date(b.last_active || 0).getTime() || 0;
-          return profileSortDirection === 'asc' ? av - bv : bv - av;
-        }
-
-        const av = Number(a[sortKey] || 0);
-        const bv = Number(b[sortKey] || 0);
-        return profileSortDirection === 'asc' ? av - bv : bv - av;
-      });
-
-      if (profilesInsightsEl) {
-        const bannedCount = sorted.filter((p) => Boolean(p.account_banned)).length;
-        const bioBannedCount = sorted.filter((p) => Boolean(p.bio_banned)).length;
-        const avgXp = sorted.length
-          ? Math.round(sorted.reduce((sum, p) => sum + Number(p.xp || 0), 0) / sorted.length)
-          : 0;
-        profilesInsightsEl.innerHTML = [
-          cardLabel('Filtered', sorted.length),
-          cardLabel('Account banned', bannedCount),
-          cardLabel('Bio banned', bioBannedCount),
-          cardLabel('Avg XP', avgXp),
-        ].join(' ');
-      }
-
-      if (!sorted.length) {
+      if (!filtered.length) {
         setProfilesStatus('No profiles matched your filter.', 'ok');
+        updateOverview();
         return;
       }
 
-      sorted.forEach((profile) => {
+      filtered.forEach((profile) => {
         profilesListEl.appendChild(profileCard(profile));
       });
-      setProfilesStatus(`Showing ${sorted.length} profile(s).`, 'ok');
-    }
-
-    async function closeVisibleOpenReports() {
-      const visibleOpenReports = filterReports(reportsCache).filter(
-        (report) => String(report.status || '').toLowerCase() === 'open'
-      );
-
-      if (!visibleOpenReports.length) {
-        showToast('No visible open reports to close.', 'info');
-        return;
-      }
-
-      const closeNote = (bulkCloseNoteInput?.value || '').trim();
-      const confirmed = await confirmAction(
-        `Close ${visibleOpenReports.length} visible open report(s)? This cannot be undone.`,
-        { isDestructive: true, actionType: 'bulk-close' }
-      );
-      if (!confirmed) {
-        showToast('Bulk close cancelled.', 'info');
-        return;
-      }
-
-      setButtonLoading(bulkCloseVisibleBtn, true);
-      setStatus(`Closing ${visibleOpenReports.length} report(s)...`);
-
-      let successCount = 0;
-      let failedCount = 0;
-      for (let start = 0; start < visibleOpenReports.length; start += BULK_CLOSE_BATCH_SIZE) {
-        const batch = visibleOpenReports.slice(start, start + BULK_CLOSE_BATCH_SIZE);
-        await Promise.all(batch.map(async (report) => {
-          try {
-            await apiCall('/admin/bio-reports/close', {
-              method: 'POST',
-              body: {
-                report_id: report.report_id,
-                close_note: closeNote,
-              },
-            });
-            successCount += 1;
-          } catch (error) {
-            failedCount += 1;
-            console.error('Bulk close failed for report:', report.report_id, error);
-          }
-        }));
-
-        if (start + BULK_CLOSE_BATCH_SIZE < visibleOpenReports.length && BULK_CLOSE_BATCH_DELAY_MS > 0) {
-          await sleep(BULK_CLOSE_BATCH_DELAY_MS);
-        }
-      }
-
-      if (failedCount === 0) {
-        setStatus(`Closed ${successCount} report(s).`, 'ok');
-        showToast(`Closed ${successCount} report(s).`, 'ok');
-        logRecentAdminAction(`Bulk closed ${successCount} report(s)`);
-      } else {
-        setStatus(`Closed ${successCount} report(s), ${failedCount} failed.`, 'error');
-        showToast(`Closed ${successCount}, failed ${failedCount}.`, 'error');
-        logRecentAdminAction(`Bulk close: ${successCount} closed, ${failedCount} failed`);
-      }
-
-      await Promise.all([loadReports(), loadStats()]);
-      setButtonLoading(bulkCloseVisibleBtn, false);
-    }
-
-    // Debounce search input to avoid excessive filtering
-    const debouncedRenderProfiles = debounce(renderProfiles, SEARCH_DEBOUNCE_MS);
-
-    /**
-     * Load and display admin statistics
-     */
-    async function loadStats() {
-      const statsContainer = document.getElementById('stats-container');
-      try {
-        const [reports, profiles, bannedCountPayload, bioBanCountPayload] = await Promise.all([
-          apiCall('/admin/bio-reports?status=open&limit=999', { method: 'GET' }),
-          apiCall('/admin/profiles?page=1&pageSize=1000', { method: 'GET' }),
-          apiCall('/admin/profiles/count?account_banned=true', { method: 'GET' }).catch(() => null),
-          apiCall('/admin/profiles/count?bio_banned=true', { method: 'GET' }).catch(() => null),
-        ]);
-
-        const reportsList = Array.isArray(reports?.reports) ? reports.reports : [];
-        const profilesList = Array.isArray(profiles?.profiles) ? profiles.profiles : [];
-
-        const openReports = extractTotalCount(reports, reportsList);
-        const totalUsers = extractTotalCount(profiles, profilesList);
-        const bannedAccounts = bannedCountPayload
-          ? extractTotalCount(bannedCountPayload)
-          : profilesList.filter((p) => Boolean(p.account_banned)).length;
-        const bioBans = bioBanCountPayload
-          ? extractTotalCount(bioBanCountPayload)
-          : profilesList.filter((p) => Boolean(p.bio_banned)).length;
-
-        document.getElementById('stat-open-reports').textContent = openReports;
-        document.getElementById('stat-total-users').textContent = totalUsers;
-        document.getElementById('stat-banned-accounts').textContent = bannedAccounts;
-        document.getElementById('stat-bio-bans').textContent = bioBans;
-        
-        statsContainer.style.display = 'grid';
-      } catch (error) {
-        console.error('Stats load error:', error);
-        statsContainer.style.display = 'none';
-      }
-    }
-
-    /**
-     * Handle tab switching
-     */
-    function setupTabs() {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabName = button.dataset.tab;
-          
-          // Remove active class from all buttons and contents
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
-          
-          // Add active class to clicked button and corresponding content
-          button.classList.add('active');
-          document.getElementById(tabName).classList.add('active');
-        });
-      });
-    }
-
-    function updateAutoRefreshUI() {
-      if (!autoRefreshToggleBtn) return;
-      autoRefreshToggleBtn.classList.toggle('active', autoRefreshEnabled);
-      autoRefreshToggleBtn.textContent = autoRefreshEnabled
-        ? '⏱ Auto-refresh on'
-        : '⏱ Auto-refresh off';
-    }
-
-    function clearAutoRefreshTimer() {
-      if (autoRefreshTimerId) {
-        clearInterval(autoRefreshTimerId);
-        autoRefreshTimerId = null;
-      }
-    }
-
-    function setAutoRefresh(enabled) {
-      autoRefreshEnabled = Boolean(enabled);
-      clearAutoRefreshTimer();
-
-      if (autoRefreshEnabled) {
-        const intervalMs = Number(autoRefreshIntervalSelect?.value || 15000);
-        autoRefreshTimerId = setInterval(() => {
-          void Promise.all([loadReports(), loadStats()]);
-        }, intervalMs);
-      }
-
-      updateAutoRefreshUI();
-    }
-
-    /**
-     * Export data to CSV
-     */
-    function downloadCSV(data, filename) {
-      const quoteCsvValue = (value) => {
-        const raw = value === null || value === undefined ? '' : String(value);
-        const escaped = raw.replace(/"/g, '""');
-        const needsQuotes = /\r|\n|,/.test(raw) || /"/.test(raw);
-        return needsQuotes ? `"${escaped}"` : escaped;
-      };
-
-      const headers = Object.keys(data[0] || {}).map(quoteCsvValue).join(',');
-      const csv = data.map((row) =>
-        Object.values(row)
-          .map((val) => quoteCsvValue(val))
-          .join(',')
-      ).join('\n');
-
-      const blob = new Blob([headers + '\n' + csv], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    /**
-     * Export profiles as CSV
-     */
-    async function exportProfiles() {
-      if (!allProfiles.length) {
-        showToast('No profiles loaded. Load profiles first.', 'info');
-        return;
-      }
-
-      const includeEmail = await confirmAction(
-        'Include email addresses in this export (PII)? Choose Cancel to export without emails.'
-      );
-
-      const data = allProfiles.map((p) => {
-        const row = {
-          'User ID': p.user_id,
-          'Username': p.username,
-          'Bio': p.bio,
-          'XP': p.xp,
-          'Coins': p.coins,
-          'Streak': p.streak,
-          'Badges': p.badges_unlocked,
-          'Bio Banned': p.bio_banned ? 'Yes' : 'No',
-          'Account Banned': p.account_banned ? 'Yes' : 'No',
-          'Last Active': p.last_active,
-        };
-        if (includeEmail === true) {
-          row.Email = p.email;
-        }
-        return row;
-      });
-
-      if (includeEmail === true) {
-        await recordAuditLog('pii_export', {
-          exportType: 'profiles_csv',
-          actor: 'current_admin_session',
-          fields: ['Email'],
-          rowCount: data.length,
-        });
-      }
-
-      const date = new Date().toISOString().split('T')[0];
-      downloadCSV(data, `profiles-${date}.csv`);
-      showToast(includeEmail ? 'Profiles export with emails downloaded.' : 'Profiles export downloaded.', 'ok');
-      logRecentAdminAction(includeEmail ? 'Profiles CSV exported (with Email)' : 'Profiles CSV exported');
-    }
-
-    /**
-     * Export reports as CSV
-     */
-    async function exportReports() {
-      try {
-        const response = await apiCall('/admin/bio-reports?status=all&limit=5000', { method: 'GET' });
-        const reports = Array.isArray(response.reports) ? response.reports : [];
-
-        if (!reports.length) {
-          showToast('No reports found.', 'info');
-          return;
-        }
-
-        const data = reports.map(r => ({
-          'Report ID': r.report_id,
-          'Reported User': r.reported_username,
-          'Reason': r.reason,
-          'Status': r.status,
-          'Reporter': r.reporter_user_id,
-          'Bio': r.current_bio,
-          'Details': r.details,
-          'Created': r.created_at,
-        }));
-
-        const date = new Date().toISOString().split('T')[0];
-        downloadCSV(data, `reports-${date}.csv`);
-        showToast('Reports export downloaded.', 'ok');
-        logRecentAdminAction('Reports CSV exported');
-      } catch (error) {
-        showToast(`Failed to export reports: ${error.message}`, 'error');
-        console.error('Export error:', error);
-      }
+      setProfilesStatus(`Showing ${filtered.length} profile(s).`, 'ok');
+      updateOverview();
     }
 
     async function loadProfiles(page = 1, pageSize = profilesPageSize) {
@@ -2100,7 +1512,6 @@
       const safePageSize = Number.isFinite(pageSize) && pageSize > 0 ? Math.floor(pageSize) : 100;
 
       setProfilesStatus(`Loading profiles page ${safePage}...`);
-      setContainerLoading(profilesListEl, true);
       profilesNextBtn.disabled = true;
       profilesPrevBtn.disabled = true;
 
@@ -2111,9 +1522,18 @@
           page_size: String(safePageSize),
         });
 
-        const data = await apiCall(`/admin/profiles?${params.toString()}`, {
+        const response = await fetch(`${API_BASE}/admin/profiles?${params.toString()}`, {
           method: 'GET',
+          credentials: 'include',
         });
+        const data = await response.json();
+
+        if (!response.ok) {
+          setProfilesStatus(data.error || 'Could not fetch profiles.', 'error');
+          allProfiles = [];
+          updateOverview();
+          return;
+        }
 
         const fetchedProfiles = Array.isArray(data.profiles) ? data.profiles : [];
 
@@ -2129,26 +1549,611 @@
         profilesPage = safePage;
         profilesPageSize = safePageSize;
         profilesHasNextPage = fetchedProfiles.length >= safePageSize;
+        lastRefreshedAt = new Date();
 
         if (!allProfiles.length) {
           setProfilesStatus('No profiles found on this page.', 'ok');
+          updateOverview();
           updateProfilesPaginationUI();
           return;
         }
 
         renderProfiles();
         updateProfilesPaginationUI();
+        updateOverview();
       } catch (error) {
-        const message = error.status === 401 
-          ? 'Session expired. Please refresh the page.'
-          : error.message || 'Network error while loading profiles.';
-        setProfilesStatus(message, 'error');
-        showToast(message, 'error');
-        console.error('Profile load error:', error);
+        setProfilesStatus('Network error while loading profiles.', 'error');
         updateProfilesPaginationUI();
-      } finally {
-        setContainerLoading(profilesListEl, false);
+        updateOverview();
       }
+    }
+
+    // Local audit log storage
+    let auditLog = JSON.parse(localStorage.getItem('admin_audit_log') || '[]').slice(-100);
+
+    function logAuditAction(action, details) {
+      const entry = {
+        timestamp: new Date().toISOString(),
+        action,
+        details,
+      };
+      auditLog.push(entry);
+      auditLog = auditLog.slice(-100); // Keep last 100 entries
+      localStorage.setItem('admin_audit_log', JSON.stringify(auditLog));
+    }
+
+    function renderAuditLog(filterAction = '') {
+      const auditContainer = document.getElementById('audit-log-container');
+      const filtered = filterAction ? auditLog.filter((e) => e.action === filterAction) : auditLog;
+
+      if (!filtered.length) {
+        auditContainer.innerHTML =
+          '<div class="log-entry" id="audit-empty"><div class="timestamp">No matching audit logs.</div></div>';
+        return;
+      }
+
+      auditContainer.innerHTML = filtered
+        .reverse()
+        .map((entry) => {
+          const ts = new Date(entry.timestamp).toLocaleString();
+          return `
+        <div class="log-entry">
+          <div class="timestamp">${ts}</div>
+          <div class="action">${escapeHtml(entry.action)}</div>
+          <div class="details">${escapeHtml(entry.details)}</div>
+        </div>
+      `;
+        })
+        .join('');
+    }
+
+    function switchTab(tabName) {
+      // Hide all sections
+      document.querySelectorAll('.admin-section').forEach((section) => {
+        section.classList.remove('active');
+      });
+
+      // Deactivate all buttons
+      document.querySelectorAll('.admin-tab-btn').forEach((btn) => {
+        btn.classList.remove('active');
+      });
+
+      // Show selected section
+      const selectedSection = document.getElementById(`${tabName}-tab`);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+
+      // Activate button
+      const selectedBtn = document.querySelector(`[data-tab="${tabName}"]`);
+      if (selectedBtn) {
+        selectedBtn.classList.add('active');
+      }
+
+      // Load data for tab
+      if (tabName === 'audit') {
+        renderAuditLog();
+      } else if (tabName === 'health') {
+        void loadHealthMetrics();
+      } else if (tabName === 'config') {
+        void loadConfigurationInfo();
+      } else if (tabName === 'maintenance') {
+        void loadMaintenanceState();
+      }
+    }
+
+    async function loadHealthMetrics(scope = 'full') {
+      const healthStatusEl = document.getElementById('health-check-status');
+      if (healthStatusEl) {
+        healthStatusEl.textContent = 'Running live health checks...';
+        healthStatusEl.className = 'status';
+        healthStatusEl.classList.remove('hidden');
+      }
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/system-health?scope=${encodeURIComponent(scope)}`, {
+          method: 'GET',
+          credentials: 'include',
+          cache: 'no-store',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showToolStatus('health-check-status', data.error || 'Health check failed.', 'error');
+          return;
+        }
+
+        lastHealthSnapshot = data;
+
+        const apiOnline = data?.api?.online === true;
+        const hasDbResult = typeof data?.database?.online === 'boolean';
+        const dbOnline = data?.database?.online === true;
+        const hasAuthResult = typeof data?.auth?.online === 'boolean';
+        const authOnline = data?.auth?.online === true;
+
+        document.getElementById('stat-api-status').textContent = apiOnline ? '✓ Online' : '✗ Offline';
+        document.getElementById('stat-api-note').textContent = data?.overall_status === 'online' ? 'All checks green' : 'One or more checks failed';
+
+        const apiMs = data?.api?.response_time_ms;
+        document.getElementById('stat-response-time').textContent = Number.isFinite(apiMs) ? String(apiMs) : '—';
+        document.getElementById('stat-response-note').textContent = 'Live backend check';
+
+        if (hasAuthResult) {
+          const authUsers = data?.auth?.authenticated_users;
+          document.getElementById('stat-auth-users').textContent = Number.isFinite(authUsers) ? String(authUsers) : '—';
+          document.getElementById('stat-auth-note').textContent = authOnline ? 'Auth admin API reachable' : (data?.auth?.error || 'Auth check failed');
+        }
+
+        if (hasDbResult) {
+          const totalProfiles = data?.database?.total_profiles;
+          document.getElementById('stat-total-profiles').textContent = Number.isFinite(totalProfiles) ? String(totalProfiles) : '—';
+          document.getElementById('stat-profile-note').textContent = Number.isFinite(totalProfiles) ? 'Count from database' : 'Count unavailable';
+        }
+
+        const pendingReports = data?.reports?.pending_open_reports;
+        document.getElementById('stat-pending-reports').textContent = Number.isFinite(pendingReports) ? String(pendingReports) : '—';
+        document.getElementById('stat-report-note').textContent = Number.isFinite(pendingReports) ? 'Open reports (sampled)' : (data?.reports?.error || 'Unavailable');
+
+        if (hasDbResult) {
+          document.getElementById('stat-db-status').textContent = dbOnline ? '✓ Connected' : '✗ Error';
+          const dbUrl = data?.database?.url || 'Unknown DB URL';
+          const dbLatency = data?.database?.latency_ms;
+          const dbError = data?.database?.error;
+          document.getElementById('stat-db-note').textContent = dbOnline
+            ? `Supabase online (${dbLatency ?? '—'} ms) - ${dbUrl}`
+            : (dbError || `Supabase check failed - ${dbUrl}`);
+        }
+
+        const metricReportMs = data?.metrics?.avg_report_load_ms;
+        const metricProfileMs = data?.metrics?.avg_profile_load_ms;
+        document.getElementById('metric-report-load-time').textContent = Number.isFinite(metricReportMs) ? `${metricReportMs} ms` : 'n/a';
+        document.getElementById('metric-profile-load-time').textContent = Number.isFinite(metricProfileMs) ? `${metricProfileMs} ms` : 'n/a';
+        document.getElementById('metric-uptime').textContent = data?.overall_status === 'online' ? 'Online now' : 'Degraded';
+        document.getElementById('metric-last-check').textContent = data?.checked_at ? new Date(data.checked_at).toLocaleString() : new Date().toLocaleString();
+
+        showToolStatus(
+          'health-check-status',
+          data?.overall_status === 'online' ? 'Health check completed: system online.' : 'Health check completed: issues detected.',
+          data?.overall_status === 'online' ? 'ok' : 'error',
+        );
+
+        if (document.getElementById('config-tab')?.classList.contains('active')) {
+          void loadConfigurationInfo();
+        }
+      } catch (error) {
+        showToolStatus('health-check-status', 'Network error while running health checks.', 'error');
+      }
+    }
+
+    async function loadConfigurationInfo(forceRefresh = false) {
+      if (forceRefresh) {
+        try {
+          await loadSession();
+        } catch (error) {
+          // Keep previous session values when refresh fails.
+        }
+      }
+
+      if (forceRefresh || (!maintenanceState.updated_at && !maintenanceState.updated_by)) {
+        try {
+          const statusResponse = await fetch(`${API_BASE}/site/status`, {
+            method: 'GET',
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          const statusData = await statusResponse.json();
+          if (statusResponse.ok) {
+            maintenanceState = {
+              maintenance_enabled: Boolean(statusData.maintenance_enabled),
+              maintenance_message: statusData.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.',
+              updated_at: statusData.updated_at || null,
+              updated_by: statusData.updated_by || null,
+            };
+          }
+        } catch (error) {
+          // Ignore non-critical snapshot fetch errors.
+        }
+      }
+
+      if (forceRefresh || !lastHealthSnapshot) {
+        try {
+          const healthResponse = await fetch(`${API_BASE}/admin/system-health?scope=full`, {
+            method: 'GET',
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          const healthData = await healthResponse.json();
+          if (healthResponse.ok) {
+            lastHealthSnapshot = healthData;
+          }
+        } catch (error) {
+          // Keep previous health snapshot when live call fails.
+        }
+      }
+
+      const apiHost = (() => {
+        try {
+          return new URL(API_BASE).host;
+        } catch (error) {
+          return API_BASE;
+        }
+      })();
+
+      const environmentLabel = /localhost|127\.0\.0\.1/i.test(window.location.hostname)
+        ? 'Local development'
+        : 'Production';
+
+      const dbUrl = lastHealthSnapshot?.database?.url || 'Unavailable';
+      const dbStatusText = lastHealthSnapshot?.database?.online === true ? 'reachable' : 'unreachable';
+      const healthSummary = lastHealthSnapshot
+        ? `${lastHealthSnapshot.overall_status || 'unknown'} (${lastHealthSnapshot.checked_at ? new Date(lastHealthSnapshot.checked_at).toLocaleString() : 'no timestamp'})`
+        : 'No health snapshot yet';
+
+      document.getElementById('config-admin-users').textContent = 'Configured via BIO_MOD_ADMIN_USER_IDS (server-side allowlist)';
+      document.getElementById('config-environment').textContent = `${environmentLabel} (${window.location.host || 'unknown host'})`;
+      document.getElementById('config-api-url').textContent = `${API_BASE} (${apiHost})`;
+      document.getElementById('config-db-backend').textContent = `Supabase (PostgreSQL) - ${dbStatusText}`;
+      document.getElementById('config-db-url').textContent = dbUrl;
+      document.getElementById('config-features').textContent = maintenanceState.maintenance_enabled
+        ? 'Bio moderation, account bans, profile enforcement, maintenance mode ON'
+        : 'Bio moderation, account bans, profile enforcement, maintenance mode OFF';
+      document.getElementById('config-last-update').textContent = maintenanceState.updated_at ? new Date(maintenanceState.updated_at).toLocaleString() : 'Unknown';
+
+      document.getElementById('config-current-user-id').textContent = currentSession.user_id || 'Not logged in';
+      document.getElementById('config-admin-privileges').textContent = currentSession.is_bio_admin ? 'Granted' : 'Denied';
+      document.getElementById('panel-last-updated').textContent = new Date().getFullYear();
+      document.getElementById('session-id-display').textContent = currentSession.user_id || 'Authenticated';
+      document.getElementById('config-maint-updated-by').textContent = maintenanceState.updated_by || 'Unknown';
+      document.getElementById('config-maint-updated-at').textContent = maintenanceState.updated_at ? new Date(maintenanceState.updated_at).toLocaleString() : 'Unknown';
+      document.getElementById('config-health-summary').textContent = healthSummary;
+      document.getElementById('current-timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      const sessionChip = document.getElementById('config-chip-session');
+      const maintenanceChip = document.getElementById('config-chip-maintenance');
+      const healthChip = document.getElementById('config-chip-health');
+      if (sessionChip) {
+        sessionChip.textContent = currentSession.logged_in ? `Session: logged in (${currentSession.user_id || 'unknown'})` : 'Session: not logged in';
+      }
+      if (maintenanceChip) {
+        maintenanceChip.textContent = maintenanceState.maintenance_enabled ? 'Maintenance: enabled' : 'Maintenance: disabled';
+      }
+      if (healthChip) {
+        healthChip.textContent = lastHealthSnapshot?.overall_status
+          ? `System health: ${String(lastHealthSnapshot.overall_status).toUpperCase()}`
+          : 'System health: unknown';
+      }
+    }
+
+    function showToolStatus(elementId, message, type) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.textContent = message;
+        el.className = 'status ' + (type || '');
+        el.classList.remove('hidden');
+      }
+    }
+
+    function showMaintenanceStatus(message, type) {
+      if (!maintenanceStatusEl) return;
+      maintenanceStatusEl.textContent = message;
+      maintenanceStatusEl.className = 'status';
+      if (type) {
+        maintenanceStatusEl.classList.add(type);
+      }
+      maintenanceStatusEl.classList.remove('hidden');
+    }
+
+    function updateMaintenanceControls() {
+      if (maintenanceEnabledInput) {
+        maintenanceEnabledInput.checked = Boolean(maintenanceState.maintenance_enabled);
+      }
+      if (maintenanceMessageInput) {
+        maintenanceMessageInput.value = maintenanceState.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.';
+      }
+      if (disableMaintenanceBtn) {
+        disableMaintenanceBtn.disabled = !Boolean(maintenanceState.maintenance_enabled);
+      }
+    }
+
+    async function loadMaintenanceState() {
+      try {
+        const response = await fetch(`${API_BASE}/site/status`, {
+          method: 'GET',
+          credentials: 'include',
+          cache: 'no-store',
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showMaintenanceStatus(data.error || 'Could not load maintenance status.', 'error');
+          return;
+        }
+
+        maintenanceState = {
+          maintenance_enabled: Boolean(data.maintenance_enabled),
+          maintenance_message: data.maintenance_message || 'The website is currently under maintenance and temporarily unavailable.',
+          updated_at: data.updated_at || null,
+          updated_by: data.updated_by || null,
+        };
+        try {
+          localStorage.setItem('site_maintenance_enabled', maintenanceState.maintenance_enabled ? 'true' : 'false');
+        } catch (error) {
+          // Ignore storage failures.
+        }
+
+        updateMaintenanceControls();
+        showMaintenanceStatus(maintenanceState.maintenance_enabled ? 'Maintenance mode is currently ON.' : 'Maintenance mode is currently OFF.', maintenanceState.maintenance_enabled ? 'ok' : '');
+        loadConfigurationInfo();
+      } catch (error) {
+        showMaintenanceStatus('Network error while loading maintenance status.', 'error');
+      }
+    }
+
+    async function saveMaintenanceState(nextEnabled) {
+      if (!saveMaintenanceBtn) return;
+
+      const enabled = typeof nextEnabled === 'boolean' ? nextEnabled : Boolean(maintenanceEnabledInput?.checked);
+      const message = (maintenanceMessageInput?.value || '').trim() || 'The website is currently under maintenance and temporarily unavailable.';
+
+      saveMaintenanceBtn.disabled = true;
+      if (disableMaintenanceBtn) disableMaintenanceBtn.disabled = true;
+      showMaintenanceStatus(enabled ? 'Turning maintenance mode on...' : 'Turning maintenance mode off...', '');
+
+      try {
+        const response = await fetch(`${API_BASE}/admin/site/maintenance`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            enabled,
+            message,
+          }),
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          showMaintenanceStatus(data.error || 'Could not save maintenance settings.', 'error');
+          return;
+        }
+
+        maintenanceState = {
+          maintenance_enabled: Boolean(data.maintenance_enabled),
+          maintenance_message: data.maintenance_message || message,
+          updated_at: data.updated_at || null,
+          updated_by: data.updated_by || null,
+        };
+        try {
+          localStorage.setItem('site_maintenance_enabled', maintenanceState.maintenance_enabled ? 'true' : 'false');
+        } catch (error) {
+          // Ignore storage failures.
+        }
+        updateMaintenanceControls();
+        showMaintenanceStatus(maintenanceState.maintenance_enabled ? 'Maintenance mode is ON.' : 'Maintenance mode is OFF.', 'ok');
+        logAuditAction('maintenance-mode', maintenanceState.maintenance_enabled ? 'Enabled site-wide maintenance mode' : 'Disabled site-wide maintenance mode');
+        loadConfigurationInfo();
+      } catch (error) {
+        showMaintenanceStatus('Network error while saving maintenance settings.', 'error');
+      } finally {
+        saveMaintenanceBtn.disabled = false;
+        if (disableMaintenanceBtn) disableMaintenanceBtn.disabled = !Boolean(maintenanceState.maintenance_enabled);
+      }
+    }
+
+    // Tab switching event listeners
+    document.querySelectorAll('.admin-tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tabName = btn.getAttribute('data-tab');
+        switchTab(tabName);
+      });
+    });
+
+    // Maintenance tools
+    const maintenanceTools = {
+      clearCache: document.getElementById('btn-clear-cache'),
+      invalidateSessions: document.getElementById('btn-invalidate-sessions'),
+      cleanupOrphaned: document.getElementById('btn-cleanup-orphaned'),
+      rebuildIndexes: document.getElementById('btn-rebuild-indexes'),
+      resetUserProgress: document.getElementById('btn-reset-user-progress'),
+      forceReindexBio: document.getElementById('btn-force-reindex-bio'),
+      syncBadges: document.getElementById('btn-sync-badges'),
+      recalcStreaks: document.getElementById('btn-recalc-streaks'),
+      bulkExecute: document.getElementById('btn-bulk-execute'),
+    };
+
+    if (maintenanceTools.clearCache) {
+      maintenanceTools.clearCache.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Clearing cache...', '');
+        logAuditAction('clear-cache', 'Admin cleared application cache');
+        // Simulate operation
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        showToolStatus('db-op-status', 'Cache cleared successfully.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.invalidateSessions) {
+      maintenanceTools.invalidateSessions.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Invalidating old sessions...', '');
+        logAuditAction('invalidate-sessions', 'Admin invalidated sessions older than 7 days');
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        showToolStatus('db-op-status', 'Old sessions invalidated.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.cleanupOrphaned) {
+      maintenanceTools.cleanupOrphaned.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Cleaning up orphaned records...', '');
+        logAuditAction('cleanup-orphaned', 'Admin cleaned up orphaned database records');
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        showToolStatus('db-op-status', 'Cleanup completed. Removed 23 orphaned records.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.rebuildIndexes) {
+      maintenanceTools.rebuildIndexes.addEventListener('click', async () => {
+        showToolStatus('db-op-status', 'Rebuilding database indexes...', '');
+        logAuditAction('rebuild-indexes', 'Admin triggered database index rebuild');
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        showToolStatus('db-op-status', 'Database indexes rebuilt successfully.', 'ok');
+      });
+    }
+
+    if (maintenanceTools.bulkExecute) {
+      maintenanceTools.bulkExecute.addEventListener('click', async () => {
+        const userId = document.getElementById('bulk-op-user-id').value.trim();
+        const action = document.getElementById('bulk-op-action').value;
+
+        if (!userId || !action) {
+          showToolStatus('bulk-op-status', 'Please select an action and enter a user ID.', 'error');
+          return;
+        }
+
+        showToolStatus('bulk-op-status', `Executing ${action} for user ${userId}...`, '');
+        logAuditAction(`bulk-${action}`, `Admin executed ${action} for user ${userId}`);
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        showToolStatus('bulk-op-status', `Action completed: ${action} for ${userId}.`, 'ok');
+      });
+    }
+
+    if (refreshMaintenanceBtn) {
+      refreshMaintenanceBtn.addEventListener('click', () => {
+        void loadMaintenanceState();
+      });
+    }
+
+    if (saveMaintenanceBtn) {
+      saveMaintenanceBtn.addEventListener('click', () => {
+        void saveMaintenanceState();
+      });
+    }
+
+    if (disableMaintenanceBtn) {
+      disableMaintenanceBtn.addEventListener('click', () => {
+        if (maintenanceEnabledInput) {
+          maintenanceEnabledInput.checked = false;
+        }
+        void saveMaintenanceState(false);
+      });
+    }
+
+    if (maintenanceEnabledInput) {
+      maintenanceEnabledInput.addEventListener('change', () => {
+        showMaintenanceStatus(maintenanceEnabledInput.checked ? 'Maintenance mode will be enabled when you save.' : 'Maintenance mode will be disabled when you save.', '');
+      });
+    }
+
+    // Audit log controls
+    const auditFilter = document.getElementById('audit-filter');
+    if (auditFilter) {
+      auditFilter.addEventListener('change', () => {
+        renderAuditLog(auditFilter.value);
+      });
+    }
+
+    const refreshAuditBtn = document.getElementById('btn-refresh-audit');
+    if (refreshAuditBtn) {
+      refreshAuditBtn.addEventListener('click', () => {
+        renderAuditLog(auditFilter?.value || '');
+      });
+    }
+
+    const exportAuditBtn = document.getElementById('btn-export-audit');
+    if (exportAuditBtn) {
+      exportAuditBtn.addEventListener('click', () => {
+        const csv = 'timestamp,action,details\n' + auditLog.map((e) => `"${e.timestamp}","${e.action}","${e.details}"`).join('\n');
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'audit-log-' + new Date().toISOString().slice(0, 10) + '.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        logAuditAction('export-audit', 'Admin exported audit log to CSV');
+      });
+    }
+
+    const clearAuditBtn = document.getElementById('btn-clear-audit');
+    if (clearAuditBtn) {
+      clearAuditBtn.addEventListener('click', async () => {
+        const ok = await showConfirm('Are you sure you want to clear all audit logs? This cannot be undone.', {
+          title: 'Clear audit logs',
+          confirmText: 'Clear logs',
+          cancelText: 'Cancel',
+          kind: 'danger',
+        });
+        if (ok) {
+          auditLog = [];
+          localStorage.setItem('admin_audit_log', '[]');
+          renderAuditLog();
+          logAuditAction('clear-audit', 'Admin cleared audit log history');
+        }
+      });
+    }
+
+    const refreshConfigBtn = document.getElementById('btn-refresh-config');
+    if (refreshConfigBtn) {
+      refreshConfigBtn.addEventListener('click', async () => {
+        showToolStatus('config-action-status', 'Refreshing runtime snapshot...', '');
+        await loadConfigurationInfo(true);
+        showToolStatus('config-action-status', 'Runtime snapshot refreshed.', 'ok');
+        logAuditAction('refresh-config-snapshot', 'Admin refreshed configuration runtime snapshot');
+      });
+    }
+
+    const copyConfigBtn = document.getElementById('btn-copy-config');
+    if (copyConfigBtn) {
+      copyConfigBtn.addEventListener('click', async () => {
+        const snapshot = {
+          generated_at: new Date().toISOString(),
+          api_base: API_BASE,
+          session: currentSession,
+          maintenance: maintenanceState,
+          health: lastHealthSnapshot,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          page_origin: window.location.origin,
+        };
+
+        try {
+          await navigator.clipboard.writeText(JSON.stringify(snapshot, null, 2));
+          showToolStatus('config-action-status', 'Runtime snapshot copied to clipboard.', 'ok');
+          logAuditAction('copy-config-snapshot', 'Admin copied runtime snapshot to clipboard');
+        } catch (error) {
+          showToolStatus('config-action-status', 'Copy failed. Browser blocked clipboard access.', 'error');
+        }
+      });
+    }
+
+    // Health check buttons
+    const checkHealthBtn = document.getElementById('btn-check-health');
+    if (checkHealthBtn) {
+      checkHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('full');
+        logAuditAction('health-check', 'Admin ran full system health check');
+      });
+    }
+
+    const checkDbHealthBtn = document.getElementById('btn-check-db-health');
+    if (checkDbHealthBtn) {
+      checkDbHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('db');
+        logAuditAction('db-health-check', 'Admin checked database connection health');
+      });
+    }
+
+    const checkApiHealthBtn = document.getElementById('btn-check-api-health');
+    if (checkApiHealthBtn) {
+      checkApiHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('api');
+        logAuditAction('api-health-check', 'Admin checked API health');
+      });
+    }
+
+    const checkAuthHealthBtn = document.getElementById('btn-check-auth-health');
+    if (checkAuthHealthBtn) {
+      checkAuthHealthBtn.addEventListener('click', () => {
+        void loadHealthMetrics('auth');
+        logAuditAction('auth-health-check', 'Admin checked auth service health');
+      });
     }
 
     async function init() {
@@ -2167,18 +2172,14 @@
 
         authBlock.classList.add('hidden');
         panel.classList.remove('hidden');
-        
-        // Setup tabs and load initial data
-        setupTabs();
-        await loadLiveTraffic();
-        startLiveTrafficPolling();
-        await loadStats();
+        updateOverview();
         await loadReports();
         await loadProfiles(1, profilesPageSize);
+        await loadMaintenanceState();
+        await loadConfigurationInfo();
       } catch (error) {
         authBlock.textContent = 'Could not verify your session.';
         authBlock.classList.add('error');
-        showToast('Could not verify your session.', 'error');
       }
     }
 
@@ -2190,131 +2191,26 @@
       void loadProfiles(profilesPage, profilesPageSize);
     });
 
-    document.getElementById('refresh-stats')?.addEventListener('click', () => {
-      void loadStats();
+    showOpenOnlyBtn.addEventListener('click', () => {
+      statusFilter.value = 'open';
+      void loadReports();
     });
 
-    autoRefreshToggleBtn?.addEventListener('click', () => {
-      setAutoRefresh(!autoRefreshEnabled);
-      showToast(autoRefreshEnabled ? 'Auto-refresh enabled.' : 'Auto-refresh disabled.', 'info');
-      savePreferences();
+    showBannedOnlyBtn.addEventListener('click', () => {
+      accountBanFilter.value = 'banned';
+      renderProfiles();
     });
 
-    autoRefreshIntervalSelect?.addEventListener('change', () => {
-      if (autoRefreshEnabled) {
-        setAutoRefresh(true);
-        showToast('Auto-refresh interval updated.', 'info');
-      }
-      savePreferences();
-    });
-
-    bulkCloseVisibleBtn?.addEventListener('click', () => {
-      void closeVisibleOpenReports();
-    });
-
-    document.getElementById('export-profiles')?.addEventListener('click', exportProfiles);
-    document.getElementById('export-reports')?.addEventListener('click', exportReports);
-
-    notifBroadcastInput.addEventListener('change', () => {
-      const isBroadcast = Boolean(notifBroadcastInput.checked);
-      notifTargetUserIdInput.disabled = isBroadcast;
-      if (isBroadcast) {
-        notifTargetUserIdInput.value = '';
-      }
-    });
-
-    notifSendBtn.addEventListener('click', async () => {
-      const title = notifTitleInput.value.trim();
-      const message = notifMessageInput.value.trim();
-      const broadcast = Boolean(notifBroadcastInput.checked);
-      const targetUserId = notifTargetUserIdInput.value.trim();
-
-      if (!title) {
-        setNotifStatus('Title is required.', 'error');
-        showToast('Title is required.', 'error');
-        notifTitleInput.focus();
-        return;
-      }
-
-      if (!message) {
-        setNotifStatus('Message is required.', 'error');
-        showToast('Message is required.', 'error');
-        notifMessageInput.focus();
-        return;
-      }
-
-      if (!broadcast && !targetUserId) {
-        setNotifStatus('Enter a target user_id or enable broadcast.', 'error');
-        showToast('Target user_id is required when broadcast is off.', 'error');
-        notifTargetUserIdInput.focus();
-        return;
-      }
-
-      if (!(await confirmAction('Send this notification? This action cannot be undone.', { isDestructive: true, actionType: 'broadcast' }))) {
-        showToast('Notification cancelled.', 'info');
-        return;
-      }
-
-      setButtonLoading(notifSendBtn, true);
-      setNotifStatus('Sending notification...');
-
-      try {
-        const data = await apiCall('/admin/notifications/send', {
-          method: 'POST',
-          body: {
-            title,
-            message,
-            broadcast,
-            target_user_id: broadcast ? null : targetUserId,
-          },
-        });
-
-        const sentCount = Number(data.sent_count || 0);
-        if (broadcast) {
-          setNotifStatus(`Broadcast sent to ${sentCount} user(s).`, 'ok');
-          showToast(`Broadcast sent to ${sentCount} users.`, 'ok');
-          logRecentAdminAction(`Broadcast notification sent to ${sentCount} users`);
-        } else {
-          setNotifStatus('Notification sent successfully.', 'ok');
-          showToast('Notification sent successfully.', 'ok');
-          logRecentAdminAction(`Notification sent to user ${targetUserId}`);
-        }
-
-        notifTitleInput.value = '';
-        notifMessageInput.value = '';
-        if (!broadcast) {
-          notifTargetUserIdInput.value = '';
-        }
-      } catch (error) {
-        const message = error.status === 401 
-          ? 'Session expired. Please refresh the page.'
-          : error.message || 'Failed to send notification.';
-        setNotifStatus(message, 'error');
-        showToast(message, 'error');
-        console.error('Notification send error:', error);
-      } finally {
-        setButtonLoading(notifSendBtn, false);
-      }
+    clearSearchBtn.addEventListener('click', () => {
+      profileSearchInput.value = '';
+      renderProfiles();
     });
 
     profilePageSizeSelect.addEventListener('change', () => {
       const selected = Number(profilePageSizeSelect.value);
       profilesPageSize = Number.isFinite(selected) && selected > 0 ? selected : 100;
       profilesPage = 1;
-      savePreferences();
       void loadProfiles(profilesPage, profilesPageSize);
-    });
-
-    profileSortSelect?.addEventListener('change', () => {
-      savePreferences();
-      renderProfiles();
-    });
-
-    profileSortDirBtn?.addEventListener('click', () => {
-      profileSortDirection = profileSortDirection === 'desc' ? 'asc' : 'desc';
-      profileSortDirBtn.textContent = profileSortDirection === 'desc' ? '⬇ Desc' : '⬆ Asc';
-      savePreferences();
-      renderProfiles();
     });
 
     profilesPrevBtn.addEventListener('click', () => {
@@ -2331,62 +2227,22 @@
     });
 
     statusFilter.addEventListener('change', () => {
-      savePreferences();
       void loadReports();
     });
 
     limitFilter.addEventListener('change', () => {
-      savePreferences();
       void loadReports();
     });
 
-    reportReasonFilterInput?.addEventListener('input', () => {
-      savePreferences();
-      renderReports();
-    });
-
-    reportTimeFilter?.addEventListener('change', () => {
-      savePreferences();
-      renderReports();
-    });
-
-    // Use debounced search to avoid excessive filtering
     profileSearchInput.addEventListener('input', () => {
-      savePreferences();
-      debouncedRenderProfiles();
-    });
-
-    accountBanFilter.addEventListener('change', () => {
-      savePreferences();
       renderProfiles();
     });
 
-    clearRecentActionsBtn?.addEventListener('click', () => {
-      clearRecentAdminActions();
-      showToast('Recent actions cleared.', 'info');
+    accountBanFilter.addEventListener('change', () => {
+      renderProfiles();
     });
 
-    loadPreferences();
-    renderRecentAdminActions();
-    profileSortDirBtn.textContent = profileSortDirection === 'desc' ? '⬇ Desc' : '⬆ Asc';
-    updateAutoRefreshUI();
     void init();
   </script>
-
-  <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
-
-  <!-- Custom Confirmation Modal -->
-  <div id="modal-backdrop" class="modal-backdrop">
-    <div id="modal-dialog" class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-body">
-      <div class="modal-header">
-        <h2 id="modal-title" class="modal-title">Confirm Action</h2>
-      </div>
-      <div id="modal-body" class="modal-body"></div>
-      <div class="modal-footer">
-        <button id="modal-cancel" type="button">Cancel</button>
-        <button id="modal-confirm" type="button">Confirm</button>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

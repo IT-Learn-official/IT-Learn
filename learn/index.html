@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4RL6H7W1C1');
+  </script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <title>IT Learn</title>
@@ -26,6 +35,7 @@
   <link rel="stylesheet" href="./ui/css/components/onboarding.css" />
   <link rel="stylesheet" href="./ui/css/components/gamification.css" />
   <link rel="stylesheet" href="./ui/css/components/learning-path.css" />
+  <script src="/maintenance-mode.js" defer></script>
   <script src="./ui/js/ace/ace.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./ui/js/ace/mode-sql.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -38,7 +48,6 @@
     <ul>
       <li><a href="#" id="dashboard-link">Courses</a></li>
       <li><a href="#" id="store-link">Shop</a></li>
-      <li><a href="#" id="notifications-link">Notifications <span id="notifications-badge" class="sidebar-pill" hidden>0</span></a></li>
       <li><a href="#" id="profile-link">Profile</a></li>
       <li><a href="#" id="badges-link">Badges</a></li>
       <li><a href="#" id="settings-link">Settings</a></li>
@@ -82,6 +91,7 @@
   <audio id="audio-wrong" src="/sounds/wrong.mp3" preload="auto"></audio>
 
   <script src="/translations.js"></script>
+  <script src="/custom-dialogs.js" defer></script>
   <script type="module" src="./ui/js/main.js"></script>
   
   <script type="module">
@@ -102,8 +112,7 @@
       const profileLink = document.getElementById('profile-link');
       const settingsLink = document.getElementById('settings-link');
       const badgesLink = document.getElementById('badges-link');
-      const notificationsLink = document.getElementById('notifications-link');
-      const sidebarLinks = [dashboardLink, storeLink, notificationsLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+      const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
 
       function setActiveSidebarLink(activeLink) {
         sidebarLinks.forEach((link) => {
@@ -123,7 +132,7 @@
             window.location.href = '/login.html';
           } else {
             console.error('Logout failed');
-            alert('Logout failed. Please try again.');
+            await showAlert('Logout failed. Please try again.', { title: 'Logout failed' });
           }
         });
         console.log('Event listener attached to logout button');
@@ -177,18 +186,6 @@
         console.log('Event listener attached to store link');
       } else {
         console.error('Store link not found!');
-      }
-
-      if (notificationsLink) {
-        notificationsLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          console.log('Notifications link clicked');
-          setActiveSidebarLink(notificationsLink);
-          navigateTo({ route: 'settings', tab: 'notifications' });
-        });
-        console.log('Event listener attached to notifications link');
-      } else {
-        console.error('Notifications link not found!');
       }
 
       if (badgesLink) {

@@ -301,9 +301,9 @@ export async function renderProfileView(screenRootEl, { username } = {}) {
   const profile = response.profile || {};
   const isOwnProfile = !isPublicProfile;
   const inventory = isOwnProfile ? getInventory() : null;
-  const hasOwnedGlow = Boolean(inventory && Array.isArray(inventory.profileEffects) && inventory.profileEffects.includes('glow'));
-  const hasPersistedGlow = Boolean(profile.has_profile_glow);
-  const hasGlowEffect = hasOwnedGlow || hasPersistedGlow;
+ const hasGlowEffect = isOwnProfile
+   ? Boolean(Array.isArray(inventory?.profileEffects) && inventory.profileEffects.includes('glow'))
+   : Boolean(profile.has_profile_glow);
   body.appendChild(renderProfileCard(profile, isOwnProfile, hasGlowEffect));
 
   const hasPersistedBio = typeof profile.bio === 'string' && profile.bio.trim().length > 0;

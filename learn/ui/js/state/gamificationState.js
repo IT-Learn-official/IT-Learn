@@ -5,7 +5,6 @@ import { checkSession, loadProgress, saveProgress } from '../services/authServic
 
 const HEARTS_MAX = 5;
 const REMOTE_SYNC_DEBOUNCE_MS = 900;
-const LOCAL_GAMIFICATION_KEY_BASE = 'itlearn.gamification.v1';
 const REWARD_MIN_FACTOR = 0.8;
 const REWARD_MAX_FACTOR = 1.2;
 const XP_PER_RANK = 12;
@@ -138,59 +137,15 @@ function defaultState() {
   };
 }
 
-function currentGamificationStorageKey() {
-  const rawUserId = typeof window !== 'undefined' ? window.currentUserId : null;
-  const userId = String(rawUserId || '').trim();
-  if (userId) {
-    return `${LOCAL_GAMIFICATION_KEY_BASE}:${userId}`;
-  }
-  return `${LOCAL_GAMIFICATION_KEY_BASE}:anon`;
-}
-
-function hasAuthenticatedUserContext() {
-  const rawUserId = typeof window !== 'undefined' ? window.currentUserId : null;
-  return Boolean(String(rawUserId || '').trim());
-}
-
-function readLocalGamificationSnapshot() {
-  // For authenticated users, Supabase is the source of truth.
-  if (hasAuthenticatedUserContext()) return null;
-  if (typeof localStorage === 'undefined') return null;
-  try {
-    const raw = localStorage.getItem(currentGamificationStorageKey());
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === 'object' ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
-function saveLocalGamificationSnapshot(snapshot) {
-  // Avoid persisting authenticated progress locally to prevent account bleed.
-  if (hasAuthenticatedUserContext()) return;
-  if (typeof localStorage === 'undefined') return;
-  try {
-    localStorage.setItem(currentGamificationStorageKey(), JSON.stringify(snapshot));
-  } catch {
-    // Ignore storage quota/privacy errors; remote sync still attempts to persist state.
-  }
-}
-
 // ─── Load / Save ─────────────────────────────────────────────────────────────
 let _state = null;
 let _remoteProgressCache = null;
 let _remoteSyncTimer = null;
 let _suppressRemoteSync = false;
-let _localSnapshotTimestampMs = 0;
 
 function load() {
   if (_state) return _state;
-  const localSnapshot = readLocalGamificationSnapshot();
-  _localSnapshotTimestampMs = snapshotTimestampMs(localSnapshot);
-  _state = (localSnapshot && typeof localSnapshot === 'object')
-    ? { ...defaultState(), ...localSnapshot }
-    : defaultState();
+  _state = defaultState();
 
   // Ensure nested objects are not missing keys after a partial restore
   _state.hearts      = Object.assign(defaultState().hearts,      _state.hearts      || {});
@@ -222,13 +177,7 @@ function load() {
   return _state;
 }
 
-function snapshotTimestampMs(snapshot) {
-  if (!snapshot || typeof snapshot.savedAt !== 'string') return 0;
-  const parsed = Date.parse(snapshot.savedAt);
-  return Number.isNaN(parsed) ? 0 : parsed;
-}
-
-function buildGamificationSnapshot() {
+function buildRemoteGamificationPayload() {
   const s = load();
   return {
     hearts: { ...s.hearts },
@@ -245,10 +194,6 @@ function buildGamificationSnapshot() {
     lessonsSinceBox: Number.isFinite(s.lessonsSinceBox) ? s.lessonsSinceBox : 0,
     savedAt: new Date().toISOString(),
   };
-}
-
-function buildRemoteGamificationPayload() {
-  return buildGamificationSnapshot();
 }
 
 function scheduleRemoteGamificationSync() {
@@ -273,30 +218,7 @@ function scheduleRemoteGamificationSync() {
 }
 
 function save() {
-  const snapshot = buildGamificationSnapshot();
-  saveLocalGamificationSnapshot(snapshot);
-  _localSnapshotTimestampMs = snapshotTimestampMs(snapshot);
   scheduleRemoteGamificationSync();
-}
-
-function snapshotStateForSync(state) {
-  return {
-    hearts: { ...state.hearts },
-    xp: { ...state.xp },
-    coins: state.coins,
-    streak: { ...state.streak },
-    leaderboard: { ...state.leaderboard },
-    quests: {
-      date: state.quests?.date || todayStr(),
-      list: Array.isArray(state.quests?.list) ? state.quests.list.map((q) => ({ ...q })) : [],
-    },
-    inventory: {
-      ...state.inventory,
-      profileEffects: Array.isArray(state.inventory?.profileEffects) ? [...state.inventory.profileEffects] : [],
-    },
-    boxReady: Boolean(state.boxReady),
-    lessonsSinceBox: Number.isFinite(state.lessonsSinceBox) ? state.lessonsSinceBox : 0,
-  };
 }
 
 function normalizeDateOnly(value) {
@@ -342,15 +264,8 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
 
     const remote = await getRemoteProgressSnapshot();
     const remoteGamification = remote?.progress?.gamification;
-    const localSnapshotTs = _localSnapshotTimestampMs;
-    const remoteSnapshotTs = snapshotTimestampMs(remoteGamification);
-    const shouldUseRemoteGamification = Boolean(remoteGamification && typeof remoteGamification === 'object');
 
-    // TODO: Replace timestamp-based conflict checks with a server-issued monotonic sequence number.
-    const syncSource = shouldUseRemoteGamification ? 'remote' : 'local';
-    const chosenTimestamp = shouldUseRemoteGamification ? remoteSnapshotTs : localSnapshotTs;
-
-    if (shouldUseRemoteGamification) {
+    if (remoteGamification && typeof remoteGamification === 'object') {
       _suppressRemoteSync = true;
       try {
         s.hearts = { ...s.hearts, ...(remoteGamification.hearts || {}) };
@@ -383,24 +298,10 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
       s.streak.longest = Math.max(s.streak.longest, profileStreak);
       if (profileLastActive) s.streak.lastDate = profileLastActive;
       save();
-      return {
-        state: snapshotStateForSync(s),
-        source: syncSource,
-        timestamp: chosenTimestamp,
-        remoteTimestamp: remoteSnapshotTs,
-        localTimestamp: _localSnapshotTimestampMs,
-      };
+      return { ...s.streak };
     }
 
-    if (!remote) {
-      return {
-        state: snapshotStateForSync(s),
-        source: syncSource,
-        timestamp: chosenTimestamp,
-        remoteTimestamp: remoteSnapshotTs,
-        localTimestamp: localSnapshotTs,
-      };
-    }
+    if (!remote) return { ...s.streak };
 
     const remoteStreak = typeof remote.streak === 'number' ? Math.max(0, remote.streak) : s.streak.current;
     const remoteLastActive = normalizeDateOnly(remote.last_active);
@@ -409,23 +310,10 @@ export async function syncGamificationWithProfileProgress(profileData = null) {
     s.streak.longest = Math.max(s.streak.longest, remoteStreak);
     if (remoteLastActive) s.streak.lastDate = remoteLastActive;
     save();
-    return {
-      state: snapshotStateForSync(s),
-      source: syncSource,
-      timestamp: chosenTimestamp,
-      remoteTimestamp: remoteSnapshotTs,
-      localTimestamp: _localSnapshotTimestampMs,
-    };
+    return { ...s.streak };
   } catch (error) {
     console.error('Failed loading profile streak sync:', error);
-    const fallbackState = load();
-    return {
-      state: snapshotStateForSync(fallbackState),
-      source: 'local',
-      timestamp: _localSnapshotTimestampMs,
-      remoteTimestamp: 0,
-      localTimestamp: _localSnapshotTimestampMs,
-    };
+    return { ...load().streak };
   }
 }
 

@@ -83,7 +83,7 @@ export async function renderApp(route) {
   screenRootEl.innerHTML = '';
 
   if (route.route === 'settings') {
-    renderSettingsView(screenRootEl, { initialTab: route.tab || 'profile' });
+    renderSettingsView(screenRootEl);
     return;
   }
 

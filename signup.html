@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4RL6H7W1C1');
+  </script>
   <link rel="canonical" href="https://itlearn.be/signup">
   <link rel="icon" href="/favicon.ico">
 
@@ -23,6 +32,8 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"
     onload="if(window.feather){feather.replace();}"></script>
   <script src="/translations.js"></script>
+  <script src="/custom-dialogs.js" defer></script>
+  <script src="/maintenance-mode.js" defer></script>
 </head>
 
 <body>
@@ -239,7 +250,7 @@ s0.parentNode.insertBefore(s1,s0);
         window.location.href = data.url;
       } catch (err) {
         console.error(`[OAUTH][${provider}] Start failed:`, err);
-        alert(`Could not start ${providerLabel(provider)} sign-in. Please try again.`);
+        await showAlert(`Could not start ${providerLabel(provider)} sign-in. Please try again.`, { title: 'Sign-in error' });
         btn.disabled = false;
         if (labelEl) {
           labelEl.textContent = baseLabel;
@@ -305,19 +316,19 @@ s0.parentNode.insertBefore(s1,s0);
     if (submitBtn) submitBtn.disabled = true;
 
     if (!email || !password) {
-        alert("Email and password are required");
+      await showAlert('Email and password are required.', { title: 'Validation' });
         if (submitBtn) submitBtn.disabled = false;
         return;
     }
   
     if (password !== confirmPassword) {
-        alert("Passwords do not match");
+      await showAlert('Passwords do not match.', { title: 'Validation' });
         if (submitBtn) submitBtn.disabled = false;
         return;
     }
   
     if (!acceptTerms) {
-        alert("You must accept the terms and conditions");
+      await showAlert('You must accept the terms and conditions.', { title: 'Validation' });
         if (submitBtn) submitBtn.disabled = false;
         return;
     }
@@ -330,7 +341,7 @@ s0.parentNode.insertBefore(s1,s0);
     const lastToken = sessionStorage.getItem('signup_last_captcha_token');
     if (lastToken && lastToken === tokenPrefix) {
       console.error('[SIGNUP] ⚠️ WARNING: REUSING SAME TOKEN!');
-      alert('Please wait for CAPTCHA to reset...');
+      await showAlert('Please wait for CAPTCHA to reset...', { title: 'CAPTCHA' });
       try { turnstile.reset(); } catch {}
       if (submitBtn) submitBtn.disabled = false;
       return;
@@ -351,7 +362,7 @@ s0.parentNode.insertBefore(s1,s0);
 
     if (!captchaToken) {
       console.error('[SIGNUP] No CAPTCHA token available after waiting');
-      alert('CAPTCHA verification not ready. Please wait a moment and try again.');
+      await showAlert('CAPTCHA verification not ready. Please wait a moment and try again.', { title: 'CAPTCHA' });
       try { turnstile.reset(); } catch {}
       if (submitBtn) submitBtn.disabled = false;
       return;
@@ -381,7 +392,7 @@ s0.parentNode.insertBefore(s1,s0);
         if (!res.ok) {
             const msg = (data && data.error) ? data.error : 'Signup failed.';
             console.error('[SIGNUP] Error details:', { status: res.status, errorMessage: msg, fullErrorData: data });
-            alert('Signup failed: ' + msg);
+            await showAlert('Signup failed: ' + msg, { title: 'Signup failed' });
             try {
               turnstile.reset();
               await new Promise(resolve => setTimeout(resolve, 500));
@@ -392,7 +403,7 @@ s0.parentNode.insertBefore(s1,s0);
 
         if (data && data.error) {
             console.error('[SIGNUP] Error details:', data.error);
-            alert('Error: ' + data.error);
+          await showAlert('Error: ' + data.error, { title: 'Signup error' });
             try { turnstile.reset(); } catch {}
             if (submitBtn) submitBtn.disabled = false;
             return;
@@ -450,11 +461,11 @@ s0.parentNode.insertBefore(s1,s0);
         }
         
         console.log('[SIGNUP] Signup complete, redirecting to /learn/index.html');
-        alert('Signup successful!');
+        await showAlert('Signup successful!', { title: 'Success' });
         window.location.href = '/learn/index.html';
     } catch (err) {
         console.error('[SIGNUP] Exception:', err);
-        alert('An error occurred while signing up.');
+        await showAlert('An error occurred while signing up.', { title: 'Signup error' });
         try {
           turnstile.reset();
           await new Promise(resolve => setTimeout(resolve, 500));
