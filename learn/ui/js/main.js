@@ -82,8 +82,6 @@ async function bootstrap() {
   await hydrateCourseProgressFromRemote();
 
   setGlobalStatus('Loading courses...');
-
-  setGlobalStatus('Loading courses...');
   try {
     await loadCoursesDoc();
     setGlobalStatus('');

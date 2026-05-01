@@ -112,3 +112,9 @@ export function getChapterIndexForCourse(course, chapterId) {
   }
   return -1;
 }
+
+export async function hydrateCourseProgressFromRemote() {
+  // Optional feature: some branches hydrate read-progress from backend.
+  // On this branch, chapter-read state is cookie-based only.
+  return;
+}
