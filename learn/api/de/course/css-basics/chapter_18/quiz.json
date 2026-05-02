@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_18",
+  "kind": "assessment",
+  "title": "Kapitel 18 - Dein CSS organisieren Check",
+  "description": "Wissenscheck:  Code lesbar halten mit Kommentaren und Einrückung.",
+  "questions": [
+    {
+      "id": "q1-organize-benefit",
+      "type": "single-choice",
+      "prompt": "Why should you organize CSS code into sections?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To make files harder for teammates",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To improve readability and maintenance",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Because browsers require comments",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To reduce internet speed",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Organized CSS is easier to maintain and debug.",
+        "byOptionId": {
+          "a": "Not quite. Organized CSS is easier to maintain and debug.",
+          "b": "Correct. Organized CSS is easier to maintain and debug.",
+          "c": "Not quite. Organized CSS is easier to maintain and debug.",
+          "d": "Not quite. Organized CSS is easier to maintain and debug."
+        }
+      }
+    },
+    {
+      "id": "q2-css-comment",
+      "type": "single-choice",
+      "prompt": "What is the correct comment syntax in CSS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "// comment",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "# comment",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "<!-- comment -->",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "/* comment */",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CSS comments are written as slash-star comment star-slash.",
+        "byOptionId": {
+          "a": "Not quite. CSS comments are written as slash-star comment star-slash.",
+          "b": "Not quite. CSS comments are written as slash-star comment star-slash.",
+          "c": "Not quite. CSS comments are written as slash-star comment star-slash.",
+          "d": "Correct. CSS comments are written as slash-star comment star-slash."
+        }
+      }
+    }
+  ]
+}

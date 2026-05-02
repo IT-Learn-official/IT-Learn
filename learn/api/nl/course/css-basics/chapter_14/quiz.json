@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Hoofdstuk 14 - Schaduwen en randen Check",
+  "description": "Controleer je kennis:  Drop shadows voor diepte en afgeronde hoeken voor een zachtere look.",
+  "questions": [
+    {
+      "id": "q1-box-shadow",
+      "type": "single-choice",
+      "prompt": "Welke property voegt een schaduw toe rond een element?",
+      "options": [
+        {
+          "id": "a",
+          "label": "text-shadow-box",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "border-shadow",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "box-shadow",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "shadow-color",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "box-shadow gebruik je om schaduwen rond elementen te maken.",
+        "byOptionId": {
+          "a": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "b": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "c": "Juist. box-shadow gebruik je om schaduwen rond elementen te maken.",
+          "d": "Niet helemaal. box-shadow gebruik je om schaduwen rond elementen te maken."
+        }
+      }
+    },
+    {
+      "id": "q2-border-radius",
+      "type": "single-choice",
+      "prompt": "Wat doet border-radius?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verandert de font weight",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Maakt hoeken van elementen rond",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Voegt een inner border toe",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Centreert tekst",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "border-radius maakt de hoeken van een box rond.",
+        "byOptionId": {
+          "a": "Niet helemaal. border-radius maakt de hoeken van een box rond.",
+          "b": "Juist. border-radius maakt de hoeken van een box rond.",
+          "c": "Niet helemaal. border-radius maakt de hoeken van een box rond.",
+          "d": "Niet helemaal. border-radius maakt de hoeken van een box rond."
+        }
+      }
+    }
+  ]
+}

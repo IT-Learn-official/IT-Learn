@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - GitHub remotes: clone, push, pull",
+  "description": "Test je begrip van remotes en synchroniseren met GitHub.",
+  "questions": [
+    {
+      "id": "q1-clone",
+      "type": "single-choice",
+      "prompt": "Wat doet `git clone`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een repository verwijderen van GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een commitboodschap maken",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Je branch hernoemen naar main",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een remote repository kopiëren naar je computer",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Clonen downloadt een repository zodat je er lokaal aan kunt werken.",
+        "byOptionId": {
+          "a": "Fout. Clone verwijdert geen repositories.",
+          "b": "Fout. Clone maakt geen commitboodschappen.",
+          "c": "Fout. Clone hernoemt geen branches.",
+          "d": "Correct. Clone kopieert een remote repo naar je computer."
+        }
+      }
+    },
+    {
+      "id": "q2-origin",
+      "type": "single-choice",
+      "prompt": "Waarvoor wordt `origin` meestal gebruikt in Git?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een speciale branch die je niet kunt wijzigen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een Git-commando om te stagen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De standaard bijnaam voor de belangrijkste remote",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Een bestands-extensie",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`origin` is meestal de naam die Git aan de remote URL geeft wanneer je een repo clonet.",
+        "byOptionId": {
+          "a": "Fout. `origin` is geen branch.",
+          "b": "Fout. `origin` is geen Git-commando.",
+          "c": "Correct. `origin` is de typische standaardnaam voor een remote.",
+          "d": "Fout. Het is geen bestands-extensie."
+        }
+      }
+    },
+    {
+      "id": "q3-push",
+      "type": "single-choice",
+      "prompt": "Wat doet `git push`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Commits downloaden van de remote",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Je lokale commits naar de remote sturen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Een nieuw `.gitignore`-bestand maken",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Je code omzetten naar een website",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Push uploadt je commits naar de remote repository.",
+        "byOptionId": {
+          "a": "Fout. Downloaden doe je meestal met `git pull` of `git fetch`.",
+          "b": "Correct. Push stuurt je commits naar de remote.",
+          "c": "Fout. `.gitignore` maak/bewerk je zelf.",
+          "d": "Fout. Git publiceert niet vanzelf websites."
+        }
+      }
+    },
+    {
+      "id": "q4-pull",
+      "type": "single-choice",
+      "prompt": "Wat doet `git pull`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Remote commits binnenhalen in je lokale branch",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Je laatste commit verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Iedereen dwingen jouw code te gebruiken",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een gloednieuwe repository maken",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Pull update je lokale branch met commits van de remote.",
+        "byOptionId": {
+          "a": "Correct. Pull haalt remote werk naar je computer.",
+          "b": "Fout. Commits verwijderen doe je met andere commando's.",
+          "c": "Fout. Samenwerken vraagt pushen en mergen via branches/PR's.",
+          "d": "Fout. Een repo maken is iets anders dan pullen."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Kapitel 11 - Dateien lesen und schreiben Check",
+  "description": "Wissenscheck: Daten mit Dateien speichern und wieder einlesen (read/write).",
+  "questions": [
+    {
+      "id": "q-compare-equal",
+      "type": "single-choice",
+      "prompt": "Welcher Operator wird in Python benutzt, um zu prüfen, ob zwei Werte gleich sind?",
+      "options": [
+        {
+          "id": "a",
+          "label": "=",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "==",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "!=",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Benutze == zum Vergleichen; = ist für Zuweisung.",
+        "byOptionId": {
+          "a": "Das ist der Zuweisungsoperator, kein Vergleich.",
+          "b": "Richtig, == prüft, ob zwei Werte gleich sind.",
+          "c": "!= prüft auf ungleich.",
+          "d": "<> ist nicht der Standard-Gleichheitsoperator in Python."
+        }
+      }
+    },
+    {
+      "id": "q-if-false-no-else",
+      "type": "single-choice",
+      "prompt": "Was passiert, wenn die Bedingung in einem if-Statement False ist und es kein else gibt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Python zeigt einen Fehler.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der Code im if wird übersprungen.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Der Code im if läuft trotzdem.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Das Programm beendet sich automatisch.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Wenn eine Bedingung False ist und es kein else gibt, überspringt Python diesen Block einfach.",
+        "byOptionId": {
+          "a": "Python zeigt in diesem Fall keinen Fehler.",
+          "b": "Richtig, der eingerückte Block unter if wird ignoriert.",
+          "c": "Der Code läuft nur, wenn die Bedingung True ist.",
+          "d": "Der Rest des Programms kann trotzdem weiterlaufen."
+        }
+      }
+    },
+    {
+      "id": "q-elif-meaning",
+      "type": "single-choice",
+      "prompt": "Was macht elif in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es bedeutet 'else if' – eine weitere Bedingung, die nur geprüft wird, wenn die vorherigen False waren.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Es läuft immer am Ende, wie finally.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Es definiert eine Funktion.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es hat keine Bedeutung; es ist nur Deko.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Mit elif kannst du mehrere Bedingungen nach einem if aneinanderreihen.",
+        "byOptionId": {
+          "a": "Richtig, elif prüft eine weitere Bedingung, wenn vorherige False waren.",
+          "b": "Anders als finally in anderen Sprachen ist elif eine Bedingung.",
+          "c": "Funktionen werden mit def definiert, nicht mit elif.",
+          "d": "elif ist ein wichtiges Schlüsselwort, keine Deko."
+        }
+      }
+    },
+    {
+      "id": "q-logical-and",
+      "type": "single-choice",
+      "prompt": "Welche Bedingung ist nur True, wenn sowohl a als auch b True sind?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a or b",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a and b",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "not a",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a != b",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Der Operator and verlangt, dass beide Seiten True sind.",
+        "byOptionId": {
+          "a": "or ist True, wenn mindestens eine Seite True ist.",
+          "b": "Richtig, a and b ist nur True, wenn beide True sind.",
+          "c": "not a dreht den Wert von a einfach um.",
+          "d": "a != b prüft, ob sie verschieden sind, nicht ob beide True sind."
+        }
+      }
+    },
+    {
+      "id": "q-else-when",
+      "type": "single-choice",
+      "prompt": "Wann wird der else-Teil eines if/else-Statements ausgeführt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wenn die if-Bedingung True ist.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wenn die if-Bedingung False ist.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Immer, vor dem if.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Nie; Python ignoriert else.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "else deckt den 'ansonsten'-Fall ab, wenn die if-Bedingung False ist.",
+        "byOptionId": {
+          "a": "Wenn True, läuft nur der if-Block, nicht else.",
+          "b": "Richtig, else läuft, wenn die if-Bedingung False ist.",
+          "c": "else kommt immer nach if, nicht davor.",
+          "d": "else ist Teil des Control-Flows in Python und wird nicht ignoriert."
+        }
+      }
+    }
+  ]
+}

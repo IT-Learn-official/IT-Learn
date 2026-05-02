@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Kapitel 8 - Das CSS Box Model erklärt Check",
+  "description": "Wissenscheck:  Content, padding, border und margin.",
+  "questions": [
+    {
+      "id": "q1-box-order",
+      "type": "single-choice",
+      "prompt": "Welche Reihenfolge ist von innen nach außen korrekt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Content -> padding -> border -> margin",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Margin -> border -> padding -> content",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Border -> content -> margin -> padding",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Padding -> margin -> content -> border",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die Reihenfolge ist: Content, Padding, Border, Margin.",
+        "byOptionId": {
+          "a": "Richtig. Die Reihenfolge ist: Content, Padding, Border, Margin.",
+          "b": "Nicht ganz. Die Reihenfolge ist: Content, Padding, Border, Margin.",
+          "c": "Nicht ganz. Die Reihenfolge ist: Content, Padding, Border, Margin.",
+          "d": "Nicht ganz. Die Reihenfolge ist: Content, Padding, Border, Margin."
+        }
+      }
+    },
+    {
+      "id": "q2-margin-vs-padding",
+      "type": "single-choice",
+      "prompt": "Was ist der wichtigste Unterschied zwischen Margin und Padding?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Beides ist exakt gleich",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Padding ist außen und Margin ist innen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Padding ist innen, Margin ist außen",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Margin ändert die Textfarbe",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Padding liegt innerhalb des Borders. Margin liegt außerhalb des Borders.",
+        "byOptionId": {
+          "a": "Nicht ganz. Padding liegt innerhalb des Borders. Margin liegt außerhalb des Borders.",
+          "b": "Nicht ganz. Padding liegt innerhalb des Borders. Margin liegt außerhalb des Borders.",
+          "c": "Richtig. Padding liegt innerhalb des Borders. Margin liegt außerhalb des Borders.",
+          "d": "Nicht ganz. Padding liegt innerhalb des Borders. Margin liegt außerhalb des Borders."
+        }
+      }
+    }
+  ]
+}

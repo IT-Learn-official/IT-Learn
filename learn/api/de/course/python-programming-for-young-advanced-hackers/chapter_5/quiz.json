@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Kapitel 5 - Ausführungsfluss und Debugging Check",
+  "description": "Kurzer Check für Kapitel 5. Teste dein Verständnis von Ausführungsfluss, Tracing und Debugging.",
+  "questions": [
+    {
+      "id": "q-execution-flow",
+      "type": "single-choice",
+      "prompt": "Was bedeutet „Ausführungsfluss“ (execution flow) in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Reihenfolge, in der Python deinen Code ausführt, Zeile für Zeile.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Die Geschwindigkeit, mit der dein Computer läuft.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Art, wie Python Text ausgibt.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Eine Art Variablentyp in Python.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Ausführungsfluss ist die Reihenfolge, in der Python deinen Code ausführt, meist von oben nach unten.",
+        "byOptionId": {
+          "a": "Richtig! Python führt deinen Code der Reihe nach aus, Zeile für Zeile.",
+          "b": "Nein, das ist Computergeschwindigkeit, nicht Code-Flow.",
+          "c": "Ausgabe ist nur ein Teil der Ausführung, nicht der Flow selbst.",
+          "d": "Es gibt keinen Variablentyp, der „execution flow“ heißt."
+        }
+      }
+    },
+    {
+      "id": "q-tracing-variables",
+      "type": "single-choice",
+      "prompt": "Was bedeutet es, eine Variable im Code zu „tracen“?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Nachverfolgen, wie sich ihr Wert während der Programmausführung verändert.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Ihr einen neuen Namen geben.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie aus dem Programm löschen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sie immer in Großbuchstaben ausgeben.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Tracing heißt: beobachten, wie sich der Wert einer Variable verändert, während der Code läuft.",
+        "byOptionId": {
+          "a": "Richtig! Beim Tracing schaust du, wie sich der Wert verändert.",
+          "b": "Umbenennen ist kein Tracing.",
+          "c": "Löschen ist kein Tracing.",
+          "d": "Großbuchstaben-Ausgabe ist kein Tracing."
+        }
+      }
+    },
+    {
+      "id": "q-print-debugging",
+      "type": "single-choice",
+      "prompt": "Warum verwenden Programmierer beim Debugging print-Ausgaben?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Um zu sehen, was im Programm passiert, während es läuft.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Um das Programm schneller zu machen.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Um Variablen zu löschen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um die Textfarbe zu ändern.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Print-Debugging hilft dir, Werte von Variablen und den Programmfluss sichtbar zu machen.",
+        "byOptionId": {
+          "a": "Richtig! Print-Ausgaben zeigen dir, was in deinem Code passiert.",
+          "b": "Drucken beeinflusst die Geschwindigkeit nicht sinnvoll.",
+          "c": "Print löscht nichts.",
+          "d": "Print ändert in der Python-Konsole keine Textfarbe."
+        }
+      }
+    },
+    {
+      "id": "q-fix-the-error",
+      "type": "single-choice",
+      "prompt": "Du siehst diesen Fehler: `NameError: name 'scroe' is not defined`. Was solltest du tun?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Auf Tippfehler in Variablennamen prüfen.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Den ganzen Code löschen und neu anfangen.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Den Fehler ignorieren und weiter ausführen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die Spracheinstellungen deines Computers ändern.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Ein NameError bedeutet meistens: ein Variablenname ist falsch geschrieben.",
+        "byOptionId": {
+          "a": "Richtig! Prüfe Tippfehler wie 'scroe' statt 'score'.",
+          "b": "Du musst nichts löschen. Korrigiere einfach den Tippfehler.",
+          "c": "Fehler zu ignorieren repariert den Code nicht.",
+          "d": "Spracheinstellungen haben damit nichts zu tun."
+        }
+      }
+    }
+  ]
+}

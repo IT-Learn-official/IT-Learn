@@ -1,8 +1,7 @@
 //author: https://github.com/nhermab
 //licence: MIT
 //edited by: https://github.com/broodje565
-import { getState, setSelection, getTrialMode } from '../state/appState.js';
-import { isOnboardingRequired, setOnboardingRequired } from '../state/appState.js';
+import { getState, getTrialMode, isOnboardingRequired, setOnboardingRequired, setSelection } from '../state/appState.js';
 import { renderCoursesScreen } from '../render/courseListView.js';
 import { renderChapterScreenContent } from '../render/chapterView.js';
 import { renderSettingsView } from '../render/settingsView.js';

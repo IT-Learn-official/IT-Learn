@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Kapitel 7 - Fehler rückgängig machen (ohne Panik)",
+  "description": "Prüfe dein Verständnis von Undo-Tools wie restore, revert, reset und stash.",
+  "questions": [
+    {
+      "id": "q1-restore",
+      "type": "single-choice",
+      "prompt": "Wofür wird `git restore` typischerweise verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Commits zu GitHub hochladen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Nicht-committete Änderungen an einer Datei verwerfen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ein neues Repository erstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Remote namens origin hinzufügen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`git restore` hilft dir, Änderungen im Arbeitsverzeichnis vor dem Committen rückgängig zu machen.",
+        "byOptionId": {
+          "a": "Falsch. Hochladen passiert mit `git push`.",
+          "b": "Richtig. Es verwirft lokale Änderungen an einer Datei.",
+          "c": "Falsch. Repos erstellt man mit `git init` (oder auf GitHub).",
+          "d": "Falsch. Remotes verwaltet man mit `git remote`."
+        }
+      }
+    },
+    {
+      "id": "q2-revert",
+      "type": "single-choice",
+      "prompt": "Warum ist `git revert` oft der sicherste Weg, einen gepushten Commit rückgängig zu machen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es löscht das Repository von GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Es macht deinen Branch privat",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Es löst alle Merge-Konflikte automatisch",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es erstellt einen neuen Commit, der die Änderung rückgängig macht, ohne Historie umzuschreiben",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Revert hält gemeinsame Historie stabil, indem es einen Undo-Commit hinzufügt statt Commits umzuschreiben.",
+        "byOptionId": {
+          "a": "Falsch. Revert löscht keine Repositories.",
+          "b": "Falsch. Revert macht Branches nicht privat.",
+          "c": "Falsch. Revert löst Merge-Konflikte nicht automatisch.",
+          "d": "Richtig. Revert erstellt einen neuen Commit zum Undo, ohne Historie umzuschreiben."
+        }
+      }
+    },
+    {
+      "id": "q3-reset-risk",
+      "type": "single-choice",
+      "prompt": "Warum kann `git reset` auf einem Branch, den andere auch nutzen, riskant sein?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es kann Historie umschreiben und Mitarbeitende verwirren",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Es ändert die Monitorauflösung",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Es lässt GitHub nicht mehr funktionieren",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es verhindert Commits für immer",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reset kann einen Branch-Zeiger zurücksetzen und damit die gemeinsame Commit-Geschichte umschreiben.",
+        "byOptionId": {
+          "a": "Richtig. Gemeinsame Historie umzuschreiben kann Probleme für andere machen.",
+          "b": "Nicht ganz. Reset ändert den Bildschirm nicht.",
+          "c": "Nicht ganz. GitHub funktioniert weiter; das Problem ist eine nicht passende Historie.",
+          "d": "Falsch. Du kannst nach reset weiterhin committen."
+        }
+      }
+    },
+    {
+      "id": "q4-stash",
+      "type": "single-choice",
+      "prompt": "Was macht `git stash`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Einen neuen Branch auf GitHub erstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die letzten fünf Commits löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Nicht-committete Änderungen temporär speichern, damit du Aufgaben wechseln kannst",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Alle Dateien automatisch stagen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Stash speichert lokale Work-in-Progress-Änderungen, damit dein Arbeitsverzeichnis wieder sauber wird.",
+        "byOptionId": {
+          "a": "Falsch. Stash erstellt keine Branches.",
+          "b": "Falsch. Stash löscht keine Commits.",
+          "c": "Richtig. Stash speichert Änderungen temporär.",
+          "d": "Falsch. Staging passiert mit `git add`."
+        }
+      }
+    }
+  ]
+}

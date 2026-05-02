@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Kapitel 9 - Box sizing und borders Check",
+  "description": "Wissenscheck:  Wie borders und box-sizing das Layout beeinflussen.",
+  "questions": [
+    {
+      "id": "q1-border-box",
+      "type": "single-choice",
+      "prompt": "Was macht box-sizing: border-box?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es entfernt alle Borders",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Es rechnet Padding und Border in Breite und Höhe ein",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Es verdoppelt die Größe des Elements",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es betrifft nur Text",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+        "byOptionId": {
+          "a": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "b": "Richtig. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "c": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet.",
+          "d": "Nicht ganz. Padding und Border werden innerhalb der gesetzten Breite und Höhe mitgerechnet."
+        }
+      }
+    },
+    {
+      "id": "q2-border-layout",
+      "type": "single-choice",
+      "prompt": "Bei der Standard-box-sizing (content-box): Was passiert, wenn du einen dicken Border hinzufügst?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Gesamtgröße des Elements kann größer werden",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Der Border beeinflusst die Größe gar nicht",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Seite crasht",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Nur die Margin ändert sich",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+        "byOptionId": {
+          "a": "Richtig. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "b": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "c": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird.",
+          "d": "Nicht ganz. Die gerenderte Gesamtgröße wird größer, weil der Border außerhalb der Content-Größe hinzugefügt wird."
+        }
+      }
+    }
+  ]
+}

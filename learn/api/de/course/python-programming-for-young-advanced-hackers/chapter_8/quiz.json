@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Kapitel 8 - Arbeiten mit Text: Strings Check",
+  "description": "Kurzer Check für Kapitel 8. Teste dein Verständnis von Strings, Indexing, Slicing, Methoden und f-Strings.",
+  "questions": [
+    {
+      "id": "q-string-definition",
+      "type": "single-choice",
+      "prompt": "Was ist in Python ein String?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Zahl, die man addieren und subtrahieren kann.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Text in Anführungszeichen, z. B. \"hello\".",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ein Geheimcode, den Python nicht lesen kann.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Eine Liste nur mit Zahlen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Ein String (str) steht für Text: Zeichen, die in Anführungszeichen geschrieben werden.",
+        "byOptionId": {
+          "a": "Zahlen stehen ohne Anführungszeichen; Strings sind Text in Quotes.",
+          "b": "Richtig, Strings sind Textstücke in Anführungszeichen.",
+          "c": "Python kann Strings sehr gut verarbeiten.",
+          "d": "Listen können viele Typen speichern, aber das ist etwas anderes als Strings."
+        }
+      }
+    },
+    {
+      "id": "q-indexing",
+      "type": "single-choice",
+      "prompt": "Wenn `text = \"HACK\"`, was liefert `text[1]`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "\"H\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"HA\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"A\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"K\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Indexing beginnt bei 0, daher ist Index 1 das zweite Zeichen.",
+        "byOptionId": {
+          "a": "Index 0 ist 'H'. Index 1 ist das nächste Zeichen.",
+          "b": "Das wäre ein Slice, kein einzelner Index.",
+          "c": "Richtig, 'A' steht an Index 1.",
+          "d": "'K' ist das letzte Zeichen, Index 3."
+        }
+      }
+    },
+    {
+      "id": "q-slicing",
+      "type": "single-choice",
+      "prompt": "Wenn `word = \"PYTHON\"`, was ist `word[0:3]`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "\"PYTH\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"P\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"PYT\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"HON\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Slicing `text[start:end]` nimmt Zeichen von start bis (aber nicht inklusive) end.",
+        "byOptionId": {
+          "a": "Das wäre `word[0:4]`.",
+          "b": "Das ist nur das erste Zeichen, nicht 0:3.",
+          "c": "Richtig, die Positionen 0, 1 und 2 ergeben 'PYT'.",
+          "d": "Das sind die letzten drei Buchstaben, aus einem anderen Slice."
+        }
+      }
+    },
+    {
+      "id": "q-upper-method",
+      "type": "single-choice",
+      "prompt": "Was liefert \"hacker\".upper() zurück?",
+      "options": [
+        {
+          "id": "a",
+          "label": "\"hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"Hacker\"",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"HACKER\"",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "\"upper\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die Methode `.upper()` macht alle Buchstaben groß.",
+        "byOptionId": {
+          "a": "Das ist der Original-String, nicht uppercased.",
+          "b": "Nur der erste Buchstabe groß wäre nicht komplett uppercase.",
+          "c": "Richtig, alle Buchstaben werden großgeschrieben.",
+          "d": "Das ist nur das Wort 'upper', nicht das Ergebnis der Methode."
+        }
+      }
+    },
+    {
+      "id": "q-fstring",
+      "type": "single-choice",
+      "prompt": "Du hast `name = \"Mia\"`. Welche Zeile verwendet korrekt einen f-String, um `Hello, Mia!` auszugeben?",
+      "options": [
+        {
+          "id": "a",
+          "label": "print(\"Hello, {name}!\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "print(f\"Hello, {name}!\")",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "print(\"Hello, \" + name + \"!\")",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "print(f'Hello, \"name\"!')",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "F-Strings beginnen mit `f` und fügen Variablenwerte mit `{...}` ein.",
+        "byOptionId": {
+          "a": "Ohne das f wird `{name}` nicht ersetzt.",
+          "b": "Richtig, das ist die korrekte f-String-Syntax.",
+          "c": "Das funktioniert, ist aber kein f-String.",
+          "d": "Hier steht \"name\" in Anführungszeichen, das ist Text, nicht die Variable."
+        }
+      }
+    }
+  ]
+}

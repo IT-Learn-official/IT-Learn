@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Hoofdstuk 3 - Je eerste repo: status, add, commit",
+  "description": "Test je begrip van stagen en wijzigingen committen.",
+  "questions": [
+    {
+      "id": "q1-git-status",
+      "type": "single-choice",
+      "prompt": "Wat helpt `git status` je te zien?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het weer van vandaag",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Welke bestanden gewijzigd zijn en staged of niet-staged zijn",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Je GitHub-volgers",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een lijst van alle programmeertalen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`git status` vertelt je wat er veranderde en wat klaarstaat om te committen.",
+        "byOptionId": {
+          "a": "Niet helemaal. Git houdt het weer niet bij.",
+          "b": "Correct. Het toont gewijzigde bestanden en hun staging-status.",
+          "c": "Niet helemaal. GitHub-volgers hebben niets te maken met Git status.",
+          "d": "Niet helemaal. Git status gaat over de toestand van je repository."
+        }
+      }
+    },
+    {
+      "id": "q2-what-is-staging",
+      "type": "single-choice",
+      "prompt": "Waarvoor gebruik je de staging area?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Bestanden automatisch uploaden naar GitHub",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Oude commits verwijderen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Je repository hernoemen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Kiezen welke wijzigingen in de volgende commit komen",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Stagen is de selectiestap vóór je commit.",
+        "byOptionId": {
+          "a": "Niet helemaal. Stagen is kiezen, niet uploaden.",
+          "b": "Niet helemaal. Stagen verwijdert geen geschiedenis.",
+          "c": "Niet helemaal. Stagen hernoemt geen repositories.",
+          "d": "Correct. Met stagen kies je wat er in de volgende commit komt."
+        }
+      }
+    },
+    {
+      "id": "q3-git-add-does",
+      "type": "single-choice",
+      "prompt": "Wat doet `git add`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een nieuwe GitHub-repository aanmaken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wijzigingen stagen zodat je ze kunt committen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Automatisch een commitboodschap schrijven",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een bestand van je computer verwijderen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`git add` staged wijzigingen voor de volgende commit.",
+        "byOptionId": {
+          "a": "Fout. Een GitHub-repo aanmaken is een aparte stap.",
+          "b": "Correct. `git add` staged wijzigingen.",
+          "c": "Fout. Commitboodschappen schrijf je wanneer je commit.",
+          "d": "Fout. `git add` verwijdert geen bestanden."
+        }
+      }
+    },
+    {
+      "id": "q4-gitignore",
+      "type": "single-choice",
+      "prompt": "Waarom zou je een `.gitignore`-bestand gebruiken?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om je internetverbinding sneller te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Om commits anoniem te maken",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om Git te dwingen elk bestand te volgen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om bestanden te negeren die je niet wilt tracken in Git",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "`.gitignore` helpt vermijden dat je tijdelijke bestanden, build-output en secrets commit.",
+        "byOptionId": {
+          "a": "Niet helemaal. `.gitignore` verandert niets aan je internetsnelheid.",
+          "b": "Niet helemaal. Het maakt commits niet anoniem.",
+          "c": "Niet helemaal. Het doet net het omgekeerde door Git te zeggen wat het moet negeren.",
+          "d": "Correct. `.gitignore` vertelt Git wat het niet moet tracken."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Hoofdstuk 14 - Formulierinputs: overzicht Check",
+  "description": "Controleer je kennis:  Alle input types: text, email, password, checkbox, radio, textarea en select.",
+  "metadata": {
+    "difficulty": "beginner",
+    "estimatedMinutes": 4
+  },
+  "questions": [
+    {
+      "id": "q-input-type-email",
+      "type": "single-choice",
+      "prompt": "Welk input type is het beste om een e-mailadres te vragen?",
+      "options": [
+        {
+          "id": "text",
+          "label": "<input type=\"text\">",
+          "isCorrect": false
+        },
+        {
+          "id": "email",
+          "label": "<input type=\"email\">",
+          "isCorrect": true
+        },
+        {
+          "id": "password",
+          "label": "<input type=\"password\">",
+          "isCorrect": false
+        },
+        {
+          "id": "tel",
+          "label": "<input type=\"tel\">",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Gebruik type=\"email\" voor ingebouwde e-mailvalidatie in browsers.",
+        "byOptionId": {
+          "email": "Juist – type=\"email\" is bedoeld voor e-mailadressen.",
+          "text": "Fout – text werkt, maar geeft geen e-mail-specifieke validatie.",
+          "password": "Fout – password is voor verborgen/geheime input.",
+          "tel": "Fout – tel is voor telefoonnummers, niet voor e-mailadressen."
+        }
+      }
+    },
+    {
+      "id": "q-select-vs-radio",
+      "type": "single-choice",
+      "prompt": "Wanneer gebruik je radio buttons?",
+      "options": [
+        {
+          "id": "multi",
+          "label": "Wanneer gebruikers meerdere opties mogen kiezen",
+          "isCorrect": false
+        },
+        {
+          "id": "single",
+          "label": "Wanneer gebruikers precies één optie moeten kiezen uit een set",
+          "isCorrect": true
+        },
+        {
+          "id": "longtext",
+          "label": "Wanneer gebruikers lange tekst moeten typen",
+          "isCorrect": false
+        },
+        {
+          "id": "file",
+          "label": "Wanneer gebruikers bestanden uploaden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Radio buttons zijn voor single-select: één keuze binnen een groep opties.",
+        "byOptionId": {
+          "single": "Juist – radios gebruik je voor één keuze binnen een groep.",
+          "multi": "Fout – checkboxes gebruik je om meerdere opties te kiezen.",
+          "longtext": "Fout – lange tekst voer je meestal in met een textarea.",
+          "file": "Fout – bestanden upload je met input type=\"file\"."
+        }
+      }
+    }
+  ]
+}
