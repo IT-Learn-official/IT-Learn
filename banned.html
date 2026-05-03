@@ -137,8 +137,13 @@
         reasonEl.textContent = `Reason: ${reason}`;
       }
 
-      if (appeal && /^https:\/\//i.test(appeal)) {
-        linkEl.href = appeal;
+      if (appeal) {
+        // Only allow passing a Discord invite code, not a full URL, to avoid open-redirects.
+        // Example: ?appeal=rKgF9s32EV
+        const inviteCode = appeal.replace(/^https?:\/\/(www\.)?discord\.gg\//i, '').trim();
+        if (/^[A-Za-z0-9-]{2,64}$/.test(inviteCode)) {
+          linkEl.href = `https://discord.gg/${inviteCode}`;
+        }
       }
     })();
   </script>
