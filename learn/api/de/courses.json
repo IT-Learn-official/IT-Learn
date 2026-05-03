@@ -263,7 +263,7 @@
     },
     {
       "id": "html-basics",
-      "title": "HTML-Grundlagen fÃ¼r junge Lernende",
+      "title": "HTML-Grundlagen für junge Lernende",
       "description": "Ein anfÃ¤ngerfreundlicher Kurs zu HTML-Grundlagen, Struktur und Best Practices.",
       "language": "html",
       "authors": [
@@ -305,7 +305,7 @@
         {
           "id": "chapter_5",
           "title": "Ãœberschriften",
-          "description": "Ãœberschriften-Elemente h1 bis h6 und ihr Einsatz fÃ¼r Struktur und SEO.",
+          "description": "Ãœberschriften-Elemente h1 bis h6 und ihr Einsatz für Struktur und SEO.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -313,7 +313,7 @@
         {
           "id": "chapter_6",
           "title": "AbsÃ¤tze & Text",
-          "description": "AbsÃ¤tze, ZeilenumbrÃ¼che, horizontale Linien und Tags zur Textbetonung.",
+          "description": "AbsÃ¤tze, Zeilenumbrüche, horizontale Linien und Tags zur Textbetonung.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -393,7 +393,7 @@
         {
           "id": "chapter_16",
           "title": "HTML Best Practices",
-          "description": "EinrÃ¼ckung, gut lesbarer Code und HTML-Kommentare.",
+          "description": "Einrückung, gut lesbarer Code und HTML-Kommentare.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -401,7 +401,7 @@
         {
           "id": "chapter_17",
           "title": "Accessibility-Grundlagen",
-          "description": "Alt-Text, Form-Labels und semantisches Markup fÃ¼r Accessibility.",
+          "description": "Alt-Text, Form-Labels und semantisches Markup für Accessibility.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -409,7 +409,7 @@
         {
           "id": "chapter_18",
           "title": "SEO-Grundlagen",
-          "description": "Ãœberschriften, meta description und gute Struktur fÃ¼r Suchmaschinen.",
+          "description": "Ãœberschriften, meta description und gute Struktur für Suchmaschinen.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -417,7 +417,7 @@
         {
           "id": "chapter_19",
           "title": "HTML + CSS",
-          "description": "Stylesheets verlinken und wofÃ¼r CSS verwendet wird.",
+          "description": "Stylesheets verlinken und wofür CSS verwendet wird.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -434,8 +434,8 @@
     },
     {
       "id": "css-basics",
-      "title": "CSS-Grundlagen fÃ¼r junge Lernende",
-      "description": "Ein anfÃ¤ngerfreundlicher CSS-Kurs fÃ¼r Kids und Teens, mit klaren Beispielen zum Stylen von Webseiten.",
+      "title": "CSS-Grundlagen für junge Lernende",
+      "description": "Ein anfÃ¤ngerfreundlicher CSS-Kurs für Kids und Teens, mit klaren Beispielen zum Stylen von Webseiten.",
       "language": "css",
       "authors": [
         "super_man2775"
@@ -451,7 +451,7 @@
         },
         {
           "id": "chapter_2",
-          "title": "CSS zu deinem HTML hinzufÃ¼gen",
+          "title": "CSS zu deinem HTML hinzufügen",
           "description": "Inline styles, internal styles und externe Stylesheets.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
@@ -515,7 +515,7 @@
         },
         {
           "id": "chapter_10",
-          "title": "HintergrÃ¼nde hinzufÃ¼gen",
+          "title": "Hintergründe hinzufügen",
           "description": "Farben, gradients und Bilder als Hintergrund.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
@@ -531,7 +531,7 @@
         },
         {
           "id": "chapter_12",
-          "title": "Flexbox fÃ¼r AnfÃ¤nger:innen",
+          "title": "Flexbox für AnfÃ¤nger:innen",
           "description": "Elemente einfach ausrichten und AbstÃ¤nde setzen mit flexbox.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
@@ -539,8 +539,8 @@
         },
         {
           "id": "chapter_13",
-          "title": "EinfÃ¼hrung in CSS Grid",
-          "description": "Einfache Grids fÃ¼r moderne Layouts erstellen.",
+          "title": "Einführung in CSS Grid",
+          "description": "Einfache Grids für moderne Layouts erstellen.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -548,7 +548,7 @@
         {
           "id": "chapter_14",
           "title": "Schatten und Rahmen",
-          "description": "Drop shadows fÃ¼r Tiefe und abgerundete Ecken fÃ¼r ein ruhiges Design.",
+          "description": "Drop shadows für Tiefe und abgerundete Ecken für ein ruhiges Design.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -572,7 +572,7 @@
         {
           "id": "chapter_17",
           "title": "Media Queries verwenden",
-          "description": "Layout und font sizes fÃ¼r unterschiedliche Bildschirmbreiten anpassen.",
+          "description": "Layout und font sizes für unterschiedliche Bildschirmbreiten anpassen.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -580,7 +580,7 @@
         {
           "id": "chapter_18",
           "title": "Dein CSS organisieren",
-          "description": "Code lesbar halten mit Kommentaren und EinrÃ¼ckung.",
+          "description": "Code lesbar halten mit Kommentaren und Einrückung.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -595,7 +595,7 @@
         },
         {
           "id": "chapter_20",
-          "title": "Kurze EinfÃ¼hrung in Frameworks",
+          "title": "Kurze Einführung in Frameworks",
           "description": "Was Frameworks sind (z. B. Bootstrap oder Tailwind) und wann man sie ausprobieren kann.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
@@ -613,7 +613,7 @@
     },
     {
       "id": "git-github-vscode-basics",
-      "title": "Git, GitHub und VS Code â€“ Grundlagen fÃ¼r junge Lernende",
+      "title": "Git, GitHub und VS Code â€“ Grundlagen für junge Lernende",
       "description": "Ein anfÃ¤ngerfreundlicher Kurs zu Git-Versionsverwaltung, Zusammenarbeit auf GitHub und Git in VS Code.",
       "authors": [
         "super_man2775"
@@ -638,7 +638,7 @@
         {
           "id": "chapter_3",
           "title": "Dein erstes Repo: Status, Add, Commit",
-          "description": "Sieh Ã„nderungen, stage die richtigen Dateien, schreibe klare Commits und lerne, wofÃ¼r `.gitignore` da ist.",
+          "description": "Sieh Ã„nderungen, stage die richtigen Dateien, schreibe klare Commits und lerne, wofür `.gitignore` da ist.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -662,15 +662,15 @@
         {
           "id": "chapter_6",
           "title": "Zusammenarbeit: Pull Requests, Reviews und Issues",
-          "description": "Nutze Pull Requests, Reviews und Issues, um zusammenzuarbeiten, ohne euch gegenseitig zu Ã¼berschreiben.",
+          "description": "Nutze Pull Requests, Reviews und Issues, um zusammenzuarbeiten, ohne euch gegenseitig zu überschreiben.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
         },
         {
           "id": "chapter_7",
-          "title": "Fehler rÃ¼ckgÃ¤ngig machen (ohne Panik)",
-          "description": "Lerne sichere Wege, Ã„nderungen rÃ¼ckgÃ¤ngig zu machen: restore, revert, stash und die Basics von reflog.",
+          "title": "Fehler rückgÃ¤ngig machen (ohne Panik)",
+          "description": "Lerne sichere Wege, Ã„nderungen rückgÃ¤ngig zu machen: restore, revert, stash und die Basics von reflog.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -685,8 +685,8 @@
         },
         {
           "id": "chapter_9",
-          "title": "NÃ¼tzliche VS Code-Erweiterungen",
-          "description": "Eine kurze Liste anfÃ¤ngerfreundlicher Erweiterungen, die deinen Workflow verbessern, ohne zu Ã¼berfordern.",
+          "title": "Nützliche VS Code-Erweiterungen",
+          "description": "Eine kurze Liste anfÃ¤ngerfreundlicher Erweiterungen, die deinen Workflow verbessern, ohne zu überfordern.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
@@ -694,7 +694,7 @@
         {
           "id": "chapter_10",
           "title": "Git-Spickzettel",
-          "description": "Eine schnelle Referenz mit gÃ¤ngigen Git-Befehlen fÃ¼r den Alltag: Branches, Synchronisieren und Fehler rÃ¼ckgÃ¤ngig machen.",
+          "description": "Eine schnelle Referenz mit gÃ¤ngigen Git-Befehlen für den Alltag: Branches, Synchronisieren und Fehler rückgÃ¤ngig machen.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"
