@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Kapitel 9 - Dictionaries: Key-Value-Magie Check",
+  "description": "Wissenscheck: Dictionaries, um Daten über Keys/Values zu verwalten.",
+  "questions": [
+    {
+      "id": "q-list-create",
+      "type": "single-choice",
+      "prompt": "Welche Zeile erstellt korrekt eine Liste mit Hacker-Namen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "names = \"Alice\", \"Bob\", \"Eve\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "names = [\"Alice\", \"Bob\", \"Eve\"]",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "names = {\"Alice\", \"Bob\", \"Eve\"}",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "names = (\"Alice\", \"Bob\", \"Eve\")",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Listen benutzen eckige Klammern [].",
+        "byOptionId": {
+          "a": "Das erzeugt in manchen Kontexten ein Tuple ohne Klammern, aber keine Liste.",
+          "b": "Richtig, das ist eine Liste mit drei Strings.",
+          "c": "Geschweifte Klammern ohne key:value-Paare erzeugen ein Set, keine Liste.",
+          "d": "Runde Klammern erzeugen ein Tuple, keine Liste."
+        }
+      }
+    },
+    {
+      "id": "q-list-append",
+      "type": "single-choice",
+      "prompt": "Du hast `tools = [\"laptop\", \"phone\"]`. Was macht `tools.append(\"usb\")`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ersetzt 'phone' durch 'usb'.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Löscht 'laptop'.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Fügt 'usb' ans Ende der Liste an.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Macht nichts.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`append` fügt ein neues Element ans Ende der Liste an.",
+        "byOptionId": {
+          "a": "`append` ersetzt keine Elemente; es fügt ein neues hinzu.",
+          "b": "`append` löscht nie Elemente.",
+          "c": "Richtig, tools wird zu ['laptop', 'phone', 'usb'].",
+          "d": "`append` verändert die Liste immer, indem es etwas hinzufügt."
+        }
+      }
+    },
+    {
+      "id": "q-dict-access",
+      "type": "single-choice",
+      "prompt": "Du hast `player = {\"name\": \"Leo\", \"score\": 50}`. Wie bekommst du den score?",
+      "options": [
+        {
+          "id": "a",
+          "label": "player[0]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "player(\"score\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "player[\"score\"]",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "player.score",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Werte aus einem Dictionary holst du per Key mit eckigen Klammern und dem Key-String.",
+        "byOptionId": {
+          "a": "Dictionaries werden standardmäßig nicht per Zahl indexiert.",
+          "b": "Das versucht, player wie eine Funktion aufzurufen.",
+          "c": "Richtig, das liest den Wert unter dem Key 'score' aus.",
+          "d": "So eine Punkt-Notation ist nicht die normale Art, mit dicts zu arbeiten."
+        }
+      }
+    },
+    {
+      "id": "q-tuple-immutable",
+      "type": "single-choice",
+      "prompt": "Was ist bei Tuples im Vergleich zu Listen besonders?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Tuples können nur Zahlen speichern.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Tuples sind immer länger als Listen.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Tuples lassen sich nach dem Erstellen nicht mehr verändern.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Tuples sind immer leer.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Tuples sind unveränderlich (immutable); Listen sind veränderlich (mutable).",
+        "byOptionId": {
+          "a": "Tuples können viele Typen speichern, nicht nur Zahlen.",
+          "b": "Die Länge hat nichts mit dem Typ zu tun.",
+          "c": "Richtig, sobald du ein Tuple erstellst, kannst du seine Elemente nicht mehr ändern.",
+          "d": "Tuples können viele Elemente haben."
+        }
+      }
+    },
+    {
+      "id": "q-choose-type",
+      "type": "single-choice",
+      "prompt": "Du willst Name und Score eines Spielers zusammen speichern und sie über den Namen nachschlagen. Welche Struktur ist am besten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Liste nur mit Namen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Tuple wie (\"Mia\", 10).",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein Dictionary wie {\"name\": \"Mia\", \"score\": 10}.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ein einzelner String wie \"Mia 10\".",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Dictionaries verbinden benannte Keys mit Values – perfekt für gelabelte Daten.",
+        "byOptionId": {
+          "a": "Wenn du nur Namen speicherst, verlierst du die Scores.",
+          "b": "Ein Tuple speichert das Paar, aber es labelt die Teile nicht.",
+          "c": "Richtig, die Keys 'name' und 'score' labeln die Values eindeutig.",
+          "d": "Ein einzelner String ist schwer in Code weiterzuverarbeiten."
+        }
+      }
+    }
+  ]
+}

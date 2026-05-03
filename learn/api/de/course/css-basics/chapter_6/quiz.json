@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Kapitel 6 - Textausrichtung und Spacing Check",
+  "description": "Wissenscheck:  line height, Ausrichtung und letter spacing steuern.",
+  "questions": [
+    {
+      "id": "q1-line-height",
+      "type": "single-choice",
+      "prompt": "Was steuert line-height?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Textfarbe",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Den Abstand zwischen Zeilen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Die Dicke des Rahmens (border)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die Schriftfamilie (font-family)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+        "byOptionId": {
+          "a": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "b": "Richtig. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "c": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen.",
+          "d": "Nicht ganz. line-height steuert den vertikalen Abstand zwischen Textzeilen."
+        }
+      }
+    },
+    {
+      "id": "q2-text-align",
+      "type": "single-choice",
+      "prompt": "Welche Property zentriert Text horizontal in seinem Container?",
+      "options": [
+        {
+          "id": "a",
+          "label": "align-text: middle;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "text-align: center;",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "font-align: center;",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "justify-items: center;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "text-align: center; zentriert Inline-Text horizontal.",
+        "byOptionId": {
+          "a": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal.",
+          "b": "Richtig. text-align: center; zentriert Inline-Text horizontal.",
+          "c": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal.",
+          "d": "Nicht ganz. text-align: center; zentriert Inline-Text horizontal."
+        }
+      }
+    }
+  ]
+}

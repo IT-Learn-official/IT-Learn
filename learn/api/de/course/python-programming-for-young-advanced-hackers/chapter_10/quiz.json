@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Kapitel 10 - Sets: keine Duplikate Check",
+  "description": "Wissenscheck: Sets für einzigartige Werte und schnelle Checks/Vergleiche.",
+  "questions": [
+    {
+      "id": "q-set-definition",
+      "type": "single-choice",
+      "prompt": "Was ist ein Set in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Liste, die immer sortiert ist.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Eine Sammlung einzigartiger Elemente ohne garantierte Reihenfolge.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ein String, der nur Zahlen enthält.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Dictionary mit nur einem Key.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets speichern einzigartige Elemente und haben keine feste Reihenfolge.",
+        "byOptionId": {
+          "a": "Listen können sortiert werden, aber das ist nicht, was Sets sind.",
+          "b": "Richtig, das ist die Grundidee eines Sets.",
+          "c": "Strings sind Text, keine Sets.",
+          "d": "Dictionaries speichern key-value-Paare; das ist etwas anderes als Sets."
+        }
+      }
+    },
+    {
+      "id": "q-create-set",
+      "type": "single-choice",
+      "prompt": "Welche Zeile erstellt korrekt ein Set mit Dateinamen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Sets benutzen geschweifte Klammern {} mit komma-getrennten Elementen.",
+        "byOptionId": {
+          "a": "Das ist eine Liste, kein Set.",
+          "b": "Das ist ein Tuple, kein Set.",
+          "c": "Richtig, das erzeugt ein Set mit zwei Dateinamen.",
+          "d": "Das ist ein langer String, kein Set."
+        }
+      }
+    },
+    {
+      "id": "q-remove-duplicates",
+      "type": "single-choice",
+      "prompt": "Du hast `nums = [1, 2, 2, 3]`. Was ergibt `set(nums)`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "[1, 2, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "(1, 2, 3)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Wenn du eine Liste in ein Set umwandelst, entfernst du doppelte Werte.",
+        "byOptionId": {
+          "a": "Das ist die ursprüngliche Liste, kein Set.",
+          "b": "Sets behalten keine Duplikate.",
+          "c": "Richtig – im Set bleiben nur einzigartige Werte übrig.",
+          "d": "Tuples sind ein anderer Typ und entfernen Duplikate nicht automatisch."
+        }
+      }
+    },
+    {
+      "id": "q-union-intersection",
+      "type": "single-choice",
+      "prompt": "Du hast `a = {1, 2}` und `b = {2, 3}`. Was ist `a & b` (die Schnittmenge)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "{}",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Die Schnittmenge behält nur Elemente, die in beiden Sets vorkommen.",
+        "byOptionId": {
+          "a": "Das wäre die Vereinigung (alle Elemente aus beiden).",
+          "b": "1 ist nur in Set a, nicht in beiden.",
+          "c": "Richtig – 2 ist das einzige Element, das in beiden Sets vorkommt.",
+          "d": "Es gibt mindestens ein gemeinsames Element, also ist es kein leeres Set."
+        }
+      }
+    },
+    {
+      "id": "q-set-vs-list",
+      "type": "single-choice",
+      "prompt": "Welche Aussage über Sets und Listen stimmt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Listen entfernen Duplikate automatisch, Sets nicht.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sets behalten die Reihenfolge der Elemente, Listen nicht.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sowohl Sets als auch Listen erlauben Duplikate.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Sets enthalten nur einzigartige Elemente; Listen können Duplikate haben.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Listen und Sets speichern beides Sammlungen, gehen aber unterschiedlich mit Duplikaten um.",
+        "byOptionId": {
+          "a": "Listen erlauben Duplikate; Sets entfernen sie.",
+          "b": "Listen behalten die Reihenfolge; Sets garantieren keine Reihenfolge.",
+          "c": "Nur Listen erlauben Duplikate; Sets nicht.",
+          "d": "Richtig – das ist der entscheidende Unterschied bei Duplikaten."
+        }
+      }
+    }
+  ]
+}

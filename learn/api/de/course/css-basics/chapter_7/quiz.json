@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Kapitel 7 - Links stylen Check",
+  "description": "Wissenscheck:  Linkfarben ändern, hover effects und Unterstreichungen entfernen.",
+  "questions": [
+    {
+      "id": "q1-hover-state",
+      "type": "single-choice",
+      "prompt": "Welcher Selektor stylt einen Link, wenn die Maus darüber ist?",
+      "options": [
+        {
+          "id": "a",
+          "label": "a:focus-visible-only",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a:hover",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "a:clicked-now",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "a:ready",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Verwende die :hover Pseudo-Klasse für Hover-Styling.",
+        "byOptionId": {
+          "a": "Nicht ganz. Verwende die :hover Pseudo-Klasse für Hover-Styling.",
+          "b": "Richtig. Verwende die :hover Pseudo-Klasse für Hover-Styling.",
+          "c": "Nicht ganz. Verwende die :hover Pseudo-Klasse für Hover-Styling.",
+          "d": "Nicht ganz. Verwende die :hover Pseudo-Klasse für Hover-Styling."
+        }
+      }
+    },
+    {
+      "id": "q2-remove-underline",
+      "type": "single-choice",
+      "prompt": "Welche Deklaration entfernt die Standard-Unterstreichung von Links?",
+      "options": [
+        {
+          "id": "a",
+          "label": "text-style: none;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "link-decoration: off;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "text-decoration: none;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "underline: false;",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "text-decoration: none; entfernt die Unterstreichung.",
+        "byOptionId": {
+          "a": "Nicht ganz. text-decoration: none; entfernt die Unterstreichung.",
+          "b": "Nicht ganz. text-decoration: none; entfernt die Unterstreichung.",
+          "c": "Richtig. text-decoration: none; entfernt die Unterstreichung.",
+          "d": "Nicht ganz. text-decoration: none; entfernt die Unterstreichung."
+        }
+      }
+    }
+  ]
+}

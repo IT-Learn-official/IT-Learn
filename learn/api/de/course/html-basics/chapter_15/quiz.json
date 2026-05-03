@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Kapitel 15 - Attribute Check",
+  "description": "Wissenscheck:  id, class, title, placeholder, required, disabled und wie man sie verwendet.",
+  "questions": [
+    {
+      "id": "q-id-class",
+      "type": "single-choice",
+      "prompt": "Wofür werden die Attribute id und class verwendet?",
+      "options": [
+        {
+          "id": "content",
+          "label": "Textinhalt speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "identify",
+          "label": "Elemente für Styling und Skripte identifizieren",
+          "isCorrect": true
+        },
+        {
+          "id": "styleonly",
+          "label": "Nur Inline-Styles hinzufügen",
+          "isCorrect": false
+        },
+        {
+          "id": "deprecated",
+          "label": "Veraltete Attribute",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id und class nutzt man, um Elemente in CSS und JavaScript gezielt anzusprechen.",
+        "byOptionId": {
+          "identify": "Richtig – id und class erlauben dir, Elemente in CSS und JS auszuwählen.",
+          "content": "Falsch – Attribute speichern nicht den eigentlichen Textinhalt; das tun Elemente.",
+          "styleonly": "Falsch – Attribute nutzt man auch in Skripten und Selektoren, nicht nur für Inline-Styles.",
+          "deprecated": "Falsch – id/class sind Standard-Attribute, nicht veraltet."
+        }
+      }
+    },
+    {
+      "id": "q-location",
+      "type": "single-choice",
+      "prompt": "Wo stehen id- und class-Attribute?",
+      "options": [
+        {
+          "id": "end",
+          "label": "Im schließenden Tag eines HTML-Elements",
+          "isCorrect": false
+        },
+        {
+          "id": "between",
+          "label": "Zwischen dem öffnenden und schließenden Tag eines HTML-Elements",
+          "isCorrect": false
+        },
+        {
+          "id": "start",
+          "label": "Im öffnenden Tag eines HTML-Elements",
+          "isCorrect": true
+        },
+        {
+          "id": "before",
+          "label": "Vor dem öffnenden Tag eines HTML-Elements",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id- und class-Attribute stehen im öffnenden Tag eines HTML-Elements.",
+        "byOptionId": {
+          "start": "Richtig – id- und class-Attribute stehen im öffnenden Tag.",
+          "end": "Falsch – id- und class-Attribute stehen nicht im schließenden Tag.",
+          "between": "Falsch – id- und class-Attribute stehen nicht zwischen öffnendem und schließendem Tag.",
+          "before": "Falsch – id- und class-Attribute stehen nicht vor dem öffnenden Tag."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - Kopteksten Check",
+  "description": "Controleer je kennis:  Heading-elementen h1 tot h6 en hun gebruik voor structuur en SEO.",
+  "questions": [
+    {
+      "id": "q-h1",
+      "type": "single-choice",
+      "prompt": "Welke heading gebruik je meestal maar één keer per pagina?",
+      "options": [
+        {
+          "id": "h1",
+          "label": "<h1>",
+          "isCorrect": true
+        },
+        {
+          "id": "h2",
+          "label": "<h2>",
+          "isCorrect": false
+        },
+        {
+          "id": "h3",
+          "label": "<h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "h6",
+          "label": "<h6>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<h1> is meestal de hoofdtitel van de pagina.",
+        "byOptionId": {
+          "h1": "Juist – <h1> is meestal de ene hoofdtitel van een pagina.",
+          "h2": "Fout – <h2> is voor subtitels/secties, niet voor de hoofdtitel.",
+          "h3": "Fout – <h3> is voor kopteksten op een lager niveau.",
+          "h6": "Fout – <h6> is een koptekst op een heel laag niveau."
+        }
+      }
+    },
+    {
+      "id": "q-heading-order",
+      "type": "single-choice",
+      "prompt": "Als je een hoofdtitel en twee subsecties hebt, is een goede volgorde:",
+      "options": [
+        {
+          "id": "a",
+          "label": "<h1>, <h2>, <h2>",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "<h2>, <h1>, <h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "<h1>, <h2>, <h3>",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "<h3>, <h2>, <h1>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Hou kopteksten in een logische hiërarchie (van groot naar klein) voor duidelijkheid en toegankelijkheid.",
+        "byOptionId": {
+          "a": "Juist – een <h1> als hoofdtitel, gevolgd door twee <h2>'s is logisch.",
+          "b": "Fout – hou de hoofdtitel op <h1>.",
+          "c": "Fout – je hebt twee kopteksten op hetzelfde niveau nodig (<h2> en <h2>).",
+          "d": "Fout – dit keert de hiërarchie om: <h1> is groter dan <h3>."
+        }
+      }
+    }
+  ]
+}

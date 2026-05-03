@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Hoofdstuk 12 - Semantische HTML Check",
+  "description": "Controleer je kennis:  Semantische elementen gebruiken zoals header, nav, main, section, article en footer.",
+  "questions": [
+    {
+      "id": "q-header",
+      "type": "single-choice",
+      "prompt": "Welk element is bedoeld voor de bovenkant van een pagina of sectie?",
+      "options": [
+        {
+          "id": "footer",
+          "label": "<footer>",
+          "isCorrect": false
+        },
+        {
+          "id": "header",
+          "label": "<header>",
+          "isCorrect": true
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        },
+        {
+          "id": "div",
+          "label": "<div>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<header> is voor inleidende content of navigatiehulp bovenaan.",
+        "byOptionId": {
+          "header": "Juist – <header> is bedoeld voor de bovenkant van een pagina of sectie.",
+          "footer": "Fout – <footer> hoort onderaan een pagina of sectie.",
+          "nav": "Fout – <nav> is voor navigatielinks (vaak in een header), maar het is niet de header zelf.",
+          "div": "Fout – <div> is generiek; semantische elementen zoals <header> zijn beter als het past."
+        }
+      }
+    },
+    {
+      "id": "q-main",
+      "type": "single-choice",
+      "prompt": "Welk element zou maar één keer moeten voorkomen en de centrale content bevatten?",
+      "options": [
+        {
+          "id": "article",
+          "label": "<article>",
+          "isCorrect": false
+        },
+        {
+          "id": "main",
+          "label": "<main>",
+          "isCorrect": true
+        },
+        {
+          "id": "section",
+          "label": "<section>",
+          "isCorrect": false
+        },
+        {
+          "id": "nav",
+          "label": "<nav>",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "<main> bevat de hoofdcontent van het document en is uniek per pagina.",
+        "byOptionId": {
+          "main": "Juist – <main> duidt de centrale content aan die uniek is voor de pagina.",
+          "article": "Fout – <article> is een op zichzelf staand stuk content, niet per se alle hoofdcontent.",
+          "section": "Fout – <section> is een thematische groepering en kan meerdere keren voorkomen.",
+          "nav": "Fout – <nav> is voor navigatielinks, niet voor de hoofdcontent."
+        }
+      }
+    }
+  ]
+}

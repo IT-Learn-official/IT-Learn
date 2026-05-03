@@ -1,0 +1,152 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Kapitel 6 - Zusammenarbeit: Pull Requests, Reviews und Issues",
+  "description": "Prüfe dein Verständnis der GitHub-Funktionen zur Zusammenarbeit.",
+  "questions": [
+    {
+      "id": "q1-what-is-pr",
+      "type": "single-choice",
+      "prompt": "Wofür verwendet man einen Pull Request (PR)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Anfrage, Änderungen von einem Branch in einen anderen zu mergen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Anfrage, das Repository von jemand anderem zu löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Anfrage, Git umzubenennen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Eine Datei, die Passwörter speichert",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "PRs helfen Teams, Änderungen zu reviewen, bevor sie in wichtige Branches wie main gemerged werden.",
+        "byOptionId": {
+          "a": "Richtig. Ein PR schlägt das Mergen von Änderungen vor.",
+          "b": "Falsch. PRs sind keine Löschanfragen.",
+          "c": "Falsch. PRs benennen keine Tools um.",
+          "d": "Falsch. Passwörter sollten nicht in Repos gespeichert werden."
+        }
+      }
+    },
+    {
+      "id": "q2-why-reviews",
+      "type": "single-choice",
+      "prompt": "Warum sind Code-Reviews nützlich?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sie machen Git automatisch schneller",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie blockieren Merges dauerhaft",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie können Fehler finden und die Lesbarkeit verbessern",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie ersetzen Tests komplett",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reviews bringen ein zweites Paar Augen und helfen, die Codequalität hoch zu halten.",
+        "byOptionId": {
+          "a": "Falsch. Reviews beeinflussen die Git-Geschwindigkeit nicht.",
+          "b": "Falsch. Reviews blockieren Merges nicht dauerhaft.",
+          "c": "Richtig. Reviews finden Bugs und verbessern die Codequalität.",
+          "d": "Falsch. Reviews helfen, aber Tests bleiben wichtig."
+        }
+      }
+    },
+    {
+      "id": "q3-what-are-issues",
+      "type": "single-choice",
+      "prompt": "Wofür werden Issues auf GitHub typischerweise verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Kompilierte Programme speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Bugs, Aufgaben und Feature-Ideen verfolgen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Dein Repository verschlüsseln",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Private Repos automatisch öffentlich machen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Issues sind ein Planungs- und Diskussionstool für Arbeitspakete.",
+        "byOptionId": {
+          "a": "Falsch. Kompilierter Output gehört normalerweise nicht in Issues.",
+          "b": "Richtig. Issues tracken Arbeit und Diskussionen.",
+          "c": "Falsch. Issues sind keine Verschlüsselungsfunktion.",
+          "d": "Falsch. Repo-Privatsphäre ist eine Einstellung."
+        }
+      }
+    },
+    {
+      "id": "q4-what-is-fork",
+      "type": "single-choice",
+      "prompt": "Was ist ein Fork auf GitHub?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Deine eigene Kopie vom Repository einer anderen Person auf GitHub",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Eine Methode, alle Branches zu löschen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Eine Art von Commit-Nachricht",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Git-Befehl zum Stagen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Forks erlauben dir, an einem Repo zu arbeiten, wenn du keinen direkten Schreibzugriff auf das Original hast.",
+        "byOptionId": {
+          "a": "Richtig. Ein Fork ist deine Kopie auf GitHub.",
+          "b": "Falsch. Forken löscht keine Branches.",
+          "c": "Falsch. Es ist kein Commit-Nachrichten-Typ.",
+          "d": "Falsch. Staging passiert mit `git add`."
+        }
+      }
+    }
+  ]
+}

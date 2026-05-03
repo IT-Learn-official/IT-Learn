@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_15",
+  "kind": "assessment",
+  "title": "Hoofdstuk 15 - Attributen Check",
+  "description": "Controleer je kennis:  id, class, title, placeholder, required, disabled en hoe je ze gebruikt.",
+  "questions": [
+    {
+      "id": "q-id-class",
+      "type": "single-choice",
+      "prompt": "Waarvoor gebruik je de id- en class-attributen?",
+      "options": [
+        {
+          "id": "content",
+          "label": "Tekstcontent opslaan",
+          "isCorrect": false
+        },
+        {
+          "id": "identify",
+          "label": "Elementen herkennen voor styling en scripting",
+          "isCorrect": true
+        },
+        {
+          "id": "styleonly",
+          "label": "Alleen inline styles toevoegen",
+          "isCorrect": false
+        },
+        {
+          "id": "deprecated",
+          "label": "Verouderde attributen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id en class gebruik je om elementen te targeten vanuit CSS en JavaScript.",
+        "byOptionId": {
+          "identify": "Juist – met id en class kan je elementen selecteren in CSS en JS.",
+          "content": "Fout – attributen houden geen hoofdtekst vast; dat doen elementen.",
+          "styleonly": "Fout – attributen kan je ook gebruiken in scripts en selectors, niet alleen voor inline styles.",
+          "deprecated": "Fout – id/class zijn standaard attributen, niet verouderd."
+        }
+      }
+    },
+    {
+      "id": "q-location",
+      "type": "single-choice",
+      "prompt": "Waar zet je id- en class-attributen?",
+      "options": [
+        {
+          "id": "end",
+          "label": "In de sluitende tag van een HTML-element",
+          "isCorrect": false
+        },
+        {
+          "id": "between",
+          "label": "Tussen de openende en sluitende tag van een HTML-element",
+          "isCorrect": false
+        },
+        {
+          "id": "start",
+          "label": "In de openende tag van een HTML-element",
+          "isCorrect": true
+        },
+        {
+          "id": "before",
+          "label": "Vóór de openende tag van een HTML-element",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "id- en class-attributen staan in de openende tag van een HTML-element.",
+        "byOptionId": {
+          "start": "Juist – id- en class-attributen staan in de openende tag.",
+          "end": "Fout – id- en class-attributen staan niet in de sluitende tag.",
+          "between": "Fout – id- en class-attributen staan niet tussen openende en sluitende tags.",
+          "before": "Fout – id- en class-attributen staan niet vóór de openende tag."
+        }
+      }
+    }
+  ]
+}

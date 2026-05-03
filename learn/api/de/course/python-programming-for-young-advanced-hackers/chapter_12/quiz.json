@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Kapitel 12 - Fehler und Exceptions Check",
+  "description": "Wissenscheck: Exceptions verstehen und Code robuster machen.",
+  "questions": [
+    {
+      "id": "q-for-purpose",
+      "type": "single-choice",
+      "prompt": "Wofür benutzt man in Python hauptsächlich eine for-Schleife?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Um eine Funktion zu definieren.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Um Code für jedes Element in einer Sequenz zu wiederholen.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Um ein Programm sofort zu stoppen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um eine neue Variable zu erstellen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "for-Schleifen benutzt man, um Code für jedes Element in einer range oder Sammlung zu wiederholen.",
+        "byOptionId": {
+          "a": "Funktionen werden mit def definiert, nicht mit for.",
+          "b": "Richtig, for-Schleifen gehen jedes Element einer Sequenz durch.",
+          "c": "Um ein Programm zu stoppen, würdest du exit() oder Ähnliches verwenden, nicht for.",
+          "d": "Variablen kann man überall erstellen, nicht nur in for-Schleifen."
+        }
+      }
+    },
+    {
+      "id": "q-range-3",
+      "type": "single-choice",
+      "prompt": "Welche Zahlen erzeugt range(3)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "0, 1, 2",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "0, 1, 2, 3",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Only 3",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "range(stop) startet bei 0 und geht bis stop-1.",
+        "byOptionId": {
+          "a": "Das wäre range(1, 4).",
+          "b": "Richtig, range(3) ergibt 0, 1, 2.",
+          "c": "Das enthält den stop-Wert, und das tut range() nicht.",
+          "d": "range(3) erzeugt eine Sequenz, keine einzelne Zahl."
+        }
+      }
+    },
+    {
+      "id": "q-while-stop",
+      "type": "single-choice",
+      "prompt": "Wann hört eine while-Schleife auf zu laufen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Nach genau 10 Durchläufen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wenn ihre Bedingung False wird.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Wenn Python entscheidet, dass es reicht.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Nur wenn der Benutzer eine Taste drückt.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "while läuft weiter, solange seine Bedingung True ist.",
+        "byOptionId": {
+          "a": "Eine while-Schleife stoppt nicht magisch nach 10 Durchläufen – außer du programmierst es so.",
+          "b": "Richtig, du musst sicherstellen, dass die Bedingung irgendwann False werden kann.",
+          "c": "Python stoppt deine Schleifen nicht automatisch für dich.",
+          "d": "User-Input kann die Bedingung beeinflussen, ist aber nicht nötig."
+        }
+      }
+    },
+    {
+      "id": "q-infinite-while",
+      "type": "single-choice",
+      "prompt": "Welcher Fehler kann leicht eine endlose while-Schleife erzeugen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Stattdessen eine for-Schleife benutzen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Vergessen, die Variable zu ändern, die in der Bedingung benutzt wird.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Zu oft printen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "range() mit 0 benutzen.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Wenn die Bedingung nie False wird, stoppt eine while-Schleife nie.",
+        "byOptionId": {
+          "a": "Eine for-Schleife zu benutzen macht nicht automatisch eine Endlosschleife.",
+          "b": "Richtig, wenn du die Variable nie updatest, kann die Bedingung für immer True bleiben.",
+          "c": "Viel zu printen ist nervig, aber nicht automatisch unendlich.",
+          "d": "range() wird nicht direkt in while-Schleifen benutzt."
+        }
+      }
+    },
+    {
+      "id": "q-iterate-string",
+      "type": "single-choice",
+      "prompt": "Was macht `for ch in 'cat':`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es läuft über die Zahlen 1 bis 3.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Es läuft über die Buchstaben 'c', 'a', 't'.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Es gibt einen Fehler; man kann nicht über Strings iterieren.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es löscht den String.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Strings sind Sequenzen aus Zeichen, daher kann for über jedes Zeichen iterieren.",
+        "byOptionId": {
+          "a": "Die Loop-Variable ch ist hier ein Zeichen, keine Zahl.",
+          "b": "Richtig, ch ist erst 'c', dann 'a', dann 't'.",
+          "c": "Python erlaubt es, über Strings zu iterieren.",
+          "d": "for löscht keine Werte."
+        }
+      }
+    }
+  ]
+}

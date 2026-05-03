@@ -1,0 +1,80 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - Achtergronden toevoegen Check",
+  "description": "Controleer je kennis:  Kleuren, gradients en afbeeldingen als achtergrond.",
+  "questions": [
+    {
+      "id": "q1-gradient",
+      "type": "single-choice",
+      "prompt": "Welke functie maakt een gradient-achtergrond in CSS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "color-mix()",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "paint-gradient()",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "linear-gradient()",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "bg-gradient()",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "linear-gradient() gebruik je om gradient-achtergronden te maken.",
+        "byOptionId": {
+          "a": "Niet helemaal. linear-gradient() gebruik je om gradient-achtergronden te maken.",
+          "b": "Niet helemaal. linear-gradient() gebruik je om gradient-achtergronden te maken.",
+          "c": "Juist. linear-gradient() gebruik je om gradient-achtergronden te maken.",
+          "d": "Niet helemaal. linear-gradient() gebruik je om gradient-achtergronden te maken."
+        }
+      }
+    },
+    {
+      "id": "q2-bg-cover",
+      "type": "single-choice",
+      "prompt": "Wat doet background-size: cover meestal?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Herhaalt de afbeelding heel vaak",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Rekt de afbeelding uit zodat alleen de hoogte gevuld is",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Schaalt de afbeelding zodat ze het element bedekt",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Verbergt de afbeelding",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Het schaalt de achtergrondafbeelding zodat ze de hele oppervlakte van het element bedekt.",
+        "byOptionId": {
+          "a": "Niet helemaal. Het schaalt de achtergrondafbeelding zodat ze de hele oppervlakte van het element bedekt.",
+          "b": "Niet helemaal. Het schaalt de achtergrondafbeelding zodat ze de hele oppervlakte van het element bedekt.",
+          "c": "Juist. Het schaalt de achtergrondafbeelding zodat ze de hele oppervlakte van het element bedekt.",
+          "d": "Niet helemaal. Het schaalt de achtergrondafbeelding zodat ze de hele oppervlakte van het element bedekt."
+        }
+      }
+    }
+  ]
+}

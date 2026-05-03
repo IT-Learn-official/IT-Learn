@@ -1,0 +1,188 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Hoofdstuk 13 - Modules en packages Check",
+  "description": "Controleer je kennis: Code hergebruiken met imports, modules en packages.",
+  "questions": [
+    {
+      "id": "q-function-meaning",
+      "type": "single-choice",
+      "prompt": "Wat is een functie in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een manier om code te herhalen door die een naam te geven en op te roepen.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een speciaal soort lijst.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een ingebouwde foutmelding.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een commentaar dat Python negeert.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Functies zijn benoemde blokken code die je kan hergebruiken door ze op te roepen.",
+        "byOptionId": {
+          "a": "Juist, functies laten je code groeperen en op naam oproepen.",
+          "b": "Lijsten bewaren data; functies voeren acties uit.",
+          "c": "Fouten staan los van functies.",
+          "d": "Commentaar start met # en is geen functie."
+        }
+      }
+    },
+    {
+      "id": "q-def-keyword",
+      "type": "single-choice",
+      "prompt": "Welk keyword gebruik je om een functie te definiëren in Python?",
+      "options": [
+        {
+          "id": "a",
+          "label": "func",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "def",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "call",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Functiedefinities beginnen altijd met def.",
+        "byOptionId": {
+          "a": "func is geen Python-keyword.",
+          "b": "Juist, def start een functiedefinitie.",
+          "c": "function is geen keyword in Python.",
+          "d": "call is ook geen keyword."
+        }
+      }
+    },
+    {
+      "id": "q-parameter-meaning",
+      "type": "single-choice",
+      "prompt": "In `def greet(name):`, wat is `name`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een returnwaarde.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een parameter (een input voor de functie).",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Een fout.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een item in een lijst.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Parameters zijn variabelen die in de functiekop staan.",
+        "byOptionId": {
+          "a": "Returnwaarden komen van de return-statement, niet van de header.",
+          "b": "Juist, name is de parameter die de functie verwacht.",
+          "c": "Er is niets mis met deze code.",
+          "d": "List-items zitten in lijsten, niet in functiekoppen."
+        }
+      }
+    },
+    {
+      "id": "q-return-meaning",
+      "type": "single-choice",
+      "prompt": "Wat doet de return-statement in een functie?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die print tekst op het scherm.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die stopt de functie en geeft een waarde terug.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Die start een nieuwe lus.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die verwijdert een variabele.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`return` verlaat de functie en geeft een waarde terug aan de aanroeper.",
+        "byOptionId": {
+          "a": "`print` toont een waarde, maar geeft die niet terug.",
+          "b": "Juist, dat is exact wat return doet.",
+          "c": "Lussen gebruiken `for` of `while`, niet `return`.",
+          "d": "`return` verwijdert geen variabelen."
+        }
+      }
+    },
+    {
+      "id": "q-default-parameter",
+      "type": "single-choice",
+      "prompt": "In `def greet(name, greeting='Hi')`, wat gebeurt er als je `greet('Alex')` oproept?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Fout, want greeting ontbreekt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "greeting wordt automatisch 'Hi'.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "greeting wordt None.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Python negeert de tweede parameter.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Standaardwaarden voor parameters worden gebruikt als je dat argument niet meegeeft.",
+        "byOptionId": {
+          "a": "De standaardwaarde voorkomt die fout.",
+          "b": "Juist – 'Hi' wordt gebruikt als standaardbegroeting.",
+          "c": "None wordt hier niet gebruikt; we gaven een echte standaardstring.",
+          "d": "Python negeert parameters niet; hij vult ze in met standaardwaarden als dat nodig is."
+        }
+      }
+    }
+  ]
+}
