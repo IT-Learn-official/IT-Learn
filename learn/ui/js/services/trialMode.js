@@ -126,7 +126,15 @@ export function clearTrialSession() {
 }
 
 function generateSessionId() {
-  return `trial_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
+  const cryptoObj = globalThis.crypto || globalThis.msCrypto;
+  if (!cryptoObj || typeof cryptoObj.getRandomValues !== 'function') {
+    throw new Error('Secure randomness unavailable (crypto.getRandomValues)');
+  }
+
+  const bytes = new Uint8Array(16);
+  cryptoObj.getRandomValues(bytes);
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  return `trial_${Date.now()}_${hex}`;
 }
 
 export function getTrialStats() {
