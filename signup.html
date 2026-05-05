@@ -33,15 +33,38 @@
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  let tawkLoaded = false;
+
+  function loadTawk() {
+    if (tawkLoaded) return;
+
+    tawkLoaded = true;
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+
+    const s1 = document.createElement('script');
+    const s0 = document.getElementsByTagName('script')[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('itlearn.analyticsConsent') === 'accepted') {
+      loadTawk();
+    }
+    document.querySelectorAll('[data-open-help-chat]').forEach(trigger => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        loadTawk();
+        if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+          window.Tawk_API.maximize();
+        }
+      });
+    });
+  });
 </script>
 <!--End of Tawk.to Script-->
 

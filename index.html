@@ -22,6 +22,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/consent.css">
 
   <!-- Meta -->
   <meta name="theme-color" content="#0f172a">
@@ -71,11 +72,12 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
 
-      localStorage.setItem('tawkConsent', 'granted');
+      // Do not persist implicit consent for chat here; rely on the site's main consent flow.
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('tawkConsent') === 'granted') {
+      // Auto-load chat only when the user has explicitly accepted analytics consent
+      if (localStorage.getItem('itlearn.analyticsConsent') === 'accepted') {
         loadTawk();
       }
 
@@ -535,93 +537,13 @@
 
   </footer>
 
-  <div class="cookie-banner" id="cookie-banner" hidden>
-    <div class="cookie-banner__content">
-      <p>We use analytics cookies to understand how people use IT Learn. Choose whether to allow non-essential tracking.</p>
-      <a href="/privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy policy</a>
-    </div>
-    <div class="cookie-banner__actions">
-      <button type="button" class="btn btn-secondary" id="cookie-reject">Reject</button>
-      <button type="button" class="btn btn-primary" id="cookie-accept">Accept</button>
-    </div>
-  </div>
+  <!-- cookie banner now provided by /consent.js -->
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="translations.js"></script>
+  <script src="/consent.js" defer></script>
   <script>
-    const analyticsConsentKey = 'itlearn.analyticsConsent';
-    const analyticsMeasurementId = 'G-4RL6H7W1C1';
-    let analyticsScriptLoaded = false;
-
-    const getAnalyticsConsent = () => {
-      try {
-        return localStorage.getItem(analyticsConsentKey);
-      } catch (error) {
-        return null;
-      }
-    };
-
-    const setAnalyticsConsent = (value) => {
-      try {
-        localStorage.setItem(analyticsConsentKey, value);
-      } catch (error) {
-        return;
-      }
-    };
-
-    const showConsentBanner = () => {
-      document.getElementById('cookie-banner')?.removeAttribute('hidden');
-    };
-
-    const hideConsentBanner = () => {
-      document.getElementById('cookie-banner')?.setAttribute('hidden', '');
-    };
-
-    const loadAnalytics = () => {
-      if (analyticsScriptLoaded) return;
-
-      analyticsScriptLoaded = true;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', analyticsMeasurementId, { anonymize_ip: true });
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`;
-      document.head.appendChild(script);
-    };
-
-    const consentState = getAnalyticsConsent();
-    if (consentState === 'accepted') {
-      loadAnalytics();
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const acceptButton = document.getElementById('cookie-accept');
-      const rejectButton = document.getElementById('cookie-reject');
-
-      if (consentState === null) {
-        showConsentBanner();
-      } else {
-        hideConsentBanner();
-      }
-
-      acceptButton?.addEventListener('click', () => {
-        setAnalyticsConsent('accepted');
-        hideConsentBanner();
-        loadAnalytics();
-      });
-
-      rejectButton?.addEventListener('click', () => {
-        setAnalyticsConsent('rejected');
-        hideConsentBanner();
-      });
-    });
-
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
 

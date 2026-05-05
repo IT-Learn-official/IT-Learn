@@ -1142,10 +1142,10 @@ button:focus {
   }
 
   .cookie-banner__actions {
-    justify-content: stretch;
+    align-items: stretch;
   }
 
-  .cookie-banner__actions .btn {
+  .cookie-banner__actions button {
     width: 100%;
     justify-content: center;
   }

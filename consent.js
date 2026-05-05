@@ -83,8 +83,11 @@
   };
 
   const bindBannerActions = () => {
-    document.getElementById('cookie-accept')?.addEventListener('click', acceptAnalytics);
-    document.getElementById('cookie-reject')?.addEventListener('click', rejectAnalytics);
+    const banner = ensureBanner();
+    const accept = document.getElementById('cookie-accept');
+    const reject = document.getElementById('cookie-reject');
+    if (accept) accept.addEventListener('click', acceptAnalytics);
+    if (reject) reject.addEventListener('click', rejectAnalytics);
   };
 
   const init = () => {
@@ -96,14 +99,18 @@
       return;
     }
 
-    bindBannerActions();
-
     if (consentState === 'rejected') {
       hideBanner();
       return;
     }
 
-    showBanner();
+    // Ensure the banner DOM exists before binding actions
+    ensureBanner();
+    bindBannerActions();
+    // If no prior choice, show the banner
+    if (consentState === null) {
+      showBanner();
+    }
   };
 
   if (document.readyState === 'loading') {
