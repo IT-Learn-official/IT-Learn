@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4RL6H7W1C1');
-  </script>
   <link rel="canonical" href="https://itlearn.be/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta name="consentlens-verification" content="cmosvqnz30006o101aojmkoji">
@@ -31,6 +22,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/consent.css">
 
   <!-- Meta -->
   <meta name="theme-color" content="#0f172a">
@@ -80,11 +72,12 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
 
-      localStorage.setItem('tawkConsent', 'granted');
+      // Do not persist implicit consent for chat here; rely on the site's main consent flow.
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('tawkConsent') === 'granted') {
+      // Auto-load chat only when the user has explicitly accepted analytics consent
+      if (localStorage.getItem('itlearn.analyticsConsent') === 'accepted') {
         loadTawk();
       }
 
@@ -544,9 +537,12 @@
 
   </footer>
 
+  <!-- cookie banner now provided by /consent.js -->
+
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="translations.js"></script>
+  <script src="/consent.js" defer></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
