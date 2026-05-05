@@ -96,13 +96,13 @@
       return;
     }
 
-    bindBannerActions();
-
     if (consentState === 'rejected') {
       hideBanner();
       return;
     }
 
+    ensureBanner();
+    bindBannerActions();
     showBanner();
   };
 
