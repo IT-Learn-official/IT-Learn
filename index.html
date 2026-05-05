@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4RL6H7W1C1');
-  </script>
   <link rel="canonical" href="https://itlearn.be/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta name="consentlens-verification" content="cmosvqnz30006o101aojmkoji">
@@ -544,10 +535,93 @@
 
   </footer>
 
+  <div class="cookie-banner" id="cookie-banner" hidden>
+    <div class="cookie-banner__content">
+      <p>We use analytics cookies to understand how people use IT Learn. Choose whether to allow non-essential tracking.</p>
+      <a href="/privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn-secondary" id="cookie-reject">Reject</button>
+      <button type="button" class="btn btn-primary" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="translations.js"></script>
   <script>
+    const analyticsConsentKey = 'itlearn.analyticsConsent';
+    const analyticsMeasurementId = 'G-4RL6H7W1C1';
+    let analyticsScriptLoaded = false;
+
+    const getAnalyticsConsent = () => {
+      try {
+        return localStorage.getItem(analyticsConsentKey);
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const setAnalyticsConsent = (value) => {
+      try {
+        localStorage.setItem(analyticsConsentKey, value);
+      } catch (error) {
+        return;
+      }
+    };
+
+    const showConsentBanner = () => {
+      document.getElementById('cookie-banner')?.removeAttribute('hidden');
+    };
+
+    const hideConsentBanner = () => {
+      document.getElementById('cookie-banner')?.setAttribute('hidden', '');
+    };
+
+    const loadAnalytics = () => {
+      if (analyticsScriptLoaded) return;
+
+      analyticsScriptLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', analyticsMeasurementId, { anonymize_ip: true });
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`;
+      document.head.appendChild(script);
+    };
+
+    const consentState = getAnalyticsConsent();
+    if (consentState === 'accepted') {
+      loadAnalytics();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const acceptButton = document.getElementById('cookie-accept');
+      const rejectButton = document.getElementById('cookie-reject');
+
+      if (consentState === null) {
+        showConsentBanner();
+      } else {
+        hideConsentBanner();
+      }
+
+      acceptButton?.addEventListener('click', () => {
+        setAnalyticsConsent('accepted');
+        hideConsentBanner();
+        loadAnalytics();
+      });
+
+      rejectButton?.addEventListener('click', () => {
+        setAnalyticsConsent('rejected');
+        hideConsentBanner();
+      });
+    });
+
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
 
