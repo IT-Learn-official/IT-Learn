@@ -2,12 +2,13 @@
    rewrite by: https://github.com/broodje565 */
 
 .markdown-ace-editor .ace_editor,
-.practice-editor .ace_editor {
+.practice-editor .ace_editor,
+.projects-ide-editor .ace_editor {
   background-color: var(--panel) !important;
   color: #f8fafc !important;
   margin: 0 !important;
   border-radius: var(--radius-md);
-  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-family: var(--font-family-mono, "JetBrains Mono", monospace) !important;
 }
 
 .ace_gutter {
@@ -17,19 +18,28 @@
   border-right: 1px solid var(--glass-border) !important;
 }
 
+/* Fix for the "ugly white" highlight on active line number */
+.ace_gutter-active-line {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  color: #fff !important;
+}
+
 .ace_editor .ace_marker-layer .ace_selection {
-  background: rgba(99,102,241,0.25) !important;
+  background: rgba(99, 102, 241, 0.3) !important;
 }
 
 .practice-editor .ace_editor,
 .markdown-ace-editor .ace_editor,
+.projects-ide-editor .ace_editor,
 .practice-editor .ace_editor.ace_dark,
-.markdown-ace-editor .ace_editor.ace_dark {
+.markdown-ace-editor .ace_editor.ace_dark,
+.projects-ide-editor .ace_editor.ace_dark {
   background: var(--panel) !important;
 }
 
 .practice-editor .ace_scroller,
-.markdown-ace-editor .ace_scroller {
+.markdown-ace-editor .ace_scroller,
+.projects-ide-editor .ace_scroller {
   background: var(--panel) !important;
 }
 
@@ -42,8 +52,47 @@
 }
 
 .ace_marker-layer .ace_active-line {
-  background: rgba(79,70,229,0.08) !important;
+  background: rgba(99, 102, 241, 0.08) !important;
 }
+
+/* Ensure syntax highlighting colors are vivid enough */
+.ace_keyword { color: #c678dd !important; }
+.ace_string { color: #98c379 !important; }
+.ace_variable { color: #e06c75 !important; }
+.ace_constant.ace_numeric { color: #d19a66 !important; }
+.ace_function { color: #61afef !important; }
+.ace_comment { color: #5c6370 !important; font-style: italic !important; }
+
+/* Improved contrast for HTML/XML tags and attributes */
+.ace_tag { color: #ef596f !important; } /* Brighter red/pink for tags like <main> */
+.ace_attribute-name { color: #d19a66 !important; } /* Orange for attributes */
+.ace_attribute-value { color: #98c379 !important; } /* Green for attribute values */
+.ace_meta.ace_tag { color: #ef596f !important; }
+.ace_punctuation.ace_tag { color: #e5e7eb !important; } /* Clean off-white for < and > brackets */
+
+/* JavaScript / Python / General language enhancements */
+.ace_storage.ace_type { color: #c678dd !important; font-style: italic !important; } /* var, let, const, function, def */
+.ace_constant.ace_language { color: #d19a66 !important; font-weight: bold !important; } /* true, false, null */
+.ace_support.ace_function { color: #56b6c2 !important; } /* console.log, print, etc */
+.ace_support.ace_class, .ace_support.ace_type { color: #e5c07b !important; } /* Built-in classes */
+
+/* Specific Function & Variable declarations */
+.ace_entity.ace_name.ace_function { color: #61afef !important; } /* Function declaration names */
+.ace_variable { color: #e06c75 !important; } /* Variables */
+.ace_variable.ace_parameter { color: #d19a66 !important; font-style: italic !important; } /* Function parameters */
+.ace_identifier { color: #c7d2fe !important; } /* Soft indigo for default identifiers */
+.ace_entity.ace_name.ace_tag { color: #ef596f !important; } /* HTML tags or CSS selectors */
+
+
+/* CSS Specific Enhancements */
+.ace_entity.ace_name.ace_tag { color: #ef596f !important; } /* CSS Selectors (h1, div) */
+.ace_entity.ace_other.ace_attribute-name { color: #d19a66 !important; } /* CSS Classes/IDs (.my-class, #my-id) */
+.ace_support.ace_type.ace_property-name { color: #c7d2fe !important; } /* Soft indigo for CSS Properties */
+.ace_support.ace_constant.ace_property-value { color: #98c379 !important; } /* CSS Property values */
+.ace_constant.ace_color { color: #56b6c2 !important; } /* #fff, rgb() colors */
+
+
+
 
 .ace_print-margin {
   width: 1px;
@@ -54,3 +103,4 @@
   background-color: var(--accent-600) !important;
   border-radius: 4px;
 }
+

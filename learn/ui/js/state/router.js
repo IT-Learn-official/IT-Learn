@@ -39,6 +39,23 @@ export function parseLocation(hash) {
     };
   }
 
+  if (segments[0] === 'projects' && segments.length === 1) {
+    return {
+      route: 'projects',
+      tab: query.tab || 'projects',
+    };
+  }
+
+  if (segments[0] === 'projects' && segments[1]) {
+    return {
+      route: 'project',
+      projectId: decodeURIComponent(segments[1]),
+      tab: query.tab || 'ide',
+      file: query.file ? String(query.file) : null,
+      view: query.view ? String(query.view) : null,
+    };
+  }
+
   if (segments[0] === 'profile') {
     return {
       route: 'profile',
@@ -86,6 +103,20 @@ export function toHash(descriptor) {
 
   if (descriptor.route === 'badges') {
     return '#/badges';
+  }
+
+  if (descriptor.route === 'projects') {
+    return '#/projects';
+  }
+
+  if (descriptor.route === 'project') {
+    const base = `#/projects/${encodeURIComponent(String(descriptor.projectId || ''))}`;
+    const params = new URLSearchParams();
+    if (descriptor.tab && descriptor.tab !== 'ide') params.set('tab', descriptor.tab);
+    if (descriptor.file) params.set('file', descriptor.file);
+    if (descriptor.view) params.set('view', descriptor.view);
+    const query = params.toString();
+    return query ? `${base}?${query}` : base;
   }
 
   if (descriptor.route === 'profile') {
