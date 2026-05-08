@@ -2,18 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4RL6H7W1C1');
-  </script>
   <link rel="canonical" href="https://itlearn.be/login">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
+  <link rel="stylesheet" href="/consent.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -38,21 +29,46 @@
   <script src="/translations.js"></script>
   <script src="/custom-dialogs.js" defer></script>
   <script src="/maintenance-mode.js" defer></script>
+  <link rel="stylesheet" href="/consent.css">
+  <script src="/consent.js" defer></script>
 </head>
 
 <body>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  let tawkLoaded = false;
+
+  function loadTawk() {
+    if (tawkLoaded) return;
+
+    tawkLoaded = true;
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+
+    const s1 = document.createElement('script');
+    const s0 = document.getElementsByTagName('script')[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/690b61d5727def194d09e47e/1j9a7caec';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('itlearn.analyticsConsent') === 'accepted') {
+      loadTawk();
+    }
+    document.querySelectorAll('[data-open-help-chat]').forEach(trigger => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        loadTawk();
+        if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+          window.Tawk_API.maximize();
+        }
+      });
+    });
+  });
 </script>
 <!--End of Tawk.to Script-->
 
