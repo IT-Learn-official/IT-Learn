@@ -1,0 +1,16 @@
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  background-color: #0f172a;
+  color: white;
+}
+
+header {
+  padding: 1rem 2rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+/* TODO: Add more styles for your portfolio */

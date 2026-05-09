@@ -9,6 +9,8 @@ import { renderStoreView } from '../render/storeView.js';
 import { renderBadgesView } from '../render/badgesView.js';
 import { renderProfileView } from '../render/profileView.js';
 import { renderOnboardingView } from '../render/onboardingView.js';
+import { renderProjectsView } from '../render/projectsView.js';
+import { renderProjectIdeView } from '../render/projectIdeView.js';
 import { navigateTo } from '../state/router.js';
 import { createTrialInfoBanner, showTrialCompletionModal } from './trialRegistrationModal.js';
 import { completeTrialCourse, saveTrialProgress, getTrialSession } from '../services/trialMode.js';
@@ -61,6 +63,10 @@ export async function handleRouteChange(route) {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else if (route.route === 'onboarding') {
     setSelection({ courseId: null, chapterId: null, tab: 'theory' });
+  } else if (route.route === 'projects') {
+    setSelection({ courseId: null, chapterId: null, tab: 'theory' });
+  } else if (route.route === 'project') {
+    setSelection({ courseId: null, chapterId: null, tab: 'theory' });
   } else {
     setSelection({
       courseId: null,
@@ -99,6 +105,16 @@ export async function renderApp(route) {
 
   if (route.route === 'profile') {
     await renderProfileView(screenRootEl, { username: route.username || null });
+    return;
+  }
+
+  if (route.route === 'projects') {
+    await renderProjectsView(screenRootEl);
+    return;
+  }
+
+  if (route.route === 'project') {
+    await renderProjectIdeView(screenRootEl, { projectId: route.projectId, file: route.file, view: route.view });
     return;
   }
 

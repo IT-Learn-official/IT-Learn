@@ -1,0 +1,523 @@
+/* ===================================================================
+   Projects IDE – Premium Dark Editor Theme
+   Author: super_man2775 · IT Learn
+   =================================================================== */
+
+/* ---- Design tokens (Mapped to Global Theme) ---- */
+:root {
+  --ide-bg:         var(--color-bg-dark, #0f172a);
+  --ide-surface:    var(--color-bg-card, #111827);
+  --ide-surface-2:  var(--color-bg-card-soft, #1e293b);
+  --ide-surface-3:  #1e293b;
+  --ide-border:     var(--border-color, rgba(148, 163, 184, 0.15));
+  --ide-border-sub: rgba(148, 163, 184, 0.08);
+  --ide-text:       var(--color-text, #f8fafc);
+  --ide-text-muted: var(--color-text-muted, #94a3b8);
+  --ide-text-dim:   #64748b;
+  --ide-accent:     var(--color-primary, #6366f1);
+  --ide-accent-glow: rgba(99, 102, 241, 0.2);
+  --ide-green:      #22c55e;
+  --ide-blue:       #3b82f6;
+  --ide-orange:     #f59e0b;
+  --ide-red:        #ef4444;
+  --ide-purple:     #a855f7;
+  --ide-cyan:       #06b6d4;
+  --ide-sidebar-w:  200px;
+  --ide-tab-h:      38px;
+  --ide-status-h:   26px;
+  --ide-font-ui:    var(--font-family-main, 'Space Grotesk', sans-serif);
+  --ide-font-code:  var(--font-family-mono, 'JetBrains Mono', monospace);
+  --ide-radius:     var(--border-radius, 10px);
+  --ide-radius-sm:  var(--border-radius-sm, 6px);
+}
+
+/* ---- Screen shell ---- */
+.projects-ide-screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Fill available space instead of fixed 100vh */
+  width: 100%;
+  background: var(--ide-bg);
+  color: var(--ide-text);
+  font-family: var(--ide-font-ui);
+  overflow: hidden;
+  border-radius: var(--ide-radius);
+  box-shadow: var(--shadow-elevated);
+}
+
+.projects-ide-screen .screen-header {
+  background: var(--ide-surface);
+  border-bottom: 1px solid var(--ide-border);
+  padding: 12px 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects-ide-screen .screen-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.projects-ide-screen .screen-header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.projects-ide-screen .screen-header-subtitle {
+  font-size: 0.85rem;
+  color: var(--ide-text-muted);
+  margin: 0;
+}
+
+.projects-ide-screen .screen-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  background: var(--ide-bg);
+}
+
+/* ---- Header buttons ---- */
+.projects-ide-screen .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 10px;
+  color: var(--ide-text-muted);
+  background: var(--ide-surface-2);
+  border: 1px solid var(--ide-border);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.projects-ide-screen .projects-ide-preview-top .btn-icon.projects-ide-preview-refresh {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+}
+
+.projects-ide-screen .projects-ide-guide-modal-header .btn-icon.projects-ide-guide-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+
+.projects-ide-screen .btn-icon svg {
+  display: block;
+  stroke: currentcolor;
+}
+
+.projects-ide-screen .btn-icon:hover {
+  color: #fff;
+  background: var(--ide-accent);
+  border-color: var(--ide-accent);
+  box-shadow: 0 4px 15px var(--ide-accent-glow);
+  transform: translateY(-1.5px);
+}
+
+
+/* ---- Main IDE wrapper ---- */
+.projects-ide {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  animation: ide-fade-in 0.35s ease;
+}
+
+/* ---- File tree sidebar ---- */
+.projects-ide-sidebar {
+  width: var(--ide-sidebar-w);
+  min-width: 160px;
+  max-width: 300px;
+  background: var(--ide-surface);
+  border-right: 1px solid var(--ide-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: width 160ms ease, min-width 160ms ease, opacity 160ms ease;
+}
+
+.projects-ide.is-explorer-collapsed .projects-ide-sidebar {
+  width: 0;
+  min-width: 0;
+  border-right: 0;
+  opacity: 0;
+}
+
+.projects-ide.is-explorer-collapsed .projects-ide-sidebar > * {
+  display: none;
+}
+
+.projects-ide-screen .btn-icon.projects-ide-explorer-toggle svg {
+  display: block;
+}
+
+.projects-ide-sidebar-header {
+  height: var(--ide-tab-h);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  border-bottom: 1px solid var(--ide-border);
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ide-text-muted);
+}
+
+.projects-ide-sidebar-header::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--ide-accent);
+  border-radius: 2px;
+}
+
+.projects-ide-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+/* File tree styling */
+.projects-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects-tree .projects-tree {
+  padding-left: 12px;
+}
+
+.projects-tree-folder {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ide-text-muted);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.projects-tree-folder::before {
+  content: '▸';
+  font-size: 10px;
+  width: 12px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.projects-tree-folder.is-open::before {
+  transform: rotate(90deg);
+}
+
+.projects-tree-folder:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.projects-tree-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 12px 4px 18px;
+  font-size: 13px;
+  color: var(--ide-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+  font-family: var(--ide-font-ui);
+  border-left: 2px solid transparent;
+}
+
+.projects-tree-file:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.projects-tree-file.is-active {
+  background: rgba(99, 102, 241, 0.1);
+  color: #fff;
+  border-left-color: var(--ide-accent);
+}
+
+.projects-tree-file::before {
+  content: '📄';
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.projects-tree-file[data-icon="html"]::before { content: '🌐'; }
+.projects-tree-file[data-icon="css"]::before  { content: '🎨'; }
+.projects-tree-file[data-icon="js"]::before   { content: '⚡'; }
+.projects-tree-file[data-icon="json"]::before  { content: '📋'; }
+.projects-tree-file[data-icon="md"]::before    { content: '📝'; }
+.projects-tree-file[data-icon="py"]::before    { content: '🐍'; }
+
+/* ---- Tab bar ---- */
+.projects-ide-tabs {
+  height: var(--ide-tab-h);
+  background: var(--ide-surface);
+  border-bottom: 1px solid var(--ide-border);
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  flex-shrink: 0;
+  scrollbar-width: none;
+}
+
+.projects-ide-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ide-text-muted);
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--ide-border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  min-width: 120px;
+}
+
+.projects-ide-tab.is-active {
+  color: #fff;
+  background: var(--ide-bg);
+}
+
+.projects-ide-tab.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--ide-accent);
+}
+
+.projects-ide-tab-close {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  opacity: 0.5;
+  transition: all 0.15s;
+}
+
+.projects-ide-tab:hover .projects-ide-tab-close {
+  opacity: 1;
+}
+
+.projects-ide-tab-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--ide-red);
+}
+
+/* ---- Main content area ---- */
+.projects-ide-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.projects-ide-main-split {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* ---- Editor pane ---- */
+.projects-ide-editor {
+  flex: 1;
+  background: var(--ide-bg);
+  position: relative;
+  min-width: 0;
+}
+
+.projects-ide-editor .ace_editor {
+  width: 100% !important;
+  height: 100% !important;
+  font-family: var(--ide-font-code) !important;
+  font-size: 14px !important;
+}
+
+/* ---- Resize gutter ---- */
+.projects-ide-resize {
+  width: 4px;
+  background: var(--ide-border);
+  cursor: col-resize;
+  transition: background 0.2s;
+  z-index: 20;
+}
+
+.projects-ide-resize:hover {
+  background: var(--ide-accent);
+}
+
+/* ---- Preview pane ---- */
+.projects-ide-preview {
+  width: 40%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.projects-ide-preview-top {
+  height: var(--ide-tab-h);
+  background: var(--ide-surface);
+  border-bottom: 1px solid var(--ide-border);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.projects-ide-preview-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ide-text-muted);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projects-ide-preview-title::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--ide-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.projects-ide-preview-frame {
+  flex: 1;
+  border: 0;
+  background: #fff;
+}
+
+.projects-ide-preview-frame.is-resize-disabled {
+  pointer-events: none;
+}
+
+body.projects-ide-is-resizing {
+  cursor: col-resize !important;
+}
+
+/* ---- Status bar ---- */
+.projects-ide-statusbar {
+  height: var(--ide-status-h);
+  background: var(--ide-accent);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ---- Guide modal ---- */
+.projects-ide-guide-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: ide-fade-in 0.2s ease;
+}
+
+.projects-ide-guide-modal-content {
+  background: var(--ide-surface);
+  border: 1px solid var(--ide-border);
+  border-radius: var(--ide-radius);
+  width: 700px;
+  max-width: 95vw;
+  height: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: ide-scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projects-ide-guide-modal-header {
+  padding: 16px 20px;
+  background: var(--ide-surface-2);
+  border-bottom: 1px solid var(--ide-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects-ide-guidebox {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  line-height: 1.7;
+}
+
+/* ---- Animations ---- */
+@keyframes ide-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ide-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .projects-ide-main-split {
+    flex-direction: column;
+  }
+  .projects-ide-preview {
+    width: 100%;
+    height: 40%;
+  }
+  .projects-ide-resize {
+    width: 100%;
+    height: 4px;
+    cursor: row-resize;
+  }
+}
+

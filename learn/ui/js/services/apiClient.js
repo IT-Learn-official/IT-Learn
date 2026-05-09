@@ -16,7 +16,9 @@ function apiPath(path) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  const separator = String(url).includes('?') ? '&' : '?';
+  const buster = `${separator}_cb=${Date.now()}`;
+  const response = await fetch(`${url}${buster}`);
   if (!response.ok) {
     throw new Error(`Request failed with status ${response.status} for ${url}`);
   }
@@ -24,15 +26,55 @@ async function fetchJson(url) {
 }
 
 async function fetchText(url) {
-  const response = await fetch(url);
+  const separator = String(url).includes('?') ? '&' : '?';
+  const buster = `${separator}_cb=${Date.now()}`;
+  const response = await fetch(`${url}${buster}`);
   if (!response.ok) {
     throw new Error(`Request failed with status ${response.status} for ${url}`);
   }
   return response.text();
 }
 
+
+
+
 export async function fetchCourses() {
   return fetchJson(apiPath('courses.json'));
+}
+
+export async function fetchProjects() {
+  return fetchJson(apiPath('projects.json'));
+}
+
+export async function fetchProjectManifest(projectId) {
+  const cleaned = encodeURIComponent(String(projectId || ''));
+  return fetchJson(apiPath(`projects/${cleaned}/manifest.json`));
+}
+
+export async function fetchProjectGuide(projectId) {
+  const cleaned = encodeURIComponent(String(projectId || ''));
+  return fetchText(apiPath(`projects/${cleaned}/guide.md`));
+}
+
+export async function fetchProjectFile(projectId, filePath) {
+  const cleanedProject = encodeURIComponent(String(projectId || ''));
+
+  const raw = String(filePath || '');
+  const parts = raw
+    .split('/')
+    .filter((p) => p !== '' && p !== '.');
+
+  const normalized = [];
+  for (const part of parts) {
+    if (part === '..') {
+      if (normalized.length > 0) normalized.pop();
+      continue;
+    }
+    normalized.push(encodeURIComponent(part));
+  }
+
+  const safePath = normalized.join('/');
+  return fetchText(apiPath(`projects/${cleanedProject}/files/${safePath}`));
 }
 
 export async function fetchChapterTheory(courseId, chapter) {

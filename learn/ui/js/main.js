@@ -115,17 +115,22 @@ bootstrap();
 
 function updateSidebarActive(route) {
   const dashboardLink = document.getElementById('dashboard-link');
+  const projectsLink = document.getElementById('projects-link');
   const storeLink = document.getElementById('store-link');
   const profileLink = document.getElementById('profile-link');
   const badgesLink = document.getElementById('badges-link');
   const settingsLink = document.getElementById('settings-link');
-  const sidebarLinks = [dashboardLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
+  const sidebarLinks = [dashboardLink, projectsLink, storeLink, profileLink, badgesLink, settingsLink].filter(Boolean);
 
   let activeLink = null;
   switch (route.route) {
     case 'courses':
     case 'chapter':
       activeLink = dashboardLink;
+      break;
+    case 'projects':
+    case 'project':
+      activeLink = projectsLink;
       break;
     case 'store':
       activeLink = storeLink;
@@ -149,6 +154,7 @@ function updateSidebarActive(route) {
 }
 
 function attachSidebarLinks() {
+  const projectsLink = document.getElementById('projects-link');
   const profileLink = document.getElementById('profile-link');
   const settingsLink = document.getElementById('settings-link');
   const badgesLink = document.getElementById('badges-link');
@@ -179,6 +185,13 @@ function attachSidebarLinks() {
     storeLink.addEventListener('click', (e) => {
       e.preventDefault();
       navigateTo({ route: 'store' });
+    });
+  }
+
+  if (projectsLink) {
+    projectsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo({ route: 'projects' });
     });
   }
 }
