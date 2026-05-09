@@ -36,19 +36,17 @@
         display: grid;
         place-items: center;
         padding: 24px;
-        background:
-          radial-gradient(circle at top, rgba(34, 211, 238, 0.16), transparent 35%),
-          linear-gradient(180deg, rgba(4, 10, 22, 0.96), rgba(8, 16, 32, 0.98));
-        color: #ecf2ff;
+        background: var(--overlay-bg, linear-gradient(180deg, rgba(4,10,22,0.96), rgba(8,16,32,0.98)));
+        color: var(--color-text, #ecf2ff);
         backdrop-filter: blur(12px);
       }
 
       #${OVERLAY_ID} .maintenance-card {
         width: min(720px, 100%);
-        border: 1px solid rgba(255, 255, 255, 0.16);
+        border: 1px solid var(--border-color, rgba(255,255,255,0.16));
         border-radius: 24px;
-        background: rgba(13, 23, 49, 0.94);
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        background: linear-gradient(180deg, var(--dialog-card-bg-start, rgba(13,23,49,0.94)), var(--dialog-card-bg-end, rgba(13,23,49,0.94)));
+        box-shadow: var(--shadow-elevated, 0 24px 80px rgba(0, 0, 0, 0.45));
         padding: clamp(24px, 4vw, 40px);
         display: grid;
         gap: 18px;
@@ -59,11 +57,12 @@
         margin: 0;
         font-size: clamp(2rem, 5vw, 3.4rem);
         line-height: 1;
+        color: var(--color-text, #ecf2ff);
       }
 
       #${OVERLAY_ID} p {
         margin: 0;
-        color: #b9c7e6;
+        color: var(--color-text-soft, #b9c7e6);
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -94,27 +93,27 @@
       }
 
       #${OVERLAY_ID} .maintenance-link {
-        background: linear-gradient(140deg, #155e75, #164e63);
-        color: #ecf2ff;
-        border: 1px solid rgba(34, 211, 238, 0.35);
+        background: var(--button-primary-bg, linear-gradient(140deg, #155e75, #164e63));
+        color: var(--color-text, #ecf2ff);
+        border: 1px solid var(--button-primary-border, rgba(34, 211, 238, 0.35));
       }
 
       #${OVERLAY_ID} .maintenance-button {
         background: rgba(255, 255, 255, 0.06);
-        color: #ecf2ff;
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--color-text, #ecf2ff);
+        border: 1px solid var(--border-color, rgba(255,255,255,0.14));
       }
 
       #${OVERLAY_ID} .maintenance-meta {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        color: #93a3c7;
+        color: var(--color-text-muted, #93a3c7);
         font-size: 0.9rem;
       }
 
       #${OVERLAY_ID} .maintenance-chip {
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid var(--border-color, rgba(255,255,255,0.12));
         border-radius: 999px;
         padding: 6px 10px;
         background: rgba(255, 255, 255, 0.04);

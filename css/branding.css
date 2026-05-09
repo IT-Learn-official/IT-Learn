@@ -1,0 +1,120 @@
+/* Shared branding variables and small utility styles for consistency */
+:root {
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-secondary: #22c55e;
+
+  --color-bg-dark: #0f172a;
+  --color-bg-darker: #020617;
+  --color-bg-card: #111827;
+  --color-bg-card-soft: #1e293b;
+
+  --color-text: #ecf2ff;
+  --color-text-muted: #94a3b8;
+  --color-text-soft: #c8d5f2;
+
+  --border-color: rgba(255,255,255,0.16);
+  --shadow-elevated: 0 24px 80px rgba(0,0,0,0.45);
+
+  --border-radius: 12px;
+  --transition-fast: 120ms ease;
+
+  --overlay-bg: rgba(5, 10, 24, 0.72);
+  --dialog-card-bg-start: rgba(16, 26, 51, 0.98);
+  --dialog-card-bg-end: rgba(12, 20, 40, 0.98);
+  --button-primary-bg: linear-gradient(140deg, #155e75, #164e63);
+  --button-primary-border: rgba(34, 211, 238, 0.35);
+  --danger: #ef4444;
+}
+
+/* Small button helpers to make pages consistent */
+.btn,
+.button,
+.maintenance-button,
+.dialog-btn {
+  font: inherit;
+  color: var(--color-text);
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.btn:hover,
+.button:hover,
+.maintenance-button:hover,
+.dialog-btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary,
+.button-primary {
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-border);
+  color: var(--color-text);
+}
+
+.btn-ghost,
+.button-ghost {
+  background: rgba(255,255,255,0.03);
+  color: var(--color-text);
+}
+
+/* Shared overlay/dialog styles used by scripts that inject markup */
+#custom-dialogs-overlay,
+#site-maintenance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+}
+
+#custom-dialogs-overlay.open,
+#site-maintenance-overlay.open {
+  display: flex;
+}
+
+#custom-dialogs-overlay .dialog-card,
+#site-maintenance-overlay .maintenance-card {
+  width: min(720px, 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--dialog-card-bg-start), var(--dialog-card-bg-end));
+  color: var(--color-text);
+  box-shadow: var(--shadow-elevated);
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+#custom-dialogs-overlay .dialog-title,
+#site-maintenance-overlay h1 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+#custom-dialogs-overlay .dialog-message,
+#site-maintenance-overlay p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+#site-maintenance-overlay .maintenance-link {
+  background: var(--button-primary-bg);
+  color: var(--color-text);
+  border: 1px solid var(--button-primary-border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Small helpers for branding consistency */
+.muted { color: var(--color-text-muted); }
+.card { background: linear-gradient(180deg, var(--color-bg-card), var(--color-bg-card-soft)); border: 1px solid var(--border-color); border-radius: var(--border-radius); color: var(--color-text); }
