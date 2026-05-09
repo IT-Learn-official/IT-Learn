@@ -24,4 +24,4 @@ Build a weather application that allows users to search for a city and see the c
 
 - Use `async/await` for your fetch call.
 - Remember to use your API key in the URL: `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric`.
-- You can get icons from `http://openweathermap.org/img/wn/{icon_code}@2x.png`.
+ - You can get icons from `https://openweathermap.org/img/wn/{icon_code}@2x.png`.

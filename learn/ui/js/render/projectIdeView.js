@@ -137,6 +137,29 @@ function saveFileState(projectId, fileState) {
   localStorage.setItem(storageKey(projectId, 'files'), JSON.stringify(fileState || {}));
 }
 
+function debounceWithFlush(fn, wait) {
+  let timer = null;
+  let lastArgs = null;
+  const debounced = function(...args) {
+    lastArgs = args;
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, lastArgs);
+    }, wait);
+  };
+  debounced.flush = function() {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+      fn.apply(this, lastArgs);
+    }
+  };
+  return debounced;
+}
+
+const debouncedSaveFileState = debounceWithFlush(saveFileState, 500);
+
 /* ══════════════════════════════════════════════════════════════════════
    MAIN RENDER
    ══════════════════════════════════════════════════════════════════════ */
@@ -313,7 +336,9 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   const previewFrame = document.createElement('iframe');
   previewFrame.className = 'projects-ide-preview-frame';
   previewFrame.setAttribute('title', 'Live preview');
-  previewFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-downloads');
+  // Do not use `allow-same-origin` here to limit iframe access to host origin resources.
+  // Scripts still run in the iframe via `allow-scripts` but the iframe is kept cross-origin.
+  previewFrame.setAttribute('sandbox', 'allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-downloads');
 
   previewWrap.appendChild(previewTop);
   previewWrap.appendChild(previewFrame);
@@ -414,12 +439,12 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     });
 
     // Auto-save on change
-    editor.session.on('change', () => {
-      if (!activeFile) return;
-      fileState[activeFile] = editor.getValue();
-      saveFileState(pid, fileState);
-      schedulePreviewRefresh();
-    });
+      editor.session.on('change', () => {
+        if (!activeFile) return;
+        fileState[activeFile] = editor.getValue();
+        debouncedSaveFileState(pid, fileState);
+        schedulePreviewRefresh();
+      });
 
     return editor;
   }
@@ -785,7 +810,17 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
       }
     })
   );
+  // Persist immediately after initial load to avoid data loss.
   saveFileState(pid, fileState);
+
+  // Ensure any pending debounced save is flushed when the user leaves the page.
+  window.addEventListener('beforeunload', () => {
+    try {
+      if (debouncedSaveFileState && typeof debouncedSaveFileState.flush === 'function') debouncedSaveFileState.flush();
+    } catch (e) {
+      // ignore
+    }
+  });
 
   /* ── Open initial file ────────────────────────────────────────── */
   const initialFile = file

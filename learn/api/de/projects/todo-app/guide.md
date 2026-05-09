@@ -17,3 +17,6 @@ Baue eine kleine To-Do-App. Fokus: klare Struktur und kleine Schritte.
 - [ ] Entfernen implementieren.
 - [ ] Persistenz (`loadTodos()` + `saveTodos()`).
 - [ ] UX verbessern (Empty state, Fokus, Enter Taste).
+ - [ ] Erledigt-Zustand umschalten.
+ - [ ] Persistenz (`loadTodos()` + `saveTodos()`).
+ - [ ] UX verbessern (leerer Zustand, Fokus, Eingabetaste).

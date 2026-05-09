@@ -4,46 +4,49 @@
       "id": "landing-page",
       "title": "Page d'atterrissage responsive",
       "description": "Créez une page d'atterrissage propre et réactive en utilisant du HTML sémantique et du CSS moderne.",
-      "difficulty": "Easy",
+      "difficulty": "Facile",
       "tags": ["HTML", "CSS"]
     },
     {
       "id": "calculator",
       "title": "Calculatrice JS",
       "description": "Créez une calculatrice entièrement fonctionnelle avec une interface sombre moderne.",
-      "difficulty": "Easy",
+      "difficulty": "Facile",
       "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "id": "todo-app",
       "title": "Application To Do (Vanilla JS)",
       "description": "Créez une petite application de liste de tâches avec ajout/suppression/bascule et persistance locale.",
-      "difficulty": "Intermediate",
+      "difficulty": "Intermédiaire",
       "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "id": "weather-app",
       "title": "Tableau de bord météo",
       "description": "Créez une application météo qui récupère des données en temps réel via une API.",
-      "difficulty": "Intermediate",
+      "difficulty": "Intermédiaire",
       "tags": ["HTML", "CSS", "JavaScript", "API"]
     },
     {
       "id": "snake-game",
       "title": "Jeu de Snake Rétro",
       "description": "Utilisez HTML5 Canvas et JavaScript pour créer le jeu classique Snake.",
-      "difficulty": "Hard",
+      "difficulty": "Difficile",
       "tags": ["HTML", "JavaScript", "Canvas"]
     },
     {
       "id": "react-portfolio",
       "title": "Portfolio Personnel (React)",
       "description": "Créez un site de portfolio professionnel en utilisant des composants et des hooks React.",
-      "difficulty": "Hard",
+      "difficulty": "Difficile",
       "tags": ["React", "JavaScript", "CSS"]
     }
   ]
 }
+
+
+
 
 
 

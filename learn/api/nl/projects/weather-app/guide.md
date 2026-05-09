@@ -24,4 +24,4 @@ Bouw een weersapplicatie waarmee gebruikers een stad kunnen zoeken en de huidige
 
 - Gebruik `async/await` voor je fetch-aanroep.
 - Vergeet niet je API-sleutel in de URL te gebruiken: `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric`.
-- Je kunt iconen ophalen via `http://openweathermap.org/img/wn/{icon_code}@2x.png`.
+- Je kunt iconen ophalen via `https://openweathermap.org/img/wn/{icon_code}@2x.png`.

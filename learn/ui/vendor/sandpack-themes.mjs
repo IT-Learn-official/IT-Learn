@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) CodeSandbox (or original theme authors)
+ * Licensed under the Apache License, Version 2.0
+ * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ */
 // node_modules/@codesandbox/sandpack-themes/dist/esm/index.js
 var amethyst = {
   colors: {
