@@ -1,0 +1,11 @@
+{
+  "id": "react-portfolio",
+  "title": "Personal Portfolio (React)",
+  "entry": "App.js",
+  "files": [
+    { "path": "App.js", "type": "text", "language": "js" },
+    { "path": "components/Header.js", "type": "text", "language": "js" },
+    { "path": "components/ProjectCard.js", "type": "text", "language": "js" },
+    { "path": "styles.css", "type": "text", "language": "css" }
+  ]
+}

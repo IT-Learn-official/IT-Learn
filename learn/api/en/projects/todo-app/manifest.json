@@ -1,0 +1,10 @@
+{
+  "id": "todo-app",
+  "title": "To Do App (Vanilla JS)",
+  "entry": "index.html",
+  "files": [
+    { "path": "index.html", "type": "text", "language": "html" },
+    { "path": "styles.css", "type": "text", "language": "css" },
+    { "path": "app.js", "type": "text", "language": "javascript" }
+  ]
+}

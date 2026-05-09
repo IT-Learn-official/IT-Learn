@@ -1,0 +1,10 @@
+{
+  "id": "landing-page",
+  "title": "Responsieve Landingpagina",
+  "entry": "index.html",
+  "files": [
+    { "path": "index.html", "type": "text", "language": "html" },
+    { "path": "styles.css", "type": "text", "language": "css" }
+  ]
+}
+

@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "id": "landing-page",
+      "title": "Responsive Landingpage",
+      "description": "Baue eine saubere, responsive Landingpage mit semantischem HTML und modernem CSS.",
+      "difficulty": "Easy",
+      "tags": ["HTML", "CSS"]
+    },
+    {
+      "id": "calculator",
+      "title": "JS Taschenrechner",
+      "description": "Erstelle einen voll funktionsfähigen Taschenrechner mit einer modernen dunklen Benutzeroberfläche.",
+      "difficulty": "Easy",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "todo-app",
+      "title": "To Do App (Vanilla JS)",
+      "description": "Erstelle eine kleine To Do App mit Hinzufügen/Entfernen/Toggle und lokaler Speicherung.",
+      "difficulty": "Intermediate",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "weather-app",
+      "title": "Wetter Dashboard",
+      "description": "Baue eine Wetter-App, die Echtzeitdaten von einer API abruft.",
+      "difficulty": "Intermediate",
+      "tags": ["HTML", "CSS", "JavaScript", "API"]
+    },
+    {
+      "id": "snake-game",
+      "title": "Retro Snake Spiel",
+      "description": "Verwende HTML5 Canvas und JavaScript, um das klassische Snake-Spiel zu bauen.",
+      "difficulty": "Hard",
+      "tags": ["HTML", "JavaScript", "Canvas"]
+    },
+    {
+      "id": "react-portfolio",
+      "title": "Persönliches Portfolio (React)",
+      "description": "Erstelle eine professionelle Portfolio-Website mit React-Komponenten und Hooks.",
+      "difficulty": "Hard",
+      "tags": ["React", "JavaScript", "CSS"]
+    }
+  ]
+}
+
+

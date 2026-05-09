@@ -1,0 +1,235 @@
+/* ===================================================================
+   Projects Listing – Card Grid & Filters
+   Author: Antigravity AI · IT Learn
+   =================================================================== */
+
+/* ---- Filters ---- */
+.projects-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  animation: proj-slide-in 0.35s ease;
+}
+
+.projects-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.15));
+  background: var(--glass, rgba(49, 46, 129, 0.08));
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted, #94a3b8);
+  transition: all 0.2s ease;
+}
+
+.projects-filter:hover {
+  border-color: var(--accent-500, #6366f1);
+  color: #fff;
+}
+
+.projects-filter-select {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.projects-filter-select:focus {
+  border-color: var(--accent-500, #6366f1);
+}
+
+/* ---- Section ---- */
+.projects-section {
+  margin-top: 32px;
+}
+
+.projects-section-title {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #94a3b8);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.projects-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+/* ---- Grid ---- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* ---- Project Card ---- */
+.projects-card {
+  text-align: left;
+  border-radius: var(--radius-lg, 14px);
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.15));
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  color: inherit;
+  animation: proj-slide-in 0.4s ease backwards;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projects-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-500, #6366f1), #8b5cf6, #d946ef);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projects-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-5px);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6));
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(99, 102, 241, 0.1);
+}
+
+.projects-card:hover::before {
+  opacity: 1;
+}
+
+.projects-card:active {
+  transform: translateY(-2px);
+}
+
+.projects-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.projects-card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.projects-card-desc {
+  margin: 0;
+  color: var(--color-text-muted, #94a3b8);
+  line-height: 1.5;
+  font-size: 14px;
+  flex: 1;
+}
+
+/* ---- Tags ---- */
+.projects-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.projects-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+  transition: all 0.2s ease;
+}
+
+.projects-card:hover .projects-pill {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.2);
+  color: var(--color-text-soft, #c7d2fe);
+}
+
+/* ---- Difficulty badge ---- */
+.projects-difficulty {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.projects-difficulty--easy {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.2);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.projects-difficulty--intermediate {
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.projects-difficulty--difficult,
+.projects-difficulty--hard {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* ---- Animations ---- */
+@keyframes proj-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

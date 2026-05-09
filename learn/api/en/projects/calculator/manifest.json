@@ -1,0 +1,10 @@
+{
+  "id": "calculator",
+  "title": "JS Calculator",
+  "entry": "index.html",
+  "files": [
+    { "path": "index.html", "type": "text", "language": "html" },
+    { "path": "styles.css", "type": "text", "language": "css" },
+    { "path": "script.js", "type": "text", "language": "js" }
+  ]
+}
