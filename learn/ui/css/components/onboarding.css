@@ -23,11 +23,11 @@
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   background:
-    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.12), transparent 28%),
-    radial-gradient(circle at 82% 68%, rgba(14, 165, 233, 0.1), transparent 26%),
-    linear-gradient(180deg, #262b32 0%, #1f2328 100%);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 16px;
+    radial-gradient(circle at 18% 12%, rgba(99, 102, 241, 0.06), transparent 28%),
+    radial-gradient(circle at 82% 68%, rgba(99, 102, 241, 0.04), transparent 26%),
+    linear-gradient(180deg, var(--color-bg-card, #262b32) 0%, var(--color-bg-dark, #1f2328) 100%);
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.2));
+  border-radius: var(--border-radius, 16px);
   overflow: hidden;
 }
 
@@ -86,10 +86,10 @@
 .onboarding-speech {
   position: relative;
   max-width: min(520px, 72vw);
-  border: 1px solid rgba(148, 163, 184, 0.36);
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.36));
   border-radius: 10px;
   padding: 0.6rem 0.72rem;
-  color: #e2e8f0;
+  color: var(--color-text, #e2e8f0);
   font-weight: 700;
   background: rgba(15, 23, 42, 0.4);
 }
@@ -126,12 +126,12 @@
 .onboarding-intro h2 {
   margin: 0;
   font-size: 1.55rem;
-  color: #f8fafc;
+  color: var(--color-text, #f8fafc);
 }
 
 .onboarding-intro p {
   margin: 0.65rem 0 0;
-  color: #cbd5e1;
+  color: var(--color-text-muted, #cbd5e1);
 }
 
 .onboarding-grid {
@@ -150,11 +150,12 @@
   grid-template-columns: 1fr;
 }
 
+
 .onboarding-option {
-  border: 1px solid rgba(148, 163, 184, 0.38);
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.38));
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(30, 41, 59, 0.32), rgba(15, 23, 42, 0.38));
-  color: #e2e8f0;
+  color: var(--color-text, #e2e8f0);
   min-height: 54px;
   padding: 0.62rem 0.8rem;
   display: grid;
@@ -167,14 +168,14 @@
 
 .onboarding-option:hover {
   transform: translateY(-1px);
-  border-color: rgba(56, 189, 248, 0.72);
+  border-color: var(--color-primary, rgba(56, 189, 248, 0.72));
   box-shadow: 0 10px 20px rgba(2, 6, 23, 0.35);
 }
 
 .onboarding-option.is-selected {
-  border-color: rgba(56, 189, 248, 0.95);
+  border-color: var(--color-primary, rgba(56, 189, 248, 0.95));
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35) inset, 0 12px 22px rgba(14, 116, 144, 0.32);
-  background: linear-gradient(180deg, rgba(56, 189, 248, 0.24), rgba(8, 145, 178, 0.15));
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(8, 145, 178, 0.08));
 }
 
 .onboarding-option-icon {
@@ -190,7 +191,7 @@
 }
 
 .onboarding-option-meta {
-  color: #94a3b8;
+  color: var(--color-text-muted, #94a3b8);
   font-size: 0.92rem;
   font-weight: 700;
 }
@@ -200,7 +201,7 @@
 }
 
 .onboarding-footer {
-  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  border-top: 1px solid var(--border-color, rgba(148, 163, 184, 0.22));
   padding: 0.86rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -225,14 +226,14 @@
 }
 
 .onboarding-btn--ghost {
-  color: #cbd5e1;
+  color: var(--color-text, #cbd5e1);
   background: rgba(51, 65, 85, 0.5);
 }
 
 .onboarding-btn--primary {
-  color: #ecfeff;
-  background: linear-gradient(180deg, #0ea5e9, #0284c7);
-  box-shadow: 0 4px 0 #075985;
+  color: var(--color-text, #ecfeff);
+  background: var(--button-primary-bg, linear-gradient(180deg, #0ea5e9, #0284c7));
+  box-shadow: 0 4px 0 rgba(7,89,133,0.6);
 }
 
 .onboarding-btn--primary:not(:disabled):hover,
