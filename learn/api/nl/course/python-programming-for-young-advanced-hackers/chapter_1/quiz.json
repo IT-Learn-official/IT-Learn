@@ -15,11 +15,6 @@
           "isCorrect": false
         },
         {
-          "id": "computer-instructions",
-          "label": "Een speciale taal om instructies te schrijven die een computer kan volgen",
-          "isCorrect": true
-        },
-        {
           "id": "hardware",
           "label": "Een soort computer hardware (zoals toetsenbord of muis)",
           "isCorrect": false
@@ -28,6 +23,11 @@
           "id": "os",
           "label": "Een besturingssysteem, zoals Windows of macOS",
           "isCorrect": false
+        },
+        {
+          "id": "computer-instructions",
+          "label": "Een speciale taal om instructies te schrijven die een computer kan volgen",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,7 +38,8 @@
           "hardware": "Hardware is het fysieke spul (toetsenbord, muis, CPU), niet de taal.",
           "os": "Een besturingssysteem beheert hardware en apps, maar het is niet de taal waarin je programma’s schrijft."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-code-vs-programming",
@@ -51,11 +52,6 @@
           "isCorrect": false
         },
         {
-          "id": "reversed-definition",
-          "label": "Code is het plannen van stappen; programmeren is het exact intypen van instructies.",
-          "isCorrect": false
-        },
-        {
           "id": "correct-definition",
           "label": "Programmeren is plannen en ontwerpen; code zijn de exacte Python-instructies die je schrijft.",
           "isCorrect": true
@@ -63,6 +59,11 @@
         {
           "id": "experts-only",
           "label": "Programmeren is alleen voor experts; code is voor beginners.",
+          "isCorrect": false
+        },
+        {
+          "id": "reversed-definition",
+          "label": "Code is het plannen van stappen; programmeren is het exact intypen van instructies.",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "correct-definition": "Juist: zie programmeren als het plan + de code samen.",
           "experts-only": "Iedereen kan programmeren leren; het is niet alleen voor experts."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-compiled-language",
@@ -82,14 +84,14 @@
       "prompt": "Je drukt op een grote BUILD-knop en je code wordt een `.exe` die je telkens opnieuw kan uitvoeren. Wat voor soort taal gebruik je dan het meest waarschijnlijk?",
       "options": [
         {
-          "id": "python",
-          "label": "Python",
-          "isCorrect": false
-        },
-        {
           "id": "cpp",
           "label": "C++",
           "isCorrect": true
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "isCorrect": false
         },
         {
           "id": "javascript",
@@ -110,7 +112,8 @@
           "javascript": "JavaScript wordt typisch geïnterpreteerd door de browser of runtime.",
           "html": "HTML is een markup language om webpagina’s te structureren, geen gecompileerde programmeertaal."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-repl",
@@ -118,23 +121,23 @@
       "prompt": "Je opent een Python-console en typt `1 + 2`, drukt op Enter en ziet `3`. Dit gebeurt in de REPL. Waar staat **REPL** voor?",
       "options": [
         {
-          "id": "read-eval-print-loop",
-          "label": "Read, Evaluate, Print, Loop",
-          "isCorrect": true
-        },
-        {
           "id": "run-edit-print-load",
           "label": "Run, Edit, Print, Load",
           "isCorrect": false
         },
         {
-          "id": "read-execute-print-learn",
-          "label": "Read, Execute, Print, Learn",
+          "id": "repeat-eval-print-loop",
+          "label": "Repeat, Evaluate, Print, Loop",
           "isCorrect": false
         },
         {
-          "id": "repeat-eval-print-loop",
-          "label": "Repeat, Evaluate, Print, Loop",
+          "id": "read-eval-print-loop",
+          "label": "Read, Evaluate, Print, Loop",
+          "isCorrect": true
+        },
+        {
+          "id": "read-execute-print-learn",
+          "label": "Read, Execute, Print, Learn",
           "isCorrect": false
         }
       ],
@@ -146,13 +149,19 @@
           "read-execute-print-learn": "Leuk idee, maar dit is niet waar REPL voor staat.",
           "repeat-eval-print-loop": "Er zitten juiste woorden in, maar de eerste stap is READ, niet REPEAT."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-python-creator",
       "type": "single-choice",
       "prompt": "Python werd gemaakt in de late jaren 80. Wie is ermee begonnen?",
       "options": [
+        {
+          "id": "bjarne-stroustrup",
+          "label": "Bjarne Stroustrup",
+          "isCorrect": false
+        },
         {
           "id": "dennis-ritchie",
           "label": "Dennis Ritchie",
@@ -167,11 +176,6 @@
           "id": "james-gosling",
           "label": "James Gosling",
           "isCorrect": false
-        },
-        {
-          "id": "bjarne-stroustrup",
-          "label": "Bjarne Stroustrup",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,18 +186,14 @@
           "james-gosling": "James Gosling maakte Java.",
           "bjarne-stroustrup": "Bjarne Stroustrup maakte C++."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-why-name-python",
       "type": "single-choice",
       "prompt": "Waarom heet de programmeertaal \"Python\"? (Nee, het gaat niet alleen over slangen.)",
       "options": [
-        {
-          "id": "snake",
-          "label": "Ze is genoemd naar een slang omdat de maker reptielen tof vond.",
-          "isCorrect": false
-        },
         {
           "id": "pet",
           "label": "Ze is genoemd naar het huisdier van de maker.",
@@ -203,6 +203,11 @@
           "id": "monty-python",
           "label": "Ze is genoemd naar een Britse comedyreeks: \"Monty Python's Flying Circus\".",
           "isCorrect": true
+        },
+        {
+          "id": "snake",
+          "label": "Ze is genoemd naar een slang omdat de maker reptielen tof vond.",
+          "isCorrect": false
         },
         {
           "id": "acronym",
@@ -218,7 +223,8 @@
           "monty-python": "Juist: de maker wou een leuke naam.",
           "acronym": "Python is geen afkorting; het staat niet stiekem voor iets."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-python-extension",
@@ -226,13 +232,8 @@
       "prompt": "Je bewaart je eerste hacker‑script zodat je het later opnieuw kan runnen. Welke file extension gebruik je voor een Python‑bestand?",
       "options": [
         {
-          "id": "txt",
-          "label": ".txt",
-          "isCorrect": false
-        },
-        {
-          "id": "exe",
-          "label": ".exe",
+          "id": "java",
+          "label": ".java",
           "isCorrect": false
         },
         {
@@ -241,8 +242,13 @@
           "isCorrect": true
         },
         {
-          "id": "java",
-          "label": ".java",
+          "id": "txt",
+          "label": ".txt",
+          "isCorrect": false
+        },
+        {
+          "id": "exe",
+          "label": ".exe",
           "isCorrect": false
         }
       ],
@@ -254,18 +260,14 @@
           "py": "Juist: `.py` is de standaard extensie voor Python‑broncode.",
           "java": "`.java` is voor Java‑bronbestanden, niet voor Python."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-print-hello-world",
       "type": "single-choice",
       "prompt": "Kijk naar deze Python‑regel:\n\n```python\nprint(\"Hello, World!\")\n```\n\nWat toont de computer effectief wanneer je dit runt?",
       "options": [
-        {
-          "id": "hello-world-no-punct",
-          "label": "Hello World",
-          "isCorrect": false
-        },
         {
           "id": "prints-code",
           "label": "print(\"Hello, World!\")",
@@ -275,6 +277,11 @@
           "id": "hello-world-with-punct",
           "label": "Hello, World!",
           "isCorrect": true
+        },
+        {
+          "id": "hello-world-no-punct",
+          "label": "Hello World",
+          "isCorrect": false
         },
         {
           "id": "error",
@@ -290,13 +297,19 @@
           "hello-world-with-punct": "Juist: `print` stuurt deze tekst naar je scherm.",
           "error": "Hier is geen error: dit is geldige Python."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-repl-or-script",
       "type": "single-choice",
       "prompt": "Je wil snel testen wat `10 / 3` doet in Python, en je hoeft het niet op te slaan. Welke modus is de beste keuze?",
       "options": [
+        {
+          "id": "text-editor",
+          "label": "Het typen in een text editor en het nooit uitvoeren",
+          "isCorrect": false
+        },
         {
           "id": "repl",
           "label": "Interactieve modus (de Python REPL)",
@@ -305,11 +318,6 @@
         {
           "id": "script",
           "label": "Scriptmodus (eerst opslaan in een `.py` bestand)",
-          "isCorrect": false
-        },
-        {
-          "id": "text-editor",
-          "label": "Het typen in een text editor en het nooit uitvoeren",
           "isCorrect": false
         },
         {
@@ -326,7 +334,8 @@
           "text-editor": "Het in een tekstbestand typen zorgt er niet voor dat Python het ook effectief runt.",
           "spreadsheet": "Python‑code hoort in Python, niet in een spreadsheetcel."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-spot-the-error",
@@ -362,7 +371,8 @@
           "missing-space": "Spaties in de string zijn oké; dat laat je programma niet crashen.",
           "wrong-word": "`World` is gewoon tekst; Python maakt het niet uit welke menselijke woorden je gebruikt."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-programming-vs-code-scenario",
@@ -375,11 +385,6 @@
           "isCorrect": false
         },
         {
-          "id": "plan-steps",
-          "label": "Een lijst stappen uitschrijven: vraag een naam, zeg hallo, en voeg later misschien extra features toe.",
-          "isCorrect": true
-        },
-        {
           "id": "save-file",
           "label": "Het bestand opslaan als `test.py`.",
           "isCorrect": false
@@ -388,6 +393,11 @@
           "id": "run-program",
           "label": "Op Run klikken om de output te zien.",
           "isCorrect": false
+        },
+        {
+          "id": "plan-steps",
+          "label": "Een lijst stappen uitschrijven: vraag een naam, zeg hallo, en voeg later misschien extra features toe.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -398,7 +408,8 @@
           "save-file": "Opslaan is belangrijk, maar op zichzelf is het geen programmeren of code.",
           "run-program": "Runnen test je code, maar het is niet het plan‑gedeelte."
         }
-      }
+      },
+      "correct": 3
     }
   ]
 }

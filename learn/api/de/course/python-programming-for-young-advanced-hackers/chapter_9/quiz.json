@@ -10,8 +10,8 @@
       "prompt": "Welche Zeile erstellt korrekt eine Liste mit Hacker-Namen?",
       "options": [
         {
-          "id": "a",
-          "label": "names = \"Alice\", \"Bob\", \"Eve\"",
+          "id": "d",
+          "label": "names = (\"Alice\", \"Bob\", \"Eve\")",
           "isCorrect": false
         },
         {
@@ -20,13 +20,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "names = {\"Alice\", \"Bob\", \"Eve\"}",
+          "id": "a",
+          "label": "names = \"Alice\", \"Bob\", \"Eve\"",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "names = (\"Alice\", \"Bob\", \"Eve\")",
+          "id": "c",
+          "label": "names = {\"Alice\", \"Bob\", \"Eve\"}",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Geschweifte Klammern ohne key:value-Paare erzeugen ein Set, keine Liste.",
           "d": "Runde Klammern erzeugen ein Tuple, keine Liste."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-list-append",
@@ -74,7 +75,8 @@
           "c": "Richtig, tools wird zu ['laptop', 'phone', 'usb'].",
           "d": "`append` verändert die Liste immer, indem es etwas hinzufügt."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-dict-access",
@@ -82,13 +84,13 @@
       "prompt": "Du hast `player = {\"name\": \"Leo\", \"score\": 50}`. Wie bekommst du den score?",
       "options": [
         {
-          "id": "a",
-          "label": "player[0]",
+          "id": "d",
+          "label": "player.score",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "player(\"score\")",
+          "id": "a",
+          "label": "player[0]",
           "isCorrect": false
         },
         {
@@ -97,8 +99,8 @@
           "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "player.score",
+          "id": "b",
+          "label": "player(\"score\")",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Richtig, das liest den Wert unter dem Key 'score' aus.",
           "d": "So eine Punkt-Notation ist nicht die normale Art, mit dicts zu arbeiten."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-tuple-immutable",
@@ -123,11 +126,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "Tuples sind immer länger als Listen.",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "Tuples lassen sich nach dem Erstellen nicht mehr verändern.",
           "isCorrect": true
@@ -135,6 +133,11 @@
         {
           "id": "d",
           "label": "Tuples sind immer leer.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Tuples sind immer länger als Listen.",
           "isCorrect": false
         }
       ],
@@ -146,23 +149,14 @@
           "c": "Richtig, sobald du ein Tuple erstellst, kannst du seine Elemente nicht mehr ändern.",
           "d": "Tuples können viele Elemente haben."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-choose-type",
       "type": "single-choice",
       "prompt": "Du willst Name und Score eines Spielers zusammen speichern und sie über den Namen nachschlagen. Welche Struktur ist am besten?",
       "options": [
-        {
-          "id": "a",
-          "label": "Eine Liste nur mit Namen.",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "Ein Tuple wie (\"Mia\", 10).",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "Ein Dictionary wie {\"name\": \"Mia\", \"score\": 10}.",
@@ -171,6 +165,16 @@
         {
           "id": "d",
           "label": "Ein einzelner String wie \"Mia 10\".",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Eine Liste nur mit Namen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Tuple wie (\"Mia\", 10).",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "Richtig, die Keys 'name' und 'score' labeln die Values eindeutig.",
           "d": "Ein einzelner String ist schwer in Code weiterzuverarbeiten."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

@@ -10,6 +10,11 @@
       "prompt": "Was ist ein Set in Python?",
       "options": [
         {
+          "id": "c",
+          "label": "Ein String, der nur Zahlen enthält.",
+          "isCorrect": false
+        },
+        {
           "id": "a",
           "label": "Eine Liste, die immer sortiert ist.",
           "isCorrect": false
@@ -18,11 +23,6 @@
           "id": "b",
           "label": "Eine Sammlung einzigartiger Elemente ohne garantierte Reihenfolge.",
           "isCorrect": true
-        },
-        {
-          "id": "c",
-          "label": "Ein String, der nur Zahlen enthält.",
-          "isCorrect": false
         },
         {
           "id": "d",
@@ -38,7 +38,8 @@
           "c": "Strings sind Text, keine Sets.",
           "d": "Dictionaries speichern key-value-Paare; das ist etwas anderes als Sets."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-create-set",
@@ -46,9 +47,9 @@
       "prompt": "Welche Zeile erstellt korrekt ein Set mit Dateinamen?",
       "options": [
         {
-          "id": "a",
-          "label": "files = [\"log.txt\", \"data.txt\"]",
-          "isCorrect": false
+          "id": "c",
+          "label": "files = {\"log.txt\", \"data.txt\"}",
+          "isCorrect": true
         },
         {
           "id": "b",
@@ -56,9 +57,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "files = {\"log.txt\", \"data.txt\"}",
-          "isCorrect": true
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
         },
         {
           "id": "d",
@@ -74,7 +75,8 @@
           "c": "Richtig, das erzeugt ein Set mit zwei Dateinamen.",
           "d": "Das ist ein langer String, kein Set."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-remove-duplicates",
@@ -87,11 +89,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "{1, 2, 2, 3}",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "{1, 2, 3}",
           "isCorrect": true
@@ -99,6 +96,11 @@
         {
           "id": "d",
           "label": "(1, 2, 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1, 2, 2, 3}",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Richtig – im Set bleiben nur einzigartige Werte übrig.",
           "d": "Tuples sind ein anderer Typ und entfernen Duplikate nicht automatisch."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-union-intersection",
@@ -118,9 +121,9 @@
       "prompt": "Du hast `a = {1, 2}` und `b = {2, 3}`. Was ist `a & b` (die Schnittmenge)?",
       "options": [
         {
-          "id": "a",
-          "label": "{1, 2, 3}",
-          "isCorrect": false
+          "id": "c",
+          "label": "{2}",
+          "isCorrect": true
         },
         {
           "id": "b",
@@ -128,9 +131,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "{2}",
-          "isCorrect": true
+          "id": "a",
+          "label": "{1, 2, 3}",
+          "isCorrect": false
         },
         {
           "id": "d",
@@ -146,18 +149,14 @@
           "c": "Richtig – 2 ist das einzige Element, das in beiden Sets vorkommt.",
           "d": "Es gibt mindestens ein gemeinsames Element, also ist es kein leeres Set."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-set-vs-list",
       "type": "single-choice",
       "prompt": "Welche Aussage über Sets und Listen stimmt?",
       "options": [
-        {
-          "id": "a",
-          "label": "Listen entfernen Duplikate automatisch, Sets nicht.",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "Sets behalten die Reihenfolge der Elemente, Listen nicht.",
@@ -172,6 +171,11 @@
           "id": "d",
           "label": "Sets enthalten nur einzigartige Elemente; Listen können Duplikate haben.",
           "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "Listen entfernen Duplikate automatisch, Sets nicht.",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "Nur Listen erlauben Duplikate; Sets nicht.",
           "d": "Richtig – das ist der entscheidende Unterschied bei Duplikaten."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

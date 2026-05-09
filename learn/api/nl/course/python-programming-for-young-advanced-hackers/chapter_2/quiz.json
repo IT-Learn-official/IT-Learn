@@ -10,11 +10,6 @@
       "prompt": "In Python, waar lijkt een **variabele** het meest op?",
       "options": [
         {
-          "id": "human-language",
-          "label": "Een taal die mensen spreken, zoals Nederlands of Frans",
-          "isCorrect": false
-        },
-        {
           "id": "named-box",
           "label": "Een doosje met een naam waarin je een waarde bewaart om later te gebruiken",
           "isCorrect": true
@@ -28,6 +23,11 @@
           "id": "keyboard",
           "label": "Een stuk computerhardware, zoals een toetsenbord",
           "isCorrect": false
+        },
+        {
+          "id": "human-language",
+          "label": "Een taal die mensen spreken, zoals Nederlands of Frans",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -38,7 +38,8 @@
           "whole-program": "Een programma bevat veel dingen, waaronder variabelen, maar het is niet hetzelfde.",
           "keyboard": "Hardware is het fysieke spul dat je kan aanraken; een variabele leeft alleen in het geheugen van je programma."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-int-vs-float",
@@ -46,14 +47,14 @@
       "prompt": "Welke hiervan is een **float** in Python?",
       "options": [
         {
-          "id": "seven",
-          "label": "7",
-          "isCorrect": false
-        },
-        {
           "id": "three-point-zero",
           "label": "3.0",
           "isCorrect": true
+        },
+        {
+          "id": "seven",
+          "label": "7",
+          "isCorrect": false
         },
         {
           "id": "minus-five",
@@ -74,13 +75,24 @@
           "minus-five": "-5 is nog altijd een heel getal, dus een int.",
           "forty-two": "42 is een heel getal (int), geen float."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-variable-update",
       "type": "single-choice",
       "prompt": "Wat zal deze code printen?\n\n```python\ncoins = 5\ncoins = coins + 2\nprint(coins)\n```",
       "options": [
+        {
+          "id": "coins-plus-two",
+          "label": "coins + 2",
+          "isCorrect": false
+        },
+        {
+          "id": "two",
+          "label": "2",
+          "isCorrect": false
+        },
         {
           "id": "five",
           "label": "5",
@@ -90,16 +102,6 @@
           "id": "seven",
           "label": "7",
           "isCorrect": true
-        },
-        {
-          "id": "two",
-          "label": "2",
-          "isCorrect": false
-        },
-        {
-          "id": "coins-plus-two",
-          "label": "coins + 2",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "two": "2 is wat je optelt, niet de eindwaarde.",
           "coins-plus-two": "Python print het resultaat, niet de tekst van de expressie."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-division-vs-int-division",
@@ -118,24 +121,24 @@
       "prompt": "Wat is het resultaat van `7 // 2` in Python?",
       "options": [
         {
-          "id": "three-point-five",
-          "label": "3.5",
+          "id": "two",
+          "label": "2",
           "isCorrect": false
         },
         {
-          "id": "three",
-          "label": "3",
-          "isCorrect": true
-        },
-        {
-          "id": "two",
-          "label": "2",
+          "id": "three-point-five",
+          "label": "3.5",
           "isCorrect": false
         },
         {
           "id": "error",
           "label": "Het geeft een foutmelding.",
           "isCorrect": false
+        },
+        {
+          "id": "three",
+          "label": "3",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -146,23 +149,14 @@
           "two": "2 is te klein; 2 * 2 is maar 4, niet dicht genoeg bij 7.",
           "error": "`//` is een geldige operator; dit geeft hier geen fout."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-modulo-meaning",
       "type": "single-choice",
       "prompt": "Je voert `10 % 3` uit in Python. Wat betekent dat, en wat is het resultaat?",
       "options": [
-        {
-          "id": "exact-division",
-          "label": "Het is 10 gedeeld door 3 exact, dat is 3.3333...",
-          "isCorrect": false
-        },
-        {
-          "id": "times",
-          "label": "Het is 10 keer 3, dat is 30.",
-          "isCorrect": false
-        },
         {
           "id": "remainder-one",
           "label": "Het is de rest wanneer 10 door 3 gedeeld wordt, dat is 1.",
@@ -171,6 +165,16 @@
         {
           "id": "always-zero",
           "label": "Het is altijd 0, voor om het even welke getallen.",
+          "isCorrect": false
+        },
+        {
+          "id": "times",
+          "label": "Het is 10 keer 3, dat is 30.",
+          "isCorrect": false
+        },
+        {
+          "id": "exact-division",
+          "label": "Het is 10 gedeeld door 3 exact, dat is 3.3333...",
           "isCorrect": false
         }
       ],
@@ -182,18 +186,14 @@
           "remainder-one": "Juist - 3 past drie keer in 10 (3 * 3 = 9) met 1 over.",
           "always-zero": "De rest is alleen 0 als de deling exact uitkomt, zoals `10 % 5`."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-precedence",
       "type": "single-choice",
       "prompt": "Wat zal Python printen?\n\n```python\nprint(2 + 3 * 4)\n```",
       "options": [
-        {
-          "id": "fourteen",
-          "label": "14",
-          "isCorrect": true
-        },
         {
           "id": "twenty",
           "label": "20",
@@ -203,6 +203,11 @@
           "id": "twenty-four",
           "label": "24",
           "isCorrect": false
+        },
+        {
+          "id": "fourteen",
+          "label": "14",
+          "isCorrect": true
         },
         {
           "id": "string-expression",
@@ -218,7 +223,8 @@
           "twenty-four": "24 zou 6 * 4 zijn; dat staat hier niet.",
           "string-expression": "Python print het *resultaat*, niet de expressie zelf."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-parentheses",
@@ -236,13 +242,13 @@
           "isCorrect": true
         },
         {
-          "id": "weak-multiply",
-          "label": "Omdat `*` zwakker is dan `+` in Python.",
+          "id": "print-changes",
+          "label": "Omdat `print` verandert hoe wiskunde werkt.",
           "isCorrect": false
         },
         {
-          "id": "print-changes",
-          "label": "Omdat `print` verandert hoe wiskunde werkt.",
+          "id": "weak-multiply",
+          "label": "Omdat `*` zwakker is dan `+` in Python.",
           "isCorrect": false
         }
       ],
@@ -254,7 +260,8 @@
           "weak-multiply": "Vermenigvuldiging is niet zwakker dan optelling; ze volgen gewoon de normale wiskunderegels.",
           "print-changes": "`print` toont alleen het resultaat; het verandert niet hoe de berekening gebeurt."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-mixing-text-and-numbers",
@@ -262,13 +269,13 @@
       "prompt": "Wat gebeurt er als je deze code runt?\n\n```python\nage = 12\nprint(\"You are \" + age)\n```",
       "options": [
         {
-          "id": "prints-age-text",
-          "label": "Het print `You are age`.",
+          "id": "crash-computer",
+          "label": "Het laat je hele computer crashen.",
           "isCorrect": false
         },
         {
-          "id": "prints-you-are-12",
-          "label": "Het print `You are 12`.",
+          "id": "prints-age-text",
+          "label": "Het print `You are age`.",
           "isCorrect": false
         },
         {
@@ -277,8 +284,8 @@
           "isCorrect": true
         },
         {
-          "id": "crash-computer",
-          "label": "Het laat je hele computer crashen.",
+          "id": "prints-you-are-12",
+          "label": "Het print `You are 12`.",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "type-error": "Juist - Python klaagt omdat `age` een int is, geen string.",
           "crash-computer": "Python-fouten maken je computer niet kapot; ze stoppen gewoon het programma."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-typo-bug",
@@ -298,8 +306,13 @@
       "prompt": "Bekijk deze code die crasht:\n\n```python\nscore = 10\nprint(socre)\n```\n\nWat is de belangrijkste bug?",
       "options": [
         {
-          "id": "missing-quotes",
-          "label": "Het woord score moet tussen aanhalingstekens staan.",
+          "id": "missing-parenthesis",
+          "label": "Er ontbreekt een haakje.",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong-operator",
+          "label": "Het gebruikt de verkeerde rekenoperator.",
           "isCorrect": false
         },
         {
@@ -308,13 +321,8 @@
           "isCorrect": true
         },
         {
-          "id": "wrong-operator",
-          "label": "Het gebruikt de verkeerde rekenoperator.",
-          "isCorrect": false
-        },
-        {
-          "id": "missing-parenthesis",
-          "label": "Er ontbreekt een haakje.",
+          "id": "missing-quotes",
+          "label": "Het woord score moet tussen aanhalingstekens staan.",
           "isCorrect": false
         }
       ],
@@ -326,7 +334,8 @@
           "wrong-operator": "Er staat geen rekenoperator in dit stukje code.",
           "missing-parenthesis": "De haakjes rond `socre` zijn oké; het probleem is de spelling."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-fix-parentheses-bug",
@@ -339,6 +348,11 @@
           "isCorrect": false
         },
         {
+          "id": "use-int-division",
+          "label": "Verander het naar `result = 10 - 2 // 3`.",
+          "isCorrect": false
+        },
+        {
           "id": "change-to-divide",
           "label": "Verander het naar `result = 10 - 2 / 3`.",
           "isCorrect": false
@@ -347,11 +361,6 @@
           "id": "use-parentheses",
           "label": "Verander het naar `result = (10 - 2) * 3`.",
           "isCorrect": true
-        },
-        {
-          "id": "use-int-division",
-          "label": "Verander het naar `result = 10 - 2 // 3`.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -362,7 +371,8 @@
           "use-parentheses": "Juist - `(10 - 2) * 3` is exact wat je vriend bedoelde.",
           "use-int-division": "`//` verandert hoe deling werkt, maar dat was hier nooit het echte probleem."
         }
-      }
+      },
+      "correct": 3
     }
   ]
 }

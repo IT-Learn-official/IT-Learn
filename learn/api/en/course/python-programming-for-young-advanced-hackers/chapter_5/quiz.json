@@ -10,13 +10,8 @@
       "prompt": "What does 'execution flow' mean in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "The order in which Python runs your code, line by line.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "The speed at which your computer runs.",
+          "id": "d",
+          "label": "A type of variable in Python.",
           "isCorrect": false
         },
         {
@@ -25,8 +20,13 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "A type of variable in Python.",
+          "id": "a",
+          "label": "The order in which Python runs your code, line by line.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "The speed at which your computer runs.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Printing is just one part of execution, not the flow itself.",
           "d": "There is no variable type called 'execution flow'."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-tracing-variables",
@@ -46,9 +47,9 @@
       "prompt": "What does it mean to 'trace' a variable in your code?",
       "options": [
         {
-          "id": "a",
-          "label": "Follow how its value changes as the program runs.",
-          "isCorrect": true
+          "id": "d",
+          "label": "Make it print in all capital letters.",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -56,13 +57,13 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Delete it from your program.",
-          "isCorrect": false
+          "id": "a",
+          "label": "Follow how its value changes as the program runs.",
+          "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "Make it print in all capital letters.",
+          "id": "c",
+          "label": "Delete it from your program.",
           "isCorrect": false
         }
       ],
@@ -74,23 +75,14 @@
           "c": "Deleting is not tracing.",
           "d": "Printing in capitals is not tracing."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-print-debugging",
       "type": "single-choice",
       "prompt": "Why do programmers use print statements when debugging?",
       "options": [
-        {
-          "id": "a",
-          "label": "To see what is happening inside the program as it runs.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "To make the program run faster.",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "To delete variables.",
@@ -99,6 +91,16 @@
         {
           "id": "d",
           "label": "To change the color of the text.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "To see what is happening inside the program as it runs.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To make the program run faster.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Printing does not delete anything.",
           "d": "Printing does not change text color in Python's console."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-fix-the-error",
@@ -123,13 +126,13 @@
           "isCorrect": true
         },
         {
-          "id": "b",
-          "label": "Delete all your code and start over.",
+          "id": "c",
+          "label": "Ignore the error and keep running the code.",
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Ignore the error and keep running the code.",
+          "id": "b",
+          "label": "Delete all your code and start over.",
           "isCorrect": false
         },
         {
@@ -146,7 +149,8 @@
           "c": "Ignoring errors won't fix your code.",
           "d": "Language settings are not related to this error."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

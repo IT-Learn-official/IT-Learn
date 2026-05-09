@@ -15,11 +15,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "Text inside quotes, like \"hello\".",
-          "isCorrect": true
-        },
-        {
           "id": "c",
           "label": "A secret code Python cannot read.",
           "isCorrect": false
@@ -28,6 +23,11 @@
           "id": "d",
           "label": "A list of only numbers.",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Text inside quotes, like \"hello\".",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,18 +38,14 @@
           "c": "Python understands strings very well.",
           "d": "Lists can store many types, but that's different from strings."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-indexing",
       "type": "single-choice",
       "prompt": "If `text = \"HACK\"`, what does `text[1]` return?",
       "options": [
-        {
-          "id": "a",
-          "label": "\"H\"",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "\"HA\"",
@@ -59,6 +55,11 @@
           "id": "c",
           "label": "\"A\"",
           "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "\"H\"",
+          "isCorrect": false
         },
         {
           "id": "d",
@@ -74,7 +75,8 @@
           "c": "Correct, 'A' is the character at index 1.",
           "d": "'K' is the last character, index 3."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-slicing",
@@ -82,23 +84,23 @@
       "prompt": "If `word = \"PYTHON\"`, what is `word[0:3]`?",
       "options": [
         {
-          "id": "a",
-          "label": "\"PYTH\"",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "\"P\"",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "\"PYT\"",
           "isCorrect": true
         },
         {
+          "id": "a",
+          "label": "\"PYTH\"",
+          "isCorrect": false
+        },
+        {
           "id": "d",
           "label": "\"HON\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"P\"",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Correct, positions 0, 1, and 2 spell 'PYT'.",
           "d": "Those are the last three letters, from a different slice."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-upper-method",
@@ -118,13 +121,13 @@
       "prompt": "What does \"hacker\".upper() return?",
       "options": [
         {
-          "id": "a",
-          "label": "\"hacker\"",
+          "id": "d",
+          "label": "\"upper\"",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "\"Hacker\"",
+          "id": "a",
+          "label": "\"hacker\"",
           "isCorrect": false
         },
         {
@@ -133,8 +136,8 @@
           "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "\"upper\"",
+          "id": "b",
+          "label": "\"Hacker\"",
           "isCorrect": false
         }
       ],
@@ -146,13 +149,19 @@
           "c": "Correct, all letters become uppercase.",
           "d": "This is just the word 'upper', not the result of the method."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-fstring",
       "type": "single-choice",
       "prompt": "You have `name = \"Mia\"`. Which line correctly uses an f-string to print `Hello, Mia!`?",
       "options": [
+        {
+          "id": "c",
+          "label": "print(\"Hello, \" + name + \"!\")",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "print(\"Hello, {name}!\")",
@@ -162,11 +171,6 @@
           "id": "b",
           "label": "print(f\"Hello, {name}!\")",
           "isCorrect": true
-        },
-        {
-          "id": "c",
-          "label": "print(\"Hello, \" + name + \"!\")",
-          "isCorrect": false
         },
         {
           "id": "d",
@@ -182,7 +186,8 @@
           "c": "This works, but it is not an f-string.",
           "d": "Here \"name\" is inside quotes, so it is just text, not the variable."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

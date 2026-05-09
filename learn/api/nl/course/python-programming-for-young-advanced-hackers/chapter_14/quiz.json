@@ -10,13 +10,8 @@
       "prompt": "Welke list comprehension maakt op de juiste manier een lijst met kwadraten van de getallen in nums?",
       "options": [
         {
-          "id": "a",
-          "label": "squares = [n ** 2 for n in nums]",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "squares = (n ** 2 in nums)",
+          "id": "d",
+          "label": "squares = n ** 2 for n in nums",
           "isCorrect": false
         },
         {
@@ -25,8 +20,13 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "squares = n ** 2 for n in nums",
+          "id": "a",
+          "label": "squares = [n ** 2 for n in nums]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "squares = (n ** 2 in nums)",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "De onderdelen staan in de verkeerde volgorde en nums wordt fout gebruikt.",
           "d": "De vierkante haakjes ontbreken, dus het is geen list comprehension."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-list-comp-filter",
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "[0, 0, 0, 0, 0]",
+          "id": "d",
+          "label": "[(1, 2), (3, 4), (5,)]",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "[(1, 2), (3, 4), (5,)]",
+          "id": "c",
+          "label": "[0, 0, 0, 0, 0]",
           "isCorrect": false
         }
       ],
@@ -74,13 +75,19 @@
           "c": "Niets in de code maakt van waarden nullen.",
           "d": "Deze structuur past totaal niet bij de list comprehension."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-set-comp-unique",
       "type": "single-choice",
       "prompt": "Wat is het belangrijkste verschil tussen een list comprehension en een set comprehension?",
       "options": [
+        {
+          "id": "c",
+          "label": "Set comprehensions zijn altijd sneller dan list comprehensions.",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "Set comprehensions kunnen alleen getallen bevatten.",
@@ -90,11 +97,6 @@
           "id": "b",
           "label": "Set comprehensions verwijderen automatisch dubbele waarden.",
           "isCorrect": true
-        },
-        {
-          "id": "c",
-          "label": "Set comprehensions zijn altijd sneller dan list comprehensions.",
-          "isCorrect": false
         },
         {
           "id": "d",
@@ -110,7 +112,8 @@
           "c": "Snelheid hangt af van de situatie; dit is niet altijd waar.",
           "d": "Je kan ook if-conditions gebruiken in set comprehensions."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-zip-shortest",
@@ -118,8 +121,13 @@
       "prompt": "Wat geeft list(zip([1, 2, 3], ['a', 'b'])) terug?",
       "options": [
         {
-          "id": "a",
-          "label": "[(1, 'a'), (2, 'b'), (3, None)]",
+          "id": "d",
+          "label": "[1, 2, 3, 'a', 'b']",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "[(1, 2, 3, 'a', 'b')]",
           "isCorrect": false
         },
         {
@@ -128,13 +136,8 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "[(1, 2, 3, 'a', 'b')]",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "[1, 2, 3, 'a', 'b']",
+          "id": "a",
+          "label": "[(1, 'a'), (2, 'b'), (3, None)]",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Dat zou één tuple met alle elementen zijn, maar dat is niet wat zip doet.",
           "d": "Dat is gewoon een platte lijst, geen paren."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-map-vs-comp",
@@ -154,13 +158,8 @@
       "prompt": "Welke twee expressies lijken het meest op elkaar in wat ze doen?",
       "options": [
         {
-          "id": "a",
-          "label": "list(map(str.upper, names)) and [name.upper() for name in names]",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "list(filter(str.upper, names)) and [name.upper() for name in names]",
+          "id": "d",
+          "label": "[name for name in names] and [len(name) for name in names]",
           "isCorrect": false
         },
         {
@@ -169,8 +168,13 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "[name for name in names] and [len(name) for name in names]",
+          "id": "a",
+          "label": "list(map(str.upper, names)) and [name.upper() for name in names]",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "list(filter(str.upper, names)) and [name.upper() for name in names]",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "names.upper() werkt niet op een lijst; upper() is een stringmethode.",
           "d": "Deze comprehensions doen iets anders (identiteit vs lengte)."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

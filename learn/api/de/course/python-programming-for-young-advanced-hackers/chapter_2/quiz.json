@@ -10,14 +10,14 @@
       "prompt": "Womit ist eine **Variable** in Python am ehesten vergleichbar?",
       "options": [
         {
-          "id": "human-language",
-          "label": "Eine von Menschen gesprochene Sprache, wie Englisch oder Französisch",
-          "isCorrect": false
-        },
-        {
           "id": "named-box",
           "label": "Eine beschriftete Box, in der du einen Wert speicherst, um ihn später zu verwenden",
           "isCorrect": true
+        },
+        {
+          "id": "keyboard",
+          "label": "Ein Stück Computerhardware, wie die Tastatur",
+          "isCorrect": false
         },
         {
           "id": "whole-program",
@@ -25,8 +25,8 @@
           "isCorrect": false
         },
         {
-          "id": "keyboard",
-          "label": "Ein Stück Computerhardware, wie die Tastatur",
+          "id": "human-language",
+          "label": "Eine von Menschen gesprochene Sprache, wie Englisch oder Französisch",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "whole-program": "Ein Programm enthält viele Dinge, unter anderem Variablen - aber es ist nicht dasselbe.",
           "keyboard": "Hardware ist das Physische, das du angreifen kannst; eine Variable lebt nur im Speicher deines Programms."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-int-vs-float",
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "minus-five",
-          "label": "-5",
+          "id": "forty-two",
+          "label": "42",
           "isCorrect": false
         },
         {
-          "id": "forty-two",
-          "label": "42",
+          "id": "minus-five",
+          "label": "-5",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "minus-five": "-5 ist immer noch eine ganze Zahl, also ein int.",
           "forty-two": "42 ist eine ganze Zahl (int), kein float."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-variable-update",
@@ -87,11 +89,6 @@
           "isCorrect": false
         },
         {
-          "id": "seven",
-          "label": "7",
-          "isCorrect": true
-        },
-        {
           "id": "two",
           "label": "2",
           "isCorrect": false
@@ -100,6 +97,11 @@
           "id": "coins-plus-two",
           "label": "coins + 2",
           "isCorrect": false
+        },
+        {
+          "id": "seven",
+          "label": "7",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "two": "2 ist das, was du addierst, nicht der Endwert.",
           "coins-plus-two": "Python gibt das Ergebnis aus, nicht den Text der Expression."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-division-vs-int-division",
@@ -128,13 +131,13 @@
           "isCorrect": true
         },
         {
-          "id": "two",
-          "label": "2",
+          "id": "error",
+          "label": "Es gibt einen Fehler.",
           "isCorrect": false
         },
         {
-          "id": "error",
-          "label": "Es gibt einen Fehler.",
+          "id": "two",
+          "label": "2",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "two": "2 ist zu klein; 2 * 2 ist nur 4, nicht nahe genug an 7.",
           "error": "`//` ist ein gültiger Operator; das verursacht hier keinen Fehler."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-modulo-meaning",
@@ -159,11 +163,6 @@
           "isCorrect": false
         },
         {
-          "id": "times",
-          "label": "Das ist 10 mal 3, also 30.",
-          "isCorrect": false
-        },
-        {
           "id": "remainder-one",
           "label": "Das ist der Rest, wenn 10 durch 3 geteilt wird, also 1.",
           "isCorrect": true
@@ -171,6 +170,11 @@
         {
           "id": "always-zero",
           "label": "Das ist immer 0, bei allen Zahlen.",
+          "isCorrect": false
+        },
+        {
+          "id": "times",
+          "label": "Das ist 10 mal 3, also 30.",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "remainder-one": "Richtig - 3 passt dreimal in 10 (3 * 3 = 9) und 1 bleibt übrig.",
           "always-zero": "Der Rest ist nur dann 0, wenn die Division aufgeht, z. B. `10 % 5`."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-precedence",
@@ -190,23 +195,23 @@
       "prompt": "Was wird Python ausgeben?\n\n```python\nprint(2 + 3 * 4)\n```",
       "options": [
         {
-          "id": "fourteen",
-          "label": "14",
-          "isCorrect": true
-        },
-        {
-          "id": "twenty",
-          "label": "20",
-          "isCorrect": false
-        },
-        {
           "id": "twenty-four",
           "label": "24",
           "isCorrect": false
         },
         {
+          "id": "fourteen",
+          "label": "14",
+          "isCorrect": true
+        },
+        {
           "id": "string-expression",
           "label": "Den Text `2 + 3 * 4`",
+          "isCorrect": false
+        },
+        {
+          "id": "twenty",
+          "label": "20",
           "isCorrect": false
         }
       ],
@@ -218,7 +223,8 @@
           "twenty-four": "24 wäre 6 * 4; das steht hier aber nicht.",
           "string-expression": "Python gibt das *Ergebnis* aus, nicht die Expression selbst."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-parentheses",
@@ -226,14 +232,14 @@
       "prompt": "Dein Freund schreibt diesen Code:\n\n```python\nprint((2 + 3) * 4)\n```\n\nWarum ist dieses Ergebnis anders als `2 + 3 * 4`?",
       "options": [
         {
-          "id": "spaces",
-          "label": "Weil mehr Leerzeichen im Code sind.",
-          "isCorrect": false
-        },
-        {
           "id": "parentheses-first",
           "label": "Weil Klammern Python zuerst `2 + 3` rechnen lassen und dann mit 4 multiplizieren.",
           "isCorrect": true
+        },
+        {
+          "id": "spaces",
+          "label": "Weil mehr Leerzeichen im Code sind.",
+          "isCorrect": false
         },
         {
           "id": "weak-multiply",
@@ -254,7 +260,8 @@
           "weak-multiply": "Multiplikation ist nicht schwächer als Addition; sie folgen einfach den normalen Rechenregeln.",
           "print-changes": "`print` zeigt nur das Ergebnis; es ändert nicht, wie gerechnet wird."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-mixing-text-and-numbers",
@@ -262,9 +269,9 @@
       "prompt": "Was passiert, wenn du diesen Code ausführst?\n\n```python\nage = 12\nprint(\"You are \" + age)\n```",
       "options": [
         {
-          "id": "prints-age-text",
-          "label": "Es gibt `You are age` aus.",
-          "isCorrect": false
+          "id": "type-error",
+          "label": "Es gibt einen Fehler, weil du einen String und eine Zahl addierst.",
+          "isCorrect": true
         },
         {
           "id": "prints-you-are-12",
@@ -272,13 +279,13 @@
           "isCorrect": false
         },
         {
-          "id": "type-error",
-          "label": "Es gibt einen Fehler, weil du einen String und eine Zahl addierst.",
-          "isCorrect": true
-        },
-        {
           "id": "crash-computer",
           "label": "Es lässt den ganzen Computer abstürzen.",
+          "isCorrect": false
+        },
+        {
+          "id": "prints-age-text",
+          "label": "Es gibt `You are age` aus.",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "type-error": "Richtig - Python meckert, weil `age` ein int ist und kein String.",
           "crash-computer": "Python-Fehler zerstören deinen Computer nicht; sie stoppen nur das Programm."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-typo-bug",
@@ -298,8 +306,8 @@
       "prompt": "Sieh dir diesen Code an, der abstürzt:\n\n```python\nscore = 10\nprint(socre)\n```\n\nWas ist der Hauptfehler?",
       "options": [
         {
-          "id": "missing-quotes",
-          "label": "Das Wort score sollte in Anführungszeichen stehen.",
+          "id": "missing-parenthesis",
+          "label": "Es fehlt eine Klammer.",
           "isCorrect": false
         },
         {
@@ -308,13 +316,13 @@
           "isCorrect": true
         },
         {
-          "id": "wrong-operator",
-          "label": "Es wird der falsche Rechenoperator verwendet.",
+          "id": "missing-quotes",
+          "label": "Das Wort score sollte in Anführungszeichen stehen.",
           "isCorrect": false
         },
         {
-          "id": "missing-parenthesis",
-          "label": "Es fehlt eine Klammer.",
+          "id": "wrong-operator",
+          "label": "Es wird der falsche Rechenoperator verwendet.",
           "isCorrect": false
         }
       ],
@@ -326,7 +334,8 @@
           "wrong-operator": "In diesem Snippet gibt es keinen Rechenoperator.",
           "missing-parenthesis": "Die Klammern um `socre` sind korrekt; das Problem ist die Schreibweise."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-fix-parentheses-bug",
@@ -334,24 +343,24 @@
       "prompt": "Du hast diesen Code:\n\n```python\nresult = 10 - 2 * 3\nprint(result)\n```\n\nDein Freund hat 24 erwartet, als ob die Expression `(10 - 2) * 3` wäre. Wie kannst du den Code so ändern, dass er dem entspricht?",
       "options": [
         {
-          "id": "change-to-plus",
-          "label": "Ändere es zu `result = 10 + 2 * 3`.",
+          "id": "change-to-divide",
+          "label": "Ändere es zu `result = 10 - 2 / 3`.",
           "isCorrect": false
         },
         {
-          "id": "change-to-divide",
-          "label": "Ändere es zu `result = 10 - 2 / 3`.",
+          "id": "use-int-division",
+          "label": "Ändere es zu `result = 10 - 2 // 3`.",
+          "isCorrect": false
+        },
+        {
+          "id": "change-to-plus",
+          "label": "Ändere es zu `result = 10 + 2 * 3`.",
           "isCorrect": false
         },
         {
           "id": "use-parentheses",
           "label": "Ändere es zu `result = (10 - 2) * 3`.",
           "isCorrect": true
-        },
-        {
-          "id": "use-int-division",
-          "label": "Ändere es zu `result = 10 - 2 // 3`.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -362,7 +371,8 @@
           "use-parentheses": "Richtig - `(10 - 2) * 3` ist genau das, was dein Freund gemeint hat.",
           "use-int-division": "`//` ändert, wie Division funktioniert, aber das war hier nie das eigentliche Problem."
         }
-      }
+      },
+      "correct": 3
     }
   ]
 }
