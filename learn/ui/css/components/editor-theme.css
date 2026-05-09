@@ -11,7 +11,9 @@
   font-family: var(--font-family-mono, "JetBrains Mono", monospace) !important;
 }
 
-.ace_gutter {
+.markdown-ace-editor .ace_gutter,
+.practice-editor .ace_gutter,
+.projects-ide-editor .ace_gutter {
   background: var(--panel) !important;
   color: var(--muted) !important;
   box-shadow: none !important;
@@ -19,12 +21,16 @@
 }
 
 /* Fix for the "ugly white" highlight on active line number */
-.ace_gutter-active-line {
+.markdown-ace-editor .ace_gutter-active-line,
+.practice-editor .ace_gutter-active-line,
+.projects-ide-editor .ace_gutter-active-line {
   background-color: rgba(99, 102, 241, 0.15) !important;
   color: #fff !important;
 }
 
-.ace_editor .ace_marker-layer .ace_selection {
+.markdown-ace-editor .ace_editor .ace_marker-layer .ace_selection,
+.practice-editor .ace_editor .ace_marker-layer .ace_selection,
+.projects-ide-editor .ace_editor .ace_marker-layer .ace_selection {
   background: rgba(99, 102, 241, 0.3) !important;
 }
 
@@ -43,63 +49,138 @@
   background: var(--panel) !important;
 }
 
-.ace_cursor {
+.markdown-ace-editor .ace_cursor,
+.practice-editor .ace_cursor,
+.projects-ide-editor .ace_cursor {
   color: #6366f1 !important;
 }
 
-.ace_gutter-cell {
+.markdown-ace-editor .ace_gutter-cell,
+.practice-editor .ace_gutter-cell,
+.projects-ide-editor .ace_gutter-cell {
   font-weight: var(--fw-medium);
 }
 
-.ace_marker-layer .ace_active-line {
+.markdown-ace-editor .ace_marker-layer .ace_active-line,
+.practice-editor .ace_marker-layer .ace_active-line,
+.projects-ide-editor .ace_marker-layer .ace_active-line {
   background: rgba(99, 102, 241, 0.08) !important;
 }
 
 /* Ensure syntax highlighting colors are vivid enough */
-.ace_keyword { color: #c678dd !important; }
-.ace_string { color: #98c379 !important; }
-.ace_variable { color: #e06c75 !important; }
-.ace_constant.ace_numeric { color: #d19a66 !important; }
-.ace_function { color: #61afef !important; }
-.ace_comment { color: #5c6370 !important; font-style: italic !important; }
+.markdown-ace-editor .ace_keyword,
+.practice-editor .ace_keyword,
+.projects-ide-editor .ace_keyword { color: #c678dd !important; }
+
+.markdown-ace-editor .ace_string,
+.practice-editor .ace_string,
+.projects-ide-editor .ace_string { color: #98c379 !important; }
+
+.markdown-ace-editor .ace_variable,
+.practice-editor .ace_variable,
+.projects-ide-editor .ace_variable { color: #e06c75 !important; }
+
+.markdown-ace-editor .ace_constant.ace_numeric,
+.practice-editor .ace_constant.ace_numeric,
+.projects-ide-editor .ace_constant.ace_numeric { color: #d19a66 !important; }
+
+.markdown-ace-editor .ace_function,
+.practice-editor .ace_function,
+.projects-ide-editor .ace_function { color: #61afef !important; }
+
+.markdown-ace-editor .ace_comment,
+.practice-editor .ace_comment,
+.projects-ide-editor .ace_comment { color: #5c6370 !important; font-style: italic !important; }
 
 /* Improved contrast for HTML/XML tags and attributes */
-.ace_tag { color: #ef596f !important; } /* Brighter red/pink for tags like <main> */
-.ace_attribute-name { color: #d19a66 !important; } /* Orange for attributes */
-.ace_attribute-value { color: #98c379 !important; } /* Green for attribute values */
-.ace_meta.ace_tag { color: #ef596f !important; }
-.ace_punctuation.ace_tag { color: #e5e7eb !important; } /* Clean off-white for < and > brackets */
+.markdown-ace-editor .ace_tag,
+.practice-editor .ace_tag,
+.projects-ide-editor .ace_tag { color: #ef596f !important; } /* Brighter red/pink for tags like <main> */
+
+.markdown-ace-editor .ace_attribute-name,
+.practice-editor .ace_attribute-name,
+.projects-ide-editor .ace_attribute-name { color: #d19a66 !important; } /* Orange for attributes */
+
+.markdown-ace-editor .ace_attribute-value,
+.practice-editor .ace_attribute-value,
+.projects-ide-editor .ace_attribute-value { color: #98c379 !important; } /* Green for attribute values */
+
+.markdown-ace-editor .ace_meta.ace_tag,
+.practice-editor .ace_meta.ace_tag,
+.projects-ide-editor .ace_meta.ace_tag { color: #ef596f !important; }
+
+.markdown-ace-editor .ace_punctuation.ace_tag,
+.practice-editor .ace_punctuation.ace_tag,
+.projects-ide-editor .ace_punctuation.ace_tag { color: #e5e7eb !important; } /* Clean off-white for < and > brackets */
 
 /* JavaScript / Python / General language enhancements */
-.ace_storage.ace_type { color: #c678dd !important; font-style: italic !important; } /* var, let, const, function, def */
-.ace_constant.ace_language { color: #d19a66 !important; font-weight: bold !important; } /* true, false, null */
-.ace_support.ace_function { color: #56b6c2 !important; } /* console.log, print, etc */
-.ace_support.ace_class, .ace_support.ace_type { color: #e5c07b !important; } /* Built-in classes */
+.markdown-ace-editor .ace_storage.ace_type,
+.practice-editor .ace_storage.ace_type,
+.projects-ide-editor .ace_storage.ace_type { color: #c678dd !important; font-style: italic !important; } /* var, let, const, function, def */
+
+.markdown-ace-editor .ace_constant.ace_language,
+.practice-editor .ace_constant.ace_language,
+.projects-ide-editor .ace_constant.ace_language { color: #d19a66 !important; font-weight: bold !important; } /* true, false, null */
+
+.markdown-ace-editor .ace_support.ace_function,
+.practice-editor .ace_support.ace_function,
+.projects-ide-editor .ace_support.ace_function { color: #56b6c2 !important; } /* console.log, print, etc */
+
+.markdown-ace-editor .ace_support.ace_class,
+.practice-editor .ace_support.ace_class,
+.projects-ide-editor .ace_support.ace_class,
+.markdown-ace-editor .ace_support.ace_type,
+.practice-editor .ace_support.ace_type,
+.projects-ide-editor .ace_support.ace_type { color: #e5c07b !important; } /* Built-in classes */
 
 /* Specific Function & Variable declarations */
-.ace_entity.ace_name.ace_function { color: #61afef !important; } /* Function declaration names */
-.ace_variable { color: #e06c75 !important; } /* Variables */
-.ace_variable.ace_parameter { color: #d19a66 !important; font-style: italic !important; } /* Function parameters */
-.ace_identifier { color: #c7d2fe !important; } /* Soft indigo for default identifiers */
-.ace_entity.ace_name.ace_tag { color: #ef596f !important; } /* HTML tags or CSS selectors */
+.markdown-ace-editor .ace_entity.ace_name.ace_function,
+.practice-editor .ace_entity.ace_name.ace_function,
+.projects-ide-editor .ace_entity.ace_name.ace_function { color: #61afef !important; } /* Function declaration names */
+
+.markdown-ace-editor .ace_variable.ace_parameter,
+.practice-editor .ace_variable.ace_parameter,
+.projects-ide-editor .ace_variable.ace_parameter { color: #d19a66 !important; font-style: italic !important; } /* Function parameters */
+
+.markdown-ace-editor .ace_identifier,
+.practice-editor .ace_identifier,
+.projects-ide-editor .ace_identifier { color: #c7d2fe !important; } /* Soft indigo for default identifiers */
+
+.markdown-ace-editor .ace_entity.ace_name.ace_tag,
+.practice-editor .ace_entity.ace_name.ace_tag,
+.projects-ide-editor .ace_entity.ace_name.ace_tag { color: #ef596f !important; } /* HTML tags or CSS selectors */
 
 
 /* CSS Specific Enhancements */
-.ace_entity.ace_name.ace_tag { color: #ef596f !important; } /* CSS Selectors (h1, div) */
-.ace_entity.ace_other.ace_attribute-name { color: #d19a66 !important; } /* CSS Classes/IDs (.my-class, #my-id) */
-.ace_support.ace_type.ace_property-name { color: #c7d2fe !important; } /* Soft indigo for CSS Properties */
-.ace_support.ace_constant.ace_property-value { color: #98c379 !important; } /* CSS Property values */
-.ace_constant.ace_color { color: #56b6c2 !important; } /* #fff, rgb() colors */
+.markdown-ace-editor .ace_entity.ace_other.ace_attribute-name,
+.practice-editor .ace_entity.ace_other.ace_attribute-name,
+.projects-ide-editor .ace_entity.ace_other.ace_attribute-name { color: #d19a66 !important; } /* CSS Classes/IDs (.my-class, #my-id) */
+
+.markdown-ace-editor .ace_support.ace_type.ace_property-name,
+.practice-editor .ace_support.ace_type.ace_property-name,
+.projects-ide-editor .ace_support.ace_type.ace_property-name { color: #c7d2fe !important; } /* Soft indigo for CSS Properties */
+
+.markdown-ace-editor .ace_support.ace_constant.ace_property-value,
+.practice-editor .ace_support.ace_constant.ace_property-value,
+.projects-ide-editor .ace_support.ace_constant.ace_property-value { color: #98c379 !important; } /* CSS Property values */
+
+.markdown-ace-editor .ace_constant.ace_color,
+.practice-editor .ace_constant.ace_color,
+.projects-ide-editor .ace_constant.ace_color { color: #56b6c2 !important; } /* #fff, rgb() colors */
 
 
 
 
-.ace_print-margin {
+.markdown-ace-editor .ace_print-margin,
+.practice-editor .ace_print-margin,
+.projects-ide-editor .ace_print-margin {
   width: 1px;
   background: var(--glass-border) !important;
 }
 
-.ace_fold {
+.markdown-ace-editor .ace_fold,
+.practice-editor .ace_fold,
+.projects-ide-editor .ace_fold {
   background-color: var(--accent-600) !important;
   border-radius: 4px;
 }

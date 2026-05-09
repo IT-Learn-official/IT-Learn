@@ -147,6 +147,22 @@
   flex-direction: column;
   flex-shrink: 0;
   overflow: hidden;
+  transition: width 160ms ease, min-width 160ms ease, opacity 160ms ease;
+}
+
+.projects-ide.is-explorer-collapsed .projects-ide-sidebar {
+  width: 0;
+  min-width: 0;
+  border-right: 0;
+  opacity: 0;
+}
+
+.projects-ide.is-explorer-collapsed .projects-ide-sidebar > * {
+  display: none;
+}
+
+.projects-ide-screen .btn-icon.projects-ide-explorer-toggle svg {
+  display: block;
 }
 
 .projects-ide-sidebar-header {
@@ -412,6 +428,14 @@
   flex: 1;
   border: 0;
   background: #fff;
+}
+
+.projects-ide-preview-frame.is-resize-disabled {
+  pointer-events: none;
+}
+
+body.projects-ide-is-resizing {
+  cursor: col-resize !important;
 }
 
 /* ---- Status bar ---- */

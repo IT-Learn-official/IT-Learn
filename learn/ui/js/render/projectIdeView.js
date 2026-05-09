@@ -161,13 +161,23 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   const actionGroup = document.createElement('div');
   actionGroup.className = 'tabs tabs-in-header';
 
+  /* ── UI state ───────────────────────────────────────────────────── */
+  const uiState = safeParse(localStorage.getItem(storageKey(pid, 'ui')), { previewOpen: true, explorerOpen: true });
+  if (typeof uiState.previewOpen !== 'boolean') uiState.previewOpen = true;
+  if (typeof uiState.explorerOpen !== 'boolean') uiState.explorerOpen = true;
+
+  function saveUiState() {
+    localStorage.setItem(storageKey(pid, 'ui'), JSON.stringify(uiState));
+  }
+
   // SVG Icon Helper
   const getIcon = (name) => {
     const icons = {
       back: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>`,
       guide: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>`,
       refresh: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>`,
-      close: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
+      close: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`,
+      panel: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`
     };
     return icons[name] || '';
   };
@@ -186,8 +196,16 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   toggleGuideBtn.innerHTML = getIcon('guide');
   toggleGuideBtn.title = 'Project Guide';
 
+  const toggleExplorerBtn = document.createElement('button');
+  toggleExplorerBtn.type = 'button';
+  toggleExplorerBtn.className = 'btn-icon projects-ide-explorer-toggle';
+  toggleExplorerBtn.innerHTML = getIcon('panel');
+  toggleExplorerBtn.title = 'Toggle Explorer';
+  toggleExplorerBtn.setAttribute('aria-label', 'Toggle Explorer');
+
 
   actionGroup.appendChild(backBtn);
+  actionGroup.appendChild(toggleExplorerBtn);
   actionGroup.appendChild(toggleGuideBtn);
 
   const mainHeader = document.createElement('div');
@@ -330,9 +348,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   const fileState = loadFileState(pid);
   const openTabs = []; // array of file path strings
   let aceEditor = null;
-
-  const uiState = safeParse(localStorage.getItem(storageKey(pid, 'ui')), { previewOpen: true });
-  if (typeof uiState.previewOpen !== 'boolean') uiState.previewOpen = true;
+  // uiState initialized above (needs pid in scope for toggle buttons)
 
   /* ── Ace editor init ──────────────────────────────────────────── */
   function initAceEditor() {
@@ -346,7 +362,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     editorHost.appendChild(editorDiv);
 
     const editor = ace.edit(editorDiv);
-    editor.setTheme('ace/theme/discord_dark');
+    editor.setTheme('ace/theme/ide-dark');
     editor.setOptions({
       fontSize: '14px',
       showPrintMargin: false,
@@ -483,7 +499,12 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
       aceEditor.setReadOnly(false);
       aceEditor.setValue(content, -1);
       const mode = aceModeName(cleanPath);
-      aceEditor.session.setMode(`ace/mode/${mode}`);
+      try {
+        aceEditor.session.setMode(`ace/mode/${mode}`);
+      } catch (err) {
+        console.warn(`Ace mode not available: ${mode}`, err);
+        aceEditor.session.setMode('ace/mode/text');
+      }
       aceEditor.focus();
     }
 
@@ -526,36 +547,62 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   renderFileTree();
 
   /* ── Resize behaviour ─────────────────────────────────────────── */
-  function makeDraggable(handle, onMove) {
+  function makeDraggable(handle, onMove, { onStart, onEnd } = {}) {
     if (!handle) return;
-    handle.addEventListener('mousedown', (e) => {
+
+    handle.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
       e.preventDefault();
+      handle.setPointerCapture?.(e.pointerId);
+
+      onStart?.();
+      document.body.classList.add('projects-ide-is-resizing');
       document.body.style.userSelect = 'none';
       document.body.style.cursor = 'col-resize';
+
       const startX = e.clientX;
       const initialPreviewW = previewWrap?.offsetWidth || 0;
+
       function move(e2) {
         const dx = e2.clientX - startX;
         onMove(dx, { initialPreviewW });
       }
-      function up() {
-        document.removeEventListener('mousemove', move);
-        document.removeEventListener('mouseup', up);
+
+      function up(e2) {
+        document.removeEventListener('pointermove', move);
+        document.removeEventListener('pointerup', up);
+        document.removeEventListener('pointercancel', up);
+        try {
+          handle.releasePointerCapture?.(e2.pointerId);
+        } catch {
+          // ignore
+        }
+        document.body.classList.remove('projects-ide-is-resizing');
         document.body.style.userSelect = '';
         document.body.style.cursor = '';
+        onEnd?.();
         // Resize Ace editor if present
         if (aceEditor) aceEditor.resize();
       }
-      document.addEventListener('mousemove', move);
-      document.addEventListener('mouseup', up);
+
+      document.addEventListener('pointermove', move);
+      document.addEventListener('pointerup', up);
+      document.addEventListener('pointercancel', up);
     });
   }
 
-  makeDraggable(midResize, (dx, { initialPreviewW }) => {
+  makeDraggable(
+    midResize,
+    (dx, { initialPreviewW }) => {
     const newW = Math.max(180, Math.round(initialPreviewW - dx));
     previewWrap.style.width = newW + 'px';
     previewWrap.style.flex = 'none';
-  });
+    },
+    {
+      onStart: () => previewFrame?.classList?.add('is-resize-disabled'),
+      onEnd: () => previewFrame?.classList?.remove('is-resize-disabled'),
+    }
+  );
 
   /* ── Panel state ──────────────────────────────────────────────── */
   function remember(viewName) {
@@ -565,9 +612,17 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
 
   function applyPanelState() {
     mainSplit.classList.toggle('is-preview-collapsed', !uiState.previewOpen);
+    layout.classList.toggle('is-explorer-collapsed', !uiState.explorerOpen);
   }
 
   applyPanelState();
+
+  toggleExplorerBtn.addEventListener('click', () => {
+    uiState.explorerOpen = !uiState.explorerOpen;
+    saveUiState();
+    applyPanelState();
+    if (aceEditor) aceEditor.resize();
+  });
 
   /* ── Guide modal ──────────────────────────────────────────────── */
   const guideModal = document.createElement('div');
