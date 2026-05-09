@@ -16,7 +16,8 @@ function apiPath(path) {
 }
 
 async function fetchJson(url) {
-  const buster = `?_cb=${Date.now()}`;
+  const separator = String(url).includes('?') ? '&' : '?';
+  const buster = `${separator}_cb=${Date.now()}`;
   const response = await fetch(`${url}${buster}`);
   if (!response.ok) {
     throw new Error(`Request failed with status ${response.status} for ${url}`);
@@ -25,7 +26,8 @@ async function fetchJson(url) {
 }
 
 async function fetchText(url) {
-  const buster = `?_cb=${Date.now()}`;
+  const separator = String(url).includes('?') ? '&' : '?';
+  const buster = `${separator}_cb=${Date.now()}`;
   const response = await fetch(`${url}${buster}`);
   if (!response.ok) {
     throw new Error(`Request failed with status ${response.status} for ${url}`);
@@ -56,8 +58,23 @@ export async function fetchProjectGuide(projectId) {
 
 export async function fetchProjectFile(projectId, filePath) {
   const cleanedProject = encodeURIComponent(String(projectId || ''));
-  const cleanedPath = String(filePath || '').replace(/^\/+/, '');
-  return fetchText(apiPath(`projects/${cleanedProject}/files/${cleanedPath}`));
+
+  const raw = String(filePath || '');
+  const parts = raw
+    .split('/')
+    .filter((p) => p !== '' && p !== '.');
+
+  const normalized = [];
+  for (const part of parts) {
+    if (part === '..') {
+      if (normalized.length > 0) normalized.pop();
+      continue;
+    }
+    normalized.push(encodeURIComponent(part));
+  }
+
+  const safePath = normalized.join('/');
+  return fetchText(apiPath(`projects/${cleanedProject}/files/${safePath}`));
 }
 
 export async function fetchChapterTheory(courseId, chapter) {

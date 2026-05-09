@@ -47,9 +47,15 @@ export function parseLocation(hash) {
   }
 
   if (segments[0] === 'projects' && segments[1]) {
+    let projectId = segments[1];
+    try {
+      projectId = decodeURIComponent(segments[1]);
+    } catch {
+      projectId = segments[1];
+    }
     return {
       route: 'project',
-      projectId: decodeURIComponent(segments[1]),
+      projectId,
       tab: query.tab || 'ide',
       file: query.file ? String(query.file) : null,
       view: query.view ? String(query.view) : null,
