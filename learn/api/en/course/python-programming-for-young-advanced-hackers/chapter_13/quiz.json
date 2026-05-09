@@ -10,11 +10,6 @@
       "prompt": "What is a function in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "A way to repeat code by giving it a name and calling it.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "A special kind of list.",
           "isCorrect": false
@@ -28,6 +23,11 @@
           "id": "d",
           "label": "A comment that Python ignores.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "A way to repeat code by giving it a name and calling it.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,18 +38,14 @@
           "c": "Errors are separate from functions.",
           "d": "Comments start with # and are not functions."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-def-keyword",
       "type": "single-choice",
       "prompt": "Which keyword is used to define a function in Python?",
       "options": [
-        {
-          "id": "a",
-          "label": "func",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "def",
@@ -58,6 +54,11 @@
         {
           "id": "c",
           "label": "function",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "func",
           "isCorrect": false
         },
         {
@@ -74,23 +75,14 @@
           "c": "function is not a keyword in Python.",
           "d": "call is not a keyword either."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-parameter-meaning",
       "type": "single-choice",
       "prompt": "In `def greet(name):`, what is `name`?",
       "options": [
-        {
-          "id": "a",
-          "label": "A return value.",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "A parameter (an input to the function).",
-          "isCorrect": true
-        },
         {
           "id": "c",
           "label": "An error.",
@@ -99,6 +91,16 @@
         {
           "id": "d",
           "label": "A list item.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A parameter (an input to the function).",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "A return value.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "There is nothing wrong with this code.",
           "d": "List items live inside lists, not in function headers."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-return-meaning",
@@ -123,9 +126,9 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "It stops the function and sends a value back.",
-          "isCorrect": true
+          "id": "d",
+          "label": "It deletes a variable.",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -133,9 +136,9 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "It deletes a variable.",
-          "isCorrect": false
+          "id": "b",
+          "label": "It stops the function and sends a value back.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -146,7 +149,8 @@
           "c": "Loops use for or while, not return.",
           "d": "return does not delete variables."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-default-parameter",
@@ -154,8 +158,8 @@
       "prompt": "In `def greet(name, greeting='Hi')`, what happens if you call `greet('Alex')`?",
       "options": [
         {
-          "id": "a",
-          "label": "Error, because greeting is missing.",
+          "id": "d",
+          "label": "Python ignores the second parameter.",
           "isCorrect": false
         },
         {
@@ -169,8 +173,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Python ignores the second parameter.",
+          "id": "a",
+          "label": "Error, because greeting is missing.",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "None is not used here; we gave a real default string.",
           "d": "Python does not ignore parameters; it fills them with defaults if needed."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

@@ -1,0 +1,25 @@
+body {
+  background-color: #020617;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.game-container {
+  text-align: center;
+}
+
+#gameCanvas {
+  border: 5px solid #1e293b;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+#score {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}

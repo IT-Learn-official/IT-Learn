@@ -1,6 +1,8 @@
 //author: https://github.com/nhermab
 //licence: MIT
 //edited by: https://github.com/broodje565
+import { resetProjectsState } from './projectsState.js';
+
 const state = {
   coursesDoc: null, // full courses.json document
   courseLanguage: null, // language code used to load courses and course content (e.g. "en")
@@ -43,6 +45,8 @@ export function setCourseLanguage(languageCode) {
   state.chapterContentCache.clear();
   state.selectedPracticeAssignmentId = null;
   state.selectedPracticeTemplatePath = null;
+
+  resetProjectsState();
 }
 
 export function setSelection({ courseId, chapterId, tab }) {

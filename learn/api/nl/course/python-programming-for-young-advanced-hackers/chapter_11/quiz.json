@@ -10,8 +10,8 @@
       "prompt": "Welke operator gebruik je in Python om te checken of twee waarden gelijk zijn?",
       "options": [
         {
-          "id": "a",
-          "label": "=",
+          "id": "d",
+          "label": "<>",
           "isCorrect": false
         },
         {
@@ -20,13 +20,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "!=",
+          "id": "a",
+          "label": "=",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "<>",
+          "id": "c",
+          "label": "!=",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "!= checkt op niet gelijk.",
           "d": "<> is niet de standaard gelijkheidsoperator in Python."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-if-false-no-else",
@@ -46,14 +47,14 @@
       "prompt": "Wat gebeurt er als de conditie in een if-statement False is en er is geen else?",
       "options": [
         {
-          "id": "a",
-          "label": "Python geeft een foutmelding.",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "De code in de if wordt overgeslagen.",
           "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Het programma stopt automatisch.",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -61,8 +62,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Het programma stopt automatisch.",
+          "id": "a",
+          "label": "Python geeft een foutmelding.",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "De code loopt alleen als de conditie True is.",
           "d": "De rest van het programma kan gewoon verder gaan."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-elif-meaning",
@@ -82,14 +84,14 @@
       "prompt": "Wat doet elif in Python?",
       "options": [
         {
+          "id": "d",
+          "label": "Het heeft geen betekenis; het is gewoon versiering.",
+          "isCorrect": false
+        },
+        {
           "id": "a",
           "label": "Het betekent 'else if' – een extra conditie die alleen gecheckt wordt als de vorige False waren.",
           "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Het wordt altijd op het einde uitgevoerd, zoals finally.",
-          "isCorrect": false
         },
         {
           "id": "c",
@@ -97,8 +99,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Het heeft geen betekenis; het is gewoon versiering.",
+          "id": "b",
+          "label": "Het wordt altijd op het einde uitgevoerd, zoals finally.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Functies definieer je met def, niet met elif.",
           "d": "elif is een belangrijk keyword, geen versiering."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-logical-and",
@@ -118,8 +121,13 @@
       "prompt": "Welke conditie is alleen True als zowel a als b True zijn?",
       "options": [
         {
-          "id": "a",
-          "label": "a or b",
+          "id": "d",
+          "label": "a != b",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "not a",
           "isCorrect": false
         },
         {
@@ -128,13 +136,8 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "not a",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "a != b",
+          "id": "a",
+          "label": "a or b",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "not a keert gewoon de waarde van a om.",
           "d": "a != b checkt of ze verschillend zijn, niet of allebei True zijn."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-else-when",
@@ -182,7 +186,8 @@
           "c": "else komt altijd na if, niet ervoor.",
           "d": "else is deel van Python-control flow en wordt niet genegeerd."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

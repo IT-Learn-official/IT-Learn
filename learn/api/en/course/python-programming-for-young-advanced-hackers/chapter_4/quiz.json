@@ -10,8 +10,8 @@
       "prompt": "In Python, what is the type of the value `3.0`?",
       "options": [
         {
-          "id": "int",
-          "label": "int",
+          "id": "str",
+          "label": "str",
           "isCorrect": false
         },
         {
@@ -20,8 +20,8 @@
           "isCorrect": true
         },
         {
-          "id": "str",
-          "label": "str",
+          "id": "int",
+          "label": "int",
           "isCorrect": false
         },
         {
@@ -38,7 +38,8 @@
           "str": "A string would need quotes, like `\"3.0\"`.",
           "bool": "Booleans are only `True` or `False`."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-type-of-quoted-123",
@@ -51,6 +52,11 @@
           "isCorrect": false
         },
         {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        },
+        {
           "id": "float",
           "label": "float",
           "isCorrect": false
@@ -59,11 +65,6 @@
           "id": "str",
           "label": "str",
           "isCorrect": true
-        },
-        {
-          "id": "bool",
-          "label": "bool",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -74,7 +75,8 @@
           "str": "Correct, anything in quotes is a string.",
           "bool": "Booleans are `True` or `False`, not `'123'`."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-boolean-literal",
@@ -82,13 +84,8 @@
       "prompt": "Which of these is a **boolean literal** in Python?",
       "options": [
         {
-          "id": "true-lower",
-          "label": "true",
-          "isCorrect": false
-        },
-        {
-          "id": "true-string",
-          "label": "\"True\"",
+          "id": "one",
+          "label": "1",
           "isCorrect": false
         },
         {
@@ -97,8 +94,13 @@
           "isCorrect": true
         },
         {
-          "id": "one",
-          "label": "1",
+          "id": "true-string",
+          "label": "\"True\"",
+          "isCorrect": false
+        },
+        {
+          "id": "true-lower",
+          "label": "true",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "True": "Correct, this is the boolean value `True`.",
           "one": "`1` is an integer, not a boolean, even though `bool(1)` is `True`."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-type-function",
@@ -123,8 +126,8 @@
           "isCorrect": true
         },
         {
-          "id": "class-int",
-          "label": "Something like <class 'int'>",
+          "id": "error",
+          "label": "It gives an error.",
           "isCorrect": false
         },
         {
@@ -133,8 +136,8 @@
           "isCorrect": false
         },
         {
-          "id": "error",
-          "label": "It gives an error.",
+          "id": "class-int",
+          "label": "Something like <class 'int'>",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "prints-hello": "`type` doesn't print the value itself, it prints information about the type.",
           "error": "This is valid Python, no error here."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-implicit-int-float",
@@ -154,8 +158,8 @@
       "prompt": "What is the **type** of the result of `3 + 2.5` in Python?",
       "options": [
         {
-          "id": "int",
-          "label": "int",
+          "id": "bool",
+          "label": "bool",
           "isCorrect": false
         },
         {
@@ -164,13 +168,13 @@
           "isCorrect": true
         },
         {
-          "id": "str",
-          "label": "str",
+          "id": "int",
+          "label": "int",
           "isCorrect": false
         },
         {
-          "id": "bool",
-          "label": "bool",
+          "id": "str",
+          "label": "str",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "str": "The expression has no strings in it.",
           "bool": "There are no True/False values involved here."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-string-plus-int-bug",
@@ -190,24 +195,24 @@
       "prompt": "What happens when you run this code?\\n\\n```python\\nage = 12\\nprint(\"You are \" + age)\\n```",
       "options": [
         {
+          "id": "prints-you-are-12",
+          "label": "It prints `You are 12`.",
+          "isCorrect": false
+        },
+        {
           "id": "prints-text-age",
           "label": "It prints `You are age`.",
           "isCorrect": false
         },
         {
-          "id": "prints-you-are-12",
-          "label": "It prints `You are 12`.",
+          "id": "crash",
+          "label": "It crashes the whole computer.",
           "isCorrect": false
         },
         {
           "id": "type-error",
           "label": "It gives a TypeError because you are adding a string and a number.",
           "isCorrect": true
-        },
-        {
-          "id": "crash",
-          "label": "It crashes the whole computer.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -218,7 +223,8 @@
           "type-error": "Correct, Python complains because `age` is an `int`, not a `str`.",
           "crash": "Errors stop your program, but they don't destroy your computer."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-fix-string-plus-int",
@@ -226,9 +232,9 @@
       "prompt": "Which line is the **best** fix for this code so it prints `You are 12`?\\n\\n```python\\nage = 12\\n# your code here\\n```",
       "options": [
         {
-          "id": "use-str",
-          "label": "print(\"You are \" + str(age))",
-          "isCorrect": true
+          "id": "just-age",
+          "label": "print(age)",
+          "isCorrect": false
         },
         {
           "id": "use-int",
@@ -236,13 +242,13 @@
           "isCorrect": false
         },
         {
-          "id": "use-bool",
-          "label": "print(\"You are \" + bool(age))",
-          "isCorrect": false
+          "id": "use-str",
+          "label": "print(\"You are \" + str(age))",
+          "isCorrect": true
         },
         {
-          "id": "just-age",
-          "label": "print(age)",
+          "id": "use-bool",
+          "label": "print(\"You are \" + bool(age))",
           "isCorrect": false
         }
       ],
@@ -254,7 +260,8 @@
           "use-bool": "`bool(age)` would be `True`, and mixing that in a string is not what we want.",
           "just-age": "This prints `12`, but loses the text `You are` from the original goal."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-safe-int-conversion",
@@ -267,6 +274,11 @@
           "isCorrect": true
         },
         {
+          "id": "empty",
+          "label": "\"\" (empty string)",
+          "isCorrect": false
+        },
+        {
           "id": "three-point-five",
           "label": "\"3.5\"",
           "isCorrect": false
@@ -274,11 +286,6 @@
         {
           "id": "word-ten",
           "label": "\"ten\"",
-          "isCorrect": false
-        },
-        {
-          "id": "empty",
-          "label": "\"\" (empty string)",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "word-ten": "Python doesn't know how to turn the English word 'ten' into a number.",
           "empty": "An empty string doesn't represent any number."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-bool-empty-string",
@@ -298,8 +306,8 @@
       "prompt": "What is the result of `bool(\"\")` (an empty string)?",
       "options": [
         {
-          "id": "true",
-          "label": "True",
+          "id": "error",
+          "label": "It gives an error.",
           "isCorrect": false
         },
         {
@@ -308,8 +316,8 @@
           "isCorrect": true
         },
         {
-          "id": "error",
-          "label": "It gives an error.",
+          "id": "true",
+          "label": "True",
           "isCorrect": false
         },
         {
@@ -326,7 +334,8 @@
           "error": "`bool` can handle strings; no error here.",
           "string-false": "This would be a string again, not a boolean."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-type-for-debugging",
@@ -334,9 +343,9 @@
       "prompt": "You see this code:\\n\\n```python\\ncoins = \"10\"\\nprint(type(coins))\\n```\\n\\nWhat is this line mainly helping you check?",
       "options": [
         {
-          "id": "coins-is-string",
-          "label": "That `coins` is a string, not a number.",
-          "isCorrect": true
+          "id": "coins-will-auto-convert",
+          "label": "That Python will automatically turn it into a number later.",
+          "isCorrect": false
         },
         {
           "id": "coins-is-int",
@@ -344,14 +353,14 @@
           "isCorrect": false
         },
         {
-          "id": "coins-will-auto-convert",
-          "label": "That Python will automatically turn it into a number later.",
-          "isCorrect": false
-        },
-        {
           "id": "coins-is-broken",
           "label": "That `coins` is broken and unusable.",
           "isCorrect": false
+        },
+        {
+          "id": "coins-is-string",
+          "label": "That `coins` is a string, not a number.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -362,7 +371,8 @@
           "coins-will-auto-convert": "Python does not auto-convert number-like strings in math operations.",
           "coins-is-broken": "The value isn't broken; it's just a different type than you might expect."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-auto-convert-string-number",
@@ -386,7 +396,8 @@
           "true": "`'5' + 3` will actually cause a TypeError.",
           "false": "Correct, you must convert one side yourself, e.g. `int('5') + 3` or `'5' + str(3)`."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

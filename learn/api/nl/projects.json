@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": "landing-page",
+      "title": "Responsieve Landingpagina",
+      "description": "Bouw een strakke, responsieve landingpagina met semantische HTML en moderne CSS.",
+      "difficulty": "Makkelijk",
+      "tags": ["HTML", "CSS"]
+    },
+    {
+      "id": "calculator",
+      "title": "JS Rekenmachine",
+      "description": "Maak een volledig functionele rekenmachine met een moderne donkere UI.",
+      "difficulty": "Makkelijk",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "todo-app",
+      "title": "To Do App (Vanilla JS)",
+      "description": "Maak een kleine to do app met toevoegen/verwijderen/toggle en lokale opslag.",
+      "difficulty": "Gemiddeld",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "id": "weather-app",
+      "title": "Weer Dashboard",
+      "description": "Bouw een weer-app die live gegevens ophaalt van een API.",
+      "difficulty": "Gemiddeld",
+      "tags": ["HTML", "CSS", "JavaScript", "API"]
+    },
+    {
+      "id": "snake-game",
+      "title": "Retro Snake Spel",
+      "description": "Gebruik HTML5 Canvas en JavaScript om het klassieke Snake spel te bouwen.",
+      "difficulty": "Moeilijk",
+      "tags": ["HTML", "JavaScript", "Canvas"]
+    },
+    {
+      "id": "react-portfolio",
+      "title": "Persoonlijk Portfolio (React)",
+      "description": "Bouw een professionele portfoliosite met React-componenten en hooks.",
+      "difficulty": "Moeilijk",
+      "tags": ["React", "JavaScript", "CSS"]
+    }
+  ]
+}

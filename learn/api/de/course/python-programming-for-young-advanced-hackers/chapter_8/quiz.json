@@ -10,8 +10,8 @@
       "prompt": "Was ist in Python ein String?",
       "options": [
         {
-          "id": "a",
-          "label": "Eine Zahl, die man addieren und subtrahieren kann.",
+          "id": "c",
+          "label": "Ein Geheimcode, den Python nicht lesen kann.",
           "isCorrect": false
         },
         {
@@ -20,8 +20,8 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Ein Geheimcode, den Python nicht lesen kann.",
+          "id": "a",
+          "label": "Eine Zahl, die man addieren und subtrahieren kann.",
           "isCorrect": false
         },
         {
@@ -38,7 +38,8 @@
           "c": "Python kann Strings sehr gut verarbeiten.",
           "d": "Listen können viele Typen speichern, aber das ist etwas anderes als Strings."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-indexing",
@@ -56,14 +57,14 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "\"A\"",
-          "isCorrect": true
-        },
-        {
           "id": "d",
           "label": "\"K\"",
           "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "\"A\"",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -74,7 +75,8 @@
           "c": "Richtig, 'A' steht an Index 1.",
           "d": "'K' ist das letzte Zeichen, Index 3."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-slicing",
@@ -87,11 +89,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "\"P\"",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "\"PYT\"",
           "isCorrect": true
@@ -99,6 +96,11 @@
         {
           "id": "d",
           "label": "\"HON\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"P\"",
           "isCorrect": false
         }
       ],
@@ -110,13 +112,19 @@
           "c": "Richtig, die Positionen 0, 1 und 2 ergeben 'PYT'.",
           "d": "Das sind die letzten drei Buchstaben, aus einem anderen Slice."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-upper-method",
       "type": "single-choice",
       "prompt": "Was liefert \"hacker\".upper() zurück?",
       "options": [
+        {
+          "id": "d",
+          "label": "\"upper\"",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "\"hacker\"",
@@ -131,11 +139,6 @@
           "id": "c",
           "label": "\"HACKER\"",
           "isCorrect": true
-        },
-        {
-          "id": "d",
-          "label": "\"upper\"",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -146,7 +149,8 @@
           "c": "Richtig, alle Buchstaben werden großgeschrieben.",
           "d": "Das ist nur das Wort 'upper', nicht das Ergebnis der Methode."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-fstring",
@@ -154,8 +158,8 @@
       "prompt": "Du hast `name = \"Mia\"`. Welche Zeile verwendet korrekt einen f-String, um `Hello, Mia!` auszugeben?",
       "options": [
         {
-          "id": "a",
-          "label": "print(\"Hello, {name}!\")",
+          "id": "c",
+          "label": "print(\"Hello, \" + name + \"!\")",
           "isCorrect": false
         },
         {
@@ -164,8 +168,8 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "print(\"Hello, \" + name + \"!\")",
+          "id": "a",
+          "label": "print(\"Hello, {name}!\")",
           "isCorrect": false
         },
         {
@@ -182,7 +186,8 @@
           "c": "Das funktioniert, ist aber kein f-String.",
           "d": "Hier steht \"name\" in Anführungszeichen, das ist Text, nicht die Variable."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

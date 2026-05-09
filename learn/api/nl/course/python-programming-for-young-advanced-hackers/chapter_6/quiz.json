@@ -10,23 +10,23 @@
       "prompt": "Wat doet de operator `**` in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Telt twee getallen op.",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "Deelt een getal door een ander.",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "Verheft een getal tot de macht van een ander.",
           "isCorrect": true
         },
         {
+          "id": "a",
+          "label": "Telt twee getallen op.",
+          "isCorrect": false
+        },
+        {
           "id": "d",
           "label": "Berekent de rest na een deling.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Deelt een getal door een ander.",
           "isCorrect": false
         }
       ],
@@ -38,13 +38,24 @@
           "c": "Juist! `**` betekent machtsverheffen.",
           "d": "De rest vind je met `%`."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-comparison-operator",
       "type": "single-choice",
       "prompt": "Welke operator checkt of twee waarden NIET gelijk zijn?",
       "options": [
+        {
+          "id": "d",
+          "label": "<=",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": ">",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "==",
@@ -54,16 +65,6 @@
           "id": "b",
           "label": "!=",
           "isCorrect": true
-        },
-        {
-          "id": "c",
-          "label": ">",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "<=",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -74,7 +75,8 @@
           "c": "`>` checkt of de ene waarde groter is dan de andere.",
           "d": "`<=` checkt kleiner dan of gelijk aan."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-assignment-operator",
@@ -82,23 +84,23 @@
       "prompt": "Wat doet de operator `+=`?",
       "options": [
         {
-          "id": "a",
-          "label": "Hij telt een waarde bij een variabele op en update de variabele.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "Hij checkt of twee waarden gelijk zijn.",
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Hij vermenigvuldigt twee waarden.",
+          "id": "d",
+          "label": "Hij trekt een waarde af van een variabele.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Hij trekt een waarde af van een variabele.",
+          "id": "a",
+          "label": "Hij telt een waarde bij een variabele op en update de variabele.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Hij vermenigvuldigt twee waarden.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Vermenigvuldigen doe je met `*`.",
           "d": "Aftrekken en updaten doe je met `-=`."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-logical-operator",
@@ -118,9 +121,9 @@
       "prompt": "Welke hiervan is een logische operator in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "and",
-          "isCorrect": true
+          "id": "c",
+          "label": "==",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -128,9 +131,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "==",
-          "isCorrect": false
+          "id": "a",
+          "label": "and",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -146,7 +149,8 @@
           "c": "`==` is een vergelijkingsoperator.",
           "d": "`**` is een rekenoperator."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

@@ -10,23 +10,23 @@
       "prompt": "Which operator is used in Python to check if two values are equal?",
       "options": [
         {
-          "id": "a",
-          "label": "=",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "==",
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "!=",
+          "id": "d",
+          "label": "<>",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "<>",
+          "id": "a",
+          "label": "=",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "!=",
           "isCorrect": false
         }
       ],
@@ -38,18 +38,14 @@
           "c": "!= checks for not equal.",
           "d": "<> is not the standard equality operator in Python."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-if-false-no-else",
       "type": "single-choice",
       "prompt": "What happens when the condition in an if statement is False and there is no else?",
       "options": [
-        {
-          "id": "a",
-          "label": "Python shows an error.",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "The code inside the if is skipped.",
@@ -58,6 +54,11 @@
         {
           "id": "c",
           "label": "The code inside the if still runs.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Python shows an error.",
           "isCorrect": false
         },
         {
@@ -74,7 +75,8 @@
           "c": "The code runs only if the condition is True.",
           "d": "The rest of the program can still continue."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-elif-meaning",
@@ -82,9 +84,9 @@
       "prompt": "What does elif do in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "It means 'else if' - another condition checked only if previous ones were False.",
-          "isCorrect": true
+          "id": "c",
+          "label": "It defines a function.",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -92,9 +94,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "It defines a function.",
-          "isCorrect": false
+          "id": "a",
+          "label": "It means 'else if' - another condition checked only if previous ones were False.",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -110,7 +112,8 @@
           "c": "Functions are defined with def, not elif.",
           "d": "elif is an important keyword, not decoration."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-logical-and",
@@ -118,14 +121,14 @@
       "prompt": "Which condition is True only when both a and b are True?",
       "options": [
         {
-          "id": "a",
-          "label": "a or b",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "a and b",
           "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "a != b",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -133,8 +136,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "a != b",
+          "id": "a",
+          "label": "a or b",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "not a just flips the value of a.",
           "d": "a != b checks if they are different, not both True."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-else-when",
@@ -154,8 +158,8 @@
       "prompt": "When does the else part of an if/else statement run?",
       "options": [
         {
-          "id": "a",
-          "label": "When the if condition is True.",
+          "id": "c",
+          "label": "Always, before the if.",
           "isCorrect": false
         },
         {
@@ -164,13 +168,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Always, before the if.",
+          "id": "d",
+          "label": "Never; else is ignored by Python.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Never; else is ignored by Python.",
+          "id": "a",
+          "label": "When the if condition is True.",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "else always comes after if, not before.",
           "d": "else is part of Python's control flow and is not ignored."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

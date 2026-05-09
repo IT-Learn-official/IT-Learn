@@ -10,23 +10,23 @@
       "prompt": "Wat betekent 'uitvoeringsvolgorde' (execution flow) in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "De volgorde waarin Python je code uitvoert, regel per regel.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "De snelheid waarmee je computer draait.",
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "De manier waarop Python tekst print.",
+          "id": "d",
+          "label": "Een type variabele in Python.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Een type variabele in Python.",
+          "id": "a",
+          "label": "De volgorde waarin Python je code uitvoert, regel per regel.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De manier waarop Python tekst print.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Printen is maar één onderdeel van uitvoeren, niet de flow zelf.",
           "d": "Er bestaat geen variabeletype dat 'execution flow' heet."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-tracing-variables",
@@ -46,23 +47,23 @@
       "prompt": "Wat betekent het om een variabele te 'tracen' in je code?",
       "options": [
         {
-          "id": "a",
-          "label": "Volgen hoe de waarde verandert terwijl het programma draait.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "Ze een nieuwe naam geven.",
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Ze verwijderen uit je programma.",
+          "id": "d",
+          "label": "Ze altijd in hoofdletters laten printen.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Ze altijd in hoofdletters laten printen.",
+          "id": "a",
+          "label": "Volgen hoe de waarde verandert terwijl het programma draait.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ze verwijderen uit je programma.",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "Verwijderen is geen tracen.",
           "d": "In hoofdletters printen is geen tracen."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-print-debugging",
@@ -82,13 +84,8 @@
       "prompt": "Waarom gebruiken programmeurs print-statements tijdens het debuggen?",
       "options": [
         {
-          "id": "a",
-          "label": "Om te zien wat er binnenin het programma gebeurt terwijl het draait.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Om het programma sneller te maken.",
+          "id": "d",
+          "label": "Om de kleur van de tekst te veranderen.",
           "isCorrect": false
         },
         {
@@ -97,9 +94,14 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Om de kleur van de tekst te veranderen.",
+          "id": "b",
+          "label": "Om het programma sneller te maken.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Om te zien wat er binnenin het programma gebeurt terwijl het draait.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "c": "Printen verwijdert niets.",
           "d": "Printen verandert geen tekstkleur in Python's console."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-fix-the-error",
@@ -118,14 +121,14 @@
       "prompt": "Je ziet deze error: `NameError: name 'scroe' is not defined`. Wat moet je doen?",
       "options": [
         {
-          "id": "a",
-          "label": "Check op typfouten in je variabelenamen.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "Verwijder al je code en begin opnieuw.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Check op typfouten in je variabelenamen.",
+          "isCorrect": true
         },
         {
           "id": "c",
@@ -146,7 +149,8 @@
           "c": "Errors negeren lost je code niet op.",
           "d": "Taalinstellingen hebben hier niets mee te maken."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

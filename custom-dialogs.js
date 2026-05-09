@@ -19,7 +19,7 @@
         display: none;
         align-items: center;
         justify-content: center;
-        background: rgba(5, 10, 24, 0.72);
+        background: var(--overlay-bg, rgba(5, 10, 24, 0.72));
         backdrop-filter: blur(8px);
         padding: 16px;
       }
@@ -30,11 +30,11 @@
 
       #${OVERLAY_ID} .dialog-card {
         width: min(520px, 100%);
-        border: 1px solid rgba(255, 255, 255, 0.16);
+        border: 1px solid var(--border-color, rgba(255,255,255,0.16));
         border-radius: 16px;
-        background: linear-gradient(180deg, rgba(16, 26, 51, 0.98), rgba(12, 20, 40, 0.98));
-        color: #ecf2ff;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        background: linear-gradient(180deg, var(--dialog-card-bg-start, rgba(16, 26, 51, 0.98)), var(--dialog-card-bg-end, rgba(12, 20, 40, 0.98)));
+        color: var(--color-text, #ecf2ff);
+        box-shadow: var(--shadow-elevated, 0 24px 80px rgba(0,0,0,0.45));
         padding: 18px;
         display: grid;
         gap: 12px;
@@ -43,12 +43,12 @@
       #${OVERLAY_ID} .dialog-title {
         margin: 0;
         font-size: 1.05rem;
-        color: #dbeafe;
+        color: var(--color-text, #dbeafe);
       }
 
       #${OVERLAY_ID} .dialog-message {
         margin: 0;
-        color: #c8d5f2;
+        color: var(--color-text-soft, #c8d5f2);
         line-height: 1.55;
         white-space: pre-wrap;
       }
@@ -62,9 +62,9 @@
 
       #${OVERLAY_ID} .dialog-btn {
         font: inherit;
-        color: #ecf2ff;
+        color: var(--color-text, #ecf2ff);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid var(--border-color, rgba(255,255,255,0.2));
         padding: 8px 14px;
         cursor: pointer;
         transition: transform 120ms ease, opacity 120ms ease;
@@ -79,13 +79,13 @@
       }
 
       #${OVERLAY_ID} .dialog-btn.primary {
-        background: linear-gradient(140deg, #155e75, #164e63);
-        border-color: rgba(34, 211, 238, 0.4);
+        background: var(--button-primary-bg, linear-gradient(140deg, #155e75, #164e63));
+        border-color: var(--button-primary-border, rgba(34, 211, 238, 0.4));
       }
 
       #${OVERLAY_ID} .dialog-btn.danger {
-        background: rgba(239, 68, 68, 0.22);
-        border-color: rgba(239, 68, 68, 0.42);
+        background: var(--danger-soft, rgba(239, 68, 68, 0.22));
+        border-color: var(--danger, rgba(239, 68, 68, 0.42));
       }
     `;
 
