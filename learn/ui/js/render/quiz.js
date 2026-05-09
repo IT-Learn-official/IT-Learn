@@ -5,6 +5,18 @@ import { renderMarkdownToHtml } from '../utils/markdown.js';
 import { playCorrectSound, playWrongSound, showMascotMessage } from '../mascot.js';
 import { loseHeart, getHearts, hasHearts } from '../state/gamificationState.js';
 
+function normalizeQuizMarkdown(text) {
+  const s = String(text ?? '');
+  // Some quiz JSON files contain double-escaped sequences like "\\n" so they render literally.
+  // Decode only the common escapes we expect in prompts/options.
+  if (!s.includes('\\n') && !s.includes('\\t') && !s.includes('\\r')) return s;
+  return s
+    .replace(/\\r\\n/g, '\n')
+    .replace(/\\n/g, '\n')
+    .replace(/\\t/g, '\t')
+    .replace(/\\r/g, '\r');
+}
+
 /**
  * Ensure quiz data is loaded, using provided cache helpers.
  *
@@ -91,7 +103,7 @@ export function renderQuiz({ container, quiz, onComplete }) {
       questionEl.className = 'quiz-question';
 
       const promptEl = document.createElement('div');
-      promptEl.innerHTML = renderMarkdownToHtml(question.prompt || '');
+      promptEl.innerHTML = renderMarkdownToHtml(normalizeQuizMarkdown(question.prompt || ''));
       questionEl.appendChild(promptEl);
 
       const optionsList = document.createElement('ul');
@@ -197,7 +209,7 @@ export function renderQuiz({ container, quiz, onComplete }) {
 
         const textSpan = document.createElement('span');
         textSpan.className = 'quiz-option-text';
-        textSpan.innerHTML = renderMarkdownToHtml(option.label || '');
+        textSpan.innerHTML = renderMarkdownToHtml(normalizeQuizMarkdown(option.label || ''));
 
         label.appendChild(input);
         label.appendChild(letter);

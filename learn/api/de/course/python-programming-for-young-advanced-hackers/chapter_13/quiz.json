@@ -10,13 +10,8 @@
       "prompt": "Was ist eine Funktion in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Eine Möglichkeit, Code zu wiederholen, indem du ihm einen Namen gibst und ihn aufrufst.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Eine besondere Art von Liste.",
+          "id": "d",
+          "label": "Ein Kommentar, den Python ignoriert.",
           "isCorrect": false
         },
         {
@@ -25,8 +20,13 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Ein Kommentar, den Python ignoriert.",
+          "id": "a",
+          "label": "Eine Möglichkeit, Code zu wiederholen, indem du ihm einen Namen gibst und ihn aufrufst.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Eine besondere Art von Liste.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Fehler haben mit Funktionen nichts direkt zu tun.",
           "d": "Kommentare beginnen mit # und sind keine Funktionen."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-def-keyword",
@@ -46,8 +47,8 @@
       "prompt": "Welches Schlüsselwort benutzt du, um in Python eine Funktion zu definieren?",
       "options": [
         {
-          "id": "a",
-          "label": "func",
+          "id": "c",
+          "label": "function",
           "isCorrect": false
         },
         {
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "function",
+          "id": "d",
+          "label": "call",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "call",
+          "id": "a",
+          "label": "func",
           "isCorrect": false
         }
       ],
@@ -74,23 +75,14 @@
           "c": "function ist kein Schlüsselwort in Python.",
           "d": "call ist ebenfalls kein Schlüsselwort."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-parameter-meaning",
       "type": "single-choice",
       "prompt": "In `def greet(name):`, was ist `name`?",
       "options": [
-        {
-          "id": "a",
-          "label": "Ein Rückgabewert.",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "Ein Parameter (eine Eingabe für die Funktion).",
-          "isCorrect": true
-        },
         {
           "id": "c",
           "label": "Ein Fehler.",
@@ -99,6 +91,16 @@
         {
           "id": "d",
           "label": "Ein Listeneintrag.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Parameter (eine Eingabe für die Funktion).",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "Ein Rückgabewert.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "An diesem Code ist nichts falsch.",
           "d": "Listeneinträge stehen in Listen, nicht im Funktionskopf."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-return-meaning",
@@ -128,13 +131,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Sie startet eine neue Schleife.",
+          "id": "d",
+          "label": "Sie löscht eine Variable.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Sie löscht eine Variable.",
+          "id": "c",
+          "label": "Sie startet eine neue Schleife.",
           "isCorrect": false
         }
       ],
@@ -146,18 +149,14 @@
           "c": "Schleifen benutzen `for` oder `while`, nicht `return`.",
           "d": "`return` löscht keine Variablen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-default-parameter",
       "type": "single-choice",
       "prompt": "In `def greet(name, greeting='Hi')`, was passiert, wenn du `greet('Alex')` aufrufst?",
       "options": [
-        {
-          "id": "a",
-          "label": "Fehler, weil greeting fehlt.",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "greeting ist automatisch 'Hi'.",
@@ -172,6 +171,11 @@
           "id": "d",
           "label": "Python ignoriert den zweiten Parameter.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Fehler, weil greeting fehlt.",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "None wird hier nicht benutzt; wir haben einen echten Standard-String gesetzt.",
           "d": "Python ignoriert Parameter nicht; es füllt sie bei Bedarf mit Standardwerten."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

@@ -10,11 +10,6 @@
       "prompt": "Wat is een functie in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Een manier om code te herhalen door die een naam te geven en op te roepen.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "Een speciaal soort lijst.",
           "isCorrect": false
@@ -28,6 +23,11 @@
           "id": "d",
           "label": "Een commentaar dat Python negeert.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Een manier om code te herhalen door die een naam te geven en op te roepen.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,7 +38,8 @@
           "c": "Fouten staan los van functies.",
           "d": "Commentaar start met # en is geen functie."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-def-keyword",
@@ -46,14 +47,14 @@
       "prompt": "Welk keyword gebruik je om een functie te definiëren in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "func",
+          "id": "d",
+          "label": "call",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "def",
-          "isCorrect": true
+          "id": "a",
+          "label": "func",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -61,9 +62,9 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "call",
-          "isCorrect": false
+          "id": "b",
+          "label": "def",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -74,7 +75,8 @@
           "c": "function is geen keyword in Python.",
           "d": "call is ook geen keyword."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-parameter-meaning",
@@ -82,8 +84,8 @@
       "prompt": "In `def greet(name):`, wat is `name`?",
       "options": [
         {
-          "id": "a",
-          "label": "Een returnwaarde.",
+          "id": "d",
+          "label": "Een item in een lijst.",
           "isCorrect": false
         },
         {
@@ -97,8 +99,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Een item in een lijst.",
+          "id": "a",
+          "label": "Een returnwaarde.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Er is niets mis met deze code.",
           "d": "List-items zitten in lijsten, niet in functiekoppen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-return-meaning",
@@ -128,13 +131,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Die start een nieuwe lus.",
+          "id": "d",
+          "label": "Die verwijdert een variabele.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Die verwijdert een variabele.",
+          "id": "c",
+          "label": "Die start een nieuwe lus.",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Lussen gebruiken `for` of `while`, niet `return`.",
           "d": "`return` verwijdert geen variabelen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-default-parameter",
@@ -159,14 +163,14 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "greeting wordt automatisch 'Hi'.",
-          "isCorrect": true
-        },
-        {
           "id": "c",
           "label": "greeting wordt None.",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "greeting wordt automatisch 'Hi'.",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -182,7 +186,8 @@
           "c": "None wordt hier niet gebruikt; we gaven een echte standaardstring.",
           "d": "Python negeert parameters niet; hij vult ze in met standaardwaarden als dat nodig is."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

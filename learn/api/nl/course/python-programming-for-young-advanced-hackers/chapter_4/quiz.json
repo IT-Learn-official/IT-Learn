@@ -10,8 +10,13 @@
       "prompt": "In Python, wat is het type van de waarde `3.0`?",
       "options": [
         {
-          "id": "int",
-          "label": "int",
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        },
+        {
+          "id": "str",
+          "label": "str",
           "isCorrect": false
         },
         {
@@ -20,13 +25,8 @@
           "isCorrect": true
         },
         {
-          "id": "str",
-          "label": "str",
-          "isCorrect": false
-        },
-        {
-          "id": "bool",
-          "label": "bool",
+          "id": "int",
+          "label": "int",
           "isCorrect": false
         }
       ],
@@ -38,13 +38,19 @@
           "str": "Een string heeft aanhalingstekens nodig, zoals `\"3.0\"`.",
           "bool": "Booleans zijn alleen `True` of `False`."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-type-of-quoted-123",
       "type": "single-choice",
       "prompt": "Kijk naar deze waarde: `'123'` (met aanhalingstekens). Wat is het type in Python?",
       "options": [
+        {
+          "id": "bool",
+          "label": "bool",
+          "isCorrect": false
+        },
         {
           "id": "int",
           "label": "int",
@@ -59,11 +65,6 @@
           "id": "str",
           "label": "str",
           "isCorrect": true
-        },
-        {
-          "id": "bool",
-          "label": "bool",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -74,7 +75,8 @@
           "str": "Juist, alles tussen aanhalingstekens is een string.",
           "bool": "Booleans zijn `True` of `False`, niet `'123'`."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-boolean-literal",
@@ -82,24 +84,24 @@
       "prompt": "Welke hiervan is een **boolean literal** in Python?",
       "options": [
         {
-          "id": "true-lower",
-          "label": "true",
+          "id": "true-string",
+          "label": "\"True\"",
           "isCorrect": false
         },
         {
-          "id": "true-string",
-          "label": "\"True\"",
+          "id": "one",
+          "label": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "true-lower",
+          "label": "true",
           "isCorrect": false
         },
         {
           "id": "True",
           "label": "True",
           "isCorrect": true
-        },
-        {
-          "id": "one",
-          "label": "1",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "True": "Juist, dit is de booleanwaarde `True`.",
           "one": "`1` is een integer, geen boolean, ook al is `bool(1)` wel `True`."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-type-function",
@@ -118,13 +121,8 @@
       "prompt": "Wat toont deze code?\\n\\n```python\\nprint(type(\"Hello\"))\\n```",
       "options": [
         {
-          "id": "class-str",
-          "label": "Iets zoals <class 'str'>",
-          "isCorrect": true
-        },
-        {
-          "id": "class-int",
-          "label": "Iets zoals <class 'int'>",
+          "id": "error",
+          "label": "Het geeft een fout.",
           "isCorrect": false
         },
         {
@@ -133,9 +131,14 @@
           "isCorrect": false
         },
         {
-          "id": "error",
-          "label": "Het geeft een fout.",
+          "id": "class-int",
+          "label": "Iets zoals <class 'int'>",
           "isCorrect": false
+        },
+        {
+          "id": "class-str",
+          "label": "Iets zoals <class 'str'>",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -146,7 +149,8 @@
           "prints-hello": "`type` print de waarde niet; het print informatie over het type.",
           "error": "Dit is geldige Python, geen fout hier."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-implicit-int-float",
@@ -154,14 +158,14 @@
       "prompt": "Wat is het **type** van het resultaat van `3 + 2.5` in Python?",
       "options": [
         {
-          "id": "int",
-          "label": "int",
-          "isCorrect": false
-        },
-        {
           "id": "float",
           "label": "float",
           "isCorrect": true
+        },
+        {
+          "id": "int",
+          "label": "int",
+          "isCorrect": false
         },
         {
           "id": "str",
@@ -182,7 +186,8 @@
           "str": "Er zitten geen strings in deze expressie.",
           "bool": "Er spelen geen True/False-waarden mee."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-string-plus-int-bug",
@@ -190,24 +195,24 @@
       "prompt": "Wat gebeurt er als je deze code runt?\\n\\n```python\\nage = 12\\nprint(\"You are \" + age)\\n```",
       "options": [
         {
+          "id": "prints-you-are-12",
+          "label": "Het print `You are 12`.",
+          "isCorrect": false
+        },
+        {
           "id": "prints-text-age",
           "label": "Het print `You are age`.",
           "isCorrect": false
         },
         {
-          "id": "prints-you-are-12",
-          "label": "Het print `You are 12`.",
+          "id": "crash",
+          "label": "Het laat je hele computer crashen.",
           "isCorrect": false
         },
         {
           "id": "type-error",
           "label": "Het geeft een TypeError omdat je een string en een getal optelt.",
           "isCorrect": true
-        },
-        {
-          "id": "crash",
-          "label": "Het laat je hele computer crashen.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -218,13 +223,19 @@
           "type-error": "Juist, Python klaagt omdat `age` een `int` is, geen `str`.",
           "crash": "Fouten stoppen je programma, maar ze maken je computer niet kapot."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-fix-string-plus-int",
       "type": "single-choice",
       "prompt": "Welke regel is de **beste** fix voor deze code zodat het `You are 12` print?\\n\\n```python\\nage = 12\\n# your code here\\n```",
       "options": [
+        {
+          "id": "use-bool",
+          "label": "print(\"You are \" + bool(age))",
+          "isCorrect": false
+        },
         {
           "id": "use-str",
           "label": "print(\"You are \" + str(age))",
@@ -233,11 +244,6 @@
         {
           "id": "use-int",
           "label": "print(\"You are \" + int(age))",
-          "isCorrect": false
-        },
-        {
-          "id": "use-bool",
-          "label": "print(\"You are \" + bool(age))",
           "isCorrect": false
         },
         {
@@ -254,7 +260,8 @@
           "use-bool": "`bool(age)` zou `True` zijn, en dat is niet wat we willen.",
           "just-age": "Dit print `12`, maar verliest de tekst `You are` uit het oorspronkelijke doel."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-safe-int-conversion",
@@ -290,7 +297,8 @@
           "word-ten": "Python weet niet hoe het Engelse woord 'ten' om te zetten naar een getal.",
           "empty": "Een lege string stelt geen getal voor."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-bool-empty-string",
@@ -298,8 +306,8 @@
       "prompt": "Wat is het resultaat van `bool(\"\")` (een lege string)?",
       "options": [
         {
-          "id": "true",
-          "label": "True",
+          "id": "error",
+          "label": "Het geeft een fout.",
           "isCorrect": false
         },
         {
@@ -308,13 +316,13 @@
           "isCorrect": true
         },
         {
-          "id": "error",
-          "label": "Het geeft een fout.",
+          "id": "string-false",
+          "label": "\"False\"",
           "isCorrect": false
         },
         {
-          "id": "string-false",
-          "label": "\"False\"",
+          "id": "true",
+          "label": "True",
           "isCorrect": false
         }
       ],
@@ -326,18 +334,14 @@
           "error": "`bool` kan strings aan; geen fout hier.",
           "string-false": "Dit zou weer een string zijn, geen boolean."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-type-for-debugging",
       "type": "single-choice",
       "prompt": "Je ziet deze code:\\n\\n```python\\ncoins = \"10\"\\nprint(type(coins))\\n```\\n\\nWat helpt deze regel je vooral te checken?",
       "options": [
-        {
-          "id": "coins-is-string",
-          "label": "Dat `coins` een string is, geen getal.",
-          "isCorrect": true
-        },
         {
           "id": "coins-is-int",
           "label": "Dat `coins` een int is.",
@@ -347,6 +351,11 @@
           "id": "coins-will-auto-convert",
           "label": "Dat Python het later automatisch naar een getal zal omzetten.",
           "isCorrect": false
+        },
+        {
+          "id": "coins-is-string",
+          "label": "Dat `coins` een string is, geen getal.",
+          "isCorrect": true
         },
         {
           "id": "coins-is-broken",
@@ -362,7 +371,8 @@
           "coins-will-auto-convert": "Python zet number-like strings niet automatisch om in rekenoperaties.",
           "coins-is-broken": "De waarde is niet kapot; ze heeft gewoon een ander type dan je verwacht."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-auto-convert-string-number",
@@ -370,14 +380,14 @@
       "prompt": "Waar of niet waar: Python zet automatisch de string `'5'` om naar het getal 5 wanneer je `'5' + 3` doet.",
       "options": [
         {
-          "id": "true",
-          "label": "True",
-          "isCorrect": false
-        },
-        {
           "id": "false",
           "label": "False",
           "isCorrect": true
+        },
+        {
+          "id": "true",
+          "label": "True",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -386,7 +396,8 @@
           "true": "`'5' + 3` geeft in werkelijkheid een TypeError.",
           "false": "Juist, je moet zelf omzetten, bv. `int('5') + 3` of `'5' + str(3)`."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

@@ -15,9 +15,9 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "Om code te herhalen voor elk item in een reeks.",
-          "isCorrect": true
+          "id": "d",
+          "label": "Om een nieuwe variabele te maken.",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -25,9 +25,9 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Om een nieuwe variabele te maken.",
-          "isCorrect": false
+          "id": "b",
+          "label": "Om code te herhalen voor elk item in een reeks.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,7 +38,8 @@
           "c": "Om te stoppen gebruik je exit() of iets gelijkaardigs, niet for.",
           "d": "Variabelen kan je overal aanmaken, niet alleen in for-lussen."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-range-3",
@@ -46,8 +47,8 @@
       "prompt": "Welke getallen genereert range(3)?",
       "options": [
         {
-          "id": "a",
-          "label": "1, 2, 3",
+          "id": "c",
+          "label": "0, 1, 2, 3",
           "isCorrect": false
         },
         {
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "0, 1, 2, 3",
+          "id": "d",
+          "label": "Alleen 3",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Only 3",
+          "id": "a",
+          "label": "1, 2, 3",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "Dat bevat de stop-waarde, en dat doet range() net niet.",
           "d": "range(3) maakt een reeks, geen enkel getal."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-while-stop",
@@ -82,8 +84,8 @@
       "prompt": "Wanneer stopt een while-lus met draaien?",
       "options": [
         {
-          "id": "a",
-          "label": "Na exact 10 rondes.",
+          "id": "d",
+          "label": "Alleen als de gebruiker een toets indrukt.",
           "isCorrect": false
         },
         {
@@ -92,13 +94,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Als Python beslist dat het genoeg is.",
+          "id": "a",
+          "label": "Na exact 10 rondes.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Alleen als de gebruiker een toets indrukt.",
+          "id": "c",
+          "label": "Als Python beslist dat het genoeg is.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Python stopt je lussen niet automatisch voor jou.",
           "d": "User input kan de conditie beïnvloeden, maar het is niet verplicht."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-infinite-while",
@@ -118,8 +121,8 @@
       "prompt": "Welke fout kan makkelijk een oneindige while-lus maken?",
       "options": [
         {
-          "id": "a",
-          "label": "Een for-lus gebruiken in de plaats.",
+          "id": "d",
+          "label": "range() gebruiken met 0.",
           "isCorrect": false
         },
         {
@@ -133,8 +136,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "range() gebruiken met 0.",
+          "id": "a",
+          "label": "Een for-lus gebruiken in de plaats.",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Veel printen is irritant, maar op zichzelf niet oneindig.",
           "d": "range() gebruik je niet rechtstreeks in while-lussen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-iterate-string",
@@ -154,23 +158,23 @@
       "prompt": "Wat doet `for ch in 'cat':`?",
       "options": [
         {
-          "id": "a",
-          "label": "Loopt over de getallen 1 tot 3.",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "Loopt over de letters 'c', 'a', 't'.",
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Geeft een fout; je kan niet over strings loopen.",
+          "id": "a",
+          "label": "Loopt over de getallen 1 tot 3.",
           "isCorrect": false
         },
         {
           "id": "d",
           "label": "Verwijdert de string.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Geeft een fout; je kan niet over strings loopen.",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "Python laat je toe om over strings te loopen.",
           "d": "for verwijdert geen waarden."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

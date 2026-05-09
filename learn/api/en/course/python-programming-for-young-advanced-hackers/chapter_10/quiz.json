@@ -10,8 +10,8 @@
       "prompt": "What is a set in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "A list that is always sorted.",
+          "id": "d",
+          "label": "A dictionary with only one key.",
           "isCorrect": false
         },
         {
@@ -20,13 +20,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "A string with only numbers.",
+          "id": "a",
+          "label": "A list that is always sorted.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "A dictionary with only one key.",
+          "id": "c",
+          "label": "A string with only numbers.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Strings are text, not sets.",
           "d": "Dictionaries store key-value pairs, which is different from sets."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-create-set",
@@ -46,23 +47,23 @@
       "prompt": "Which line correctly creates a set of file names?",
       "options": [
         {
-          "id": "a",
-          "label": "files = [\"log.txt\", \"data.txt\"]",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "files = (\"log.txt\", \"data.txt\")",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "files = {\"log.txt\", \"data.txt\"}",
           "isCorrect": true
         },
         {
+          "id": "a",
+          "label": "files = [\"log.txt\", \"data.txt\"]",
+          "isCorrect": false
+        },
+        {
           "id": "d",
           "label": "files = \"log.txt, data.txt\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "files = (\"log.txt\", \"data.txt\")",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "Correct, this creates a set of two file names.",
           "d": "This is one long string, not a set."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-remove-duplicates",
@@ -92,14 +94,14 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "{1, 2, 3}",
-          "isCorrect": true
-        },
-        {
           "id": "d",
           "label": "(1, 2, 3)",
           "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "{1, 2, 3}",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "c": "Correct - only unique values remain in the set.",
           "d": "Tuples are a different type that does not remove duplicates automatically."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-union-intersection",
@@ -123,11 +126,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "{1}",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "{2}",
           "isCorrect": true
@@ -135,6 +133,11 @@
         {
           "id": "d",
           "label": "{}",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "{1}",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Correct - 2 is the only element in both sets.",
           "d": "There is at least one common element, so it's not an empty set."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-set-vs-list",
@@ -154,9 +158,9 @@
       "prompt": "Which statement about sets and lists is true?",
       "options": [
         {
-          "id": "a",
-          "label": "Lists remove duplicates automatically, sets do not.",
-          "isCorrect": false
+          "id": "d",
+          "label": "Sets keep only unique elements, lists can have duplicates.",
+          "isCorrect": true
         },
         {
           "id": "b",
@@ -164,14 +168,14 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Both sets and lists allow duplicate elements.",
+          "id": "a",
+          "label": "Lists remove duplicates automatically, sets do not.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Sets keep only unique elements, lists can have duplicates.",
-          "isCorrect": true
+          "id": "c",
+          "label": "Both sets and lists allow duplicate elements.",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "Only lists allow duplicates; sets do not.",
           "d": "Correct - this is the key difference for duplicates."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

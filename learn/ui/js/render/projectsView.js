@@ -46,7 +46,12 @@ function buildFilterBar({ difficulties, tags, currentLang, onFilterChange, onLan
   bar.className = 'projects-filters';
 
   const langHtml = getCourseLanguageOptions()
-    .map(l => `<option value="${l.code}" ${l.code === currentLang ? 'selected' : ''}>${l.label}</option>`)
+    .map(l => {
+      const code = escapeHtmlAttr(String(l.code || ''));
+      const label = escapeHtml(String(l.label || ''));
+      const sel = String(l.code) === currentLang ? 'selected' : '';
+      return `<option value="${code}" ${sel}>${label}</option>`;
+    })
     .join('');
 
   bar.innerHTML = `
@@ -144,7 +149,8 @@ export async function renderProjectsView(rootEl) {
       });
 
       if (projects.length === 0) {
-        container.innerHTML = `<p class="muted" style="margin-top: 20px;">No projects found in your library for "${currentLang.toUpperCase()}".</p>`;
+        const safeLang = escapeHtml(String(currentLang || '').toUpperCase());
+        container.innerHTML = `<p class="muted" style="margin-top: 20px;">No projects found in your library for "${safeLang}".</p>`;
         return;
       }
 

@@ -10,8 +10,8 @@
       "prompt": "Which expression correctly calculates 2 to the power of 5 in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "2 ^ 5",
+          "id": "d",
+          "label": "pow(2, 5, 0)",
           "isCorrect": false
         },
         {
@@ -25,8 +25,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "pow(2, 5, 0)",
+          "id": "a",
+          "label": "2 ^ 5",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "There is no ^^ operator in Python.",
           "d": "pow(2, 5) would work, but pow(2, 5, 0) has a different meaning and would raise an error."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-math-sqrt",
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "math.square_root(16)",
+          "id": "d",
+          "label": "math.sqrt = 16",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "math.sqrt = 16",
+          "id": "c",
+          "label": "math.square_root(16)",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "There is no function named square_root in the math module.",
           "d": "This would try to overwrite math.sqrt instead of calling it."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-floor-ceil",
@@ -87,11 +89,6 @@
           "isCorrect": true
         },
         {
-          "id": "b",
-          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7",
           "isCorrect": false
@@ -99,6 +96,11 @@
         {
           "id": "d",
           "label": "math.floor(3.7) = 4, math.ceil(3.7) = 4",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Floor and ceil always return whole numbers, not the original decimal.",
           "d": "Both going to 4 would not be correct for floor."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-rounding",
@@ -118,13 +121,13 @@
       "prompt": "What does `round(2.6)` return in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "2",
+          "id": "b",
+          "label": "2.0",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "2.0",
+          "id": "a",
+          "label": "2",
           "isCorrect": false
         },
         {
@@ -146,7 +149,8 @@
           "c": "Correct, round(2.6) is 3.",
           "d": "Conceptually close, but in this quiz we use plain integers for whole numbers."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-random-randint",
@@ -182,7 +186,8 @@
           "c": "random.random() does not take arguments and returns a float between 0 and 1.",
           "d": "random.choice() expects a sequence (like a list), not two numbers."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

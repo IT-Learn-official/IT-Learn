@@ -15,6 +15,11 @@
           "isCorrect": false
         },
         {
+          "id": "d",
+          "label": "Finds the remainder after division.",
+          "isCorrect": false
+        },
+        {
           "id": "b",
           "label": "Divides one number by another.",
           "isCorrect": false
@@ -23,11 +28,6 @@
           "id": "c",
           "label": "Raises one number to the power of another.",
           "isCorrect": true
-        },
-        {
-          "id": "d",
-          "label": "Finds the remainder after division.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -38,18 +38,14 @@
           "c": "Correct! `**` means exponentiation.",
           "d": "Remainder is found with `%`."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-comparison-operator",
       "type": "single-choice",
       "prompt": "Which operator checks if two values are NOT equal?",
       "options": [
-        {
-          "id": "a",
-          "label": "==",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "!=",
@@ -58,6 +54,11 @@
         {
           "id": "c",
           "label": ">",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "==",
           "isCorrect": false
         },
         {
@@ -74,7 +75,8 @@
           "c": "`>` checks if one value is greater than another.",
           "d": "`<=` checks for less than or equal to."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-assignment-operator",
@@ -82,14 +84,14 @@
       "prompt": "What does the operator `+=` do?",
       "options": [
         {
-          "id": "a",
-          "label": "It adds a value to a variable and updates the variable.",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "It checks if two values are equal.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "It adds a value to a variable and updates the variable.",
+          "isCorrect": true
         },
         {
           "id": "c",
@@ -110,7 +112,8 @@
           "c": "Multiplication uses `*`.",
           "d": "Subtraction and update uses `-=`."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-logical-operator",
@@ -123,11 +126,6 @@
           "isCorrect": true
         },
         {
-          "id": "b",
-          "label": "++",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "==",
           "isCorrect": false
@@ -135,6 +133,11 @@
         {
           "id": "d",
           "label": "**",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "++",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "`==` is a comparison operator.",
           "d": "`**` is an arithmetic operator."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

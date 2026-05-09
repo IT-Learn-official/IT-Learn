@@ -10,11 +10,6 @@
       "prompt": "Was macht der Operator `**` in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Addiert zwei Zahlen.",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "Teilt eine Zahl durch eine andere.",
           "isCorrect": false
@@ -23,6 +18,11 @@
           "id": "c",
           "label": "Potenzieren: eine Zahl zur Potenz einer anderen erheben.",
           "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "Addiert zwei Zahlen.",
+          "isCorrect": false
         },
         {
           "id": "d",
@@ -38,7 +38,8 @@
           "c": "Richtig! `**` bedeutet Potenzieren.",
           "d": "Den Rest bekommst du mit `%`."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-comparison-operator",
@@ -46,14 +47,14 @@
       "prompt": "Welcher Operator prüft, ob zwei Werte NICHT gleich sind?",
       "options": [
         {
-          "id": "a",
-          "label": "==",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "!=",
           "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "==",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -74,7 +75,8 @@
           "c": "`>` prüft, ob ein Wert größer als ein anderer ist.",
           "d": "`<=` prüft kleiner gleich."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-assignment-operator",
@@ -82,9 +84,9 @@
       "prompt": "Was macht der Operator `+=`?",
       "options": [
         {
-          "id": "a",
-          "label": "Er addiert einen Wert zu einer Variable und aktualisiert die Variable.",
-          "isCorrect": true
+          "id": "d",
+          "label": "Er zieht einen Wert von einer Variable ab.",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -92,13 +94,13 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Er multipliziert zwei Werte.",
-          "isCorrect": false
+          "id": "a",
+          "label": "Er addiert einen Wert zu einer Variable und aktualisiert die Variable.",
+          "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "Er zieht einen Wert von einer Variable ab.",
+          "id": "c",
+          "label": "Er multipliziert zwei Werte.",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Multiplizieren machst du mit `*`.",
           "d": "Subtrahieren und updaten machst du mit `-=`."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-logical-operator",
@@ -118,9 +121,9 @@
       "prompt": "Welche davon ist ein logischer Operator in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "and",
-          "isCorrect": true
+          "id": "c",
+          "label": "==",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -128,14 +131,14 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "==",
-          "isCorrect": false
-        },
-        {
           "id": "d",
           "label": "**",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "and",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -146,7 +149,8 @@
           "c": "`==` ist ein Vergleichsoperator.",
           "d": "`**` ist ein Rechenoperator."
         }
-      }
+      },
+      "correct": 3
     }
   ]
 }
