@@ -10,8 +10,8 @@
       "prompt": "Was ist der Hauptzweck der __init__-Methode in einer Python-Klasse?",
       "options": [
         {
-          "id": "a",
-          "label": "Um ein Objekt aus dem Speicher zu löschen.",
+          "id": "c",
+          "label": "Um das Objekt zu printen, wenn du print(obj) aufrufst.",
           "isCorrect": false
         },
         {
@@ -20,13 +20,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Um das Objekt zu printen, wenn du print(obj) aufrufst.",
+          "id": "d",
+          "label": "Um eine globale Funktion zu definieren.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Um eine globale Funktion zu definieren.",
+          "id": "a",
+          "label": "Um ein Objekt aus dem Speicher zu löschen.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "print(obj) benutzt __str__ oder __repr__, nicht __init__.",
           "d": "__init__ gehört zu einer Klasse, nicht zum globalen Scope."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-correct-class-def",
@@ -51,14 +52,14 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "class Car:\n    def __init__(self, color):\n        self.color = color",
-          "isCorrect": true
-        },
-        {
           "id": "c",
           "label": "def Car(color):\n    self.color = color",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "class Car:\n    def __init__(self, color):\n        self.color = color",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -74,23 +75,14 @@
           "c": "Das definiert eine Funktion, keine Klasse.",
           "d": "Das ist keine gültige Klassen-Syntax in einfachem Python."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-create-object",
       "type": "single-choice",
       "prompt": "Gegeben die Klasse Player:\n    def __init__(self, name):\n        self.name = name\nWie erstellst du korrekt einen neuen Player namens 'Alex'?",
       "options": [
-        {
-          "id": "a",
-          "label": "p = Player.__init__(\"Alex\")",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "p = new Player(\"Alex\")",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "p = Player(\"Alex\")",
@@ -99,6 +91,16 @@
         {
           "id": "d",
           "label": "p = Player.init(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "p = Player.__init__(\"Alex\")",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "p = new Player(\"Alex\")",
           "isCorrect": false
         }
       ],
@@ -110,7 +112,8 @@
           "c": "Richtig, das ruft Player auf und lässt __init__ im Hintergrund laufen.",
           "d": "Es gibt keine eingebaute init-Methode mit diesem Namen auf der Klasse."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-access-attribute",
@@ -123,11 +126,6 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "name = self.name",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "name = p.name",
           "isCorrect": true
@@ -135,6 +133,11 @@
         {
           "id": "d",
           "label": "name = name.self",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "name = self.name",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Richtig, p.name liest das name-Attribut dieses Player-Objekts.",
           "d": "Das ist keine gültige Python-Syntax."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-self-meaning",
@@ -154,24 +158,24 @@
       "prompt": "In einer Methode, die so definiert ist: def greet(self):, worauf bezieht sich self normalerweise?",
       "options": [
         {
-          "id": "a",
-          "label": "Die Klasse selbst.",
+          "id": "b",
+          "label": "Das Modul, in dem die Klasse definiert ist.",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "Das Modul, in dem die Klasse definiert ist.",
+          "id": "d",
+          "label": "Eine zufällige globale Variable.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Die Klasse selbst.",
           "isCorrect": false
         },
         {
           "id": "c",
           "label": "Das konkrete Objekt (die Instanz), auf dem die Methode aufgerufen wird.",
           "isCorrect": true
-        },
-        {
-          "id": "d",
-          "label": "Eine zufällige globale Variable.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "Richtig – self lässt Methoden auf die Daten der Instanz zugreifen.",
           "d": "self ist nur ein normaler Parameternamen, keine globale Variable."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-class-vs-instance-attribute",
@@ -190,14 +195,14 @@
       "prompt": "Du hast:\n\n```python\nclass Hacker:\n    team_name = \"Red\"\n\n    def __init__(self, name):\n        self.name = name\n\na = Hacker(\"Alex\")\nb = Hacker(\"Blake\")\nHacker.team_name = \"Blue\"\na.name = \"Avery\"\n```\n\nWas sind am Ende die Werte von a.team_name und b.name?",
       "options": [
         {
-          "id": "a",
-          "label": "a.team_name == \"Red\" and b.name == \"Blake\"",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "a.team_name == \"Blue\" and b.name == \"Blake\"",
           "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "a.team_name == \"Red\" and b.name == \"Blake\"",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -218,7 +223,8 @@
           "c": "Falsch, b.name ist immer noch 'Blake', nicht 'Blue'.",
           "d": "Falsch, team_name ist jetzt 'Blue', nicht 'Red'."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-method-side-effects",
@@ -226,24 +232,24 @@
       "prompt": "Gegeben:\n\n```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n\n    def click(self):\n        self.value = self.value + 1\n        return self.value\n\nc = Counter()\nx = c.click()\ny = c.click()\n```\n\nWas sind die Werte von x und y?",
       "options": [
         {
+          "id": "b",
+          "label": "x == 1 and y == 1",
+          "isCorrect": false
+        },
+        {
           "id": "a",
           "label": "x == 0 and y == 0",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "x == 1 and y == 1",
+          "id": "d",
+          "label": "x == 2 and y == 3",
           "isCorrect": false
         },
         {
           "id": "c",
           "label": "x == 1 and y == 2",
           "isCorrect": true
-        },
-        {
-          "id": "d",
-          "label": "x == 2 and y == 3",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -254,7 +260,8 @@
           "c": "Richtig, der erste Aufruf gibt 1 zurück, der zweite gibt 2 zurück.",
           "d": "Falsch, das wäre nur richtig, wenn der Counter bei 1 gestartet wäre."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-self-parameter-behavior",
@@ -262,8 +269,8 @@
       "prompt": "Was ist die beste Beschreibung von self in dieser Methode?\n\n```python\nclass Device:\n    def reboot(self):\n        print(\"Rebooting\", self.name)\n```",
       "options": [
         {
-          "id": "a",
-          "label": "self ist ein Schlüsselwort, das immer auf die Klasse Device verweist.",
+          "id": "d",
+          "label": "self muss immer self heißen, sonst crasht Python.",
           "isCorrect": false
         },
         {
@@ -277,8 +284,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "self muss immer self heißen, sonst crasht Python.",
+          "id": "a",
+          "label": "self ist ein Schlüsselwort, das immer auf die Klasse Device verweist.",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "c": "Falsch, self ist nicht global; es wird wie jeder andere Parameter übergeben.",
           "d": "Falsch, du kannst einen anderen Namen benutzen, aber self ist die übliche Konvention."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-multiple-objects-state",
@@ -298,8 +306,8 @@
       "prompt": "Gegeben:\n\n```python\nclass Bot:\n    def __init__(self, name):\n        self.name = name\n        self.energy = 100\n\n    def drain(self, amount):\n        self.energy = self.energy - amount\n\na = Bot(\"Alpha\")\nb = Bot(\"Beta\")\na.drain(30)\nb.drain(10)\n```\n\nWas sind die endgültigen energy-Werte?",
       "options": [
         {
-          "id": "a",
-          "label": "a.energy == 100 and b.energy == 100",
+          "id": "d",
+          "label": "a.energy == 70 and b.energy == 70",
           "isCorrect": false
         },
         {
@@ -313,8 +321,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "a.energy == 70 and b.energy == 70",
+          "id": "a",
+          "label": "a.energy == 100 and b.energy == 100",
           "isCorrect": false
         }
       ],
@@ -326,7 +334,8 @@
           "c": "Falsch, Alpha hat nur 30 gedraint, nicht 40.",
           "d": "Falsch, Beta hat nur 10 gedraint, also sollte es 90 sein, nicht 70."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

@@ -10,11 +10,6 @@
       "prompt": "Wofür benutzt man in Python hauptsächlich eine for-Schleife?",
       "options": [
         {
-          "id": "a",
-          "label": "Um eine Funktion zu definieren.",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "Um Code für jedes Element in einer Sequenz zu wiederholen.",
           "isCorrect": true
@@ -28,6 +23,11 @@
           "id": "d",
           "label": "Um eine neue Variable zu erstellen.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Um eine Funktion zu definieren.",
+          "isCorrect": false
         }
       ],
       "explanations": {
@@ -38,23 +38,14 @@
           "c": "Um ein Programm zu stoppen, würdest du exit() oder Ähnliches verwenden, nicht for.",
           "d": "Variablen kann man überall erstellen, nicht nur in for-Schleifen."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-range-3",
       "type": "single-choice",
       "prompt": "Welche Zahlen erzeugt range(3)?",
       "options": [
-        {
-          "id": "a",
-          "label": "1, 2, 3",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "0, 1, 2",
-          "isCorrect": true
-        },
         {
           "id": "c",
           "label": "0, 1, 2, 3",
@@ -63,6 +54,16 @@
         {
           "id": "d",
           "label": "Only 3",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "0, 1, 2",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "label": "1, 2, 3",
           "isCorrect": false
         }
       ],
@@ -74,18 +75,14 @@
           "c": "Das enthält den stop-Wert, und das tut range() nicht.",
           "d": "range(3) erzeugt eine Sequenz, keine einzelne Zahl."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-while-stop",
       "type": "single-choice",
       "prompt": "Wann hört eine while-Schleife auf zu laufen?",
       "options": [
-        {
-          "id": "a",
-          "label": "Nach genau 10 Durchläufen.",
-          "isCorrect": false
-        },
         {
           "id": "b",
           "label": "Wenn ihre Bedingung False wird.",
@@ -94,6 +91,11 @@
         {
           "id": "c",
           "label": "Wenn Python entscheidet, dass es reicht.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Nach genau 10 Durchläufen.",
           "isCorrect": false
         },
         {
@@ -110,13 +112,19 @@
           "c": "Python stoppt deine Schleifen nicht automatisch für dich.",
           "d": "User-Input kann die Bedingung beeinflussen, ist aber nicht nötig."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-infinite-while",
       "type": "single-choice",
       "prompt": "Welcher Fehler kann leicht eine endlose while-Schleife erzeugen?",
       "options": [
+        {
+          "id": "d",
+          "label": "range() mit 0 benutzen.",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "Stattdessen eine for-Schleife benutzen.",
@@ -131,11 +139,6 @@
           "id": "c",
           "label": "Zu oft printen.",
           "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "range() mit 0 benutzen.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -146,13 +149,19 @@
           "c": "Viel zu printen ist nervig, aber nicht automatisch unendlich.",
           "d": "range() wird nicht direkt in while-Schleifen benutzt."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-iterate-string",
       "type": "single-choice",
       "prompt": "Was macht `for ch in 'cat':`?",
       "options": [
+        {
+          "id": "d",
+          "label": "Es löscht den String.",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "Es läuft über die Zahlen 1 bis 3.",
@@ -167,11 +176,6 @@
           "id": "c",
           "label": "Es gibt einen Fehler; man kann nicht über Strings iterieren.",
           "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "Es löscht den String.",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "Python erlaubt es, über Strings zu iterieren.",
           "d": "for löscht keine Werte."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

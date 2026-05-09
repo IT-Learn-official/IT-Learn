@@ -10,9 +10,9 @@
       "prompt": "In Python, wat is een functie zoals len of round?",
       "options": [
         {
-          "id": "a",
-          "label": "Een herbruikbare helper die een specifieke taak doet wanneer je die oproept.",
-          "isCorrect": true
+          "id": "d",
+          "label": "Een venster dat op het scherm verschijnt.",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -20,13 +20,13 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Een variabele die alleen getallen bewaart.",
-          "isCorrect": false
+          "id": "a",
+          "label": "Een herbruikbare helper die een specifieke taak doet wanneer je die oproept.",
+          "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "Een venster dat op het scherm verschijnt.",
+          "id": "c",
+          "label": "Een variabele die alleen getallen bewaart.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Niet helemaal. Variabelen bewaren waarden; functies zijn acties die je kan oproepen.",
           "d": "Nee. Een functie kan dingen printen, maar ze is geen venster."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-parentheses-meaning",
@@ -46,9 +47,9 @@
       "prompt": "Wat doen de haakjes in deze regel code?\\n\\n```python\\nprint(\"Hello\")\\n```",
       "options": [
         {
-          "id": "a",
-          "label": "Ze roepen de functie print aan en bevatten de argumenten.",
-          "isCorrect": true
+          "id": "c",
+          "label": "Ze zijn maar versiering; ze doen niets.",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -56,9 +57,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Ze zijn maar versiering; ze doen niets.",
-          "isCorrect": false
+          "id": "a",
+          "label": "Ze roepen de functie print aan en bevatten de argumenten.",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -74,7 +75,8 @@
           "c": "Ze zijn heel belangrijk. Zonder haakjes zou Python de functie niet aanroepen.",
           "d": "Lussen maak je met `for`/`while`, niet met haakjes na `print`."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-arguments-meaning",
@@ -87,13 +89,13 @@
           "isCorrect": true
         },
         {
-          "id": "b",
-          "label": "Het verdubbelt het getal vóór het afronden.",
+          "id": "c",
+          "label": "Het laat de functie 2 keer lopen.",
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "Het laat de functie 2 keer lopen.",
+          "id": "b",
+          "label": "Het verdubbelt het getal vóór het afronden.",
           "isCorrect": false
         },
         {
@@ -110,7 +112,8 @@
           "c": "Nee. De functie draait nog altijd maar één keer.",
           "d": "Het heeft zeker betekenis: het is een argument van de functie."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-return-value",
@@ -146,7 +149,8 @@
           "c": "De variabele length bewaart het getal 6, niet de originele tekst.",
           "d": "Nee, length krijgt wél een waarde: de returnwaarde van len(\"wizard\")."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-len-behavior",
@@ -164,13 +168,13 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "1",
+          "id": "d",
+          "label": "Het geeft een fout.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Het geeft een fout.",
+          "id": "c",
+          "label": "1",
           "isCorrect": false
         }
       ],
@@ -182,23 +186,14 @@
           "c": "Er is duidelijk meer dan 1 teken.",
           "d": "len werkt prima op strings zoals 'hello!'."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-abs-behavior",
       "type": "single-choice",
       "prompt": "Wat is het resultaat van `abs(-10)`?",
       "options": [
-        {
-          "id": "a",
-          "label": "10",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "-10",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "0",
@@ -207,6 +202,16 @@
         {
           "id": "d",
           "label": "Het print -10 maar geeft niets terug.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "10",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "-10",
           "isCorrect": false
         }
       ],
@@ -218,7 +223,8 @@
           "c": "De afstand van 0 tot -10 is niet 0.",
           "d": "abs geeft een getal terug; het print niet vanzelf."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-round-usage",
@@ -226,13 +232,8 @@
       "prompt": "Wat geeft `round(5.678, 1)` terug?",
       "options": [
         {
-          "id": "a",
-          "label": "5.7",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "5.6",
+          "id": "d",
+          "label": "567.8",
           "isCorrect": false
         },
         {
@@ -241,9 +242,14 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "567.8",
+          "id": "b",
+          "label": "5.6",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "5.7",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -254,7 +260,8 @@
           "c": "Dat zou afronden naar een geheel getal zijn, niet naar één decimaal.",
           "d": "Dat zou vermenigvuldigen met 100 zijn; round doet dat niet."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-type-debugging",
@@ -262,13 +269,13 @@
       "prompt": "Waarom zou een programmeur `print(type(coins))` in code zetten?",
       "options": [
         {
-          "id": "a",
-          "label": "Om te checken welk type waarde coins is (zoals int of str).",
-          "isCorrect": true
-        },
-        {
           "id": "b",
           "label": "Om coins te veranderen naar een andere waarde.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om heel vaak over coins te loopen.",
           "isCorrect": false
         },
         {
@@ -277,9 +284,9 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Om heel vaak over coins te loopen.",
-          "isCorrect": false
+          "id": "a",
+          "label": "Om te checken welk type waarde coins is (zoals int of str).",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -290,23 +297,14 @@
           "c": "Variabelen verwijder je niet met type.",
           "d": "Lussen maak je met for of while, niet met type."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-console-vs-print",
       "type": "single-choice",
       "prompt": "In de Python REPL zie je dit: \\n\\n```python\\n>>> len(\"cat\")\\n3\\n>>> print(len(\"cat\"))\\n3\\n```\\nWat is waar over deze twee regels?",
       "options": [
-        {
-          "id": "a",
-          "label": "Beide gebruiken len, maar de tweede gebruikt ook print om het resultaat te tonen.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Alleen de eerste regel gebruikt len.",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "De tweede regel verandert de waarde die len teruggeeft.",
@@ -316,6 +314,16 @@
           "id": "d",
           "label": "De eerste regel geeft een fout.",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Alleen de eerste regel gebruikt len.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Beide gebruiken len, maar de tweede gebruikt ook print om het resultaat te tonen.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -326,7 +334,8 @@
           "c": "print verandert de waarde van len niet; het toont ze alleen.",
           "d": "len('cat') is perfect geldig."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-print-vs-returning",
@@ -334,9 +343,9 @@
       "prompt": "Welke functie hieronder gebruik je vooral om tekst op het scherm te tonen, in plaats van een getal terug te geven dat je in berekeningen gebruikt?",
       "options": [
         {
-          "id": "a",
-          "label": "print",
-          "isCorrect": true
+          "id": "d",
+          "label": "abs",
+          "isCorrect": false
         },
         {
           "id": "b",
@@ -344,13 +353,13 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "round",
-          "isCorrect": false
+          "id": "a",
+          "label": "print",
+          "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "abs",
+          "id": "c",
+          "label": "round",
           "isCorrect": false
         }
       ],
@@ -362,7 +371,8 @@
           "c": "round geeft een afgerond getal terug.",
           "d": "abs geeft de afstand tot nul terug als een getal."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

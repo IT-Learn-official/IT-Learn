@@ -10,8 +10,13 @@
       "prompt": "You want to teach a computer to send you a reminder every day at 7pm. What is a programming language in this situation?",
       "options": [
         {
-          "id": "human-language",
-          "label": "A language spoken by humans, like English or French",
+          "id": "hardware",
+          "label": "A type of computer hardware (like the keyboard or mouse)",
+          "isCorrect": false
+        },
+        {
+          "id": "os",
+          "label": "A computer operating system, like Windows or macOS",
           "isCorrect": false
         },
         {
@@ -20,13 +25,8 @@
           "isCorrect": true
         },
         {
-          "id": "hardware",
-          "label": "A type of computer hardware (like the keyboard or mouse)",
-          "isCorrect": false
-        },
-        {
-          "id": "os",
-          "label": "A computer operating system, like Windows or macOS",
+          "id": "human-language",
+          "label": "A language spoken by humans, like English or French",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "hardware": "Hardware is the physical stuff (keyboard, mouse, CPU), not the language.",
           "os": "An operating system is software that manages hardware and apps, not the language you write programs in."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-code-vs-programming",
@@ -46,13 +47,8 @@
       "prompt": "You are designing a small game that says hello to the player. Which option best describes the difference between **programming** and **code**?",
       "options": [
         {
-          "id": "no-difference",
-          "label": "There is no real difference, people just use different words.",
-          "isCorrect": false
-        },
-        {
-          "id": "reversed-definition",
-          "label": "Code is planning the steps, programming is typing the exact instructions.",
+          "id": "experts-only",
+          "label": "Programming is only for experts, code is for beginners.",
           "isCorrect": false
         },
         {
@@ -61,8 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "experts-only",
-          "label": "Programming is only for experts, code is for beginners.",
+          "id": "reversed-definition",
+          "label": "Code is planning the steps, programming is typing the exact instructions.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-difference",
+          "label": "There is no real difference, people just use different words.",
           "isCorrect": false
         }
       ],
@@ -74,23 +75,14 @@
           "correct-definition": "Correct, think of programming as the plan plus the code together.",
           "experts-only": "Anyone can learn programming; it's not just for experts."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-compiled-language",
       "type": "single-choice",
       "prompt": "You press a big BUILD button and your code turns into an .exe file you can run over and over. What kind of language are you most likely using?",
       "options": [
-        {
-          "id": "python",
-          "label": "Python",
-          "isCorrect": false
-        },
-        {
-          "id": "cpp",
-          "label": "C++",
-          "isCorrect": true
-        },
         {
           "id": "javascript",
           "label": "JavaScript",
@@ -100,6 +92,16 @@
           "id": "html",
           "label": "HTML",
           "isCorrect": false
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "isCorrect": false
+        },
+        {
+          "id": "cpp",
+          "label": "C++",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "javascript": "JavaScript is typically interpreted by the browser.",
           "html": "HTML is a markup language for structuring web pages, not a compiled programming language."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-repl",
@@ -128,13 +131,13 @@
           "isCorrect": false
         },
         {
-          "id": "read-execute-print-learn",
-          "label": "Read, Execute, Print, Learn",
+          "id": "repeat-eval-print-loop",
+          "label": "Repeat, Evaluate, Print, Loop",
           "isCorrect": false
         },
         {
-          "id": "repeat-eval-print-loop",
-          "label": "Repeat, Evaluate, Print, Loop",
+          "id": "read-execute-print-learn",
+          "label": "Read, Execute, Print, Learn",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "read-execute-print-learn": "Nice idea, but not what REPL stands for.",
           "repeat-eval-print-loop": "Has some of the right words, but the first step is READ, not REPEAT."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-python-creator",
@@ -154,23 +158,23 @@
       "prompt": "Python was created in the late 1980s. Who started this whole thing?",
       "options": [
         {
-          "id": "dennis-ritchie",
-          "label": "Dennis Ritchie",
-          "isCorrect": false
-        },
-        {
           "id": "guido-van-rossum",
           "label": "Guido van Rossum",
           "isCorrect": true
         },
         {
-          "id": "james-gosling",
-          "label": "James Gosling",
+          "id": "dennis-ritchie",
+          "label": "Dennis Ritchie",
           "isCorrect": false
         },
         {
           "id": "bjarne-stroustrup",
           "label": "Bjarne Stroustrup",
+          "isCorrect": false
+        },
+        {
+          "id": "james-gosling",
+          "label": "James Gosling",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "james-gosling": "James Gosling created Java.",
           "bjarne-stroustrup": "Bjarne Stroustrup created C++."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-why-name-python",
@@ -195,11 +200,6 @@
           "isCorrect": false
         },
         {
-          "id": "pet",
-          "label": "It is named after the creator's pet.",
-          "isCorrect": false
-        },
-        {
           "id": "monty-python",
           "label": "It is named after a British comedy series called \"Monty Python's Flying Circus\".",
           "isCorrect": true
@@ -207,6 +207,11 @@
         {
           "id": "acronym",
           "label": "It is an acronym for something secret and technical.",
+          "isCorrect": false
+        },
+        {
+          "id": "pet",
+          "label": "It is named after the creator's pet.",
           "isCorrect": false
         }
       ],
@@ -218,18 +223,14 @@
           "monty-python": "Correct, the creator wanted a fun name.",
           "acronym": "Python is not an acronym; it doesn't secretly stand for something."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-python-extension",
       "type": "single-choice",
       "prompt": "You are saving your first hacker script so you can run it again later. Which file extension should you use for a Python file?",
       "options": [
-        {
-          "id": "txt",
-          "label": ".txt",
-          "isCorrect": false
-        },
         {
           "id": "exe",
           "label": ".exe",
@@ -239,6 +240,11 @@
           "id": "py",
           "label": ".py",
           "isCorrect": true
+        },
+        {
+          "id": "txt",
+          "label": ".txt",
+          "isCorrect": false
         },
         {
           "id": "java",
@@ -254,7 +260,8 @@
           "py": "Correct, .py is the standard extension for Python source files.",
           "java": ".java is for Java source files, not Python."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-print-hello-world",
@@ -262,9 +269,9 @@
       "prompt": "Look at this line of Python code:\n\n```python\nprint(\"Hello, World!\")\n```\n\nWhat does the computer actually show when you run this line?",
       "options": [
         {
-          "id": "hello-world-no-punct",
-          "label": "Hello World",
-          "isCorrect": false
+          "id": "hello-world-with-punct",
+          "label": "Hello, World!",
+          "isCorrect": true
         },
         {
           "id": "prints-code",
@@ -272,13 +279,13 @@
           "isCorrect": false
         },
         {
-          "id": "hello-world-with-punct",
-          "label": "Hello, World!",
-          "isCorrect": true
-        },
-        {
           "id": "error",
           "label": "It gives an error.",
+          "isCorrect": false
+        },
+        {
+          "id": "hello-world-no-punct",
+          "label": "Hello World",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "hello-world-with-punct": "Correct, `print` sends this text to the screen.",
           "error": "There is no error here; this is valid Python."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-repl-or-script",
@@ -298,13 +306,8 @@
       "prompt": "You want to quickly test what `10 / 3` does in Python, and you don't care about saving it. Which mode is the better choice?",
       "options": [
         {
-          "id": "repl",
-          "label": "Interactive mode (the Python REPL)",
-          "isCorrect": true
-        },
-        {
-          "id": "script",
-          "label": "Script mode (saving it in a .py file first)",
+          "id": "spreadsheet",
+          "label": "Putting it into a spreadsheet cell",
           "isCorrect": false
         },
         {
@@ -313,8 +316,13 @@
           "isCorrect": false
         },
         {
-          "id": "spreadsheet",
-          "label": "Putting it into a spreadsheet cell",
+          "id": "repl",
+          "label": "Interactive mode (the Python REPL)",
+          "isCorrect": true
+        },
+        {
+          "id": "script",
+          "label": "Script mode (saving it in a .py file first)",
           "isCorrect": false
         }
       ],
@@ -326,7 +334,8 @@
           "text-editor": "Just typing it in a text file doesn't make Python actually run it.",
           "spreadsheet": "Python code belongs in Python, not in a spreadsheet cell."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-spot-the-error",
@@ -334,9 +343,9 @@
       "prompt": "A friend writes this line and it crashes:\n\n```python\nprint(\"Hello, World!)\n```\n\nWhat is the main problem?",
       "options": [
         {
-          "id": "missing-quote",
-          "label": "One of the quotation marks is missing.",
-          "isCorrect": true
+          "id": "missing-space",
+          "label": "There should be a space after Hello.",
+          "isCorrect": false
         },
         {
           "id": "missing-comma",
@@ -344,9 +353,9 @@
           "isCorrect": false
         },
         {
-          "id": "missing-space",
-          "label": "There should be a space after Hello.",
-          "isCorrect": false
+          "id": "missing-quote",
+          "label": "One of the quotation marks is missing.",
+          "isCorrect": true
         },
         {
           "id": "wrong-word",
@@ -362,18 +371,14 @@
           "missing-space": "Spaces inside the string are fine; that wouldn't crash the program.",
           "wrong-word": "`World` is just text inside the string; Python doesn't care what human words you use there."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-programming-vs-code-scenario",
       "type": "single-choice",
       "prompt": "You want to build a small \"hello\" program. Which of these actions is an example of **programming** (not just code)?",
       "options": [
-        {
-          "id": "write-print-line",
-          "label": "Typing `print(\"Hello, World!\")` into your editor.",
-          "isCorrect": false
-        },
         {
           "id": "plan-steps",
           "label": "Writing a list of steps like: ask for a name, then say hello, then maybe add more features later.",
@@ -382,6 +387,11 @@
         {
           "id": "save-file",
           "label": "Saving the file as `test.py`.",
+          "isCorrect": false
+        },
+        {
+          "id": "write-print-line",
+          "label": "Typing `print(\"Hello, World!\")` into your editor.",
           "isCorrect": false
         },
         {
@@ -398,7 +408,8 @@
           "save-file": "Saving the file is important, but it's not really programming or code by itself.",
           "run-program": "Running the program tests your code, but it's not the planning part."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

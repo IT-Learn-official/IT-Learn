@@ -10,23 +10,23 @@
       "prompt": "Was bedeutet „Ausführungsfluss“ (execution flow) in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Die Reihenfolge, in der Python deinen Code ausführt, Zeile für Zeile.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Die Geschwindigkeit, mit der dein Computer läuft.",
-          "isCorrect": false
-        },
-        {
           "id": "c",
           "label": "Die Art, wie Python Text ausgibt.",
           "isCorrect": false
         },
         {
+          "id": "a",
+          "label": "Die Reihenfolge, in der Python deinen Code ausführt, Zeile für Zeile.",
+          "isCorrect": true
+        },
+        {
           "id": "d",
           "label": "Eine Art Variablentyp in Python.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die Geschwindigkeit, mit der dein Computer läuft.",
           "isCorrect": false
         }
       ],
@@ -38,18 +38,14 @@
           "c": "Ausgabe ist nur ein Teil der Ausführung, nicht der Flow selbst.",
           "d": "Es gibt keinen Variablentyp, der „execution flow“ heißt."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-tracing-variables",
       "type": "single-choice",
       "prompt": "Was bedeutet es, eine Variable im Code zu „tracen“?",
       "options": [
-        {
-          "id": "a",
-          "label": "Nachverfolgen, wie sich ihr Wert während der Programmausführung verändert.",
-          "isCorrect": true
-        },
         {
           "id": "b",
           "label": "Ihr einen neuen Namen geben.",
@@ -64,6 +60,11 @@
           "id": "d",
           "label": "Sie immer in Großbuchstaben ausgeben.",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Nachverfolgen, wie sich ihr Wert während der Programmausführung verändert.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -74,23 +75,14 @@
           "c": "Löschen ist kein Tracing.",
           "d": "Großbuchstaben-Ausgabe ist kein Tracing."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-print-debugging",
       "type": "single-choice",
       "prompt": "Warum verwenden Programmierer beim Debugging print-Ausgaben?",
       "options": [
-        {
-          "id": "a",
-          "label": "Um zu sehen, was im Programm passiert, während es läuft.",
-          "isCorrect": true
-        },
-        {
-          "id": "b",
-          "label": "Um das Programm schneller zu machen.",
-          "isCorrect": false
-        },
         {
           "id": "c",
           "label": "Um Variablen zu löschen.",
@@ -100,6 +92,16 @@
           "id": "d",
           "label": "Um die Textfarbe zu ändern.",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Um das Programm schneller zu machen.",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "Um zu sehen, was im Programm passiert, während es läuft.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -110,7 +112,8 @@
           "c": "Print löscht nichts.",
           "d": "Print ändert in der Python-Konsole keine Textfarbe."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-fix-the-error",
@@ -123,6 +126,11 @@
           "isCorrect": true
         },
         {
+          "id": "d",
+          "label": "Die Spracheinstellungen deines Computers ändern.",
+          "isCorrect": false
+        },
+        {
           "id": "b",
           "label": "Den ganzen Code löschen und neu anfangen.",
           "isCorrect": false
@@ -130,11 +138,6 @@
         {
           "id": "c",
           "label": "Den Fehler ignorieren und weiter ausführen.",
-          "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "Die Spracheinstellungen deines Computers ändern.",
           "isCorrect": false
         }
       ],
@@ -146,7 +149,8 @@
           "c": "Fehler zu ignorieren repariert den Code nicht.",
           "d": "Spracheinstellungen haben damit nichts zu tun."
         }
-      }
+      },
+      "correct": 0
     }
   ]
 }

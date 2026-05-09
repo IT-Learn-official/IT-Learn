@@ -10,8 +10,8 @@
       "prompt": "Welke expressie berekent correct 2 tot de macht 5 in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "2 ^ 5",
+          "id": "c",
+          "label": "2 ^^ 5",
           "isCorrect": false
         },
         {
@@ -20,8 +20,8 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "2 ^^ 5",
+          "id": "a",
+          "label": "2 ^ 5",
           "isCorrect": false
         },
         {
@@ -38,7 +38,8 @@
           "c": "Er bestaat geen `^^`-operator in Python.",
           "d": "`pow(2, 5)` zou werken, maar `pow(2, 5, 0)` betekent iets anders en geeft een error."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-math-sqrt",
@@ -46,8 +47,8 @@
       "prompt": "Je importeerde de math-module met `import math`. Hoe bereken je correct de vierkantswortel van 16?",
       "options": [
         {
-          "id": "a",
-          "label": "sqrt(16)",
+          "id": "d",
+          "label": "math.sqrt = 16",
           "isCorrect": false
         },
         {
@@ -61,8 +62,8 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "math.sqrt = 16",
+          "id": "a",
+          "label": "sqrt(16)",
           "isCorrect": false
         }
       ],
@@ -74,18 +75,14 @@
           "c": "Er is geen functie `square_root` in de math-module.",
           "d": "Dit probeert `math.sqrt` te overschrijven in plaats van het aan te roepen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-floor-ceil",
       "type": "single-choice",
       "prompt": "Wat zijn de resultaten van `math.floor(3.7)` en `math.ceil(3.7)`?",
       "options": [
-        {
-          "id": "a",
-          "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4",
-          "isCorrect": true
-        },
         {
           "id": "b",
           "label": "math.floor(3.7) = 4, math.ceil(3.7) = 3",
@@ -95,6 +92,11 @@
           "id": "c",
           "label": "math.floor(3.7) = 3.7, math.ceil(3.7) = 3.7",
           "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "math.floor(3.7) = 3, math.ceil(3.7) = 4",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -110,7 +112,8 @@
           "c": "Floor en ceil geven altijd hele getallen terug, niet het originele decimale getal.",
           "d": "Beide naar 4 is niet correct voor floor."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-rounding",
@@ -118,13 +121,8 @@
       "prompt": "Wat geeft `round(2.6)` terug in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "2",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "2.0",
+          "id": "d",
+          "label": "3.0",
           "isCorrect": false
         },
         {
@@ -133,8 +131,13 @@
           "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "3.0",
+          "id": "b",
+          "label": "2.0",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "2",
           "isCorrect": false
         }
       ],
@@ -146,13 +149,19 @@
           "c": "Juist, round(2.6) is 3.",
           "d": "In de buurt, maar in deze quiz gebruiken we gewone ints voor hele getallen."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-random-randint",
       "type": "single-choice",
       "prompt": "Je wil een random integer tussen 1 en 10, inclusief 1 en 10. Welke code gebruik je na `import random`?",
       "options": [
+        {
+          "id": "d",
+          "label": "random.choice(1, 10)",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "random.randint(1, 10)",
@@ -167,11 +176,6 @@
           "id": "c",
           "label": "random.random(1, 10)",
           "isCorrect": false
-        },
-        {
-          "id": "d",
-          "label": "random.choice(1, 10)",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -182,7 +186,8 @@
           "c": "random.random() neemt geen argumenten en geeft een float tussen 0 en 1 terug.",
           "d": "random.choice() verwacht een reeks (zoals een lijst), niet twee losse getallen."
         }
-      }
+      },
+      "correct": 1
     }
   ]
 }

@@ -10,8 +10,8 @@
       "prompt": "Wat is een string in Python?",
       "options": [
         {
-          "id": "a",
-          "label": "Een getal waarmee je kan optellen en aftrekken.",
+          "id": "d",
+          "label": "Een lijst met alleen getallen.",
           "isCorrect": false
         },
         {
@@ -20,13 +20,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "Een geheime code die Python niet kan lezen.",
+          "id": "a",
+          "label": "Een getal waarmee je kan optellen en aftrekken.",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Een lijst met alleen getallen.",
+          "id": "c",
+          "label": "Een geheime code die Python niet kan lezen.",
           "isCorrect": false
         }
       ],
@@ -38,7 +38,8 @@
           "c": "Python begrijpt strings net heel goed.",
           "d": "Lijsten kunnen van alles bevatten, maar dat is iets anders dan strings."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-indexing",
@@ -46,13 +47,8 @@
       "prompt": "Als `text = \"HACK\"`, wat geeft `text[1]` terug?",
       "options": [
         {
-          "id": "a",
-          "label": "\"H\"",
-          "isCorrect": false
-        },
-        {
-          "id": "b",
-          "label": "\"HA\"",
+          "id": "d",
+          "label": "\"K\"",
           "isCorrect": false
         },
         {
@@ -61,8 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "\"K\"",
+          "id": "a",
+          "label": "\"H\"",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "\"HA\"",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "Juist, 'A' staat op index 1.",
           "d": "'K' is het laatste teken, index 3."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-slicing",
@@ -82,13 +84,13 @@
       "prompt": "Als `word = \"PYTHON\"`, wat is `word[0:3]`?",
       "options": [
         {
-          "id": "a",
-          "label": "\"PYTH\"",
+          "id": "b",
+          "label": "\"P\"",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "\"P\"",
+          "id": "a",
+          "label": "\"PYTH\"",
           "isCorrect": false
         },
         {
@@ -110,7 +112,8 @@
           "c": "Juist, posities 0, 1 en 2 vormen 'PYT'.",
           "d": "Dat zijn de laatste drie letters, van een andere slice."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-upper-method",
@@ -118,13 +121,13 @@
       "prompt": "Wat geeft \"hacker\".upper() terug?",
       "options": [
         {
-          "id": "a",
-          "label": "\"hacker\"",
+          "id": "b",
+          "label": "\"Hacker\"",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "\"Hacker\"",
+          "id": "a",
+          "label": "\"hacker\"",
           "isCorrect": false
         },
         {
@@ -146,13 +149,19 @@
           "c": "Juist, alle letters worden hoofdletters.",
           "d": "Dit is gewoon het woord 'upper', niet het resultaat van de methode."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-fstring",
       "type": "single-choice",
       "prompt": "Je hebt `name = \"Mia\"`. Welke regel gebruikt correct een f-string om `Hello, Mia!` te printen?",
       "options": [
+        {
+          "id": "c",
+          "label": "print(\"Hello, \" + name + \"!\")",
+          "isCorrect": false
+        },
         {
           "id": "a",
           "label": "print(\"Hello, {name}!\")",
@@ -162,11 +171,6 @@
           "id": "b",
           "label": "print(f\"Hello, {name}!\")",
           "isCorrect": true
-        },
-        {
-          "id": "c",
-          "label": "print(\"Hello, \" + name + \"!\")",
-          "isCorrect": false
         },
         {
           "id": "d",
@@ -182,7 +186,8 @@
           "c": "Dit werkt, maar het is geen f-string.",
           "d": "Hier staat \"name\" tussen aanhalingstekens, dus het is tekst, niet de variabele."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }

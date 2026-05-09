@@ -10,14 +10,14 @@
       "prompt": "Wat is het hoofddoel van de __init__-methode in een Python-class?",
       "options": [
         {
-          "id": "a",
-          "label": "Om een object uit het geheugen te verwijderen.",
+          "id": "d",
+          "label": "Om een globale functie te definiëren.",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "Om de attributen van een nieuw object te initialiseren wanneer het wordt aangemaakt.",
-          "isCorrect": true
+          "id": "a",
+          "label": "Om een object uit het geheugen te verwijderen.",
+          "isCorrect": false
         },
         {
           "id": "c",
@@ -25,9 +25,9 @@
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "Om een globale functie te definiëren.",
-          "isCorrect": false
+          "id": "b",
+          "label": "Om de attributen van een nieuw object te initialiseren wanneer het wordt aangemaakt.",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -38,7 +38,8 @@
           "c": "print(obj) gebruikt __str__ of __repr__, niet __init__.",
           "d": "__init__ hoort bij een class, niet bij de globale scope."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-correct-class-def",
@@ -46,8 +47,8 @@
       "prompt": "Welke van de volgende definieert correct een class en zijn initializer?",
       "options": [
         {
-          "id": "a",
-          "label": "class Car:\n    def __init__(color):\n        self.color = color",
+          "id": "c",
+          "label": "def Car(color):\n    self.color = color",
           "isCorrect": false
         },
         {
@@ -56,13 +57,13 @@
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "def Car(color):\n    self.color = color",
+          "id": "d",
+          "label": "class Car(color):\n    self.color = color",
           "isCorrect": false
         },
         {
-          "id": "d",
-          "label": "class Car(color):\n    self.color = color",
+          "id": "a",
+          "label": "class Car:\n    def __init__(color):\n        self.color = color",
           "isCorrect": false
         }
       ],
@@ -74,7 +75,8 @@
           "c": "Dit definieert een functie, geen class.",
           "d": "Dit is geen geldige class-syntax in basic Python."
         }
-      }
+      },
+      "correct": 1
     },
     {
       "id": "q-create-object",
@@ -82,9 +84,9 @@
       "prompt": "Gegeven class Player:\n    def __init__(self, name):\n        self.name = name\nHoe maak je correct een nieuwe Player met de naam 'Alex'?",
       "options": [
         {
-          "id": "a",
-          "label": "p = Player.__init__(\"Alex\")",
-          "isCorrect": false
+          "id": "c",
+          "label": "p = Player(\"Alex\")",
+          "isCorrect": true
         },
         {
           "id": "b",
@@ -92,9 +94,9 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "p = Player(\"Alex\")",
-          "isCorrect": true
+          "id": "a",
+          "label": "p = Player.__init__(\"Alex\")",
+          "isCorrect": false
         },
         {
           "id": "d",
@@ -110,7 +112,8 @@
           "c": "Juist, dit roept Player aan en laat __init__ achter de schermen lopen.",
           "d": "Er is geen ingebouwde init-methode met die naam op de class."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-access-attribute",
@@ -118,24 +121,24 @@
       "prompt": "Je hebt p = Player(\"Alex\") en in __init__ deed je self.name = name. Hoe lees je de naam van de speler buiten de class?",
       "options": [
         {
-          "id": "a",
-          "label": "name = Player.name",
+          "id": "b",
+          "label": "name = self.name",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "name = self.name",
+          "id": "d",
+          "label": "name = name.self",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "label": "name = Player.name",
           "isCorrect": false
         },
         {
           "id": "c",
           "label": "name = p.name",
           "isCorrect": true
-        },
-        {
-          "id": "d",
-          "label": "name = name.self",
-          "isCorrect": false
         }
       ],
       "explanations": {
@@ -146,7 +149,8 @@
           "c": "Juist, p.name leest het name-attribuut van dit Player-object.",
           "d": "Dit is geen geldige Python-syntax."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-self-meaning",
@@ -154,13 +158,13 @@
       "prompt": "In een methode die gedefinieerd is als def greet(self):, waar verwijst self meestal naar?",
       "options": [
         {
-          "id": "a",
-          "label": "De class zelf.",
+          "id": "d",
+          "label": "Een willekeurige globale variabele.",
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "De module waarin de class gedefinieerd is.",
+          "id": "a",
+          "label": "De class zelf.",
           "isCorrect": false
         },
         {
@@ -169,8 +173,8 @@
           "isCorrect": true
         },
         {
-          "id": "d",
-          "label": "Een willekeurige globale variabele.",
+          "id": "b",
+          "label": "De module waarin de class gedefinieerd is.",
           "isCorrect": false
         }
       ],
@@ -182,7 +186,8 @@
           "c": "Juist – self laat methodes aan de data van de instance.",
           "d": "self is gewoon een parameternaam, geen globale variabele."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-class-vs-instance-attribute",
@@ -195,14 +200,14 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "a.team_name == \"Blue\" and b.name == \"Blake\"",
-          "isCorrect": true
-        },
-        {
           "id": "c",
           "label": "a.team_name == \"Blue\" and b.name == \"Blue\"",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.team_name == \"Blue\" and b.name == \"Blake\"",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -218,7 +223,8 @@
           "c": "Fout, b.name is nog altijd 'Blake', niet 'Blue'.",
           "d": "Fout, team_name is nu 'Blue', niet 'Red'."
         }
-      }
+      },
+      "correct": 2
     },
     {
       "id": "q-method-side-effects",
@@ -236,14 +242,14 @@
           "isCorrect": false
         },
         {
-          "id": "c",
-          "label": "x == 1 and y == 2",
-          "isCorrect": true
-        },
-        {
           "id": "d",
           "label": "x == 2 and y == 3",
           "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "x == 1 and y == 2",
+          "isCorrect": true
         }
       ],
       "explanations": {
@@ -254,7 +260,8 @@
           "c": "Juist, de eerste call geeft 1 terug, de tweede call 2.",
           "d": "Fout, dit zou alleen kloppen als de counter op 1 startte."
         }
-      }
+      },
+      "correct": 3
     },
     {
       "id": "q-self-parameter-behavior",
@@ -262,23 +269,23 @@
       "prompt": "Wat is de beste beschrijving van self in deze methode?\n\n```python\nclass Device:\n    def reboot(self):\n        print(\"Rebooting\", self.name)\n```",
       "options": [
         {
-          "id": "a",
-          "label": "self is een keyword dat altijd naar de class Device verwijst.",
-          "isCorrect": false
-        },
-        {
           "id": "b",
           "label": "self is het eerste argument en verwijst naar het specifieke Device-object dat reboot heeft opgeroepen.",
           "isCorrect": true
         },
         {
-          "id": "c",
-          "label": "self is een globale variabele die automatisch door Python wordt aangemaakt.",
+          "id": "a",
+          "label": "self is een keyword dat altijd naar de class Device verwijst.",
           "isCorrect": false
         },
         {
           "id": "d",
           "label": "self moet altijd self heten of Python crasht.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "self is een globale variabele die automatisch door Python wordt aangemaakt.",
           "isCorrect": false
         }
       ],
@@ -290,7 +297,8 @@
           "c": "Fout, self is niet globaal; het wordt meegegeven zoals elke andere parameter.",
           "d": "Fout, je mag een andere naam gebruiken, maar self is de gebruikelijke conventie."
         }
-      }
+      },
+      "correct": 0
     },
     {
       "id": "q-multiple-objects-state",
@@ -303,14 +311,14 @@
           "isCorrect": false
         },
         {
-          "id": "b",
-          "label": "a.energy == 70 and b.energy == 90",
-          "isCorrect": true
-        },
-        {
           "id": "c",
           "label": "a.energy == 60 and b.energy == 90",
           "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "a.energy == 70 and b.energy == 90",
+          "isCorrect": true
         },
         {
           "id": "d",
@@ -326,7 +334,8 @@
           "c": "Fout, Alpha drainde alleen 30, niet 40.",
           "d": "Fout, Beta drainde alleen 10, dus het moet 90 zijn, niet 70."
         }
-      }
+      },
+      "correct": 2
     }
   ]
 }
