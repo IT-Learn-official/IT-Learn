@@ -28,4 +28,6 @@ Build a fully functional calculator. This project focuses on DOM manipulation, e
 	- When an operator is pressed, if `previousValue` is empty set it to `currentValue` and clear `currentValue`; otherwise compute the result from `previousValue`, `currentValue`, and `operator` using a small `performOperation()` function and store the result in `previousValue`.
 	- When `=` is pressed, compute and display the final result using the same controlled logic.
 	- Avoid `eval()`; explicitly parse and perform operations so behavior is predictable and secure.
+- Use `eval()` for simple calculation (caution: only in small projects like this!).
+- Better: Keep track of `previousValue`, `currentValue`, and `operator` in variables.
 - Use `grid-template-columns: repeat(4, 1fr)` for the button layout.
