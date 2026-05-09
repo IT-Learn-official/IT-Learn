@@ -1,6 +1,6 @@
-# To Do App (Vanilla JS)
+# To-Do-App (Vanilla-JS)
 
-Baue eine kleine To Do App. Fokus: klare Struktur und kleine Schritte.
+Baue eine kleine To-Do-App. Fokus: klare Struktur und kleine Schritte.
 
 ## Anforderungen
 

@@ -13,7 +13,7 @@ Build a simple landing page from scratch. Don’t copy/paste a template, try to 
 
 - [ ] Create the basic HTML structure in `index.html`.
 - [ ] Add a header with a logo + 3 nav links.
-- [ ] Build the hero section using a two column layout.
+- [ ] Build the hero section using a two-column layout.
 - [ ] Create 3 feature cards using CSS grid.
 - [ ] Make it responsive (mobile nav stacks, hero becomes one column).
 - [ ] Polish: spacing, font sizes, hover states.

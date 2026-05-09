@@ -8,7 +8,9 @@ import { markProjectOpened } from '../state/projectsProgress.js';
 /* ── Helpers ───────────────────────────────────────────────────────── */
 
 function storageKey(projectId, suffix) {
-  return `itlearn.projects.${String(projectId)}.${suffix}`;
+  const rawLocale = (document.documentElement.lang || navigator.language || 'en');
+  const locale = String(rawLocale).toLowerCase().split('-')[0] || 'en';
+  return `itlearn.${locale}.projects.${String(projectId)}.${suffix}`;
 }
 
 function safeParse(raw, fallback) {
@@ -179,7 +181,8 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
       close: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`,
       panel: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`
     };
-    return icons[name] || '';
+    const svg = icons[name] || '';
+    return svg ? svg.replace('<svg ', '<svg aria-hidden="true" focusable="false" ') : '';
   };
 
 
@@ -188,6 +191,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   backBtn.className = 'btn-icon';
   backBtn.innerHTML = getIcon('back');
   backBtn.title = 'Back to Projects';
+  backBtn.setAttribute('aria-label', 'Back to Projects');
   backBtn.addEventListener('click', () => navigateTo({ route: 'projects' }));
 
   const toggleGuideBtn = document.createElement('button');
@@ -195,6 +199,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   toggleGuideBtn.className = 'btn-icon';
   toggleGuideBtn.innerHTML = getIcon('guide');
   toggleGuideBtn.title = 'Project Guide';
+  toggleGuideBtn.setAttribute('aria-label', 'Project Guide');
 
   const toggleExplorerBtn = document.createElement('button');
   toggleExplorerBtn.type = 'button';
@@ -308,7 +313,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   const previewFrame = document.createElement('iframe');
   previewFrame.className = 'projects-ide-preview-frame';
   previewFrame.setAttribute('title', 'Live preview');
-  previewFrame.setAttribute('sandbox', 'allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-downloads');
+  previewFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-downloads');
 
   previewWrap.appendChild(previewTop);
   previewWrap.appendChild(previewFrame);
@@ -354,7 +359,35 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   function initAceEditor() {
     if (typeof ace === 'undefined') {
       console.warn('Ace editor not available, falling back to textarea');
-      return null;
+      const ta = document.createElement('textarea');
+      ta.className = 'projects-ide-textarea';
+      ta.spellcheck = false;
+      ta.autocapitalize = 'off';
+      ta.autocomplete = 'off';
+      ta.wrap = 'off';
+      ta.style.cssText = 'width:100%;height:100%;flex:1;resize:none;border:0;outline:0;background:transparent;color:inherit;font:inherit;padding:12px;';
+      editorHost.appendChild(ta);
+
+      const listeners = new Set();
+      ta.addEventListener('input', () => listeners.forEach((fn) => fn()));
+
+      // Minimal adapter so the rest of the code can keep using aceEditor-like calls.
+      return {
+        __isTextareaFallback: true,
+        el: ta,
+        setReadOnly(v) { ta.readOnly = !!v; },
+        setValue(v) { ta.value = String(v ?? ''); },
+        getValue() { return ta.value; },
+        focus() { ta.focus(); },
+        resize() {},
+        session: {
+          on(evt, fn) {
+            if (evt === 'change' && typeof fn === 'function') listeners.add(fn);
+          },
+          setMode() {},
+          setUseWrapMode() {},
+        },
+      };
     }
 
     const editorDiv = document.createElement('div');

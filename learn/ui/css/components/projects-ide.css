@@ -114,7 +114,7 @@
 
 .projects-ide-screen .btn-icon svg {
   display: block;
-  stroke: currentColor;
+  stroke: currentcolor;
 }
 
 .projects-ide-screen .btn-icon:hover {

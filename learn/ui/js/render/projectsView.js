@@ -3,6 +3,7 @@ import { loadProjectsDoc } from '../services/projectsService.js';
 import { getRecentProjects } from '../state/projectsProgress.js';
 import { getCourseLanguage, setCourseLanguage } from '../state/appState.js';
 import { getCourseLanguageOptions } from '../services/courseLanguageService.js';
+import { escapeHtml, escapeHtmlAttr } from '../utils/markdown/htmlEscape.js';
 
 function normalizeTag(tag) {
   return String(tag || '').trim();
@@ -17,15 +18,22 @@ function buildProjectCard(project, { onOpen } = {}) {
   const card = document.createElement('button');
   card.className = 'projects-card';
   card.type = 'button';
-  
+
+  const safeTitle = escapeHtml(String(project.title || project.id || ''));
+  const safeDifficultyRaw = String(project.difficulty || 'Easy');
+  const safeDifficultyText = escapeHtml(safeDifficultyRaw);
+  const safeDifficultyClass = escapeHtmlAttr(safeDifficultyRaw.toLowerCase());
+  const safeDesc = escapeHtml(String(project.description || ''));
+  const safeTags = (project.tags || []).map((t) => escapeHtml(String(t)));
+
   card.innerHTML = `
     <div class="projects-card-top">
-      <h3 class="projects-card-title">${project.title || project.id}</h3>
-      <span class="projects-difficulty projects-difficulty--${String(project.difficulty || 'Easy').toLowerCase()}">${project.difficulty || 'Easy'}</span>
+      <h3 class="projects-card-title">${safeTitle}</h3>
+      <span class="projects-difficulty projects-difficulty--${safeDifficultyClass}">${safeDifficultyText}</span>
     </div>
-    <p class="projects-card-desc">${project.description || ''}</p>
+    <p class="projects-card-desc">${safeDesc}</p>
     <div class="projects-card-tags">
-      ${(project.tags || []).map(t => `<span class="projects-pill">${t}</span>`).join('')}
+      ${safeTags.map(t => `<span class="projects-pill">${t}</span>`).join('')}
     </div>
   `;
 
@@ -50,14 +58,14 @@ function buildFilterBar({ difficulties, tags, currentLang, onFilterChange, onLan
       Difficulty
       <select class="projects-filter-select" id="diff-sel">
         <option value="">All</option>
-        ${difficulties.map(d => `<option value="${d}">${d}</option>`).join('')}
+        ${difficulties.map(d => `<option value="${escapeHtmlAttr(String(d))}">${escapeHtml(String(d))}</option>`).join('')}
       </select>
     </label>
     <label class="projects-filter">
       Tag
       <select class="projects-filter-select" id="tag-sel">
         <option value="">All</option>
-        ${tags.map(t => `<option value="${t}">${t}</option>`).join('')}
+        ${tags.map(t => `<option value="${escapeHtmlAttr(String(t))}">${escapeHtml(String(t))}</option>`).join('')}
       </select>
     </label>
   `;
@@ -87,13 +95,13 @@ export async function renderProjectsView(rootEl) {
 
   const body = screen.querySelector('#proj-body');
 
-  async function loadAndRender() {
+  async function loadAndRender({ force = false } = {}) {
     body.innerHTML = '<p class="muted">Loading projects...</p>';
     const currentLang = (getCourseLanguage() || 'en').toLowerCase();
     
     let doc = null;
     try {
-      doc = await loadProjectsDoc({ force: true });
+      doc = force ? await loadProjectsDoc({ force: true }) : await loadProjectsDoc();
     } catch (err) {
       console.error('Fetch failed:', err);
     }
@@ -112,7 +120,7 @@ export async function renderProjectsView(rootEl) {
       currentLang,
       onLanguageChange: async (lang) => {
         setCourseLanguage(lang);
-        await loadAndRender();
+        await loadAndRender({ force: true });
       },
       onFilterChange: (next) => {
         if (next.difficulty !== undefined) filterState.difficulty = next.difficulty;
@@ -179,5 +187,5 @@ export async function renderProjectsView(rootEl) {
     updateDisplay();
   }
 
-  await loadAndRender();
+  await loadAndRender({ force: true });
 }
