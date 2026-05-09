@@ -2,18 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RL6H7W1C1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4RL6H7W1C1');
-  </script>
   <link rel="canonical" href="https://itlearn.be/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
+  <meta name="consentlens-verification" content="cmosvqnz30006o101aojmkoji">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="IT Learn: Learn programming for free, step by step.">
@@ -21,7 +12,8 @@
   <title>IT Learn</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -31,6 +23,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/consent.css">
 
   <!-- Meta -->
   <meta name="theme-color" content="#0f172a">
@@ -80,11 +73,12 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
 
-      localStorage.setItem('tawkConsent', 'granted');
+      // Do not persist implicit consent for chat here; rely on the site's main consent flow.
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('tawkConsent') === 'granted') {
+      // Auto-load chat only when the user has explicitly accepted analytics consent
+      if (localStorage.getItem('itlearn.analyticsConsent') === 'accepted') {
         loadTawk();
       }
 
@@ -146,8 +140,7 @@
                 <p class="dropdown-title" data-translate="dropdownStayInLoop">Stay in the loop</p>
                 <a href="https://itlearn.beehiiv.com/" class="dropdown-link"
                   data-translate="headerNewsletter">Newsletter</a>
-                <a href="#" class="dropdown-link" data-open-help-chat="true"
-                  data-translate="helpCenter">Help Center</a>
+                <a href="#" class="dropdown-link" data-open-help-chat="true" data-translate="helpCenter">Help Center</a>
               </div>
             </div>
           </div>
@@ -187,7 +180,8 @@
         <div class="hero-ctas" data-aos="fade-up" data-aos-delay="100">
           <a id="get-started" href="login.html" class="btn btn-lg btn-primary" data-translate="getStarted">Get
             started</a>
-          <a id="try-trial" href="/learn/?trial=start" class="btn btn-lg btn-secondary" style="margin-left: 1rem;">Try without account</a>
+          <a id="try-trial" href="/learn/?trial=start" class="btn btn-lg btn-secondary" style="margin-left: 1rem;">Try
+            without account</a>
         </div>
 
         <div class="hero-supported" data-aos="fade-up" data-aos-delay="200">
@@ -345,7 +339,8 @@
             <p class="muted" data-translate="teambroodje56">
               I'm Broodje56, and together with Joren I co-founded IT Learn.
               From a young age, I've been fascinated by technology and computers.
-              With IT Learn, my goal is to share that passion and help other young people discover the fun and creative side of programming through interactive learning. 
+              With IT Learn, my goal is to share that passion and help other young people discover the fun and creative
+              side of programming through interactive learning.
             </p>
 
             <a href="https://github.com/Broodje565" class="more-link small" target="_blank" rel="noopener noreferrer"
@@ -372,7 +367,7 @@
               data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
-          <!-- Matteo -->
+          <!-- Superman -->
           <div class="team-member" data-aos="fade-up" data-member="superman-dev" data-role="owner">
             <div class="team-head">
               <img src="https://files.itlearn.be/images/branding/pfp/Superman.png" alt="Team member" class="avatar">
@@ -381,8 +376,10 @@
                 <p class="muted small" data-translate="coOwner">Co-owner</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamSuperman">Hallo! Ik ben super_man2775, de co-owner van IT Learn! Ik ben heel blij om deel uit te maken van dit project, en heb dan ook nog veel leuke en handige zaken op mijn to do lijstje staan. Ik hoop om IT Learn ooit heel groot te maken (en liever vandaag dan morgen 😀)</p>
-            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer"
+            <p class="muted" data-translate="teamSuperman">Hallo! Ik ben super_man2775, de co-owner van IT Learn! Ik ben
+              heel blij om deel uit te maken van dit project, en heb dan ook nog veel leuke en handige zaken op mijn to
+              do lijstje staan. Ik hoop om IT Learn ooit heel groot te maken (en liever vandaag dan morgen 😀)</p>
+            <a href="https://www.superman2775.eu/" class="more-link small" target="_blank" rel="noopener noreferrer"
               data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
@@ -397,9 +394,26 @@
                 <p class="muted small" data-translate="roleManager">Manager</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamMiltie">My name is Miltie, and I am the Manager of the IT-Learn Discord. I'm trying to learn a couple of different coding languages at the moment, with the help of this platform ofcourse. I would love to be able to help programming this website later. I am looking to help this community where necessary, and hope to meet you here too!</p>
-            <a href="https://discord.itlearn.be/" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
-              data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamMiltie">My name is Miltie, and I am the Manager of the IT-Learn
+              Discord. I'm trying to learn a couple of different coding languages at the moment, with the help of this
+              platform ofcourse. I would love to be able to help programming this website later. I am looking to help
+              this community where necessary, and hope to meet you here too!</p>
+            <a href="https://discord.itlearn.be/" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
+          </div>
+
+          <!-- Matteohls -->
+          <div class="team-member" data-aos="fade-up" data-member="matteohls" data-role="manager">
+            <div class="team-head">
+              <img src="https://files.itlearn.be/images/branding/pfp/Matteohls.png" alt="Team member" class="avatar">
+              <div>
+                <h3>Matteohls</h3>
+                <p class="muted small" data-translate="roleAssistantManager">Assistant Manager</p>
+              </div>
+            </div>
+            <p class="muted" data-translate="teamMatteohls">I'm Matteohls, an Assistant Discord Manager for IT Learn. I'm always here to support the community, answer questions, and help keep everything running smoothly. I focus on creating a welcoming, organized, and positive environment where everyone feels comfortable and engaged.</p>
+            <a href="https://github.com/matteohls" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
           <!-- Developer -->
@@ -413,9 +427,11 @@
                 <p class="muted small" data-translate="roleDeveloper">Developer</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamNunoke">I'm Nuno, and I'm a developer at ITLearn. I am a computer science student and I love making websites and I want to teach it myself. That's why I wan't to help create ITLearn to make learning it even more easy and fun.</p>
-            <a href="https://github.com/Nunoke123" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
-              data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamNunoke">I'm Nuno, and I'm a developer at ITLearn. I am a computer
+              science student and I love making websites and I want to teach it myself. That's why I wan't to help
+              create ITLearn to make learning it even more easy and fun.</p>
+            <a href="https://github.com/Nunoke123" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
           <!-- Superman -->
@@ -427,9 +443,11 @@
                 <p class="muted small" data-translate="roleDeveloper">Developer</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamDevSuperman">Hi there! I am super_man2775, and I helped developing the platform you are looking at right now! It has been an amazing journey, from the first line of code to where we are right now, and I am very proud of what we have accomplished!</p>
-            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
-              data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamDevSuperman">Hi there! I am super_man2775, and I helped developing the
+              platform you are looking at right now! It has been an amazing journey, from the first line of code to
+              where we are right now, and I am very proud of what we have accomplished!</p>
+            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
 
           <!-- Moderator -->
@@ -443,12 +461,28 @@
                 <p class="muted small" data-translate="roleModerator">Moderator</p>
               </div>
             </div>
-            <p class="muted" data-translate="teamModSuperman">Hello! I am super_man2775. I am moderator for IT Learn, which means I keep IT Learn fun and engaging for everyone! I really love hanging out in our Discord community and talking with people. I am very proud of how amazing our community is, and how it evolved from a server with 5 people in it, to what we have now.</p>
-            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer" data-translate="viewprofile">View profile <i
-              data-feather="arrow-right"></i></a>
+            <p class="muted" data-translate="teamModSuperman">Hello! I am super_man2775. I am moderator for IT Learn,
+              which means I keep IT Learn fun and engaging for everyone! I really love hanging out in our Discord
+              community and talking with people. I am very proud of how amazing our community is, and how it evolved
+              from a server with 5 people in it, to what we have now.</p>
+            <a href="https://github.com/superman2775" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
+          </div>
+
+          <!-- Viviodezio -->
+          <div class="team-member" data-aos="fade-up" data-member="viviodezio-mod" data-role="moderator">
+            <div class="team-head">
+              <img src="https://files.itlearn.be/images/branding/pfp/Viviodezio.png" alt="Team member" class="avatar">
+              <div>
+                <h3>viviodezio</h3>
+                <p class="muted small" data-translate="roleModerator">Moderator</p>
+              </div>
+            </div>
+            <p class="muted" data-translate="teamViviodezio">Hi, I'm Vivio and I'm a moderator for IT Learn, so I mainly keep the Discord safe and engaging. I'm currently learning how to code with IT Learn, and hope to see you in the Discord server too!</p>
+            <a href="https://discord.itlearn.be" class="more-link small" target="_blank" rel="noopener noreferrer"
+              data-translate="viewprofile">View profile <i data-feather="arrow-right"></i></a>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -507,7 +541,7 @@
           <li><a href="/about-us" data-translate="footerAboutUs">About us</a></li>
           <li><a href="#team" data-translate="footerOurTeam">Our Team</a></li>
           <li><a href="https://discord.itlearn.be/" target="_blank" rel="noopener noreferrer">Discord</a></li>
-            <li><a href="#" data-open-help-chat="true" data-translate="helpCenter">Help Center</a></li>
+          <li><a href="#" data-open-help-chat="true" data-translate="helpCenter">Help Center</a></li>
           <li><a href="/roadmap/index.html">Roadmap</a></li>
         </ul>
       </div>
@@ -539,14 +573,21 @@
         <a href="/terms/index.html" target="_blank">Terms</a>
         <a href="privacy/index.html" target="_blank">Privacy Policy</a>
       </div>
+      <a href="https://consentlens.eu/scan/itlearn.be" target="_blank" rel="noopener noreferrer">
+        <img src="https://consentlens.eu/api/badge/itlearn.be" alt="GDPR compliance verified by ConsentLens" width="280"
+          height="80" />
+      </a>
     </div>
 
 
   </footer>
 
+  <!-- cookie banner now provided by /consent.js -->
+
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="translations.js"></script>
+  <script src="/consent.js" defer></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
