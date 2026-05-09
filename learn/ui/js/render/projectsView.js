@@ -122,14 +122,6 @@ export async function renderProjectsView(rootEl) {
     });
     body.appendChild(filterBar);
 
-    // Project Count Indicator
-    const countInfo = document.createElement('p');
-    countInfo.className = 'muted';
-    countInfo.style.fontSize = '12px';
-    countInfo.style.marginBottom = '20px';
-    countInfo.textContent = `Language: ${currentLang.toUpperCase()} | Loaded ${projects.length} project(s)`;
-    body.appendChild(countInfo);
-
     const container = document.createElement('div');
     container.id = 'proj-container';
     body.appendChild(container);

@@ -41,12 +41,28 @@
   font-family: inherit;
   font-size: 13px;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   outline: none;
+}
+
+.projects-filter-select:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .projects-filter-select:focus {
   border-color: var(--accent-500, #6366f1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+/* Cleaner dropdown look (best-effort, browser-dependent) */
+.projects-filter-select:focus-visible {
+  outline: none;
+}
+
+.projects-filter-select option {
+  background: #0b1220;
+  color: #fff;
 }
 
 /* ---- Section ---- */
