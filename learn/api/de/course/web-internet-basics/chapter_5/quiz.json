@@ -39,7 +39,7 @@
         { "id": "d", "label": "Nur Browser können HTTP verwenden.", "isCorrect": false }
       ],
       "explanations": { "overview": "Header beschreiben die Nachricht, und der Body enthält den Hauptinhalt.", "byOptionId": { "b": "Richtig. Der Body kann HTML, JSON, Dateien usw. enthalten." } }
-    }
+    },
       {
         "id": "q-extra-5xx",
         "type": "single-choice",
