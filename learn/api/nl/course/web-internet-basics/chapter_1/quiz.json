@@ -1,0 +1,147 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Hoofdstuk 1 - Het web vs. het internet",
+  "description": "Korte conceptcheck: internet vs web en het client/server‑idee.",
+  "questions": [
+    {
+      "id": "q1-internet-vs-web",
+      "type": "single-choice",
+      "prompt": "Welke uitspraak is het meest correct?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het web en het internet zijn precies hetzelfde.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het web is kabels en routers, het internet zijn websites.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het internet is alleen Wi‑Fi, het web is alleen mobiele data.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het internet is het netwerk, en het web is een dienst die erop draait.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Het internet is het globale netwerk; het web is een systeem van websites dat dat netwerk gebruikt.",
+        "byOptionId": {
+          "a": "Ze zijn verwant maar niet hetzelfde: het web draait op het internet.",
+          "d": "Correct. Het web is één dienst bovenop het internet.",
+          "b": "Dat is omgekeerd: kabels/routers horen bij het internet.",
+          "c": "Wi‑Fi en mobiele data zijn verbindingsmethodes, geen definities van web/internet."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-client-server",
+      "type": "single-choice",
+      "prompt": "Als je een website bezoekt, wat is meestal de **client**?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De servercomputer die de site host",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Je browser (bv. Chrome)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De database die de site opslaat",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het toetsenbord dat je gebruikt",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De client is het programma dat data opvraagt (je browser); de server antwoordt.",
+        "byOptionId": {
+          "b": "Correct. De browser vraagt pagina’s en data op."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-request-response",
+      "type": "single-choice",
+      "prompt": "Wat gebeurt er eerst bij het laden van een webpagina?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De server stuurt een response voordat de browser iets vraagt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De browser raadt de pagina zonder internet te gebruiken.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De server vraagt je browser om toestemming om te bestaan.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De browser stuurt een request naar een server.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Het web werkt meestal als request → response. De client initieert doorgaans.",
+        "byOptionId": {
+          "d": "Correct. De browser vraagt bv. `/` of `/index.html` op."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-dns-service",
+      "type": "single-choice",
+      "prompt": "Welke dienst zet een domeinnaam (bijv. example.com) om in een IP‑adres?",
+      "options": [
+        {
+          "id": "a",
+          "label": "CSS",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "HTTP",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "DNS",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "FTP",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "DNS vertaalt domeinnamen naar IP‑adressen zodat browsers de juiste server kunnen vinden.",
+        "byOptionId": {
+          "c": "Correct — DNS doet deze vertaling."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

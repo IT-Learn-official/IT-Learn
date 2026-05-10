@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Kapitel 6 - HTTPS und APIs",
+  "description": "Kurzcheck zu HTTPS, APIs und gängigen API‑Stilen.",
+  "questions": [
+    {
+      "id": "q1-https-purpose",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptvorteil von HTTPS gegenüber HTTP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es verschlüsselt und schützt die Verbindung mit TLS",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Es beseitigt die Notwendigkeit von Servern",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Es behebt automatisch Programmierfehler",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es macht die URL kürzer",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS verwendet TLS, um Verkehr zu verschlüsseln und Integrität zu sichern sowie die Identität des Servers nachzuweisen.",
+        "byOptionId": {
+          "a": "Richtig. TLS fügt Verschlüsselung und Integritätsschutz hinzu."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q2-api-definition",
+      "type": "single-choice",
+      "prompt": "Wozu wird eine API im Web am häufigsten verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Um HTML in Bilder zu verwandeln",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Damit verschiedene Programme Daten oder Aktionen von einem Server anfordern können",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Um dein CSS in einem speziellen Ordner zu speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um DNS zu ersetzen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "APIs lassen Software miteinander sprechen, oft über HTTP und JSON.",
+        "byOptionId": {
+          "b": "Richtig. APIs stellen Daten und Aktionen für Clients bereit."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-api-types",
+      "type": "single-choice",
+      "prompt": "Welches Beispiel ist ein gutes Beispiel für eine Real‑Time, zweiseitige API‑Verbindung?",
+      "options": [
+        {
+          "id": "a",
+          "label": "DNS",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "REST",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "HTML",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "WebSockets",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "WebSockets halten eine Verbindung offen und erlauben beiden Seiten, jederzeit Nachrichten zu senden.",
+        "byOptionId": {
+          "d": "Richtig. WebSockets sind für Echtzeit‑Zweikanal‑Kommunikation gedacht."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-contenttype",
+      "type": "single-choice",
+      "prompt": "Welche Header‑Angabe zeigt an, dass die Antwort JSON enthält?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Host: example.com",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Accept: text/html",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Content‑Type: application/json",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Cache‑Control: no‑cache",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Der Content‑Type‑Header beschreibt den Typ der Body‑Daten, z. B. `application/json` für JSON.",
+        "byOptionId": {
+          "c": "Richtig — Content‑Type sagt, welches MIME‑Type die Body‑Daten haben."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

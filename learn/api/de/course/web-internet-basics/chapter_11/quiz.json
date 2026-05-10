@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Kapitel 11 - Authentifizierungsgrundlagen",
+  "description": "Kurze Fragen zu Auth‑Methoden und Tokens.",
+  "questions": [
+    {
+      "id": "q-auth-header",
+      "type": "single-choice",
+      "prompt": "Wohin wird ein Bearer‑Token üblicherweise in einer API‑Anfrage gesendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "In den Authorization‑Header",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Nur im HTML‑Body",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "In die URL‑Query‑String",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "In einen DNS‑Eintrag",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Bearer‑Tokens werden häufig im Authorization‑Header gesendet.",
+        "byOptionId": {
+          "a": "Richtig — `Authorization: Bearer <token>` ist Standard."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-jwt-structure",
+      "type": "single-choice",
+      "prompt": "Aus welchen drei Teilen besteht ein JWT, getrennt durch Punkte?",
+      "options": [
+        {
+          "id": "a",
+          "label": "method, path, status",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "header, payload, signature",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "username, password, token",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "key, value, salt",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "JWTs enthalten header, payload und signature.",
+        "byOptionId": {
+          "b": "Richtig — header.payload.signature."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-cookie-httpOnly",
+      "type": "single-choice",
+      "prompt": "Warum verwendet man das HttpOnly‑Flag bei Cookies?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Um JavaScript vom Lesen des Cookies abzuhalten",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Um Cookies für JavaScript lesbar zu machen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Um Tokens in DNS zu speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Um den Cookie‑Inhalt zu verschlüsseln",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HttpOnly verhindert, dass JavaScript das Cookie lesen kann und reduziert XSS‑Risiken.",
+        "byOptionId": {
+          "a": "Richtig — HttpOnly macht Cookies für Client‑Skripte unzugänglich."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-auth-diff",
+      "type": "single-choice",
+      "prompt": "Was ist der Unterschied zwischen Authentifizierung und Autorisierung?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Beides ist dasselbe.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Authentifizierung bestätigt, wer du bist; Autorisierung bestimmt, was du tun darfst.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Authentifizierung ist DNS‑bezogen; Autorisierung ist TLS‑bezogen.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Authentifizierung gewährt Berechtigungen; Autorisierung prüft Passwörter.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Authentifizierung = Identität; Autorisierung = Rechte/Permissions.",
+        "byOptionId": {
+          "b": "Richtig — authentication = who, authorization = what you can do."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

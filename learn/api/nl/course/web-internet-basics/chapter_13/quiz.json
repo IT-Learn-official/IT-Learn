@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Hoofdstuk 13 - CDN en Caching",
+  "description": "Korte check over CDN‑concepten en cachinglagen.",
+  "questions": [
+    {
+      "id": "q-cdn-purpose",
+      "type": "single-choice",
+      "prompt": "Wat is het primaire doel van een CDN?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Zorgen voor DNS‑resolutie",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Statische assets dichter bij gebruikers cachen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "TLS‑certificaten beheren",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "IP‑adressen uitgeven",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CDN’s cachen statische inhoud in meerdere locaties om latency te verminderen.",
+        "byOptionId": {
+          "b": "Correct — CDN’s leveren content dichter bij gebruikers."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-cache-control",
+      "type": "single-choice",
+      "prompt": "Welke HTTP‑header gebruik je om caching te sturen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Authorization",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Cache‑Control",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Content‑Type",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Set‑Cookie",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "`Cache‑Control` regelt cachingbeleid tussen server, CDN en browser.",
+        "byOptionId": {
+          "b": "Correct — gebruik Cache‑Control headers."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-cdn",
+      "type": "single-choice",
+      "prompt": "Wat is het belangrijkste doel van een CDN?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Databases vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "TLS‑sleutels roteren",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "DNS‑resolutie leveren",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Statische bestanden dichter bij gebruikers cachen om latency te verlagen",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CDN’s cachen content op randlocaties om laadtijden te verbeteren en origin‑load te verlagen.",
+        "byOptionId": {
+          "d": "Correct — CDN’s verkorten afstand tot gebruikers door caching."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

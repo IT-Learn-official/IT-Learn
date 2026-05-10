@@ -1,0 +1,147 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Kapitel 1 - Das Web vs. Das Internet",
+  "description": "Kurzer Konzept‑Check zu Internet vs Web und dem Client/Server‑Prinzip.",
+  "questions": [
+    {
+      "id": "q1-internet-vs-web",
+      "type": "single-choice",
+      "prompt": "Welche Aussage ist am zutreffendsten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Das Web und das Internet sind genau dasselbe.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Das Internet ist das Netzwerk, und das Web ist ein Dienst, der darauf läuft.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Das Web sind Kabel und Router, das Internet sind Webseiten.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Das Internet ist nur WLAN, das Web ist nur mobiele data.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Das Internet ist das globale Netzwerk; das Web ist ein System von Webseiten, das dieses Netzwerk nutzt.",
+        "byOptionId": {
+          "a": "Sie sind verwandt, aber nicht identisch: das Web läuft auf dem Internet.",
+          "b": "Richtig. Das Web ist ein Dienst, der das Internet nutzt.",
+          "c": "Das ist vertauscht: Kabel/Router sind Teil des Internets.",
+          "d": "WLAN und mobiele data sind Verbindungsarten, keine Definitionen von Web/Internet."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q2-client-server",
+      "type": "single-choice",
+      "prompt": "Wenn du eine Webseite besuchst, was ist normalerweise der **Client**?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Der Servercomputer, der die Seite hostet",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Die Tastatur, die du benutzt",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Datenbank, die die Webseite speichert",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Dein Browser (z. B. Chrome)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Der Client ist das Programm, das Daten anfordert (dein Browser); der Server antwortet.",
+        "byOptionId": {
+          "d": "Richtig. Der Browser fragt Seiten und Daten an."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q3-request-response",
+      "type": "single-choice",
+      "prompt": "Was passiert zuerst beim Laden einer Webseite?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Der Browser sendet eine Anfrage an einen Server.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Der Browser errät die Seite ohne Internetkontakt.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Der Server sendet eine Antwort, bevor der Browser fragt.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Der Server fragt deinen Browser um Erlaubnis zu existieren.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Das Web läuft meist nach dem Muster Anfrage → Antwort. Der Client fragt zuerst.",
+        "byOptionId": {
+          "a": "Richtig. Der Browser fordert z. B. `/` oder `/index.html` an."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-dns-service",
+      "type": "single-choice",
+      "prompt": "Welcher Dienst wandelt einen Domainnamen (z. B. example.com) in eine IP‑Adresse um?",
+      "options": [
+        {
+          "id": "a",
+          "label": "FTP",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "HTTP",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "CSS",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DNS",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "DNS übersetzt Domainnamen in IP‑Adressen, damit Browser die richtige Serveradresse finden.",
+        "byOptionId": {
+          "d": "Richtig — DNS führt diese Übersetzung durch."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

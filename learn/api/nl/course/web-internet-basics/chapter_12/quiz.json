@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Hoofdstuk 12 - WebSockets",
+  "description": "Korte check over realtime communicatie en WebSockets.",
+  "questions": [
+    {
+      "id": "q-ws-duplex",
+      "type": "single-choice",
+      "prompt": "Wat betekent het dat WebSockets 'full‑duplex' zijn?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Dat zowel client als server tegelijk data kunnen sturen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Dat ze geen TLS gebruiken",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Dat de verbinding alleen van client naar server werkt",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Dat WebSockets alleen voor video kunnen gebruikt worden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Full‑duplex betekent dat beide kanten data kunnen sturen zonder steeds te wachten op requests.",
+        "byOptionId": {
+          "a": "Correct — beide zijden kunnen communiceren zonder request/response cycli."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-ws-upgrade",
+      "type": "single-choice",
+      "prompt": "Welke stap is vereist om een HTTP‑verbinding naar WebSocket te upgraden?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een nieuw TLS‑certificaat aanvragen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een TCP‑reset sturen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een DNS‑update uitvoeren",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een speciale HTTP‑upgrade header sturen",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "WebSocket begint met een HTTP upgrade handshake waarbij een upgrade header wordt gebruikt.",
+        "byOptionId": {
+          "d": "Correct — client vraagt upgrade en server accepteert met een 101 status."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-sse",
+      "type": "single-choice",
+      "prompt": "Welke techniek is meestal éénrichtings‑push van server naar client?",
+      "options": [
+        {
+          "id": "a",
+          "label": "WebSocket",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Webhook",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Server‑Sent Events (SSE)",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "HTTP‑polling",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SSE pusht berichten van server naar client; WebSockets zijn bidirectioneel.",
+        "byOptionId": {
+          "c": "Correct — SSE is server→client push only."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

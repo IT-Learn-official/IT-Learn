@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Chapter 11 - Authentication Basics",
+  "description": "Quick checks on auth methods and tokens.",
+  "questions": [
+    {
+      "id": "q-auth-header",
+      "type": "single-choice",
+      "prompt": "Where is a bearer token usually sent in an API request?",
+      "options": [
+        {
+          "id": "a",
+          "label": "In a DNS record",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Inside the HTML body only",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "In the URL query string",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "In the Authorization header",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Bearer tokens are commonly sent in the Authorization header.",
+        "byOptionId": {
+          "d": "Correct — `Authorization: Bearer <token>` is standard."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-jwt-structure",
+      "type": "single-choice",
+      "prompt": "A JWT token is made of which three parts separated by dots?",
+      "options": [
+        {
+          "id": "a",
+          "label": "key, value, salt",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "method, path, status",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "header, payload, signature",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "username, password, token",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "JWTs contain a header, payload, and signature.",
+        "byOptionId": {
+          "c": "Correct — header.payload.signature."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-cookie-httpOnly",
+      "type": "single-choice",
+      "prompt": "Why use the HttpOnly flag on cookies?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To prevent JavaScript from reading the cookie",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To store tokens in DNS",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To encrypt the cookie contents",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To make cookies readable by JavaScript",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HttpOnly prevents JavaScript from reading the cookie, reducing some XSS risks.",
+        "byOptionId": {
+          "a": "Correct — HttpOnly keeps cookies inaccessible to client scripts."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-auth-diff",
+      "type": "single-choice",
+      "prompt": "What is the difference between authentication and authorization?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Authentication proves who you are; authorization decides what you can do.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Authorization proves identity; authentication grants permissions.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "They are the same thing.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Authentication deletes data; authorization backs it up.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Authentication = identity; Authorization = permissions/rights.",
+        "byOptionId": {
+          "a": "Correct — authentication is who, authorization is what you may do."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

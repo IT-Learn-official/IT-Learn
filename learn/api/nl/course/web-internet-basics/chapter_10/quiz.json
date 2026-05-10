@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Hoofdstuk 10 - RESTful API Basis",
+  "description": "Korte checks over REST‑principes en HTTP‑methoden.",
+  "questions": [
+    {
+      "id": "q-method-create",
+      "type": "single-choice",
+      "prompt": "Welke HTTP‑methode wordt typisch gebruikt om een nieuwe resource te maken?",
+      "options": [
+        {
+          "id": "a",
+          "label": "GET",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "PUT",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "DELETE",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "POST",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "POST wordt gebruikt om nieuwe resources te maken.",
+        "byOptionId": {
+          "d": "Correct — POST maakt doorgaans nieuwe resources."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-status-created",
+      "type": "single-choice",
+      "prompt": "Welke statuscode geeft aan dat een resource succesvol is aangemaakt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "200",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "500",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "404",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "201",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "201 Created betekent dat er een nieuwe resource op de server is gemaakt.",
+        "byOptionId": {
+          "d": "Correct — 201 duidt succesvolle creatie aan."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-idempotent",
+      "type": "single-choice",
+      "prompt": "Welke HTTP‑methode is idempotent (herhaaldelijk uitvoeren heeft hetzelfde effect)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Geen van bovenstaande",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "POST",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "PUT",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "PATCH",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "PUT is idempotent omdat herhalen dezelfde toestand oplevert.",
+        "byOptionId": {
+          "c": "Correct — PUT is idempotent."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-204",
+      "type": "single-choice",
+      "prompt": "Wat betekent HTTP‑statuscode 204 No Content?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De resource is niet gevonden",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De client stuurde ongeldige JSON",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De server weigerde de verbinding",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De aanvraag is gelukt maar er is geen response‑body",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "204 geeft aan dat de actie geslaagd is maar er bewust geen body wordt teruggegeven (handig bij DELETE/PUT).",
+        "byOptionId": {
+          "d": "Correct — 204 betekent succes zonder inhoud."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

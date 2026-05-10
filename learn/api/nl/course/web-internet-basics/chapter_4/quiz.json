@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Hoofdstuk 4 - Servers",
+  "description": "Check je begrip van wat een server is en wat deze doet.",
+  "questions": [
+    {
+      "id": "q1-what-is-server",
+      "type": "single-choice",
+      "prompt": "Welke definitie past het beste?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een server is een computer (en software) die verzoeken ontvangt en beantwoordt.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Een server is hetzelfde als een URL.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een server is een CSS‑bestand dat de pagina styleert.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een server is altijd een laptop.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Servers zijn computers en programma's die via een netwerk verzoeken beantwoorden.",
+        "byOptionId": {
+          "a": "Correct. Het centrale idee is luisteren en antwoorden via een netwerk."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q2-webserver-job",
+      "type": "single-choice",
+      "prompt": "Welke taak is typisch voor een webserver?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Domeinnamen in IP‑adressen omzetten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Statische bestanden zoals HTML en CSS serveren",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Knoppen direct op je scherm tekenen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Je toetsenbordindeling veranderen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Webservers serveren vaak bestanden en routeren verzoeken naar backends.",
+        "byOptionId": {
+          "b": "Correct. Statische assets serveren is een klassieke taak."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-backend-app",
+      "type": "single-choice",
+      "prompt": "Waar wordt een backend‑app doorgaans voor gebruikt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De internetkabels korter maken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "CSS‑selectoren schrijven",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "De browser vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Logica implementeren zoals login en API‑data teruggeven",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Backends bevatten de regels en logica van een site of API en praten vaak met databases.",
+        "byOptionId": {
+          "d": "Correct. Backends verwerken logica en data."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-reverse-proxy",
+      "type": "single-choice",
+      "prompt": "Welke servercomponent wordt vaak gebruikt om TLS te beëindigen en statische bestanden efficiënt te serveren (bv. Nginx)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een DNS‑resolver",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Een reverse proxy/webserver",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Een FTP‑client",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Een browserextensie",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reverse proxies zoals Nginx behandelen vaak TLS en serveren statische assets dichtbij de client.",
+        "byOptionId": {
+          "b": "Correct — reverse proxies/load balancers vervullen deze taken vaak."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

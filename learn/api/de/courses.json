@@ -122,7 +122,7 @@
         },
         {
           "id": "chapter_15",
-          "title": "Endmission: Mini‑Projekt",
+          "title": "Endmission: Mini-Projekt",
           "description": "Alles in einem kleinen Abschlussprojekt zusammenführen.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
@@ -695,6 +695,128 @@
           "id": "chapter_10",
           "title": "Git-Spickzettel",
           "description": "Eine schnelle Referenz mit gängigen Git-Befehlen für den Alltag: Branches, Synchronisieren und Fehler rückgängig machen.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
+    },
+    {
+      "id": "web-internet-basics",
+      "title": "Web & Internet Grundlagen für junge Pros",
+      "description": "Ein einsteigerfreundlicher Kurs, der erklärt, wie Web und Internet funktionieren: URLs, IP-Adressen, Server, HTTP/HTTPS und APIs. Kapitel 1–6 behandeln die Grundlagen; Kapitel 7–14 gehen tiefer in Transport, DNS, TLS, API-Design, Authentifizierung, Echtzeit-Techniken, Caching/CDNs und Deployment/Sicherheit.",
+      "authors": [
+        "super_man2775"
+      ],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "Das Web vs. Das Internet",
+          "description": "Unterscheide Internet (das Netzwerk) und das Web (Webseiten) und lerne das Client/Server-Prinzip.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Wie eine URL funktioniert",
+          "description": "Zerlege eine URL in Protokoll, Host, Pfad, Query und Fragment und verstehe deren Rolle.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "Wie eine IP-Adresse funktioniert (und DNS)",
+          "description": "Verstehe IP-Adressen, warum DNS existiert und wie der Browser den richtigen Server findet.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Wie ein Server funktioniert",
+          "description": "Was ein Server ist, was ein Webserver macht und wie Backend-Apps und Datenbanken zusammenarbeiten.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "HTTP-Grundlagen",
+          "description": "Lerne HTTP-Requests und -Responses, Methoden wie GET/POST, Statuscodes, Header und Bodies.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "HTTPS und APIs",
+          "description": "Warum HTTPS wichtig ist, was APIs sind und ein Überblick über REST, GraphQL, WebSockets und Webhooks.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Ports, TCP, UDP und die Transportschicht",
+          "description": "Wie Ports funktionieren, und die Unterschiede zwischen TCP und UDP.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "DNS im Detail und gängige DNS-Einträge",
+          "description": "A/AAAA, CNAME, MX, TXT, NS, TTL und wie DNS-Caching funktioniert.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "TLS und HTTPS-Interna",
+          "description": "Wie TLS HTTPS absichert, Zertifikate, Handshake und Vertrauenskette.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "RESTful APIs: Prinzipien und Design",
+          "description": "Ressourcenorientierte URLs, HTTP-Methoden, Statuscodes und JSON-Antworten.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Authentifizierung & Autorisierung für APIs",
+          "description": "Sessions/Cookies, API-Keys, JWTs und eine kurze Einführung in OAuth2.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "Echtzeit-Web: WebSockets, SSE und Webhooks",
+          "description": "Vergleich von WebSockets, Server-Sent Events und Webhooks sowie typische Anwendungsfälle.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Caching, CDNs und Performance",
+          "description": "Cache-Control, ETag, TTL und wie CDNs Inhalte weltweit schneller ausliefern.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Deployment, Skalierung und Sicherheitsgrundlagen",
+          "description": "Überblick über Deployment-Modelle, Load-Balancing, Reverse-Proxies und wichtige Sicherheitspraktiken.",
           "theoryResourceUid": "theory.md",
           "quizResourceUid": "quiz.json",
           "practiceResourceUid": "practice.json"

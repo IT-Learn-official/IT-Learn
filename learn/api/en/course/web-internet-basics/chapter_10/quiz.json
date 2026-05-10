@@ -1,0 +1,71 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Chapter 10 - RESTful API Basics",
+  "description": "Quick checks on REST principles and HTTP methods.",
+  "questions": [
+    {
+      "id": "q-method-create",
+      "type": "single-choice",
+      "prompt": "Which HTTP method is typically used to create a new resource?",
+      "options": [
+        { "id": "a", "label": "GET", "isCorrect": false },
+        { "id": "b", "label": "POST", "isCorrect": true },
+        { "id": "c", "label": "PUT", "isCorrect": false },
+        { "id": "d", "label": "DELETE", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "POST is commonly used to create new resources.",
+        "byOptionId": { "b": "Correct — POST usually creates new resources." }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-status-created",
+      "type": "single-choice",
+      "prompt": "Which status code indicates that a resource was successfully created?",
+      "options": [
+        { "id": "a", "label": "200", "isCorrect": false },
+        { "id": "b", "label": "201", "isCorrect": true },
+        { "id": "c", "label": "404", "isCorrect": false },
+        { "id": "d", "label": "500", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "201 Created means a new resource was created on the server.",
+        "byOptionId": { "b": "Correct — 201 signals successful creation." }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-idempotent",
+      "type": "single-choice",
+      "prompt": "Which HTTP method is defined as idempotent (performing it multiple times has the same effect)?",
+      "options": [
+        { "id": "a", "label": "POST", "isCorrect": false },
+        { "id": "b", "label": "PUT", "isCorrect": true },
+        { "id": "c", "label": "PATCH", "isCorrect": false },
+        { "id": "d", "label": "None of the above", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "PUT is idempotent because repeating the same request results in the same state.",
+        "byOptionId": { "b": "Correct — PUT is idempotent." }
+      },
+      "correct": 1
+    }
+    {
+      "id": "q-extra-204",
+      "type": "single-choice",
+      "prompt": "What does HTTP status code 204 No Content mean?",
+      "options": [
+        { "id": "a", "label": "The request succeeded but there is no response body", "isCorrect": true },
+        { "id": "b", "label": "The resource was not found", "isCorrect": false },
+        { "id": "c", "label": "The server refused the connection", "isCorrect": false },
+        { "id": "d", "label": "The client sent malformed JSON", "isCorrect": false }
+      ],
+      "explanations": {
+        "overview": "204 indicates success but intentionally no body is returned (useful for DELETE/PUT responses).",
+        "byOptionId": { "a": "Correct — 204 means success with no content." }
+      }
+    }
+  ]
+}

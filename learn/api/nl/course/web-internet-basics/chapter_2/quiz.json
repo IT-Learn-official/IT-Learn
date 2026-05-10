@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_2",
+  "kind": "assessment",
+  "title": "Hoofdstuk 2 - URL's",
+  "description": "Check of je de belangrijkste delen van een URL herkent.",
+  "questions": [
+    {
+      "id": "q1-url-parts",
+      "type": "single-choice",
+      "prompt": "In `https://example.com/shop?item=7#reviews`, wat is `/shop`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De query‑string",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het protocol",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het fragment",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Het pad",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Het pad is het deel na de host, zoals `/shop` of `/users/123`.",
+        "byOptionId": {
+          "d": "Correct. `/shop` is het pad."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-query-string",
+      "type": "single-choice",
+      "prompt": "Wat is het doel van query‑parameters zoals `?page=2&sort=price`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ze versleutelen de hele verbinding.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ze veranderen de domeinnaam naar een IP‑adres.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ze worden alleen gebruikt om links langer te laten lijken.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ze sturen extra opties naar de server.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Query‑parameters zijn extra key/value‑data die met de request worden meegestuurd.",
+        "byOptionId": {
+          "d": "Correct. Ze worden gebruikt voor filters, paginering en opties."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q3-fragment",
+      "type": "single-choice",
+      "prompt": "Wat doet het `#section-2`‑deel van een URL meestal?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het verandert het IP‑adres van de server.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het forceert HTTP in plaats van HTTPS.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het vertelt de browser naar een deel van de pagina te springen.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Het wordt een wachtwoord voor de request.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Fragmenten (`#...`) worden door de browser gebruikt om binnen een pagina te navigeren of in client‑apps te routen.",
+        "byOptionId": {
+          "c": "Correct. Vaak springt de browser naar een kop of route in een SPA."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-url-host",
+      "type": "single-choice",
+      "prompt": "Welk deel van `https://shop.example.com/cart` vertelt welke server te contacteren?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het pad (/cart)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "De host (shop.example.com)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De fragment (#...)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De query string",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "De host of domein vertelt de browser met welke server contact gemaakt moet worden.",
+        "byOptionId": {
+          "b": "Correct — de host bepaalt de server/domein."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

@@ -612,6 +612,128 @@
       ]
     },
     {
+      "id": "web-internet-basics",
+      "title": "Web & Internet Basics for Young Pros",
+      "description": "A beginner-friendly course explaining how the web and internet work. Chapters 1–6 cover core concepts (URLs, IPs, servers, HTTP/HTTPS, APIs). Chapters 7–14 dive deeper into ports & transport, DNS, TLS/HTTPS internals, API design, authentication, real-time techniques, caching/CDNs, and deployment/security.",
+      "authors": [
+        "super_man2775"
+      ],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "The Web vs. The Internet",
+          "description": "Learn the difference between the internet and the web, and how client/server requests work.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "How a URL Works",
+          "description": "Break down a URL into protocol, host, path, query, and fragment, and learn what each part does.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "How an IP Address Works (and DNS)",
+          "description": "Understand IP addresses, why DNS exists, and how browsers find the right server to connect to.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "How a Server Works",
+          "description": "See what a server is, what a web server does, and how backend apps and databases fit together.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "HTTP Basics",
+          "description": "Learn HTTP requests and responses, methods like GET/POST, status codes, headers, and bodies.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "HTTPS and APIs (and Types of APIs)",
+          "description": "Learn why HTTPS exists, how APIs work, and the differences between REST, GraphQL, RPC, WebSockets, and webhooks.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Ports, TCP, UDP, and the Transport Layer",
+          "description": "Learn how ports, TCP and UDP let multiple services share one IP address and how connections work.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "DNS in Depth and Common DNS Records",
+          "description": "Explore DNS records (A, AAAA, CNAME, MX, TXT), TTL, and how DNS caching and resolution work.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "TLS and HTTPS Internals",
+          "description": "How TLS secures HTTP: certificates, the handshake, and the chain of trust behind HTTPS.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "RESTful APIs: Principles and Design",
+          "description": "Design simple, well-behaved web APIs using HTTP methods, status codes, URLs, and JSON.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Authentication & Authorization for APIs",
+          "description": "Understand sessions, cookies, API keys, JWTs, and a high-level view of OAuth2.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "Real-time Web: WebSockets, SSE, and Webhooks",
+          "description": "Compare WebSockets, Server-Sent Events, and webhooks and when to use each for real-time features.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Caching, CDNs, and Performance",
+          "description": "How caching and CDNs improve performance: Cache-Control, ETag, TTL, and edge caching basics.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Deployment, Scaling, and Security Basics",
+          "description": "An overview of deploying web services, load balancing, basic scaling patterns, and essential security practices.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
+    },
+    {
       "id": "git-github-vscode-basics",
       "title": "Git, GitHub, and VS Code Basics for Young Students",
       "description": "A beginner-friendly course that teaches the basics of Git version control, GitHub collaboration, and how to use VS Code with Git.",

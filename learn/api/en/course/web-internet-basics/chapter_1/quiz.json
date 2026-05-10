@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_1",
+  "kind": "assessment",
+  "title": "Chapter 1 - The Web vs. The Internet",
+  "description": "Quick concept check on internet vs web, and the client/server idea.",
+  "questions": [
+    {
+      "id": "q1-internet-vs-web",
+      "type": "single-choice",
+      "prompt": "Which statement is the most accurate?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The internet is only Wi‑Fi, the web is only mobile data.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The web is cables and routers, the internet is websites.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The internet is the network, and the web is a service that runs on it.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "The web and the internet are exactly the same thing.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The internet is the global network, and the web is a system of websites that uses that network.",
+        "byOptionId": {
+          "d": "They’re related, but not the same: the web runs on the internet.",
+          "c": "Correct. The web is one thing that uses the internet.",
+          "b": "That’s flipped: cables/routers are part of the internet.",
+          "a": "Wi‑Fi and mobile data are ways to connect, not definitions of web/internet."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q2-client-server",
+      "type": "single-choice",
+      "prompt": "When you visit a website, what is usually the **client**?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The database that stores the website",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The keyboard you type on",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Your browser (like Chrome)",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "The server computer that hosts the site",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The client is the program that asks for data (your browser), and the server is the program/computer that answers.",
+        "byOptionId": {
+          "c": "Correct. The browser requests pages and data.",
+          "a": "A database helps the server, but it’s not usually the client.",
+          "d": "That’s the server side: it answers requests.",
+          "b": "Hardware input devices aren’t clients in this sense."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q3-request-response",
+      "type": "single-choice",
+      "prompt": "What happens first when loading a web page?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The server asks your browser for permission to exist.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The browser guesses the page without contacting the internet.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The server sends a response before the browser asks.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "The browser sends a request to a server.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "The web is mostly request → response. The client asks first.",
+        "byOptionId": {
+          "c": "A response is usually a reply to a request.",
+          "d": "Correct. The browser requests something like `/` or `/index.html`.",
+          "b": "Browsers can cache, but normally they still work through requests and responses.",
+          "a": "Servers don’t do that; clients initiate most page loads."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-domain-dns",
+      "type": "single-choice",
+      "prompt": "What service turns a domain like `example.com` into an IP address?",
+      "options": [
+        {
+          "id": "a",
+          "label": "FTP service",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Web browser",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "HTTP server",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DNS (Domain Name System)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "DNS resolves domain names to IP addresses so browsers can connect.",
+        "byOptionId": {
+          "d": "Correct — DNS maps names to IP addresses.",
+          "c": "An HTTP server responds to requests but doesn't map names to IPs.",
+          "b": "Browsers use DNS but aren't the mapping service themselves.",
+          "a": "FTP is a file transfer protocol, not name resolution."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

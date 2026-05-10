@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Hoofdstuk 9 - TLS en HTTPS",
+  "description": "Korte check over TLS en certificaten.",
+  "questions": [
+    {
+      "id": "q-https-encryption",
+      "type": "single-choice",
+      "prompt": "Wat is het belangrijkste voordeel van HTTPS ten opzichte van HTTP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verwijdert de noodzaak van certificaten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Versleuteld verkeer dat data voor afluisteraars verbergt",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Wijzigt DNS‑records automatisch",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Snellere paginalading",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS versleutelt data en helpt de identiteit van de server te verifiëren.",
+        "byOptionId": {
+          "b": "Correct — HTTPS voorkomt passief meeluisteren door encryptie."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-certificate-purpose",
+      "type": "single-choice",
+      "prompt": "Wat bewijst een TLS‑certificaat aan je browser?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Dat de server de controle heeft over de domeinnaam die in het certificaat staat",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Dat de pagina altijd veilig te gebruiken is",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Dat de server de snelste CPU heeft",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Dat de server geen gebruikersdata opslaat",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Certificaten koppelen een publieke sleutel aan een domein of identiteit en worden ondertekend door vertrouwde autoriteiten.",
+        "byOptionId": {
+          "a": "Correct — een certificaat bindt een public key aan een domein of identity."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-ca",
+      "type": "single-choice",
+      "prompt": "Wie ondertekent certificaten zodat browsers ze doorgaans vertrouwen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "DNS‑resolvers",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Certificate Authorities (CA's)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Webbrowsers zelf zonder derden",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "CDN‑providers",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "CA's ondertekenen certificaten en browsers vertrouwen een set bekende CA‑handtekeningen.",
+        "byOptionId": {
+          "b": "Correct — CA's geven certificaten uit en ondertekenen ze."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}
