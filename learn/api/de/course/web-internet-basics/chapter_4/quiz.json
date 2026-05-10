@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Kapitel 4 - Server",
+  "description": "Prüfe dein Verständnis darüber, was ein Server ist und was er macht.",
+  "questions": [
+    {
+      "id": "q1-what-is-server",
+      "type": "single-choice",
+      "prompt": "Welche Definition passt am besten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ein Server ist ein Computer (und Software), der Anfragen entgegennimmt und antwortet.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Ein Server ist immer ein Laptop.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein Server ist eine CSS‑Datei, die die Seite stylt.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Server ist dasselbe wie eine URL.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Server sind Computer und Programme, die über ein Netzwerk Anfragen beantworten.",
+        "byOptionId": {
+          "a": "Richtig. Die zentrale Idee ist: zuhören und antworten über ein Netzwerk."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q2-webserver-job",
+      "type": "single-choice",
+      "prompt": "Welche Aufgabe übernimmt ein Webserver typischerweise?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Domainnamen in IP‑Adressen umwandeln",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Statische Dateien wie HTML und CSS ausliefern",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Dein Tastaturlayout ändern",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Buttons direkt auf deinem Bildschirm zeichnen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Webserver liefern oft Dateien und routen Anfragen an Backend‑Apps.",
+        "byOptionId": {
+          "b": "Richtig. Statische Assets ausliefern ist eine klassische Aufgabe."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-backend-app",
+      "type": "single-choice",
+      "prompt": "Wofür wird eine Backend‑App normalerweise verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "CSS‑Selektoren schreiben",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Den Browser ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Logik implementieren wie Login und API‑Daten liefern",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Die Internetkabel kürzer machen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Backend‑Apps enthalten Regeln und Logik einer Seite oder API und sprechen oft mit Datenbanken.",
+        "byOptionId": {
+          "c": "Richtig. Backends verarbeiten Logik und Daten."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-reverse-proxy",
+      "type": "single-choice",
+      "prompt": "Welche Komponente wird häufig verwendet, um TLS zu terminieren und statische Dateien effizient auszuliefern (z. B. Nginx)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ein DNS‑Resolver",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Reverse‑Proxy/Webserver",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Eine Browser‑Erweiterung",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein FTP‑Client",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reverse‑Proxies wie Nginx übernehmen oft TLS‑Termination und das Ausliefern statischer Assets.",
+        "byOptionId": {
+          "b": "Richtig — Reverse‑Proxies/Load‑Balancer übernehmen solche Aufgaben."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

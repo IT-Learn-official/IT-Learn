@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Hoofdstuk 14 - Samenvatting",
+  "description": "Kleine herhalingstest over de belangrijkste concepten.",
+  "questions": [
+    {
+      "id": "q-summary-ip",
+      "type": "single-choice",
+      "prompt": "Wat doet DNS in het internetecosysteem?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Beheren van certificaten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Vertalen van domeinnamen naar IP‑adressen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Versleutelt verkeer",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Opslaan van cookies",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "DNS vertaalt domeinnamen naar IP‑adressen.",
+        "byOptionId": {
+          "b": "Correct — DNS is het naamresolutiemechanisme."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-summary-tls",
+      "type": "single-choice",
+      "prompt": "Wat is de rol van TLS in HTTPS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Verhogen van paginalaad snelheid",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Zorgen voor versleuteling en server‑identiteit",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Verwijderen van cookies",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DNS records versturen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TLS versleutelt verkeer en helpt serveridentiteit bevestigen.",
+        "byOptionId": {
+          "b": "Correct — TLS zorgt voor encryptie en authenticatie."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-containers",
+      "type": "single-choice",
+      "prompt": "Welke manier verpakt een applicatie samen met zijn omgeving voor consistente deployments?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Direct HTML op de server bewerken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "DNS records veranderen om te deployen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "FTP gebruiken voor backups",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Containers (bv. Docker)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Containers pakken een app en dependencies zodat die consistent draait in verschillende omgevingen.",
+        "byOptionId": {
+          "d": "Correct — containers zorgen voor consistentie tussen omgevingen."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

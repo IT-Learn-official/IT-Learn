@@ -1,0 +1,56 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Kapitel 5 - HTTP",
+  "description": "Prüfe, ob du grundlegende HTTP‑Konzepte verstehst: Methoden, Statuscodes und Bodies.",
+  "questions": [
+    {
+      "id": "q1-http-get",
+      "type": "single-choice",
+      "prompt": "Welche HTTP‑Methode wird am häufigsten verwendet, um eine Seite zu lesen oder Daten abzurufen?",
+      "options": [
+        { "id": "a", "label": "GET", "isCorrect": true },
+        { "id": "b", "label": "POST", "isCorrect": false },
+        { "id": "c", "label": "DELETE", "isCorrect": false },
+        { "id": "d", "label": "PAINT", "isCorrect": false }
+      ],
+      "explanations": { "overview": "GET wird verwendet, um Daten von einem Server anzufordern.", "byOptionId": { "a": "Richtig. GET holt/liest Daten." } }
+    },
+    {
+      "id": "q2-status-404",
+      "type": "single-choice",
+      "prompt": "Was bedeutet der HTTP‑Statuscode `404` normalerweise?",
+      "options": [
+        { "id": "a", "label": "Alles hat perfekt funktioniert", "isCorrect": false },
+        { "id": "b", "label": "Die Seite oder Ressource wurde nicht gefunden", "isCorrect": true },
+        { "id": "c", "label": "Die Verbindung ist verschlüsselt", "isCorrect": false },
+        { "id": "d", "label": "Der Server fordert dich auf, neu zu starten", "isCorrect": false }
+      ],
+      "explanations": { "overview": "404 bedeutet, dass der Server nicht finden kann, was angefragt wurde.", "byOptionId": { "b": "Richtig. Die Ressource existiert nicht an diesem Pfad (oder wurde nicht gefunden)." } }
+    },
+    {
+      "id": "q3-headers-vs-body",
+      "type": "single-choice",
+      "prompt": "Welche Aussage ist wahr?",
+      "options": [
+        { "id": "a", "label": "Header sind der Hauptinhalt und der Body ist nur Metadaten.", "isCorrect": false },
+        { "id": "b", "label": "Header sind Metadaten, und der Body kann HTML oder JSON enthalten.", "isCorrect": true },
+        { "id": "c", "label": "HTTP hat überhaupt keine Header.", "isCorrect": false },
+        { "id": "d", "label": "Nur Browser können HTTP verwenden.", "isCorrect": false }
+      ],
+      "explanations": { "overview": "Header beschreiben die Nachricht, und der Body enthält den Hauptinhalt.", "byOptionId": { "b": "Richtig. Der Body kann HTML, JSON, Dateien usw. enthalten." } }
+    }
+      {
+        "id": "q-extra-5xx",
+        "type": "single-choice",
+        "prompt": "Was zeigt eine 5xx HTTP‑Statuscode normalerweise an?",
+        "options": [
+          { "id": "a", "label": "Client‑Fehler (z. B. ungültige Anfrage)", "isCorrect": false },
+          { "id": "b", "label": "Server‑Fehler (z. B. interne Serverfehler)", "isCorrect": true },
+          { "id": "c", "label": "Der Client muss sich erneut anmelden", "isCorrect": false },
+          { "id": "d", "label": "Die Verbindung ist erfolgreich und enthält Inhalte", "isCorrect": false }
+        ],
+        "explanations": { "overview": "5xx‑Codes zeigen an, dass der Server bei der Verarbeitung der Anfrage fehlgeschlagen ist.", "byOptionId": { "b": "Richtig — 5xx‑Codes sind Server‑Fehler." } }
+      }
+  ]
+}

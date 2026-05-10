@@ -1,0 +1,57 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Kapitel 8 - DNS Grundlagen",
+  "description": "Prüfe dein Verständnis von gängigen DNS‑Einträgen und TTL.",
+  "questions": [
+    {
+      "id": "q-a-record",
+      "type": "single-choice",
+      "prompt": "Welcher DNS‑Eintrag weist einen Domainnamen einer IPv4‑Adresse zu?",
+      "options": [
+        { "id": "a", "label": "MX", "isCorrect": false },
+        { "id": "b", "label": "A", "isCorrect": true },
+        { "id": "c", "label": "CNAME", "isCorrect": false },
+        { "id": "d", "label": "TXT", "isCorrect": false }
+      ],
+      "explanations": { "overview": "A‑Records zeigen auf IPv4‑Adressen.", "byOptionId": { "b": "Richtig — A = IPv4‑Adresse." } }
+    },
+    {
+      "id": "q-mx",
+      "type": "single-choice",
+      "prompt": "Wofür wird ein MX‑Eintrag verwendet?",
+      "options": [
+        { "id": "a", "label": "Namen IPv6‑Adressen zuweisen", "isCorrect": false },
+        { "id": "b", "label": "Mail‑Server für eine Domain angeben", "isCorrect": true },
+        { "id": "c", "label": "Einen Alias auf eine andere Domain setzen", "isCorrect": false },
+        { "id": "d", "label": "TLS‑Zertifikate bereitstellen", "isCorrect": false }
+      ],
+      "explanations": { "overview": "MX‑Einträge zeigen anderen Mail‑Systemen, wohin E‑Mails für die Domain geliefert werden sollen.", "byOptionId": { "b": "Richtig — MX listet Mail‑Server." } }
+    },
+    {
+      "id": "q-ttl",
+      "type": "single-choice",
+      "prompt": "Weshalb verwendet DNS eine TTL (time to live)?",
+      "options": [
+        { "id": "a", "label": "Um das Internet zu verlangsamen", "isCorrect": false },
+        { "id": "b", "label": "Um zu steuern, wie lange Antworten gecacht werden", "isCorrect": true },
+        { "id": "c", "label": "Um DNS‑Antworten zu verschlüsseln", "isCorrect": false },
+        { "id": "d", "label": "Um Traffic an CDNs zu leiten", "isCorrect": false }
+      ],
+      "explanations": { "overview": "TTL steuert das Caching von DNS‑Antworten.", "byOptionId": { "b": "Richtig — TTL sagt Resolvern, wie lange sie Einträge cachen dürfen." } }
+    }
+  ]
+    ,
+    {
+      "id": "q-extra-aaaa",
+      "type": "single-choice",
+      "prompt": "Welcher DNS‑Record‑Typ zeigt auf eine IPv6‑Adresse?",
+      "options": [
+        { "id": "a", "label": "A", "isCorrect": false },
+        { "id": "b", "label": "AAAA", "isCorrect": true },
+        { "id": "c", "label": "MX", "isCorrect": false },
+        { "id": "d", "label": "CNAME", "isCorrect": false }
+      ],
+      "explanations": { "overview": "AAAA‑Records verknüpfen Domainnamen mit IPv6‑Adressen.", "byOptionId": { "b": "Richtig — AAAA steht für IPv6‑Adresse." } }
+    }
+}

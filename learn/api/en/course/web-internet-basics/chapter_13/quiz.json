@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Chapter 13 - Caching and CDNs",
+  "description": "Quick checks on caching headers and CDNs.",
+  "questions": [
+    {
+      "id": "q-cache-control",
+      "type": "single-choice",
+      "prompt": "Which header instructs caches how long to keep a response?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Content-Type",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Authorization",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Cache-Control",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Set-Cookie",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Cache-Control controls caching behavior and max-age.",
+        "byOptionId": {
+          "c": "Correct — Cache-Control sets caching directives like max-age."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-etag",
+      "type": "single-choice",
+      "prompt": "What is the purpose of an ETag header?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To provide a fingerprint for a resource version",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To compress responses",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To change DNS records",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To list CDN nodes",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "ETag is a content fingerprint clients can use to check for changes.",
+        "byOptionId": {
+          "a": "Correct — ETag helps conditional requests and caching."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-cdn",
+      "type": "single-choice",
+      "prompt": "What is the main purpose of a CDN?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To manage DNS records",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To sign TLS certificates",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To replace databases",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To cache static assets closer to users to reduce latency",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CDNs cache and serve static content from edge locations close to users.",
+        "byOptionId": {
+          "d": "Correct — CDNs reduce latency and origin load by caching assets."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

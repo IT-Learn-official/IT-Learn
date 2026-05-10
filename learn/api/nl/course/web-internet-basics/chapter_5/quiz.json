@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Hoofdstuk 5 - HTTP",
+  "description": "Check of je basisideeën over HTTP begrijpt: methoden, statuscodes en bodies.",
+  "questions": [
+    {
+      "id": "q1-http-get",
+      "type": "single-choice",
+      "prompt": "Welke HTTP‑methode wordt het meest gebruikt om een pagina te **lezen** of data op te halen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "GET",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "PAINT",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "POST",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DELETE",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "GET wordt gebruikt om data van een server op te vragen.",
+        "byOptionId": {
+          "a": "Correct. GET haalt/lekt data."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q2-status-404",
+      "type": "single-choice",
+      "prompt": "Wat betekent HTTP‑statuscode `404` meestal?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De pagina of resource is niet gevonden",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "De verbinding is versleuteld",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alles werkte perfect",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De server vraagt je te herstarten",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "404 betekent dat de server niet kan vinden wat je vroeg.",
+        "byOptionId": {
+          "a": "Correct. De resource bestaat niet op dat pad."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q3-headers-vs-body",
+      "type": "single-choice",
+      "prompt": "Welke uitspraak is waar?",
+      "options": [
+        {
+          "id": "a",
+          "label": "HTTP heeft helemaal geen headers.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Headers zijn de hoofdinhoud en de body is enkel metadata.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Headers zijn metadata en de body kan HTML of JSON bevatten.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Alleen browsers kunnen HTTP gebruiken.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Headers beschrijven het bericht, en de body bevat de hoofdinhoud.",
+        "byOptionId": {
+          "c": "Correct. De body kan HTML, JSON of bestanden bevatten."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-5xx",
+      "type": "single-choice",
+      "prompt": "Wat geeft een 5xx HTTP‑statuscode meestal aan?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Client‑fout (bv. onjuiste aanvraag)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Server‑fout (bv. interne fout op de server)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "De verbinding is succesvol en heeft inhoud",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "De client moet opnieuw inloggen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "5xx‑codes geven aan dat de server iets intern fout heeft gedaan of niet kon voltooien.",
+        "byOptionId": {
+          "b": "Correct — 5xx zijn serverfouten."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

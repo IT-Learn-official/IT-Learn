@@ -1,0 +1,45 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Kapitel 9 - TLS und HTTPS",
+  "description": "Kurzer Check zu TLS und Zertifikaten.",
+  "questions": [
+    {
+      "id": "q-https-encryption",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptvorteil von HTTPS gegenüber HTTP?",
+      "options": [
+        { "id": "a", "label": "Schnellere Seitenladezeiten", "isCorrect": false },
+        { "id": "b", "label": "Verschlüsselter Verkehr, der Daten vor Lauscher schützt", "isCorrect": true },
+        { "id": "c", "label": "Ändert DNS‑Einträge automatisch", "isCorrect": false },
+        { "id": "d", "label": "Entfernt die Notwendigkeit von Zertifikaten", "isCorrect": false }
+      ],
+      "explanations": { "overview": "HTTPS verschlüsselt Daten und hilft, die Identität des Servers zu überprüfen.", "byOptionId": { "b": "Richtig — HTTPS verhindert passives Mitlesen durch Verschlüsselung." } }
+    },
+    {
+      "id": "q-certificate-purpose",
+      "type": "single-choice",
+      "prompt": "Was beweist ein TLS‑Zertifikat dem Browser?",
+      "options": [
+        { "id": "a", "label": "Dass der Server die schnellste CPU hat", "isCorrect": false },
+        { "id": "b", "label": "Dass der Server die Kontrolle über den im Zertifikat angegebenen Domainnamen hat", "isCorrect": true },
+        { "id": "c", "label": "Dass der Server keine Nutzerdaten speichert", "isCorrect": false },
+        { "id": "d", "label": "Dass die Seite immer sicher ist", "isCorrect": false }
+      ],
+      "explanations": { "overview": "Zertifikate verbinden einen öffentlichen Schlüssel mit einer Domain oder Identität und werden von vertrauenswürdigen Behörden signiert.", "byOptionId": { "b": "Richtig — ein Zertifikat verknüpft Schlüssel mit einer Domain." } }
+    }
+  ]
+    ,
+    {
+      "id": "q-extra-ca",
+      "type": "single-choice",
+      "prompt": "Wer signiert Zertifikate, sodass Browser ihnen normalerweise vertrauen?",
+      "options": [
+        { "id": "a", "label": "Certificate Authorities (CAs)", "isCorrect": true },
+        { "id": "b", "label": "DNS‑Resolver", "isCorrect": false },
+        { "id": "c", "label": "CDN‑Provider", "isCorrect": false },
+        { "id": "d", "label": "Browser selbst ohne externe Stellen", "isCorrect": false }
+      ],
+      "explanations": { "overview": "CAs signieren Zertifikate; Browser vertrauen einer eingebauten Liste von CAs.", "byOptionId": { "a": "Richtig — CAs stellen Zertifikate aus und signieren sie." } }
+    }
+}

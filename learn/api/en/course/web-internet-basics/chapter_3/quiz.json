@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Chapter 3 - IP Addresses and DNS",
+  "description": "Check if you understand what IP addresses are and what DNS does.",
+  "questions": [
+    {
+      "id": "q1-ip-address",
+      "type": "single-choice",
+      "prompt": "What is the main purpose of an IP address?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To encrypt passwords automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To style a website",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To create HTML pages",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To identify where data should be delivered on a network",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "IP addresses are used for addressing and routing on networks.",
+        "byOptionId": {
+          "b": "Styling is CSS, not IP.",
+          "d": "Correct. It’s the address used to deliver network traffic.",
+          "a": "Encryption is not the job of IP addresses.",
+          "c": "HTML is for page structure, not networking."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-dns-job",
+      "type": "single-choice",
+      "prompt": "What does DNS do when you type `example.com` in your browser?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Turns an IP address into a CSS file",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Turns a domain name into an IP address",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Creates the website content",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Forces the website to load faster",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "DNS helps browsers find the IP address for a domain name so they can connect to the right server.",
+        "byOptionId": {
+          "b": "Correct. DNS translates names to addresses.",
+          "a": "DNS doesn’t create CSS files.",
+          "d": "DNS doesn’t force speed; it’s just part of the lookup process.",
+          "c": "Web servers create content, not DNS."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-ip-versions",
+      "type": "single-choice",
+      "prompt": "Which one looks like an IPv4 address?",
+      "options": [
+        {
+          "id": "a",
+          "label": "192.168.0.42",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "#section",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "2001:db8::1",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "https://example.com",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "IPv4 addresses use four dot-separated numbers.",
+        "byOptionId": {
+          "c": "That’s an IPv6-style address.",
+          "a": "Correct. Four numbers separated by dots is typical IPv4 format.",
+          "d": "That’s a URL, not an IP address.",
+          "b": "That’s a URL fragment, not an IP address."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-ttl",
+      "type": "single-choice",
+      "prompt": "In DNS, what does TTL (time to live) control?",
+      "options": [
+        {
+          "id": "a",
+          "label": "How fast the website will load in the browser",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "How long a resolver may cache a DNS answer (in seconds)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "The maximum size of DNS responses",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "The number of DNS servers for a domain",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TTL tells caching resolvers how long they can keep a DNS record before asking again.",
+        "byOptionId": {
+          "b": "Correct — TTL is measured in seconds and controls caching time.",
+          "a": "Load speed is affected by many things; TTL is about caching DNS answers.",
+          "c": "TTL is not about response size.",
+          "d": "The number of nameservers is unrelated to TTL."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

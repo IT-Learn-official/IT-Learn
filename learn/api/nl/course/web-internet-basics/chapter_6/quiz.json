@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Hoofdstuk 6 - HTTPS en API’s",
+  "description": "Check of je HTTPS, API’s en veelvoorkomende API‑stijlen begrijpt.",
+  "questions": [
+    {
+      "id": "q1-https-purpose",
+      "type": "single-choice",
+      "prompt": "Wat is het belangrijkste voordeel van HTTPS ten opzichte van HTTP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Het lost programmeerfouten automatisch op",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het maakt servers overbodig",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Het versleutelt en beschermt de verbinding met TLS",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Het maakt de URL korter",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS gebruikt TLS om verkeer te versleutelen en integriteit te beschermen, en helpt serveridentiteit te verifiëren.",
+        "byOptionId": {
+          "c": "Correct. TLS voegt encryptie en integriteitsbescherming toe."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q2-api-definition",
+      "type": "single-choice",
+      "prompt": "Waar wordt een API op het web meestal voor gebruikt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "HTML in afbeeldingen veranderen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "DNS vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Verschillende programma’s laten data of acties van een server opvragen",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Je CSS in een speciale map bewaren",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "API’s laten software met andere software praten, vaak via HTTP en JSON.",
+        "byOptionId": {
+          "c": "Correct. API’s stellen data en acties beschikbaar aan clients."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q3-api-types",
+      "type": "single-choice",
+      "prompt": "Welke optie is een goed voorbeeld van een real‑time, tweerichtingsverbinding?",
+      "options": [
+        {
+          "id": "a",
+          "label": "DNS",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "WebSockets",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "HTML",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "REST",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "WebSockets houden een verbinding open, waardoor beide kanten op elk moment berichten kunnen sturen.",
+        "byOptionId": {
+          "b": "Correct. WebSockets zijn ontworpen voor real‑time tweerichtingscommunicatie."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-contenttype",
+      "type": "single-choice",
+      "prompt": "Welke header geeft aan dat het antwoord JSON bevat?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Accept: text/html",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Cache-Control: no-cache",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Host: example.com",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Content-Type: application/json",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "De Content‑Type header beschrijft het type body, bijvoorbeeld `application/json` voor JSON‑data.",
+        "byOptionId": {
+          "d": "Correct — Content‑Type vertelt de client welk MIME‑type de body heeft."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}
