@@ -51,7 +51,7 @@
         "byOptionId": { "b": "Correct — PUT is idempotent." }
       },
       "correct": 1
-    }
+    },
     {
       "id": "q-extra-204",
       "type": "single-choice",
