@@ -40,7 +40,6 @@
       ],
       "explanations": { "overview": "TTL steuert das Caching von DNS‑Antworten.", "byOptionId": { "b": "Richtig — TTL sagt Resolvern, wie lange sie Einträge cachen dürfen." } }
     }
-  ]
     ,
     {
       "id": "q-extra-aaaa",
@@ -54,4 +53,6 @@
       ],
       "explanations": { "overview": "AAAA‑Records verknüpfen Domainnamen mit IPv6‑Adressen.", "byOptionId": { "b": "Richtig — AAAA steht für IPv6‑Adresse." } }
     }
+  ]
+}
 }
