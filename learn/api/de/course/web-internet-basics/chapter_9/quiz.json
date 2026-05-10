@@ -28,10 +28,15 @@
       ],
       "explanations": { "overview": "Zertifikate verbinden einen öffentlichen Schlüssel mit einer Domain oder Identität und werden von vertrauenswürdigen Behörden signiert.", "byOptionId": { "b": "Richtig — ein Zertifikat verknüpft Schlüssel mit einer Domain." } }
     }
-  ]
-    ,
+  },
     {
       "id": "q-extra-ca",
+      "type": "single-choice",
+      "prompt": "Wer signiert Zertifikate, sodass Browser ihnen normalerweise vertrauen?",
+      ...
+    }
+  ]
+}
       "type": "single-choice",
       "prompt": "Wer signiert Zertifikate, sodass Browser ihnen normalerweise vertrauen?",
       "options": [
