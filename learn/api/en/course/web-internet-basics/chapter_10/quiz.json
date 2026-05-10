@@ -65,7 +65,8 @@
       "explanations": {
         "overview": "204 indicates success but intentionally no body is returned (useful for DELETE/PUT responses).",
         "byOptionId": { "a": "Correct — 204 means success with no content." }
-      }
+      },
+      "correct": 0
     }
   ]
 }
