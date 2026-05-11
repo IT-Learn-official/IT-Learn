@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Kapitel 12 - Echtzeit‑Web Technologien",
+  "description": "Kurzer Check zu WebSockets, SSE und Webhooks.",
+  "questions": [
+    {
+      "id": "q-websocket-duplex",
+      "type": "single-choice",
+      "prompt": "Welche Technologie bietet eine persistente zweiseitige (Full‑Duplex) Verbindung zwischen Client und Server?",
+      "options": [
+        {
+          "id": "a",
+          "label": "WebSocket",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Webhook",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "HTTP‑Polling",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "SSE",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "WebSockets erlauben Full‑Duplex‑Kommunikation.",
+        "byOptionId": {
+          "a": "Richtig — WebSockets sind permanente zweiseitige Verbindungen."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-webhook",
+      "type": "single-choice",
+      "prompt": "Was ist ein Webhook?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Browser‑API zum Zeichnen von Grafiken",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ein Server, der andere Server abfragt",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ein DNS‑Record‑Typ",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ein Server‑zu‑Server HTTP‑Callback, das bei einem Ereignis ausgelöst wird",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Webhooks sind HTTP‑Callbacks, die von einem Server an einen anderen gesendet werden, wenn Ereignisse auftreten.",
+        "byOptionId": {
+          "d": "Richtig — Webhooks POSTen Daten an eine bereitgestellte URL bei Ereignissen."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-sse",
+      "type": "single-choice",
+      "prompt": "Welche Technik ist typischerweise einseitiger Server→Client‑Push?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Server‑Sent Events (SSE)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "HTTP‑Polling",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "WebSocket",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Webhook",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SSE liefert Updates vom Server an den Client; WebSockets sind bidirektional.",
+        "byOptionId": {
+          "a": "Richtig — SSE ist server→client push only."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

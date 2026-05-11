@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_2",
+  "kind": "assessment",
+  "title": "Chapter 2 - URLs",
+  "description": "Check if you can recognize the main parts of a URL.",
+  "questions": [
+    {
+      "id": "q1-url-parts",
+      "type": "single-choice",
+      "prompt": "In `https://example.com/shop?item=7#reviews`, what is `/shop`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The protocol",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The query string",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The fragment",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "The path",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "The path is the part after the host, like `/shop` or `/users/123`.",
+        "byOptionId": {
+          "a": "The protocol is `https`.",
+          "d": "Correct. `/shop` is the path.",
+          "b": "The query string starts after `?`.",
+          "c": "The fragment starts after `#`."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-query-string",
+      "type": "single-choice",
+      "prompt": "What is the purpose of query parameters like `?page=2&sort=price`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "They change the domain name into an IP address.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "They send extra options to the server.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "They encrypt the whole connection.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "They are only used to make links look longer.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Query parameters are extra key/value data sent with the request.",
+        "byOptionId": {
+          "a": "That’s DNS, not query parameters.",
+          "b": "Correct. They’re used for filters, paging, sorting, and options.",
+          "c": "Encryption comes from HTTPS/TLS, not query parameters.",
+          "d": "They have real meaning for the server."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-fragment",
+      "type": "single-choice",
+      "prompt": "What does the `#section-2` part of a URL usually do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It forces the request to use HTTP instead of HTTPS.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "It changes the server’s IP address.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It becomes a password for the request.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It tells the browser to jump to a part of the page.",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Fragments (`#...`) are handled by the browser to navigate within a page or client-side app.",
+        "byOptionId": {
+          "d": "Correct. It’s often used to jump to a heading or route inside a single-page app.",
+          "b": "IP addresses come from DNS and networking, not fragments.",
+          "a": "Protocol changes are in the `http`/`https` part, not the fragment.",
+          "c": "Fragments aren’t passwords."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-url-host",
+      "type": "single-choice",
+      "prompt": "Which part of a URL tells the browser which server (domain) to contact?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The query string (after ?)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The host (e.g., example.com)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "The path (e.g., /users)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "The fragment (after #)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "The host (domain) tells the client which server to connect to; the path selects the resource on that server.",
+        "byOptionId": {
+          "b": "Correct — the host/domain is used to resolve the server via DNS.",
+          "c": "The path is the resource on the server.",
+          "a": "Query string passes extra options to the server.",
+          "d": "Fragment is handled client-side and does not choose the server."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Hoofdstuk 8 - DNS Basis",
+  "description": "Controleer je begrip van veelvoorkomende DNS‑records en TTL.",
+  "questions": [
+    {
+      "id": "q-a-record",
+      "type": "single-choice",
+      "prompt": "Welk DNS‑record linkt een domeinnaam aan een IPv4‑adres?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "MX",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "TXT",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "CNAME",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A‑records wijzen namen naar IPv4‑adressen.",
+        "byOptionId": {
+          "a": "Correct — A = IPv4‑adres."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-mx",
+      "type": "single-choice",
+      "prompt": "Waarvoor wordt een MX‑record gebruikt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Mailservers voor een domein specificeren",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Alias naar een andere domein",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Namen naar IPv6 adres mappen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "TLS certificaten leveren",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "MX‑records vertellen mail‑systemen waarheen e‑mail voor de domein moet worden gestuurd.",
+        "byOptionId": {
+          "a": "Correct — MX‑records geven mailservers aan."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-ttl",
+      "type": "single-choice",
+      "prompt": "Waarom gebruikt DNS een TTL (time to live)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om te bepalen hoe lang antwoorden gecached mogen blijven",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Om het internet te vertragen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om verkeer naar CDN’s te routeren",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om DNS‑antwoorden te versleutelen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TTL regelt het cachen van DNS‑antwoorden.",
+        "byOptionId": {
+          "a": "Correct — TTL vertelt resolvers hoelang ze records mogen cachen."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-aaaa",
+      "type": "single-choice",
+      "prompt": "Welk DNS‑recordtype wijst naar een IPv6‑adres?",
+      "options": [
+        {
+          "id": "a",
+          "label": "CNAME",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "AAAA",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "MX",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "AAAA‑records linken een domein aan een IPv6‑adres.",
+        "byOptionId": {
+          "b": "Correct — AAAA = IPv6‑adres."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

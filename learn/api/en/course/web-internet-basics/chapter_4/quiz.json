@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_4",
+  "kind": "assessment",
+  "title": "Chapter 4 - Servers",
+  "description": "Check your understanding of what a server is and what it does.",
+  "questions": [
+    {
+      "id": "q1-what-is-server",
+      "type": "single-choice",
+      "prompt": "Which definition fits best?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A server is always a laptop.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A server is the same thing as a URL.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A server is a computer (and software) that listens for requests and responds.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "A server is a CSS file that styles the page.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Servers are computers and programs that answer requests over a network.",
+        "byOptionId": {
+          "a": "Servers can be many things: a big machine, a small device, or a virtual machine in the cloud.",
+          "c": "Correct. The key idea is listening and responding over a network.",
+          "d": "CSS is for styling, not serving network requests.",
+          "b": "A URL is an address, not the machine answering."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q2-webserver-job",
+      "type": "single-choice",
+      "prompt": "Which task is a web server commonly responsible for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Turning domain names into IP addresses",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Serving static files like HTML and CSS",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Changing your keyboard layout",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Drawing buttons on your screen directly",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Web servers often serve files and route requests to backend apps.",
+        "byOptionId": {
+          "b": "Correct. Serving static assets is a classic web server job.",
+          "c": "That’s an operating system setting, not a server task.",
+          "d": "The browser draws the UI, not the server.",
+          "a": "That’s DNS."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q3-backend-app",
+      "type": "single-choice",
+      "prompt": "What is a backend app usually used for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Writing CSS selectors",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Making the internet cables shorter",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Implementing logic like login and returning API data",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Replacing the browser",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Backend apps contain the rules and logic of a site or API, often talking to databases.",
+        "byOptionId": {
+          "a": "CSS selectors are front-end styling, not backend logic.",
+          "c": "Correct. Backends handle logic and data processing.",
+          "d": "Browsers are client programs; backends don’t replace them.",
+          "b": "Cables aren’t controlled by your backend app."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-tls",
+      "type": "single-choice",
+      "prompt": "Which component commonly handles TLS termination and serves static files?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A reverse proxy / web server (e.g., Nginx)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "A CSS preprocessor",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The user’s keyboard",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DNS resolver",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Reverse proxies or web servers often handle TLS and static asset delivery before handing requests to backend apps.",
+        "byOptionId": {
+          "a": "Correct — Nginx/Apache often terminate TLS and serve static content.",
+          "b": "CSS preprocessors transform stylesheets but don’t handle TLS.",
+          "c": "Keyboards are input devices, not servers.",
+          "d": "DNS resolvers map names to IPs; they don’t terminate TLS for web traffic."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

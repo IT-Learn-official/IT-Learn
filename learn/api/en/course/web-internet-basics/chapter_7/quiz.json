@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Chapter 7 - Ports, TCP, and UDP",
+  "description": "Quick concept-check about ports and transport protocols.",
+  "questions": [
+    {
+      "id": "q-port-purpose",
+      "type": "single-choice",
+      "prompt": "What is the main purpose of a network port number?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To identify a specific service or application on a device",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To replace IP addresses",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To name the device on the internet",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To identify the physical network cable",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Ports route traffic on a device to the correct service.",
+        "byOptionId": {
+          "a": "Correct — ports let multiple services share one IP address.",
+          "d": "Physical cables are not ports in this sense.",
+          "c": "The IP address names the device, not the port.",
+          "b": "Ports work together with IP addresses, not replace them."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-tcp-udp",
+      "type": "single-choice",
+      "prompt": "Which statement best describes TCP compared to UDP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "TCP ignores packet order",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "TCP guarantees ordered delivery and retries lost packets",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "TCP is connectionless and faster than UDP",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "TCP is used only for video streaming",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP focuses on reliable, ordered delivery; UDP focuses on low latency.",
+        "byOptionId": {
+          "b": "Correct — TCP ensures reliable, ordered delivery.",
+          "c": "This describes UDP more closely.",
+          "d": "TCP is used for many services, not only streaming.",
+          "a": "TCP maintains order; UDP may not."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-common-port",
+      "type": "single-choice",
+      "prompt": "Which port is commonly used for HTTPS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "80",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "22",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "53",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "443",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS typically uses port 443.",
+        "byOptionId": {
+          "d": "Correct — 443 is the standard HTTPS port.",
+          "a": "80 is standard for HTTP (not HTTPS).",
+          "b": "22 is SSH.",
+          "c": "53 is DNS."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-tcp-guarantee",
+      "type": "single-choice",
+      "prompt": "Which transport protocol generally guarantees ordered, reliable delivery?",
+      "options": [
+        {
+          "id": "a",
+          "label": "HTTP",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "TCP",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "UDP",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "IP",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP provides connection-oriented, reliable, ordered delivery; UDP does not.",
+        "byOptionId": {
+          "c": "UDP is connectionless and does not guarantee order.",
+          "b": "Correct — TCP ensures ordered, reliable delivery.",
+          "d": "IP is used for addressing/routing, not delivery guarantees at this layer.",
+          "a": "HTTP is an application protocol on top of TCP (usually)."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

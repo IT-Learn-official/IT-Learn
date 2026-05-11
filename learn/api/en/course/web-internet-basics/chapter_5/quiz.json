@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_5",
+  "kind": "assessment",
+  "title": "Chapter 5 - HTTP",
+  "description": "Check if you understand basic HTTP ideas: methods, status codes, and bodies.",
+  "questions": [
+    {
+      "id": "q1-http-get",
+      "type": "single-choice",
+      "prompt": "Which HTTP method is most commonly used to **read** a page or fetch data?",
+      "options": [
+        {
+          "id": "a",
+          "label": "DELETE",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "PAINT",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "POST",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "GET",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "GET is used to request data from a server.",
+        "byOptionId": {
+          "d": "Correct. GET is for fetching/reading data.",
+          "c": "POST usually creates something or sends data to the server.",
+          "a": "DELETE is for removing a resource.",
+          "b": "That’s not a real HTTP method."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-status-404",
+      "type": "single-choice",
+      "prompt": "What does an HTTP status code `404` usually mean?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The server is asking you to reboot",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Everything worked perfectly",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "The page or resource was not found",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "The connection is encrypted",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "404 means the server can’t find what you asked for at that path.",
+        "byOptionId": {
+          "b": "That would be a 2xx success code like 200.",
+          "c": "Correct. The resource doesn’t exist at that location (or the server can’t find it).",
+          "d": "Encryption is about HTTPS/TLS, not status codes.",
+          "a": "Servers don’t use 404 for rebooting."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q3-headers-vs-body",
+      "type": "single-choice",
+      "prompt": "Which statement is true?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Headers are the main content, and the body is just metadata.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Headers are metadata, and the body can contain HTML or JSON.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "HTTP has no headers at all.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Only browsers can use HTTP.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Headers describe the message, and the body carries the main content.",
+        "byOptionId": {
+          "a": "That’s flipped: headers are metadata, body is the main content.",
+          "b": "Correct. Body content can be HTML, JSON, files, etc.",
+          "c": "HTTP heavily uses headers.",
+          "d": "Any program can use HTTP (apps, scripts, servers)."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-status-5xx",
+      "type": "single-choice",
+      "prompt": "What does an HTTP 5xx status code generally indicate?",
+      "options": [
+        {
+          "id": "a",
+          "label": "The client asked for an encrypted connection",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The resource was not found",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "A server-side error happened",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "The browser needs a plugin",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "5xx codes mean the server failed to fulfill a valid request.",
+        "byOptionId": {
+          "c": "Correct — 5xx are server errors.",
+          "a": "Encryption is about TLS; 5xx are server failures.",
+          "b": "Not Found is 404 (a 4xx client error).",
+          "d": "Plugins are not indicated by 5xx codes."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Chapter 14 - Deployment & Security Basics",
+  "description": "Quick checks on deployment models and basic security.",
+  "questions": [
+    {
+      "id": "q-load-balancer",
+      "type": "single-choice",
+      "prompt": "What is the primary purpose of a load balancer?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To edit source code",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To distribute incoming traffic across multiple servers",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "To replace TLS",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To store DNS records",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Load balancers help scale and provide redundancy by distributing requests.",
+        "byOptionId": {
+          "b": "Correct — load balancers distribute traffic to backends."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-https-required",
+      "type": "single-choice",
+      "prompt": "Why should you use HTTPS for your site?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It removes the need for backups",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "It makes the site load instantly",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It changes DNS records automatically",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It encrypts traffic and protects user data",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS encrypts traffic and verifies server identity.",
+        "byOptionId": {
+          "d": "Correct — HTTPS secures data in transit."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-containers",
+      "type": "single-choice",
+      "prompt": "Which deployment approach packages an app with its environment for consistency?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Editing HTML directly on the server",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Using FTP for backups",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Changing DNS records to deploy",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Containers (e.g., Docker)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Containers package an app and its dependencies to run consistently across environments.",
+        "byOptionId": {
+          "d": "Correct — containers provide environment consistency for deployments."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Hoofdstuk 3 - IP‑adressen en DNS",
+  "description": "Check of je begrijpt wat IP‑adressen zijn en wat DNS doet.",
+  "questions": [
+    {
+      "id": "q1-ip-address",
+      "type": "single-choice",
+      "prompt": "Wat is het belangrijkste doel van een IP‑adres?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Een website stijlen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wachtwoorden automatisch versleutelen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Aangeven waar data op een netwerk afgeleverd moet worden",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "HTML‑pagina's maken",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "IP‑adressen worden gebruikt voor adressering en routing op netwerken.",
+        "byOptionId": {
+          "c": "Correct. Het is het adres voor netwerkverkeer."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q2-dns-job",
+      "type": "single-choice",
+      "prompt": "Wat doet DNS als je `example.com` in je browser typt?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Maakt de website sneller laden",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Creëert de inhoud van de website",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Zet een IP‑adres om in een CSS‑bestand",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Zet een domeinnaam om naar een IP‑adres",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "DNS helpt browsers het IP‑adres voor een domeinnaam te vinden zodat ze met de juiste server kunnen verbinden.",
+        "byOptionId": {
+          "d": "Correct. DNS vertaalt namen naar adressen."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q3-ip-versions",
+      "type": "single-choice",
+      "prompt": "Welke van deze ziet eruit als een IPv4‑adres?",
+      "options": [
+        {
+          "id": "a",
+          "label": "2001:db8::1",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "#section",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "https://example.com",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "192.168.0.42",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "IPv4‑adressen gebruiken vier door punten gescheiden nummers.",
+        "byOptionId": {
+          "d": "Correct. Vier getallen met punten is typisch IPv4‑formaat."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-ttl",
+      "type": "single-choice",
+      "prompt": "Wat regelt de TTL (time‑to‑live) in DNS records?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De versleutelingsmethode voor DNS",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het aantal subdomeinen toegestaan",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Hoe lang een DNS‑antwoord in caches mag blijven",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "De maximale HTTP‑bodygrootte",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TTL bepaalt hoe lang caches (resolvers) het DNS‑antwoord mogen bewaren voordat ze opnieuw moeten vragen.",
+        "byOptionId": {
+          "c": "Correct — TTL regelt cachingduur voor DNS‑records."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

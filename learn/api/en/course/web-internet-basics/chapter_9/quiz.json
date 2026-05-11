@@ -1,0 +1,113 @@
+{
+  "chapterId": "chapter_9",
+  "kind": "assessment",
+  "title": "Chapter 9 - TLS and HTTPS",
+  "description": "Quick check on TLS and certificates.",
+  "questions": [
+    {
+      "id": "q-https-encryption",
+      "type": "single-choice",
+      "prompt": "What is the main benefit of using HTTPS instead of HTTP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Removes the need for certificates",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Encrypted traffic that hides data from eavesdroppers",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Faster page loads",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Changes DNS records automatically",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS encrypts data and helps verify the server's identity.",
+        "byOptionId": {
+          "b": "Correct — HTTPS prevents passive eavesdropping by encrypting traffic."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-certificate-purpose",
+      "type": "single-choice",
+      "prompt": "What does a TLS certificate prove to your browser?",
+      "options": [
+        {
+          "id": "a",
+          "label": "That the page is always safe to use",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "That the server controls the domain name shown in the certificate",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "That the server has the fastest CPU",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "That the server stores no user data",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Certificates indicate which entity controls the domain and are signed by trusted authorities.",
+        "byOptionId": {
+          "b": "Correct — a certificate ties a public key to a domain or identity."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-ca",
+      "type": "single-choice",
+      "prompt": "Who signs TLS certificates so browsers can trust them?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Certificate Authorities (CAs)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Web browsers themselves always sign certificates",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "DNS resolvers",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Content Delivery Networks (CDNs)",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Browsers trust certificates that are signed by trusted Certificate Authorities (CAs).",
+        "byOptionId": {
+          "a": "Correct — CAs sign certificates and browsers include a list of trusted CAs.",
+          "c": "DNS resolvers map names to IPs, not sign certificates.",
+          "b": "Browsers trust CA signatures; they don’t universally sign certificates themselves.",
+          "d": "CDNs may have certificates, but trust comes from CAs."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

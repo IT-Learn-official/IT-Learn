@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_10",
+  "kind": "assessment",
+  "title": "Kapitel 10 - RESTful API Grundlagen",
+  "description": "Kurze Fragen zu REST‑Prinzipien und HTTP‑Methoden.",
+  "questions": [
+    {
+      "id": "q-method-create",
+      "type": "single-choice",
+      "prompt": "Welche HTTP‑Methode wird typischerweise verwendet, um eine neue Ressource zu erstellen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "GET",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "DELETE",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "POST",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "PUT",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "POST wird oft verwendet, um neue Ressourcen zu erstellen.",
+        "byOptionId": {
+          "c": "Richtig — POST erstellt üblicherweise Ressourcen."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-status-created",
+      "type": "single-choice",
+      "prompt": "Welcher Statuscode zeigt an, dass eine Ressource erfolgreich erstellt wurde?",
+      "options": [
+        {
+          "id": "a",
+          "label": "500",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "201",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "404",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "200",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "201 Created bedeutet, dass eine neue Ressource auf dem Server erstellt wurde.",
+        "byOptionId": {
+          "b": "Richtig — 201 signalisiert erfolgreiche Erstellung."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-idempotent",
+      "type": "single-choice",
+      "prompt": "Welche HTTP‑Methode ist definiert als idempotent (wiederholtes Aufrufen hat denselben Effekt)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "PUT",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "POST",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Keine der oben genannten",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "PATCH",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "PUT ist idempotent, da wiederholtes Senden denselben Zustand ergibt.",
+        "byOptionId": {
+          "a": "Richtig — PUT ist idempotent."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-204",
+      "type": "single-choice",
+      "prompt": "Was bedeutet der HTTP‑Statuscode 204 No Content?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Der Server hat die Verbindung verweigert",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der Client hat ungültiges JSON gesendet",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Anfrage war erfolgreich, aber es gibt keinen Response‑Body",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Die Ressource wurde nicht gefunden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "204 zeigt Erfolg an, aber es wird bewusst kein Inhalt zurückgegeben (nützlich bei DELETE/PUT).",
+        "byOptionId": {
+          "c": "Richtig — 204 bedeutet Erfolg ohne Inhalt."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

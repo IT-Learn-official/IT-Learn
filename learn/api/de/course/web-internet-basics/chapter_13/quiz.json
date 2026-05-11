@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_13",
+  "kind": "assessment",
+  "title": "Kapitel 13 - Caching und CDNs",
+  "description": "Kurze Fragen zu Cache‑Headern und CDNs.",
+  "questions": [
+    {
+      "id": "q-cache-control",
+      "type": "single-choice",
+      "prompt": "Welcher Header gibt Caches vor, wie lange sie eine Antwort behalten sollen?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Set‑Cookie",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Content‑Type",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Cache‑Control",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Authorization",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Cache‑Control steuert Caching‑Verhalten und max‑age.",
+        "byOptionId": {
+          "c": "Richtig — Cache‑Control setzt Direktiven wie max‑age."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-etag",
+      "type": "single-choice",
+      "prompt": "Wozu dient ein ETag‑Header?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Einen Fingerabdruck für eine Ressourcen‑Version bereitzustellen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "CDN‑Knoten aufzulisten",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "DNS‑Einträge zu ändern",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Antworten zu komprimieren",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "ETag ist ein Fingerabdruck, den Clients zur Prüfung auf Änderungen verwenden können.",
+        "byOptionId": {
+          "a": "Richtig — ETag unterstützt bedingte Anfragen und Caching."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-cdn",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptzweck eines CDN?",
+      "options": [
+        {
+          "id": "a",
+          "label": "TLS‑Schlüssel verwalten",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "DNS‑Auflösung bereitstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Datenbanken ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Statische Assets näher an Benutzern cachen, um Latenz zu reduzieren",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "CDNs cachen Content an Edge‑Standorten, um Ladezeiten zu verbessern und Origin‑Last zu senken.",
+        "byOptionId": {
+          "d": "Richtig — CDNs liefern Inhalte näher an Benutzer durch Caching."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}
