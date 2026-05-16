@@ -43,6 +43,20 @@ function fileIcon(filename) {
   return map[ext] || 'file';
 }
 
+function stripInjectedCloudflareAnalytics(content) {
+  if (typeof content !== 'string' || content.length === 0) return content;
+  if (!content.includes('Cloudflare Pages Analytics') && !content.includes('static.cloudflareinsights.com/beacon.min.js')) return content;
+
+  const injectedBlock =
+    /<!--\s*Cloudflare Pages Analytics\s*-->\s*<script\b[^>]*\bsrc=(['"])https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js\1[^>]*>\s*<\/script>\s*<!--\s*Cloudflare Pages Analytics\s*-->/gi;
+  const injectedScript =
+    /<script\b(?=[^>]*\bsrc=(['"])https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js\1)(?=[^>]*\bdata-cf-beacon=)[^>]*>\s*<\/script>/gi;
+
+  return content
+    .replace(injectedBlock, '')
+    .replace(injectedScript, '');
+}
+
 /* ── File tree ─────────────────────────────────────────────────────── */
 
 function buildFileTree(files) {
@@ -380,6 +394,22 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   let aceEditor = null;
   // uiState initialized above (needs pid in scope for toggle buttons)
 
+  // If any HTML file content was cached while Cloudflare injected analytics,
+  // scrub it now so the token never shows inside the IDE.
+  {
+    let changed = false;
+    Object.keys(fileState || {}).forEach((p) => {
+      const value = fileState[p];
+      if (typeof value !== 'string') return;
+      const cleaned = stripInjectedCloudflareAnalytics(value);
+      if (cleaned !== value) {
+        fileState[p] = cleaned;
+        changed = true;
+      }
+    });
+    if (changed) saveFileState(pid, fileState);
+  }
+
   /* ── Ace editor init ──────────────────────────────────────────── */
   function initAceEditor() {
     if (typeof ace === 'undefined') {
@@ -545,7 +575,13 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
       }
     }
 
-    const content = fileState[cleanPath] || '';
+    let content = fileState[cleanPath] || '';
+    const cleanedContent = stripInjectedCloudflareAnalytics(content);
+    if (cleanedContent !== content) {
+      content = cleanedContent;
+      fileState[cleanPath] = cleanedContent;
+      saveFileState(pid, fileState);
+    }
 
     // Initialize Ace if needed
     if (!aceEditor) {
@@ -758,7 +794,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   /* ── Live preview ─────────────────────────────────────────────── */
   function computePreviewHtml() {
     const entryPath = String(manifest?.entry || 'index.html');
-    const html = typeof fileState[entryPath] === 'string' ? fileState[entryPath] : '';
+    const html = typeof fileState[entryPath] === 'string' ? stripInjectedCloudflareAnalytics(fileState[entryPath]) : '';
 
     // Inline stylesheets
     const withCss = html.replace(/<link\s+[^>]*rel=["']stylesheet["'][^>]*href=["']([^"']+)["'][^>]*>/gi, (m, href) => {
