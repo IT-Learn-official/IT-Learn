@@ -545,7 +545,7 @@ body.projects-ide-is-resizing {
   padding: 10px 14px;
   border-radius: var(--ide-radius-sm);
   color: var(--ide-text);
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .projects-ide-ai-msg-content p {

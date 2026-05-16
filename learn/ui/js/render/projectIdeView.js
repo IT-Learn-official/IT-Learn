@@ -860,7 +860,13 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     } catch (err) {
       console.error(err);
       const errorPrefix = getRandomMessage(ERROR_MESSAGES);
-      aiChatHistory.push({ role: 'assistant', content: `${errorPrefix}${err.message}` });
+      const escapedErrMessage = String(err.message || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+      aiChatHistory.push({ role: 'assistant', content: `${errorPrefix}${escapedErrMessage}` });
     } finally {
       aiSendBtn.disabled = false;
       aiInput.disabled = false;
