@@ -1,0 +1,156 @@
+{
+  "chapterId": "chapter_6",
+  "kind": "assessment",
+  "title": "Chapter 6 - HTTPS and APIs",
+  "description": "Check if you understand HTTPS, APIs, and common API styles.",
+  "questions": [
+    {
+      "id": "q1-https-purpose",
+      "type": "single-choice",
+      "prompt": "What is the main advantage of HTTPS over HTTP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It removes the need for servers",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "It makes the URL shorter",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "It automatically fixes programming bugs",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It encrypts and protects the connection using TLS",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS uses TLS to encrypt traffic and protect it from tampering, and it helps verify server identity with certificates.",
+        "byOptionId": {
+          "b": "HTTPS does not change URL length in a useful way.",
+          "d": "Correct. TLS adds encryption and integrity protections.",
+          "a": "Servers are still required.",
+          "c": "Security doesn’t magically fix bugs."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q2-api-definition",
+      "type": "single-choice",
+      "prompt": "On the web, what is an API most commonly used for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To let different programs request data or actions from a server",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "To turn HTML into images",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To store your CSS in a special folder",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To replace DNS",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "APIs help software talk to other software, often using HTTP and JSON.",
+        "byOptionId": {
+          "c": "CSS storage is not what an API is for.",
+          "a": "Correct. APIs expose data and actions to clients.",
+          "d": "DNS is about name-to-IP lookup, not application data.",
+          "b": "That’s unrelated to APIs."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q3-api-types",
+      "type": "single-choice",
+      "prompt": "Which option is a good example of a real-time, two-way API connection?",
+      "options": [
+        {
+          "id": "a",
+          "label": "WebSockets",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "HTML",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "REST",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "DNS",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "WebSockets keep a connection open, letting both sides send messages any time.",
+        "byOptionId": {
+          "c": "REST usually uses separate request/response calls.",
+          "a": "Correct. WebSockets are designed for real-time two-way messaging.",
+          "d": "DNS isn’t an API style for app data; it’s a naming system.",
+          "b": "HTML is a markup language, not an API."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-contenttype",
+      "type": "single-choice",
+      "prompt": "Which HTTP header indicates the response is JSON?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Content-Type: application/json",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Location: /index.html",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Accept: text/html",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Server: nginx",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "APIs use the Content-Type header to tell clients the media type of the body.",
+        "byOptionId": {
+          "a": "Correct — `Content-Type: application/json` indicates JSON content.",
+          "c": "`Accept` is sent by clients to indicate what they can accept.",
+          "b": "`Location` is used for redirects or created resources, not media type.",
+          "d": "`Server` advertises server software, not the body format."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

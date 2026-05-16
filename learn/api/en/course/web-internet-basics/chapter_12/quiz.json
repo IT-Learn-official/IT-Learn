@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_12",
+  "kind": "assessment",
+  "title": "Chapter 12 - Real-time Web Technologies",
+  "description": "Quick checks on WebSockets, SSE, and webhooks.",
+  "questions": [
+    {
+      "id": "q-websocket-duplex",
+      "type": "single-choice",
+      "prompt": "Which technology provides a persistent two-way (full duplex) connection between client and server?",
+      "options": [
+        {
+          "id": "a",
+          "label": "SSE",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "HTTP polling",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Webhook",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "WebSocket",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "WebSockets allow full duplex communication.",
+        "byOptionId": {
+          "d": "Correct — WebSockets are full duplex persistent connections."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-webhook",
+      "type": "single-choice",
+      "prompt": "What is a webhook?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A server that polls other servers",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A server-to-server HTTP callback that triggers when an event occurs",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "A DNS record type",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "A browser API for drawing graphics",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Webhooks are HTTP callbacks sent from one server to another when events happen.",
+        "byOptionId": {
+          "b": "Correct — webhooks POST data to a URL you provide when events occur."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-sse",
+      "type": "single-choice",
+      "prompt": "Which real-time technology is typically one-way (server → client) push?",
+      "options": [
+        {
+          "id": "a",
+          "label": "HTTP polling",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Server-Sent Events (SSE)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Webhook",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "WebSocket",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "SSE is a simple server→client push channel; WebSockets are bidirectional.",
+        "byOptionId": {
+          "b": "Correct — SSE pushes updates from server to client only."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

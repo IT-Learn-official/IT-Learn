@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Hoofdstuk 7 - Poorten, TCP en UDP",
+  "description": "Korte conceptcheck over poorten en transportprotocollen.",
+  "questions": [
+    {
+      "id": "q-port-purpose",
+      "type": "single-choice",
+      "prompt": "Wat is het belangrijkste doel van een netwerkpoortnummer?",
+      "options": [
+        {
+          "id": "a",
+          "label": "IP‑adressen vervangen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Het fysieke netwerk­kabel identificeren",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Een specifieke dienst of applicatie op een apparaat identificeren",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Het apparaat op het internet benoemen",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Poorten leiden verkeer op een apparaat naar de juiste dienst.",
+        "byOptionId": {
+          "c": "Correct — poorten laten meerdere diensten één IP delen."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-tcp-udp",
+      "type": "single-choice",
+      "prompt": "Welke uitspraak beschrijft TCP het beste in vergelijking met UDP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "TCP garandeert geordende levering en herhaalt verloren pakketten",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "TCP wordt alleen voor video‑streaming gebruikt",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "TCP is connectionless en sneller dan UDP",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "TCP negeert pakketvolgorde",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP richt zich op betrouwbare, geordende levering; UDP op lage latentie.",
+        "byOptionId": {
+          "a": "Correct — TCP zorgt voor betrouwbare, geordende levering."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-common-port",
+      "type": "single-choice",
+      "prompt": "Welke poort wordt vaak gebruikt voor HTTPS?",
+      "options": [
+        {
+          "id": "a",
+          "label": "53",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "22",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "80",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "443",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS gebruikt meestal poort 443.",
+        "byOptionId": {
+          "d": "Correct — 443 is de standaard HTTPS‑poort."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-tcp-guarantee",
+      "type": "single-choice",
+      "prompt": "Welk kenmerk past het beste bij TCP in vergelijking met UDP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Geen garantie van aflevering",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Werkt alleen op poort 80",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Biedt betrouwbare, geordende aflevering",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Is altijd sneller dan UDP",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP zorgt voor betrouwbare aflevering en orde; UDP richt zich op lage latentie zonder garantie.",
+        "byOptionId": {
+          "c": "Correct — TCP herstelt verloren pakketten en houdt volgorde aan."
+        }
+      },
+      "correct": 2
+    }
+  ]
+}

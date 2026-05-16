@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_7",
+  "kind": "assessment",
+  "title": "Kapitel 7 - Ports, TCP und UDP",
+  "description": "Kurzer Konzept‑Check zu Ports und Transportschichtprotokollen.",
+  "questions": [
+    {
+      "id": "q-port-purpose",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptzweck einer Netzwerk‑Portnummer?",
+      "options": [
+        {
+          "id": "a",
+          "label": "IP‑Adressen zu ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Einen bestimmten Dienst oder eine Anwendung auf einem Gerät zu identifizieren",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Das Gerät im Internet zu benennen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Das physische Netzwerkkabel zu identifizieren",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Ports leiten Verkehr auf einem Gerät an den richtigen Dienst weiter.",
+        "byOptionId": {
+          "b": "Richtig — Ports lassen mehrere Dienste eine IP teilen."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-tcp-udp",
+      "type": "single-choice",
+      "prompt": "Welche Aussage beschreibt TCP im Vergleich zu UDP am besten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "TCP ignoriert Paketreihenfolge",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "TCP ist verbindungslos und schneller als UDP",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "TCP garantiert geordnete Lieferung und wiederholt verlorene Pakete",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "TCP wird nur für Videostreaming verwendet",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP fokussiert auf Zuverlässigkeit und Reihenfolge; UDP auf geringe Latenz.",
+        "byOptionId": {
+          "c": "Richtig — TCP stellt geordnete, zuverlässige Lieferung sicher."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-common-port",
+      "type": "single-choice",
+      "prompt": "Welcher Port wird üblicherweise für HTTPS verwendet?",
+      "options": [
+        {
+          "id": "a",
+          "label": "53",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "443",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "22",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "80",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS nutzt typischerweise Port 443.",
+        "byOptionId": {
+          "b": "Richtig — 443 ist der Standard‑HTTPS‑Port."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-tcp-guarantee",
+      "type": "single-choice",
+      "prompt": "Welches Merkmal passt am besten zu TCP im Vergleich zu UDP?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Keine Zustellungs‑Garantie",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Zuverlässige, geordnete Zustellung",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Funktioniert nur auf Port 80",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Immer schneller als UDP",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TCP sorgt für zuverlässige Übertragung und Reihenfolge; UDP zielt auf geringe Latenz ohne Garantie.",
+        "byOptionId": {
+          "b": "Richtig — TCP stellt verlorene Pakete wieder her und erhält Reihenfolge."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

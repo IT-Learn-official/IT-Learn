@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_11",
+  "kind": "assessment",
+  "title": "Hoofdstuk 11 - Authenticatie basis",
+  "description": "Korte checks over auth‑methoden en tokens.",
+  "questions": [
+    {
+      "id": "q-auth-header",
+      "type": "single-choice",
+      "prompt": "Waar wordt een bearer‑token meestal in een API‑request geplaatst?",
+      "options": [
+        {
+          "id": "a",
+          "label": "In een DNS‑record",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "In de URL‑querystring",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "In de Authorization‑header",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Alleen in de HTML‑body",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Bearer‑tokens worden meestal in de Authorization‑header geplaatst.",
+        "byOptionId": {
+          "c": "Correct — `Authorization: Bearer <token>` is standaard."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-jwt-structure",
+      "type": "single-choice",
+      "prompt": "Uit welke drie delen bestaat een JWT, gescheiden door punten?",
+      "options": [
+        {
+          "id": "a",
+          "label": "username, password, token",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "key, value, salt",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "method, path, status",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "header, payload, signature",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "JWTs bevatten header, payload en signature.",
+        "byOptionId": {
+          "d": "Correct — header.payload.signature."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-cookie-httpOnly",
+      "type": "single-choice",
+      "prompt": "Waarom gebruik je het HttpOnly‑flag op cookies?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Om te voorkomen dat JavaScript de cookie kan lezen",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Om cookies leesbaar te maken voor JavaScript",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Om de cookie‑inhoud te versleutelen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Om tokens in DNS op te slaan",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HttpOnly voorkomt dat JavaScript de cookie leest, wat sommige XSS‑risico’s vermindert.",
+        "byOptionId": {
+          "a": "Correct — HttpOnly maakt cookies ontoegankelijk voor client‑scripts."
+        }
+      },
+      "correct": 0
+    },
+    {
+      "id": "q-extra-auth-diff",
+      "type": "single-choice",
+      "prompt": "Wat is het verschil tussen authenticatie en autorisatie?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Authenticatie bevestigt wie je bent; autorisatie bepaalt wat je mag doen.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Authenticatie is DNS gerelateerd; autorisatie is TLS gerelateerd.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Authenticatie geeft permissies; autorisatie valideert wachtwoorden.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Beide betekenen hetzelfde.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Authenticatie = identiteit; autorisatie = rechten/permisseis.",
+        "byOptionId": {
+          "a": "Correct — authentication = who, authorization = what you can do."
+        }
+      },
+      "correct": 0
+    }
+  ]
+}

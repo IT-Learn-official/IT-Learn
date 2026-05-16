@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_2",
+  "kind": "assessment",
+  "title": "Kapitel 2 - URLs",
+  "description": "Prüfe, ob du die Hauptteile einer URL erkennst.",
+  "questions": [
+    {
+      "id": "q1-url-parts",
+      "type": "single-choice",
+      "prompt": "In `https://example.com/shop?item=7#reviews`, was ist `/shop`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Das Fragment",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der Pfad",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Die Query‑Zeichenfolge",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Das Protokoll",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Der Pfad ist der Teil nach dem Host, z. B. `/shop` oder `/users/123`.",
+        "byOptionId": {
+          "b": "Richtig. `/shop` ist der Pfad."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q2-query-string",
+      "type": "single-choice",
+      "prompt": "Wozu dienen Query‑Parameter wie `?page=2&sort=price`?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sie dienen nur dazu, Links länger aussehen zu lassen.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Sie wandeln den Domainnamen in eine IP‑Adresse um.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sie senden zusätzliche Optionen an den Server.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sie verschlüsseln die Verbindung.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Query‑Parameter sind zusätzliche Key/Value‑Daten, die mit der Anfrage gesendet werden.",
+        "byOptionId": {
+          "c": "Richtig. Sie werden für Filter, Paginierung und Optionen genutzt."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q3-fragment",
+      "type": "single-choice",
+      "prompt": "Was macht der Teil `#section-2` einer URL normalerweise?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Er wird zum Passwort für die Anfrage.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Er zwingt die Anfrage, HTTP statt HTTPS zu verwenden.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Er sagt dem Browser, zu einem Teil der Seite zu springen.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Er ändert die IP‑Adresse des Servers.",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Fragmente (`#...`) werden vom Browser genutzt, um innerhalb einer Seite zu navigieren oder in einer Client‑App zu routen.",
+        "byOptionId": {
+          "c": "Richtig. Oft springt der Browser zu einer Überschrift oder Route in einer Single‑Page‑App."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-url-host",
+      "type": "single-choice",
+      "prompt": "Welcher Teil von `https://shop.example.com/cart` sagt dem Browser, welchen Server er kontaktieren soll?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Das Fragment (#...)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Der Pfad (/cart)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Die Query‑String",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Der Host (shop.example.com)",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "Der Host oder die Domain gibt an, mit welchem Server eine Verbindung hergestellt werden soll.",
+        "byOptionId": {
+          "d": "Richtig — der Host bestimmt Server/Domäne."
+        }
+      },
+      "correct": 3
+    }
+  ]
+}

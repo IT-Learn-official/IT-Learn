@@ -700,6 +700,128 @@
           "practiceResourceUid": "practice.json"
         }
       ]
+    },
+    {
+      "id": "web-internet-basics",
+      "title": "Web- en Internetbasis voor jonge pros",
+      "description": "Een beginnersvriendelijke cursus die uitlegt hoe het web en internet werken: URL's, IP‑adressen, servers, HTTP/HTTPS en API's. Hoofdstukken 1–6 behandelen de basis; hoofdstukken 7–14 gaan dieper in transport, DNS, TLS, API‑ontwerp, authenticatie, real-time technieken, caching/CDN's en deployment/beveiliging.",
+      "authors": [
+        "super_man2775"
+      ],
+      "chapters": [
+        {
+          "id": "chapter_1",
+          "title": "Het web vs. het internet",
+          "description": "Het verschil tussen het internet (netwerk) en het web (websites) en het client/server‑principe.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_2",
+          "title": "Hoe een URL werkt",
+          "description": "Breek een URL op in protocol, host, pad, query en fragment en begrijp hun functies.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_3",
+          "title": "Hoe een IP‑adres en DNS werken",
+          "description": "Begrijp IP‑adressen, waarom DNS nodig is en hoe de browser de juiste server vindt.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_4",
+          "title": "Hoe een server werkt",
+          "description": "Wat een server is, wat een webserver doet en hoe backend‑apps en databases samenwerken.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_5",
+          "title": "HTTP basis",
+          "description": "Leer HTTP‑requests en -responses, methoden zoals GET/POST, statuscodes, headers en bodies.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_6",
+          "title": "HTTPS en API's",
+          "description": "Waarom HTTPS belangrijk is, wat API's doen en een overzicht van REST, GraphQL, WebSockets en Webhooks.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_7",
+          "title": "Poorten, TCP, UDP en de transportlaag",
+          "description": "Hoe poorten werken en het verschil tussen TCP en UDP.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_8",
+          "title": "DNS in detail en veelvoorkomende DNS‑records",
+          "description": "A/AAAA, CNAME, MX, TXT, NS, TTL en hoe DNS‑caching werkt.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_9",
+          "title": "TLS en HTTPS internals",
+          "description": "Hoe TLS HTTPS beveiligt, certificaten, handshake en keten van vertrouwen.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_10",
+          "title": "RESTful API's: principes en ontwerp",
+          "description": "Resource‑gerichte URLs, HTTP‑methoden, statuscodes en JSON‑antwoorden.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_11",
+          "title": "Authenticatie & autorisatie voor API's",
+          "description": "Sessies/cookies, API‑sleutels, JWT's en een korte intro tot OAuth2.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_12",
+          "title": "Real-time web: WebSockets, SSE en webhooks",
+          "description": "Vergelijk WebSockets, Server‑Sent Events en webhooks en hun typische toepassingen.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_13",
+          "title": "Caching, CDN's en performance",
+          "description": "Cache‑Control, ETag, TTL en hoe CDN's content sneller naar gebruikers brengen.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        },
+        {
+          "id": "chapter_14",
+          "title": "Deployment, schalen en beveiligingsbasis",
+          "description": "Overzicht van deployment‑modellen, load balancers, reverse proxies en belangrijke beveiligingspraktijken.",
+          "theoryResourceUid": "theory.md",
+          "quizResourceUid": "quiz.json",
+          "practiceResourceUid": "practice.json"
+        }
+      ]
     }
   ]
 }

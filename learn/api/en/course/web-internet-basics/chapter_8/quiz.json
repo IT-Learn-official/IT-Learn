@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_8",
+  "kind": "assessment",
+  "title": "Chapter 8 - DNS Basics",
+  "description": "Check understanding of common DNS records and TTL.",
+  "questions": [
+    {
+      "id": "q-a-record",
+      "type": "single-choice",
+      "prompt": "Which DNS record maps a domain name to an IPv4 address?",
+      "options": [
+        {
+          "id": "a",
+          "label": "CNAME",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "A",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "MX",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "TXT",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "A records point names to IPv4 addresses.",
+        "byOptionId": {
+          "b": "Correct — A = IPv4 address."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-mx",
+      "type": "single-choice",
+      "prompt": "What is an MX record used for?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Mapping names to IPv6 addresses",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Providing TLS certificates",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Alias to another domain",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Specifying mail servers for a domain",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "MX records tell other mail systems where to deliver email.",
+        "byOptionId": {
+          "d": "Correct — MX records list mail servers for a domain."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-ttl",
+      "type": "single-choice",
+      "prompt": "Why does DNS use a TTL (time to live)?",
+      "options": [
+        {
+          "id": "a",
+          "label": "To slow down the internet",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To encrypt DNS responses",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To route traffic to CDNs",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "To determine how long answers may be cached",
+          "isCorrect": true
+        }
+      ],
+      "explanations": {
+        "overview": "TTL controls caching of DNS responses.",
+        "byOptionId": {
+          "d": "Correct — TTL tells resolvers how long they can cache records."
+        }
+      },
+      "correct": 3
+    },
+    {
+      "id": "q-extra-aaaa",
+      "type": "single-choice",
+      "prompt": "Which DNS record type maps a name to an IPv6 address?",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "AAAA",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "MX",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "CNAME",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "AAAA records point names to IPv6 addresses.",
+        "byOptionId": {
+          "b": "Correct — AAAA maps to IPv6."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

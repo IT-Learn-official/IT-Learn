@@ -29,7 +29,7 @@
       banner.hidden = true;
       banner.innerHTML = `
         <div class="cookie-banner__content">
-          <p>We use analytics cookies to understand how people use IT Learn. Choose whether to allow non-essential tracking.</p>
+          <p>We use analytical cookies to understand how people use IT Learn. Choose whether to allow non-essential tracking.</p>
           <a href="/privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy policy</a>
         </div>
         <div class="cookie-banner__actions">

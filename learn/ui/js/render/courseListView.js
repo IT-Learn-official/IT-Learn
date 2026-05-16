@@ -57,6 +57,7 @@ function getCourseFlag(course) {
   if (id.includes('html') || title.includes('html')) return '🌐';
   if (id.includes('css') || title.includes('css')) return '🎨';
   if (id.includes('git') || title.includes('git')) return '🧭';
+  if (id.includes('internet') || title.includes('internet')) return '🌍';
   return '📚';
 }
 

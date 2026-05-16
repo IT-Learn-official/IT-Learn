@@ -1,0 +1,110 @@
+{
+  "chapterId": "chapter_14",
+  "kind": "assessment",
+  "title": "Kapitel 14 - Deployment & Sicherheitsgrundlagen",
+  "description": "Kurze Fragen zu Deployment‑Modellen und grundlegender Sicherheit.",
+  "questions": [
+    {
+      "id": "q-load-balancer",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptzweck eines Load‑Balancers?",
+      "options": [
+        {
+          "id": "a",
+          "label": "DNS‑Einträge zu speichern",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Eingehenden Traffic auf mehrere Server zu verteilen",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "TLS zu ersetzen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Quellcode zu editieren",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Load‑Balancer helfen beim Skalieren und bieten Redundanz, indem sie Anfragen verteilen.",
+        "byOptionId": {
+          "b": "Richtig — Load‑Balancer verteilen Traffic an Backends."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-https-required",
+      "type": "single-choice",
+      "prompt": "Warum solltest du HTTPS für deine Seite verwenden?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Es ändert DNS‑Einträge automatisch",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Es verschlüsselt Verkehr und schützt Benutzerdaten",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Es ersetzt Backups",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Es lässt die Seite sofort laden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "HTTPS verschlüsselt Verkehr und verifiziert Server‑Identität.",
+        "byOptionId": {
+          "b": "Richtig — HTTPS sichert Daten auf dem Weg."
+        }
+      },
+      "correct": 1
+    },
+    {
+      "id": "q-extra-containers",
+      "type": "single-choice",
+      "prompt": "Welche Methode verpackt eine App zusammen mit ihrer Umgebung für konsistente Deployments?",
+      "options": [
+        {
+          "id": "a",
+          "label": "HTML direkt auf dem Server editieren",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Container (z. B. Docker)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "DNS‑Einträge ändern, um zu deployen",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "FTP für Backups verwenden",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "Container packen die App mit Abhängigkeiten, sodass sie konsistent in verschiedenen Umgebungen läuft.",
+        "byOptionId": {
+          "b": "Richtig — Container bieten Umgebungskonsistenz für Deployments."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

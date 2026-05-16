@@ -1,0 +1,144 @@
+{
+  "chapterId": "chapter_3",
+  "kind": "assessment",
+  "title": "Kapitel 3 - IP‑Adressen und DNS",
+  "description": "Prüfe, ob du verstehst, was IP‑Adressen sind und was DNS macht.",
+  "questions": [
+    {
+      "id": "q1-ip-address",
+      "type": "single-choice",
+      "prompt": "Was ist der Hauptzweck einer IP‑Adresse?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Eine Webseite zu stylen",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "HTML‑Seiten zu erstellen",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Zu identifizieren, wohin Daten im Netzwerk geliefert werden sollen",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Passwörter automatisch zu verschlüsseln",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "IP‑Adressen dienen zur Adressierung und zum Routing im Netzwerk.",
+        "byOptionId": {
+          "c": "Richtig. Sie sind die Adresse für Netzwerkverkehr."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q2-dns-job",
+      "type": "single-choice",
+      "prompt": "Was macht DNS, wenn du `example.com` in deinen Browser eingibst?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wandelt eine IP‑Adresse in eine CSS‑Datei um",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Erstellt den Inhalt der Webseite",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Wandelt einen Domainnamen in eine IP‑Adresse um",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Sorgt dafür, dass die Seite schneller lädt",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "DNS hilft Browsern, die IP‑Adresse für einen Domainnamen zu finden, damit sie sich mit dem richtigen Server verbinden können.",
+        "byOptionId": {
+          "c": "Richtig. DNS übersetzt Namen zu Adressen."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q3-ip-versions",
+      "type": "single-choice",
+      "prompt": "Welche der folgenden sieht aus wie eine IPv4‑Adresse?",
+      "options": [
+        {
+          "id": "a",
+          "label": "2001:db8::1",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "#section",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "192.168.0.42",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "https://example.com",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "IPv4‑Adressen bestehen aus vier durch Punkte getrennten Zahlen.",
+        "byOptionId": {
+          "c": "Richtig. Vier Zahlen mit Punkten sind typisch für IPv4."
+        }
+      },
+      "correct": 2
+    },
+    {
+      "id": "q-extra-ttl",
+      "type": "single-choice",
+      "prompt": "Wofür steht TTL in DNS‑Einträgen und was regelt es?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Die Anzahl erlaubter Subdomains",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Wie lange ein DNS‑Antwort im Cache bleiben darf",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Die Verschlüsselungsmethode für DNS",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Die maximale HTTP‑Body‑Größe",
+          "isCorrect": false
+        }
+      ],
+      "explanations": {
+        "overview": "TTL bestimmt, wie lange Resolver DNS‑Antworten cachen, bevor sie neu anfragen.",
+        "byOptionId": {
+          "b": "Richtig — TTL steuert die Cache‑Dauer für DNS‑Einträge."
+        }
+      },
+      "correct": 1
+    }
+  ]
+}

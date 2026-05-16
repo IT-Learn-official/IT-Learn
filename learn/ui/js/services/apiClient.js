@@ -74,7 +74,31 @@ export async function fetchProjectFile(projectId, filePath) {
   }
 
   const safePath = normalized.join('/');
-  return fetchText(apiPath(`projects/${cleanedProject}/files/${safePath}`));
+  const content = await fetchText(apiPath(`projects/${cleanedProject}/files/${safePath}`));
+
+  const isHtml = /\.(html?)$/i.test(String(filePath || ''));
+  return isHtml ? stripInjectedCloudflareAnalytics(content) : content;
+}
+
+function stripInjectedCloudflareAnalytics(content) {
+  if (typeof content !== 'string' || content.length === 0) return content;
+
+  // Cloudflare Pages can inject this into HTML responses automatically.
+  // It must never show up inside the in-browser IDE (and it should not run in previews).
+  // Only strip the well-known injected snippet to avoid removing intentional analytics code.
+  if (!content.includes('Cloudflare Pages Analytics') && !content.includes('static.cloudflareinsights.com/beacon.min.js')) {
+    return content;
+  }
+
+  const injectedBlock =
+    /<!--\s*Cloudflare Pages Analytics\s*-->\s*<script\b[^>]*\bsrc=(['"])https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js\1[^>]*>\s*<\/script>\s*<!--\s*Cloudflare Pages Analytics\s*-->/gi;
+
+  const injectedScript =
+    /<script\b(?=[^>]*\bsrc=(['"])https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js\1)(?=[^>]*\bdata-cf-beacon=)[^>]*>\s*<\/script>/gi;
+
+  return content
+    .replace(injectedBlock, '')
+    .replace(injectedScript, '');
 }
 
 export async function fetchChapterTheory(courseId, chapter) {
