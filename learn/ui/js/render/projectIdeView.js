@@ -399,6 +399,8 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   {
     let changed = false;
     Object.keys(fileState || {}).forEach((p) => {
+      const isHtml = /\.(html?)$/i.test(p);
+      if (!isHtml) return;
       const value = fileState[p];
       if (typeof value !== 'string') return;
       const cleaned = stripInjectedCloudflareAnalytics(value);
@@ -576,11 +578,14 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     }
 
     let content = fileState[cleanPath] || '';
-    const cleanedContent = stripInjectedCloudflareAnalytics(content);
-    if (cleanedContent !== content) {
-      content = cleanedContent;
-      fileState[cleanPath] = cleanedContent;
-      saveFileState(pid, fileState);
+    const isHtml = /\.(html?)$/i.test(cleanPath);
+    if (isHtml) {
+      const cleanedContent = stripInjectedCloudflareAnalytics(content);
+      if (cleanedContent !== content) {
+        content = cleanedContent;
+        fileState[cleanPath] = cleanedContent;
+        saveFileState(pid, fileState);
+      }
     }
 
     // Initialize Ace if needed

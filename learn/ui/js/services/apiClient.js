@@ -75,7 +75,9 @@ export async function fetchProjectFile(projectId, filePath) {
 
   const safePath = normalized.join('/');
   const content = await fetchText(apiPath(`projects/${cleanedProject}/files/${safePath}`));
-  return stripInjectedCloudflareAnalytics(content);
+
+  const isHtml = /\.(html?)$/i.test(String(filePath || ''));
+  return isHtml ? stripInjectedCloudflareAnalytics(content) : content;
 }
 
 function stripInjectedCloudflareAnalytics(content) {
