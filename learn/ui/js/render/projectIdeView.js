@@ -140,7 +140,7 @@ function saveFileState(projectId, fileState) {
 function debounceWithFlush(fn, wait) {
   let timer = null;
   let lastArgs = null;
-  const debounced = function(...args) {
+  const debounced = function (...args) {
     lastArgs = args;
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
@@ -148,7 +148,7 @@ function debounceWithFlush(fn, wait) {
       fn.apply(this, lastArgs);
     }, wait);
   };
-  debounced.flush = function() {
+  debounced.flush = function () {
     if (timer) {
       clearTimeout(timer);
       timer = null;
@@ -187,9 +187,10 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   actionGroup.className = 'tabs tabs-in-header';
 
   /* ── UI state ───────────────────────────────────────────────────── */
-  const uiState = safeParse(localStorage.getItem(storageKey(pid, 'ui')), { previewOpen: true, explorerOpen: true });
+  const uiState = safeParse(localStorage.getItem(storageKey(pid, 'ui')), { previewOpen: true, explorerOpen: true, aiOpen: false });
   if (typeof uiState.previewOpen !== 'boolean') uiState.previewOpen = true;
   if (typeof uiState.explorerOpen !== 'boolean') uiState.explorerOpen = true;
+  if (typeof uiState.aiOpen !== 'boolean') uiState.aiOpen = false;
 
   function saveUiState() {
     localStorage.setItem(storageKey(pid, 'ui'), JSON.stringify(uiState));
@@ -202,7 +203,9 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
       guide: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>`,
       refresh: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>`,
       close: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`,
-      panel: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`
+      panel: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`,
+      ai: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+      send: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>`
     };
     const svg = icons[name] || '';
     return svg ? svg.replace('<svg ', '<svg aria-hidden="true" focusable="false" ') : '';
@@ -231,10 +234,17 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   toggleExplorerBtn.title = 'Toggle Explorer';
   toggleExplorerBtn.setAttribute('aria-label', 'Toggle Explorer');
 
+  const toggleAiBtn = document.createElement('button');
+  toggleAiBtn.type = 'button';
+  toggleAiBtn.className = 'btn-icon projects-ide-ai-toggle';
+  toggleAiBtn.innerHTML = getIcon('ai');
+  toggleAiBtn.title = 'AI Assistant';
+  toggleAiBtn.setAttribute('aria-label', 'AI Assistant');
 
   actionGroup.appendChild(backBtn);
   actionGroup.appendChild(toggleExplorerBtn);
   actionGroup.appendChild(toggleGuideBtn);
+  actionGroup.appendChild(toggleAiBtn);
 
   const mainHeader = document.createElement('div');
   mainHeader.className = 'screen-header-main screen-header-main--align-right';
@@ -370,6 +380,44 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   layout.appendChild(sidebar);
   layout.appendChild(main);
 
+  //ai chat
+  const aiSidebar = document.createElement('div');
+  aiSidebar.className = 'projects-ide-ai';
+
+  const aiHeader = document.createElement('div');
+  aiHeader.className = 'projects-ide-ai-header';
+
+  const aiTitle = document.createElement('div');
+  aiTitle.className = 'projects-ide-ai-title';
+  aiTitle.textContent = 'AI Assistant';
+
+  aiHeader.appendChild(aiTitle);
+
+  const aiMessages = document.createElement('div');
+  aiMessages.className = 'projects-ide-ai-messages';
+
+  const aiInputWrap = document.createElement('div');
+  aiInputWrap.className = 'projects-ide-ai-input-wrap';
+
+  const aiInput = document.createElement('textarea');
+  aiInput.className = 'projects-ide-ai-input';
+  aiInput.placeholder = 'Ask a question about the project...';
+  aiInput.rows = 1;
+
+  const aiSendBtn = document.createElement('button');
+  aiSendBtn.type = 'button';
+  aiSendBtn.className = 'projects-ide-ai-send';
+  aiSendBtn.innerHTML = getIcon('send');
+  aiSendBtn.title = 'Send Message';
+
+  aiInputWrap.appendChild(aiInput);
+  aiInputWrap.appendChild(aiSendBtn);
+
+  aiSidebar.appendChild(aiHeader);
+  aiSidebar.appendChild(aiMessages);
+  aiSidebar.appendChild(aiInputWrap);
+
+  layout.appendChild(aiSidebar);
   body.innerHTML = '';
   body.appendChild(layout);
 
@@ -404,13 +452,13 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
         setValue(v) { ta.value = String(v ?? ''); },
         getValue() { return ta.value; },
         focus() { ta.focus(); },
-        resize() {},
+        resize() { },
         session: {
           on(evt, fn) {
             if (evt === 'change' && typeof fn === 'function') listeners.add(fn);
           },
-          setMode() {},
-          setUseWrapMode() {},
+          setMode() { },
+          setUseWrapMode() { },
         },
       };
     }
@@ -439,12 +487,12 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     });
 
     // Auto-save on change
-      editor.session.on('change', () => {
-        if (!activeFile) return;
-        fileState[activeFile] = editor.getValue();
-        debouncedSaveFileState(pid, fileState);
-        schedulePreviewRefresh();
-      });
+    editor.session.on('change', () => {
+      if (!activeFile) return;
+      fileState[activeFile] = editor.getValue();
+      debouncedSaveFileState(pid, fileState);
+      schedulePreviewRefresh();
+    });
 
     return editor;
   }
@@ -652,9 +700,9 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   makeDraggable(
     midResize,
     (dx, { initialPreviewW }) => {
-    const newW = Math.max(180, Math.round(initialPreviewW - dx));
-    previewWrap.style.width = newW + 'px';
-    previewWrap.style.flex = 'none';
+      const newW = Math.max(180, Math.round(initialPreviewW - dx));
+      previewWrap.style.width = newW + 'px';
+      previewWrap.style.flex = 'none';
     },
     {
       onStart: () => previewFrame?.classList?.add('is-resize-disabled'),
@@ -671,6 +719,7 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
   function applyPanelState() {
     mainSplit.classList.toggle('is-preview-collapsed', !uiState.previewOpen);
     layout.classList.toggle('is-explorer-collapsed', !uiState.explorerOpen);
+    layout.classList.toggle('is-ai-collapsed', !uiState.aiOpen);
   }
 
   applyPanelState();
@@ -680,6 +729,152 @@ export async function renderProjectIdeView(rootEl, { projectId, file, view } = {
     saveUiState();
     applyPanelState();
     if (aceEditor) aceEditor.resize();
+  });
+
+  toggleAiBtn.addEventListener('click', () => {
+    uiState.aiOpen = !uiState.aiOpen;
+    saveUiState();
+    applyPanelState();
+    if (aceEditor) aceEditor.resize();
+    if (uiState.aiOpen) {
+      setTimeout(() => aiInput.focus(), 100);
+    }
+  });
+
+  const aiChatHistory = [];
+
+  const WELCOME_MESSAGES = [
+    'How can I help you today?',
+    'What are we working on?',
+    'Need some coding advice?',
+    'How can I assist with your project?',
+    'Got a question?'
+  ];
+
+  const THINKING_MESSAGES = [
+    'Thinking...',
+    'Cooking...',
+    'Toasting...',
+    'Warming up...',
+    'Heating up...',
+    'Making a sandwich...',
+    'Brewing coffee...'
+  ];
+
+  const ERROR_MESSAGES = [
+    'Error: ',
+    'Oops, something went wrong: ',
+    'I ran into a problem: ',
+    'Failed to fetch response: ',
+    'Oh no, I could not get an answer this time: '
+  ];
+
+  function getRandomMessage(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function renderAiMessages() {
+    aiMessages.innerHTML = '';
+    if (aiChatHistory.length === 0) {
+      const empty = document.createElement('div');
+      empty.style.textAlign = 'center';
+      empty.style.color = 'var(--ide-text-muted)';
+      empty.style.fontSize = '13px';
+      empty.style.marginTop = '20px';
+
+      if (!aiMessages.dataset.welcomeMsg) {
+        aiMessages.dataset.welcomeMsg = getRandomMessage(WELCOME_MESSAGES);
+      }
+      empty.textContent = aiMessages.dataset.welcomeMsg;
+      aiMessages.appendChild(empty);
+      return;
+    }
+
+    aiChatHistory.forEach(msg => {
+      const el = document.createElement('div');
+      el.className = `projects-ide-ai-msg ${msg.role}`;
+
+      const roleEl = document.createElement('div');
+      roleEl.className = 'projects-ide-ai-msg-role';
+      roleEl.textContent = msg.role === 'user' ? 'You' : 'AI Assistant';
+
+      const contentEl = document.createElement('div');
+      contentEl.className = 'projects-ide-ai-msg-content';
+
+      if (msg.role === 'assistant') {
+        contentEl.innerHTML = renderMarkdownToHtml(msg.content);
+        upgradeMarkdownCodeBlocks(contentEl);
+      } else {
+        contentEl.textContent = msg.content;
+      }
+
+      el.appendChild(roleEl);
+      el.appendChild(contentEl);
+      aiMessages.appendChild(el);
+    });
+
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }
+
+  renderAiMessages();
+
+  async function submitAiMessage() {
+    const text = aiInput.value.trim();
+    if (!text) return;
+
+    aiInput.value = '';
+    aiChatHistory.push({ role: 'user', content: text });
+    renderAiMessages();
+
+    aiSendBtn.disabled = true;
+    aiInput.disabled = true;
+
+    //say stuff is loading
+    const loadingEl = document.createElement('div');
+    loadingEl.className = 'projects-ide-ai-msg assistant loading';
+    const thinkingMsg = getRandomMessage(THINKING_MESSAGES);
+    loadingEl.innerHTML = `<div class="projects-ide-ai-msg-role">AI Assistant</div><div class="projects-ide-ai-msg-content">${thinkingMsg}</div>`;
+    aiMessages.appendChild(loadingEl);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+
+    try {
+      //get the context
+      const contextFiles = openTabs.map(p => `\n--- File: ${p} ---\n${fileState[p] || ''}`).join('\n');
+      const systemMessage = `You have the following files open:\n${contextFiles}`;
+
+      const payloadMessages = aiChatHistory.map(m => ({ ...m }));
+      payloadMessages[payloadMessages.length - 1].content = `Project context:\n${systemMessage}\n\nUser question: ${text}`;
+
+      const res = await fetch('/api/ai?p=projects-assist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: payloadMessages })
+      });
+
+      if (!res.ok) throw new Error('Failed to communicate with AI');
+
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'AI Error');
+
+      aiChatHistory.push({ role: 'assistant', content: data.content });
+    } catch (err) {
+      console.error(err);
+      const errorPrefix = getRandomMessage(ERROR_MESSAGES);
+      aiChatHistory.push({ role: 'assistant', content: `${errorPrefix}${err.message}` });
+    } finally {
+      aiSendBtn.disabled = false;
+      aiInput.disabled = false;
+      renderAiMessages();
+      aiInput.focus();
+    }
+  }
+
+  aiSendBtn.addEventListener('click', submitAiMessage);
+  aiInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      submitAiMessage();
+    }
   });
 
   /* ── Guide modal ──────────────────────────────────────────────── */
